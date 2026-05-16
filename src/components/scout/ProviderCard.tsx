@@ -103,7 +103,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
               <Calendar className="h-4 w-4" /> Book Now
             </Button>
           ) : (
-            <Button onClick={() => onOpen(provider)} className="flex-1 bg-foreground text-background hover:bg-foreground/90">
+            <Button onClick={() => onOpen(provider)} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
               View details
             </Button>
           )}

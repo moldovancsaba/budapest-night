@@ -9,6 +9,8 @@ import type { BoroughChoice, Provider, Category } from "@/types/provider";
 import { MapPin, Sparkles, Loader2 } from "lucide-react";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { useProvidersCatalog, useNeighborhoodsCatalog, useSiteCatalog } from "@/hooks/useCatalog";
+import { CYBER_PANEL } from "@/lib/cyberTheme";
+import { cn } from "@/lib/utils";
 
 interface Props {
   category: Category;
@@ -17,6 +19,13 @@ interface Props {
   initialBorough?: BoroughChoice | null;
   initialNeighborhood?: string | null;
 }
+
+const CATEGORY_BLURB: Record<Category, string> = {
+  Events: "concerts, festivals, boat parties, and rooftops",
+  Parties: "ruin bars, clubs, DJ nights, and late parties",
+  Restaurants: "bistros, fine dining, and Danube-side tables",
+  Cafés: "coffee, brunch, dessert bars, and all-day hangouts",
+};
 
 export function DiscoverView({ category, onOpen, onShare, initialBorough, initialNeighborhood }: Props) {
   const [borough, setBorough] = useState<BoroughChoice>(initialBorough ?? "All");
@@ -54,7 +63,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
   if (loadP) {
     return (
       <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin" />
+        <Loader2 className="h-8 w-8 animate-spin text-accent" />
         <p className="text-sm">Loading listings…</p>
       </div>
     );
@@ -75,30 +84,35 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
       <EmptyState
         icon={MapPin}
         title="No listings in the database"
-        message="Add listings in /admin or run npm run ingest:listing with a curator JSON payload. Ensure MONGODB_URI is set."
+        message="Add listings in /admin or run npm run ingest:listing with a curator JSON payload."
       />
     );
   }
 
   return (
     <div className="space-y-8">
-      <section className="relative overflow-hidden rounded-3xl bg-card shadow-card">
-        <div className="grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
+      <section className={cn("relative overflow-hidden neon-border", CYBER_PANEL)}>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(310_100%_50%_/_0.1),transparent_55%)]" />
+        <div className="relative grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">Your local class scout</p>
-            <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] text-foreground sm:text-4xl md:text-5xl">
-              Discover the best<br />kids activities in Budapest
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Budapest after dark</p>
+            <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl">
+              <span className="neon-text">
+                Discover {category.toLowerCase()}
+                <br />
+                in Budapest
+              </span>
             </h1>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Find {category.toLowerCase()}, camps, birthday parties, and drop-in activities by borough and neighborhood. Curated. Local. Built by Parents.
+              Find {CATEGORY_BLURB[category]} by district and neighborhood. Curated. Local. Built for nights out.
             </p>
           </div>
           <CdnImage
             src={site?.discoverHeroUrl}
-            alt="Budapest skyline at night"
+            alt="Budapest Chain Bridge and city lights at night"
             width={1024}
             height={640}
-            className="ml-auto hidden h-44 w-full max-w-md rounded-2xl object-cover md:block"
+            className="ml-auto hidden h-44 w-full max-w-md rounded-2xl border border-accent/20 object-cover ring-1 ring-primary/20 md:block"
           />
         </div>
       </section>
@@ -112,24 +126,18 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
           }}
         />
         {borough !== "All" && (
-          <NeighborhoodChips
-            options={hoodOptions}
-            value={neighborhood}
-            onChange={setNeighborhood}
-          />
+          <NeighborhoodChips options={hoodOptions} value={neighborhood} onChange={setNeighborhood} />
         )}
         <Filters value={filters} onChange={setFilters} />
       </section>
 
       {featured.length > 0 && (
         <section>
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="flex items-center gap-2 font-display text-xl font-semibold text-foreground">
-              <Sparkles className="h-5 w-5 text-orange" />
-              Featured providers
-            </h2>
+          <div className="mb-4 flex items-center gap-2">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <h2 className="font-display text-lg font-semibold text-foreground">Featured</h2>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (
               <ProviderCard key={p.id} provider={p} onOpen={onOpen} onShare={onShare} />
             ))}
@@ -138,25 +146,19 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
       )}
 
       <section>
-        <div className="mb-4 flex items-baseline justify-between">
-          <h2 className="font-display text-xl font-semibold text-foreground">
-            {neighborhood
-              ? `${category} in ${neighborhood}`
-              : borough === "All"
-                ? `${category} across Budapest`
-                : `${category} in ${borough}`}
-          </h2>
-          <span className="text-sm text-muted-foreground">{filtered.length} results</span>
-        </div>
-
+        <h2 className="mb-4 font-display text-lg font-semibold text-foreground">
+          {filtered.length} {category.toLowerCase()} {filtered.length === 1 ? "spot" : "spots"}
+          {borough !== "All" ? ` in ${borough}` : ""}
+          {neighborhood ? ` · ${neighborhood}` : ""}
+        </h2>
         {filtered.length === 0 ? (
           <EmptyState
             icon={MapPin}
-            title="No providers here yet"
-            message="No providers found here yet. Try another nearby neighborhood or adjust your filters."
+            title="No matches"
+            message="Try another district, neighborhood, or filter."
           />
         ) : (
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((p) => (
               <ProviderCard key={p.id} provider={p} onOpen={onOpen} onShare={onShare} />
             ))}

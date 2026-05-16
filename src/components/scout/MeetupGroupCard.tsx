@@ -86,7 +86,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
       </div>
 
       <div className="flex gap-2 px-5 pb-5">
-        <Button onClick={() => onOpen(group)} className="flex-1 bg-foreground text-background hover:bg-foreground/90">
+        <Button onClick={() => onOpen(group)} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
           View details
         </Button>
         <Button variant="outline" size="icon" aria-label="Share group" onClick={() => onShare(group)}>

@@ -18,7 +18,7 @@ export function NeighborhoodChips({
           className={cn(
             "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
             value === null
-              ? "border-foreground bg-foreground text-background"
+              ? "border-primary bg-primary text-primary-foreground shadow-[0_0_12px_hsl(310_100%_62%_/_0.3)]"
               : "border-border bg-card text-foreground hover:border-foreground",
           )}
         >
@@ -33,8 +33,8 @@ export function NeighborhoodChips({
               className={cn(
                 "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
                 active
-                  ? "border-teal bg-teal-soft text-teal"
-                  : "border-border bg-card text-foreground hover:border-teal hover:text-teal",
+                  ? "border-accent bg-accent/15 text-accent"
+                  : "border-border bg-card/80 text-foreground hover:border-accent hover:text-accent",
               )}
               aria-pressed={active}
             >

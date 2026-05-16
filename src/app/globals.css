@@ -83,6 +83,12 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
+  /* Legacy ClassScout light panels — force dark surfaces in marketing views */
+  .bg-ivory,
+  .bg-\[hsl\(24_45\%_94\%\)\],
+  .bg-\[hsl\(340_70\%_96\%\)\] {
+    background-color: hsl(var(--card)) !important;
+  }
 }
 
 @layer utilities {

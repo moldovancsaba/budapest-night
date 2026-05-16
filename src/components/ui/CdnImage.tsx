@@ -23,7 +23,7 @@ export function CdnImage({ src, resolveBase, className, alt, ...imgProps }: Prop
     return (
       <div
         className={cn(
-          "grid place-items-center bg-gradient-to-br from-secondary to-muted text-muted-foreground",
+          "grid place-items-center bg-gradient-to-br from-[hsl(280_50%_12%)] via-card to-[hsl(260_50%_8%)] text-muted-foreground",
           className,
         )}
         aria-label={alt || "Image placeholder"}

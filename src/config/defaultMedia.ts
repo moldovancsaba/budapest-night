@@ -1,10 +1,6 @@
 /**
  * Raster images for marketing + UI fallbacks must be **https://i.ibb.co/...** (ImgBB).
  * `NEXT_PUBLIC_IMG_BB_*` overrides these defaults (set after `npm run imgbb:upload-assets`).
- *
- * Built-in URLs are from the repo’s bundled JPEGs uploaded once to ImgBB so guides/heroes
- * are not empty before Vercel env is configured. Re-run the upload script and replace here
- * if you rotate the ImgBB account or images are removed.
  */
 export type CmsMediaUrls = {
   homeHero: string;
@@ -14,13 +10,13 @@ export type CmsMediaUrls = {
   guideCard: string;
 };
 
-/** Last-resort CDN URLs (same assets as `scripts/imgbb-asset-sources/`). */
+/** Budapest nightlife defaults (re-run `npm run imgbb:upload-assets` to rotate). */
 const BAKED_IMG_BB: CmsMediaUrls = {
-  homeHero: "https://i.ibb.co/C3k9k2bG/eec5793c6379.jpg",
-  discoverHero: "https://i.ibb.co/7d33cFj4/31b5a106c7f2.jpg",
-  fallbackListing: "https://i.ibb.co/cX2MTsKW/1de59a6f2a20.jpg",
-  fallbackMeetup: "https://i.ibb.co/B2gTxn0T/fb06bf613a97.jpg",
-  guideCard: "https://i.ibb.co/0RCvBy95/783a0a6a17b1.jpg",
+  homeHero: "https://i.ibb.co/GQCgxnm0/cbe8e6335604.jpg",
+  discoverHero: "https://i.ibb.co/HLd5nwcK/27a9829853a0.jpg",
+  fallbackListing: "https://i.ibb.co/1f00nn4X/b4bef39e5fc5.jpg",
+  fallbackMeetup: "https://i.ibb.co/CsBQ1Ff5/9f2233d76c21.jpg",
+  guideCard: "https://i.ibb.co/xK672jw6/6a4e4e8ea50c.jpg",
 };
 
 const ENV_KEYS: Record<keyof CmsMediaUrls, string> = {
@@ -52,7 +48,6 @@ export function getCmsMediaUrls(): CmsMediaUrls {
   return readEnv();
 }
 
-/** Lazy env reads (supports Next `NEXT_PUBLIC_*` inlining at build time). */
 export const CMS_MEDIA: CmsMediaUrls = {
   get homeHero() {
     return readEnv().homeHero;

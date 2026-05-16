@@ -25,6 +25,7 @@ import { CdnImage } from "@/components/ui/CdnImage";
 import { SiteLucideIcon } from "@/lib/siteLucideIcon";
 import { useProvidersCatalog, useMeetupGroupsCatalog, useSiteCatalog, useNeighborhoodsCatalog } from "@/hooks/useCatalog";
 import { BOROUGHS, NEIGHBORHOODS } from "@/data/locations";
+import { CYBER_PANEL, CYBER_TONE_BG, CYBER_TONE_LINK } from "@/lib/cyberTheme";
 
 const HOME_BOROUGH_CHOICES: BoroughChoice[] = ["All", ...BOROUGHS];
 
@@ -58,21 +59,8 @@ const CATEGORIES: {
   { key: "Meet-Up Groups", icon: Palette, description: "Gallery walks, culture circles, food clubs & local creator meetups", tone: "blue" },
 ];
 
-const TONE_BG: Record<string, string> = {
-  orange: "bg-orange/15 text-orange",
-  teal: "bg-teal-soft text-teal",
-  pink: "bg-[hsl(340_70%_94%)] text-[hsl(340_60%_45%)]",
-  amber: "bg-[hsl(40_90%_92%)] text-[hsl(35_85%_45%)]",
-  blue: "bg-[hsl(210_80%_94%)] text-[hsl(210_70%_45%)]",
-};
-
-const TONE_LINK: Record<string, string> = {
-  orange: "text-orange",
-  teal: "text-teal",
-  pink: "text-[hsl(340_60%_45%)]",
-  amber: "text-[hsl(35_85%_45%)]",
-  blue: "text-[hsl(210_70%_45%)]",
-};
+const TONE_BG = CYBER_TONE_BG;
+const TONE_LINK = CYBER_TONE_LINK;
 
 interface Props {
   onNavigate: (view: Category | "Saved" | "Calculator" | "Meet-Up Groups", location?: { borough?: BoroughChoice; neighborhood?: string }) => void;
@@ -106,7 +94,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
   return (
     <div className="space-y-16">
       {/* HERO */}
-      <section className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-card via-background to-[hsl(280_50%_12%)] neon-border">
+      <section className={cn("relative overflow-hidden neon-border", CYBER_PANEL)}>
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(310_100%_50%_/_0.12),transparent_50%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(180_100%_50%_/_0.08),transparent_55%)]" />
         <div className="relative grid items-center gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_1fr] md:p-16">
@@ -168,7 +156,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               onClick={() =>
                 onNavigate(key === "Meet-Up Groups" ? "Meet-Up Groups" : (key as Category))
               }
-              className="group flex flex-col items-center rounded-3xl border border-border bg-card p-6 text-center shadow-card transition-all hover:-translate-y-1 hover:shadow-elevated"
+              className="group flex flex-col items-center rounded-3xl border border-border/80 bg-card/90 p-6 text-center shadow-card transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-elevated"
             >
               <span className={cn("grid h-16 w-16 place-items-center rounded-full", TONE_BG[tone])}>
                 <Icon className="h-7 w-7" />
@@ -184,7 +172,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       </section>
 
       {/* NEIGHBORHOOD DISCOVERY */}
-      <section id="home-neighborhoods" className="relative overflow-hidden rounded-[2rem] bg-secondary px-6 py-12 sm:px-12 sm:py-14">
+      <section id="home-neighborhoods" className={cn("relative overflow-hidden px-6 py-12 sm:px-12 sm:py-14", CYBER_PANEL)}>
         <Building2 className="pointer-events-none absolute -left-4 top-6 h-32 w-32 text-foreground/[0.04]" aria-hidden />
         <Building2 className="pointer-events-none absolute -right-4 bottom-6 h-32 w-32 text-foreground/[0.04]" aria-hidden />
         <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">{s.neighborhoodSectionTitle}</h2>
@@ -200,8 +188,8 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 className={cn(
                   "rounded-full border px-5 py-2 text-sm font-semibold transition-colors",
                   active
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border bg-card text-foreground hover:border-foreground",
+                    ? "border-primary bg-primary text-primary-foreground shadow-[0_0_16px_hsl(310_100%_62%_/_0.35)]"
+                    : "border-border bg-card/80 text-foreground hover:border-accent hover:text-accent",
                 )}
               >
                 {label}
@@ -211,7 +199,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
         </div>
         <p className="mt-6 text-center text-sm font-medium text-muted-foreground">
           {borough === "All"
-            ? "Browse every borough at once in Discover, or pick a borough above to explore its neighborhoods."
+            ? "Browse every district at once in Discover, or pick a district above to explore its neighborhoods."
             : s.popularNeighborhoodsCaption.replace(/\{borough\}/g, borough)}
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
@@ -219,9 +207,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
             <button
               type="button"
               onClick={() => onNavigate("Events", { borough: "All" })}
-              className="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-teal hover:text-teal"
+              className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
             >
-              Open Discover (all NYC)
+              Open Discover (all Budapest)
             </button>
           ) : (
             <>
@@ -230,7 +218,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   key={n}
                   type="button"
                   onClick={() => onNavigate("Events", { borough, neighborhood: n })}
-                  className="rounded-full border border-border bg-card px-4 py-1.5 text-sm text-foreground transition-colors hover:border-teal hover:text-teal"
+                  className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
                 >
                   {n}
                 </button>
@@ -238,9 +226,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <button
                 type="button"
                 onClick={() => onNavigate("Events", { borough })}
-                className="rounded-full border border-border bg-card px-4 py-1.5 text-sm text-foreground transition-colors hover:border-teal hover:text-teal"
-              >
-                View all
+              className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              View all
               </button>
             </>
           )}
@@ -259,7 +247,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   onNavigate("Events");
                 })
               }
-              className="hidden items-center gap-1 text-sm font-semibold text-foreground hover:text-teal sm:inline-flex"
+              className="hidden items-center gap-1 text-sm font-semibold text-accent hover:text-primary sm:inline-flex"
             >
               {s.guidesViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
             </button>
@@ -307,7 +295,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
         <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">{s.howItWorksSectionTitle}</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {s.howItWorksSteps.map((step) => (
-            <div key={step.step} className="rounded-3xl border border-border bg-card p-6 shadow-card">
+            <div key={step.step} className="rounded-3xl border border-border/80 bg-card/90 p-6 shadow-card">
               <div className="flex items-start gap-4">
                 <span className={cn("grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-bold", TONE_BG[step.tone])}>
                   {step.step}
@@ -326,7 +314,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       </section>
 
       {/* TRUST STRIP */}
-      <section className="rounded-[2rem] bg-[hsl(24_45%_94%)] px-6 py-8 sm:px-10">
+      <section className={cn("px-6 py-8 sm:px-10", CYBER_PANEL)}>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {s.trustPillars.map((pillar) => (
             <div key={pillar.title} className="flex items-start gap-3">
@@ -350,7 +338,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
             <button
               type="button"
               onClick={() => onNavigate("Events")}
-              className="inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:text-teal"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-primary"
             >
               {s.popularPicksViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
             </button>
@@ -364,17 +352,17 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 onClick={() => onOpenGroup(popularGroup)}
                 className="group flex w-64 shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-card text-left shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated sm:w-auto"
               >
-                <div className="relative grid h-32 place-items-center bg-[hsl(210_80%_94%)]">
-                  <Users className="h-10 w-10 text-[hsl(210_70%_45%)]" />
-                  <span className="absolute left-2 top-2 rounded-full bg-[hsl(210_70%_45%)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
-                    Parent Favorite
+                <div className="relative grid h-32 place-items-center bg-accent/10">
+                  <Users className="h-10 w-10 text-accent" />
+                  <span className="absolute left-2 top-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent-foreground">
+                    Culture pick
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-3">
                   <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">{popularGroup.name}</h3>
                   <p className="mt-0.5 text-xs text-muted-foreground">{popularGroup.neighborhood}</p>
-                  <p className="mt-1 text-[11px] text-muted-foreground">Ages {popularGroup.ageRange} · Meet-Up Group</p>
-                  <p className="mt-2 text-sm font-semibold text-orange">Free</p>
+                  <p className="mt-1 text-[11px] text-muted-foreground">{popularGroup.ageRange} · Culture circle</p>
+                  <p className="mt-2 text-sm font-semibold text-accent">Free to join</p>
                 </div>
               </button>
             )}
@@ -383,9 +371,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       )}
 
       {/* EMAIL */}
-      <section className="overflow-hidden rounded-[2rem] bg-[hsl(340_70%_96%)] px-6 py-10 sm:px-12">
+      <section className="overflow-hidden rounded-[2rem] border border-primary/25 bg-gradient-to-r from-[hsl(310_80%_12%)] via-card to-[hsl(280_50%_10%)] px-6 py-10 sm:px-12 neon-border">
         <div className="grid items-center gap-6 md:grid-cols-[auto_1fr_auto]">
-          <span className="grid h-14 w-14 place-items-center rounded-full bg-[hsl(340_70%_88%)] text-[hsl(340_60%_40%)]">
+          <span className="grid h-14 w-14 place-items-center rounded-full bg-primary/20 text-primary ring-1 ring-primary/40">
             <Mail className="h-6 w-6" />
           </span>
           <div>
@@ -407,9 +395,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={s.newsletterPlaceholder}
-              className="h-11 rounded-full border-border bg-card sm:w-64"
+              className="h-11 rounded-full border-border/80 bg-background/50 sm:w-64"
             />
-            <Button type="submit" className="h-11 rounded-full bg-foreground px-6 text-background hover:bg-foreground/90">
+            <Button type="submit" className="h-11 rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90">
               {s.newsletterCta}
             </Button>
           </form>
@@ -447,11 +435,11 @@ function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Pro
           Ages {provider.ageRanges[0]} · {provider.activityTypes[0]}
         </p>
         <div className="mt-2 flex items-center justify-between">
-          <span className="text-sm font-semibold text-orange">
-            ${provider.pricePerClass}
-            <span className="text-[10px] font-normal text-muted-foreground">/class</span>
+          <span className="text-sm font-semibold text-primary">
+            €{provider.pricePerClass}
+            <span className="text-[10px] font-normal text-muted-foreground">/visit</span>
           </span>
-          <Star className="h-3.5 w-3.5 fill-orange text-orange" />
+          <Star className="h-3.5 w-3.5 fill-primary text-primary" />
         </div>
       </div>
     </button>
