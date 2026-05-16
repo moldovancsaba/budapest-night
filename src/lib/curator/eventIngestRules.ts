@@ -18,7 +18,7 @@ export function getEventIngestRulesForPrompt(): string {
 
 **Timed events** (\`resource: "event"\`) = a specific dated happening (concert, festival night, ticketed show) with \`startsAt\`, \`endsAt\`, ticket tiers, and one or more \`venueIds\` pointing at existing provider ids.
 
-Never put a concert listing only as a Venues provider. Never use \`category: "Events"\` (removed). Never map a venue to the wrong district (e.g. Budapest Park is **Ferencváros / Fábián Juli**, 1095 — **not** Óbuda Island).
+Never put a concert listing only as a Venues provider. Never use \`category: "Events"\` (removed). Never map a venue to the wrong district (e.g. Budapest Park is **Ferencváros / Fábián Juli**, 1095 — **not** Óbuda Island; MVM Dome is **1143 Stefánia út, Terézváros** — **not** Kelenföld / Infopark).
 
 ---
 

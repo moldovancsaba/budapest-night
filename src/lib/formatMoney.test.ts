@@ -17,7 +17,7 @@ describe("providerPriceCurrency", () => {
     expect(providerPriceCurrency(100, "HUF")).toBe("HUF");
   });
 
-  it("defaults to EUR", () => {
-    expect(providerPriceCurrency(25, undefined)).toBe("EUR");
+  it("defaults to HUF", () => {
+    expect(providerPriceCurrency(25, undefined)).toBe("HUF");
   });
 });

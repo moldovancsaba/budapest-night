@@ -12,6 +12,14 @@
     "he": "Ebraico",
     "ar": "Arabo"
   },
+  "currency": {
+    "label": "Valuta",
+    "option": {
+      "HUF": "Fiorino ungherese (Ft)",
+      "EUR": "Euro (€)",
+      "USD": "Dollaro USA ($)"
+    }
+  },
   "nav": {
     "explore": "Esplora",
     "yourNight": "La tua serata",
@@ -249,7 +257,7 @@
     "title": "Dividi il conto",
     "subtitle": "Dividi prima che qualcuno «dimentichi» la carta. Dal budget notturno o totale manuale.",
     "sourceTitle": "Totale serata",
-    "fromBudget": "{count} locali nel budget · €{total} subtotale",
+    "fromBudget": "{count} locali nel budget · {total} subtotale",
     "editBudget": "Modifica budget",
     "manualHint": "Nessun locale — inserisci un totale o aggiungi posti.",
     "manualPlaceholder": "es. 120",
@@ -279,7 +287,7 @@
     "copied": "Copiato",
     "copyFailed": "Copia fallita",
     "reset": "Reimposta",
-    "shareLine": "Budapest Night: €{perPerson} a testa ({people} persone, €{total} totale)",
+    "shareLine": "Budapest Night: {perPerson} a testa ({people} persone, {total} totale)",
     "fromBudgetCta": "Dividi tra il gruppo"
   },
   "home": {
@@ -457,6 +465,7 @@
     "oktogon": "Oktogon",
     "kiralyUtca": "Király utca",
     "lisztFerencTer": "Liszt Ferenc tér",
+    "stefaniaUt": "Stefánia út",
     "jewishQuarter": "Quartiere ebraico",
     "gozsduUdvar": "Gozsdu Udvar",
     "kazinczyUtca": "Kazinczy utca",

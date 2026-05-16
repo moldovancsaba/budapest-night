@@ -13,6 +13,7 @@ export const NEIGHBORHOOD_KEY: Record<string, string> = {
   Oktogon: "oktogon",
   "Király utca": "kiralyUtca",
   "Liszt Ferenc tér": "lisztFerencTer",
+  "Stefánia út": "stefaniaUt",
   "Jewish Quarter": "jewishQuarter",
   "Gozsdu Udvar": "gozsduUdvar",
   "Kazinczy utca": "kazinczyUtca",

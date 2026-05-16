@@ -1,7 +1,7 @@
-/** ISO-style money codes used on providers, events, and menus. */
+/** ISO-style money codes used on providers, events, and menus (storage). */
 export type MoneyCurrency = "EUR" | "HUF" | "FREE";
 
-/** Format a numeric amount with the correct symbol and grouping (never mix € with HUF). */
+/** @deprecated Use formatHufAsDisplay from @/lib/currency with display currency context. */
 export function formatMoneyAmount(
   amount: number,
   currency: MoneyCurrency,
@@ -16,11 +16,11 @@ export function formatMoneyAmount(
   return `€${amount.toFixed(2)}`;
 }
 
-/** Default listing currency when omitted on a provider document. */
+/** Canonical storage currency for provider pricePerClass. */
 export function providerPriceCurrency(
-  pricePerClass: number,
+  _pricePerClass: number,
   priceCurrency?: MoneyCurrency | null,
 ): MoneyCurrency {
-  if (priceCurrency === "HUF" || priceCurrency === "EUR") return priceCurrency;
-  return "EUR";
+  if (priceCurrency === "EUR") return "EUR";
+  return "HUF";
 }

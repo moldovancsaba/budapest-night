@@ -1,5 +1,7 @@
 import type { EntryFee, NightEvent } from "@/types/event";
-import { formatMoneyAmount } from "@/lib/formatMoney";
+import { amountToHuf, formatHufAsDisplay } from "@/lib/currency";
+import type { CurrencyRates, DisplayCurrency } from "@/types/currency";
+import { DEFAULT_CURRENCY_RATES } from "@/types/currency";
 
 const TZ = "Europe/Budapest";
 
@@ -47,9 +49,39 @@ export function formatDoorsOpen(
   return fmt.format(new Date(doorsOpenAt));
 }
 
+export function entryFeeHuf(fee: EntryFee, rates: CurrencyRates = DEFAULT_CURRENCY_RATES): number {
+  if (fee.currency === "FREE" || fee.amount === 0) return 0;
+  return amountToHuf(fee.amount, fee.currency, rates);
+}
+
+export function formatEntryFeeHuf(
+  huf: number,
+  display: DisplayCurrency,
+  locale: string,
+  rates: CurrencyRates = DEFAULT_CURRENCY_RATES,
+): string {
+  if (huf <= 0) return "Free";
+  return formatHufAsDisplay(huf, display, locale, rates);
+}
+
+/** @deprecated Prefer formatEntryFeeHuf with display currency. */
 export function formatEntryFee(fee: EntryFee, locale: string): string {
   if (fee.currency === "FREE" || fee.amount === 0) return "Free";
-  return formatMoneyAmount(fee.amount, fee.currency, locale);
+  return formatEntryFeeHuf(entryFeeHuf(fee), "HUF", locale);
+}
+
+export function lowestEntryFeeHuf(
+  fees: EntryFee[],
+  rates: CurrencyRates = DEFAULT_CURRENCY_RATES,
+): number | null {
+  const priced = fees
+    .map((f) => entryFeeHuf(f, rates))
+    .filter((h) => h > 0);
+  if (!priced.length) {
+    const hasFree = fees.some((f) => f.currency === "FREE" || f.amount === 0);
+    return hasFree ? 0 : null;
+  }
+  return Math.min(...priced);
 }
 
 export function lowestEntryFee(fees: EntryFee[]): EntryFee | null {

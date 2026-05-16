@@ -35,6 +35,7 @@ import {
   useSiteCatalog,
 } from "@/hooks/useCatalog";
 import { useAppNavigation } from "@/hooks/useAppNavigation";
+import { CurrencySwitcher } from "@/components/i18n/CurrencySwitcher";
 import { LocaleSwitcher } from "@/components/i18n/LocaleSwitcher";
 import { ThemeToggle } from "@/components/i18n/ThemeToggle";
 import { Link } from "@/i18n/routing";
@@ -184,6 +185,7 @@ export default function BudapestNightShell() {
               )}
             </Link>
             <ThemeToggle />
+            <CurrencySwitcher variant="header" />
             <LocaleSwitcher variant="header" />
             <Link
               href={buildPathForView("My Account")}

@@ -12,6 +12,14 @@
     "he": "עברית",
     "ar": "ערבית"
   },
+  "currency": {
+    "label": "מטבע",
+    "option": {
+      "HUF": "פורינט הונגרי (Ft)",
+      "EUR": "אירו (€)",
+      "USD": "דולר אמריקאי ($)"
+    }
+  },
   "nav": {
     "explore": "לגלות",
     "yourNight": "הלילה שלך",
@@ -249,7 +257,7 @@
     "title": "חלוקת חשבון",
     "subtitle": "חלקו לפני שמישהו «שוכח» את הכרטיס. מהתקציב או סכום ידני.",
     "sourceTitle": "סך הלילה",
-    "fromBudget": "{count} מקומות בתקציב · €{total} סכום ביניים",
+    "fromBudget": "{count} מקומות בתקציב · {total} סכום ביניים",
     "editBudget": "ערוך תקציב",
     "manualHint": "אין מקומות עדיין — הזינו סכום או הוסיפו מקומות.",
     "manualPlaceholder": "למשל 120",
@@ -279,7 +287,7 @@
     "copied": "הועתק",
     "copyFailed": "ההעתקה נכשלה",
     "reset": "איפוס",
-    "shareLine": "Budapest Night: €{perPerson} לאדם ({people} אנשים, €{total} סה״כ)",
+    "shareLine": "Budapest Night: {perPerson} לאדם ({people} אנשים, {total} סה״כ)",
     "fromBudgetCta": "חלקו בין הקבוצה"
   },
   "home": {
@@ -457,6 +465,7 @@
     "oktogon": "Oktogon",
     "kiralyUtca": "Király utca",
     "lisztFerencTer": "Liszt Ferenc tér",
+    "stefaniaUt": "Stefánia út",
     "jewishQuarter": "הרובע היהודי",
     "gozsduUdvar": "Gozsdu Udvar",
     "kazinczyUtca": "Kazinczy utca",

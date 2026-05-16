@@ -355,6 +355,45 @@ export default function AdminDashboard() {
                     <Input value={site.discoverHeroUrl ?? ""} onChange={(e) => setSite({ ...site, discoverHeroUrl: e.target.value })} />
                   </Field>
                 </div>
+                <p className="text-sm font-medium text-foreground">Display currency rates</p>
+                <p className="text-xs text-muted-foreground">
+                  Prices are stored in Hungarian forint (HUF). These fixed rates convert HUF to EUR and USD in the app.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <Field label="HUF per 1 EUR (e.g. 350)">
+                    <Input
+                      type="number"
+                      min={1}
+                      value={site.currencyRates?.hufPerEur ?? 350}
+                      onChange={(e) =>
+                        setSite({
+                          ...site,
+                          currencyRates: {
+                            ...site.currencyRates,
+                            hufPerEur: Number(e.target.value) || 350,
+                            hufPerUsd: site.currencyRates?.hufPerUsd ?? 300,
+                          },
+                        })
+                      }
+                    />
+                  </Field>
+                  <Field label="HUF per 1 USD (e.g. 300)">
+                    <Input
+                      type="number"
+                      min={1}
+                      value={site.currencyRates?.hufPerUsd ?? 300}
+                      onChange={(e) =>
+                        setSite({
+                          ...site,
+                          currencyRates: {
+                            hufPerEur: site.currencyRates?.hufPerEur ?? 350,
+                            hufPerUsd: Number(e.target.value) || 300,
+                          },
+                        })
+                      }
+                    />
+                  </Field>
+                </div>
                 <p className="text-sm font-medium text-foreground">Home hero copy</p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Field label="Home hero title">

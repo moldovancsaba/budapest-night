@@ -13,6 +13,7 @@ import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } f
 import { validateProviderLocalesForIngest } from "@/lib/curator/localeIngestRules";
 import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
+import { resolveProviderLocation, syncEventLocationFromHost } from "@/lib/budapestLocation";
 
 export type IngestOpResult =
   | { ok: true; data?: unknown }
@@ -31,6 +32,10 @@ function stripId<T extends object>(doc: T): T {
   const o = { ...doc } as Record<string, unknown>;
   delete o._id;
   return o as T;
+}
+
+function withResolvedLocation(provider: Provider): Provider {
+  return { ...provider, ...resolveProviderLocation(provider) };
 }
 
 export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestOpResult> {
@@ -200,7 +205,7 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (imgErr) return { ok: false, error: imgErr };
     const localeErrs = validateProviderLocalesForIngest(rest.locales, "provider.document");
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
-    const withMenu = applyMenuToProvider(rest) as Provider;
+    const withMenu = withResolvedLocation(applyMenuToProvider(rest) as Provider);
     await db.collection(COL.providers).replaceOne({ id: withMenu.id }, withMenu, { upsert: true });
     return { ok: true };
   }
@@ -250,7 +255,7 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
       writes.push({
         replaceOne: {
           filter: { id: rest.id },
-          replacement: rest as unknown as Document,
+          replacement: withResolvedLocation(applyMenuToProvider(rest) as Provider) as unknown as Document,
           upsert: true,
         },
       });
@@ -355,7 +360,14 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (imgErr) return { ok: false, error: imgErr };
     const localeErrs = validateEventLocalesForIngest(rest.locales, "event.document");
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
-    await db.collection(COL.events).replaceOne({ id: rest.id }, parsed.data as unknown as Document, { upsert: true });
+    const hostId = parsed.data.venueIds[0];
+    const hostRaw = hostId
+      ? ((await db.collection(COL.providers).findOne({ id: hostId })) as unknown as Provider | null)
+      : null;
+    const host = hostRaw ? withResolvedLocation(hostRaw) : null;
+    const eventDoc = parsed.data as NightEvent;
+    const located = { ...eventDoc, ...syncEventLocationFromHost(eventDoc, host) };
+    await db.collection(COL.events).replaceOne({ id: rest.id }, located as unknown as Document, { upsert: true });
     return { ok: true };
   }
 

@@ -12,6 +12,14 @@
     "he": "Héber",
     "ar": "Arab"
   },
+  "currency": {
+    "label": "Pénznem",
+    "option": {
+      "HUF": "Magyar forint (Ft)",
+      "EUR": "Euró (€)",
+      "USD": "USA dollár ($)"
+    }
+  },
   "nav": {
     "explore": "Felfedezés",
     "yourNight": "Az éjszakád",
@@ -290,7 +298,7 @@
     "title": "Csapatosztás",
     "subtitle": "Oszd el a számlát, mielőtt valaki „elfelejti” a kártyáját. A költségvetésedből vagy egyedi összegből.",
     "sourceTitle": "Éjszakai összeg",
-    "fromBudget": "{count} helyszín a költségvetésben · €{total} részösszeg",
+    "fromBudget": "{count} helyszín a költségvetésben · {total} részösszeg",
     "editBudget": "Költségvetés szerkesztése",
     "manualHint": "Még nincs helyszín — adj meg összeget vagy add hozzá a helyeket.",
     "manualPlaceholder": "pl. 120",
@@ -320,7 +328,7 @@
     "copied": "Vágólapra másolva",
     "copyFailed": "Másolás sikertelen",
     "reset": "Beállítások visszaállítása",
-    "shareLine": "Budapest Night osztás: €{perPerson} fejenként ({people} fő, €{total} összesen)",
+    "shareLine": "Budapest Night osztás: {perPerson} fejenként ({people} fő, {total} összesen)",
     "fromBudgetCta": "Oszd el a csapat között"
   },
   "home": {
@@ -470,6 +478,7 @@
     "oktogon": "Oktogon",
     "kiralyUtca": "Király utca",
     "lisztFerencTer": "Liszt Ferenc tér",
+    "stefaniaUt": "Stefánia út",
     "jewishQuarter": "Zsidó negyed",
     "gozsduUdvar": "Gozsdu udvar",
     "kazinczyUtca": "Kazinczy utca",

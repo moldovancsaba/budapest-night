@@ -12,6 +12,14 @@
     "he": "Hebrew",
     "ar": "Arabic"
   },
+  "currency": {
+    "label": "Currency",
+    "option": {
+      "HUF": "Hungarian forint (Ft)",
+      "EUR": "Euro (€)",
+      "USD": "US dollar ($)"
+    }
+  },
   "nav": {
     "explore": "Explore",
     "yourNight": "Your night",
@@ -288,7 +296,7 @@
     "title": "Crew split",
     "subtitle": "Divide the tab before someone mysteriously forgets their card. Pulls from your night budget or a custom total.",
     "sourceTitle": "Night total",
-    "fromBudget": "{count, plural, one {# venue} other {# venues}} in your budget · €{total} subtotal",
+    "fromBudget": "{count, plural, one {# venue} other {# venues}} in your budget · {total} subtotal",
     "editBudget": "Edit budget",
     "manualHint": "No venues in the budget yet — enter a total or add spots first.",
     "manualPlaceholder": "e.g. 120",
@@ -318,7 +326,7 @@
     "copied": "Copied to clipboard",
     "copyFailed": "Could not copy",
     "reset": "Reset split settings",
-    "shareLine": "Budapest Night crew split: €{perPerson} each ({people} people, €{total} total incl. tip)",
+    "shareLine": "Budapest Night crew split: {perPerson} each ({people} people, {total} total incl. tip)",
     "fromBudgetCta": "Split among crew"
   },
   "home": {
@@ -468,6 +476,7 @@
     "oktogon": "Oktogon",
     "kiralyUtca": "Király utca",
     "lisztFerencTer": "Liszt Ferenc tér",
+    "stefaniaUt": "Stefánia út",
     "jewishQuarter": "Jewish Quarter",
     "gozsduUdvar": "Gozsdu Udvar",
     "kazinczyUtca": "Kazinczy utca",

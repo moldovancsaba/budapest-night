@@ -2,11 +2,13 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import type { EntryFee, NightEvent } from "@/types/event";
+import { formatHufAsDisplay } from "@/lib/currency";
+import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import {
+  entryFeeHuf,
   formatDoorsOpen,
-  formatEntryFee,
   formatEventDateRange,
-  lowestEntryFee,
+  lowestEntryFeeHuf,
 } from "@/lib/eventDisplay";
 import type { Provider } from "@/types/provider";
 import {
@@ -15,6 +17,7 @@ import {
   useBadgeLabel,
   useVenueLocationLine,
 } from "@/hooks/useVenueDisplay";
+import { resolveProviderLocation } from "@/lib/budapestLocation";
 
 export function useFormatEventSchedule() {
   const locale = useLocale();
@@ -34,20 +37,24 @@ export function useFormatDoorsOpen() {
 export function useFormatEntryFee() {
   const locale = useLocale();
   const t = useTranslations("event");
+  const { displayCurrency, rates } = useDisplayCurrency();
   return (fee: EntryFee) => {
-    if (fee.currency === "FREE" || fee.amount === 0) return t("freeEntry");
-    return formatEntryFee(fee, locale);
+    const huf = entryFeeHuf(fee, rates);
+    if (huf === 0) return t("freeEntry");
+    return formatHufAsDisplay(huf, displayCurrency, locale, rates);
   };
 }
 
 export function useEventFromPrice() {
-  const formatFee = useFormatEntryFee();
+  const locale = useLocale();
   const t = useTranslations("event");
+  const { displayCurrency, rates } = useDisplayCurrency();
   return (fees: EntryFee[]) => {
-    const low = lowestEntryFee(fees);
-    if (!low) return t("priceTba");
-    if (low.currency === "FREE" || low.amount === 0) return t("freeEntry");
-    return t("fromPrice", { price: formatFee(low) });
+    const lowHuf = lowestEntryFeeHuf(fees, rates);
+    if (lowHuf === null) return t("priceTba");
+    if (lowHuf === 0) return t("freeEntry");
+    const price = formatHufAsDisplay(lowHuf, displayCurrency, locale, rates);
+    return t("fromPrice", { price });
   };
 }
 
@@ -55,10 +62,11 @@ export function useEventLocationLine() {
   const locationLine = useVenueLocationLine();
   return (
     event: Pick<NightEvent, "borough" | "neighborhood">,
-    host?: Pick<Provider, "borough" | "neighborhood"> | null,
+    host?: Pick<Provider, "id" | "borough" | "neighborhood" | "address"> | null,
   ) => {
-    const borough = host?.borough ?? event.borough;
-    const neighborhood = host?.neighborhood ?? event.neighborhood;
+    const located = host ? resolveProviderLocation(host) : null;
+    const borough = located?.borough ?? event.borough;
+    const neighborhood = located?.neighborhood ?? event.neighborhood;
     return locationLine(borough, neighborhood);
   };
 }
@@ -69,10 +77,11 @@ export function useEventPlaceLine() {
   const t = useTranslations("event");
   return (
     event: Pick<NightEvent, "borough" | "neighborhood">,
-    host?: Pick<Provider, "name" | "borough" | "neighborhood" | "address"> | null,
+    host?: Pick<Provider, "id" | "name" | "borough" | "neighborhood" | "address"> | null,
   ) => {
     if (host?.name) {
-      const place = locationLine(host.borough, host.neighborhood);
+      const loc = resolveProviderLocation(host);
+      const place = locationLine(loc.borough, loc.neighborhood);
       return t("hostAt", { venue: host.name, place });
     }
     return locationLine(event.borough, event.neighborhood);

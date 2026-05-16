@@ -17,8 +17,10 @@ import { CdnImage } from "@/components/ui/CdnImage";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useCalculatorCopy } from "@/hooks/useLocalizedSiteCopy";
 import { CMS_MEDIA } from "@/config/defaultMedia";
-import { formatVenuePrice } from "@/lib/venueDisplay";
-import { useVenueLocationLine } from "@/hooks/useVenueDisplay";
+import { providerLineHuf } from "@/lib/venueDisplay";
+import { useFormatHuf } from "@/hooks/useFormatHuf";
+import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
+import { useFormatVenuePrice, useVenueLocationLine } from "@/hooks/useVenueDisplay";
 
 export function CalculatorView() {
   const t = useTranslations("calculator");
@@ -27,16 +29,19 @@ export function CalculatorView() {
   const { items, setClasses, remove, clear } = useCalculator();
   const { data: providers = [], isLoading } = useProvidersCatalog();
   const locationLine = useVenueLocationLine();
+  const formatPrice = useFormatVenuePrice();
+  const formatHuf = useFormatHuf();
+  const { rates } = useDisplayCurrency();
 
   const rows = items
     .map((i) => {
       const p = providers.find((x) => x.id === i.providerId);
       if (!p) return null;
-      return { ...i, provider: p, subtotal: p.pricePerClass * i.classes };
+      return { ...i, provider: p, subtotalHuf: providerLineHuf(p, i.classes, rates) };
     })
     .filter((x): x is NonNullable<typeof x> => !!x);
 
-  const total = rows.reduce((sum, r) => sum + r.subtotal, 0);
+  const totalHuf = rows.reduce((sum, r) => sum + r.subtotalHuf, 0);
 
   if (isLoading) {
     return (
@@ -72,7 +77,7 @@ export function CalculatorView() {
         <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
           <div className="space-y-3">
             {rows.map((r) => {
-              const linePrice = formatVenuePrice(r.provider);
+              const linePrice = formatPrice(r.provider);
               return (
                 <div
                   className="flex items-center gap-4 rounded-2xl bg-card p-4 "
@@ -123,7 +128,7 @@ export function CalculatorView() {
                     </button>
                   </div>
                   <div className="w-20 text-right font-display font-bold text-foreground">
-                    €{r.subtotal}
+                    {formatHuf(r.subtotalHuf)}
                   </div>
                   <button
                     onClick={() => remove(r.providerId)}
@@ -152,7 +157,7 @@ export function CalculatorView() {
                     {r.classes === 1 ? t("guest") : t("guests")}
                   </span>
                   <span className="font-medium text-foreground">
-                    €{r.subtotal}
+                    {formatHuf(r.subtotalHuf)}
                   </span>
                 </div>
               ))}
@@ -162,13 +167,13 @@ export function CalculatorView() {
                 {c.estimatedTotalLabel}
               </span>
               <span className="font-display text-3xl font-bold text-foreground">
-                €{total}
+                {formatHuf(totalHuf)}
               </span>
             </div>
             <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
               {c.asideFootnote}
             </p>
-            {total > 0 && (
+            {totalHuf > 0 && (
               <Button
                 asChild
                 className="mt-4 w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"

@@ -1,4 +1,7 @@
-import { formatMoneyAmount, providerPriceCurrency } from "@/lib/formatMoney";
+import { amountToHuf, formatHufAsDisplay } from "@/lib/currency";
+import { providerPriceCurrency } from "@/lib/formatMoney";
+import type { DisplayCurrency, CurrencyRates } from "@/types/currency";
+import { DEFAULT_CURRENCY_RATES } from "@/types/currency";
 import type { Category, Provider } from "@/types/provider";
 
 /** Crowd / age chip — values are already human-readable (e.g. "18+", "All ages"). */
@@ -21,33 +24,41 @@ export function venuePriceUnit(category: Category): "ticket" | "cover" | "person
 }
 
 export type VenuePriceDisplay = {
-  /** Main line, e.g. "€25" or "Free entry" */
   main: string;
-  /** Optional suffix, e.g. "/cover" — omitted when main already explains pricing */
   suffix?: string;
+};
+
+export type VenuePriceFormatOptions = {
+  displayCurrency?: DisplayCurrency;
+  rates?: CurrencyRates;
+  locale?: string;
 };
 
 export function formatVenuePrice(
   provider: Pick<Provider, "category" | "pricePerClass" | "priceCurrency">,
-  locale = "en",
+  opts: VenuePriceFormatOptions = {},
 ): VenuePriceDisplay {
   const unit = venuePriceUnit(provider.category);
-  const n = provider.pricePerClass;
+  const display = opts.displayCurrency ?? "HUF";
+  const rates = opts.rates ?? DEFAULT_CURRENCY_RATES;
+  const locale = opts.locale ?? "en";
+  const stored = providerPriceCurrency(provider.pricePerClass, provider.priceCurrency);
+  const huf = amountToHuf(provider.pricePerClass, stored, rates);
 
-  if (n === 0) {
+  if (huf === 0) {
     if (provider.category === "Parties") return { main: "Free entry" };
     return { main: "Price varies" };
   }
 
-  const currency = providerPriceCurrency(n, provider.priceCurrency);
-  const amount = formatMoneyAmount(n, currency, locale);
+  const amount = formatHufAsDisplay(huf, display, locale, rates);
   return { main: `From ${amount}`, suffix: `/${unit}` };
 }
 
-/** Budget / saved row unit word (no slash). */
-/** One-line price for share / email copy. */
-export function venueSharePriceLine(provider: Pick<Provider, "category" | "pricePerClass">): string {
-  const p = formatVenuePrice(provider);
+export function venueSharePriceLine(
+  provider: Pick<Provider, "category" | "pricePerClass" | "priceCurrency">,
+  opts: VenuePriceFormatOptions = {},
+): string {
+  const p = formatVenuePrice(provider, opts);
   if (!p.suffix) return p.main;
   return `${p.main}${p.suffix}`;
 }
@@ -65,4 +76,14 @@ export function venueBudgetUnit(category: Category): string {
     default:
       return "person";
   }
+}
+
+/** Sum provider line items in canonical HUF for calculator totals. */
+export function providerLineHuf(
+  provider: Pick<Provider, "pricePerClass" | "priceCurrency">,
+  classes: number,
+  rates: CurrencyRates = DEFAULT_CURRENCY_RATES,
+): number {
+  const stored = providerPriceCurrency(provider.pricePerClass, provider.priceCurrency);
+  return amountToHuf(provider.pricePerClass, stored, rates) * classes;
 }

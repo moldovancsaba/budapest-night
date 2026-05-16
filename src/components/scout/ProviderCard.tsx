@@ -22,6 +22,7 @@ import {
   useFormatVenuePrice,
   useVenueLocationLine,
 } from "@/hooks/useVenueDisplay";
+import { resolveProviderLocation } from "@/lib/budapestLocation";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -42,6 +43,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
   const formatPrice = useFormatVenuePrice();
   const saved = isSaved(provider.id);
   const price = formatPrice(provider);
+  const located = resolveProviderLocation(provider);
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
@@ -90,9 +92,16 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
             {provider.name}
           </h3>
         </button>
-        <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
-          <MapPin className="h-3.5 w-3.5" />
-          {locationLine(provider.borough, provider.neighborhood)}
+        <p className="mt-1 flex items-start gap-1 text-sm text-muted-foreground">
+          <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          <span>
+            <span className="block text-foreground">
+              {locationLine(located.borough, located.neighborhood)}
+            </span>
+            {located.address ? (
+              <span className="mt-0.5 block text-xs">{located.address}</span>
+            ) : null}
+          </span>
         </p>
 
         <p className="mt-3 text-xs text-muted-foreground">

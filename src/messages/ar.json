@@ -12,6 +12,14 @@
     "he": "العبرية",
     "ar": "العربية"
   },
+  "currency": {
+    "label": "العملة",
+    "option": {
+      "HUF": "الفورنت المجري (Ft)",
+      "EUR": "اليورو (€)",
+      "USD": "الدولار الأمريكي ($)"
+    }
+  },
   "nav": {
     "explore": "استكشف",
     "yourNight": "ليلتك",
@@ -248,7 +256,7 @@
     "title": "تقسيم الحساب",
     "subtitle": "قسّموا قبل أن ينسى أحدهم بطاقته. من ميزانية الليلة أو مبلغ يدوي.",
     "sourceTitle": "إجمالي الليلة",
-    "fromBudget": "{count} أماكن في الميزانية · €{total} المجموع الفرعي",
+    "fromBudget": "{count} أماكن في الميزانية · {total} المجموع الفرعي",
     "editBudget": "تعديل الميزانية",
     "manualHint": "لا أماكن بعد — أدخل مبلغاً أو أضف أماكناً.",
     "manualPlaceholder": "مثال 120",
@@ -278,7 +286,7 @@
     "copied": "تم النسخ",
     "copyFailed": "فشل النسخ",
     "reset": "إعادة تعيين",
-    "shareLine": "Budapest Night: €{perPerson} لكل شخص ({people} أشخاص، €{total} الإجمالي)",
+    "shareLine": "Budapest Night: {perPerson} لكل شخص ({people} أشخاص، {total} الإجمالي)",
     "fromBudgetCta": "قسّم بين المجموعة"
   },
   "home": {
@@ -456,6 +464,7 @@
     "oktogon": "Oktogon",
     "kiralyUtca": "Király utca",
     "lisztFerencTer": "Liszt Ferenc tér",
+    "stefaniaUt": "Stefánia út",
     "jewishQuarter": "الحي اليهودي",
     "gozsduUdvar": "Gozsdu Udvar",
     "kazinczyUtca": "Kazinczy utca",

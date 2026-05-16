@@ -1,4 +1,6 @@
 import type { Borough, Category } from "@/types/provider";
+import type { CurrencyRates } from "@/types/currency";
+import { DEFAULT_CURRENCY_RATES } from "@/types/currency";
 import { APP_LOGO_PATH } from "@/config/brand";
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 
@@ -198,6 +200,8 @@ export interface SiteDoc {
   calculator: SiteCalculatorCopy;
   /** My Account + related dashboard copy and option lists (CMS). */
   account: SiteAccountSettings;
+  /** Fixed HUF↔EUR/USD rates for display conversion (canonical prices are HUF). */
+  currencyRates: CurrencyRates;
 }
 
 export interface BrainSettingsDoc {
@@ -487,4 +491,5 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       supportTextAfter: "",
     },
   },
+  currencyRates: { ...DEFAULT_CURRENCY_RATES },
 };

@@ -13,6 +13,7 @@ import {
   useFormatEventSchedule,
 } from "@/hooks/useEventDisplay";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
+import { resolveProviderLocation } from "@/lib/budapestLocation";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -29,8 +30,10 @@ export function EventCard({ event, onOpen }: Props) {
   const { data: providers = [] } = useProvidersCatalog();
   const { badgeLabel } = useEventDisplayLabels();
   const { dateLine, timeLine } = schedule(event);
-  const primaryHost =
-    providers.find((p) => p.id === event.venueIds[0]) ?? null;
+  const primaryHostRaw = providers.find((p) => p.id === event.venueIds[0]) ?? null;
+  const primaryHost = primaryHostRaw
+    ? { ...primaryHostRaw, ...resolveProviderLocation(primaryHostRaw) }
+    : null;
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
@@ -68,9 +71,14 @@ export function EventCard({ event, onOpen }: Props) {
         {doors(event) ? (
           <p className="mt-1 text-xs text-muted-foreground">{doors(event)}</p>
         ) : null}
-        <p className="mt-2 flex items-center gap-1 text-sm text-muted-foreground">
-          <MapPin className="h-4 w-4 shrink-0" />
-          {placeLine(event, primaryHost)}
+        <p className="mt-2 flex items-start gap-1 text-sm text-muted-foreground">
+          <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>
+            <span className="block text-foreground">{placeLine(event, primaryHost)}</span>
+            {primaryHost?.address ? (
+              <span className="mt-0.5 block text-xs">{primaryHost.address}</span>
+            ) : null}
+          </span>
         </p>
         <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
           {event.shortDescription}

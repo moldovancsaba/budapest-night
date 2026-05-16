@@ -1,4 +1,5 @@
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
+import { normalizeRates } from "@/lib/currency";
 import { DEFAULT_SITE, type SiteAccountSettings, type SiteCalculatorCopy, type SiteDoc } from "@/types/site";
 
 function mergeCalculator(base: SiteCalculatorCopy, patch: Partial<SiteCalculatorCopy> | undefined): SiteCalculatorCopy {
@@ -54,6 +55,7 @@ export function mergeSiteDocument(doc: Partial<SiteDoc> | null | undefined): Sit
   const merged = { _id: "main" as const, ...DEFAULT_SITE, ...rest } as SiteDoc;
   merged.account = mergeAccount(DEFAULT_SITE.account, accountPatch);
   merged.calculator = mergeCalculator(DEFAULT_SITE.calculator, calculatorPatch);
+  merged.currencyRates = normalizeRates(merged.currencyRates ?? DEFAULT_SITE.currencyRates);
   if (!merged.logoUrl?.trim()) merged.logoUrl = DEFAULT_SITE.logoUrl;
   if (!merged.homeHeroUrl?.trim()) merged.homeHeroUrl = DEFAULT_SITE.homeHeroUrl;
   if (!merged.discoverHeroUrl?.trim()) merged.discoverHeroUrl = DEFAULT_SITE.discoverHeroUrl;

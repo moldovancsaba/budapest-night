@@ -5,7 +5,10 @@ import { activityTypeMessageKey } from "@/data/activityTypeKeys";
 import { badgeMessageKey } from "@/data/badgeKeys";
 import { MEETUP_CADENCE_KEY, MEETUP_GROUP_TYPE_KEY } from "@/data/meetupKeys";
 import { neighborhoodMessageKey } from "@/data/neighborhoodKeys";
-import { formatMoneyAmount, providerPriceCurrency } from "@/lib/formatMoney";
+import { amountToHuf, formatHufAsDisplay } from "@/lib/currency";
+import { providerPriceCurrency } from "@/lib/formatMoney";
+import { venuePriceUnit } from "@/lib/venueDisplay";
+import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import type { Category, Provider, AgeRange, DayTimeTag } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
 import type { MeetupCadence, MeetupGroupType } from "@/types/meetup";
@@ -78,22 +81,22 @@ export type VenuePriceDisplay = { main: string; suffix?: string };
 export function useFormatVenuePrice() {
   const t = useTranslations("venue");
   const locale = useLocale();
+  const { displayCurrency, rates } = useDisplayCurrency();
   return (provider: Pick<Provider, "category" | "pricePerClass" | "priceCurrency">): VenuePriceDisplay => {
-    const n = provider.pricePerClass;
-    if (n === 0) {
+    const stored = providerPriceCurrency(provider.pricePerClass, provider.priceCurrency);
+    const huf = amountToHuf(provider.pricePerClass, stored, rates);
+    if (huf === 0) {
       if (provider.category === "Parties") return { main: t("freeEntry") };
-      if (provider.category === "Venues") return { main: t("free"), suffix: t("perTicket") };
       return { main: t("priceVaries") };
     }
+    const amount = formatHufAsDisplay(huf, displayCurrency, locale, rates);
     const suffix =
       provider.category === "Venues"
         ? t("perTicket")
         : provider.category === "Parties"
           ? t("perCover")
           : t("perPerson");
-    const currency = providerPriceCurrency(n, provider.priceCurrency);
-    const price = formatMoneyAmount(n, currency, locale);
-    return { main: t("fromPrice", { price }), suffix };
+    return { main: t("fromPrice", { price: amount }), suffix };
   };
 }
 

@@ -20,7 +20,10 @@ import { Switch } from "@/components/ui/switch";
 import { EmptyState } from "../EmptyState";
 import { useCalculator, useCrewSplit } from "@/store/useScout";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
+import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
+import { useFormatHuf } from "@/hooks/useFormatHuf";
 import { computeCrewSplit } from "@/lib/crewSplit";
+import { providerLineHuf } from "@/lib/venueDisplay";
 import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/routing";
@@ -41,21 +44,23 @@ export function SplitCheckView() {
     reset,
   } = useCrewSplit();
   const { data: providers = [], isLoading } = useProvidersCatalog();
+  const { displayCurrency, rates } = useDisplayCurrency();
+  const formatHuf = useFormatHuf();
   const [manualInput, setManualInput] = useState("");
 
-  const budgetSubtotal = useMemo(() => {
+  const budgetSubtotalHuf = useMemo(() => {
     return items.reduce((sum, i) => {
       const p = providers.find((x) => x.id === i.providerId);
       if (!p) return sum;
-      return sum + p.pricePerClass * i.classes;
+      return sum + providerLineHuf(p, i.classes, rates);
     }, 0);
-  }, [items, providers]);
+  }, [items, providers, rates]);
 
-  const usingBudget = budgetSubtotal > 0;
-  const subtotal = usingBudget ? budgetSubtotal : (settings.manualTotal ?? 0);
+  const usingBudget = budgetSubtotalHuf > 0;
+  const subtotalHuf = usingBudget ? budgetSubtotalHuf : (settings.manualTotal ?? 0);
 
   const split = computeCrewSplit(
-    subtotal,
+    subtotalHuf,
     settings.people,
     settings.tipPercent,
     settings.roundUp,
@@ -67,7 +72,10 @@ export function SplitCheckView() {
   const applyManual = () => {
     const n = parseFloat(manualInput.replace(",", "."));
     if (Number.isFinite(n) && n > 0) {
-      setManualTotal(n);
+      let huf = n;
+      if (displayCurrency === "EUR") huf = Math.round(n * rates.hufPerEur);
+      else if (displayCurrency === "USD") huf = Math.round(n * rates.hufPerUsd);
+      setManualTotal(huf);
       toast.success(t("manualApplied"));
     } else {
       setManualTotal(null);
@@ -77,9 +85,9 @@ export function SplitCheckView() {
 
   const copyShare = async () => {
     const line = t("shareLine", {
-      perPerson: split.perPerson,
+      perPerson: formatHuf(split.perPerson),
       people: settings.people,
-      total: split.grandTotal,
+      total: formatHuf(split.grandTotal),
     });
     try {
       await navigator.clipboard.writeText(line);
@@ -124,7 +132,7 @@ export function SplitCheckView() {
                 <p className="text-sm text-muted-foreground">
                   {t("fromBudget", {
                     count: venueCount,
-                    total: budgetSubtotal,
+                    total: formatHuf(budgetSubtotalHuf),
                   })}
                 </p>
                 <Button
@@ -170,7 +178,7 @@ export function SplitCheckView() {
             )}
           </section>
 
-          {subtotal <= 0 ? (
+          {subtotalHuf <= 0 ? (
             <EmptyState
               icon={HandCoins}
               title={t("emptyTitle")}
@@ -266,7 +274,7 @@ export function SplitCheckView() {
           className={cn(
             CYBER_PANEL,
             "h-fit p-6 lg:sticky lg:top-24",
-            subtotal <= 0 && "opacity-60",
+            subtotalHuf <= 0 && "opacity-60",
           )}
         >
           <h3 className="font-display text-lg font-semibold text-foreground">
@@ -279,15 +287,15 @@ export function SplitCheckView() {
           <div className="mt-6 space-y-2 text-sm">
             <div className="flex justify-between text-muted-foreground">
               <span>{t("lineSubtotal")}</span>
-              <span>€{split.subtotal}</span>
+              <span>{formatHuf(split.subtotal)}</span>
             </div>
             <div className="flex justify-between text-muted-foreground">
               <span>{t("lineTip", { percent: settings.tipPercent })}</span>
-              <span>€{split.tipAmount}</span>
+              <span>{formatHuf(split.tipAmount)}</span>
             </div>
             <div className="flex justify-between border-t border-border/60 pt-2 font-medium text-foreground">
               <span>{t("lineTotal")}</span>
-              <span>€{split.grandTotal}</span>
+              <span>{formatHuf(split.grandTotal)}</span>
             </div>
           </div>
 
@@ -296,7 +304,7 @@ export function SplitCheckView() {
               {t("eachPays")}
             </p>
             <p className="mt-2 font-display text-5xl font-bold text-foreground">
-              €{split.perPerson}
+              {formatHuf(split.perPerson)}
             </p>
             <p className="mt-2 text-xs text-muted-foreground">
               {settings.roundUp && split.perPerson > split.perPersonRaw
@@ -311,7 +319,7 @@ export function SplitCheckView() {
 
           <div className="mt-6 flex flex-col gap-2">
             <Button
-              disabled={subtotal <= 0}
+              disabled={subtotalHuf <= 0}
               onClick={copyShare}
               className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
             >

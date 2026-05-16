@@ -16,6 +16,8 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useAccountCopy } from "@/hooks/useLocalizedSiteCopy";
+import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
+import { useFormatHuf } from "@/hooks/useFormatHuf";
 import {
   useActivityTypeLabel,
   useAgeRangeLabel,
@@ -24,6 +26,7 @@ import {
   usePreferenceOptionLabel,
   useVenueLocationLine,
 } from "@/hooks/useVenueDisplay";
+import { providerLineHuf } from "@/lib/venueDisplay";
 import { useTranslations } from "next-intl";
 import { useSaved, useCalculator } from "@/store/useScout";
 import type { Provider, BoroughChoice, Category } from "@/types/provider";
@@ -438,7 +441,9 @@ function ActivityPlanCard({
 }) {
   const tCalc = useTranslations("calculator");
   const formatPrice = useFormatVenuePrice();
+  const formatHuf = useFormatHuf();
   const locationLine = useVenueLocationLine();
+  const { rates } = useDisplayCurrency();
   const { items, setClasses, remove, clear } = useCalculator();
   const visible = withSaved(tab, acc.saved.tabId, acc.activityPlan.tabId);
 
@@ -451,13 +456,13 @@ function ActivityPlanCard({
           providerId: i.providerId,
           provider: p,
           qty: i.classes,
-          subtotal: p.pricePerClass * i.classes,
+          subtotalHuf: providerLineHuf(p, i.classes, rates),
         };
       })
       .filter((x): x is NonNullable<typeof x> => !!x);
-  }, [items, providers]);
+  }, [items, providers, rates]);
 
-  const total = rows.reduce((s, r) => s + r.subtotal, 0);
+  const totalHuf = rows.reduce((s, r) => s + r.subtotalHuf, 0);
 
   return (
     <section
@@ -524,8 +529,8 @@ function ActivityPlanCard({
                         <Plus className="h-3 w-3" />
                       </button>
                     </div>
-                    <p className="w-16 text-right text-sm font-bold text-foreground">
-                      €{r.subtotal}
+                    <p className="w-20 text-right text-sm font-bold text-foreground">
+                      {formatHuf(r.subtotalHuf)}
                     </p>
                     <button
                       type="button"
@@ -546,7 +551,7 @@ function ActivityPlanCard({
               {acc.activityPlan.estimatedTotalLabel}
             </span>
             <span className="font-display text-2xl font-bold text-foreground">
-              €{total}
+              {formatHuf(totalHuf)}
             </span>
           </div>
         </>
