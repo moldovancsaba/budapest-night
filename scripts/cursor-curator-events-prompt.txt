@@ -4,22 +4,102 @@
 You are my **timed event** curator for Budapest Night. Use tools (web search, fetch, terminal). Do not only tell me what to run.
 
 ## Goal
-Ingest **one** real Budapest concert / festival / ticketed show as `resource: "event"`, with host venue(s) linked, correct **HUF/EUR** tickets, schedule, and **full i18n** (`hu`, `es`, `it`, `he`, `ar`). Finish with production ingest `HTTP 200`, `ok: true`.
+Ingest **one or more** real Budapest concerts / festivals / ticketed shows as `resource: "event"`, with host venue(s) linked, correct **HUF/EUR** tickets, schedule, **unique show-specific images**, and **full i18n** (`hu`, `es`, `it`, `he`, `ar`). Finish with production ingest `HTTP 200`, `ok: true` for every operation.
 
 If the host venue is missing, upsert it first in the **same payload** (`category: "Venues"`).
 
 ## Read first (repo)
-- Rules: `src/lib/curator/eventIngestRules.ts` (entire checklist)
+- Rules (blocking): `src/lib/curator/eventIngestRules.ts` — entire checklist
 - Locales: `src/lib/curator/eventLocaleIngestRules.ts`
 - Schema: `src/lib/eventSchema.ts`
-- Gold example: `scripts/ingest-payloads/seed-timed-events-moby-sting.json`
+- Gold examples:
+  - `scripts/ingest-payloads/seed-timed-events-moby-sting.json` (venue + event upserts, HUF tiers)
+  - `scripts/ingest-payloads/cursor-curated-events-lp-idles-oliver-tree-2026.json` (multi-event batch)
+  - `scripts/ingest-payloads/patch-event-images-unique.json` (image-only patches — reference URLs)
+- Image repair script: `scripts/patch-event-images.cjs` (`npm run db:patch-event-images`)
 
 ## Live catalog (before choosing)
-- `GET https://budapest-night.vercel.app/api/public/events`
-- `GET https://budapest-night.vercel.app/api/public/providers` (host venues)
-- `GET https://budapest-night.vercel.app/api/public/locations`
+```bash
+curl -s https://budapest-night.vercel.app/api/public/events
+curl -s https://budapest-night.vercel.app/api/public/providers
+curl -s https://budapest-night.vercel.app/api/public/locations
+```
 
 Dedupe by `id`, normalized `title`, and `startsAt`. Do not duplicate an existing show.
+
+After ingest, verify **every event has a different `image` URL** (no two events may share the same ImgBB link).
+
+---
+
+## Lessons from recent production fixes (must follow)
+
+### 1. Event images ≠ venue images
+Event cards must show **artist / show promo art**, not the host venue’s listing photo.
+
+| Wrong | Why |
+|-------|-----|
+| Copying `provider.image` onto the event | Users see duplicate venue photos on every card |
+| Budapest Park generic “leave reality outside” graphic for all Park shows | Same image on 6+ events — fixed by per-show art |
+| MVM Dome **building exterior** for Sting | Arena photo ≠ tour artwork; use promoter/tour image |
+| Reusing one ImgBB URL on multiple events | Catalog looks broken in Featured + list views |
+
+**Correct:** scrape **per-show** art from the official event or ticket page, upload to ImgBB, assign **one unique URL per event**.
+
+### 2. How to find the right image URL
+1. Open the **event/ticket page** (not only the venue homepage).
+2. Read `og:image` / `twitter:image` from HTML, or listing-specific assets:
+   - **budapestpark.hu** — prefer `budapestpark.cdn-netpositive.com/event_images/...` or `/uploads/<hash>.{jpg,png}` from the **ticket/event URL**; ignore site-wide `budapestpark-og-2021.jpg`.
+   - **mupa.hu** — hero under `/storage/media/.../conversions/...` for that program.
+   - **livenation.hu** — tour artwork from `dynamicmedia.livenationinternational.com/...` when `og:image` is missing; not the arena stock photo.
+   - **barbanegra.hu** — `/uploads/<show-slug>.jpg` on the show page.
+   - **akvariumklub.hu** — event page `og:image` (band photo), not site chrome icons.
+   - **durerkert.com** — Minio/CDN poster for that event.
+3. `curl` or fetch the image URL; confirm it is a real photo/poster (not favicon/logo).
+4. Save under `scripts/imgbb-asset-sources/events/<slug>.{jpg,png,webp}`.
+5. Upload to ImgBB **before** ingest:
+   ```bash
+   # Option A: project upload API (needs INGEST_API_KEY)
+   curl -s -X POST https://budapest-night.vercel.app/api/ingest/upload \
+     -H "Authorization: Bearer $INGEST_API_KEY" \
+     -F "file=@scripts/imgbb-asset-sources/events/artist-venue.jpg"
+
+   # Option B: IMGBB_API_KEY in .env.local (see scripts/patch-listing-images.ts)
+   ```
+6. Put the returned `https://i.ibb.co/...` URL in `document.image`.
+7. Cross-check `GET /api/public/events` — your new URL must not match any existing event’s `image`.
+
+If you already ingested with a bad image: patch only:
+```json
+{ "resource": "event", "action": "patch", "id": "event-...", "patch": { "image": "https://i.ibb.co/..." } }
+```
+Or extend `scripts/patch-event-images.cjs` and run `npm run db:patch-event-images`.
+
+### 3. Schedule when only gates are published
+Many open-air pages list **gate opening 18:00** but not stage time. Unless the source gives an explicit show start:
+- `doorsOpenAt`: published gate time (e.g. `2026-07-07T18:00:00+02:00`)
+- `startsAt`: **20:00** same day (document in `missingOrUncertain`)
+- `endsAt`: ~23:00–23:30 for concerts; **long opera** use published end (e.g. Parsifal 16:00–22:20)
+- `timezone`: `"Europe/Budapest"`
+
+### 4. Venue IDs and districts (common pitfalls)
+| Host | Typical `venueIds` | Event `borough` (from host) |
+|------|-------------------|-----------------------------|
+| Budapest Park | `prov-budapest-park-obuda` | **Ferencváros** / Fábián Juli (1095 — not Óbuda Island) |
+| MVM Dome / Live Nation arena | `prov-mvm-dome-ujbuda` | **Terézváros** / Stefánia út (1143) |
+| Müpa Bartók Hall | `prov-cov-bartok-moricz` | Ferencváros / Műegyetem |
+| A38 Ship | `prov-a38-ferencvaros` | Ferencváros / Petőfi Bridge |
+| Barba Negra | `prov-barba-negra-ujbuda` | **Újbuda** — show may be Red Stage (Szállító u.); follow **show page** address |
+| Akvárium | `prov-akvarium-belvaros` | Belváros |
+
+Provider id suffixes like `-obuda` are legacy slugs; trust the provider’s **address + borough** in the catalog, not the id string.
+
+### 5. Tickets
+- Forint shops → `currency: "HUF"`, integer amounts (e.g. `17999` = 17,999 Ft).
+- Paid show with unknown tiers → `entryFees: []` + explain in `missingOrUncertain` — **never** `FREE` / `amount: 0`.
+- Dynamic pricing (Müpa) → one `from` tier + `notes` about range; do not invent upper tiers.
+- Admin/handling fees → `notes` on the tier, not added to `amount`.
+
+---
 
 ## Scarcity (events catalog)
 Measure the **events** collection separately from providers. Rank gaps:
@@ -30,47 +110,80 @@ Measure the **events** collection separately from providers. Rank gaps:
 4. **Activity** — e.g. Electronic, Live Music, Festival (root `activityTypes`, English).
 5. **Tag gaps** — boroughs with many venues but zero upcoming timed events.
 
-Pick a real official listing that fills the scarcest slice you can source credibly. Pragmatic fallback if the perfect empty cell has no source.
+Pick real official listings that fill the scarcest slice you can source credibly.
 
-## Hard requirements
-- Official promoter or venue ticket page; cite in `Sources:` lines.
-- `startsAt` / `endsAt` / optional `doorsOpenAt` as ISO 8601 with offset (e.g. `+02:00`); `timezone: "Europe/Budapest"`.
-- `venueIds` → existing `prov-*` (primary host **first**). Upsert venues before events in `operations[]`. Ingest rejects unknown ids and writes `venueLinks[]` snapshots automatically.
-- Event `borough` / `neighborhood` are synced from the primary host — must match the venue’s official address.
-- `entryFees`: real tiers; **HUF** for forint shops; never `FREE`/`amount:0` for paid shows. Use `[]` if tiers unknown.
-- Venue `pricePerClass: 0` for ticketed hosts; do not put forint ticket prices on the venue.
-- ImgBB `image` on event (poster or venue image).
-- `locales`: all five non-English locales with `title`, `shortDescription`, `longDescription`, `slug`.
+---
+
+## Hard requirements (checklist)
+- [ ] Official promoter or venue ticket page; cite in `Sources:` lines (EN + all locales).
+- [ ] `startsAt` / `endsAt` / optional `doorsOpenAt` — ISO 8601 with offset (`+02:00`); `timezone: "Europe/Budapest"`.
+- [ ] `venueIds` → existing `prov-*` (primary host **first**). Upsert venues **before** events in `operations[]`.
+- [ ] Event `borough` / `neighborhood` match primary host (ingest overwrites from host — still set correctly).
+- [ ] `entryFees`: real tiers in HUF/EUR; `[]` only when truly unknown.
+- [ ] **`image`**: unique ImgBB URL from **this show’s** promo art (see workflow above).
+- [ ] `locales`: `hu`, `es`, `it`, `he`, `ar` — each with `title`, `shortDescription`, `longDescription`, `slug`.
+- [ ] Root copy in **English**; no `locales.en`.
+- [ ] `website` = event page; `bookingUrl` = direct ticket URL when available.
+
+---
 
 ## Output
-Save: `scripts/ingest-payloads/cursor-curated-event-<slug>.json`
+Save: `scripts/ingest-payloads/cursor-curated-event-<slug>.json` (or `cursor-curated-events-<batch>.json` for several shows)
 
 ```json
 {
-  "sourceUrls": ["https://..."],
-  "notes": "scarcity target + why this show",
-  "missingOrUncertain": [],
+  "sourceUrls": ["https://official-event-page", "https://ticket-page"],
+  "notes": "scarcity target + borough/month gap filled",
+  "missingOrUncertain": [
+    "Show start assumed 20:00 after 18:00 gates — not on budapestpark.hu"
+  ],
   "operations": [
     { "resource": "provider", "action": "upsert", "document": { } },
-    { "resource": "event", "action": "upsert", "document": { } }
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-artist-venue-2026",
+        "image": "https://i.ibb.co/UNIQUE-PER-SHOW.jpg",
+        "entryFees": [],
+        "locales": { "hu": { }, "es": { }, "it": { }, "he": { }, "ar": { } }
+      }
+    }
   ]
 }
 ```
+
+Record the **source image URL** (before ImgBB) in `sourceUrls` or `notes` for audit.
+
+---
 
 ## Ingest
 ```bash
 npm run ingest:listing -- --dry-run scripts/ingest-payloads/cursor-curated-event-<slug>.json
 npm run ingest:listing -- scripts/ingest-payloads/cursor-curated-event-<slug>.json
-# or --force if refreshing same ids
+# --force only when intentionally refreshing same ids
 ```
 
+---
+
+## Pre-flight (before POST)
+1. Dry-run passes (`Document validation: OK`).
+2. All `venueIds` exist in catalog or are upserted earlier in the same file.
+3. **Image audit:** list every `document.image` in the payload; none may equal a host `provider.image` or another event’s URL in `GET /api/public/events`.
+4. No duplicate `id` / `startsAt` vs live catalog (unless `--force` refresh).
+
+---
+
 ## Final reply
-- Event: title, id, `startsAt`, borough, lowest ticket tier + currency
-- Host venue id(s)
-- Locales + slugs confirmed via `GET /api/public/events?locale=hu`
+- Each event: title, id, `startsAt`, borough, lowest ticket tier + currency
+- Host `venueIds`
+- **ImgBB image URL per event** + original promo source URL
+- Locales confirmed: `GET /api/public/events?locale=hu`
 - Scarcity rationale (counts before/after)
-- Source URLs, ImgBB URL, `missingOrUncertain`
+- `missingOrUncertain` items
+- Confirm: **N events, N unique images** in API
 
 Optional focus (edit one line):
-- District: Ferencváros / Belváros / … / no preference
-- Genre: Electronic / Live Music / Festival / no preference
+- District: Ferencváros / Belváros / Újbuda / Óbuda / Buda / … / no preference
+- Genre: Electronic / Live Music / Festival / Opera / no preference
+- Batch size: 1 / 3 / 5 / …

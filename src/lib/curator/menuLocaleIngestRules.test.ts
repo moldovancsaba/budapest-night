@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   validateMenuItemLocalesForIngest,
   validateMenuSectionLocalesForIngest,
+  validateProviderMenuLocalesForIngest,
 } from "@/lib/curator/menuLocaleIngestRules";
 
 const fullItemLocales = {
@@ -29,6 +30,44 @@ describe("menuLocaleIngestRules", () => {
           ar: { title: "مشروبات" },
         },
         "sec",
+      ),
+    ).toEqual([]);
+  });
+
+  it("validates nested menu on provider", () => {
+    expect(
+      validateProviderMenuLocalesForIngest(
+        {
+          menu: {
+            menuUrl: "https://example.com",
+            sourceUrls: ["https://example.com"],
+            lastVerifiedAt: "2026-05-16",
+            sections: [
+              {
+                id: "drinks",
+                title: "Drinks",
+                kind: "drink",
+                locales: {
+                  hu: { title: "Italok" },
+                  es: { title: "Bebidas" },
+                  it: { title: "Bevande" },
+                  he: { title: "משקאות" },
+                  ar: { title: "مشروبات" },
+                },
+                items: [
+                  {
+                    id: "espresso",
+                    kind: "drink",
+                    name: "Espresso",
+                    tags: ["coffee"],
+                    locales: fullItemLocales,
+                  },
+                ],
+              },
+            ],
+          },
+        },
+        "provider",
       ),
     ).toEqual([]);
   });

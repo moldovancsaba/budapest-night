@@ -11,6 +11,7 @@ import { DEFAULT_BRAIN } from "@/types/site";
 import { mergeSiteDocument } from "@/lib/siteMerge";
 import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } from "@/lib/imgbbUrl";
 import { validateProviderLocalesForIngest } from "@/lib/curator/localeIngestRules";
+import { validateProviderMenuLocalesForIngest } from "@/lib/curator/menuLocaleIngestRules";
 import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
@@ -316,6 +317,8 @@ export async function applyIngestOperation(
     if (imgErr) return { ok: false, error: imgErr };
     const localeErrs = validateProviderLocalesForIngest(rest.locales, "provider.document");
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
+    const menuLocaleErrs = validateProviderMenuLocalesForIngest(rest, "provider.document");
+    if (menuLocaleErrs.length) return { ok: false, error: menuLocaleErrs.join("; ") };
     const withMenu = finalizeProvider(rest as Provider);
     await db.collection(COL.providers).replaceOne({ id: withMenu.id }, withMenu, { upsert: true });
     batch.providerIdsInBatch.add(withMenu.id);
@@ -339,6 +342,19 @@ export async function applyIngestOperation(
     }
     const imgErr = validateProviderImages(merged);
     if (imgErr) return { ok: false, error: imgErr };
+    if (patch.menu !== undefined || patch.eventOfferings !== undefined) {
+      const menuLocaleErrs = validateProviderMenuLocalesForIngest(
+        {
+          menu: patch.menu !== undefined ? (patch.menu as Provider["menu"]) : undefined,
+          eventOfferings:
+            patch.eventOfferings !== undefined
+              ? (patch.eventOfferings as Provider["eventOfferings"])
+              : undefined,
+        },
+        "provider.patch",
+      );
+      if (menuLocaleErrs.length) return { ok: false, error: menuLocaleErrs.join("; ") };
+    }
     const final = finalizeProvider(merged);
     const setDoc: Partial<Provider> = {};
     for (const key of Object.keys(patch) as (keyof Provider)[]) {
@@ -374,6 +390,11 @@ export async function applyIngestOperation(
       if (imgErr) return { ok: false, error: imgErr };
       const localeErrs = validateProviderLocalesForIngest(rest.locales, `providers.upsertMany document ${rest.id}`);
       if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
+      const menuLocaleErrs = validateProviderMenuLocalesForIngest(
+        rest,
+        `providers.upsertMany document ${rest.id}`,
+      );
+      if (menuLocaleErrs.length) return { ok: false, error: menuLocaleErrs.join("; ") };
       writes.push({
         replaceOne: {
           filter: { id: rest.id },

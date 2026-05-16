@@ -1,0 +1,226 @@
+{
+  "sourceUrls": [
+    "https://www.budapestpark.hu/en/events/lp-20260707",
+    "https://funcode.hu/en/event/3652-lp",
+    "https://www.livenation.hu/en/tickets/lp-budapest-events-edp1652207",
+    "https://www.budapestpark.hu/en/events/idles-20260708",
+    "https://funcode.hu/en/event/2943-idles",
+    "https://www.livenation.hu/en/tickets/idles-budapest-events-edp1632063",
+    "https://www.durerkert.com/en/event/oliver_tree_2026",
+    "https://www.livenation.hu/artist-oliver-tree-1180211"
+  ],
+  "notes": "Three July 2026 shows: LP + IDLES at Budapest Park (dense July week at prov-budapest-park-obuda); Oliver Tree first HU show at Dürer Kert fills Erzsébetváros (0 events). Catalog before: 3 upcoming across Belváros/Terézváros/Ferencváros only.",
+  "missingOrUncertain": [
+    "LP/IDLES/Moby-style exact show start not on budapestpark.hu — using 20:00 after 18:00 gates (funcode lists 19:00 as event time).",
+    "IDLES tier breakdown not listed on official pages — single published floor from 16,500 HUF via funcode.",
+    "Oliver Tree ticket tiers/prices not published on durerkert.com or livenation at ingest time — entryFees empty; sales via livenation.hu and funcode.hu from 8 May 2026."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-lp-budapest-park-2026",
+        "title": "LP — live at Budapest Park",
+        "shortDescription": "LP returns to Budapest Park on Tuesday 7 July 2026 — gates 18:00, Lost On You and Love Lines in South Pest (Fábián Juli tér).",
+        "longDescription": "Laura Pergolizzi (LP) plays an open-air headline set at Budapest Park on Tuesday 7 July 2026. Gates open at 18:00 at 1095 Budapest, Fábián Juli tér 1 (Ferencváros). Ticketed show — standing and terrace tiers on budapestpark.hu, livenation.hu, and funcode.hu (online handling fee applies).\n\nSources: https://www.budapestpark.hu/en/events/lp-20260707 https://funcode.hu/en/event/3652-lp",
+        "startsAt": "2026-07-07T20:00:00+02:00",
+        "endsAt": "2026-07-07T23:00:00+02:00",
+        "doorsOpenAt": "2026-07-07T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "pl3-standing",
+            "label": "PL3 — standing (main floor)",
+            "amount": 18200,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 1,100 Ft handling fee at online checkout"
+          },
+          {
+            "id": "terrace",
+            "label": "Terrace — front / middle",
+            "amount": 28200,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 1,100 Ft handling fee at online checkout"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["All ages", "18+"],
+        "dayTimeTags": ["Weekday", "Evening"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/7J5wTH9C/c1df2d60c6ce.png",
+        "website": "https://www.budapestpark.hu/en/events/lp-20260707",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/LP_20260707",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "lp-budapest-park-2026",
+            "title": "LP — élőben a Budapest Parkban",
+            "shortDescription": "LP visszatér 2026. július 7-én — kapunyitás 18:00, dél-Pest (Fábián Juli tér).",
+            "longDescription": "LP (Laura Pergolizzi) nyílt légi főkoncertet ad a Budapest Parkban 2026. július 7-én (kedd). Kapunyitás 18:00, 1095 Budapest, Fábián Juli tér 1. Jegyes előadás — álló és terasz kategóriák a budapestpark.hu, livenation.hu és funcode.hu oldalakon.\n\nSources: https://www.budapestpark.hu/en/events/lp-20260707 https://funcode.hu/en/event/3652-lp"
+          },
+          "es": {
+            "slug": "lp-budapest-park-2026",
+            "title": "LP en directo en Budapest Park",
+            "shortDescription": "LP vuelve el 7 de julio de 2026 — puertas 18:00, sur de Pest.",
+            "longDescription": "LP actúa al aire libre en Budapest Park el 7 de julio de 2026. Puertas 18:00. Entradas en budapestpark.hu y funcode.hu.\n\nSources: https://www.budapestpark.hu/en/events/lp-20260707 https://funcode.hu/en/event/3652-lp"
+          },
+          "it": {
+            "slug": "lp-budapest-park-2026",
+            "title": "LP live al Budapest Park",
+            "shortDescription": "LP torna il 7 luglio 2026 — porte 18:00, Pest sud.",
+            "longDescription": "LP in concerto all'aperto al Budapest Park il 7 luglio 2026. Biglietti su budapestpark.hu e funcode.hu.\n\nSources: https://www.budapestpark.hu/en/events/lp-20260707 https://funcode.hu/en/event/3652-lp"
+          },
+          "he": {
+            "slug": "lp-budapest-park-2026",
+            "title": "LP בבודפשט פארק",
+            "shortDescription": "LP חוזרת ב-7 ביולי 2026 — שערים 18:00, דרום פשט.",
+            "longDescription": "LP מופיעה בבודפשט פארק ב-7 ביולי 2026. כרטיסים ב-budapestpark.hu ו-funcode.hu.\n\nSources: https://www.budapestpark.hu/en/events/lp-20260707 https://funcode.hu/en/event/3652-lp"
+          },
+          "ar": {
+            "slug": "lp-budapest-park-2026",
+            "title": "LP في بودابست بارك",
+            "shortDescription": "عودة LP في 7 يوليو 2026 — الأبواب 18:00، جنوب بودابست.",
+            "longDescription": "تقدّم LP حفلاً في الهواء الطلق في بودابست بارك في 7 يوليو 2026. التذاكر على budapestpark.hu وfuncode.hu.\n\nSources: https://www.budapestpark.hu/en/events/lp-20260707 https://funcode.hu/en/event/3652-lp"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-idles-budapest-park-2026",
+        "title": "IDLES — first headline show at Budapest Park",
+        "shortDescription": "British post-punk band IDLES with support Enola Gay — Wednesday 8 July 2026, gates 18:00 at Budapest Park.",
+        "longDescription": "IDLES play their first Budapest headline concert at Budapest Park on Wednesday 8 July 2026 with special guest Enola Gay. Gates open at 18:00 (1095 Budapest, Fábián Juli tér 1). Tickets via livenation.hu, funcode.hu, and budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/idles-20260708 https://funcode.hu/en/event/2943-idles https://www.livenation.hu/en/tickets/idles-budapest-events-edp1632063",
+        "startsAt": "2026-07-08T20:00:00+02:00",
+        "endsAt": "2026-07-08T23:00:00+02:00",
+        "doorsOpenAt": "2026-07-08T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "standing-from",
+            "label": "Standing — from",
+            "amount": 16500,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Higher tiers may apply at checkout; online handling fee per budapestpark.hu FAQ"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Weekday", "Evening", "Late night"],
+        "badges": ["Staff Pick"],
+        "image": "https://i.ibb.co/Q7MZNT29/d6b72dda7273.png",
+        "website": "https://www.budapestpark.hu/en/events/idles-20260708",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/IDLES260708",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "idles-budapest-park-2026",
+            "title": "IDLES — első főszereplős budapesti koncert a Budapest Parkban",
+            "shortDescription": "A brit poszt-punk IDLES, vendég: Enola Gay — 2026. július 8., kapunyitás 18:00.",
+            "longDescription": "Az IDLES először ad főszereplős budapesti koncertet a Budapest Parkban 2026. július 8-án, különleges vendég: Enola Gay. Kapunyitás 18:00. Jegyek: livenation.hu, funcode.hu, budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/idles-20260708 https://funcode.hu/en/event/2943-idles"
+          },
+          "es": {
+            "slug": "idles-budapest-park-2026",
+            "title": "IDLES — primer headline en Budapest Park",
+            "shortDescription": "Post-punk británico con Enola Gay — 8 julio 2026, puertas 18:00.",
+            "longDescription": "IDLES en su primer headline en Budapest Park el 8 de julio de 2026 con Enola Gay. Entradas en livenation.hu y budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/idles-20260708 https://funcode.hu/en/event/2943-idles"
+          },
+          "it": {
+            "slug": "idles-budapest-park-2026",
+            "title": "IDLES — primo headline al Budapest Park",
+            "shortDescription": "Post-punk britannico con Enola Gay — 8 luglio 2026, porte 18:00.",
+            "longDescription": "IDLES al primo headline ungherese al Budapest Park l'8 luglio 2026 con Enola Gay. Biglietti su livenation.hu e budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/idles-20260708 https://funcode.hu/en/event/2943-idles"
+          },
+          "he": {
+            "slug": "idles-budapest-park-2026",
+            "title": "IDLES — הופעת ראשית בבודפשט פארק",
+            "shortDescription": "פוסט-פאנק בריטי עם Enola Gay — 8 ביולי 2026, שערים 18:00.",
+            "longDescription": "IDLES בהופעת הראשית בבודפשט פארק ב-8 ביולי 2026 עם Enola Gay. כרטיסים ב-livenation.hu ו-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/idles-20260708 https://funcode.hu/en/event/2943-idles"
+          },
+          "ar": {
+            "slug": "idles-budapest-park-2026",
+            "title": "IDLES — أول حفل رئيسي في بودابست بارك",
+            "shortDescription": "بوسط-بانك بريطاني مع Enola Gay — 8 يوليو 2026، الأبواب 18:00.",
+            "longDescription": "IDLES في أول حفل رئيسي في بودابست بارك في 8 يوليو 2026 مع Enola Gay. التذاكر على livenation.hu وbudapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/idles-20260708 https://funcode.hu/en/event/2943-idles"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-oliver-tree-durer-kert-2026",
+        "title": "Oliver Tree — Love You Madly, Hate You Badly at Dürer Kert",
+        "shortDescription": "Oliver Tree’s first Hungarian show — Saturday 12 July 2026 at Dürer Kert, Erzsébetváros (Wesselényi utca), presenting Love You Madly, Hate You Badly.",
+        "longDescription": "Oliver Tree brings his genre-blending pop spectacle to Budapest for the first time at Dürer Kert on Saturday 12 July 2026, featuring material from Love You Madly, Hate You Badly (recorded across 82 countries). Tickets on sale via livenation.hu and funcode.hu (general on-sale from 8 May 2026, 10:00). Venue: 1075 Budapest, Wesselényi utca 52.\n\nSources: https://www.durerkert.com/en/event/oliver_tree_2026 https://www.livenation.hu/artist-oliver-tree-1180211",
+        "startsAt": "2026-07-12T20:00:00+02:00",
+        "endsAt": "2026-07-12T22:30:00+02:00",
+        "doorsOpenAt": "2026-07-12T19:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-cov-durer-wessel"],
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "entryFees": [],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Weekend", "Evening", "Late night"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/vCwhzpJD/67a00223ba36.webp",
+        "website": "https://www.durerkert.com/en/event/oliver_tree_2026",
+        "bookingUrl": "https://www.livenation.hu/artist-oliver-tree-1180211",
+        "email": "info@durerkert.com",
+        "phone": "+36 1 787 0760",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "oliver-tree-durer-kert-2026",
+            "title": "Oliver Tree — Love You Madly, Hate You Badly a Dürer Kertben",
+            "shortDescription": "Oliver Tree először Magyarországon — 2026. július 12., Dürer Kert, Erzsébetváros.",
+            "longDescription": "Oliver Tree első budapesti koncertje a Dürer Kertben 2026. július 12-én (szombat), a Love You Madly, Hate You Badly anyaggal. Jegyek: livenation.hu és funcode.hu (értékesítés május 8-tól 10:00). Cím: 1075 Budapest, Wesselényi utca 52.\n\nSources: https://www.durerkert.com/en/event/oliver_tree_2026 https://www.livenation.hu/artist-oliver-tree-1180211"
+          },
+          "es": {
+            "slug": "oliver-tree-durer-kert-2026",
+            "title": "Oliver Tree — Love You Madly, Hate You Badly en Dürer Kert",
+            "shortDescription": "Primera actuación de Oliver Tree en Hungría — 12 julio 2026, Erzsébetváros.",
+            "longDescription": "Oliver Tree debuta en Budapest en Dürer Kert el 12 de julio de 2026. Entradas en livenation.hu y funcode.hu desde el 8 de mayo.\n\nSources: https://www.durerkert.com/en/event/oliver_tree_2026 https://www.livenation.hu/artist-oliver-tree-1180211"
+          },
+          "it": {
+            "slug": "oliver-tree-durer-kert-2026",
+            "title": "Oliver Tree — Love You Madly, Hate You Badly al Dürer Kert",
+            "shortDescription": "Prima data ungherese di Oliver Tree — 12 luglio 2026, Erzsébetváros.",
+            "longDescription": "Oliver Tree a Budapest per la prima volta al Dürer Kert il 12 luglio 2026. Biglietti su livenation.hu e funcode.hu dal 8 maggio.\n\nSources: https://www.durerkert.com/en/event/oliver_tree_2026 https://www.livenation.hu/artist-oliver-tree-1180211"
+          },
+          "he": {
+            "slug": "oliver-tree-durer-kert-2026",
+            "title": "אוליבר טרי — Love You Madly, Hate You Badly בדירר קרט",
+            "shortDescription": "הופעה ראשונה בהונגריה — 12 ביולי 2026, ארזסבטווארוש.",
+            "longDescription": "אוליבר טרי מגיע לראשונה לבודפשט בדירר קרט ב-12 ביולי 2026. כרטיסים ב-livenation.hu ו-funcode.hu מה-8 במאי.\n\nSources: https://www.durerkert.com/en/event/oliver_tree_2026 https://www.livenation.hu/artist-oliver-tree-1180211"
+          },
+          "ar": {
+            "slug": "oliver-tree-durer-kert-2026",
+            "title": "أوليفر تري — Love You Madly, Hate You Badly في ديورر كيرت",
+            "shortDescription": "أول حفل في المجر — 12 يوليو 2026، إرزسيبيتفاروش.",
+            "longDescription": "يقدّم أوليفر تري أول حفل له في بودابست في ديورر كيرت في 12 يوليو 2026. التذاكر على livenation.hu وfuncode.hu من 8 مايو.\n\nSources: https://www.durerkert.com/en/event/oliver_tree_2026 https://www.livenation.hu/artist-oliver-tree-1180211"
+          }
+        }
+      }
+    }
+  ]
+}

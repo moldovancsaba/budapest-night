@@ -585,6 +585,13 @@
     "filterDrink": "Drink",
     "allTags": "Tutti i tag",
     "empty": "Nessuna voce corrisponde ancora.",
+    "atVenue": "{venue} ({category}) · {section}",
+    "venueCategory": {
+      "Restaurants": "Ristorante",
+      "Cafés": "Caffè",
+      "Parties": "Bar e nightlife",
+      "Venues": "Locale"
+    },
     "tourReady": "Pronto — {count} locali con menu compatibile",
     "tourNeedsMenus": "Servono menu — {eligible} su {required} locali pronti",
     "venuesWithMenus": "{count} locali con menu pubblicato",

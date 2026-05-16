@@ -17,6 +17,7 @@
     "db:patch-media": "node -r ./scripts/load-env.cjs scripts/patch-site-media.cjs",
     "db:patch-copy": "npx tsx scripts/patch-site-copy.ts",
     "db:patch-listing-images": "npx tsx scripts/patch-listing-images.ts",
+    "db:patch-event-images": "node -r ./scripts/load-env.cjs scripts/patch-event-images.cjs",
     "db:patch-provider-locales": "node -r ./scripts/load-env.cjs scripts/patch-provider-locales-sample.cjs",
     "imgbb:upload-assets": "node -r ./scripts/load-env.cjs scripts/imgbb-upload-assets.cjs",
     "vercel:env:push": "node -r ./scripts/load-env.cjs scripts/sync-vercel-env.cjs",

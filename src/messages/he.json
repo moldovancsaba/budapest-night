@@ -585,6 +585,13 @@
     "filterDrink": "שתייה",
     "allTags": "כל התגיות",
     "empty": "אין פריטים תואמים עדיין.",
+    "atVenue": "{venue} ({category}) · {section}",
+    "venueCategory": {
+      "Restaurants": "מסעדה",
+      "Cafés": "בית קפה",
+      "Parties": "בר וחיי לילה",
+      "Venues": "מקום"
+    },
     "tourReady": "מוכן — {count} מקומות עם תפריט תואם",
     "tourNeedsMenus": "חסרים תפריטים — {eligible} מתוך {required} מקומות",
     "venuesWithMenus": "{count} מקומות עם תפריט מפורסם",

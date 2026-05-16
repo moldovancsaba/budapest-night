@@ -1,5 +1,7 @@
 import { localeLabels, type AppLocale } from "@/i18n/config";
 import { MENU_BASE_LOCALE, type MenuIngestLocale } from "@/types/menuLocale";
+import type { VenueMenu } from "@/types/menu";
+import type { Provider } from "@/types/provider";
 
 export const MENU_INGEST_LOCALES: MenuIngestLocale[] = ["hu", "es", "it", "he", "ar"];
 
@@ -76,5 +78,42 @@ export function validateMenuSectionLocalesForIngest(
   if ((record as { en?: unknown }).en !== undefined) {
     errors.push(`${pathPrefix}.locales: do not add "en" — English is the root title`);
   }
+  return errors;
+}
+
+export function validateVenueMenuLocalesForIngest(menu: VenueMenu, pathPrefix: string): string[] {
+  const errors: string[] = [];
+  if (!menu.sections?.length) return errors;
+  menu.sections.forEach((sec, si) => {
+    const secPath = `${pathPrefix}.sections[${si}]`;
+    errors.push(...validateMenuSectionLocalesForIngest(sec.locales, secPath));
+    (sec.items ?? []).forEach((item, ii) => {
+      errors.push(
+        ...validateMenuItemLocalesForIngest(item.locales, `${secPath}.items[${ii}]`),
+      );
+    });
+  });
+  return errors;
+}
+
+/** When a provider patch/upsert includes menu or event offering items, require full menu locales. */
+export function validateProviderMenuLocalesForIngest(
+  provider: Pick<Provider, "menu" | "eventOfferings">,
+  pathPrefix: string,
+): string[] {
+  const errors: string[] = [];
+  if (provider.menu?.sections?.length) {
+    errors.push(...validateVenueMenuLocalesForIngest(provider.menu, `${pathPrefix}.menu`));
+  }
+  (provider.eventOfferings ?? []).forEach((ev, ei) => {
+    (ev.items ?? []).forEach((item, ii) => {
+      errors.push(
+        ...validateMenuItemLocalesForIngest(
+          item.locales,
+          `${pathPrefix}.eventOfferings[${ei}].items[${ii}]`,
+        ),
+      );
+    });
+  });
   return errors;
 }

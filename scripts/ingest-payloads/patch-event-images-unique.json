@@ -1,0 +1,109 @@
+{
+  "sourceUrls": [
+    "https://www.budapestpark.hu/tickets/event/RILES_20260531",
+    "https://www.budapestpark.hu/tickets/event/deva-20260627",
+    "https://www.budapestpark.hu/en/events/lp-20260707",
+    "https://www.budapestpark.hu/en/events/idles-20260708",
+    "https://www.budapestpark.hu/en/events/charlie-puth-20260727",
+    "https://www.budapestpark.hu/index.php/en/events/moby-20260801",
+    "https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+    "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall",
+    "https://www.durerkert.com/en/event/oliver_tree_2026",
+    "https://akvariumklub.hu/en/events/dogstar/",
+    "https://www.barbanegra.hu/in-flames_20260725"
+  ],
+  "notes": "Replace venue-generic event images with official per-show promo art from listing pages; each event gets a unique ImgBB URL.",
+  "missingOrUncertain": [
+    "Sting image from Live Nation dynamic media (tour artwork), not MVM Dome building photo."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-rilles-budapest-park-2026",
+      "patch": {
+        "image": "https://i.ibb.co/3504rCjm/4737b972ddab.jpg"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-deva-budapest-park-2026",
+      "patch": {
+        "image": "https://i.ibb.co/qFsG2sXN/37814e806030.jpg"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-lp-budapest-park-2026",
+      "patch": {
+        "image": "https://i.ibb.co/7J5wTH9C/c1df2d60c6ce.png"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-idles-budapest-park-2026",
+      "patch": {
+        "image": "https://i.ibb.co/Q7MZNT29/d6b72dda7273.png"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-charlie-puth-budapest-park-2026",
+      "patch": {
+        "image": "https://i.ibb.co/k6DyWzC8/68492bdc62d1.jpg"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-moby-budapest-park-2026",
+      "patch": {
+        "image": "https://i.ibb.co/mC8J1w9r/5f04d19deee7.jpg"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-sting-mvm-dome-2026",
+      "patch": {
+        "image": "https://i.ibb.co/5WfbxfV5/3aa06558408d.jpg"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-wagner-parsifal-mupa-2026",
+      "patch": {
+        "image": "https://i.ibb.co/HD5xPyJb/d4d97a5c8b25.webp"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-oliver-tree-durer-kert-2026",
+      "patch": {
+        "image": "https://i.ibb.co/vCwhzpJD/67a00223ba36.webp"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-dogstar-akvarium-2026",
+      "patch": {
+        "image": "https://i.ibb.co/8L9zN7fN/c0ce9a206c07.jpg"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-in-flames-barba-negra-2026",
+      "patch": {
+        "image": "https://i.ibb.co/8p3VGwz/b79ea3823538.jpg"
+      }
+    }
+  ]
+}

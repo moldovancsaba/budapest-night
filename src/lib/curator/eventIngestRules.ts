@@ -35,8 +35,9 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 
 ### Schedule (ISO 8601 with offset)
 - \`startsAt\`, \`endsAt\`: real show window from the official page (e.g. \`2026-08-01T20:00:00+02:00\`).
-- \`doorsOpenAt\`: optional gate time when published (e.g. 18:00 before 20:00 show).
+- \`doorsOpenAt\`: gate time when published (e.g. budapestpark.hu “Gate opening 18:00”).
 - \`timezone\`: \`Europe/Budapest\` when omitted, app still defaults correctly.
+- **Gates only, no stage time** (common on budapestpark.hu): set \`doorsOpenAt\` to the published gate time, \`startsAt\` to **20:00** same day, \`endsAt\` ~23:00–23:30; note in \`missingOrUncertain\`. Long opera/matinee: use published start/end (e.g. Müpa 16:00–22:20).
 
 ### Host venues (required link)
 - \`venueIds\`: array of **existing** provider ids (\`^prov-[a-z0-9-]+$\`). Minimum 1; **first id = primary host** (location, cards, filters).
@@ -72,14 +73,27 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 - \`bookingUrl\`: direct ticket purchase URL when available (else \`""\`).
 - \`email\`, \`phone\`: from official source or host venue; \`""\` if unknown.
 
-### Image
-- \`image\`: https ImgBB URL for the event poster/hero (\`i.ibb.co\` / \`*.ibb.co\`), or reuse host venue image if no poster. Same upload flow as providers.
+### Image (event-specific — never duplicate)
+- \`image\`: https ImgBB URL (\`i.ibb.co\` / \`*.ibb.co\`) for **this show’s** official poster/hero — scraped from the **event/ticket page**, not the venue homepage.
+- **Blocking mistakes (fixed in production):** copying \`provider.image\`; reusing Budapest Park’s generic park graphic (\`cb56a463140e.jpg\`) for multiple artists; using MVM Dome **building exterior** instead of Sting/tour artwork; assigning the same ImgBB URL to two events.
+- **Where to scrape:** \`og:image\` / \`twitter:image\` on the ticket URL. Site hints: budapestpark \`cdn-netpositive.com/event_images/...\` or \`/uploads/<hash>.png\` (ignore site-wide \`budapestpark-og-2021.jpg\`); mupa program hero; livenation \`dynamicmedia.livenationinternational.com/...\`; barbanegra \`/uploads/<show>.jpg\`; akvarium/durer event \`og:image\`.
+- **Workflow:** download → \`scripts/imgbb-asset-sources/events/\` → upload (\`POST /api/ingest/upload\` or \`IMGBB_API_KEY\`) → unique URL in payload → before POST, confirm no other row in \`GET /api/public/events\` shares that \`image\`.
+- **Last resort only:** if no show art exists, use a venue photo **not** used by any other event or that venue’s default card image; still must be a **unique** ImgBB URL in the catalog.
+- Repair batch: \`npm run db:patch-event-images\` or \`event\` + \`action: "patch"\` with \`{ "image": "..." }\` only (see \`scripts/ingest-payloads/patch-event-images-unique.json\`).
 
 ${getEventLocaleIngestRulesForPrompt()}
 
-### Gold-standard reference payload
-Read and mirror quality from: \`scripts/ingest-payloads/seed-timed-events-moby-sting.json\` (Moby + Sting + venue upserts, HUF tiers, locales, correct Ferencváros address).
+### Gold-standard reference payloads
+- \`scripts/ingest-payloads/seed-timed-events-moby-sting.json\` — venue + event upserts, HUF tiers, locales, Ferencváros address.
+- \`scripts/ingest-payloads/cursor-curated-events-lp-idles-oliver-tree-2026.json\` — multi-event batch, per-show images.
+- \`scripts/ingest-payloads/patch-event-images-unique.json\` — image-only patches (reference for repair).
 
 ### Deduping events
-Before ingest, \`GET /api/public/events\` and check \`id\`, normalized \`title\`, and \`startsAt\`. Do not duplicate the same show.`;
+Before ingest, \`GET /api/public/events\` and check \`id\`, normalized \`title\`, and \`startsAt\`. Do not duplicate the same show.
+
+### Pre-ingest checklist
+1. Every \`venueIds\` entry exists or is upserted earlier in \`operations[]\`.
+2. Every \`image\` is ImgBB https and **unique** vs all other events (and ≠ host \`provider.image\` unless last-resort fallback).
+3. Paid shows have HUF/EUR \`entryFees\` or \`[]\` with explanation — no fake FREE tiers.
+4. All five locales present; each \`longDescription\` ends with \`Sources: https://...\`.`;
 }

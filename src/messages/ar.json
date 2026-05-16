@@ -584,6 +584,13 @@
     "filterDrink": "شراب",
     "allTags": "كل الوسوم",
     "empty": "لا توجد عناصر مطابقة بعد.",
+    "atVenue": "{venue} ({category}) · {section}",
+    "venueCategory": {
+      "Restaurants": "مطعم",
+      "Cafés": "مقهى",
+      "Parties": "بار وحياة ليلية",
+      "Venues": "مكان"
+    },
     "tourReady": "جاهز — {count} أماكن بقوائم متوافقة",
     "tourNeedsMenus": "قوائم مطلوبة — {eligible} من {required} أماكن جاهزة",
     "venuesWithMenus": "{count} أماكن بقوائم منشورة",

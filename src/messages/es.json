@@ -585,6 +585,13 @@
     "filterDrink": "Bebida",
     "allTags": "Todas las etiquetas",
     "empty": "Ningún plato coincide aún. Se añaden más cartas al verificarse.",
+    "atVenue": "{venue} ({category}) · {section}",
+    "venueCategory": {
+      "Restaurants": "Restaurante",
+      "Cafés": "Café",
+      "Parties": "Bar y vida nocturna",
+      "Venues": "Local"
+    },
     "tourReady": "Listo — {count} locales con carta compatible",
     "tourNeedsMenus": "Faltan cartas — {eligible} de {required} locales listos",
     "venuesWithMenus": "{count} locales con carta publicada",

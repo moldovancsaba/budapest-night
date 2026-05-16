@@ -7,7 +7,7 @@
 |------|------|
 | **Timed concert / ticketed show** | `scripts/cursor-curator-events-prompt.txt` |
 | **Venue (place listing)** | `scripts/cursor-curator-venues-prompt.txt` |
-| **Menus for Eat & Drink / tours** | `scripts/cursor-curator-menu-prompt.txt` |
+| **Menus for Eat & Drink / tours** | `scripts/cursor-curator-menu-prompt.txt` — transcribe menus + **`locales`** (`hu`, `es`, `it`, `he`, `ar`) on every item/section |
 | **Culture circle** | This file (meetup section below) |
 
 Copy **one** specialist prompt into a new chat — not this whole index unless you need meetups or a mixed run.
@@ -189,17 +189,19 @@ The public site serves **six locales**: `en`, `es`, `it`, `hu`, `he`, `ar`. Ever
 
 ## Timed event workflow (when focus is a concert / ticketed show)
 
-Read **`src/lib/curator/eventIngestRules.ts`** in full before writing the payload. Summary of non-negotiables:
+Use dedicated prompt: **`scripts/cursor-curator-events-prompt.txt`**. Read **`src/lib/curator/eventIngestRules.ts`** in full before writing the payload. Summary of non-negotiables:
 
 1. **Upsert host venue(s) first** in the same `operations` array if not already in `GET /api/public/providers`.
-2. **Schedule**: `startsAt`, `endsAt` as ISO 8601 with `+02:00` (or correct offset); optional `doorsOpenAt`; `timezone: "Europe/Budapest"`.
-3. **`venueIds`**: existing `prov-*` ids; event `borough` / `neighborhood` = primary host venue’s district.
-4. **`entryFees`**: real tiers from the ticket page; **HUF** for budapestpark.hu / jegy.hu forint prices; **EUR** for € prices; admin fees in `notes`; never fake FREE for paid shows.
+2. **Schedule**: `startsAt`, `endsAt` as ISO 8601 with `+02:00`; optional `doorsOpenAt`; `timezone: "Europe/Budapest"`. If only “gates 18:00” is published (budapestpark.hu), use `doorsOpenAt` 18:00 and `startsAt` 20:00 unless the page states otherwise — note in `missingOrUncertain`.
+3. **`venueIds`**: existing `prov-*` ids; event `borough` / `neighborhood` = primary host’s district (Budapest Park → Ferencváros, not Óbuda Island; see rules for MVM Dome, Müpa, Barba Negra).
+4. **`entryFees`**: real tiers from the ticket page; **HUF** for forint shops; admin fees in `notes`; never fake FREE for paid shows; `[]` if tiers unknown.
 5. **`locales`**: `hu`, `es`, `it`, `he`, `ar` each with `title`, `shortDescription`, `longDescription`, `slug` (see `eventLocaleIngestRules.ts`).
 6. **`bookingUrl`**: direct ticket link; `website`: official event page.
 7. Dedupe against `GET /api/public/events` by `id`, title, and `startsAt`.
+8. **`image` (critical):** per-show promo from the **event/ticket page** (`og:image`, budapestpark `event_images` / `/uploads/`, mupa hero, livenation tour art, etc.). **Never** copy `provider.image` or reuse the same ImgBB URL on multiple events. Upload via `/api/ingest/upload` or `npm run db:patch-event-images`; assets in `scripts/imgbb-asset-sources/events/`.
+9. **Pre-flight:** dry-run OK; every `image` unique vs `GET /api/public/events` and ≠ venue card fallback.
 
-Mirror structure and quality of **`scripts/ingest-payloads/seed-timed-events-moby-sting.json`**.
+Mirror structure and quality of **`seed-timed-events-moby-sting.json`** and **`cursor-curated-events-lp-idles-oliver-tree-2026.json`**.
 
 ## Output shape
 
@@ -279,7 +281,7 @@ Often **multiple operations** in one file (venue upsert + event upsert). Example
     "ageRanges": ["18+"],
     "dayTimeTags": ["Evening", "Weekend"],
     "badges": ["Featured"],
-    "image": "https://i.ibb.co/....jpg",
+    "image": "https://i.ibb.co/UNIQUE-SHOW-POSTER.jpg",
     "website": "https://official-event-page",
     "bookingUrl": "https://official-ticket-shop/...",
     "email": "info@venue.hu",
