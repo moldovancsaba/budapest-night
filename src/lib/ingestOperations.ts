@@ -214,10 +214,15 @@ export async function applyIngestOperation(
     }
     await db.collection(COL.meetupGroups).deleteMany({});
     if (documents.length > 0) {
-      const cleaned = documents.map((raw) => {
-        const { _id, ...rest } = raw as unknown as MeetupGroup & { _id?: unknown };
-        return rest as MeetupGroup;
-      });
+      const cleaned: MeetupGroup[] = [];
+      for (const raw of documents) {
+        const { _id, venueLinks: _vl, eventLinks: _el, ...rest } = raw as unknown as MeetupGroup & { _id?: unknown };
+        const imgErr = validateMeetupCover(rest);
+        if (imgErr) return { ok: false, error: imgErr };
+        const stored = await finalizeMeetupGroup(db, rest as MeetupGroup);
+        if ("error" in stored) return { ok: false, error: stored.error };
+        cleaned.push(stored);
+      }
       await db.collection(COL.meetupGroups).insertMany(cleaned as unknown as Document[]);
     }
     return { ok: true, data: { replaced: documents.length } };
@@ -348,11 +353,15 @@ export async function applyIngestOperation(
   if (resource === "meetupGroup" && action === "upsert") {
     const doc = op.document;
     if (!isPlainObject(doc)) return { ok: false, error: "meetupGroup.upsert requires document object" };
-    const { _id, ...rest } = doc as unknown as MeetupGroup & { _id?: unknown };
+    const { _id, venueLinks: _vl, eventLinks: _el, ...rest } = doc as unknown as MeetupGroup & {
+      _id?: unknown;
+    };
     if (!rest.id || typeof rest.id !== "string") return { ok: false, error: "meetupGroup.document.id required" };
     const imgErr = validateMeetupCover(rest);
     if (imgErr) return { ok: false, error: imgErr };
-    await db.collection(COL.meetupGroups).replaceOne({ id: rest.id }, rest as MeetupGroup, {
+    const stored = await finalizeMeetupGroup(db, rest as MeetupGroup);
+    if ("error" in stored) return { ok: false, error: stored.error };
+    await db.collection(COL.meetupGroups).replaceOne({ id: rest.id }, stored as unknown as Document, {
       upsert: true,
     });
     return { ok: true };
@@ -363,13 +372,16 @@ export async function applyIngestOperation(
     if (typeof id !== "string" || !id) return { ok: false, error: "meetupGroup.patch requires id string" };
     const patchIn = op.patch;
     if (!isPlainObject(patchIn)) return { ok: false, error: "meetupGroup.patch requires patch object" };
-    const { id: _drop, ...patch } = patchIn as { id?: string };
+    const { id: _drop, venueLinks: _vl, eventLinks: _el, ...patch } = patchIn as { id?: string };
     if (Object.keys(patch).length === 0) return { ok: false, error: "meetupGroup.patch patch must not be empty" };
     const cur = (await db.collection(COL.meetupGroups).findOne({ id })) as unknown as MeetupGroup | null;
-    const merged: Partial<MeetupGroup> = { ...(cur ?? {}), ...patch };
+    if (!cur) return { ok: false, error: `meetupGroup.patch: unknown id ${id}` };
+    const merged = { ...cur, ...patch } as MeetupGroup;
     const imgErr = validateMeetupCover(merged);
     if (imgErr) return { ok: false, error: imgErr };
-    await db.collection(COL.meetupGroups).updateOne({ id }, { $set: patch });
+    const stored = await finalizeMeetupGroup(db, merged);
+    if ("error" in stored) return { ok: false, error: stored.error };
+    await db.collection(COL.meetupGroups).replaceOne({ id }, stored as unknown as Document);
     return { ok: true };
   }
 
@@ -388,14 +400,16 @@ export async function applyIngestOperation(
     const writes: AnyBulkWriteOperation<Document>[] = [];
     for (const raw of documents) {
       if (!isPlainObject(raw)) return { ok: false, error: "meetupGroups.upsertMany: each item must be an object" };
-      const { _id, ...rest } = raw as unknown as MeetupGroup & { _id?: unknown };
+      const { _id, venueLinks: _vl, eventLinks: _el, ...rest } = raw as unknown as MeetupGroup & { _id?: unknown };
       if (!rest.id || typeof rest.id !== "string") return { ok: false, error: "meetupGroups.upsertMany: each document needs string id" };
       const imgErr = validateMeetupCover(rest);
       if (imgErr) return { ok: false, error: imgErr };
+      const stored = await finalizeMeetupGroup(db, rest as MeetupGroup);
+      if ("error" in stored) return { ok: false, error: stored.error };
       writes.push({
         replaceOne: {
           filter: { id: rest.id },
-          replacement: rest as unknown as Document,
+          replacement: stored as unknown as Document,
           upsert: true,
         },
       });
