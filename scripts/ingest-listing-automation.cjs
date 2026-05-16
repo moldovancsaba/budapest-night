@@ -13,8 +13,9 @@
  * - Validates provider / event / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
  * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`).
  * - Event upserts require locales + HUF/EUR entryFees rules + **unique per-show ImgBB image** (not host `provider.image`); see `src/lib/curator/eventIngestRules.ts` and `scripts/cursor-curator-events-prompt.txt`. Gold examples: `seed-timed-events-moby-sting.json`, `cursor-curated-events-lp-idles-oliver-tree-2026.json`.
- * - Menu items/sections require `locales` for hu, es, it, he, ar on every patch (see `src/lib/curator/menuLocaleIngestRules.ts`).
- * - Use `--skip-locale-check` only for legacy payloads.
+ * - Menu items/sections require `locales` for hu, es, it, he, ar on every menu patch/upsert (see `src/lib/curator/menuLocaleIngestRules.ts`).
+ * - `provider` + `patch` is validated (menu, eventOfferings, optional provider locales) — not only upserts.
+ * - Use `--skip-locale-check` only for legacy payloads (skips provider profile locales on upsert/patch; menu translations still required).
  *
  * Env: `INGEST_API_KEY` (required unless `--dry-run`), optional `INGEST_BASE_URL`
  * (default https://budapest-night.vercel.app). Loads `.env` then `.env.local`.
@@ -411,6 +412,45 @@ function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
   return errors;
 }
 
+function validateProviderPatch(op, idx, { skipLocaleCheck = false } = {}) {
+  const errors = [];
+  const p = `operations[${idx}] provider.patch`;
+  if (typeof op.id !== "string" || !op.id.trim()) {
+    errors.push(`${p}: id required (prov-...)`);
+  } else if (!/^prov-[a-z0-9-]+$/.test(op.id)) {
+    errors.push(`${p}: id must match prov-...`);
+  }
+  const patch = op.patch;
+  if (!patch || typeof patch !== "object") {
+    errors.push(`${p}: patch object required`);
+    return errors;
+  }
+  if (Object.keys(patch).length === 0) errors.push(`${p}: patch must not be empty`);
+  if (patch.id !== undefined) errors.push(`${p}: do not include id inside patch (use operation id)`);
+  if (patch.menuTags !== undefined) errors.push(`${p}: do not send menuTags (computed on ingest)`);
+  if (patch.menu !== undefined) errors.push(...validateVenueMenu(patch.menu, `${p}.menu`));
+  if (patch.eventOfferings !== undefined) errors.push(...validateEventOfferings(patch.eventOfferings, p));
+  if (patch.locales !== undefined && !skipLocaleCheck) {
+    errors.push(...validateProviderLocalesForIngest(patch.locales, p));
+  }
+  if (patch.image !== undefined) {
+    if (typeof patch.image !== "string") errors.push(`${p}: image must be string (empty ok)`);
+    else if (patch.image.trim() && !isImgBbHttpsImageUrl(patch.image)) {
+      errors.push(`${p}: image must be empty or https ImgBB (i.ibb.co)`);
+    }
+  }
+  if (patch.galleryImages !== undefined && !Array.isArray(patch.galleryImages)) {
+    errors.push(`${p}: galleryImages must be array or omitted`);
+  } else if (Array.isArray(patch.galleryImages)) {
+    patch.galleryImages.forEach((g, gi) => {
+      if (typeof g === "string" && g.trim() && !isImgBbHttpsImageUrl(g)) {
+        errors.push(`${p}: galleryImages[${gi}] must be https ImgBB URL`);
+      }
+    });
+  }
+  return errors;
+}
+
 function validateOperations(operations, opts = {}) {
   const all = [];
   const providerIdsInPayload = new Set();
@@ -424,6 +464,9 @@ function validateOperations(operations, opts = {}) {
     if (op.resource === "provider" && op.action === "upsert") {
       all.push(...validateProvider(op.document, i, opts));
       if (op.document?.id) providerIdsInPayload.add(op.document.id);
+    } else if (op.resource === "provider" && op.action === "patch") {
+      all.push(...validateProviderPatch(op, i, opts));
+      if (typeof op.id === "string" && op.id) providerIdsInPayload.add(op.id);
     } else if (op.resource === "meetupGroup" && op.action === "upsert") {
       all.push(...validateMeetup(op.document, i));
     } else if (op.resource === "event" && op.action === "upsert") {
@@ -441,6 +484,8 @@ function validateOperations(operations, opts = {}) {
       }
     } else if (op.action === "upsert") {
       all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
+    } else if (op.action === "patch") {
+      all.push(`operations[${i}]: unsupported patch resource ${String(op.resource)} (supported: provider)`);
     }
   }
   for (let i = 0; i < operations.length; i++) {

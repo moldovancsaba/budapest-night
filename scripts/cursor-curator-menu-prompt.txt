@@ -124,10 +124,14 @@ Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` i
 `scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json`
 
 ## Ingest
+`npm run ingest:listing` validates **provider patch** menus (sections, items, and `locales` on every item/section) before POST. Fix all dry-run errors before `--force`.
+
 ```bash
 npm run ingest:listing -- --dry-run scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json
 npm run ingest:listing -- --force scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json
 ```
+
+Legacy payloads without menu translations may pass only with `--skip-locale-check` (provider profile only — **not** a substitute for menu `locales`).
 
 After deploy, optional local repair:
 `npm run db:recompute-menu-tags`
