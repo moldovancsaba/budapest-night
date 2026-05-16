@@ -119,6 +119,25 @@
     "copyLink": "Copy link",
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} reviews)",
+    "reviewsSourceOsm": "OpenStreetMap",
+    "reviewsSourceBn": "Budapest Night",
+    "listedOnOsm": "Listed on OpenStreetMap (community map data)",
+    "communityReviewsTitle": "Community reviews",
+    "communityReviewsHint": "Ratings from visitors on Budapest Night — one review per browser.",
+    "reviewsLoading": "Loading reviews…",
+    "reviewsEmpty": "No reviews yet. Be the first to share your experience.",
+    "reviewWriteTitle": "Write a review",
+    "reviewEditTitle": "Update your review",
+    "reviewYourRating": "Your rating",
+    "reviewDisplayNamePlaceholder": "Display name (optional)",
+    "reviewBodyPlaceholder": "What was the vibe, drinks, or food like?",
+    "reviewSubmitButton": "Post review",
+    "reviewUpdateButton": "Save changes",
+    "reviewThanks": "Thanks — your review is live.",
+    "reviewUpdated": "Review updated.",
+    "reviewRatingRequired": "Pick a star rating first.",
+    "reviewSubmitFailed": "Could not post review. Try again.",
+    "reviewRateLimit": "Too many reviews today. Try again tomorrow.",
     "connectVenue": "Connect with this venue",
     "freeEntry": "Free entry",
     "free": "Free",
@@ -560,7 +579,12 @@
     "title": "Menu & drinks",
     "empty": "No published menu yet for this venue.",
     "verified": "Menu verified",
-    "estimated": "(est.)"
+    "estimated": "(est.)",
+    "sectionKind": {
+      "food": "Food",
+      "drink": "Drink",
+      "mixed": "Food & drink"
+    }
   },
   "menuTag": {
     "palinka": "Pálinka",
@@ -596,7 +620,12 @@
     "filterDrink": "Drink",
     "allTags": "All tags",
     "empty": "No menu items match yet. More venues are added as menus are verified.",
-    "atVenue": "{venue} ({category}) · {section}",
+    "atVenue": "{venue} · {kind} · {section}",
+    "itemKind": {
+      "food": "Food",
+      "drink": "Drink",
+      "other": "Other"
+    },
     "venueCategory": {
       "Restaurants": "Restaurant",
       "Cafés": "Café",

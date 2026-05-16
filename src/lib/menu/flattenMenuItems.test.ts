@@ -75,4 +75,30 @@ describe("filterFlatMenuItems", () => {
     expect(drink).toHaveLength(1);
     expect(drink[0]?.item.name).toBe("Lager");
   });
+
+  it("drops tag filter when tag kind mismatches item", () => {
+    const mismatched = flattenProviderMenu({
+      ...provider,
+      menu: {
+        ...provider.menu!,
+        sections: [
+          {
+            id: "bad",
+            title: "Mains",
+            kind: "food",
+            items: [
+              {
+                id: "x",
+                kind: "food",
+                name: "Soup",
+                tags: ["goulash", "beer"],
+              },
+            ],
+          },
+        ],
+      },
+    } as Provider);
+    expect(filterFlatMenuItems(mismatched, { tag: "beer" })).toHaveLength(0);
+    expect(filterFlatMenuItems(mismatched, { tag: "goulash" })).toHaveLength(1);
+  });
 });

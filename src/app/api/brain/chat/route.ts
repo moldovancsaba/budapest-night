@@ -1,9 +1,25 @@
 import { NextResponse } from "next/server";
 import { brainChatCompletionsUrl, resolveBrainOpenAIKey } from "@/lib/brain/openaiChat";
+import { checkBrainChatRateLimit, clientIpFromRequest } from "@/lib/brainChatRateLimit";
 import { getDb, COL } from "@/lib/mongodb";
 import { DEFAULT_BRAIN } from "@/types/site";
 
 export async function POST(req: Request) {
+  const db = await getDb();
+  if (db) {
+    const ip = clientIpFromRequest(req);
+    const limited = await checkBrainChatRateLimit(db, ip);
+    if (limited.allowed === false) {
+      return NextResponse.json(
+        { error: "Rate limit exceeded. Try again shortly." },
+        {
+          status: 429,
+          headers: { "Retry-After": String(limited.retryAfterSec) },
+        },
+      );
+    }
+  }
+
   const key = resolveBrainOpenAIKey();
   if (!key) {
     return NextResponse.json(
@@ -25,7 +41,6 @@ export async function POST(req: Request) {
 
   let system = DEFAULT_BRAIN.systemPrompt;
   let model = DEFAULT_BRAIN.model;
-  const db = await getDb();
   if (db) {
     const doc = await db.collection(COL.brain).findOne({ _id: "main" } as never);
     if (doc) {

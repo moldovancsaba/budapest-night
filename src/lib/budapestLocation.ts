@@ -1,4 +1,3 @@
-import { NEIGHBORHOODS } from "@/data/locations";
 import type { Borough } from "@/types/provider";
 import type { NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";

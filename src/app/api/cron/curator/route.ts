@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/mongodb";
 import { runCuratorDiscovery } from "@/lib/curator/runCuratorDiscovery";
+import { timingSafeStringEqual } from "@/lib/timingSafeStringEqual";
 
 export const maxDuration = 120;
 export const dynamic = "force-dynamic";
@@ -11,7 +12,7 @@ function authorize(req: Request): boolean {
   if (!secret) return false;
   const auth = req.headers.get("authorization")?.trim() ?? "";
   const x = auth.toLowerCase().startsWith("bearer ") ? auth.slice(7).trim() : "";
-  return x.length > 0 && x === secret;
+  return x.length > 0 && timingSafeStringEqual(secret, x);
 }
 
 /**

@@ -125,6 +125,25 @@
     "copyLink": "Copia link",
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} recensioni)",
+    "reviewsSourceOsm": "OpenStreetMap",
+    "reviewsSourceBn": "Budapest Night",
+    "listedOnOsm": "Su OpenStreetMap (dati cartografici della community)",
+    "communityReviewsTitle": "Recensioni della community",
+    "communityReviewsHint": "Valutazioni dei visitatori su Budapest Night — una recensione per browser.",
+    "reviewsLoading": "Caricamento recensioni…",
+    "reviewsEmpty": "Nessuna recensione ancora. Sii il primo.",
+    "reviewWriteTitle": "Scrivi una recensione",
+    "reviewEditTitle": "Modifica la tua recensione",
+    "reviewYourRating": "La tua valutazione",
+    "reviewDisplayNamePlaceholder": "Nome visualizzato (opzionale)",
+    "reviewBodyPlaceholder": "Com'era l'atmosfera, drink o cibo?",
+    "reviewSubmitButton": "Pubblica recensione",
+    "reviewUpdateButton": "Salva modifiche",
+    "reviewThanks": "Grazie — la recensione è online.",
+    "reviewUpdated": "Recensione aggiornata.",
+    "reviewRatingRequired": "Scegli prima un voto a stelle.",
+    "reviewSubmitFailed": "Impossibile pubblicare. Riprova.",
+    "reviewRateLimit": "Troppe recensioni oggi. Riprova domani.",
     "connectVenue": "Contatta questo locale",
     "savedGroup": "Gruppo salvato",
     "removeGroupSaved": "Rimosso dai salvati",
@@ -549,7 +568,12 @@
     "title": "Menu e drink",
     "empty": "Nessun menu pubblicato per questo locale.",
     "verified": "Menu verificato",
-    "estimated": "(stim.)"
+    "estimated": "(stim.)",
+    "sectionKind": {
+      "food": "Cibo",
+      "drink": "Bevanda",
+      "mixed": "Cibo e bevande"
+    }
   },
   "menuTag": {
     "palinka": "Pálinka",
@@ -585,7 +609,12 @@
     "filterDrink": "Drink",
     "allTags": "Tutti i tag",
     "empty": "Nessuna voce corrisponde ancora.",
-    "atVenue": "{venue} ({category}) · {section}",
+    "atVenue": "{venue} · {kind} · {section}",
+    "itemKind": {
+      "food": "Cibo",
+      "drink": "Bevanda",
+      "other": "Altro"
+    },
     "venueCategory": {
       "Restaurants": "Ristorante",
       "Cafés": "Caffè",

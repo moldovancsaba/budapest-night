@@ -28,4 +28,5 @@ export const COL = {
   locations: "locations",
   site: "site",
   brain: "brainSettings",
+  venueReviews: "venueReviews",
 } as const;

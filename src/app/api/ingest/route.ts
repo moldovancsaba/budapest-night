@@ -33,6 +33,9 @@ export async function GET(req: Request) {
       "event.venueLinks and event borough/neighborhood from venueIds[0]",
     ],
     limits: { maxOperationsPerRequest: MAX_OPS },
+    destructiveWrites: {
+      replaceAll: "Requires confirmReplaceAll: true on the operation, or header X-Ingest-Confirm: replace-all (or INGEST_ALLOW_REPLACE_ALL=true for local dev)",
+    },
   });
 }
 
@@ -66,7 +69,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `At most ${MAX_OPS} operations per request` }, { status: 400 });
   }
 
-  const batch: IngestBatchContext = { providerIdsInBatch: new Set() };
+  const confirmHeader = req.headers.get("x-ingest-confirm")?.trim().toLowerCase();
+  const batch: IngestBatchContext = {
+    providerIdsInBatch: new Set(),
+    replaceAllConfirmed: confirmHeader === "replace-all",
+  };
   const results: { index: number; ok: boolean; error?: string; data?: unknown }[] = [];
   for (let i = 0; i < ops.length; i++) {
     const res = await applyIngestOperation(db, ops[i], batch);

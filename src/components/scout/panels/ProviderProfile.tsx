@@ -8,7 +8,6 @@ import {
   Globe,
   Phone,
   MapPin,
-  Star,
   MessageCircle,
   Megaphone,
   X,
@@ -28,6 +27,9 @@ import { CdnImage } from "@/components/ui/CdnImage";
 import { ProviderCard } from "../ProviderCard";
 import { ProviderMap } from "./ProviderMap";
 import { VenueMenuPanel } from "@/components/scout/VenueMenuPanel";
+import { ProviderRating } from "@/components/scout/ProviderRating";
+import { ProviderOsmAttribution } from "@/components/scout/ProviderOsmAttribution";
+import { VenueReviewsPanel } from "@/components/scout/VenueReviewsPanel";
 import { resolveImageUrl } from "@/lib/resolveImageUrl";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
@@ -248,17 +250,11 @@ export function ProviderProfile({
               <MapPin className="h-4 w-4" />
               {provider.address}
             </p>
-            <div className="mt-3 flex items-center gap-3 text-sm">
-              <span className="flex items-center gap-1">
-                <Star className="h-4 w-4 fill-foreground text-foreground" />
-                <span className="font-semibold text-foreground">
-                  {provider.rating}
-                </span>
-                <span className="text-muted-foreground">
-                  {t("reviewsCount", { count: provider.reviewCount })}
-                </span>
-              </span>
-              <span className="text-border">|</span>
+            <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
+              <ProviderRating provider={provider} variant="profile" />
+              {provider.reviewCount > 0 ? (
+                <span className="text-border">|</span>
+              ) : null}
               <span className="font-display text-base">
                 <span className="font-bold text-foreground">{price.main}</span>
                 {price.suffix && (
@@ -300,6 +296,9 @@ export function ProviderProfile({
           <p className="text-sm leading-relaxed text-foreground/85">
             {provider.longDescription}
           </p>
+          <ProviderOsmAttribution provider={provider} />
+
+          <VenueReviewsPanel provider={provider} />
 
           {(provider.menu?.sections?.length ||
             (provider.eventOfferings?.length ?? 0) > 0) && (

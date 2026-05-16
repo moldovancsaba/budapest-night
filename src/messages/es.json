@@ -125,6 +125,25 @@
     "copyLink": "Copiar enlace",
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} reseñas)",
+    "reviewsSourceOsm": "OpenStreetMap",
+    "reviewsSourceBn": "Budapest Night",
+    "listedOnOsm": "En OpenStreetMap (datos cartográficos comunitarios)",
+    "communityReviewsTitle": "Reseñas de la comunidad",
+    "communityReviewsHint": "Valoraciones de visitantes en Budapest Night — una reseña por navegador.",
+    "reviewsLoading": "Cargando reseñas…",
+    "reviewsEmpty": "Aún no hay reseñas. Sé el primero.",
+    "reviewWriteTitle": "Escribir reseña",
+    "reviewEditTitle": "Editar tu reseña",
+    "reviewYourRating": "Tu valoración",
+    "reviewDisplayNamePlaceholder": "Nombre visible (opcional)",
+    "reviewBodyPlaceholder": "¿Cómo fue el ambiente, las bebidas o la comida?",
+    "reviewSubmitButton": "Publicar reseña",
+    "reviewUpdateButton": "Guardar cambios",
+    "reviewThanks": "Gracias — tu reseña ya está publicada.",
+    "reviewUpdated": "Reseña actualizada.",
+    "reviewRatingRequired": "Elige una valoración en estrellas.",
+    "reviewSubmitFailed": "No se pudo publicar. Inténtalo de nuevo.",
+    "reviewRateLimit": "Demasiadas reseñas hoy. Prueba mañana.",
     "connectVenue": "Contactar con este local",
     "savedGroup": "Grupo guardado",
     "removeGroupSaved": "Eliminado de guardados",
@@ -549,7 +568,12 @@
     "title": "Carta y bebidas",
     "empty": "Aún no hay carta publicada para este local.",
     "verified": "Carta verificada",
-    "estimated": "(aprox.)"
+    "estimated": "(aprox.)",
+    "sectionKind": {
+      "food": "Comida",
+      "drink": "Bebida",
+      "mixed": "Comida y bebida"
+    }
   },
   "menuTag": {
     "palinka": "Pálinka",
@@ -585,7 +609,12 @@
     "filterDrink": "Bebida",
     "allTags": "Todas las etiquetas",
     "empty": "Ningún plato coincide aún. Se añaden más cartas al verificarse.",
-    "atVenue": "{venue} ({category}) · {section}",
+    "atVenue": "{venue} · {kind} · {section}",
+    "itemKind": {
+      "food": "Comida",
+      "drink": "Bebida",
+      "other": "Otro"
+    },
     "venueCategory": {
       "Restaurants": "Restaurante",
       "Cafés": "Café",

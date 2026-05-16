@@ -4,7 +4,18 @@ import type { Provider } from "@/types/provider";
 import type { EventOffering, VenueMenu } from "@/types/menu";
 import { useFormatMenuPrice } from "@/hooks/useFormatMenuPrice";
 import { useTranslations } from "next-intl";
-import { menuTagMessageKey } from "@/data/menuTags";
+import { inferMenuItemKind } from "@/lib/menu/flattenMenuItems";
+import { menuTagMatchesItemKind, menuTagMessageKey } from "@/data/menuTags";
+import type { MenuSectionKind } from "@/types/menu";
+
+function sectionKindLabel(
+  kind: MenuSectionKind,
+  tMenu: ReturnType<typeof useTranslations<"menu">>,
+): string {
+  if (kind === "food") return tMenu("sectionKind.food");
+  if (kind === "drink") return tMenu("sectionKind.drink");
+  return tMenu("sectionKind.mixed");
+}
 
 function MenuBlock({
   menu,
@@ -14,6 +25,7 @@ function MenuBlock({
   verifiedLabel: string;
 }) {
   const formatPrice = useFormatMenuPrice();
+  const tMenu = useTranslations("menu");
   const tTag = useTranslations("menuTag");
 
   if (!menu.sections.length) return null;
@@ -41,11 +53,28 @@ function MenuBlock({
           key={sec.id}
           className="rounded-2xl border border-border/60 bg-card/50 p-4"
         >
-          <h4 className="font-display text-sm font-semibold text-foreground">
-            {sec.title}
-          </h4>
+          <div className="flex flex-wrap items-baseline gap-2">
+            <h4 className="font-display text-sm font-semibold text-foreground">
+              {sec.title}
+            </h4>
+            <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+              {sectionKindLabel(sec.kind, tMenu)}
+            </span>
+          </div>
           <ul className="mt-3 space-y-2">
             {sec.items.map((item) => {
+              const itemKind =
+                item.kind === "food" || item.kind === "drink"
+                  ? item.kind
+                  : (() => {
+                      const inferred = inferMenuItemKind(item);
+                      if (inferred !== "other") return inferred;
+                      if (sec.kind === "food" || sec.kind === "drink") return sec.kind;
+                      return inferred;
+                    })();
+              const displayTags = item.tags.filter((tag) =>
+                menuTagMatchesItemKind(tag, itemKind),
+              );
               const price = item.price ? formatPrice(item.price) : null;
               return (
                 <li
@@ -59,9 +88,9 @@ function MenuBlock({
                         {item.description}
                       </p>
                     ) : null}
-                    {item.tags.length > 0 ? (
+                    {displayTags.length > 0 ? (
                       <p className="mt-1 flex flex-wrap gap-1">
-                        {item.tags.map((tag) => {
+                        {displayTags.map((tag) => {
                           const key = menuTagMessageKey(tag);
                           return (
                             <span

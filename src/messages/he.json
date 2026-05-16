@@ -125,6 +125,25 @@
     "copyLink": "העתק קישור",
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} ביקורות)",
+    "reviewsSourceOsm": "OpenStreetMap",
+    "reviewsSourceBn": "Budapest Night",
+    "listedOnOsm": "רשום ב-OpenStreetMap (נתוני מפה קהילתיים)",
+    "communityReviewsTitle": "ביקורות קהילה",
+    "communityReviewsHint": "דירוגים ממבקרים ב-Budapest Night — ביקורת אחת לדפדפן.",
+    "reviewsLoading": "טוען ביקורות…",
+    "reviewsEmpty": "אין עדיין ביקורות. תהיה הראשון.",
+    "reviewWriteTitle": "כתוב ביקורת",
+    "reviewEditTitle": "ערוך את הביקורת שלך",
+    "reviewYourRating": "הדירוג שלך",
+    "reviewDisplayNamePlaceholder": "שם לתצוגה (אופציונלי)",
+    "reviewBodyPlaceholder": "איך היה האווירה, המשקאות או האוכל?",
+    "reviewSubmitButton": "פרסם ביקורת",
+    "reviewUpdateButton": "שמור שינויים",
+    "reviewThanks": "תודה — הביקורת שלך פורסמה.",
+    "reviewUpdated": "הביקורת עודכנה.",
+    "reviewRatingRequired": "בחר דירוג כוכבים קודם.",
+    "reviewSubmitFailed": "לא ניתן לפרסם. נסה שוב.",
+    "reviewRateLimit": "יותר מדי ביקורות היום. נסה מחר.",
     "connectVenue": "צור קשר עם המקום",
     "savedGroup": "הקבוצה נשמרה",
     "removeGroupSaved": "הוסר מהשמורים",
@@ -549,7 +568,12 @@
     "title": "תפריט ומשקאות",
     "empty": "אין עדיין תפריט מפורסם למקום הזה.",
     "verified": "תפריט מאומת",
-    "estimated": "(הערכה)"
+    "estimated": "(הערכה)",
+    "sectionKind": {
+      "food": "אוכל",
+      "drink": "שתייה",
+      "mixed": "אוכל ושתייה"
+    }
   },
   "menuTag": {
     "palinka": "פאלינקה",
@@ -585,7 +609,12 @@
     "filterDrink": "שתייה",
     "allTags": "כל התגיות",
     "empty": "אין פריטים תואמים עדיין.",
-    "atVenue": "{venue} ({category}) · {section}",
+    "atVenue": "{venue} · {kind} · {section}",
+    "itemKind": {
+      "food": "אוכל",
+      "drink": "שתייה",
+      "other": "אחר"
+    },
     "venueCategory": {
       "Restaurants": "מסעדה",
       "Cafés": "בית קפה",

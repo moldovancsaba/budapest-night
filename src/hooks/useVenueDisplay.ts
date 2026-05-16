@@ -7,7 +7,6 @@ import { MEETUP_CADENCE_KEY, MEETUP_GROUP_TYPE_KEY } from "@/data/meetupKeys";
 import { neighborhoodMessageKey } from "@/data/neighborhoodKeys";
 import { amountToHuf, formatHufAsDisplay } from "@/lib/currency";
 import { providerPriceCurrency } from "@/lib/formatMoney";
-import { venuePriceUnit } from "@/lib/venueDisplay";
 import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import type { Category, Provider, AgeRange, DayTimeTag } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";

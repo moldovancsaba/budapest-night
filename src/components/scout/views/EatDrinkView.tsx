@@ -91,8 +91,11 @@ export function EatDrinkView({ onOpen }: Props) {
     if (p) onOpen(p);
   };
 
-  const categoryLabel = (cat: PublicMenuItemRow["venue"]["category"]) =>
-    t(`venueCategory.${cat}`);
+  const itemKindLabel = (kind: PublicMenuItemRow["kind"]) => {
+    if (kind === "food") return t("itemKind.food");
+    if (kind === "drink") return t("itemKind.drink");
+    return t("itemKind.other");
+  };
 
   return (
     <div className="space-y-8">
@@ -299,7 +302,7 @@ export function EatDrinkView({ onOpen }: Props) {
                     <p className="mt-1 text-xs text-muted-foreground">
                       {t("atVenue", {
                         venue: row.venue.name,
-                        category: categoryLabel(row.venue.category),
+                        kind: itemKindLabel(row.kind),
                         section: row.sectionTitle,
                       })}
                       {row.eventTitle ? ` · ${row.eventTitle}` : ""}

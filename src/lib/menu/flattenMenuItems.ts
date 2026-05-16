@@ -3,7 +3,7 @@ import { resolveMenuVenueLink } from "@/lib/menu/menuVenueLink";
 import type { AppLocale } from "@/i18n/config";
 import { defaultLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
-import { isDrinkMenuTag, isFoodMenuTag } from "@/data/menuTags";
+import { isDrinkMenuTag, isFoodMenuTag, menuTagMatchesItemKind } from "@/data/menuTags";
 import type { MenuItem, MenuItemKind, MenuSectionKind } from "@/types/menu";
 import type { VenueLink } from "@/types/venueLink";
 
@@ -131,7 +131,11 @@ export function filterFlatMenuItems(
 ): FlatMenuItem[] {
   let list = items;
   if (opts.tag) {
-    list = list.filter((row) => row.item.tags.includes(opts.tag!));
+    const tag = opts.tag;
+    list = list.filter((row) => {
+      if (!row.item.tags.includes(tag)) return false;
+      return menuTagMatchesItemKind(tag, effectiveItemKind(row));
+    });
   }
   if (opts.kind) {
     list = list.filter((row) => effectiveItemKind(row) === opts.kind);

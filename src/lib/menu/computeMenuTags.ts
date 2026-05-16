@@ -1,10 +1,10 @@
 import type { EventOffering, MenuItem, VenueMenu } from "@/types/menu";
-import { isMenuTag } from "@/data/menuTags";
+import { isMenuBoardTag } from "@/data/menuTags";
 
 function collectFromItems(items: MenuItem[], out: Set<string>) {
   for (const item of items) {
     for (const tag of item.tags ?? []) {
-      if (isMenuTag(tag)) out.add(tag);
+      if (isMenuBoardTag(tag)) out.add(tag);
     }
   }
 }

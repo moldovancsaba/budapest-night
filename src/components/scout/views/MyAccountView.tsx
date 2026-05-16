@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Heart,
   Share2,
@@ -69,7 +69,7 @@ export function MyAccountView({
   const tNav = useTranslations("nav");
   const categoryLabel = useCategoryLabel();
 
-  const badgeFor = (cat: string) => {
+  const badgeFor = useCallback((cat: string) => {
     switch (cat) {
       case "Events":
       case "Venues":
@@ -109,7 +109,7 @@ export function MyAccountView({
           tone: CATEGORY_BADGE.default,
         };
     }
-  };
+  }, [categoryLabel, tNav]);
 
   const [tab, setTab] = useState(acc.saved.tabId);
   const [filter, setFilter] = useState<AccountSavedCategoryFilter>("All");
@@ -136,7 +136,7 @@ export function MyAccountView({
         categoryFilter: badgeFor(p.category)
           .filter as AccountSavedCategoryFilter,
       })),
-    [savedProviders],
+    [savedProviders, badgeFor],
   );
 
   const filtered =

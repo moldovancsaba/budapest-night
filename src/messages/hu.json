@@ -125,6 +125,25 @@
     "copyLink": "Link másolása",
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} értékelés)",
+    "reviewsSourceOsm": "OpenStreetMap",
+    "reviewsSourceBn": "Budapest Night",
+    "listedOnOsm": "Szerepel az OpenStreetMapen (közösségi térképadat)",
+    "communityReviewsTitle": "Közösségi értékelések",
+    "communityReviewsHint": "Látogatói értékelések a Budapest Nightön — böngészőnként egy értékelés.",
+    "reviewsLoading": "Értékelések betöltése…",
+    "reviewsEmpty": "Még nincs értékelés. Legyél te az első.",
+    "reviewWriteTitle": "Értékelés írása",
+    "reviewEditTitle": "Értékelésed szerkesztése",
+    "reviewYourRating": "Értékelésed",
+    "reviewDisplayNamePlaceholder": "Megjelenő név (opcionális)",
+    "reviewBodyPlaceholder": "Milyen volt a hangulat, italok, étel?",
+    "reviewSubmitButton": "Értékelés beküldése",
+    "reviewUpdateButton": "Mentés",
+    "reviewThanks": "Köszönjük — az értékelésed megjelent.",
+    "reviewUpdated": "Értékelés frissítve.",
+    "reviewRatingRequired": "Először válassz csillagot.",
+    "reviewSubmitFailed": "Nem sikerült beküldeni. Próbáld újra.",
+    "reviewRateLimit": "Ma már elég értékelést küldtél. Holnap újra próbálhatod.",
     "connectVenue": "Kapcsolat a hellyel",
     "savedGroup": "Kör mentve",
     "removeGroupSaved": "Eltávolítva",
@@ -562,7 +581,12 @@
     "title": "Étlap és italok",
     "empty": "Ehhez a helyhez még nincs közzétett étlap.",
     "verified": "Étlap ellenőrizve",
-    "estimated": "(becs.)"
+    "estimated": "(becs.)",
+    "sectionKind": {
+      "food": "Étel",
+      "drink": "Ital",
+      "mixed": "Étel és ital"
+    }
   },
   "menuTag": {
     "palinka": "Pálinka",
@@ -598,7 +622,12 @@
     "filterDrink": "Ital",
     "allTags": "Minden címke",
     "empty": "Még nincs egyező tétel. További helyek kerülnek fel, ahogy az étlapok ellenőrzésre kerülnek.",
-    "atVenue": "{venue} ({category}) · {section}",
+    "atVenue": "{venue} · {kind} · {section}",
+    "itemKind": {
+      "food": "Étel",
+      "drink": "Ital",
+      "other": "Egyéb"
+    },
     "venueCategory": {
       "Restaurants": "Étterem",
       "Cafés": "Kávézó",

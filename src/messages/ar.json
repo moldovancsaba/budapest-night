@@ -124,6 +124,25 @@
     "copyLink": "نسخ الرابط",
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} مراجعات)",
+    "reviewsSourceOsm": "OpenStreetMap",
+    "reviewsSourceBn": "Budapest Night",
+    "listedOnOsm": "مُدرَج على OpenStreetMap (بيانات خريطة مجتمعية)",
+    "communityReviewsTitle": "مراجعات المجتمع",
+    "communityReviewsHint": "تقييمات الزوار على Budapest Night — مراجعة واحدة لكل متصفح.",
+    "reviewsLoading": "جاري تحميل المراجعات…",
+    "reviewsEmpty": "لا توجد مراجعات بعد. كن الأول.",
+    "reviewWriteTitle": "اكتب مراجعة",
+    "reviewEditTitle": "عدّل مراجعتك",
+    "reviewYourRating": "تقييمك",
+    "reviewDisplayNamePlaceholder": "الاسم المعروض (اختياري)",
+    "reviewBodyPlaceholder": "كيف كان الجو والمشروبات أو الطعام؟",
+    "reviewSubmitButton": "نشر المراجعة",
+    "reviewUpdateButton": "حفظ التغييرات",
+    "reviewThanks": "شكراً — مراجعتك منشورة.",
+    "reviewUpdated": "تم تحديث المراجعة.",
+    "reviewRatingRequired": "اختر تقييماً بالنجوم أولاً.",
+    "reviewSubmitFailed": "تعذر النشر. حاول مرة أخرى.",
+    "reviewRateLimit": "مراجعات كثيرة اليوم. حاول غداً.",
     "connectVenue": "تواصل مع هذا المكان",
     "savedGroup": "تم حفظ المجموعة",
     "removeGroupSaved": "أُزيل من المحفوظات",
@@ -548,7 +567,12 @@
     "title": "القائمة والمشروبات",
     "empty": "لا توجد قائمة منشورة لهذا المكان بعد.",
     "verified": "قائمة موثّقة",
-    "estimated": "(تقريبي)"
+    "estimated": "(تقريبي)",
+    "sectionKind": {
+      "food": "طعام",
+      "drink": "مشروب",
+      "mixed": "طعام ومشروبات"
+    }
   },
   "menuTag": {
     "palinka": "بالينكا",
@@ -584,7 +608,12 @@
     "filterDrink": "شراب",
     "allTags": "كل الوسوم",
     "empty": "لا توجد عناصر مطابقة بعد.",
-    "atVenue": "{venue} ({category}) · {section}",
+    "atVenue": "{venue} · {kind} · {section}",
+    "itemKind": {
+      "food": "طعام",
+      "drink": "مشروب",
+      "other": "أخرى"
+    },
     "venueCategory": {
       "Restaurants": "مطعم",
       "Cafés": "مقهى",

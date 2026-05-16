@@ -13,6 +13,8 @@ import type { Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc, BrainSettingsDoc, SiteAccountSettings, SiteCalculatorCopy } from "@/types/site";
 import type { Borough } from "@/types/provider";
+import type { VenueReview } from "@/types/venueReview";
+import { AdminReviewsTab } from "@/components/admin/AdminReviewsTab";
 
 async function adminFetch(input: RequestInfo, init?: RequestInit) {
   return fetch(input, { ...init, credentials: "include" });
@@ -35,14 +37,16 @@ export default function AdminDashboard() {
   const [accountDraft, setAccountDraft] = useState("{}");
   const [startersDraft, setStartersDraft] = useState("[]");
   const [busy, setBusy] = useState(false);
+  const [reviews, setReviews] = useState<VenueReview[]>([]);
 
   const load = useCallback(async () => {
-    const [pr, mg, st, br, loc] = await Promise.all([
+    const [pr, mg, st, br, loc, rev] = await Promise.all([
       adminFetch("/api/admin/providers"),
       adminFetch("/api/admin/meetup-groups"),
       adminFetch("/api/admin/site"),
       adminFetch("/api/admin/brain"),
       adminFetch("/api/admin/locations"),
+      adminFetch("/api/admin/reviews?limit=50"),
     ]);
     if (pr.status === 401) {
       router.push("/admin/login");
@@ -71,7 +75,24 @@ export default function AdminDashboard() {
       const rows = await loc.json();
       setLocationsJson(JSON.stringify(rows, null, 2));
     }
+    if (rev.ok) setReviews(await rev.json());
   }, [router]);
+
+  const deleteReview = async (id: string) => {
+    setBusy(true);
+    try {
+      const r = await adminFetch(`/api/admin/reviews?id=${encodeURIComponent(id)}`, {
+        method: "DELETE",
+      });
+      if (!r.ok) throw new Error();
+      toast.success("Review removed");
+      await load();
+    } catch {
+      toast.error("Delete failed");
+    } finally {
+      setBusy(false);
+    }
+  };
 
   useEffect(() => {
     load();
@@ -303,6 +324,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="site">Site & images</TabsTrigger>
             <TabsTrigger value="brain">Night Guide brain</TabsTrigger>
             <TabsTrigger value="upload">ImgBB upload</TabsTrigger>
+            <TabsTrigger value="reviews">Community reviews</TabsTrigger>
           </TabsList>
 
           <TabsContent value="providers" className="space-y-3 rounded-xl border border-border bg-card p-4">
@@ -318,6 +340,10 @@ export default function AdminDashboard() {
             {providers.length > 80 && (
               <p className="text-xs text-muted-foreground">Showing first 80 of {providers.length}. Use Mongo tools for bulk edits.</p>
             )}
+          </TabsContent>
+
+          <TabsContent value="reviews" className="space-y-3 rounded-xl border border-border bg-card p-4">
+            <AdminReviewsTab reviews={reviews} busy={busy} onDelete={deleteReview} />
           </TabsContent>
 
           <TabsContent value="meetups" className="space-y-3 rounded-xl border border-border bg-card p-4">

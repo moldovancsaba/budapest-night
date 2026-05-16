@@ -41,6 +41,7 @@ export type MenuTagFood = (typeof MENU_TAGS_FOOD)[number];
 const MENU_TAG_SET = new Set<string>(MENU_TAGS);
 const DRINK_TAG_SET = new Set<string>(MENU_TAGS_DRINK);
 const FOOD_TAG_SET = new Set<string>(MENU_TAGS_FOOD);
+const VENUE_TAG_SET = new Set<string>(MENU_TAGS_VENUE);
 
 export function isMenuTag(value: string): value is MenuTag {
   return MENU_TAG_SET.has(value);
@@ -52,6 +53,23 @@ export function isDrinkMenuTag(value: string): value is MenuTagDrink {
 
 export function isFoodMenuTag(value: string): value is MenuTagFood {
   return FOOD_TAG_SET.has(value);
+}
+
+export function isVenueMenuTag(value: string): boolean {
+  return VENUE_TAG_SET.has(value);
+}
+
+/** Menu-board / tour tags only — excludes venue vibe tags. */
+export function isMenuBoardTag(value: string): value is MenuTagDrink | MenuTagFood {
+  return isDrinkMenuTag(value) || isFoodMenuTag(value);
+}
+
+/** Tag must apply to this item kind (food tags on food items only, etc.). */
+export function menuTagMatchesItemKind(tag: string, kind: "food" | "drink" | "other"): boolean {
+  if (isVenueMenuTag(tag)) return false;
+  if (kind === "food") return isFoodMenuTag(tag);
+  if (kind === "drink") return isDrinkMenuTag(tag);
+  return isFoodMenuTag(tag) || isDrinkMenuTag(tag);
 }
 
 /** Tags for the menu-board chip row — excludes venue/vibe tags. */

@@ -5,13 +5,22 @@ const COOKIE = "cs_admin";
 
 function getSecret(): string {
   const fromSession = process.env.ADMIN_SESSION_SECRET?.trim();
+  if (process.env.NODE_ENV === "production") {
+    return fromSession || "";
+  }
   const fromAdmin = process.env.ADMIN_PASSWORD?.trim();
   return fromSession || fromAdmin || "";
 }
 
 export function signAdminSession(): string {
   const secret = getSecret();
-  if (!secret) throw new Error("ADMIN_PASSWORD or ADMIN_SESSION_SECRET must be set");
+  if (!secret) {
+    throw new Error(
+      process.env.NODE_ENV === "production"
+        ? "ADMIN_SESSION_SECRET must be set in production"
+        : "ADMIN_PASSWORD or ADMIN_SESSION_SECRET must be set",
+    );
+  }
   const exp = Date.now() + 7 * 24 * 60 * 60 * 1000;
   const nonce = randomBytes(8).toString("hex");
   const payload = Buffer.from(JSON.stringify({ exp, nonce })).toString("base64url");

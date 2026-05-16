@@ -2,7 +2,6 @@ import {
   Heart,
   Share2,
   Plus,
-  Star,
   MapPin,
   Calendar,
   Megaphone,
@@ -23,6 +22,7 @@ import {
   useVenueLocationLine,
 } from "@/hooks/useVenueDisplay";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
+import { ProviderRating } from "@/components/scout/ProviderRating";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -138,15 +138,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
               </span>
             )}
           </div>
-          <div className="flex items-center gap-1 text-sm">
-            <Star className="h-4 w-4 fill-foreground text-foreground" />
-            <span className="font-semibold text-foreground">
-              {provider.rating}
-            </span>
-            <span className="text-muted-foreground">
-              {t("reviewsShort", { count: provider.reviewCount })}
-            </span>
-          </div>
+          <ProviderRating provider={provider} variant="card" />
         </div>
 
         <div className="mt-4 flex gap-2">

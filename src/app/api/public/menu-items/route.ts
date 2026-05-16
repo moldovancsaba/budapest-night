@@ -8,7 +8,7 @@ import { toPublicMenuItemRow } from "@/lib/publicMenuItem";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
 import type { Provider } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
-import { isMenuTag } from "@/data/menuTags";
+import { isMenuBoardTag } from "@/data/menuTags";
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
@@ -18,8 +18,8 @@ export async function GET(req: Request) {
   const borough = url.searchParams.get("borough") as Borough | "All" | null;
   const categories = url.searchParams.get("categories")?.split(",").filter(Boolean) ?? null;
 
-  if (tag && !isMenuTag(tag)) {
-    return NextResponse.json({ error: "invalid tag" }, { status: 400 });
+  if (tag && !isMenuBoardTag(tag)) {
+    return NextResponse.json({ error: "invalid tag for menu board" }, { status: 400 });
   }
 
   const locale = parseAppLocaleParam(url.searchParams.get("locale"));

@@ -25,9 +25,28 @@ export type IngestOpResult =
 export type IngestBatchContext = {
   /** Provider ids upserted earlier in the same POST /api/ingest request. */
   providerIdsInBatch: Set<string>;
+  /** Set when request includes X-Ingest-Confirm: replace-all */
+  replaceAllConfirmed: boolean;
 };
 
-const defaultBatchContext = (): IngestBatchContext => ({ providerIdsInBatch: new Set() });
+const defaultBatchContext = (): IngestBatchContext => ({
+  providerIdsInBatch: new Set(),
+  replaceAllConfirmed: false,
+});
+
+function replaceAllAllowed(op: Record<string, unknown>, batch: IngestBatchContext): boolean {
+  if (process.env.INGEST_ALLOW_REPLACE_ALL === "true") return true;
+  if (batch.replaceAllConfirmed) return true;
+  if (op.confirmReplaceAll === true) return true;
+  return false;
+}
+
+function replaceAllGuardError(resource: string): IngestOpResult {
+  return {
+    ok: false,
+    error: `${resource}.replaceAll blocked in production: set confirmReplaceAll: true on the operation, send header X-Ingest-Confirm: replace-all, or set INGEST_ALLOW_REPLACE_ALL=true (dev only)`,
+  };
+}
 
 async function refreshEventsLinkedToHost(db: Db, hostId: string): Promise<void> {
   const rows = (await db
@@ -213,6 +232,7 @@ export async function applyIngestOperation(
 
   // --- bulk writes ---
   if (resource === "providers" && action === "replaceAll") {
+    if (!replaceAllAllowed(op, batch)) return replaceAllGuardError("providers");
     const documents = op.documents;
     if (!Array.isArray(documents)) return { ok: false, error: "providers.replaceAll requires documents array" };
     if (documents.length > MAX_REPLACE_ALL) {
@@ -237,6 +257,7 @@ export async function applyIngestOperation(
   }
 
   if (resource === "meetupGroups" && action === "replaceAll") {
+    if (!replaceAllAllowed(op, batch)) return replaceAllGuardError("meetupGroups");
     const documents = op.documents;
     if (!Array.isArray(documents)) return { ok: false, error: "meetupGroups.replaceAll requires documents array" };
     if (documents.length > MAX_REPLACE_ALL) {

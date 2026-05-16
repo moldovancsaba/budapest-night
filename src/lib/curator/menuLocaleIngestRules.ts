@@ -1,4 +1,4 @@
-import { localeLabels, type AppLocale } from "@/i18n/config";
+import { localeLabels } from "@/i18n/config";
 import { MENU_BASE_LOCALE, type MenuIngestLocale } from "@/types/menuLocale";
 import type { VenueMenu } from "@/types/menu";
 import type { Provider } from "@/types/provider";

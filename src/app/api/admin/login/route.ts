@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { signAdminSession, ADMIN_COOKIE_NAME } from "@/lib/adminSession";
+import { timingSafeStringEqual } from "@/lib/timingSafeStringEqual";
 
 export async function POST(req: Request) {
   const pass = process.env.ADMIN_PASSWORD?.trim();
@@ -24,7 +25,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
   const submitted = typeof body.password === "string" ? body.password.trim() : "";
-  if (submitted !== pass) {
+  if (!timingSafeStringEqual(pass, submitted)) {
     return NextResponse.json({ error: "Invalid password" }, { status: 401 });
   }
   const token = signAdminSession();

@@ -1,0 +1,1091 @@
+{
+  "sourceUrls": [
+    "https://szimpla.hu/",
+    "https://szimpla.hu/drinks.html",
+    "https://szimpla.hu/drinks_202403.jpg",
+    "https://szimpla.hu/info.html"
+  ],
+  "notes": "Szimpla Kert: replace placeholder menu with chalkboard items from official drinks_202403.jpg; drop fake Google rating.",
+  "missingOrUncertain": [
+    "Full spirit list on chalkboard — patch includes representative 4 cl pours; see drinks_202403.jpg for full board.",
+    "Chalkboard dated Feb 2024 on szimpla.hu — re-check in venue if a price looks off."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-szimpla-kert-erzsebetvaros",
+      "patch": {
+        "phone": "+36 1 352 4198",
+        "email": "kert@szimpla.hu",
+        "website": "https://szimpla.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "activityTypes": [
+          "Ruin Bar",
+          "Live Music",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, street food, and Budapest nightlife energy.",
+        "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars on Kazinczy utca. Expect rambling courtyards, chalkboard food and drink menus, concerts, and a packed weekend crowd. Free entry — you pay only for what you order. Check szimpla.hu for tonight's program.\n\nSources: https://szimpla.hu/ https://szimpla.hu/drinks.html https://szimpla.hu/drinks_202403.jpg https://szimpla.hu/info.html",
+        "locales": {
+          "hu": {
+            "name": "Szimpla Kert",
+            "shortDescription": "Ikonikus romkocsma a Zsidó negyedben — udvarok, élő zene, street food és budapesti éjszakai hangulat.",
+            "longDescription": "A Szimpla Kert Budapest egyik leghíresebb romkocsmája a Kazinczy utcában. Krétatáblás étlap és italok, koncertek, zsúfolt hétvégi tömeg. A belépés ingyenes — csak amit fogyasztasz, azt fizeted. Mai program: szimpla.hu.\n\nSources: https://szimpla.hu/ https://szimpla.hu/drinks.html https://szimpla.hu/drinks_202403.jpg https://szimpla.hu/info.html",
+            "slug": "szimpla-kert"
+          },
+          "es": {
+            "name": "Szimpla Kert",
+            "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, street food, and Budapest nightlife energy.",
+            "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars on Kazinczy utca. Expect rambling courtyards, chalkboard food and drink menus, concerts, and a packed weekend crowd. Free entry — you pay only for what you order. Check szimpla.hu for tonight's program.\n\nSources: https://szimpla.hu/ https://szimpla.hu/drinks.html https://szimpla.hu/drinks_202403.jpg https://szimpla.hu/info.html",
+            "slug": "szimpla-kert-erzsebetvaros-es"
+          },
+          "it": {
+            "name": "Szimpla Kert",
+            "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, street food, and Budapest nightlife energy.",
+            "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars on Kazinczy utca. Expect rambling courtyards, chalkboard food and drink menus, concerts, and a packed weekend crowd. Free entry — you pay only for what you order. Check szimpla.hu for tonight's program.\n\nSources: https://szimpla.hu/ https://szimpla.hu/drinks.html https://szimpla.hu/drinks_202403.jpg https://szimpla.hu/info.html",
+            "slug": "szimpla-kert-erzsebetvaros-it"
+          },
+          "he": {
+            "name": "Szimpla Kert",
+            "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, street food, and Budapest nightlife energy.",
+            "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars on Kazinczy utca. Expect rambling courtyards, chalkboard food and drink menus, concerts, and a packed weekend crowd. Free entry — you pay only for what you order. Check szimpla.hu for tonight's program.\n\nSources: https://szimpla.hu/ https://szimpla.hu/drinks.html https://szimpla.hu/drinks_202403.jpg https://szimpla.hu/info.html",
+            "slug": "szimpla-kert-erzsebetvaros-he"
+          },
+          "ar": {
+            "name": "Szimpla Kert",
+            "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, street food, and Budapest nightlife energy.",
+            "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars on Kazinczy utca. Expect rambling courtyards, chalkboard food and drink menus, concerts, and a packed weekend crowd. Free entry — you pay only for what you order. Check szimpla.hu for tonight's program.\n\nSources: https://szimpla.hu/ https://szimpla.hu/drinks.html https://szimpla.hu/drinks_202403.jpg https://szimpla.hu/info.html",
+            "slug": "szimpla-kert-erzsebetvaros-ar"
+          }
+        },
+        "menu": {
+          "menuUrl": "https://szimpla.hu/drinks.html",
+          "sourceUrls": [
+            "https://szimpla.hu/",
+            "https://szimpla.hu/drinks.html",
+            "https://szimpla.hu/drinks_202403.jpg",
+            "https://szimpla.hu/info.html"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "food",
+              "title": "Food",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Ételek"
+                },
+                "es": {
+                  "title": "Comida"
+                },
+                "it": {
+                  "title": "Cibo"
+                },
+                "he": {
+                  "title": "אוכל"
+                },
+                "ar": {
+                  "title": "طعام"
+                }
+              },
+              "items": [
+                {
+                  "id": "pulled-pork-flautas",
+                  "kind": "food",
+                  "name": "Pulled pork flautas",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Pulled pork flautas"
+                    },
+                    "es": {
+                      "name": "Pulled pork flautas"
+                    },
+                    "it": {
+                      "name": "Pulled pork flautas"
+                    },
+                    "he": {
+                      "name": "Pulled pork flautas"
+                    },
+                    "ar": {
+                      "name": "Pulled pork flautas"
+                    }
+                  },
+                  "price": {
+                    "amount": 4200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "description": "BBQ pork, cheese, pickles, garlic sour cream"
+                },
+                {
+                  "id": "barbacoa-flautas",
+                  "kind": "food",
+                  "name": "Barbacoa flautas",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Barbacoa flautas"
+                    },
+                    "es": {
+                      "name": "Barbacoa flautas"
+                    },
+                    "it": {
+                      "name": "Barbacoa flautas"
+                    },
+                    "he": {
+                      "name": "Barbacoa flautas"
+                    },
+                    "ar": {
+                      "name": "Barbacoa flautas"
+                    }
+                  },
+                  "price": {
+                    "amount": 4200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "description": "BBQ beef, Mexican rice, cheese, tomato salsa"
+                },
+                {
+                  "id": "hortobagy-flautas",
+                  "kind": "food",
+                  "name": "Hortobágyi flautas",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Hortobágyi flautas"
+                    },
+                    "es": {
+                      "name": "Hortobágyi flautas"
+                    },
+                    "it": {
+                      "name": "Hortobágyi flautas"
+                    },
+                    "he": {
+                      "name": "Hortobágyi flautas"
+                    },
+                    "ar": {
+                      "name": "Hortobágyi flautas"
+                    }
+                  },
+                  "price": {
+                    "amount": 4200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "description": "Chicken paprikás, pickles, sour cream"
+                },
+                {
+                  "id": "vega-wrap",
+                  "kind": "food",
+                  "name": "Vega wrap",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Vega wrap"
+                    },
+                    "es": {
+                      "name": "Vega wrap"
+                    },
+                    "it": {
+                      "name": "Vega wrap"
+                    },
+                    "he": {
+                      "name": "Vega wrap"
+                    },
+                    "ar": {
+                      "name": "Vega wrap"
+                    }
+                  },
+                  "price": {
+                    "amount": 4200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "description": "Grilled cheese, veggies, roasted tomato, caper mayo"
+                },
+                {
+                  "id": "grill-plate-2",
+                  "kind": "food",
+                  "name": "Grill plate (for 2)",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Grill tál (2 főre)"
+                    },
+                    "es": {
+                      "name": "Grill plate (for 2)"
+                    },
+                    "it": {
+                      "name": "Grill plate (for 2)"
+                    },
+                    "he": {
+                      "name": "Grill plate (for 2)"
+                    },
+                    "ar": {
+                      "name": "Grill plate (for 2)"
+                    }
+                  },
+                  "price": {
+                    "amount": 9200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "description": "3 sausages, grilled cheese, fries, pickles, honey mustard, caper mayo"
+                },
+                {
+                  "id": "langos-crackers",
+                  "kind": "food",
+                  "name": "Lángos crackers",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Lángos crackers"
+                    },
+                    "es": {
+                      "name": "Lángos crackers"
+                    },
+                    "it": {
+                      "name": "Lángos crackers"
+                    },
+                    "he": {
+                      "name": "Lángos crackers"
+                    },
+                    "ar": {
+                      "name": "Lángos crackers"
+                    }
+                  },
+                  "price": {
+                    "amount": 3000,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "description": "Sour cream, cheese, fresh chives"
+                }
+              ]
+            },
+            {
+              "id": "beer-tap",
+              "title": "Beer on tap",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Csapolt sör"
+                },
+                "es": {
+                  "title": "Cerveza de barril"
+                },
+                "it": {
+                  "title": "Birra alla spina"
+                },
+                "he": {
+                  "title": "בירה מהחבית"
+                },
+                "ar": {
+                  "title": "بيرة من الصنبور"
+                }
+              },
+              "items": [
+                {
+                  "id": "pilsner-urquell-03",
+                  "kind": "drink",
+                  "name": "Pilsner Urquell (0.3 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Pilsner Urquell (0,3 l)"
+                    },
+                    "es": {
+                      "name": "Pilsner Urquell (0.3 l)"
+                    },
+                    "it": {
+                      "name": "Pilsner Urquell (0.3 l)"
+                    },
+                    "he": {
+                      "name": "Pilsner Urquell (0.3 l)"
+                    },
+                    "ar": {
+                      "name": "Pilsner Urquell (0.3 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1600,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "pilsner-urquell-05",
+                  "kind": "drink",
+                  "name": "Pilsner Urquell (0.5 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Pilsner Urquell (0,5 l)"
+                    },
+                    "es": {
+                      "name": "Pilsner Urquell (0.5 l)"
+                    },
+                    "it": {
+                      "name": "Pilsner Urquell (0.5 l)"
+                    },
+                    "he": {
+                      "name": "Pilsner Urquell (0.5 l)"
+                    },
+                    "ar": {
+                      "name": "Pilsner Urquell (0.5 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "wheat-beer-05",
+                  "kind": "drink",
+                  "name": "Wheat beer (0.5 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Búzasör (0,5 l)"
+                    },
+                    "es": {
+                      "name": "Wheat beer (0.5 l)"
+                    },
+                    "it": {
+                      "name": "Wheat beer (0.5 l)"
+                    },
+                    "he": {
+                      "name": "Wheat beer (0.5 l)"
+                    },
+                    "ar": {
+                      "name": "Wheat beer (0.5 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1800,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "konrad-lager-05",
+                  "kind": "drink",
+                  "name": "Konrad lager (0.5 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Konrad lager (0,5 l)"
+                    },
+                    "es": {
+                      "name": "Konrad lager (0.5 l)"
+                    },
+                    "it": {
+                      "name": "Konrad lager (0.5 l)"
+                    },
+                    "he": {
+                      "name": "Konrad lager (0.5 l)"
+                    },
+                    "ar": {
+                      "name": "Konrad lager (0.5 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1700,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "flying-rabbit-ipa",
+                  "kind": "drink",
+                  "name": "Flying Rabbit IPA (0.4 l)",
+                  "tags": [
+                    "beer",
+                    "craft-beer"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Flying Rabbit IPA (0,4 l)"
+                    },
+                    "es": {
+                      "name": "Flying Rabbit IPA (0.4 l)"
+                    },
+                    "it": {
+                      "name": "Flying Rabbit IPA (0.4 l)"
+                    },
+                    "he": {
+                      "name": "Flying Rabbit IPA (0.4 l)"
+                    },
+                    "ar": {
+                      "name": "Flying Rabbit IPA (0.4 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1800,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "magners-cider",
+                  "kind": "drink",
+                  "name": "Magners apple cider (0.5 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Magners alma cider (0,5 l)"
+                    },
+                    "es": {
+                      "name": "Magners apple cider (0.5 l)"
+                    },
+                    "it": {
+                      "name": "Magners apple cider (0.5 l)"
+                    },
+                    "he": {
+                      "name": "Magners apple cider (0.5 l)"
+                    },
+                    "ar": {
+                      "name": "Magners apple cider (0.5 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2500,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "wine",
+              "title": "Wine & fröccs",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Bor és fröccs"
+                },
+                "es": {
+                  "title": "Vino y fröccs"
+                },
+                "it": {
+                  "title": "Vino e fröccs"
+                },
+                "he": {
+                  "title": "יין ופרוץ'"
+                },
+                "ar": {
+                  "title": "نبيذ وفرۆتش"
+                }
+              },
+              "items": [
+                {
+                  "id": "house-wine-2dl",
+                  "kind": "drink",
+                  "name": "House wine white/rosé (2 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Házbor fehér/rozé (2 dl)"
+                    },
+                    "es": {
+                      "name": "House wine white/rosé (2 dl)"
+                    },
+                    "it": {
+                      "name": "House wine white/rosé (2 dl)"
+                    },
+                    "he": {
+                      "name": "House wine white/rosé (2 dl)"
+                    },
+                    "ar": {
+                      "name": "House wine white/rosé (2 dl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "quality-wine-2dl",
+                  "kind": "drink",
+                  "name": "Quality wine white/red (2 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Prémium bor fehér/vörös (2 dl)"
+                    },
+                    "es": {
+                      "name": "Quality wine white/red (2 dl)"
+                    },
+                    "it": {
+                      "name": "Quality wine white/red (2 dl)"
+                    },
+                    "he": {
+                      "name": "Quality wine white/red (2 dl)"
+                    },
+                    "ar": {
+                      "name": "Quality wine white/red (2 dl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1600,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "kis-froccs",
+                  "kind": "drink",
+                  "name": "Kis fröccs (1:1)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Kis fröccs (1:1)"
+                    },
+                    "es": {
+                      "name": "Kis fröccs (1:1)"
+                    },
+                    "it": {
+                      "name": "Kis fröccs (1:1)"
+                    },
+                    "he": {
+                      "name": "Kis fröccs (1:1)"
+                    },
+                    "ar": {
+                      "name": "Kis fröccs (1:1)"
+                    }
+                  },
+                  "price": {
+                    "amount": 600,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "nagy-froccs",
+                  "kind": "drink",
+                  "name": "Nagy fröccs (2:1)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Nagy fröccs (2:1)"
+                    },
+                    "es": {
+                      "name": "Nagy fröccs (2:1)"
+                    },
+                    "it": {
+                      "name": "Nagy fröccs (2:1)"
+                    },
+                    "he": {
+                      "name": "Nagy fröccs (2:1)"
+                    },
+                    "ar": {
+                      "name": "Nagy fröccs (2:1)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1100,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "prosecco-tap",
+                  "kind": "drink",
+                  "name": "Prosecco on tap (1.5 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Prosecco csap (1,5 dl)"
+                    },
+                    "es": {
+                      "name": "Prosecco on tap (1.5 dl)"
+                    },
+                    "it": {
+                      "name": "Prosecco on tap (1.5 dl)"
+                    },
+                    "he": {
+                      "name": "Prosecco on tap (1.5 dl)"
+                    },
+                    "ar": {
+                      "name": "Prosecco on tap (1.5 dl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1500,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "spirits",
+              "title": "Spirits (4 cl)",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Szesszek (4 cl)"
+                },
+                "es": {
+                  "title": "Licores (4 cl)"
+                },
+                "it": {
+                  "title": "Distillati (4 cl)"
+                },
+                "he": {
+                  "title": "משקאות חריפים (4 ס״מ)"
+                },
+                "ar": {
+                  "title": "مشروبات روحية (4 سم)"
+                }
+              },
+              "items": [
+                {
+                  "id": "palinka-apricot",
+                  "kind": "drink",
+                  "name": "Pálinka — apricot",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Pálinka — barack"
+                    },
+                    "es": {
+                      "name": "Pálinka — apricot"
+                    },
+                    "it": {
+                      "name": "Pálinka — apricot"
+                    },
+                    "he": {
+                      "name": "Pálinka — apricot"
+                    },
+                    "ar": {
+                      "name": "Pálinka — apricot"
+                    }
+                  },
+                  "price": {
+                    "amount": 2500,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "palinka-pear",
+                  "kind": "drink",
+                  "name": "Pálinka — pear",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Pálinka — körte"
+                    },
+                    "es": {
+                      "name": "Pálinka — pear"
+                    },
+                    "it": {
+                      "name": "Pálinka — pear"
+                    },
+                    "he": {
+                      "name": "Pálinka — pear"
+                    },
+                    "ar": {
+                      "name": "Pálinka — pear"
+                    }
+                  },
+                  "price": {
+                    "amount": 2500,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "palinka-cherry",
+                  "kind": "drink",
+                  "name": "Pálinka — cherry",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Pálinka — cseresznye"
+                    },
+                    "es": {
+                      "name": "Pálinka — cherry"
+                    },
+                    "it": {
+                      "name": "Pálinka — cherry"
+                    },
+                    "he": {
+                      "name": "Pálinka — cherry"
+                    },
+                    "ar": {
+                      "name": "Pálinka — cherry"
+                    }
+                  },
+                  "price": {
+                    "amount": 2500,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "forras-plum",
+                  "kind": "drink",
+                  "name": "Forrás plum pálinka 55% (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Forrás szilvapálinka 55% (4 cl)"
+                    },
+                    "es": {
+                      "name": "Forrás plum pálinka 55% (4 cl)"
+                    },
+                    "it": {
+                      "name": "Forrás plum pálinka 55% (4 cl)"
+                    },
+                    "he": {
+                      "name": "Forrás plum pálinka 55% (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Forrás plum pálinka 55% (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "beefeater-gin",
+                  "kind": "drink",
+                  "name": "Beefeater gin (4 cl)",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Beefeater gin (4 cl)"
+                    },
+                    "es": {
+                      "name": "Beefeater gin (4 cl)"
+                    },
+                    "it": {
+                      "name": "Beefeater gin (4 cl)"
+                    },
+                    "he": {
+                      "name": "Beefeater gin (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Beefeater gin (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "jameson",
+                  "kind": "drink",
+                  "name": "Jameson (4 cl)",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Jameson (4 cl)"
+                    },
+                    "es": {
+                      "name": "Jameson (4 cl)"
+                    },
+                    "it": {
+                      "name": "Jameson (4 cl)"
+                    },
+                    "he": {
+                      "name": "Jameson (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Jameson (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "jim-beam",
+                  "kind": "drink",
+                  "name": "Jim Beam (4 cl)",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Jim Beam (4 cl)"
+                    },
+                    "es": {
+                      "name": "Jim Beam (4 cl)"
+                    },
+                    "it": {
+                      "name": "Jim Beam (4 cl)"
+                    },
+                    "he": {
+                      "name": "Jim Beam (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Jim Beam (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "unicum",
+                  "kind": "drink",
+                  "name": "Zwack Unicum (4 cl)",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Zwack Unicum (4 cl)"
+                    },
+                    "es": {
+                      "name": "Zwack Unicum (4 cl)"
+                    },
+                    "it": {
+                      "name": "Zwack Unicum (4 cl)"
+                    },
+                    "he": {
+                      "name": "Zwack Unicum (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Zwack Unicum (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2000,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "soft",
+              "title": "Non-alcoholic",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Alkoholmentes"
+                },
+                "es": {
+                  "title": "Sin alcohol"
+                },
+                "it": {
+                  "title": "Analcolici"
+                },
+                "he": {
+                  "title": "ללא אלכוהול"
+                },
+                "ar": {
+                  "title": "بدون كحول"
+                }
+              },
+              "items": [
+                {
+                  "id": "soft-drink",
+                  "kind": "drink",
+                  "name": "Soft drink (Pepsi, tonic, water)",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Üdítő (Pepsi, tonic, víz)"
+                    },
+                    "es": {
+                      "name": "Soft drink (Pepsi, tonic, water)"
+                    },
+                    "it": {
+                      "name": "Soft drink (Pepsi, tonic, water)"
+                    },
+                    "he": {
+                      "name": "Soft drink (Pepsi, tonic, water)"
+                    },
+                    "ar": {
+                      "name": "Soft drink (Pepsi, tonic, water)"
+                    }
+                  },
+                  "price": {
+                    "amount": 800,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "juice-3dl",
+                  "kind": "drink",
+                  "name": "Juice (3 dl)",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Gyümölcslé (3 dl)"
+                    },
+                    "es": {
+                      "name": "Juice (3 dl)"
+                    },
+                    "it": {
+                      "name": "Juice (3 dl)"
+                    },
+                    "he": {
+                      "name": "Juice (3 dl)"
+                    },
+                    "ar": {
+                      "name": "Juice (3 dl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 900,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "red-bull",
+                  "kind": "drink",
+                  "name": "Red Bull",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Red Bull"
+                    },
+                    "es": {
+                      "name": "Red Bull"
+                    },
+                    "it": {
+                      "name": "Red Bull"
+                    },
+                    "he": {
+                      "name": "Red Bull"
+                    },
+                    "ar": {
+                      "name": "Red Bull"
+                    }
+                  },
+                  "price": {
+                    "amount": 1800,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "tea",
+                  "kind": "drink",
+                  "name": "Tea",
+                  "tags": [],
+                  "locales": {
+                    "hu": {
+                      "name": "Tea"
+                    },
+                    "es": {
+                      "name": "Tea"
+                    },
+                    "it": {
+                      "name": "Tea"
+                    },
+                    "he": {
+                      "name": "Tea"
+                    },
+                    "ar": {
+                      "name": "Tea"
+                    }
+                  },
+                  "price": {
+                    "amount": 900,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

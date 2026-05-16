@@ -17,5 +17,9 @@ export async function GET(req: NextRequest) {
   const locale = parseAppLocaleParam(req.nextUrl.searchParams.get("locale"));
   const rows = (await db.collection(COL.providers).find({}).toArray()) as unknown as (Provider & { _id?: unknown })[];
   const providers = rows.map(stripId);
-  return NextResponse.json(resolveProvidersForLocale(providers, locale));
+  return NextResponse.json(resolveProvidersForLocale(providers, locale), {
+    headers: {
+      "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+    },
+  });
 }

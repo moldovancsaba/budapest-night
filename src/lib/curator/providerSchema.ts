@@ -95,6 +95,17 @@ export const curatedProviderSchema = z
     locales: providerLocalesIngestSchema,
     menu: venueMenuSchema.optional(),
     eventOfferings: z.array(eventOfferingSchema).max(12).optional(),
+    osmPlaceRef: z
+      .string()
+      .max(40)
+      .regex(/^(node|way|relation)\/\d+$/i)
+      .optional(),
+    reviewsSource: z.enum(["osm", "budapest-night"]).optional(),
+    reviewsSyncedAt: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/)
+      .optional(),
+    reviewsProfileUrl: z.string().url().max(500).optional(),
   })
   .strict();
 

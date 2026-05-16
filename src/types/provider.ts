@@ -23,10 +23,11 @@ export type FeaturedBadge =
 
 import type { EventOffering, VenueMenu } from "@/types/menu";
 import type { ProviderLocalesMap } from "@/types/providerLocale";
+import type { ProviderReviewsMeta } from "@/types/reviews";
 
 export type { ProviderLocaleContent, ProviderLocalesMap } from "@/types/providerLocale";
 
-export interface Provider {
+export interface Provider extends ProviderReviewsMeta {
   id: string;
   name: string;
   category: Category;
