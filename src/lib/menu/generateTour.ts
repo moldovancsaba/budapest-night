@@ -1,6 +1,7 @@
 import { getTourTemplate, type TourTemplate } from "@/data/tourTemplates";
 import type { Provider } from "@/types/provider";
 import { getEffectiveMenuTags, providerHasPublishedMenuItems } from "@/lib/menu/effectiveMenuTags";
+import { formatMenuPrice } from "@/lib/menu/formatMenuPrice";
 import { flattenProviderMenu } from "@/lib/menu/flattenMenuItems";
 
 export type TourStop = {
@@ -51,12 +52,13 @@ function highlightForProvider(provider: Provider, template: TourTemplate) {
   const tagSet = new Set(template.requiredTags);
   const matched = flat.filter((row) => row.item.tags.some((t) => tagSet.has(t as (typeof template.requiredTags)[number])));
   const pick = (matched.length ? matched : flat).slice(0, 3);
-  return pick.map((row) => ({
-    name: row.item.name,
-    priceLabel: row.item.price
-      ? `${row.item.price.amount} ${row.item.price.currency}${row.item.price.unit ? ` / ${row.item.price.unit}` : ""}`
-      : undefined,
-  }));
+  return pick.map((row) => {
+    const formatted = row.item.price ? formatMenuPrice(row.item.price) : null;
+    const priceLabel = formatted
+      ? `${formatted.main}${formatted.suffix ? ` ${formatted.suffix}` : ""}`
+      : undefined;
+    return { name: row.item.name, priceLabel };
+  });
 }
 
 export function countEligibleForTour(providers: Provider[], tourId: string): number {

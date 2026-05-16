@@ -563,6 +563,9 @@
     "filterDrink": "Bebida",
     "allTags": "Todas las etiquetas",
     "empty": "Ningún plato coincide aún. Se añaden más cartas al verificarse.",
+    "tourReady": "Listo — {count} locales con carta compatible",
+    "tourNeedsMenus": "Faltan cartas — {eligible} de {required} locales listos",
+    "venuesWithMenus": "{count} locales con carta publicada",
     "tours": {
       "palinka": {
         "title": "Ruta del pálinka",

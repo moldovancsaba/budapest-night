@@ -562,6 +562,9 @@
     "filterDrink": "شراب",
     "allTags": "كل الوسوم",
     "empty": "لا توجد عناصر مطابقة بعد.",
+    "tourReady": "جاهز — {count} أماكن بقوائم متوافقة",
+    "tourNeedsMenus": "قوائم مطلوبة — {eligible} من {required} أماكن جاهزة",
+    "venuesWithMenus": "{count} أماكن بقوائم منشورة",
     "tours": {
       "palinka": { "title": "مسار بالينكا", "description": "ثلاثة أماكن معروفة بالبراندي المجري." },
       "foodie": { "title": "جولة فودي", "description": "أطباق مجرية كلاسيكية وطعام الشارع." },

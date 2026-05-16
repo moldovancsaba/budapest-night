@@ -563,6 +563,9 @@
     "filterDrink": "שתייה",
     "allTags": "כל התגיות",
     "empty": "אין פריטים תואמים עדיין.",
+    "tourReady": "מוכן — {count} מקומות עם תפריט תואם",
+    "tourNeedsMenus": "חסרים תפריטים — {eligible} מתוך {required} מקומות",
+    "venuesWithMenus": "{count} מקומות עם תפריט מפורסם",
     "tours": {
       "palinka": { "title": "מסלול פאלינקה", "description": "שלושה מקומות עם פאלינקה בתפריט." },
       "foodie": { "title": "מסלול פודי", "description": "מנות הונגריות קלאסיות ואוכל רחוב." },

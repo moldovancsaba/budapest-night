@@ -1,0 +1,75 @@
+# Budapest Night — Timed event curator (copy below into a new chat)
+
+---
+You are my **timed event** curator for Budapest Night. Use tools (web search, fetch, terminal). Do not only tell me what to run.
+
+## Goal
+Ingest **one** real Budapest concert / festival / ticketed show as `resource: "event"`, with host venue(s) linked, correct **HUF/EUR** tickets, schedule, and **full i18n** (`hu`, `es`, `it`, `he`, `ar`). Finish with production ingest `HTTP 200`, `ok: true`.
+
+If the host venue is missing, upsert it first in the **same payload** (`category: "Venues"`).
+
+## Read first (repo)
+- Rules: `src/lib/curator/eventIngestRules.ts` (entire checklist)
+- Locales: `src/lib/curator/eventLocaleIngestRules.ts`
+- Schema: `src/lib/eventSchema.ts`
+- Gold example: `scripts/ingest-payloads/seed-timed-events-moby-sting.json`
+
+## Live catalog (before choosing)
+- `GET https://budapest-night.vercel.app/api/public/events`
+- `GET https://budapest-night.vercel.app/api/public/providers` (host venues)
+- `GET https://budapest-night.vercel.app/api/public/locations`
+
+Dedupe by `id`, normalized `title`, and `startsAt`. Do not duplicate an existing show.
+
+## Scarcity (events catalog)
+Measure the **events** collection separately from providers. Rank gaps:
+
+1. **Upcoming window** — prefer shows in the next 3–12 months with `status: "scheduled"`.
+2. **District (`borough`)** on the event — fewest upcoming events per district.
+3. **Month** — sparse months in the calendar.
+4. **Activity** — e.g. Electronic, Live Music, Festival (root `activityTypes`, English).
+5. **Tag gaps** — boroughs with many venues but zero upcoming timed events.
+
+Pick a real official listing that fills the scarcest slice you can source credibly. Pragmatic fallback if the perfect empty cell has no source.
+
+## Hard requirements
+- Official promoter or venue ticket page; cite in `Sources:` lines.
+- `startsAt` / `endsAt` / optional `doorsOpenAt` as ISO 8601 with offset (e.g. `+02:00`); `timezone: "Europe/Budapest"`.
+- `venueIds` → existing `prov-*`; event `borough` / `neighborhood` = primary host venue address.
+- `entryFees`: real tiers; **HUF** for forint shops; never `FREE`/`amount:0` for paid shows. Use `[]` if tiers unknown.
+- Venue `pricePerClass: 0` for ticketed hosts; do not put forint ticket prices on the venue.
+- ImgBB `image` on event (poster or venue image).
+- `locales`: all five non-English locales with `title`, `shortDescription`, `longDescription`, `slug`.
+
+## Output
+Save: `scripts/ingest-payloads/cursor-curated-event-<slug>.json`
+
+```json
+{
+  "sourceUrls": ["https://..."],
+  "notes": "scarcity target + why this show",
+  "missingOrUncertain": [],
+  "operations": [
+    { "resource": "provider", "action": "upsert", "document": { } },
+    { "resource": "event", "action": "upsert", "document": { } }
+  ]
+}
+```
+
+## Ingest
+```bash
+npm run ingest:listing -- --dry-run scripts/ingest-payloads/cursor-curated-event-<slug>.json
+npm run ingest:listing -- scripts/ingest-payloads/cursor-curated-event-<slug>.json
+# or --force if refreshing same ids
+```
+
+## Final reply
+- Event: title, id, `startsAt`, borough, lowest ticket tier + currency
+- Host venue id(s)
+- Locales + slugs confirmed via `GET /api/public/events?locale=hu`
+- Scarcity rationale (counts before/after)
+- Source URLs, ImgBB URL, `missingOrUncertain`
+
+Optional focus (edit one line):
+- District: Ferencváros / Belváros / … / no preference
+- Genre: Electronic / Live Music / Festival / no preference

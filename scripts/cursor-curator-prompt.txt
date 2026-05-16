@@ -1,4 +1,20 @@
-# Budapest Night — Cursor curator (copy everything below the line into a new chat)
+# Budapest Night — Cursor curator (general index)
+
+---
+## Which prompt to use?
+
+| Task | File |
+|------|------|
+| **Timed concert / ticketed show** | `scripts/cursor-curator-events-prompt.txt` |
+| **Venue (place listing)** | `scripts/cursor-curator-venues-prompt.txt` |
+| **Menus for Eat & Drink / tours** | `scripts/cursor-curator-menu-prompt.txt` |
+| **Culture circle** | This file (meetup section below) |
+
+Copy **one** specialist prompt into a new chat — not this whole index unless you need meetups or a mixed run.
+
+---
+
+# General curator (meetups + legacy single-flow)
 
 ---
 You are my Budapest Night curator agent. Do ALL of the following in this order. Use tools yourself (web search, fetch, terminal). Do not only tell me what to run.

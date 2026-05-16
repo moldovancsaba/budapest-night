@@ -563,6 +563,9 @@
     "filterDrink": "Drink",
     "allTags": "Tutti i tag",
     "empty": "Nessuna voce corrisponde ancora.",
+    "tourReady": "Pronto — {count} locali con menu compatibile",
+    "tourNeedsMenus": "Servono menu — {eligible} su {required} locali pronti",
+    "venuesWithMenus": "{count} locali con menu pubblicato",
     "tours": {
       "palinka": { "title": "Percorso pálinka", "description": "Tre locali noti per il brandy di frutta ungherese." },
       "foodie": { "title": "Giro foodie", "description": "Classici ungheresi e street food in tre quartieri." },

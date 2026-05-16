@@ -576,6 +576,9 @@
     "filterDrink": "Ital",
     "allTags": "Minden címke",
     "empty": "Még nincs egyező tétel. További helyek kerülnek fel, ahogy az étlapok ellenőrzésre kerülnek.",
+    "tourReady": "Kész — {count} hely megfelelő étlappal",
+    "tourNeedsMenus": "Étlapok kellenek — {eligible} / {required} hely kész",
+    "venuesWithMenus": "{count} hely közzétett étlappal",
     "tours": {
       "palinka": { "title": "Pálinka út", "description": "Három hely, ahol pálinka szerepel az étlapon." },
       "foodie": { "title": "Foodie kör", "description": "Magyar klasszikusok és street food három kerületben." },
