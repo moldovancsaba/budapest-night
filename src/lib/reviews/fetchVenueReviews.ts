@@ -34,7 +34,9 @@ export async function fetchVenueReviews(
   const reviewsSource =
     provider.reviewsSource === "budapest-night" && provider.reviewCount > 0
       ? "budapest-night"
-      : null;
+      : provider.reviewsSource === "osm" && provider.reviewCount > 0
+        ? "osm"
+        : null;
 
   return {
     summary: {

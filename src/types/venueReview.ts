@@ -25,7 +25,7 @@ export type PublicVenueReview = Pick<
 export type VenueReviewsSummary = {
   rating: number;
   reviewCount: number;
-  reviewsSource: "budapest-night" | null;
+  reviewsSource: "budapest-night" | "osm" | null;
 };
 
 export type VenueReviewsPayload = {

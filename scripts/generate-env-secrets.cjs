@@ -23,7 +23,7 @@ const { parse } = require("dotenv");
 const root = path.resolve(__dirname, "..");
 const envLocalPath = path.join(root, ".env.local");
 
-const AUTO_KEYS = ["INGEST_API_KEY", "ADMIN_SESSION_SECRET", "ADMIN_PASSWORD"];
+const AUTO_KEYS = ["INGEST_API_KEY", "ADMIN_SESSION_SECRET", "ADMIN_PASSWORD", "CRON_SECRET"];
 
 /** 32 bytes → 64 hex chars (Bearer / shared-secret strength). */
 function hex32() {
@@ -39,6 +39,7 @@ const generators = {
   INGEST_API_KEY: hex32,
   ADMIN_SESSION_SECRET: hex32,
   ADMIN_PASSWORD: adminPassword,
+  CRON_SECRET: hex32,
 };
 
 /** Canonical key order for new / merged files (matches .env.example). */
@@ -61,6 +62,9 @@ const KEY_ORDER = [
   "CURATOR_OPENAI_API_KEY",
   "CURATOR_OPENAI_MODEL",
   "CURATOR_OPENAI_BASE_URL",
+  "CRON_SECRET",
+  "REVIEWS_SYNC_ENABLED",
+  "OSM_CONTACT_EMAIL",
 ];
 
 function loadExisting() {
