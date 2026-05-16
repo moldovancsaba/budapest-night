@@ -36,15 +36,15 @@ export function LocaleSwitcher({
       <SelectTrigger
         className={cn(
           isHeader
-            ? "h-10 w-[4.75rem] shrink-0 gap-1 rounded-full border-border bg-card px-2 text-foreground shadow-none hover:border-primary focus:ring-primary/40 sm:w-[7.25rem] sm:gap-1.5 sm:px-2.5"
+            ? "h-10 w-10 shrink-0 gap-0 rounded-full border-border bg-card p-0 text-foreground shadow-none hover:border-foreground/40 focus:ring-foreground/30 sm:w-auto sm:gap-1.5 sm:px-3 [&>svg]:hidden sm:[&>svg]:block"
             : "h-10 w-[148px] gap-2 border-border bg-card text-sm",
           className,
         )}
         aria-label={t("label")}
       >
         <Languages className="h-4 w-4 shrink-0 text-muted-foreground" />
-        <span className="truncate text-[11px] font-semibold uppercase tracking-wide sm:hidden">{locale}</span>
-        <SelectValue className="hidden truncate text-xs sm:inline sm:text-sm" />
+        <span className="text-[11px] font-semibold uppercase tracking-wide sm:hidden">{locale}</span>
+        <SelectValue className="hidden whitespace-nowrap text-xs sm:inline sm:text-sm" />
       </SelectTrigger>
       <SelectContent align="end" className="border-border bg-card">
         {locales.map((code) => (

@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.operettszinhaz.hu/"
+  ],
+  "notes": "Fix duplicate IT slug",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-operetta-andrassy",
+        "name": "Budapest Operetta Theatre",
+        "category": "Venues",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 17, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+        "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/39LBnPpX/06e161c3f16b.jpg",
+        "email": "info@operettszinhaz.hu",
+        "website": "https://www.operettszinhaz.hu/",
+        "phone": "+36 1 332 5000",
+        "locales": {
+          "hu": {
+            "name": "Budapesti Operettszínház",
+            "shortDescription": "Nagy operettszínház az Andrássy uton, musicalekkel, operettekkel és gala-premierekkel az UNESCO-sugaruton.",
+            "longDescription": "A Budapesti Operettszínház az Andrássy ut 17. alatt magyar és nemzetközi musicalprodukciokat játssza egy díszes 19. századi teremben. Elhelyezkedese az Oktogon és az Opera metróállomás között van az avenue tengelyen. Jegyek és évadfüzet az operettszínház.hu oldalon.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "budapesti-operettszinhaz-hu"
+          },
+          "es": {
+            "name": "Teatro de Opereta de Budapest",
+            "shortDescription": "Gran teatro de opereta en Andrassy ut, con musicales, operetas y estrenos de gala en una avenida UNESCO.",
+            "longDescription": "El Teatro de Opereta de Budapest, en Andrassy ut 17, presenta producciones musicales hungaras e internacionales en una elegante sala del siglo XIX. Su ubicacion queda entre Oktogon y la estacion de Opera. Entradas y programa de temporada en operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "teatro-opereta-budapest-es"
+          },
+          "it": {
+            "name": "Teatro dell Operetta di Budapest",
+            "shortDescription": "Grande teatro dell operetta su Andrassy ut, con musical, operette e prime di gala in un viale UNESCO.",
+            "longDescription": "Il Teatro dell Operetta di Budapest, in Andrassy ut 17, mette in scena produzioni musicali ungheresi e internazionali in un elegante salone del XIX secolo. Si trova tra Oktogon e la fermata metro Opera. Biglietti e brochure di stagione su operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "operetta-andrassy-it"
+          },
+          "he": {
+            "name": "תיאטרון האופרטה של בודפשט",
+            "shortDescription": "בית אופרטה מפואר בשדרת אנדראשי, עם מחזות זמר, אופרטות והפקות גאלה בשדרה המוכרת על ידי אונסקו.",
+            "longDescription": "תיאטרון האופרטה של בודפשט ב-Andrassy ut 17 מעלה הפקות מוזיקליות הונגריות ובינלאומיות באולם מעוטר מהמאה ה-19. המיקום שלו נמצא בין אוקטוגון לתחנת המטרו Opera. כרטיסים וחוברות עונה זמינים ב-operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "budapest-operetta-he"
+          },
+          "ar": {
+            "name": "مسرح الأوبريت في بودابست",
+            "shortDescription": "مسرح أوبريت كبير على Andrassy ut يقدم المسرحيات الغنائية والأوبريتات والعروض الافتتاحية الاحتفالية في شارع مدرج لدى اليونسكو.",
+            "longDescription": "يقدم مسرح الأوبريت في بودابست في Andrassy ut 17 إنتاجات موسيقية مجرية ودولية داخل قاعة مزخرفة من القرن التاسع عشر. يقع بين Oktogon ومحطة مترو Opera. التذاكر وكتيبات الموسم متاحة عبر operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "budapest-operetta-ar"
+          }
+        },
+        "gapKey": "Events|Terézváros|Andrássy út",
+        "imageSource": "https://www.operettszinhaz.hu/images/operetta-facade.jpg"
+      }
+    }
+  ]
+}

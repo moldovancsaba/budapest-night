@@ -64,6 +64,7 @@ async function main() {
     }
     const document = { ...p, locales: buildLocales(p, i18n) };
     delete document._id;
+    delete document.menuTags;
 
     if (p.id === "prov-cov-operetta-andrassy" && document.locales.it) {
       document.locales.it.slug = "operetta-andrassy-it";

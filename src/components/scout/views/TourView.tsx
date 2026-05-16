@@ -134,7 +134,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
                     src={stop.image || CMS_MEDIA.fallbackListing}
                     alt={stop.providerName}
                   />
-                  <span className="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-bold text-foreground-foreground">
+                  <span className="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                     {idx + 1}
                   </span>
                 </div>

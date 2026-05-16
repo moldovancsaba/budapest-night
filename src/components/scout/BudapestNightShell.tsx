@@ -161,7 +161,7 @@ export default function BudapestNightShell() {
             >
               <Heart className="h-4 w-4" />
               {saved.length > 0 && (
-                <span className="absolute -right-1 -top-1 grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-foreground-foreground">
+                <span className="absolute -right-1 -top-1 grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
                   {saved.length}
                 </span>
               )}
@@ -178,7 +178,7 @@ export default function BudapestNightShell() {
             >
               {t("budget")}
               {items.length > 0 && (
-                <span className="grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-foreground-foreground">
+                <span className="grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1.5 text-[10px] font-bold tabular-nums text-primary-foreground">
                   {items.length}
                 </span>
               )}

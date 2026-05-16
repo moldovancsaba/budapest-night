@@ -1,0 +1,674 @@
+{
+  "prov-cov-roman-cafe-aquincum": {
+    "hu": {
+      "name": "Aquincum Múzeum Kávézó",
+      "short": "Múzeumi kávézó Aquincumban — kávé és snack a római romok között Óbudán.",
+      "long": "Az Aquincum Múzeum kávézója kávét és könnyű ételeket kínál a Szentendrei úti bejáratnál, a szabadtéri romok megtekintése előtt. Családok pihennek meg itt a tárlatvezetések és a játszótéri látogatások között. Kombinált jegyek az aquincum.hu oldalon.\n\nSources: https://www.aquincum.hu/",
+      "slug": "aquincum-muzeum-kavézo"
+    },
+    "es": {
+      "name": "Café del Museo Aquincum",
+      "short": "Cafetería del museo en Aquincum — café y aperitivos entre las ruinas romanas de Óbuda.",
+      "long": "El café del Museo Aquincum ofrece café y comidas ligeras en la entrada de Szentendrei út antes de explorar las ruinas al aire libre. Las familias se detienen aquí entre visitas guiadas y juegos. Entradas combinadas en aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+      "slug": "cafe-museo-aquincum"
+    },
+    "it": {
+      "name": "Caffè del Museo Aquincum",
+      "short": "Caffè museale ad Aquincum — caffè e snack tra le rovine romane di Óbuda.",
+      "long": "Il caffè del Museo Aquincum offre caffè e pasti leggeri all'ingresso di Szentendrei út prima di esplorare le rovine all'aperto. Le famiglie si fermano tra visite guidate e giochi al parco. Biglietti combinati su aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+      "slug": "caffe-museo-aquincum"
+    },
+    "he": {
+      "name": "בית קפה מוזיאון אקווינקום",
+      "short": "בית קפה במוזיאון אקווינקום — קפה וחטיפים בין טיולים בשרידים הרומיים שבאובודה.",
+      "long": "בית הקפה של מוזיאון אקווינקום מציע קפה וארוחות קלות בכניסה לרחוב Szentendrei לפני סיור בחורבות הפתוחות. משפחות עוצרות כאן בין סיורים מודרכים וביקורים במגרש המשחקים. כרטיסים משולבים באתר aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+      "slug": "beit-kafe-aquincum"
+    },
+    "ar": {
+      "name": "مقهى متحف أكوينكوم",
+      "short": "مقهى المتحف في أكوينكوم — قهوة ووجبات خفيفة بين جولات الأطلال الرومانية في أوبودا.",
+      "long": "يقدم مقهى متحف أكوينكوم القهوة والوجبات الخفيفة عند مدخل شارع Szentendrei قبل استكشاف الأطلال في الهواء الطلق. تتوقف العائلات هنا بين الجولات المرشدة وزيارات الملعب. التذاكر المشتركة متاحة على aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+      "slug": "maqha-mathaf-aquincum"
+    }
+  },
+  "prov-cov-liliom-moricz": {
+    "hu": {
+      "name": "Liliom Kávézó",
+      "short": "Sarokkávézó a Bartók Béla úton — eszpresszó és sütemények a Móricz Zsigmond körtéri villamosmegállónál.",
+      "long": "A Liliom Kávézó a Bartók Béla út 15. szám alatt várja a reggeli ingázókat a Móricz Zsigmond körtérről eszpresszóval és friss péksüteményekkel. Délután a borral és süteménnyel a törzsvendégek töltik el az időt. Nyitvatartás a liliomcafe.hu oldalon.\n\nSources: https://www.liliomcafe.hu/",
+      "slug": "liliom-kavézo-moricz"
+    },
+    "es": {
+      "name": "Café Liliom",
+      "short": "Cafetería de esquina en Bartók Béla út — espressos y pasteles junto a la parada de tranvía de Móricz körtér.",
+      "long": "El Café Liliom en Bartók Béla út 15 sirve a los madrugadores de Móricz Zsigmond körtér con espresso y pasteles frescos. El vino y las tartas atraen a los vecinos habituales por la tarde. Horario en liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+      "slug": "cafe-liliom-moricz"
+    },
+    "it": {
+      "name": "Caffè Liliom",
+      "short": "Caffè d'angolo su Bartók Béla út — espresso e dolci vicino alla fermata del tram di Móricz körtér.",
+      "long": "Il Caffè Liliom in Bartók Béla út 15 accoglie i pendolari mattutini da Móricz Zsigmond körtér con espresso e pasticcini freschi. Il pomeriggio offre vino e torte ai clienti abituali del quartiere. Orari su liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+      "slug": "caffe-liliom-moricz"
+    },
+    "he": {
+      "name": "בית קפה ליליום",
+      "short": "בית קפה פינתי ברחוב Bartók Béla — אספרסו ועוגות ליד תחנת הטרם של Móricz körtér.",
+      "long": "בית הקפה ליליום ברחוב Bartók Béla 15 מציע אספרסו ומאפים טריים לנוסעי הבוקר מ-Móricz Zsigmond körtér. בשעות אחר הצהריים מגיעים שכנים קבועים ליין ועוגה. שעות הפעילות בלiliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+      "slug": "beit-kafe-liliom-moricz"
+    },
+    "ar": {
+      "name": "مقهى ليليوم",
+      "short": "مقهى الزاوية في شارع Bartók Béla — إسبريسو وكعك بجوار محطة الترام في Móricz körtér.",
+      "long": "يستقبل مقهى ليليوم في شارع Bartók Béla رقم 15 المسافرين الصباحيين من Móricz Zsigmond körtér بالإسبريسو والمعجنات الطازجة. يجذب النبيذ والكعك الزبائن المعتادين في فترة ما بعد الظهر. الساعات على liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+      "slug": "maqha-liliom-moricz"
+    }
+  },
+  "prov-cov-obester-bikas": {
+    "hu": {
+      "name": "Obester Specialty Coffee",
+      "short": "Pörköldés-kávézó a Bikás parknál — harmadik hullámos eszpresszó a metróvégállomás mellett Újbudán.",
+      "long": "Az Obester Specialty Coffee helyben pörköl a Bikás park sétányon, eszpresszót, filteres kávét és ömlesztett szemet kínálva a dél-budai ingázóknak. A világos bár alkalmas laptopozásra kiállítási látogatások előtt. Nyitvatartás az obester.hu oldalon.\n\nSources: https://www.obester.hu/",
+      "slug": "obester-specialty-coffee-bikas"
+    },
+    "es": {
+      "name": "Obester Specialty Coffee",
+      "short": "Café con tostadora en Bikás park — espresso de tercera ola junto al terminal de metro en Újbuda.",
+      "long": "Obester Specialty Coffee tuesta en el local cerca del paseo de Bikás park con espresso, filtro y granos para llevar para los viajeros del sur de Buda. El luminoso bar es ideal para trabajar con portátil antes de visitar salas de exposiciones. Horario en obester.hu.\n\nSources: https://www.obester.hu/",
+      "slug": "obester-specialty-coffee-bikas"
+    },
+    "it": {
+      "name": "Obester Specialty Coffee",
+      "short": "Caffè con tostatura in loco a Bikás park — espresso di terza ondata vicino al capolinea della metro a Újbuda.",
+      "long": "Obester Specialty Coffee tosta sul posto vicino al viale di Bikás park con espresso, filtro e chicchi al dettaglio per i pendolari del sud di Buda. Il bar luminoso si presta al lavoro con laptop prima delle visite alle sale espositive. Orari su obester.hu.\n\nSources: https://www.obester.hu/",
+      "slug": "obester-specialty-coffee-bikas"
+    },
+    "he": {
+      "name": "Obester Specialty Coffee",
+      "short": "בית קפה עם קלייה מקומית ב-Bikás park — אספרסו גל שלישי ליד תחנת המטרו הסופית ב-Újbuda.",
+      "long": "Obester Specialty Coffee קולה קפה במקום ליד שדרות Bikás park עם אספרסו, פילטר וגרגרי קפה קמעונאיים לנוסעי דרום בודה. הבר הבהיר מתאים לעבודה עם מחשב נייד לפני ביקורים באולמות תצוגה. שעות פעילות באתר obester.hu.\n\nSources: https://www.obester.hu/",
+      "slug": "obester-specialty-coffee-bikas"
+    },
+    "ar": {
+      "name": "Obester Specialty Coffee",
+      "short": "مقهى تحميص محلي في Bikás park — إسبريسو الموجة الثالثة بجوار محطة المترو في Újbuda.",
+      "long": "يحمّص Obester Specialty Coffee القهوة في الموقع بالقرب من شارع Bikás park مع إسبريسو وفلتر وحبوب قهوة للبيع بالتجزئة لمسافري جنوب بودا. يناسب البار المضيء العمل بالحاسوب المحمول قبل زيارة قاعات المعارض. الساعات على obester.hu.\n\nSources: https://www.obester.hu/",
+      "slug": "obester-specialty-coffee-bikas"
+    }
+  },
+  "prov-cov-spoon-party-prom": {
+    "hu": {
+      "name": "Spoon Café & Lounge",
+      "short": "Kikötött étterembárka a Dunán — vacsorák, DJ-k és buliéjszakák a sétány mólóján.",
+      "long": "A Spoon Café & Lounge egy étterembárka, amely a Vigadó utcai kikötőnél horgonyoz, egész éves étkezési és hétvégi partirendezvényekkel. A fedélzet közvetlenül a Duna-korzóra és a Lánchíd látványára néz. Program és foglalás a spoon.hu oldalon.\n\nSources: https://www.spoon.hu/",
+      "slug": "spoon-cafe-lounge-duna"
+    },
+    "es": {
+      "name": "Spoon Café & Lounge",
+      "short": "Barco restaurante amarrado en el Danubio — cenas, DJs y noches de fiesta en el muelle del paseo.",
+      "long": "Spoon Café & Lounge es un barco restaurante atracado en Vigadó utca con comidas durante todo el año y eventos festivos los fines de semana. La cubierta da directamente al Paseo del Danubio y las vistas al Puente de las Cadenas. Programa y reservas en spoon.hu.\n\nSources: https://www.spoon.hu/",
+      "slug": "spoon-cafe-lounge-danubio"
+    },
+    "it": {
+      "name": "Spoon Café & Lounge",
+      "short": "Ristorante galleggiante ormeggiato sul Danubio — cene, DJ e serate di festa sul pontile del lungodanubio.",
+      "long": "Spoon Café & Lounge è un battello ristorante ormeggiato a Vigadó utca con ristorazione tutto l'anno ed eventi festivi nel fine settimana. Il ponte si affaccia direttamente sul Lungofiume del Danubio e sul Ponte delle Catene. Programma e prenotazioni su spoon.hu.\n\nSources: https://www.spoon.hu/",
+      "slug": "spoon-cafe-lounge-danubio"
+    },
+    "he": {
+      "name": "Spoon Café & Lounge",
+      "short": "סירת מסעדה עגונה על הדנובה — ארוחות ערב, די-ג'ים ולילות מסיבה על מזח הטיילת.",
+      "long": "Spoon Café & Lounge היא סירת מסעדה העגונה ב-Vigadó utca עם ארוחות לאורך כל השנה ואירועי מסיבה בסופי שבוע. הסיפון מביט ישירות על טיילת הדנובה ועל נוף גשר השלשלאות. תוכנית והזמנות באתר spoon.hu.\n\nSources: https://www.spoon.hu/",
+      "slug": "spoon-cafe-lounge-danube"
+    },
+    "ar": {
+      "name": "Spoon Café & Lounge",
+      "short": "مطعم سفينة راسية على نهر الدانوب — عشاء ودي جي وليالي حفلات على رصيف الكورنيش.",
+      "long": "Spoon Café & Lounge هو مطعم سفينة راسية عند Vigadó utca مع تناول الطعام على مدار العام وأحداث حفلات في عطلات نهاية الأسبوع. يطل الطابق العلوي مباشرة على كورنيش الدانوب ومناظر جسر السلاسل. البرنامج والحجوزات على spoon.hu.\n\nSources: https://www.spoon.hu/",
+      "slug": "spoon-cafe-lounge-danube"
+    }
+  },
+  "prov-cov-becketts-liszt": {
+    "hu": {
+      "name": "Beckett's Irish Pub",
+      "short": "Ír kocsma a Liszt Ferenc téren — élőzene, sporttévék és késő sörök az étteremsorban.",
+      "long": "A Beckett's a Liszt Ferenc tér sarkát foglalja el Guinness-csapokkal, pub-étellel és hétvégi élőzenével, szemben a gyalogos étteremsorral. Focimeccsek közvetítései és DJ-estek pezsgőn tartják a helyszínt a színházi előadások után. Részletek a becketts.hu oldalon.\n\nSources: https://www.becketts.hu/",
+      "slug": "becketts-irish-pub-liszt"
+    },
+    "es": {
+      "name": "Beckett's Irish Pub",
+      "short": "Pub irlandés en Liszt Ferenc tér — bandas en vivo, pantallas de deportes y cervezas tardías en la fila de restaurantes.",
+      "long": "Beckett's ocupa un lugar central en Liszt Ferenc tér con grifos de Guinness, comida de pub y música en vivo los fines de semana frente a la calle peatonal de restaurantes. Las retransmisiones de fútbol y las noches de DJ animan el local tras las funciones de teatro. Detalles en becketts.hu.\n\nSources: https://www.becketts.hu/",
+      "slug": "becketts-irish-pub-liszt"
+    },
+    "it": {
+      "name": "Beckett's Irish Pub",
+      "short": "Pub irlandese in Liszt Ferenc tér — band dal vivo, schermi sportivi e birre notturne nella fila di ristoranti.",
+      "long": "Beckett's presidia Liszt Ferenc tér con i rubinetti della Guinness, cibo da pub e musica dal vivo nel weekend, affacciato sulla striscia pedonale di ristoranti. Le dirette di calcio e le serate DJ animano il locale dopo gli spettacoli teatrali. Dettagli su becketts.hu.\n\nSources: https://www.becketts.hu/",
+      "slug": "becketts-irish-pub-liszt"
+    },
+    "he": {
+      "name": "Beckett's Irish Pub",
+      "short": "פאב אירי ב-Liszt Ferenc tér — להקות חיות, מסכי ספורט ושתייה מאוחרת ברחוב המסעדות.",
+      "long": "Beckett's עוגן ב-Liszt Ferenc tér עם ברזי גינס, אוכל פאב ומוזיקה חיה בסופי שבוע מול רחוב ההולכי רגל של מסעדות. שידורי כדורגל ולילות דיג'יי שומרים על המקום פעיל לאחר הצגות תיאטרון. פרטים באתר becketts.hu.\n\nSources: https://www.becketts.hu/",
+      "slug": "becketts-irish-pub-liszt"
+    },
+    "ar": {
+      "name": "Beckett's Irish Pub",
+      "short": "حانة أيرلندية في Liszt Ferenc tér — فرق موسيقية حية وشاشات رياضية وبيرة متأخرة في صف المطاعم.",
+      "long": "يحتل Beckett's مكانة بارزة في Liszt Ferenc tér بصنابير الغينيس وأكل الحانات والموسيقى الحية في عطلات نهاية الأسبوع أمام شارع المطاعم للمشاة. تبث مباريات كرة القدم وتقام ليالي الدي جي لإبقاء المكان حياً بعد عروض المسرح. التفاصيل على becketts.hu.\n\nSources: https://www.becketts.hu/",
+      "slug": "becketts-irish-pub-liszt"
+    }
+  },
+  "prov-cov-a38-muegyetem": {
+    "hu": {
+      "name": "A38 Hajó",
+      "short": "Koncerthajó a Petőfi hídnál — élő zenekarok és klubestek a Dunán az egyetemi parton.",
+      "long": "Az A38 egy átalakított ukrán kőhordó, amely a Petőfi hídnál horgonyoz, több fedélzettel koncertekre és DJ-bulikra. A „legjobb bár a világon\" szavazásokon nyert, és a Műegyetem melletti folyóparti éjszakai élet nélkülözhetetlen helyszíne maradt. Jegyek az a38.hu oldalon.\n\nSources: https://www.a38.hu/en",
+      "slug": "a38-hajo-petofi-hid"
+    },
+    "es": {
+      "name": "Barco A38",
+      "short": "Barco de conciertos junto al puente Petőfi — bandas en vivo y noches de club en el Danubio frente a la universidad.",
+      "long": "A38 es un carguero ucraniano de piedra reconvertido amarrado en el puente Petőfi con varias cubiertas para conciertos y fiestas de DJ. Ganó encuestas al \"mejor bar del mundo\" y sigue siendo esencial para la vida nocturna a orillas del río cerca de Műegyetem. Entradas en a38.hu.\n\nSources: https://www.a38.hu/en",
+      "slug": "barco-a38-petofi"
+    },
+    "it": {
+      "name": "Nave A38",
+      "short": "Nave da concerti vicino al ponte Petőfi — band dal vivo e serate club sul Danubio di fronte all'università.",
+      "long": "A38 è una ex nave da carico ucraina ormeggiata al ponte Petőfi con più ponti per concerti e feste DJ. Ha vinto sondaggi come \"miglior bar del mondo\" e rimane imprescindibile per la vita notturna sul fiume vicino a Műegyetem. Biglietti su a38.hu.\n\nSources: https://www.a38.hu/en",
+      "slug": "nave-a38-petofi"
+    },
+    "he": {
+      "name": "ספינת A38",
+      "short": "ספינת קונצרטים ליד גשר פטופי — להקות חיות ולילות מועדון על הדנובה לצד הקמפוס האוניברסיטאי.",
+      "long": "A38 היא ספינת שינוע אוקראינית לאבן שהוסבה ועגינה ליד גשר פטופי עם מספר סיפונים לקונצרטים ומסיבות דיג'יי. זכתה בסקרים לתואר \"הבר הטוב בעולם\" ונשארת חיונית לחיי הלילה על הנהר ליד Műegyetem. כרטיסים באתר a38.hu.\n\nSources: https://www.a38.hu/en",
+      "slug": "sfinat-a38-petofi"
+    },
+    "ar": {
+      "name": "سفينة A38",
+      "short": "سفينة حفلات بجوار جسر بيتوفي — فرق موسيقية حية وليالي نادٍ على نهر الدانوب بجانب الجامعة.",
+      "long": "A38 هي سفينة شحن أوكرانية للحجارة تم تحويلها وترسيخها عند جسر بيتوفي بأسطح متعددة للحفلات الموسيقية وحفلات الدي جي. فازت بلقب \"أفضل بار في العالم\" وتظل أساسية لحياة الليل على ضفة النهر بالقرب من Műegyetem. التذاكر على a38.hu.\n\nSources: https://www.a38.hu/en",
+      "slug": "safinat-a38-petofi"
+    }
+  },
+  "prov-cov-robertson-castle": {
+    "hu": {
+      "name": "Robertson Bár",
+      "short": "Koktélbár a Várhegyen — DJ-k és vegyes italok boltíves termekben a Robertson utcán.",
+      "long": "A Robertson Bár a Robertson utcán késő esti koktélokat és DJ-ket kínál a budavári lakónegyedben. A kőbelső a naplementei várnegyed-séták után vonzza a látogatókat. Menü a robertsonbar.hu oldalon.\n\nSources: https://www.robertsonbar.hu/",
+      "slug": "robertson-bar-varhegy"
+    },
+    "es": {
+      "name": "Robertson Bar",
+      "short": "Bar de cócteles en el Castillo de Buda — DJs y cócteles en salas abovedadas en Robertson utca.",
+      "long": "Robertson Bar en Robertson utca trae cócteles de madrugada y DJs a los callejones residenciales del Castillo de Buda. El interior de piedra atrae visitantes tras los paseos nocturnos por el castillo. Menú en robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+      "slug": "robertson-bar-castillo"
+    },
+    "it": {
+      "name": "Robertson Bar",
+      "short": "Cocktail bar sul Castello di Buda — DJ e cocktail in sale con volta su Robertson utca.",
+      "long": "Il Robertson Bar in Robertson utca porta cocktail notturni e DJ nei vicoli residenziali del Castello di Buda. L'interno in pietra attrae visitatori dopo le passeggiate serali al castello. Menu su robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+      "slug": "robertson-bar-castello"
+    },
+    "he": {
+      "name": "רוברטסון בר",
+      "short": "בר קוקטיילים בגבעת הטירה — דיג'ים ומשקאות מעורבים בחדרים קמורים ברחוב Robertson.",
+      "long": "רוברטסון בר ברחוב Robertson מביא קוקטיילים ודיג'ים בלילות מאוחרים לסמטאות המגורים של טירת בודה. הפנים האבנית מושכת מבקרים לאחר טיולי הטירה בשקיעה. תפריט באתר robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+      "slug": "robertson-bar-castle"
+    },
+    "ar": {
+      "name": "روبرتسون بار",
+      "short": "بار كوكتيلات في قلعة بودا — دي جي ومشروبات مشكلة في قاعات مقببة في شارع Robertson.",
+      "long": "يجلب Robertson Bar في شارع Robertson الكوكتيلات المتأخرة والدي جي إلى الأزقة السكنية لقلعة بودا. يجذب الداخل الحجري الزوار بعد نزهات القلعة عند غروب الشمس. القائمة على robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+      "slug": "robertson-bar-castle"
+    }
+  },
+  "prov-cov-gellert-bar-party": {
+    "hu": {
+      "name": "Gellért Lobby Bár",
+      "short": "Szállodai bárpartik a Gellértben — jazz, koktélok és esti kiszolgálás szecessziós szalonokban.",
+      "long": "A Gellért Hotel lobby bárja zongorás jazzt és koktélkiszolgálást nyújt a hírneves üvegkupola alatt a Szent Gellért téren. Hétvégi esték előtt elegáns öltözetben kell megjelenni a fürdőlátogatások után. Program a danubiusgellert.com oldalon.\n\nSources: https://www.danubiusgellert.com/bars",
+      "slug": "gellert-lobby-bar"
+    },
+    "es": {
+      "name": "Gellért Lobby Bar",
+      "short": "Noches de hotel bar en el Gellért — jazz, cócteles y servicio nocturno en salones art nouveau.",
+      "long": "El lobby bar del Hotel Gellért ofrece piano jazz y servicio de cócteles bajo la famosa cúpula de cristal en Szent Gellért tér. Vístase elegante para los fines de semana después de las visitas al spa. Programación en danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+      "slug": "gellert-lobby-bar"
+    },
+    "it": {
+      "name": "Gellért Lobby Bar",
+      "short": "Serate bar all'hotel Gellért — jazz, cocktail e servizio serale in saloni art nouveau.",
+      "long": "Il lobby bar dell'Hotel Gellért ospita piano jazz e servizio cocktail sotto la famosa cupola di vetro in Szent Gellért tér. Abbigliamento elegante per i fine settimana dopo le visite alla spa. Programma su danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+      "slug": "gellert-lobby-bar"
+    },
+    "he": {
+      "name": "בר לובי גלרט",
+      "short": "לילות בר במלון גלרט — ג'אז, קוקטיילים ושירות לילי בסלונים בסגנון Art Nouveau.",
+      "long": "בר הלובי של מלון גלרט מארח פסנתר ג'אז ושירות קוקטיילים תחת הכיפה הזכוכית המפורסמת ב-Szent Gellért tér. לבשו בצורה מכובדת לסופי שבוע לאחר ביקורים בספא. תוכנית באתר danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+      "slug": "gellert-lobby-bar"
+    },
+    "ar": {
+      "name": "بار لوبي جيليرت",
+      "short": "ليالي البار الفندقي في جيليرت — جاز وكوكتيلات وخدمة ليلية في صالونات الفن الجديد.",
+      "long": "يستضيف بار لوبي فندق جيليرت موسيقى البيانو الجاز وخدمة الكوكتيلات تحت القبة الزجاجية الشهيرة في Szent Gellért tér. ارتدِ ملابس أنيقة لليالي نهاية الأسبوع بعد زيارات المنتجع الصحي. البرنامج على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+      "slug": "gellert-lobby-bar"
+    }
+  },
+  "prov-cov-johnnys-becsi": {
+    "hu": {
+      "name": "Johnny's American Bar",
+      "short": "Amerikai sportbár a Bécsi úton — burgerek, csapolt sörök és késő hétvégék Óbudán.",
+      "long": "A Johnny's American Bar a Bécsi úton közvetíti a sportot US-stílusú burgerekkel és kézműves sörcsapokkal. A hétvégék sokáig tartanak az óbudai expat és helyi közönség számára a villamosvonal mentén. Menü a johnnysbar.hu oldalon.\n\nSources: https://www.johnnysbar.hu/",
+      "slug": "johnnys-american-bar-becsi"
+    },
+    "es": {
+      "name": "Johnny's American Bar",
+      "short": "Bar deportivo americano en Bécsi út — hamburguesas, cervezas de barril y largas noches en Óbuda.",
+      "long": "Johnny's American Bar en Bécsi út retransmite deportes con hamburguesas al estilo americano y cervezas artesanales. Los fines de semana se alargan para el público local y expatriado de Óbuda a lo largo de la línea del tranvía. Menú en johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+      "slug": "johnnys-american-bar-becsi"
+    },
+    "it": {
+      "name": "Johnny's American Bar",
+      "short": "Bar sportivo americano su Bécsi út — hamburger, birre alla spina e serate lunghe a Óbuda.",
+      "long": "Johnny's American Bar su Bécsi út trasmette sport con hamburger stile americano e birre artigianali alla spina. I fine settimana si prolungano per gli expat e i locali di Óbuda lungo la linea del tram. Menu su johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+      "slug": "johnnys-american-bar-becsi"
+    },
+    "he": {
+      "name": "Johnny's American Bar",
+      "short": "בר ספורט אמריקאי ב-Bécsi út — המבורגרים, ברזי בירה ולילות ארוכים באובודה.",
+      "long": "Johnny's American Bar ב-Bécsi út משדר ספורט עם המבורגרים בסגנון אמריקאי וברזי בירה מלאכותית. סופי השבוע נמשכים עד מאוחר לקהל האקספטים והמקומיים של אובודה לאורך קו הטרם. תפריט באתר johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+      "slug": "johnnys-american-bar-becsi"
+    },
+    "ar": {
+      "name": "Johnny's American Bar",
+      "short": "بار رياضي أمريكي في شارع Bécsi — برغر وبيرة من الصنبور وليالي متأخرة في أوبودا.",
+      "long": "يبث Johnny's American Bar في شارع Bécsi الرياضة مع البرغر على الطراز الأمريكي وصنابير البيرة الحرفية. تمتد نهايات الأسبوع في وقت متأخر لجمهور المغتربين والمحليين في أوبودا على طول خط الترام. القائمة على johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+      "slug": "johnnys-american-bar-becsi"
+    }
+  },
+  "prov-cov-binx-infopark": {
+    "hu": {
+      "name": "BinX Rooftop",
+      "short": "Infoparki tetőterasz-bulik — panorámakoktélok és DJ-k a Duna feletti irodaházak tetején.",
+      "long": "A BinX Rooftop az Infopark sétányon nyári DJ-partikat rendez Pest-Buda panorámájával az irodatornyok tetejéről. A munkaidő utáni tömegek hétvégi táncestekkel keverednek. Vendéglista a binxrooftop.hu oldalon.\n\nSources: https://www.binxrooftop.hu/",
+      "slug": "binx-rooftop-infopark"
+    },
+    "es": {
+      "name": "BinX Rooftop",
+      "short": "Fiestas en azotea en Infopark — cócteles con vistas al skyline y DJs sobre las oficinas del Danubio.",
+      "long": "BinX Rooftop en Infopark sétány organiza fiestas DJ de verano con vistas del skyline Pest-Buda desde las torres de oficinas. Las multitudes de después del trabajo se mezclan con las noches de baile del fin de semana. Lista de invitados en binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+      "slug": "binx-rooftop-infopark"
+    },
+    "it": {
+      "name": "BinX Rooftop",
+      "short": "Feste sul tetto a Infopark — cocktail con vista sullo skyline e DJ sopra gli uffici del Danubio.",
+      "long": "BinX Rooftop in Infopark sétány ospita feste DJ estive con viste panoramiche Pest-Buda dalle torri per uffici. Le folle after-work si mescolano con le serate danzanti del fine settimana. Lista ospiti su binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+      "slug": "binx-rooftop-infopark"
+    },
+    "he": {
+      "name": "BinX Rooftop",
+      "short": "מסיבות גג ב-Infopark — קוקטיילים עם נוף לקו האופק ודיג'ים מעל משרדי הדנובה.",
+      "long": "BinX Rooftop ב-Infopark sétány מארח מסיבות דיג'יי קיציות עם נוף פנורמי של פשט-בודה מגורדי השחקים. קהל שעות אחרי העבודה מתמזג עם לילות ריקוד של סופי שבוע. רשימת אורחים באתר binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+      "slug": "binx-rooftop-infopark"
+    },
+    "ar": {
+      "name": "BinX Rooftop",
+      "short": "حفلات السطح في Infopark — كوكتيلات بإطلالة على الأفق ودي جي فوق مكاتب الدانوب.",
+      "long": "يستضيف BinX Rooftop في Infopark sétány حفلات دي جي صيفية مع مناظر بانورامية لـ Pest-Buda من أبراج المكاتب. يختلط حشد ما بعد العمل مع ليالي الرقص في عطلات نهاية الأسبوع. قائمة الضيوف على binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+      "slug": "binx-rooftop-infopark"
+    }
+  },
+  "prov-cov-bock-deak": {
+    "hu": {
+      "name": "Bock Bisztró",
+      "short": "Borközpontú bisztró a Deák tér közelében — Bock pincészeti borok, szezonális magyar fogások és hangulatos téglás étteremterem.",
+      "long": "A Bock Bisztró a Kért utcán bemutatja a Bock család borainak válogatását a modern magyar konyha mellett, rövid sétára a Deák tértől. A pincészeti borlap és a napi menük a bockbistro.hu oldalon jelennek meg. Hétvégén foglalás ajánlott.\n\nSources: https://www.bockbistro.hu/",
+      "slug": "bock-bisztro-deak"
+    },
+    "es": {
+      "name": "Bock Bistro",
+      "short": "Bistró centrado en vinos cerca de Deák — etiquetas Bock, platos húngaros de temporada y acogedora sala de ladrillo.",
+      "long": "Bock Bistro en Kért utca exhibe los vinos de la familia Bock junto con cocina húngara moderna a un corto paseo de Deák tér. La carta de bodega y los menús diarios se publican en bockbistro.hu. Se recomienda reservar los fines de semana.\n\nSources: https://www.bockbistro.hu/",
+      "slug": "bock-bistro-deak"
+    },
+    "it": {
+      "name": "Bock Bistro",
+      "short": "Bistrot orientato al vino vicino a Deák — etichette Bock, piatti ungheresi di stagione e accogliente sala in mattoni.",
+      "long": "Il Bock Bistro in Kért utca mette in mostra i vini della famiglia Bock insieme alla cucina ungherese moderna a pochi passi da Deák tér. La lista delle cantine e i menù del giorno sono pubblicati su bockbistro.hu. Si consiglia la prenotazione nei fine settimana.\n\nSources: https://www.bockbistro.hu/",
+      "slug": "bock-bistro-deak"
+    },
+    "he": {
+      "name": "בוק ביסטרו",
+      "short": "ביסטרו ממוקד יין ליד דיאק — יינות Bock, מנות הונגריות עונתיות וחדר אוכל לבנים נעים.",
+      "long": "Bock Bistro ברחוב Kért מציג את יינות משפחת Bock לצד בישול הונגרי מודרני במרחק קצר מ-Deák tér. רשימת המרתף והתפריטים היומיים מפורסמים ב-bockbistro.hu. מומלץ להזמין מקום מראש בסופי שבוע.\n\nSources: https://www.bockbistro.hu/",
+      "slug": "bock-bistro-deak"
+    },
+    "ar": {
+      "name": "بوك بيسترو",
+      "short": "مطعم بيسترو متمحور حول النبيذ بالقرب من ديآك — ماركات Bock وأطباق هنغارية موسمية وغرفة طعام لبنية مريحة.",
+      "long": "يعرض Bock Bistro في شارع Kért نبيذ عائلة Bock جنباً إلى جنب مع المطبخ الهنغاري الحديث على مسافة قصيرة من Deák tér. تُنشر قائمة المرتجل والقوائم اليومية على bockbistro.hu. يُنصح بالحجز في عطلات نهاية الأسبوع.\n\nSources: https://www.bockbistro.hu/",
+      "slug": "bock-bistro-deak"
+    }
+  },
+  "prov-cov-alabard-opera": {
+    "hu": {
+      "name": "Arany Kaviár",
+      "short": "Orosz-magyar finomvendéglő az Opera közelében — kaviár, vodkapárosítások és bársonyos szalonok az Október 6. utcán.",
+      "long": "Az Arany Kaviár az Október 6. utcán orosz és közép-európai haute cuisine-t kínál kiterjedt vodka- és borpincészettel az Andrássy kulturális helyszínek közelében. A kóstolómenük és a privát szobák különleges alkalmakhoz illenek. Foglalás az aranykaviar.hu oldalon.\n\nSources: https://www.aranykaviar.hu/",
+      "slug": "arany-kaviar-opera"
+    },
+    "es": {
+      "name": "Arany Kaviár",
+      "short": "Alta cocina ruso-húngara cerca de la Ópera — caviar, vodka y salones de terciopelo en Október 6. utca.",
+      "long": "Arany Kaviár en Október 6. utca sirve alta cocina rusa y centroeuropea con una extensa bodega de vodka y vino cerca de los recintos culturales de Andrássy. Los menús de degustación y las salas privadas son ideales para ocasiones especiales. Reservas en aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+      "slug": "arany-kaviar-opera"
+    },
+    "it": {
+      "name": "Arany Kaviár",
+      "short": "Fine dining russo-ungherese vicino all'Opera — caviale, abbinamenti vodka e saloni di velluto in Október 6. utca.",
+      "long": "Arany Kaviár in Október 6. utca serve haute cuisine russa e centroeuropea con un'ampia cantina di vodka e vini vicino ai luoghi culturali di Andrássy. I menù degustazione e le sale private si adattano alle occasioni speciali. Prenotazioni su aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+      "slug": "arany-kaviar-opera"
+    },
+    "he": {
+      "name": "Arany Kaviár",
+      "short": "מסעדת יוקרה רוסית-הונגרית ליד האופרה — קוויאר, זיווגי וודקה וסלונים מקטיפה ב-Október 6. utca.",
+      "long": "Arany Kaviár ב-Október 6. utca מגיש מטבח גבוה רוסי ומרכז-אירופאי עם מרתף נרחב של וודקה ויין בסמוך לאתרי התרבות של Andrássy. תפריטי טעימות וחדרים פרטיים מתאימים לאירועים מיוחדים. הזמנות דרך aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+      "slug": "arany-kaviar-opera"
+    },
+    "ar": {
+      "name": "Arany Kaviár",
+      "short": "مطعم راقٍ روسي-هنغاري قرب الأوبرا — كافيار وزيجات فودكا وصالونات مخملية في شارع Október 6.",
+      "long": "يقدم Arany Kaviár في شارع Október 6 مطبخاً راقياً روسياً ووسط أوروبياً مع قبو واسع من الفودكا والنبيذ بالقرب من المواقع الثقافية في Andrássy. تناسب قوائم التذوق والغرف الخاصة المناسبات الخاصة. الحجوزات عبر aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+      "slug": "arany-kaviar-opera"
+    }
+  },
+  "prov-cov-frici-jewish-q": {
+    "hu": {
+      "name": "Frici Papa",
+      "short": "Szeretett zsidónegyedi étkezde — bőséges magyar fogások, napi menük és egyszerű étterem.",
+      "long": "A Frici Papa a Kertész utcán bőkezű, otthoni ízű magyar ételeket kínál kedvező áron a zsidónegyed mélyén. A törzsvendégek rántott húsért, levesekért és napi táblás ajánlatokért járnak vissza. Nyitvatartás a fricipapa.hu oldalon.\n\nSources: https://www.fricipapa.hu/",
+      "slug": "frici-papa-zsido-negyed"
+    },
+    "es": {
+      "name": "Frici Papa",
+      "short": "Querida taberna del Barrio Judío — abundantes platos húngaros, menús del día y comedor sin pretensiones.",
+      "long": "Frici Papa en Kertész utca sirve generosa cocina casera húngara a precios asequibles en el corazón del Barrio Judío. Los habituales vuelven por el escalope, las sopas y los especiales de la pizarra diaria. Horario en fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+      "slug": "frici-papa-barrio-judio"
+    },
+    "it": {
+      "name": "Frici Papa",
+      "short": "Amata trattoria del Quartiere Ebraico — abbondanti piatti ungheresi, menù del giorno e sala essenziale.",
+      "long": "Frici Papa in Kertész utca serve generosa cucina casalinga ungherese a prezzi accessibili nel cuore del Quartiere Ebraico. I clienti abituali tornano per la cotoletta, le zuppe e i piatti speciali sulla lavagna quotidiana. Orari su fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+      "slug": "frici-papa-quartiere-ebraico"
+    },
+    "he": {
+      "name": "פריצי פפא",
+      "short": "מסעדה אהובה ברובע היהודי — מנות הונגריות נדיבות, תפריטי יום וחדר אוכל פשוט.",
+      "long": "פריצי פפא ברחוב Kertész מגיש בישול ביתי הונגרי נדיב במחירים נוחים עמוק ברובע היהודי. לקוחות קבועים חוזרים לשניצל, מרקים ומבצעי לוח יומיים. שעות פעילות באתר fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+      "slug": "frici-papa-negyed"
+    },
+    "ar": {
+      "name": "فريتشي بابا",
+      "short": "مطعم محبوب في الحي اليهودي — أطباق هنغارية وفيرة وقوائم يومية وغرفة طعام بسيطة.",
+      "long": "يقدم فريتشي بابا في شارع Kertész طبخاً منزلياً هنغارياً كريماً بأسعار معقولة في عمق الحي اليهودي. يعود الزبائن المعتادون من أجل الشنيتزل والحساء والأطباق الخاصة على السبورة اليومية. الساعات على fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+      "slug": "frici-papa-jewish-quarter"
+    }
+  },
+  "prov-cov-betes-corvin": {
+    "hu": {
+      "name": "Bétés Étterem",
+      "short": "Negyedi bisztró a Corvin-negyedben — magyar-európai fogások és borok a Futó utca közelében.",
+      "long": "A Bétés a Futó utcán finom magyar és európai ételeket kínál negyedi hangulatban, pár lépésre a Corvin Plazától. Az étterem megfelelő informális randikhoz és üzleti ebédekhez a Corvin-negyedben. Foglalás a betesetterem.hu oldalon.\n\nSources: https://www.betesetterem.hu/",
+      "slug": "betes-etterem-corvin"
+    },
+    "es": {
+      "name": "Restaurante Bétés",
+      "short": "Bistró de barrio en Corvin-negyed — platos húngaro-europeos y vinos cerca de Futó utca.",
+      "long": "Bétés en Futó utca sirve refinados platos húngaros y europeos con ambiente de barrio a pasos de Corvin Plaza. El comedor es ideal para citas informales y almuerzos de negocios en Corvin-negyed. Reserve en betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+      "slug": "restaurante-betes-corvin"
+    },
+    "it": {
+      "name": "Ristorante Bétés",
+      "short": "Bistrot di quartiere a Corvin-negyed — piatti ungheresi-europei e vini vicino a Futó utca.",
+      "long": "Bétés in Futó utca serve raffinati piatti ungheresi ed europei con un'atmosfera di quartiere a pochi passi da Corvin Plaza. La sala è adatta per appuntamenti informali e pranzi di lavoro nel Corvin-negyed. Prenotazioni su betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+      "slug": "ristorante-betes-corvin"
+    },
+    "he": {
+      "name": "מסעדת בטש",
+      "short": "ביסטרו שכונתי ב-Corvin-negyed — מנות הונגריות-אירופאיות ויין בקרבת Futó utca.",
+      "long": "Bétés ב-Futó utca מגיש מנות הונגריות ואירופאיות מעודנות באווירה שכונתית צעד מ-Corvin Plaza. חדר האוכל מתאים לדייטים לא רשמיים וארוחות עסקיות ב-Corvin-negyed. הזמנה באתר betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+      "slug": "betes-restaurant-corvin"
+    },
+    "ar": {
+      "name": "مطعم بيتيش",
+      "short": "بيسترو حي في Corvin-negyed — أطباق هنغارية-أوروبية ونبيذ بالقرب من Futó utca.",
+      "long": "يقدم Bétés في شارع Futó أطباقاً هنغارية وأوروبية راقية بأجواء حي على بعد خطوات من Corvin Plaza. تناسب غرفة الطعام المواعيد غير الرسمية وغداءات العمل في Corvin-negyed. الحجز على betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+      "slug": "betes-restaurant-corvin"
+    }
+  },
+  "prov-cov-pestbuda-castle": {
+    "hu": {
+      "name": "Pest-Buda Bisztró",
+      "short": "Történelmi bisztró a Várnegyedben — magyar klasszikusok és udvari ülőhelyek a Fortuna utcán.",
+      "long": "A Pest-Buda a Fortuna utcán a Várnegyed egyik meghatározó étterme, középkori pincetermekkel és egy zöld belső udvarral. A hagyományos magyar ételek és a borservis turistáknak és helyieknek egyaránt megfelelnek. Foglalás a pestbuda.hu oldalon.\n\nSources: https://www.pestbuda.hu/",
+      "slug": "pestbuda-bisztro-varnegyed"
+    },
+    "es": {
+      "name": "Pest-Buda Bistro",
+      "short": "Bistró histórico en el Barrio del Castillo — clásicos húngaros y patio interior en Fortuna utca.",
+      "long": "Pest-Buda en Fortuna utca es un restaurante emblemático del Barrio del Castillo con salas medievales en sótano y un patio arbolado. Los platos húngaros tradicionales y el servicio de vinos son aptos para turistas y locales. Reserve en pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+      "slug": "pestbuda-bistro-castillo"
+    },
+    "it": {
+      "name": "Pest-Buda Bistro",
+      "short": "Bistrot storico nel Quartiere del Castello — classici ungheresi e cortile con patio in Fortuna utca.",
+      "long": "Pest-Buda in Fortuna utca è un ristorante simbolo del Quartiere del Castello con sale medievali in cantina e un cortile alberato. I piatti ungheresi tradizionali e il servizio vini si adattano sia ai turisti che ai locali. Prenotazioni su pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+      "slug": "pestbuda-bistro-castello"
+    },
+    "he": {
+      "name": "פשט-בודה ביסטרו",
+      "short": "ביסטרו היסטורי בשכונת הטירה — קלאסיקות הונגריות וישיבה בחצר ב-Fortuna utca.",
+      "long": "Pest-Buda ב-Fortuna utca הוא מסעדה סמלית בשכונת הטירה עם חדרי מרתף מימי הביניים וחצר ירוקה. המנות ההונגריות המסורתיות ושירות היין מתאימים לתיירים ולמקומיים כאחד. הזמנה באתר pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+      "slug": "pestbuda-bistro-castle"
+    },
+    "ar": {
+      "name": "بيست-بودا بيسترو",
+      "short": "بيسترو تاريخي في حي القلعة — كلاسيكيات هنغارية ومقاعد الفناء في شارع Fortuna.",
+      "long": "Pest-Buda في شارع Fortuna هو مطعم بارز في حي القلعة مع غرف قبو من القرون الوسطى وفناء مورق. تناسب الأطباق الهنغارية التقليدية وخدمة النبيذ السياح والمحليين على حد سواء. الحجز على pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+      "slug": "pestbuda-bistro-castle"
+    }
+  },
+  "prov-cov-gellert-brasserie": {
+    "hu": {
+      "name": "Gellért Étterem",
+      "short": "Nagyszállodai étkezés a Gellértben — brasserie-menü és vasárnapi brunch a Szent Gellért téren.",
+      "long": "A Gellért Brasserie a Danubius Hotelben nemzetközi és magyar ételeket kínál a fürdővendégek számára folyókilátással. A vasárnapi brunch megtölti a szecessziós éttermet. Foglalás a danubiusgellert.com oldalon.\n\nSources: https://www.danubiusgellert.com/dining",
+      "slug": "gellert-brasserie-etterem"
+    },
+    "es": {
+      "name": "Gellért Brasserie",
+      "short": "Comedor de gran hotel en el Gellért — menú brasserie y brunch dominical en Szent Gellért tér.",
+      "long": "Gellért Brasserie en el Hotel Danubius sirve platos internacionales y húngaros a los huéspedes del spa con vistas al río. El brunch dominical llena el comedor art nouveau. Reservas en danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+      "slug": "gellert-brasserie-danubius"
+    },
+    "it": {
+      "name": "Gellért Brasserie",
+      "short": "Ristorazione di grand hotel al Gellért — menu brasserie e brunch della domenica a Szent Gellért tér.",
+      "long": "Gellért Brasserie nell'Hotel Danubius serve piatti internazionali e ungheresi agli ospiti della spa con vista sul fiume. Il brunch domenicale riempie la sala da pranzo art nouveau. Prenotazioni su danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+      "slug": "gellert-brasserie-danubius"
+    },
+    "he": {
+      "name": "גלרט ברסרי",
+      "short": "אוכל של מלון גדול בגלרט — תפריט ברסרי וארוחת בוקר של יום ראשון ב-Szent Gellért tér.",
+      "long": "Gellért Brasserie במלון Danubius מגיש מנות בינלאומיות והונגריות לאורחי הספא עם נוף לנהר. ארוחת הבוקר של יום ראשון ממלאת את חדר האוכל בסגנון Art Nouveau. הזמנות באתר danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+      "slug": "gellert-brasserie-danubius"
+    },
+    "ar": {
+      "name": "جيليرت براسيري",
+      "short": "تناول طعام الفندق الكبير في جيليرت — قائمة براسيري وبروفست الأحد في Szent Gellért tér.",
+      "long": "تقدم Gellért Brasserie في فندق Danubius أطباقاً دولية وهنغارية لضيوف المنتجع الصحي مع إطلالات على النهر. يمتلئ حجرة الطعام بطراز الفن الجديد بالبروفست يوم الأحد. الحجوزات على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+      "slug": "gellert-brasserie-danubius"
+    }
+  },
+  "prov-cov-kacsa-becsi": {
+    "hu": {
+      "name": "Kacsa Étterem",
+      "short": "Kacsa-specialista a Fő utcán — hagyományos magyar víziszárnyas-ételek a Bécsi út közelében Óbudán.",
+      "long": "A Kacsa Étterem a Fő utcán kacsamájáról és sült kacsájáról ismert, amelyeket hagyományos óbudai étteremben tálalnak, a Bécsi úthoz közel. A borpárosítások kiemelik a magyar fehérborokat. Foglalás a kacsaetterem.hu oldalon.\n\nSources: https://www.kacsaetterem.hu/",
+      "slug": "kacsa-etterem-becsi"
+    },
+    "es": {
+      "name": "Kacsa Étterem",
+      "short": "Especialista en pato en Fő utca — platos clásicos húngaros de ave acuática cerca de Bécsi út en Óbuda.",
+      "long": "Kacsa Étterem en Fő utca es famoso por el hígado de pato y el pato asado en un comedor tradicional de Óbuda a pasos de Bécsi út. Los maridajes de vino destacan los blancos húngaros. Reserve en kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+      "slug": "kacsa-etterem-becsi"
+    },
+    "it": {
+      "name": "Kacsa Étterem",
+      "short": "Specialista in anatra su Fő utca — piatti classici ungheresi di volatili vicino a Bécsi út a Óbuda.",
+      "long": "Kacsa Étterem in Fő utca è famoso per il fegato d'anatra e l'anatra arrosto in una sala da pranzo tradizionale di Óbuda a pochi passi da Bécsi út. Gli abbinamenti con il vino valorizzano i bianchi ungheresi. Prenota su kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+      "slug": "kacsa-etterem-becsi"
+    },
+    "he": {
+      "name": "מסעדת קאצ'ה",
+      "short": "מומחה לברווז ב-Fő utca — מנות ברווז הונגריות קלאסיות ליד Bécsi út באובודה.",
+      "long": "מסעדת קאצ'ה ב-Fő utca מפורסמת בכבד ברווז וברווז צלוי בחדר אוכל אובודאי מסורתי צעד מ-Bécsi út. זיווגי יין מדגישים את היינות הלבנים ההונגריים. הזמנות באתר kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+      "slug": "kacsa-etterem-becsi"
+    },
+    "ar": {
+      "name": "مطعم كاكسا",
+      "short": "متخصص في البط في شارع Fő — أطباق بط هنغارية كلاسيكية قرب Bécsi út في أوبودا.",
+      "long": "مطعم Kacsa في شارع Fő مشهور بكبد البط والبط المشوي في غرفة طعام أوبودية تقليدية على بعد خطوات من Bécsi út. تبرز أزواج النبيذ اليبان الهنغاري. الحجز على kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+      "slug": "kacsa-etterem-becsi"
+    }
+  },
+  "prov-cov-mom-eden-infopark": {
+    "hu": {
+      "name": "MOM Eden Étterem",
+      "short": "Üzleti negyed fine dining a MOM-ban — modern európai menü az Infopark üveg atriumában.",
+      "long": "A MOM Eden Étterem kortárs európai konyhaélményt kínál a MOM Kulturális Központ atriumában az Infoparkon belül. Ebéden irodai dolgozók töltik meg; vacsorán borpárosítások és kóstolómenük kapnak helyet. Foglalás a momkult.hu oldalon.\n\nSources: https://momkult.hu/en/restaurant",
+      "slug": "mom-eden-etterem-infopark"
+    },
+    "es": {
+      "name": "MOM Eden Restaurant",
+      "short": "Fine dining en el distrito de negocios en MOM — menú europeo moderno en el atrio de cristal de Infopark.",
+      "long": "MOM Eden Restaurant sirve cocina europea contemporánea dentro del atrio del MOM Cultural Centre en Infopark. El almuerzo atrae a trabajadores de oficina; las cenas ofrecen maridajes de vinos y menús degustación. Reserve en momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+      "slug": "mom-eden-restaurant-infopark"
+    },
+    "it": {
+      "name": "MOM Eden Restaurant",
+      "short": "Fine dining nel distretto degli affari al MOM — menu europeo moderno nell'atrio di vetro di Infopark.",
+      "long": "MOM Eden Restaurant serve cucina europea contemporanea nell'atrio del MOM Cultural Centre a Infopark. Il pranzo attrae lavoratori d'ufficio; le cene offrono abbinamenti con il vino e menù degustazione. Prenota su momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+      "slug": "mom-eden-restaurant-infopark"
+    },
+    "he": {
+      "name": "מסעדת MOM Eden",
+      "short": "מסעדה עדינה ב-MOM — תפריט אירופאי מודרני באטריום הזכוכית של Infopark.",
+      "long": "מסעדת MOM Eden מגישה מטבח אירופאי עכשווי בתוך אטריום מרכז התרבות MOM ב-Infopark. ארוחות הצהריים מושכות עובדי משרד; ערב מציע זיווגי יין ותפריטי טעימות. הזמן באתר momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+      "slug": "mom-eden-restaurant-infopark"
+    },
+    "ar": {
+      "name": "مطعم MOM Eden",
+      "short": "مطعم راقٍ في حي الأعمال MOM — قائمة أوروبية حديثة في ردهة الزجاج في Infopark.",
+      "long": "يقدم مطعم MOM Eden مطبخاً أوروبياً معاصراً داخل ردهة مركز MOM الثقافي في Infopark. يجذب الغداء موظفي المكاتب؛ تقدم العشاءات أزواج النبيذ وقوائم التذوق. احجز على momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+      "slug": "mom-eden-restaurant-infopark"
+    }
+  },
+  "prov-cov-pierrot-parliament": {
+    "hu": {
+      "name": "Pierrot Kávézó",
+      "short": "Kerti kávézó a budai parton — kávé és sütemények Parlament-kilátással a folyón át.",
+      "long": "A Pierrot Kávézó a budai Fő utcán belső udvaros ülőhellyel és képeslapnyi kilátással fogadja vendégeit a Parlament épületére. Sütemények, kávé és könnyű ételek teszik nyugodt megállóvá a Duna Buda-oldali részén. Nyitvatartás és menü a pierrot.hu oldalon.\n\nSources: https://www.pierrot.hu/",
+      "slug": "pierrot-kavézo-parlament"
+    },
+    "es": {
+      "name": "Café Pierrot",
+      "short": "Café jardín en la orilla de Buda — café y pasteles con vistas al Parlamento al otro lado del río.",
+      "long": "El Café Pierrot en Fő utca de Buda ofrece asientos en patio con vistas de postal al edificio del Parlamento. Pasteles, café y platos ligeros lo convierten en una parada tranquila al lado de Buda del Danubio. Horario y menús en pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+      "slug": "cafe-pierrot-parlamento"
+    },
+    "it": {
+      "name": "Caffè Pierrot",
+      "short": "Caffè giardino sulla riva di Buda — caffè e dolci con viste sul Parlamento dall'altro lato del fiume.",
+      "long": "Il Caffè Pierrot in Fő utca di Buda offre posti a sedere in cortile con vedute da cartolina dell'edificio del Parlamento. Pasticcini, caffè e piatti leggeri ne fanno una sosta rilassante sul lato di Buda del Danubio. Orari e menù su pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+      "slug": "caffe-pierrot-parlamento"
+    },
+    "he": {
+      "name": "בית קפה פיירו",
+      "short": "בית קפה גינה על גדת בודה — קפה ועוגות עם נוף לבניין הפרלמנט מעבר לנהר.",
+      "long": "בית הקפה פיירו ב-Fő utca בבודה מציע ישיבה בחצר עם נוף גלויה לבניין הפרלמנט. מאפים, קפה ומנות קלות הופכים אותו לעצירה שלווה בצד בודה של הדנובה. שעות ותפריטים באתר pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+      "slug": "beit-kafe-pierrot"
+    },
+    "ar": {
+      "name": "مقهى بييرو",
+      "short": "مقهى حديقة على ضفة بودا — قهوة وكعك مع مناظر البرلمان عبر النهر.",
+      "long": "يقدم مقهى Pierrot في شارع Fő ببودا مقاعد في الفناء مع مناظر بطاقة بريدية لمبنى البرلمان. المعجنات والقهوة والأطباق الخفيفة تجعله توقفاً هادئاً على الجانب البودا من الدانوب. الساعات والقوائم على pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+      "slug": "maqha-pierrot-parliament"
+    }
+  },
+  "prov-cov-froccterasz-liszt": {
+    "hu": {
+      "name": "Fröccsterasz",
+      "short": "Fröccsterasz a Liszt Ferenc téren — fröccs, kávé és könnyű harapnivalók a híres vendéglátós téren.",
+      "long": "A Fröccsterasz a Liszt Ferenc téren kültéri asztalokkal várja a vendégeket, amelyek magyar boros fröccsökre és alkalmi fogásokra épülnek. Az esték a közeli Király utcáról érkező bulizókkal töltődnek. Menü és nyitvatartás a froccsterasz.hu oldalon.\n\nSources: https://www.froccsterasz.hu/",
+      "slug": "froccsterasz-liszt-ter"
+    },
+    "es": {
+      "name": "Fröccsterasz",
+      "short": "Terraza de spritz en Liszt Ferenc tér — vino con soda, café y tapas en la famosa plaza gastronómica.",
+      "long": "Fröccsterasz en Liszt Ferenc tér tiene mesas al aire libre perfectas para los spritzers de vino húngaro y platos informales. Las veladas se llenan con quienes se preparan para los clubes del cercano Király utca. Menú y horario en froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+      "slug": "froccsterasz-liszt"
+    },
+    "it": {
+      "name": "Fröccsterasz",
+      "short": "Terrazza dello spritz a Liszt Ferenc tér — fröccs, caffè e spuntini sulla famosa piazza dei ristoranti.",
+      "long": "Fröccsterasz a Liszt Ferenc tér ha tavoli all'aperto pensati per gli spritz di vino ungherese e piatti informali. Le serate si riempiono di chi si prepara per i locali di Király utca. Menu e orari su froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+      "slug": "froccsterasz-liszt"
+    },
+    "he": {
+      "name": "פרוצ'סטראז",
+      "short": "מרפסת שפריץ ב-Liszt Ferenc tér — פרוץ', קפה ומנות קלות בכיכר המסעדות המפורסמת.",
+      "long": "פרוצ'סטראז ב-Liszt Ferenc tér מציע שולחנות חוץ שנועדו לשפריץ יין הונגרי ומנות סתמיות. הערבות מתמלאים בקהל שמגיע לפני מועדונים ב-Király utca הסמוכה. תפריט ושעות באתר froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+      "slug": "froccsterasz-liszt"
+    },
+    "ar": {
+      "name": "فروتشتيراز",
+      "short": "تراس الشبريتز في Liszt Ferenc tér — فروتش وقهوة ووجبات خفيفة في الميدان الغذائي الشهير.",
+      "long": "يمتلك Fröccsterasz في Liszt Ferenc tér طاولات خارجية مصممة للنبيذ الهنغاري المخفف والأطباق غير الرسمية. تمتلئ الأمسيات بالحشود المتوجهة لنوادي شارع Király القريب. القائمة والساعات على froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+      "slug": "froccsterasz-liszt"
+    }
+  },
+  "prov-cov-fekete-wessel": {
+    "hu": {
+      "name": "Fekete",
+      "short": "Minimalista fekete-fehér kávézó a Wesselényiben — specialty kávé és sütemények a zsidónegyed peremén.",
+      "long": "A Fekete a Wesselényi utcán egy dizájn-orientált kávézó, amelyet monokróm belső terei és pontos eszpresszója tett ismertté. Sütemények és filteres kávé vonzza a napközbeni látogatókat a közeli éjszakai élettől távolabb. Nyitvatartás a feketebudapest.com oldalon.\n\nSources: https://www.feketebudapest.com/",
+      "slug": "fekete-kavézo-wesselényi"
+    },
+    "es": {
+      "name": "Fekete",
+      "short": "Café minimalista en blanco y negro en Wesselényi — café de especialidad y pasteles en las afueras del Barrio Judío.",
+      "long": "Fekete en Wesselényi utca es una cafetería de diseño conocida por sus interiores monocromáticos y su espresso preciso. Los pasteles y el café de filtro atraen a los visitantes diurnos alejados de la cercana vida nocturna. Horario en feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+      "slug": "fekete-cafe-wesselenyi"
+    },
+    "it": {
+      "name": "Fekete",
+      "short": "Caffè minimalista in bianco e nero a Wesselényi — caffè specialty e dolci ai margini del Quartiere Ebraico.",
+      "long": "Fekete in Wesselényi utca è una caffetteria di design nota per gli interni monocromatici e l'espresso preciso. Pasticcini e caffè filtro attirano i visitatori diurni lontano dalla vicina vita notturna. Orari su feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+      "slug": "fekete-caffe-wesselenyi"
+    },
+    "he": {
+      "name": "פקטה",
+      "short": "בית קפה מינימליסטי שחור-לבן בוסלני — קפה ספציאלטי ועוגות בשולי הרובע היהודי.",
+      "long": "פקטה ב-Wesselényi utca הוא בית קפה מכוון עיצוב המפורסם בפנים מונוכרומטיים ואספרסו מדויק. מאפים וקפה פילטר מושכים מבקרים בשעות היום הרחק מחיי הלילה הסמוכים. שעות פעילות באתר feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+      "slug": "fekete-cafe-wesselenyi"
+    },
+    "ar": {
+      "name": "فيكيتي",
+      "short": "مقهى أسود وأبيض بسيط في Wesselényi — قهوة متخصصة وكعك على أطراف الحي اليهودي.",
+      "long": "فيكيتي في شارع Wesselényi هو مقهى موجه بالتصميم يشتهر بالتصاميم الداخلية أحادية اللون والإسبريسو الدقيق. تجذب المعجنات وقهوة الفلتر الزوار أثناء النهار بعيداً عن حياة الليل القريبة. الساعات على feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+      "slug": "fekete-cafe-wesselenyi"
+    }
+  }
+}

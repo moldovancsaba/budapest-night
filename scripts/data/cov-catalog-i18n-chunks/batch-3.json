@@ -1,0 +1,674 @@
+{
+  "prov-cov-manno-kolosy": {
+    "hu": {
+      "name": "Manno Caffè",
+      "short": "Olasz eszpresszóbár a Bécsi úton — reggeli kávéhely a Kolosy téri villamosmegálló közelében.",
+      "long": "A Bécsi úti Manno Caffè olasz eszpresszót és süteményeket kínál az óbudai ingázóknak, a Kolosy tér közelében. Az álló pultnál gyorsan lehet cappuccinót inni az észak felé induló HÉV-vonatok előtt. Nyitvatartás a mannocaffe.hu oldalon.\n\nSources: https://www.mannocaffe.hu/",
+      "slug": "manno-kolosy-hu"
+    },
+    "es": {
+      "name": "Manno Caffè",
+      "short": "Bar de espresso de estilo italiano en Bécsi út — punto de café matutino cerca de los tranvías de Kolosy tér.",
+      "long": "Manno Caffè en Bécsi út sirve espresso italiano y bollería a los viajeros de Óbuda cerca de Kolosy tér. La barra de pie facilita tomar un cappuccino rápido antes de los trenes HÉV hacia el norte. Horarios en mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+      "slug": "manno-kolosy-es"
+    },
+    "it": {
+      "name": "Manno Caffè",
+      "short": "Bar espresso in stile italiano su Bécsi út — punto caffè mattutino vicino ai tram di Kolosy tér.",
+      "long": "Manno Caffè su Bécsi út serve espresso italiano e pasticceria ai pendolari di Óbuda vicino a Kolosy tér. Il bancone in piedi è ideale per un cappuccino veloce prima dei treni HÉV verso nord. Orari su mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+      "slug": "manno-kolosy-it"
+    },
+    "he": {
+      "name": "מאנו קפה",
+      "short": "בר אספרסו בסגנון איטלקי ברחוב בצ'י — עצירת קפה בוקרית ליד קווי הטרמוואי של כיכר קולושי.",
+      "long": "מאנו קפה ברחוב בצ'י מגיש אספרסו איטלקי ומאפים לנוסעים מאובודה ליד כיכר קולושי. הבר העמידה מאפשר קפוצ'ינו מהיר לפני רכבות ה-HÉV צפונה. שעות פתיחה באתר mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+      "slug": "manno-kolosy-he"
+    },
+    "ar": {
+      "name": "مانو كافيه",
+      "short": "بار إسبريسو على الطراز الإيطالي في شارع بيشي — نقطة قهوة صباحية بالقرب من ترام ساحة كولوشي.",
+      "long": "يقدم مانو كافيه في شارع بيشي الإسبريسو الإيطالي والمعجنات لركاب أوبودا بالقرب من ساحة كولوشي. يتيح البار الواقف تناول كابوتشينو سريع قبل قطارات HÉV المتجهة شمالاً. أوقات العمل على mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+      "slug": "manno-kolosy-ar"
+    }
+  },
+  "prov-cov-gelibi-gellert": {
+    "hu": {
+      "name": "Gelibi Café",
+      "short": "Fagylalt és kávé a Gellért fürdő közelében — édes megálló a Bartók Béla úton a fürdő után.",
+      "long": "A Gelibi Café gelátót, eszpresszót és gofrit kínál a Gellért fürdő bejáratától pár lépésre, a Bartók Béla úton. Családok térnek be ide a termálfürdő után, a Gellért-hegy megmászása előtt. Ízek a gelibi.hu oldalon.\n\nSources: https://www.gelibi.hu/",
+      "slug": "gelibi-gellert-hu"
+    },
+    "es": {
+      "name": "Gelibi Café",
+      "short": "Helados y café junto a los Baños Gellért — parada dulce en Bartók Béla út tras el spa.",
+      "long": "Gelibi Café sirve gelato, espresso y gofres a pocos pasos de la entrada a los Baños Gellért en Bartók Béla út. Las familias se detienen aquí tras el baño termal antes de subir la Colina Gellért. Sabores en gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+      "slug": "gelibi-gellert-es"
+    },
+    "it": {
+      "name": "Gelibi Café",
+      "short": "Gelato e caffè accanto alle Terme Gellért — sosta dolce su Bartók Béla út dopo la spa.",
+      "long": "Gelibi Café serve gelato, espresso e waffle a pochi passi dall'ingresso delle Terme Gellért su Bartók Béla út. Le famiglie si fermano qui dopo il bagno termale prima di salire sul Colle Gellért. Gusti su gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+      "slug": "gelibi-gellert-it"
+    },
+    "he": {
+      "name": "ג'לבי קפה",
+      "short": "גלידה וקפה ליד מרחץ גלרט — עצירה מתוקה ברחוב ברטוק בלה לאחר הספא.",
+      "long": "ג'לבי קפה מגיש גלידה, אספרסו ווופלים במרחק כמה צעדים מכניסת מרחץ גלרט ברחוב ברטוק בלה. משפחות עוצרות כאן לאחר האמבטיה הטרמלית לפני טיפוס על גבעת גלרט. טעמים באתר gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+      "slug": "gelibi-gellert-he"
+    },
+    "ar": {
+      "name": "جيليبي كافيه",
+      "short": "جيلاتو وقهوة بجانب حمام جيليرت — محطة حلوى في شارع بارتوك بيلا بعد السبا.",
+      "long": "يقدم جيليبي كافيه جيلاتو وإسبريسو ووافل على بُعد خطوات من مدخل حمام جيليرت في شارع بارتوك بيلا. تتوقف العائلات هنا بعد الحمام الحراري قبل تسلق تل جيليرت. النكهات على gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+      "slug": "gelibi-gellert-ar"
+    }
+  },
+  "prov-cov-hard-rock-vaci": {
+    "hu": {
+      "name": "Hard Rock Cafe Budapest",
+      "short": "Rock stílusú étterem és bár az Erzsébet térnél — élő zenei estek, relikviák és késő koktélok a Váci utca közelében.",
+      "long": "A Hard Rock Cafe Budapest az Erzsébet tér 12–14. szám alatt található, a Deák Ferenc tértől és a Váci sétálóutcától pár lépésre. Amerikai grill ételek, különleges koktélok és időszakos élő zenei estek várnak egy relikviákkal teli étteremben. Foglalások és események a hivatalos weboldalon.\n\nSources: https://cafe.hardrock.com/budapest/",
+      "slug": "hard-rock-vaci-hu"
+    },
+    "es": {
+      "name": "Hard Rock Cafe Budapest",
+      "short": "Restaurante y bar temático de rock junto a Erzsébet tér — conciertos, memorabilia y cócteles tardíos cerca de Váci utca.",
+      "long": "El Hard Rock Cafe Budapest está en Erzsébet tér 12-14, a pasos de Deák Ferenc tér y la zona peatonal de Váci. Ofrece cocina americana a la parrilla, cócteles exclusivos y música en vivo periódica en un comedor lleno de memorabilia. Reservas y eventos en el sitio oficial.\n\nSources: https://cafe.hardrock.com/budapest/",
+      "slug": "hard-rock-vaci-es"
+    },
+    "it": {
+      "name": "Hard Rock Cafe Budapest",
+      "short": "Ristorante e bar a tema rock vicino a Erzsébet tér — live set, cimeli e cocktail notturni vicino a Váci utca.",
+      "long": "L'Hard Rock Cafe Budapest si trova a Erzsébet tér 12-14, a pochi passi da Deák Ferenc tér e dalla zona pedonale di Váci. Propone cucina americana alla griglia, cocktail esclusivi e musica dal vivo periodica in una sala da pranzo piena di cimeli. Prenotazioni ed eventi sul sito ufficiale.\n\nSources: https://cafe.hardrock.com/budapest/",
+      "slug": "hard-rock-vaci-it"
+    },
+    "he": {
+      "name": "הארד רוק קפה בודפשט",
+      "short": "מסעדה ובר בנושא רוק ליד כיכר ארז'בט — הופעות חיות, מזכרות וקוקטיילים לילו בסמוך לרחוב ואצי.",
+      "long": "הארד רוק קפה בודפשט ממוקם בכיכר ארז'בט 12–14, כמה צעדים מכיכר דאק פרנץ ומהאזור הולכי הרגל של ואצי. התפריט כולל מנות גריל אמריקאיות, קוקטיילים ייחודיים ומוזיקה חיה תקופתית בחדר אוכל מלא מזכרות. הזמנות ואירועים באתר הרשמי.\n\nSources: https://cafe.hardrock.com/budapest/",
+      "slug": "hard-rock-vaci-he"
+    },
+    "ar": {
+      "name": "هارد روك كافيه بودابست",
+      "short": "مطعم وبار بطابع الروك بالقرب من ساحة إرز'يبت — عروض حية وتذكارات وكوكتيلات ليلية قرب شارع فاتسي.",
+      "long": "يقع هارد روك كافيه بودابست في ساحة إرز'يبت 12-14، على بعد خطوات من ساحة ديك فرينتس والمنطقة المشاة في فاتسي. يضم قائمة طعام أمريكية مشوية ومشروبات خاصة وموسيقى حية دورية في غرفة طعام مليئة بالتذكارات. الحجوزات والفعاليات على الموقع الرسمي.\n\nSources: https://cafe.hardrock.com/budapest/",
+      "slug": "hard-rock-vaci-ar"
+    }
+  },
+  "prov-cov-360bar-andrassy": {
+    "hu": {
+      "name": "360 Bar",
+      "short": "Tetőbár koktélokkal az Andrássy úton — téli igluk és szabadtéri DJ-naplemenyék panorámával.",
+      "long": "A 360 Bar az Andrássy út 39. tetején panorámás pesti kilátással, kézműves koktélokkal és szezonális iglu-kupolákkal várja vendégeit. A hétvégi nyitvatartás éjfélen túl nyúlik, és foglalható ülőhely is elérhető. Részletek és események a 360bar.hu oldalon.\n\nSources: https://www.360bar.hu/",
+      "slug": "360bar-andrassy-hu"
+    },
+    "es": {
+      "name": "360 Bar",
+      "short": "Cócteles en azotea en Andrássy út — iglúes invernales y atardeceres con DJ al aire libre con vistas al horizonte.",
+      "long": "El 360 Bar corona Andrássy út 39 con vistas panorámicas de Pest, cócteles artesanales y cúpulas igló de temporada. Los fines de semana el horario se extiende pasada la medianoche con asientos reservables. Detalles y eventos en 360bar.hu.\n\nSources: https://www.360bar.hu/",
+      "slug": "360bar-andrassy-es"
+    },
+    "it": {
+      "name": "360 Bar",
+      "short": "Cocktail sul rooftop di Andrássy út — iglù invernali e DJ set all'aperto con vista sullo skyline.",
+      "long": "Il 360 Bar incorona Andrássy út 39 con viste panoramiche su Pest, cocktail artigianali e cupole igloo stagionali. Nei fine settimana l'orario si estende oltre la mezzanotte con posti prenotabili. Dettagli ed eventi su 360bar.hu.\n\nSources: https://www.360bar.hu/",
+      "slug": "360bar-andrassy-it"
+    },
+    "he": {
+      "name": "360 בר",
+      "short": "קוקטיילים על הגג באנדרשי אוט — איגלואים חורפיים ושקיעות DJ בחוץ עם נוף לסקייליין.",
+      "long": "ה-360 בר מוצב על גג אנדרשי אוט 39 עם נוף פנורמי לפשט, קוקטיילים מיוחדים וכיפות איגלו עונתיות. בסופי שבוע השעות מתארכות מעבר לחצות עם ישיבה הניתנת להזמנה. פרטים ואירועים באתר 360bar.hu.\n\nSources: https://www.360bar.hu/",
+      "slug": "360bar-andrassy-he"
+    },
+    "ar": {
+      "name": "360 بار",
+      "short": "كوكتيلات على السطح في شارع أندراشي — قباب شتوية وحفلات DJ في الهواء الطلق مع إطلالة على الأفق.",
+      "long": "يتوج 360 بار الطابق الأعلى من شارع أندراشي 39 بإطلالات بانورامية على بشت وكوكتيلات مميزة وقباب إيغلو موسمية. يمتد وقت العمل في عطلات نهاية الأسبوع إلى ما بعد منتصف الليل مع مقاعد قابلة للحجز. التفاصيل والفعاليات على 360bar.hu.\n\nSources: https://www.360bar.hu/",
+      "slug": "360bar-andrassy-ar"
+    }
+  },
+  "prov-cov-bluebird-gozsdu": {
+    "hu": {
+      "name": "Blue Bird Bar",
+      "short": "Koktélbár a Gozsdu Udvarban — spritz-ek, DJ-k és késő éjszakák a belső udvar folyosóin.",
+      "long": "A Blue Bird Bar a Gozsdu Udvar árkádsora mögött kézműves koktélokat és hétvégi DJ-ket kínál, a Dob utcától pár lépésre. A romkocsmás belső tér a csatlakozó udvarokra nyílik, ahol kedvére lehet kocsmázni. Étlap a bluebirdbar.hu oldalon.\n\nSources: https://www.bluebirdbar.hu/",
+      "slug": "bluebird-gozsdu-hu"
+    },
+    "es": {
+      "name": "Blue Bird Bar",
+      "short": "Cóctelería en Gozsdu Udvar — spritz, DJs y noches tardías en los patios del pasaje.",
+      "long": "Blue Bird Bar está dentro de la arcada Gozsdu Udvar con cócteles artesanales y DJs de fin de semana a pasos de Dob utca. El interior estilo ruina se abre a los patios conectados para saltar de bar en bar. Menú en bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+      "slug": "bluebird-gozsdu-es"
+    },
+    "it": {
+      "name": "Blue Bird Bar",
+      "short": "Cocktail bar nel Gozsdu Udvar — spritz, DJ e serate tardive nei cortili del passaggio.",
+      "long": "Blue Bird Bar si trova nell'arcata del Gozsdu Udvar con cocktail artigianali e DJ del fine settimana a pochi passi da Dob utca. L'interno in stile rovina si apre ai cortili collegati per il bar-hopping. Menù su bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+      "slug": "bluebird-gozsdu-it"
+    },
+    "he": {
+      "name": "בלו בירד בר",
+      "short": "בר קוקטיילים בגוז'דו אודוור — שפריצר, DJ ולילות מאוחרים בחצרות הסמטה.",
+      "long": "בלו בירד בר ממוקם בתוך קשת גוז'דו אודוור עם קוקטיילים מיוחדים ו-DJ בסופי שבוע, כמה צעדים מרחוב דוב. הפנים בסגנון חורבות נפתח לחצרות המחוברות לצלילה מבר לבר. תפריט באתר bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+      "slug": "bluebird-gozsdu-he"
+    },
+    "ar": {
+      "name": "بلو بيرد بار",
+      "short": "بار كوكتيل في غوز'دو أودفار — مشروبات سبريتز وحفلات DJ وليالٍ متأخرة في أفنية الممر.",
+      "long": "يقع بلو بيرد بار داخل قوس غوز'دو أودفار مع كوكتيلات مميزة وحفلات DJ في عطلات نهاية الأسبوع على بعد خطوات من شارع دوب. يفتح الديكور الداخلي بطراز الأطلال على الأفنية المتصلة للتجوال بين الحانات. القائمة على bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+      "slug": "bluebird-gozsdu-ar"
+    }
+  },
+  "prov-cov-legio-nagy": {
+    "hu": {
+      "name": "Légió Magyar Kocsma",
+      "short": "Pince kocsma a Ferenciek tere közelében — magyar kézműves csapok, élő folk-rock és késő falatok.",
+      "long": "A Pipa utcai Légió egy pincekocsmát kínál magyar mikrosörökkel és hétvégi élő zenekarokkal, a Ferenciek tere közelében. A hangulat helyi és hangos, összekötve a Nagytemplom utcát és a folyópartot. Frissítések a legio.hu oldalon.\n\nSources: https://www.legio.hu/",
+      "slug": "legio-nagy-hu"
+    },
+    "es": {
+      "name": "Légió Pub Húngaro",
+      "short": "Pub subterráneo cerca de Ferenciek tere — cervezas artesanales húngaras, folk-rock en vivo y tapas tardías.",
+      "long": "Légió en Pipa utca es un pub de sótano con microcervecerías húngaras y bandas en vivo los fines de semana, cerca de Ferenciek tere. El ambiente es local y ruidoso, uniendo Nagytemplom utca y el paseo fluvial. Novedades en legio.hu.\n\nSources: https://www.legio.hu/",
+      "slug": "legio-nagy-es"
+    },
+    "it": {
+      "name": "Légió Pub Ungherese",
+      "short": "Pub sotterraneo vicino a Ferenciek tere — birre artigianali ungheresi, folk-rock dal vivo e snack tardivi.",
+      "long": "Légió su Pipa utca è un pub in cantina con microbirrifici ungheresi e band live nei fine settimana, vicino a Ferenciek tere. L'atmosfera è locale e rumorosa, collegando Nagytemplom utca e il lungofiume. Aggiornamenti su legio.hu.\n\nSources: https://www.legio.hu/",
+      "slug": "legio-nagy-it"
+    },
+    "he": {
+      "name": "לגיו פאב הונגרי",
+      "short": "פאב מרתף ליד כיכר פרנציאק — ברזי בירה הונגרית מיוחדת, פולק-רוק חי ונשנושים לילו.",
+      "long": "לגיו ברחוב פיפה הוא פאב מרתף עם מיקרו-בירה הונגרית ולהקות חיות בסופי שבוע, ליד כיכר פרנציאק. האווירה מקומית ורועשת, מחברת את רחוב נדג'טמפלום לשפת הנהר. עדכונים באתר legio.hu.\n\nSources: https://www.legio.hu/",
+      "slug": "legio-nagy-he"
+    },
+    "ar": {
+      "name": "ليجيو حانة هنغارية",
+      "short": "حانة تحت الأرض بالقرب من ساحة فيرنتسيك — صنابير بيرة هنغارية مميزة وفولك-روك حي ووجبات خفيفة ليلية.",
+      "long": "تقع ليجيو في شارع بيبا وهي حانة في القبو مع بيرة مصنوعة محلياً وفرق موسيقية حية في عطلات نهاية الأسبوع، قرب ساحة فيرنتسيك. الأجواء محلية وصاخبة تربط شارع نادج تمبلوم بالواجهة النهرية. التحديثات على legio.hu.\n\nSources: https://www.legio.hu/",
+      "slug": "legio-nagy-ar"
+    }
+  },
+  "prov-cov-rudas-party": {
+    "hu": {
+      "name": "Rudas Tetőbár",
+      "short": "Tetőterasz a Rudas fürdőn — koktélok és Duna-panoráma a Gellért-hegyről.",
+      "long": "A Rudas fürdő tetőterasz-bárja termálmedencéket ötvöz koktélokkal a Gellért-hegyről a Dunára nyíló kilátással. A pénteki és szombati éjszakai szessziókon nyáron DJ-setek is hallhatók. Csomagok a rudasfurdo.hu oldalon.\n\nSources: https://www.rudasfurdo.hu/",
+      "slug": "rudas-party-hu"
+    },
+    "es": {
+      "name": "Rudas Rooftop Bar",
+      "short": "Bar de azotea en los Baños Rudas — cócteles y panorámica del Danubio desde la Colina Gellért.",
+      "long": "El bar de bienestar en la azotea de los Baños Rudas combina piscinas termales con cócteles y vistas al Danubio desde la Colina Gellért. Las sesiones nocturnas de viernes y sábado incluyen DJ sets en verano. Paquetes en rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+      "slug": "rudas-party-es"
+    },
+    "it": {
+      "name": "Rudas Rooftop Bar",
+      "short": "Bar sul tetto dei Bagni Rudas — cocktail e panorama sul Danubio dal Colle Gellért.",
+      "long": "Il bar wellness sul tetto dei Bagni Rudas combina piscine termali con cocktail e viste sul Danubio dal Colle Gellért. Le sessioni notturne del venerdì e del sabato includono DJ set in estate. Pacchetti su rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+      "slug": "rudas-party-it"
+    },
+    "he": {
+      "name": "רודאש בר גג",
+      "short": "בר גג במרחץ רודאש — קוקטיילים ופנורמת דנובה מגבעת גלרט.",
+      "long": "בר הרווחה על גג מרחץ רודאש משלב בריכות תרמיות עם קוקטיילים ונוף לדנובה מגבעת גלרט. בשישי ושבת בלילה יש סטים של DJ בקיץ. חבילות באתר rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+      "slug": "rudas-party-he"
+    },
+    "ar": {
+      "name": "رودوش بار السطح",
+      "short": "بار على السطح في حمام رودوش — كوكتيلات وبانوراما الدانوب من تل جيليرت.",
+      "long": "يجمع بار الرعاية على سطح حمام رودوش بين أحواض السباحة الحرارية والكوكتيلات مع إطلالة على الدانوب من تل جيليرت. تشمل جلسات ليالي الجمعة والسبت عروض DJ في الصيف. الباقات على rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+      "slug": "rudas-party-ar"
+    }
+  },
+  "prov-cov-park-party-obuda": {
+    "hu": {
+      "name": "Budapest Park Bulik",
+      "short": "Szigeti táncos éjszakák a Budapest Parkban — elektronikus headliner-ek és éjfélen túli teraszok.",
+      "long": "A Budapest Park klub-éjszakái nemzetközi DJ-ket hoznak az Óbudai-szigetre, több bárral és szabadtéri táncparkettekkel. Az eseményeket nyári hétvégéken éjfélen túl tartják, villamossal megközelíthetően Pestről. Műsor a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/parties",
+      "slug": "park-party-obuda-hu"
+    },
+    "es": {
+      "name": "Budapest Park Club Nights",
+      "short": "Noches de baile en la isla del Budapest Park — headliners electrónicos y terrazas de madrugada.",
+      "long": "Las noches de club del Budapest Park traen DJs internacionales a la Isla de Óbuda con múltiples barras y pistas de baile al aire libre. Los eventos se prolongan pasada la medianoche los fines de semana de verano con acceso en tranvía desde Pest. Cartel en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+      "slug": "park-party-obuda-es"
+    },
+    "it": {
+      "name": "Budapest Park Club Nights",
+      "short": "Notti danzanti sull'isola del Budapest Park — headliner elettronici e terrazze dopo mezzanotte.",
+      "long": "Le notti club del Budapest Park portano DJ internazionali sull'Isola di Óbuda con più bar e piste da ballo all'aperto. Gli eventi si svolgono oltre la mezzanotte nei fine settimana estivi con accesso in tram da Pest. Programma su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+      "slug": "park-party-obuda-it"
+    },
+    "he": {
+      "name": "לילות מועדון בודפשט פארק",
+      "short": "לילות ריקודים באי בודפשט פארק — כוכבי אלקטרוניקה ומרפסות לאחר חצות.",
+      "long": "לילות המועדון של בודפשט פארק מביאים DJ-ים בינלאומיים לאי אובודה עם מספר ברים ורחבות ריקוד בחוץ. האירועים נמשכים מעבר לחצות בסופי שבוע קיצי עם גישה בטרמוואי מפשט. תוכנית באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+      "slug": "park-party-obuda-he"
+    },
+    "ar": {
+      "name": "ليالي نادي بودابست بارك",
+      "short": "ليالي رقص على جزيرة بودابست بارك — نجوم الإلكترونيك وشرفات ما بعد منتصف الليل.",
+      "long": "تجلب ليالي النادي في بودابست بارك DJ-ين دوليين إلى جزيرة أوبودا مع عدة بارات وحلبات رقص في الهواء الطلق. تمتد الفعاليات إلى ما بعد منتصف الليل في عطلات نهاية الأسبوع الصيفية مع وصول بالترام من بشت. البرنامج على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+      "slug": "park-party-obuda-ar"
+    }
+  },
+  "prov-cov-zsindelyes-obuda": {
+    "hu": {
+      "name": "Zsindelyes Zenés Pub",
+      "short": "Élő rock-kocsma a Fő tér közelében — magyar zenekarok és sör egy óbudai intézményben.",
+      "long": "A Lajos utcai Zsindelyes évtizedek óta ad otthont rockbuliknak és sörözőknek a Fő tér Óbuda közelében. A hétvégi feldolgozó zenekarok zsúfolásig töltik a hosszú bártermet. Koncertlista a zsindelyes.hu oldalon.\n\nSources: https://www.zsindelyes.hu/",
+      "slug": "zsindelyes-obuda-hu"
+    },
+    "es": {
+      "name": "Zsindelyes Music Pub",
+      "short": "Pub de rock en vivo junto a Main Square — bandas húngaras y cerveza en una institución de Óbuda.",
+      "long": "Zsindelyes en Lajos utca lleva décadas acogiendo conciertos de rock y jarras de cerveza cerca de Main Square Óbuda. Las bandas de versiones de los fines de semana llenan la larga sala. Cartelera en zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+      "slug": "zsindelyes-obuda-es"
+    },
+    "it": {
+      "name": "Zsindelyes Music Pub",
+      "short": "Pub rock dal vivo vicino a Main Square — band ungheresi e birra in un'istituzione di Óbuda.",
+      "long": "Zsindelyes su Lajos utca ospita concerti rock e birre vicino a Main Square Óbuda da decenni. Le band cover del fine settimana riempiono la lunga sala. Lista concerti su zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+      "slug": "zsindelyes-obuda-it"
+    },
+    "he": {
+      "name": "ז'ינדליש פאב מוזיקה",
+      "short": "פאב רוק חי ליד הכיכר הראשית — להקות הונגריות ובירה במוסד אובודה.",
+      "long": "ז'ינדליש ברחוב לאיוש מארח מזה עשרות שנים הופעות רוק ובירות ליד הכיכר הראשית של אובודה. להקות הקאברים בסופי שבוע ממלאות את הבר הארוך. רשימת הופעות באתר zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+      "slug": "zsindelyes-obuda-he"
+    },
+    "ar": {
+      "name": "زشينديليش حانة الموسيقى",
+      "short": "حانة روك حي بالقرب من الميدان الرئيسي — فرق هنغارية وبيرة في معلم أوبودا.",
+      "long": "استضافت زشينديليش في شارع لايوش حفلات الروك والبيرة بالقرب من الميدان الرئيسي في أوبودا منذ عقود. فرق الكوفر في عطلات نهاية الأسبوع تملأ غرفة البار الطويلة. قائمة الحفلات على zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+      "slug": "zsindelyes-obuda-ar"
+    }
+  },
+  "prov-cov-golya-kosztolanyi": {
+    "hu": {
+      "name": "Golyó Kávé",
+      "short": "Esti bár-estek a Golyónál — kézműves sör és DJ-k a Kosztolányi tér közelében a Bartók Béla úton.",
+      "long": "A Bartók Béla úti Golyó Kávé napközbeni kávézóból esténként sörözővé és DJ-estékké alakul, a Kosztolányi Dezső tér közelében. A kert meleg hétvégéken megtelik helyiekkel. Program a golyokave.hu oldalon.\n\nSources: https://www.golyokave.hu/",
+      "slug": "golya-kosztolanyi-hu"
+    },
+    "es": {
+      "name": "Golyó Kávé",
+      "short": "Noches de bar en Golyó — cervezas artesanales y DJs junto a Kosztolányi tér en Bartók Béla út.",
+      "long": "Golyó Kávé pasa de café diurno a noches de cerveza y DJ en Bartók Béla út cerca de Kosztolányi Dezső tér. El jardín se llena de lugareños los fines de semana cálidos. Programa en golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+      "slug": "golya-kosztolanyi-es"
+    },
+    "it": {
+      "name": "Golyó Kávé",
+      "short": "Serate bar al Golyó — birra artigianale e DJ vicino a Kosztolányi tér su Bartók Béla út.",
+      "long": "Golyó Kávé passa da caffè diurno a serate di birra e DJ su Bartók Béla út vicino a Kosztolányi Dezső tér. Il giardino si riempie di gente del posto nei fine settimana caldi. Programma su golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+      "slug": "golya-kosztolanyi-it"
+    },
+    "he": {
+      "name": "גויו קווה",
+      "short": "ערבי בר בגויו — בירה מיוחדת ו-DJ ליד כיכר קוסטולאני בשדרות ברטוק.",
+      "long": "גויו קווה עובר מבית קפה יומי ללילות בירה ו-DJ בשדרות ברטוק בלה ליד כיכר קוסטולאני דז'ו. הגינה מתמלאת בתושבים המקומיים בסופי שבוע חמים. תוכנית באתר golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+      "slug": "golya-kosztolanyi-he"
+    },
+    "ar": {
+      "name": "غولو كافيه",
+      "short": "ليالي بار في غولو — بيرة مميزة وحفلات DJ بالقرب من ساحة كوستولاني في شارع بارتوك بيلا.",
+      "long": "يتحول غولو كافيه من مقهى نهاري إلى ليالي بيرة وحفلات DJ في شارع بارتوك بيلا بالقرب من ساحة كوستولاني ديز'و. تمتلئ الحديقة بالسكان المحليين في عطلات نهاية الأسبوع الدافئة. البرنامج على golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+      "slug": "golya-kosztolanyi-ar"
+    }
+  },
+  "prov-cov-kiosk-parliament": {
+    "hu": {
+      "name": "Kiosk Budapest",
+      "short": "Egész napos bisztró a Duna-parton — mediterrán fogások és terasz kilátással az Országházra.",
+      "long": "A Kiosk Budapest a Március 15. téren tágas terasszal rendelkezik, ahonnan a Dunára és az Országház tornyaira nyílik kilátás. Az étlap reggeli ebédtől késő vacsoráig tart, erős koktélkínálattal. Foglaljon a kioskbudapest.com oldalon a legjobb folyóparti asztalokhoz.\n\nSources: https://www.kioskbudapest.com/",
+      "slug": "kiosk-parliament-hu"
+    },
+    "es": {
+      "name": "Kiosk Budapest",
+      "short": "Bistró de todo el día en la orilla del Danubio — platos mediterráneos y terraza con vistas al Parlamento.",
+      "long": "Kiosk Budapest está en Március 15. tér con una amplia terraza que da al Danubio y a las agujas del Parlamento. El menú abarca desde el brunch hasta la cena tardía con una sólida carta de cócteles. Reserve en kioskbudapest.com para las mejores mesas junto al río.\n\nSources: https://www.kioskbudapest.com/",
+      "slug": "kiosk-parliament-es"
+    },
+    "it": {
+      "name": "Kiosk Budapest",
+      "short": "Bistrot tutto il giorno sulla riva del Danubio — piatti mediterranei e terrazza con vista sul Parlamento.",
+      "long": "Kiosk Budapest si trova a Március 15. tér con un'ampia terrazza affacciata sul Danubio e sulle guglie del Parlamento. Il menù spazia dal brunch alla cena tardi con una solida carta dei cocktail. Prenota su kioskbudapest.com per i migliori tavoli sul fiume.\n\nSources: https://www.kioskbudapest.com/",
+      "slug": "kiosk-parliament-it"
+    },
+    "he": {
+      "name": "קיוסק בודפשט",
+      "short": "ביסטרו כל היום על גדת הדנובה — מנות ים תיכוניות ונוף מרפסת לפרלמנט.",
+      "long": "קיוסק בודפשט ממוקם בכיכר מרציוס 15 עם מרפסת רחבה המשקיפה על הדנובה ועל צריחי הפרלמנט. התפריט משתרע מארוחת בוקר-צהריים ועד ארוחת ערב מאוחרת עם רשימת קוקטיילים עשירה. הזמן מקום דרך kioskbudapest.com לשולחנות הטובים על הנהר.\n\nSources: https://www.kioskbudapest.com/",
+      "slug": "kiosk-parliament-he"
+    },
+    "ar": {
+      "name": "كيوسك بودابست",
+      "short": "بيسترو طوال اليوم على ضفة الدانوب — أطباق متوسطية وشرفة بإطلالة على البرلمان.",
+      "long": "يقع كيوسك بودابست في ساحة مارتسيوس 15 مع مدرجات واسعة تطل على الدانوب وأبراج البرلمان. تمتد القائمة من الإفطار-الغداء حتى العشاء المتأخر مع قائمة كوكتيل قوية. احجز عبر kioskbudapest.com للحصول على أفضل الطاولات على النهر.\n\nSources: https://www.kioskbudapest.com/",
+      "slug": "kiosk-parliament-ar"
+    }
+  },
+  "prov-cov-ket-szerecsen-oktogon": {
+    "hu": {
+      "name": "Két Szerecsen",
+      "short": "Klasszikus pesti brasserie az Oktogon közelében — magyar comfort-ételek, terasz és késő konyha a Nagymező utcán.",
+      "long": "A Nagymező utcai Két Szerecsen egy régóta működő bisztró kertes üléssel, az Oktogon-kereszteződés közelében. Az étlap magyar alapételeket vegyít napi ajánlatokkal és megbízható borlappal. Színházi előadások után népszerű vacsorahelyszín; foglaljon a ketszerecsen.hu oldalon.\n\nSources: https://www.ketszerecsen.hu/",
+      "slug": "ket-szerecsen-oktogon-hu"
+    },
+    "es": {
+      "name": "Két Szerecsen",
+      "short": "Brasserie clásica de Pest cerca de Oktogon — comida húngara de confort, terraza y cocina nocturna en Nagymező utca.",
+      "long": "Két Szerecsen en Nagymező utca es un bistró consolidado con jardín cerca del cruce del Oktogon. El menú mezcla platos húngaros tradicionales con especiales del día y una carta de vinos de confianza. Popular para cenar tras el teatro; reserve en ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+      "slug": "ket-szerecsen-oktogon-es"
+    },
+    "it": {
+      "name": "Két Szerecsen",
+      "short": "Classica brasserie di Pest vicino all'Oktogon — comfort food ungherese, terrazza e cucina serale su Nagymező utca.",
+      "long": "Két Szerecsen su Nagymező utca è un bistrot storico con giardino vicino all'incrocio dell'Oktogon. Il menù mescola piatti ungheresi tradizionali con speciali giornalieri e un'affidabile carta dei vini. Popolare per le cene post-teatro; prenota su ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+      "slug": "ket-szerecsen-oktogon-it"
+    },
+    "he": {
+      "name": "כֶּט סֶרֶצ'ן",
+      "short": "בראסרי קלאסי של פשט ליד אוקטוגון — אוכל הונגרי מנחם, מרפסת ומטבח מאוחר ברחוב נדג'מז'ו.",
+      "long": "כֶּט סֶרֶצ'ן ברחוב נדג'מז'ו הוא ביסטרו ותיק עם ישיבה בגינה ליד צומת האוקטוגון. התפריט משלב מנות הונגריות מסורתיות עם מנות יום ורשימת יינות אמינה. פופולרי לסעודות לאחר הצגות תיאטרון; הזמנות ב-ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+      "slug": "ket-szerecsen-oktogon-he"
+    },
+    "ar": {
+      "name": "كيت سيريتشين",
+      "short": "براسري كلاسيكي في بشت قرب أوكتوغون — أكل هنغاري مريح وشرفة ومطبخ ليلي في شارع نادجميز'و.",
+      "long": "كيت سيريتشين في شارع نادجميز'و هو بيسترو عريق بجلوس في الحديقة بالقرب من تقاطع الأوكتوغون. تمزج القائمة بين الأطباق الهنغارية التقليدية والعروض اليومية وقائمة نبيذ موثوقة. مشهور لعشاء ما بعد المسرح؛ احجز على ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+      "slug": "ket-szerecsen-oktogon-ar"
+    }
+  },
+  "prov-cov-vegazzi-kazinczy": {
+    "hu": {
+      "name": "Vegazzi",
+      "short": "Növényi alapú bisztró a Kazinczy utcán — szezonális vegán fogások és természetes borok a romkocsmás negyedben.",
+      "long": "A Kazinczy utcai Vegazzi kreatív vegán és vegetáriánus menüket kínál természetes borpárosítással. A bensőséges terem csendesebb vacsorázási lehetőséget nyújt a partibárok között. Foglaljon a vegazzi.hu oldalon.\n\nSources: https://www.vegazzi.hu/",
+      "slug": "vegazzi-kazinczy-hu"
+    },
+    "es": {
+      "name": "Vegazzi",
+      "short": "Bistró de cocina vegetal en Kazinczy utca — platos veganos de temporada y vinos naturales en el barrio de las ruinas.",
+      "long": "Vegazzi en Kazinczy utca sirve menús veganos y vegetarianos creativos con maridajes de vino natural. La sala íntima es una pausa para cenar más tranquila entre los bares de fiesta. Reserva en vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+      "slug": "vegazzi-kazinczy-es"
+    },
+    "it": {
+      "name": "Vegazzi",
+      "short": "Bistrot plant-forward su Kazinczy utca — piatti vegani stagionali e vini naturali nel quartiere delle rovine.",
+      "long": "Vegazzi su Kazinczy utca serve menù vegani e vegetariani creativi con abbinamenti di vino naturale. La sala intima è una sosta cena più tranquilla tra i bar festaioli. Prenota su vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+      "slug": "vegazzi-kazinczy-it"
+    },
+    "he": {
+      "name": "וגאזי",
+      "short": "ביסטרו מבוסס צמחים ברחוב קאזינצי — מנות טבעוניות עונתיות ויינות טבעיים ברובע החורבות.",
+      "long": "וגאזי ברחוב קאזינצי מגיש תפריטים טבעוניים וצמחוניים יצירתיים עם התאמות יין טבעי. החדר האינטימי הוא עצירת ערב שקטה יותר בין ברי המסיבות. הזמנות דרך vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+      "slug": "vegazzi-kazinczy-he"
+    },
+    "ar": {
+      "name": "فيغازي",
+      "short": "بيسترو نباتي في شارع كازينتسي — أطباق نباتية موسمية ونبيذ طبيعي في حي الأطلال.",
+      "long": "يقدم فيغازي في شارع كازينتسي قوائم طعام نباتية وخضراوية إبداعية تقترن بالنبيذ الطبيعي. الغرفة الحميمة هي وجهة عشاء أهدأ وسط حانات الحفلات. الحجز عبر vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+      "slug": "vegazzi-kazinczy-ar"
+    }
+  },
+  "prov-cov-bamba-marha": {
+    "hu": {
+      "name": "Bamba Marha",
+      "short": "Gourmet burgerbár az egyetem közelében — kézműves húspogácsák, helyi sörök és késő nyitvatartás az Október 23. utcán.",
+      "long": "A Bamba Marha az Október 23. utcán vastag gourmet burgereket és kézműves csapot kínál, amelyeket a Dunán túli BME hallgatói kedvelnek. A laza terem késő estig nyitva tartja az ajtaját az A38 utáni tömegeknek is. Étlap a bambamarha.hu oldalon.\n\nSources: https://www.bambamarha.hu/",
+      "slug": "bamba-marha-hu"
+    },
+    "es": {
+      "name": "Bamba Marha",
+      "short": "Hamburguería gourmet cerca de la universidad — hamburguesas artesanales, cervezas locales y cierre tardío en Október 23. utca.",
+      "long": "Bamba Marha en Október 23. utca sirve gruesas hamburguesas gourmet y cervezas artesanales de grifo, populares entre estudiantes del BME al otro lado del Danubio. La sala informal permanece abierta para el público de post-concierto del A38. Menú en bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+      "slug": "bamba-marha-es"
+    },
+    "it": {
+      "name": "Bamba Marha",
+      "short": "Hamburgeria gourmet vicino all'università — polpette artigianali, birre locali e orari prolungati su Október 23. utca.",
+      "long": "Bamba Marha su Október 23. utca serve hamburger gourmet spessi e birre artigianali alla spina, popolari tra gli studenti del BME dall'altra parte del Danubio. La sala casual rimane aperta per il pubblico post-concerto dell'A38. Menù su bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+      "slug": "bamba-marha-it"
+    },
+    "he": {
+      "name": "במבה מרהה",
+      "short": "בורגר בר גורמה ליד האוניברסיטה — קציצות מיוחדות, בירות מקומיות ושעות פתיחה מאוחרות ברחוב אוקטובר 23.",
+      "long": "במבה מרהה ברחוב אוקטובר 23 מגיש המבורגרים גורמה עבים ובירות מיוחדות מהברז, פופולרי בקרב סטודנטים של BME מעבר לדנובה. החדר הקז'ואל פתוח עד מאוחר לקהל שאחרי A38. תפריט באתר bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+      "slug": "bamba-marha-he"
+    },
+    "ar": {
+      "name": "بامبا مارها",
+      "short": "بار برغر راقٍ بالقرب من الجامعة — شرائح لحم مميزة وبيرة محلية وأوقات عمل متأخرة في شارع أوكتوبر 23.",
+      "long": "يقدم بامبا مارها في شارع أوكتوبر 23 برغراً راقياً سميكاً وبيرة مميزة من الصنبور، محبوب بين طلاب BME عبر الدانوب. تبقى الغرفة غير الرسمية مفتوحة للجمهور بعد حفلات A38. القائمة على bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+      "slug": "bamba-marha-ar"
+    }
+  },
+  "prov-cov-citadella-rest": {
+    "hu": {
+      "name": "Citadella Étterem",
+      "short": "Panorámaétterem a Gellért-hegyen — magyar-európai menü teraszos kilátással a Citadelláról.",
+      "long": "A Citadella Étterem a Gellért-hegy csúcsán ebédet és vacsorát kínál, lenyűgöző pesti panorámával. A teraszasztalok naplementekor telnek meg a Szabadság-szobortól felgyalogló turistákkal. Étlap a citadellarestaurant.hu oldalon.\n\nSources: https://www.citadellarestaurant.hu/",
+      "slug": "citadella-rest-hu"
+    },
+    "es": {
+      "name": "Restaurante Citadella",
+      "short": "Restaurante panorámico en la Colina Gellért — menú húngaro-europeo con vistas en terraza desde la Ciudadela.",
+      "long": "El Restaurante Citadella en la cima del Monte Gellért sirve almuerzo y cena con amplias vistas de Pest. Las mesas en terraza se llenan al atardecer con turistas que suben desde la Estatua de la Libertad. Menú en citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+      "slug": "citadella-rest-es"
+    },
+    "it": {
+      "name": "Ristorante Citadella",
+      "short": "Ristorante panoramico sul Colle Gellért — menù ungherese-europeo con viste in terrazza dalla Cittadella.",
+      "long": "Il Ristorante Citadella in cima al Monte Gellért serve pranzo e cena con ampie vedute su Pest. I tavoli in terrazza si riempiono al tramonto con i turisti che salgono dalla Statua della Libertà. Menù su citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+      "slug": "citadella-rest-it"
+    },
+    "he": {
+      "name": "מסעדת ציטדלה",
+      "short": "מסעדה פנורמית על גבעת גלרט — תפריט הונגרי-אירופאי עם נוף מרפסת מהציטדלה.",
+      "long": "מסעדת ציטדלה בפסגת גבעת גלרט מגישה ארוחות צהריים וערב עם נוף רחב על פשט. שולחנות המרפסת מתמלאים בשקיעה עם תיירים המטפסים ממצוקת פסל החירות. תפריט באתר citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+      "slug": "citadella-rest-he"
+    },
+    "ar": {
+      "name": "مطعم سيتادلا",
+      "short": "مطعم بانورامي على تل جيليرت — قائمة هنغارية-أوروبية مع إطلالات من تراس السيتادلا.",
+      "long": "يقدم مطعم سيتادلا على قمة تل جيليرت الغداء والعشاء مع إطلالات واسعة على بشت. تمتلئ طاولات التراس عند الغروب بالسياح الصاعدين من تمثال الحرية. القائمة على citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+      "slug": "citadella-rest-ar"
+    }
+  },
+  "prov-cov-buena-vista-obuda": {
+    "hu": {
+      "name": "Buena Vista Bisztró",
+      "short": "Sziget melletti bisztró az óbudai hajógyárak közelében — grillételek, burgerek és teraszi sör a Duna partján.",
+      "long": "A Királyok útján lévő Buena Vista Bisztró alkalmi grillételeket és sört kínál egy teraszon, ahonnan az Óbudai-sziget hídjaira nyílik kilátás. A koncertlátogatók itt állnak meg a Budapest Park előadásai előtt. Étlap a buenavista.hu oldalon.\n\nSources: https://www.buenavista.hu/",
+      "slug": "buena-vista-obuda-hu"
+    },
+    "es": {
+      "name": "Buena Vista Bistro",
+      "short": "Bistró junto a la isla, cerca de los astilleros de Óbuda — parrillas, hamburguesas y cerveza en terraza junto al Danubio.",
+      "long": "Buena Vista Bistro en Királyok útja sirve parrillas informales y cerveza en una terraza con vistas a los puentes de la Isla de Óbuda. El público de conciertos para aquí antes de los espectáculos del Budapest Park. Menú en buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+      "slug": "buena-vista-obuda-es"
+    },
+    "it": {
+      "name": "Buena Vista Bistro",
+      "short": "Bistrot vicino all'isola, nei pressi dei cantieri di Óbuda — grigliate, hamburger e birra in terrazza sul Danubio.",
+      "long": "Buena Vista Bistro su Királyok útja serve grigliate informali e birra su una terrazza con vista sui ponti dell'Isola di Óbuda. Il pubblico dei concerti si ferma qui prima degli spettacoli del Budapest Park. Menù su buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+      "slug": "buena-vista-obuda-it"
+    },
+    "he": {
+      "name": "בואנה ויסטה ביסטרו",
+      "short": "ביסטרו סמוך לאי ליד מספנות אובודה — גרילים, המבורגרים ובירת מרפסת על הדנובה.",
+      "long": "בואנה ויסטה ביסטרו בכביש קיראיוק מגיש מנות גריל ובירה במרפסת עם נוף לגשרי האי של אובודה. מבקרי הקונצרטים עוצרים כאן לפני ההופעות של בודפשט פארק. תפריט באתר buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+      "slug": "buena-vista-obuda-he"
+    },
+    "ar": {
+      "name": "بوينا فيستا بيسترو",
+      "short": "بيسترو مجاور للجزيرة بالقرب من أحواض بناء السفن في أوبودا — مشاوي وبرغر وبيرة في التراس على الدانوب.",
+      "long": "يقدم بوينا فيستا بيسترو في شارع كيرالوك مشاوي غير رسمية وبيرة في تراس يطل على جسور جزيرة أوبودا. يتوقف رواد الحفلات هنا قبل عروض بودابست بارك. القائمة على buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+      "slug": "buena-vista-obuda-ar"
+    }
+  },
+  "prov-cov-vasut-obuda": {
+    "hu": {
+      "name": "Vasúrszálló Étterem",
+      "short": "Vasúti szálloda étterme a Fő tér közelében — magyar vadhúsok és pinceborok Óbudán.",
+      "long": "A Fő tér Óbuda melletti Vasúrszálló Étterem kiadós magyar ételeket kínál egy történelmi vasúti szálloda hangulatában. Az étteremterem vasárnapi családi ebédeknek és hétköznapi üzleti étkezéseknek egyaránt megfelel. Étlap a vasurszallo.hu oldalon.\n\nSources: https://www.vasurszallo.hu/",
+      "slug": "vasut-obuda-hu"
+    },
+    "es": {
+      "name": "Restaurante Vasúrszálló",
+      "short": "Restaurante de hotel ferroviario cerca de Main Square — caza húngara y vinos de bodega en Óbuda.",
+      "long": "El Restaurante Vasúrszálló cerca de Main Square Óbuda sirve platos húngaros abundantes en un ambiente histórico de posada ferroviaria. El comedor es ideal para almuerzos familiares dominicales y comidas de negocios entre semana. Menú en vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+      "slug": "vasut-obuda-es"
+    },
+    "it": {
+      "name": "Ristorante Vasúrszálló",
+      "short": "Ristorante albergo ferroviario vicino a Main Square — selvaggina ungherese e vini da cantina a Óbuda.",
+      "long": "Il Ristorante Vasúrszálló vicino a Main Square Óbuda serve piatti ungheresi abbondanti in un'atmosfera storica di locanda ferroviaria. La sala da pranzo è adatta per i pranzi domenicali in famiglia e per i pasti d'affari nei giorni feriali. Menù su vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+      "slug": "vasut-obuda-it"
+    },
+    "he": {
+      "name": "מסעדת וושורסאלו",
+      "short": "מסעדת מלון הרכבת ליד הכיכר הראשית — ציד הונגרי ויינות מרתף באובודה.",
+      "long": "מסעדת וושורסאלו ליד הכיכר הראשית של אובודה מגישה מנות הונגריות שמנות באווירה היסטורית של פונדק רכבות. חדר האוכל מתאים לארוחות משפחתיות בצהריים ביום ראשון ולארוחות עסקיות בימות השבוע. תפריט באתר vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+      "slug": "vasut-obuda-he"
+    },
+    "ar": {
+      "name": "مطعم فاشورسالو",
+      "short": "مطعم فندق السكك الحديدية بالقرب من الميدان الرئيسي — طرائد هنغارية ونبيذ القبو في أوبودا.",
+      "long": "يقدم مطعم فاشورسالو بالقرب من الميدان الرئيسي في أوبودا أطباقاً هنغارية دسمة في أجواء نزل سكك حديدية تاريخية. تناسب غرفة الطعام وجبات الغداء العائلية يوم الأحد والوجبات التجارية في أيام الأسبوع. القائمة على vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+      "slug": "vasut-obuda-ar"
+    }
+  },
+  "prov-cov-kekbello-kosztolanyi": {
+    "hu": {
+      "name": "Kékbello Bisztró",
+      "short": "Negyedi bisztró a Kosztolányi tér közelében — szezonális menü és magyar borok a Bocskai úton.",
+      "long": "A Bocskai úti Kékbello Bisztró kompakt szezonális menüket kínál természetes borokkal a Kosztolányi Dezső tér körüli lakóknak. A téglaboltozatos étkezőterem csendes páros vacsorákhoz ideális, Buda déli részén. Foglaljon a kekbello.hu oldalon.\n\nSources: https://www.kekbello.hu/",
+      "slug": "kekbello-kosztolanyi-hu"
+    },
+    "es": {
+      "name": "Kékbello Bistro",
+      "short": "Bistró de barrio cerca de Kosztolányi tér — menú de temporada y vinos húngaros en Bocskai út.",
+      "long": "Kékbello Bistro en Bocskai út sirve menús de temporada compactos con vinos naturales para los residentes alrededor de Kosztolányi Dezső tér. El comedor de ladrillo visto es ideal para cenas tranquilas en pareja en el sur de Buda. Reserve en kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+      "slug": "kekbello-kosztolanyi-es"
+    },
+    "it": {
+      "name": "Kékbello Bistro",
+      "short": "Bistrot di quartiere vicino a Kosztolányi tér — menù stagionale e vini ungheresi su Bocskai út.",
+      "long": "Kékbello Bistro su Bocskai út serve menù stagionali compatti con vini naturali per i residenti intorno a Kosztolányi Dezső tér. La sala da pranzo in mattoni è ideale per cene tranquille in coppia nel sud di Buda. Prenota su kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+      "slug": "kekbello-kosztolanyi-it"
+    },
+    "he": {
+      "name": "קֵקבֵלו ביסטרו",
+      "short": "ביסטרו שכונתי ליד כיכר קוסטולאני — תפריט עונתי ויינות הונגרים בשדרות בוצ'קאי.",
+      "long": "קֵקבֵלו ביסטרו בשדרות בוצ'קאי מגיש תפריטים עונתיים קומפקטיים עם יינות טבעיים לתושבים סביב כיכר קוסטולאני דז'ו. חדר האוכל הבנוי לבנים מתאים לארוחות ערב שקטות בזוג בבודה הדרומית. הזמנות דרך kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+      "slug": "kekbello-kosztolanyi-he"
+    },
+    "ar": {
+      "name": "كيكبيلو بيسترو",
+      "short": "بيسترو حي بالقرب من ساحة كوستولاني — قائمة موسمية ونبيذ هنغاري في شارع بوتشكاي.",
+      "long": "يقدم كيكبيلو بيسترو في شارع بوتشكاي قوائم موسمية مدمجة مع النبيذ الطبيعي للسكان حول ساحة كوستولاني ديز'و. تناسب غرفة الطعام ذات الطوب العشاءات الهادئة للأزواج في جنوب بودا. الحجز على kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+      "slug": "kekbello-kosztolanyi-ar"
+    }
+  },
+  "prov-cov-szamos-prom": {
+    "hu": {
+      "name": "Szamos Kávézó Vigadó",
+      "short": "Klasszikus magyar cukrász kávézó a Duna partján — torták és kávé a Vigadó tér közelében.",
+      "long": "A Vigadó utcai Szamos Kávézó a Szamos csokoládé- és süteménydinasztia folyóhoz közeli szalonjának része. Hagyományos torták, eszpresszó és szezonális édességek várnak a korzón sétálókat. Nyitvatartás a szamos.hu oldalon.\n\nSources: https://www.szamos.hu/",
+      "slug": "szamos-prom-hu"
+    },
+    "es": {
+      "name": "Szamos Café Vigadó",
+      "short": "Clásica cafetería de confitería húngara junto al Danubio — pasteles y café cerca de Vigadó tér.",
+      "long": "El Szamos Café en Vigadó utca es parte de la dinastía Szamos de chocolates y tartas, con un salón cerca del río. Ofrece tartas tradicionales, espresso y dulces de temporada en el paseo ribereño. Horarios en szamos.hu.\n\nSources: https://www.szamos.hu/",
+      "slug": "szamos-prom-es"
+    },
+    "it": {
+      "name": "Szamos Café Vigadó",
+      "short": "Classica caffetteria di pasticceria ungherese sul Danubio — torte e caffè vicino a Vigadó tér.",
+      "long": "Il Szamos Café su Vigadó utca fa parte della dinastia Szamos del cioccolato e delle torte, con un salone vicino al fiume. Offre torte tradizionali, espresso e dolci di stagione sul lungofiume. Orari su szamos.hu.\n\nSources: https://www.szamos.hu/",
+      "slug": "szamos-prom-it"
+    },
+    "he": {
+      "name": "קפה סאמוש ויגאדו",
+      "short": "בית קפה של קונדיטוריה הונגרית קלאסית על הדנובה — עוגות וקפה ליד כיכר ויגאדו.",
+      "long": "קפה סאמוש בשדרת ויגאדו הוא חלק מממלכת השוקולד והעוגות של סאמוש עם סלון סמוך לנהר. מצפים לעוגות מסורתיות, אספרסו ומתוקים עונתיים בטיילת. שעות פתיחה באתר szamos.hu.\n\nSources: https://www.szamos.hu/",
+      "slug": "szamos-prom-he"
+    },
+    "ar": {
+      "name": "كافيه سامُش فيغادو",
+      "short": "مقهى حلوانيات هنغارية كلاسيكية على ضفة الدانوب — كعك وقهوة بالقرب من ساحة فيغادو.",
+      "long": "يُعدّ كافيه سامُش في شارع فيغادو جزءاً من سلالة الشوكولاتة والكعك سامُش مع صالون قريب من النهر. انتظر التورتات التقليدية والإسبريسو والحلويات الموسمية على كورنيش النهر. أوقات العمل على szamos.hu.\n\nSources: https://www.szamos.hu/",
+      "slug": "szamos-prom-ar"
+    }
+  },
+  "prov-cov-contessa-jewish-q": {
+    "hu": {
+      "name": "Szpünik Kávézó",
+      "short": "Nappali kávézó a Szimplán belül — reggeli és eszpresszó a romkocsma megnyitása előtt a Zsidó negyedben.",
+      "long": "A Szpünik Kávézó nappal üzemel a Kazinczy utcai Szimpla Kert komplexumon belül, ahol kávét, reggelit és könnyű ebédet kínál. Csendesebb belépő a Zsidó negyed romkert-kertjeibe. Részletek a szimpla.hu oldalon.\n\nSources: https://szimpla.hu/szpunik",
+      "slug": "contessa-jewish-q-hu"
+    },
+    "es": {
+      "name": "Szpünik Café",
+      "short": "Cafetería diurna dentro de Szimpla — brunch y espresso antes de que abra el ruin bar en el Barrio Judío.",
+      "long": "Szpünik Café opera en horario diurno dentro del complejo Szimpla Kert en Kazinczy utca con café, desayuno y almuerzo ligero. Es una entrada más tranquila a los jardines de ruinas del Barrio Judío. Detalles en szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+      "slug": "contessa-jewish-q-es"
+    },
+    "it": {
+      "name": "Szpünik Café",
+      "short": "Caffetteria diurna dentro Szimpla — brunch e espresso prima dell'apertura del ruin bar nel Quartiere Ebraico.",
+      "long": "Szpünik Café opera nelle ore diurne all'interno del complesso Szimpla Kert su Kazinczy utca con caffè, colazione e pranzo leggero. È un ingresso più tranquillo ai giardini di rovine del Quartiere Ebraico. Dettagli su szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+      "slug": "contessa-jewish-q-it"
+    },
+    "he": {
+      "name": "שפיוניק קפה",
+      "short": "בית קפה יומי בתוך שימפלה — ברנץ' ואספרסו לפני פתיחת בר החורבות ברובע היהודי.",
+      "long": "שפיוניק קפה פועל בשעות היום בתוך מתחם שימפלה קרט ברחוב קאזינצי עם קפה, ארוחת בוקר וצהריים קל. הוא נקודת כניסה שקטה יותר לגני החורבות של הרובע היהודי. פרטים דרך szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+      "slug": "contessa-jewish-q-he"
+    },
+    "ar": {
+      "name": "سبيونيك كافيه",
+      "short": "مقهى نهاري داخل شيمبلا — برنش وإسبريسو قبل افتتاح بار الأطلال في الحي اليهودي.",
+      "long": "يعمل سبيونيك كافيه خلال ساعات النهار داخل مجمع شيمبلا كرت في شارع كازينتسي مع القهوة والإفطار والغداء الخفيف. إنه نقطة دخول أهدأ لحدائق الأطلال في الحي اليهودي. التفاصيل على szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+      "slug": "contessa-jewish-q-ar"
+    }
+  },
+  "prov-cov-embassy-rakoczi": {
+    "hu": {
+      "name": "Espresso Embassy Rákóczi",
+      "short": "Az Embassy második kávézója a Rákóczi úton — különleges pörköléssel az ingázóknak a bulvárnál és a metrócsomópontnál.",
+      "long": "Az Espresso Embassy Rákóczi úti kirendeltsége a márka különleges pörköléstechnikáját hozza el pour-overrel és eszpresszóval az ingázóknak a Rákóczi tér közelében. A kompakt pult gyors reggeli megállókhoz is ideális. Nyitvatartás az espressoembassy.hu oldalon.\n\nSources: https://espressoembassy.hu/",
+      "slug": "embassy-rakoczi-hu"
+    },
+    "es": {
+      "name": "Espresso Embassy Rákóczi",
+      "short": "Segunda cafetería Embassy en Rákóczi út — tostado de especialidad para viajeros en el bulevar y la conexión de metro.",
+      "long": "La sucursal de Rákóczi út de Espresso Embassy continúa el tostado de especialidad de la marca con pour-over y espresso para los viajeros cerca de Rákóczi tér. Un pequeño mostrador es ideal para paradas rápidas matutinas. Horarios en espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+      "slug": "embassy-rakoczi-es"
+    },
+    "it": {
+      "name": "Espresso Embassy Rákóczi",
+      "short": "Secondo Embassy su Rákóczi út — tostatura specialty per pendolari sul viale e nodo della metro.",
+      "long": "Il punto vendita di Rákóczi út di Espresso Embassy continua la tostatura specialty del marchio con pour-over ed espresso per i pendolari vicino a Rákóczi tér. Un bancone compatto è ideale per le soste mattutine veloci. Orari su espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+      "slug": "embassy-rakoczi-it"
+    },
+    "he": {
+      "name": "אספרסו אמבסי ראקוצי",
+      "short": "בית הקפה השני של אמבסי ברחוב ראקוצי — קלייה מיוחדת לנוסעים ליד הבולוואר ותחנת המטרו.",
+      "long": "סניף רחוב ראקוצי של אספרסו אמבסי ממשיך את הקלייה המיוחדת של המותג עם פור-אובר ואספרסו לנוסעים ליד כיכר ראקוצי. פינה קומפקטית אידיאלית לעצירות בוקר מהירות. שעות פתיחה באתר espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+      "slug": "embassy-rakoczi-he"
+    },
+    "ar": {
+      "name": "إسبريسو إمباسي راكوتسي",
+      "short": "مقهى إمباسي الثاني في شارع راكوتسي — تحميص متخصص للمسافرين على الجادة وعقدة المترو.",
+      "long": "يستمر فرع شارع راكوتسي من إسبريسو إمباسي في التحميص المتخصص للعلامة التجارية مع البور أوفر والإسبريسو للمسافرين بالقرب من ساحة راكوتسي. يناسب البار الصغير التوقف السريع صباحاً. أوقات العمل على espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+      "slug": "embassy-rakoczi-ar"
+    }
+  }
+}

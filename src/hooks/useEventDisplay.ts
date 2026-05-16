@@ -27,7 +27,11 @@ export function useFormatDoorsOpen() {
 
 export function useFormatEntryFee() {
   const locale = useLocale();
-  return (fee: EntryFee) => formatEntryFee(fee, locale);
+  const t = useTranslations("event");
+  return (fee: EntryFee) => {
+    if (fee.currency === "FREE" || fee.amount === 0) return t("freeEntry");
+    return formatEntryFee(fee, locale);
+  };
 }
 
 export function useEventFromPrice() {

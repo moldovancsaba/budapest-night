@@ -23,6 +23,7 @@ export const NEIGHBORHOOD_KEY: Record<string, string> = {
   "Nagytemplom utca": "nagytemplomUtca",
   "Boráros tér": "borarosTer",
   "Millenniumi Városközpont": "millenniumiVaroskozpont",
+  "Fábián Juli": "fabianJuli",
   "Castle District": "castleDistrict",
   "Gellért Hill": "gellertHill",
   Tabán: "taban",

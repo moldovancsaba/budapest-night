@@ -146,7 +146,7 @@ const COV_EVENT_I18N = {
       "Teatro dell Operetta di Budapest",
       "Grande teatro dell operetta su Andrassy ut, con musical, operette e prime di gala in un viale UNESCO.",
       "Il Teatro dell Operetta di Budapest, in Andrassy ut 17, mette in scena produzioni musicali ungheresi e internazionali in un elegante salone del XIX secolo. Si trova tra Oktogon e la fermata metro Opera. Biglietti e brochure di stagione su operettszinhaz.hu.",
-      "teatro-operetta-budapest-it"
+      "operetta-andrassy-it"
     ),
     he: localeEntry(
       "תיאטרון האופרטה של בודפשט",

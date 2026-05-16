@@ -132,45 +132,45 @@ const LOCALES_BY_ID = {
     hu: {
       name: "Budapest Park",
       shortDescription:
-        "Nyílt légi koncert- és bulipark a Hajógyári-szigeten — főszínpad, teraszok, nyári szezon.",
+        "Dél-Pest nyílt légi koncertpark a Fábián Juli téren — aréna, teraszok, nyári szezon.",
       longDescription:
-        "A Budapest Park szezonális szabadtéri helyszín a Hajógyári-szigeten, nagyjából áprilistól október elejéig koncertekkel, DJ estekkel és ételárusokkal. Az oldalon kapunyitás, ruhatár (499 Ft) és közlekedés tram, H6/H7 és busz szerint. Jegyek: budapestpark.hu.\n\n" +
+        "A Budapest Park szezonális szabadtéri helyszín dél-Pesten (Ferencváros, 1095 Budapest, Fábián Juli tér 1.), nem az óbudai Hajógyári-szigeten. Áprilistól október elejéig koncertek, DJ estek és ételárusok. Kapunyitás, ruhatár (499 Ft) és közlekedés (4/6-os villamos, H7) show-nként a budapestpark.hu oldalon.\n\n" +
         S("Sources: https://www.budapestpark.hu/en/park"),
       slug: "budapest-park",
     },
     es: {
       name: "Budapest Park",
       shortDescription:
-        "Parque de conciertos y fiestas al aire libre en la isla Hajógyári — escenario principal y temporada de verano.",
+        "Parque de conciertos al aire libre en el sur de Pest, plaza Fábián Juli — arena y terrazas.",
       longDescription:
-        "Budapest Park es el recinto estacional al aire libre en Hajógyári-sziget (isla del Astillero), abierto aproximadamente de abril a principios de octubre con conciertos, noches de DJ y puestos de comida. La web indica horarios de puerta, guardarropa (499 HUF) y transporte en tranvía, H6/H7 y autobús. Entradas en budapestpark.hu.\n\n" +
+        "Budapest Park es un recinto estacional al aire libre en el sur de Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1), no en la isla de Óbuda. Abierto aproximadamente de abril a principios de octubre. Entradas y horarios en budapestpark.hu.\n\n" +
         S("Sources: https://www.budapestpark.hu/en/park"),
       slug: "budapest-park-es",
     },
     it: {
       name: "Budapest Park",
       shortDescription:
-        "Parco concerti e party all'aperto sull'isola Hajógyári — palco principale e stagione estiva.",
+        "Parco concerti all'aperto a Pest sud, piazza Fábián Juli — arena e terrazze.",
       longDescription:
-        "Budapest Park è la venue stagionale all'aperto su Hajógyári-sziget (isola del cantiere navale), aperta circa da aprile a inizio ottobre con concerti, serate DJ e street food. Il sito elenca orari cancelli, guardaroba (499 HUF) e trasporti tram, H6/H7 e bus. Biglietti su budapestpark.hu.\n\n" +
+        "Budapest Park è una venue stagionale all'aperto a Pest sud (Ferencváros, 1095 Budapest, Fábián Juli tér 1), non sull'isola di Óbuda. Aperta circa da aprile a inizio ottobre. Biglietti su budapestpark.hu.\n\n" +
         S("Sources: https://www.budapestpark.hu/en/park"),
       slug: "budapest-park-it",
     },
     he: {
       name: "בודפשט פארק",
       shortDescription:
-        "פארק הופעות ומסיבות בחוץ באי הייאוגיארי — במה ראשית ועונת קיץ.",
+        "פארק הופעות בחוץ בדרום פשט, כיכר פביאן יולי — זירה וטרסות.",
       longDescription:
-        "בודפשט פארק הוא מתחם עונתי בחוץ באי הייאוגיארי (אי מספנות), פתוח בערך מאפריל עד תחילת אוקטובר עם קונצרטים, לילות DJ ודוכני אוכל. האתר מפרט שעות שערים, שירות מעילים (499 פורינט) ותחבורה ברכבת, H6/H7 ואוטובוס. כרטיסים ב-budapestpark.hu.\n\n" +
+        "בודפשט פארק הוא מתחם עונתי בחוץ בדרום פשט (Ferencváros, 1095 Budapest, Fábián Juli tér 1), לא באי אובודה. פתוח בערך מאפריל עד תחילת אוקטובר. כרטיסים ב-budapestpark.hu.\n\n" +
         S("Sources: https://www.budapestpark.hu/en/park"),
       slug: "budapest-park-he",
     },
     ar: {
       name: "بودابست بارك",
       shortDescription:
-        "حديقة حفلات وموسيقى في الهواء الطلق على جزيرة هايوغياري — مسرح رئيسي وموسم صيفي.",
+        "حديقة حفلات في الهواء الطلق جنوب بودابست، ساحة فابيان جولي.",
       longDescription:
-        "بودابست بارك هو مكان موسمي في الهواء الطلق على جزيرة هايوغياري، مفتوح تقريباً من أبريل حتى أوائل أكتوبر بحفلات وليالي DJ وبائعي طعام. الموقع يوضح أوقات البوابة والخزانة (499 فورنت) والمواصلات بالترام وH6/H7 والحافلة. التذاكر على budapestpark.hu.\n\n" +
+        "بودابست بارك مكان موسمي في الهواء الطلق في جنوب بودابست (Ferencváros، 1095 Budapest، Fábián Juli tér 1) وليس في جزيرة أوبودا. مفتوح تقريباً من أبريل حتى أوائل أكتوبر. التذاكر على budapestpark.hu.\n\n" +
         S("Sources: https://www.budapestpark.hu/en/park"),
       slug: "budapest-park-ar",
     },

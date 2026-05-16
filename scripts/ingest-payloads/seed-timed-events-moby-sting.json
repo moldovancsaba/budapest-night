@@ -5,10 +5,68 @@
   ],
   "notes": "Test timed events (Moby, Sting 3.0) + MVM Dome venue + Budapest Park recategorized as Venues. Run migration script first if DB still has category Events.",
   "missingOrUncertain": [
-    "Sting ticket prices vary by tier; entryFees use published on-sale reference only.",
+    "Moby ticket tiers and admin fees from budapestpark.hu (May 2026); middle terrace tier sold out on site.",
+    "Sting ticket prices vary by tier; see livenation.hu (no fixed tiers in seed).",
     "MVM Dome image uses Budapest arena placeholder until dedicated ImgBB asset is uploaded."
   ],
   "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-budapest-park-obuda",
+        "name": "Budapest Park",
+        "category": "Venues",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": ["Festival", "Live Music", "DJ Sets"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Evening", "Weekend", "Late night"],
+        "pricePerClass": 26999,
+        "shortDescription": "South Pest open-air concert park at Fábián Juli tér — arena, terraces, and summer festival season.",
+        "longDescription": "Budapest Park is a seasonal open-air venue in southern Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1), not on Óbuda Island. It runs roughly April through early October with concerts, DJ nights, and food vendors. Gate times, cloakroom (499 HUF), and transport (tram 4/6, H7) are listed per show on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": ["Featured", "Weekend Vibes"],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "slug": "budapest-park",
+            "name": "Budapest Park",
+            "shortDescription": "Dél-Pest nyílt légi koncertpark a Fábián Juli téren — aréna, teraszok, nyári szezon.",
+            "longDescription": "A Budapest Park szezonális szabadtéri helyszín dél-Pesten (Ferencváros, 1095 Budapest, Fábián Juli tér 1.), nem az óbudai Hajógyári-szigeten. Áprilistól október elejéig koncertek, DJ estek és ételárusok. Kapunyitás, ruhatár (499 Ft) és közlekedés (4/6-os villamos, H7) show-nként a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "es": {
+            "slug": "budapest-park-es",
+            "name": "Budapest Park",
+            "shortDescription": "Parque de conciertos al aire libre en el sur de Pest, plaza Fábián Juli — arena y terrazas.",
+            "longDescription": "Budapest Park es un recinto estacional al aire libre en el sur de Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1), no en la isla de Óbuda. Abierto aproximadamente de abril a principios de octubre. Entradas y horarios en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "it": {
+            "slug": "budapest-park-it",
+            "name": "Budapest Park",
+            "shortDescription": "Parco concerti all'aperto a Pest sud, piazza Fábián Juli — arena e terrazze.",
+            "longDescription": "Budapest Park è una venue stagionale all'aperto a Pest sud (Ferencváros, 1095 Budapest, Fábián Juli tér 1), non sull'isola di Óbuda. Aperta circa da aprile a inizio ottobre. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "he": {
+            "slug": "budapest-park-he",
+            "name": "בודפשט פארק",
+            "shortDescription": "פארק הופעות בחוץ בדרום פשט, כיכר פביאן יולי — זירה וטרסות.",
+            "longDescription": "בודפשט פארק הוא מתחם עונתי בחוץ בדרום פשט (Ferencváros, 1095 Budapest, Fábián Juli tér 1), לא באי אובודה. פתוח בערך מאפריל עד תחילת אוקטובר. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "ar": {
+            "slug": "budapest-park-ar",
+            "name": "بودابست بارك",
+            "shortDescription": "حديقة حفلات في الهواء الطلق جنوب بودابست، ساحة فابيان جولي.",
+            "longDescription": "بودابست بارك مكان موسمي في الهواء الطلق في جنوب بودابست (Ferencváros، 1095 Budapest، Fábián Juli tér 1) وليس في جزيرة أوبودا. مفتوح تقريباً من أبريل حتى أوائل أكتوبر. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          }
+        }
+      }
+    },
     {
       "resource": "provider",
       "action": "upsert",
@@ -72,23 +130,31 @@
       "document": {
         "id": "event-moby-budapest-park-2026",
         "title": "Moby — live at Budapest Park",
-        "shortDescription": "Moby returns to Budapest Park on Saturday 1 August 2026 — gates 18:00, electronic set on the island stage.",
-        "longDescription": "After 15 years, Moby plays an open-air show at Budapest Park (Hajógyári-sziget). The promoter lists gate opening at 18:00 on Saturday 1 August 2026. Buy tickets on budapestpark.hu; handling fees may apply online.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801",
+        "shortDescription": "Moby returns to Budapest Park on Saturday 1 August 2026 — gates 18:00, electronic set in South Pest (Fábián Juli tér).",
+        "longDescription": "After 15 years, Moby plays an open-air show at Budapest Park in southern Pest (1095 Budapest, Fábián Juli tér 1). Gates open at 18:00 on Saturday 1 August 2026. Ticketed show — arena and terrace tiers on budapestpark.hu (admin fees apply at checkout).\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801",
         "startsAt": "2026-08-01T20:00:00+02:00",
         "endsAt": "2026-08-01T23:30:00+02:00",
         "doorsOpenAt": "2026-08-01T18:00:00+02:00",
         "timezone": "Europe/Budapest",
         "venueIds": ["prov-budapest-park-obuda"],
-        "borough": "Óbuda",
-        "neighborhood": "Óbuda Island",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
         "entryFees": [
           {
-            "id": "ga",
-            "label": "General admission",
-            "amount": 0,
-            "currency": "FREE",
+            "id": "arena-pl2",
+            "label": "Arena — PL2 (general admission)",
+            "amount": 26999,
+            "currency": "HUF",
             "source": "published",
-            "notes": "See budapestpark.hu for current ticket tiers and fees"
+            "notes": "+ 1,350 Ft admin fee at checkout (budapestpark.hu)"
+          },
+          {
+            "id": "terrace-rear",
+            "label": "Hoppá terrace, rear — general admission",
+            "amount": 45999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 2,300 Ft admin fee at checkout"
           }
         ],
         "activityTypes": ["Live Music", "Electronic"],
@@ -105,8 +171,8 @@
           "hu": {
             "slug": "moby-budapest-park-2026",
             "title": "Moby — élőben a Budapest Parkban",
-            "shortDescription": "Moby visszatér 2026. augusztus 1-jén — kapunyitás 18:00.",
-            "longDescription": "Moby nyílt légi koncert a Budapest Parkban. Kapunyitás 18:00, jegyek a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
+            "shortDescription": "Moby visszatér 2026. augusztus 1-jén — kapunyitás 18:00, dél-Pest (Fábián Juli tér).",
+            "longDescription": "Moby nyílt légi koncert a Budapest Parkban, dél-Pesten (1095 Budapest, Fábián Juli tér 1.). Kapunyitás 18:00. Jegyes előadás — aréna és terasz kategóriák a budapestpark.hu oldalon (kezelési díjak a pénztárnál).\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
           },
           "es": {
             "slug": "moby-budapest-park-2026",
@@ -149,16 +215,7 @@
         "venueIds": ["prov-mvm-dome-ujbuda"],
         "borough": "Újbuda",
         "neighborhood": "Kelenföld",
-        "entryFees": [
-          {
-            "id": "onsale",
-            "label": "General on sale",
-            "amount": 0,
-            "currency": "FREE",
-            "source": "published",
-            "notes": "See livenation.hu for tier pricing"
-          }
-        ],
+        "entryFees": [],
         "activityTypes": ["Live Music"],
         "ageRanges": ["All ages", "18+"],
         "dayTimeTags": ["Weekday", "Evening"],
