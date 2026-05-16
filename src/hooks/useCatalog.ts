@@ -79,15 +79,3 @@ export function useSiteCatalog() {
     staleTime: 60_000,
   });
 }
-
-export function useBrainStarters() {
-  return useQuery({
-    queryKey: ["catalog", "brain-starters"],
-    queryFn: async () => {
-      const r = await fetch("/api/public/brain");
-      if (!r.ok) return { starters: [] as string[] };
-      return r.json() as Promise<{ starters: string[] }>;
-    },
-    staleTime: 60_000,
-  });
-}

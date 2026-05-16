@@ -29,7 +29,7 @@ Valid listing types (pick what the source actually is):
 
 **Do not** confuse venues with timed events. A concert page is an **event** (plus venue upsert if missing). A venue’s general info page is a **provider** with `category: "Venues"`. **Never** use `category: "Events"` (removed).
 
-Prefer official sources (venue `.hu` site, promoter/ticket office, cultural institution). Must be clearly **Budapest**, with correct `borough` + canonical **neighborhood** from `src/data/locations.ts`.
+Prefer official sources (venue `.hu` site, promoter/ticket office, cultural institution). Must be clearly **Budapest**, with `borough` + `neighborhood` from **`scripts/cursor-curator-location-rules.txt`** / `src/data/budapest-location-registry.json` (ingest rejects non-registry locations).
 
 ## Hard requirements
 1. You must finish with a **successful production ingest** (`HTTP 200`, response `ok: true` from `POST /api/ingest`).

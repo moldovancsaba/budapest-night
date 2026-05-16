@@ -1,5 +1,6 @@
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 import { normalizeRates } from "@/lib/currency";
+import { resolveDiscoverHeroUrl, resolveHomeHeroUrl } from "@/lib/siteMedia";
 import { DEFAULT_SITE, type SiteAccountSettings, type SiteCalculatorCopy, type SiteDoc } from "@/types/site";
 
 function mergeCalculator(base: SiteCalculatorCopy, patch: Partial<SiteCalculatorCopy> | undefined): SiteCalculatorCopy {
@@ -58,8 +59,8 @@ export function mergeSiteDocument(doc: Partial<SiteDoc> | null | undefined): Sit
   merged.currencyRates = normalizeRates(merged.currencyRates ?? DEFAULT_SITE.currencyRates);
   if (!merged.logoUrl?.trim()) merged.logoUrl = DEFAULT_SITE.logoUrl;
   if (!merged.logoLightUrl?.trim()) merged.logoLightUrl = DEFAULT_SITE.logoLightUrl;
-  if (!merged.homeHeroUrl?.trim()) merged.homeHeroUrl = DEFAULT_SITE.homeHeroUrl;
-  if (!merged.discoverHeroUrl?.trim()) merged.discoverHeroUrl = DEFAULT_SITE.discoverHeroUrl;
+  merged.homeHeroUrl = resolveHomeHeroUrl(merged.homeHeroUrl);
+  merged.discoverHeroUrl = resolveDiscoverHeroUrl(merged.discoverHeroUrl);
   if (!merged.guides?.length) merged.guides = DEFAULT_SITE.guides;
   else {
     const generic = CMS_MEDIA.guideCard;

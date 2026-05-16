@@ -12,6 +12,7 @@
  * - Fetches public catalogs for id/name overlap checks.
  * - Validates provider / event / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
  * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`).
+ * - **Location:** borough/neighborhood/address must match `src/data/budapest-location-registry.json` (see `scripts/cursor-curator-location-rules.txt`).
  * - Event upserts require locales + HUF/EUR entryFees rules + **unique per-show ImgBB image** (not host `provider.image`); see `src/lib/curator/eventIngestRules.ts` and `scripts/cursor-curator-events-prompt.txt`. Gold examples: `seed-timed-events-moby-sting.json`, `cursor-curated-events-lp-idles-oliver-tree-2026.json`.
  * - **Image enforcement:** banned ImgBB hashes, catalog-wide URL uniqueness, no empty images on upserts (`scripts/lib/image-ingest-validate.cjs`).
  * - **Scarcity notes:** `cursor-curated*.json` listing payloads must document catalog counts + gap in `notes` (`scripts/lib/scarcity-ingest-validate.cjs`).

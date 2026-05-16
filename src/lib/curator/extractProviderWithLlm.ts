@@ -6,6 +6,7 @@ import {
   CURATOR_AGE_RANGES,
   CURATOR_DAY_TAGS,
 } from "@/lib/curator/constants";
+import { getLocationIngestRulesForPrompt } from "@/lib/curator/locationIngestRules";
 import { getProviderLocaleIngestRulesForPrompt } from "@/lib/curator/localeIngestRules";
 import { curatedProviderSchema, type CuratedProvider } from "@/lib/curator/providerSchema";
 import { isImgBbHttpsImageUrl } from "@/lib/imgbbUrl";
@@ -30,7 +31,8 @@ Rules:
 - id MUST match ^prov-[a-z0-9-]+$ (lowercase slug, unique), e.g. prov-cmom-visit.
 - category MUST be one of: ${CURATOR_CATEGORIES.join(", ")}
 - borough MUST be one of: ${CURATOR_BOROUGHS.join(", ")}
-- neighborhood MUST be one of the canonical neighborhoods for that borough in this JSON (pick closest match): ${hoods}
+- neighborhood MUST be one of the canonical neighborhoods for that borough in this JSON (exact string): ${hoods}
+- ${getLocationIngestRulesForPrompt()}
 - ageRanges: each entry one of: ${CURATOR_AGE_RANGES.join(", ")}
 - dayTimeTags: each entry one of: ${CURATOR_DAY_TAGS.join(", ")}
 - badges: subset of: ${CURATOR_BADGES.join(", ")} (0-3 items, do not spam).

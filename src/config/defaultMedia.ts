@@ -3,6 +3,7 @@
  * `NEXT_PUBLIC_IMG_BB_*` overrides these defaults (set after `npm run imgbb:upload-assets`).
  */
 import type { Category } from "@/types/provider";
+import { isStaleSiteMediaUrl } from "@/lib/siteMedia";
 
 export type CmsMediaUrls = {
   homeHero: string;
@@ -60,7 +61,8 @@ function pick(key: keyof CmsMediaUrls): string {
   const e = typeof process !== "undefined" ? process.env : undefined;
   const raw = e?.[ENV_KEYS[key] as keyof NodeJS.ProcessEnv];
   const fromEnv = typeof raw === "string" ? raw.trim() : "";
-  return fromEnv || BAKED_IMG_BB[key];
+  if (fromEnv && !isStaleSiteMediaUrl(fromEnv)) return fromEnv;
+  return BAKED_IMG_BB[key];
 }
 
 function pickDiscoverHero(category: Category): string {

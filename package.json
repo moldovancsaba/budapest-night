@@ -25,6 +25,7 @@
     "ingest:listing": "node -r ./scripts/load-env.cjs scripts/ingest-listing-automation.cjs",
     "audit:catalog": "node -r ./scripts/load-env.cjs scripts/catalog-content-audit.cjs",
     "audit:locations": "node -r ./scripts/load-env.cjs scripts/fix-venue-locations.cjs",
+    "audit:locations:validate": "node scripts/lib/location-ingest-validate.test.cjs",
     "i18n:audit": "node scripts/i18n-audit.cjs",
     "curator:run": "npx tsx scripts/run-curator-once.ts",
     "reviews:sync": "npx tsx scripts/sync-provider-reviews.ts",

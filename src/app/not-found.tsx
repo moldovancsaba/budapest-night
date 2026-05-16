@@ -8,7 +8,7 @@ const copy: NotFoundCopy = {
   subtitle: "Signal lost somewhere in District VII",
   headline: "This page went home before last call",
   line1: "You took a wrong turn between the Danube, a ruin bar, and a thermal bath that definitely was not on the map.",
-  line2: "Our Night Guide AI shrugged, ordered a pálinka, and refused to give directions.",
+  line2: "Even the map gave up and ordered another pálinka.",
   excusesTitle: "Official explanation (rotating, suspiciously)",
   excuses: [
     "Szimpla Kert absorbed it during a jazz set",

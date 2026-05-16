@@ -1,0 +1,101 @@
+# Budapest Night — Location rules (blocking)
+
+Copy this entire file into any curator chat that sets `borough`, `neighborhood`, or `address`.
+Registry version: see `version` in `src/data/budapest-location-registry.json`.
+
+---
+
+## Source of truth (only these)
+
+| File | Purpose |
+|------|---------|
+| `src/data/budapest-location-registry.json` | Postal → app borough, verified landmarks, street overrides, forbidden pairings |
+| `src/data/locations.ts` | Allowed `neighborhood` strings per `borough` |
+| Official venue website / contact page | Street address + postal code for the payload |
+
+**Forbidden as location sources:** marketing prose, `prov-*` id suffix, coverage `gapKey`, “Millennium quarter”, “Infopark” in copy, memory, other listings.
+
+---
+
+## Address format (required)
+
+```
+{postal} Budapest, {street}, Hungary
+```
+
+Example: `1124 Budapest, Csörsz utca 18, Hungary`
+
+---
+
+## Resolution order (automated — ingest enforces)
+
+1. **landmark** — `landmarks[]` entry matching `document.id`
+2. **landmark** — same normalized address as a registered landmark
+3. **addressOverride** — street pattern in registry (e.g. `csörsz` → Buda / MOM Park)
+4. **postal** — `postalToAppBorough[postal].appBorough` + neighborhood from allow-list
+
+If postal is missing from registry → **dry-run fails**. Add the postal row (with `kerulet`, `keruletName`, `appBorough`) before ingest.
+
+---
+
+## Official kerület vs app borough (examples)
+
+| Postal | Budapest kerület | App `borough` | Typical `neighborhood` |
+|--------|------------------|---------------|-------------------------|
+| 1124 | XII. Hegyvidék | **Buda** | **MOM Park** |
+| 1117 + Infopark sétány | XI. Újbuda | **Újbuda** | **Infopark** |
+| 1095 + Fábián Juli tér | IX. Ferencváros | **Ferencváros** | **Fábián Juli** |
+| 1143 + Stefánia út | XIV. Zugló (Stefánia area) | **Terézváros** | **Stefánia út** |
+| 1117 + Petőfi rakpart | XI. / ship berth | **Ferencváros** | **Petőfi Bridge** |
+
+**1124 is NOT Ferencváros. 1124 is NOT Újbuda / Infopark.**
+
+---
+
+## Verified MOM cluster (same building)
+
+All at `1124 Budapest, Csörsz utca 18, Hungary`:
+
+- `prov-momkult-ujbuda` — MOM Cultural Centre
+- `prov-cov-cafe-mom-infopark` — MOM Café
+- `prov-cov-mom-eden-infopark` — MOM Eden Restaurant
+- `prov-cov-mom-cafe-mill` — MOM Eden Café
+- `prov-cov-mom-infopark` — events row
+
+**Required:** `borough: "Buda"`, `neighborhood: "MOM Park"`.  
+**Forbidden:** `Infopark` neighborhood; `Újbuda` or `Ferencváros` borough; copy saying “Infopark office workers” for Csörsz.
+
+---
+
+## Other verified landmarks (see JSON for full list)
+
+- Budapest Park → `Ferencváros` / `Fábián Juli` — `1095 Budapest, Fábián Juli tér 1, Hungary`
+- MVM Dome → `Terézváros` / `Stefánia út` — `1143 Budapest, Stefánia út 2, Hungary`
+- Müpa → `Ferencváros` / `Műegyetem` — `1095 Budapest, Komor Marcell utca 1, Hungary`
+- A38 → `Ferencváros` / `Petőfi Bridge` — `1117 Budapest, Petőfi rakpart, Buda bridge foot, Hungary`
+- BinX Rooftop → `Újbuda` / `Infopark` — `1117 Budapest, Infopark sétány 1, Hungary`
+
+---
+
+## Checklist before ingest
+
+- [ ] Postal code copied from official site (not invented)
+- [ ] `borough` + `neighborhood` match registry resolution
+- [ ] `neighborhood` is exact allow-list string from `src/data/locations.ts`
+- [ ] No forbidden copy (Infopark on Csörsz, Óbuda Island on Budapest Park, etc.)
+- [ ] `npm run ingest:listing -- --dry-run <payload.json>` passes location errors
+
+---
+
+## Commands
+
+```bash
+# Generate fix payload from live catalog
+npm run audit:locations
+
+# Validate payload (includes location)
+npm run ingest:listing -- --dry-run scripts/ingest-payloads/your-file.json
+
+# Full catalog location audit report
+npm run audit:catalog -- --skip-urls
+```

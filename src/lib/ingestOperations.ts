@@ -6,8 +6,7 @@ import type { MeetupGroup } from "@/types/meetup";
 import { nightEventSchema } from "@/lib/eventSchema";
 import { mergeEventLocales } from "@/lib/eventLocale";
 import { validateEventLocalesForIngest } from "@/lib/curator/eventLocaleIngestRules";
-import type { BrainSettingsDoc, SiteDoc } from "@/types/site";
-import { DEFAULT_BRAIN } from "@/types/site";
+import type { SiteDoc } from "@/types/site";
 import { mergeSiteDocument } from "@/lib/siteMerge";
 import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } from "@/lib/imgbbUrl";
 import { validateProviderLocalesForIngest } from "@/lib/curator/localeIngestRules";
@@ -15,6 +14,7 @@ import { validateProviderMenuLocalesForIngest } from "@/lib/curator/menuLocaleIn
 import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
+import { validateProviderLocationForIngest } from "@/lib/curator/locationIngestRules";
 import { isValidProviderId, prepareNightEventWithVenues } from "@/lib/eventVenueLink";
 import { isValidEventId, prepareMeetupGroupWithLinks } from "@/lib/meetupGroupLink";
 
@@ -101,7 +101,12 @@ function withResolvedLocation(provider: Provider): Provider {
 }
 
 function finalizeProvider(doc: Provider): Provider {
-  return withResolvedLocation(applyMenuToProvider(doc) as Provider);
+  const resolved = withResolvedLocation(applyMenuToProvider(doc) as Provider);
+  const locErrs = validateProviderLocationForIngest(resolved, `provider ${resolved.id}`);
+  if (locErrs.length) {
+    throw new Error(locErrs.join("; "));
+  }
+  return resolved;
 }
 
 async function loadMeetupGroupHosts(
@@ -220,11 +225,6 @@ export async function applyIngestOperation(
     return { ok: true, data: mergeSiteDocument(doc) };
   }
 
-  if (resource === "brain" && action === "get") {
-    const doc = (await db.collection(COL.brain).findOne({ _id: "main" } as never)) as unknown as BrainSettingsDoc | null;
-    return { ok: true, data: doc ?? { _id: "main" as const, ...DEFAULT_BRAIN } };
-  }
-
   if (resource === "locations" && action === "list") {
     const rows = await db.collection(COL.locations).find({}).toArray();
     return { ok: true, data: rows };
@@ -316,15 +316,6 @@ export async function applyIngestOperation(
     const imgErr = validateSiteRasterUrls(full as unknown as Record<string, unknown>);
     if (imgErr) return { ok: false, error: imgErr };
     await db.collection(COL.site).replaceOne({ _id: "main" as never }, full, { upsert: true });
-    return { ok: true };
-  }
-
-  if (resource === "brain" && action === "put") {
-    const doc = op.document;
-    if (!isPlainObject(doc)) return { ok: false, error: "brain.put requires document object" };
-    const { _id, ...rest } = doc as unknown as BrainSettingsDoc & { _id?: unknown };
-    const full = { _id: "main" as const, ...rest } as BrainSettingsDoc;
-    await db.collection(COL.brain).replaceOne({ _id: "main" as never }, full, { upsert: true });
     return { ok: true };
   }
 
@@ -505,18 +496,6 @@ export async function applyIngestOperation(
     const imgErr = validateSiteRasterUrls(rest as unknown as Record<string, unknown>);
     if (imgErr) return { ok: false, error: imgErr };
     await db.collection(COL.site).updateOne(
-      { _id: "main" as never },
-      { $set: { ...rest, _id: "main" } },
-      { upsert: true },
-    );
-    return { ok: true };
-  }
-
-  if (resource === "brain" && action === "patch") {
-    const patch = op.patch;
-    if (!isPlainObject(patch)) return { ok: false, error: "brain.patch requires patch object" };
-    const { _id: _dropId, ...rest } = patch as Partial<BrainSettingsDoc>;
-    await db.collection(COL.brain).updateOne(
       { _id: "main" as never },
       { $set: { ...rest, _id: "main" } },
       { upsert: true },

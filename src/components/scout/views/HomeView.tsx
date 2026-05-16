@@ -38,6 +38,7 @@ import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc, SiteGuide, SiteGuideNavigateTo } from "@/types/site";
 import { DEFAULT_SITE } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
+import { cacheBustMediaUrl } from "@/lib/siteMedia";
 import { toast } from "sonner";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { SiteLucideIcon } from "@/lib/siteLucideIcon";
@@ -193,7 +194,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
           </div>
           <div className="relative">
             <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-border">
-              <CdnImage fill src={s.homeHeroUrl} alt={home.heroImageAlt} />
+              <CdnImage fill src={cacheBustMediaUrl(s.homeHeroUrl)} alt={home.heroImageAlt} />
             </div>
             <span
               className="absolute -right-2 -top-2 hidden text-muted-foreground md:block"

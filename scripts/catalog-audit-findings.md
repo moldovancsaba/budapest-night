@@ -1,30 +1,32 @@
 # Budapest Night — catalog content audit
 
-Generated: **2026-05-16T17:01:01.501Z**
+Generated: **2026-05-16T18:16:49.485Z**
 Base: https://budapest-night.vercel.app
-Live URL checks: **yes**
+Live URL checks: **no (static only)**
 
 ## Summary
 
 | Catalog | Total | Rows with issues |
 |---------|------:|-----------------:|
-| Providers | 145 | 111 |
+| Providers | 145 | 104 |
 | Timed events | 29 | 0 |
 | Culture circles | 37 | 3 |
 
-**213** findings across **114** rows.
+**195** findings across **107** rows.
 
 ### How to read this report
 
 - **`website_unreachable`** — Many `prov-cov-*` bulk rows fail automated HEAD/GET (404, bot blocks). **Manually verify** on Maps before deleting; prioritize rows with wrong copy or images.
 - **`image_source_off_venue_site`** — Often **OK** when the venue uses Webflow (`cdn.prod.website-files.com`) or Wikimedia fixes.
 - **`missing_menu`** — Expected for most coverage-wave restaurants until menu curator batches land.
+- **Location** (`postal_borough_mismatch`, `landmark_neighborhood_mismatch`, `duplicate_address_inconsistent`) — run `node scripts/fix-venue-locations.cjs` then ingest `scripts/ingest-payloads/venue-location-fix.json`.
 - **Critical image/identity issues** (`banned_imgbb_hash`, `duplicate_*`, `legacy_provider_id`, `stale_domain_in_copy`) — fix first; none flagged means production is clean on those checks.
 
 ### By severity
 
-- **high**: 79
-- **low**: 39
+- **critical**: 3
+- **high**: 59
+- **low**: 38
 - **medium**: 95
 
 ### By issue code
@@ -32,12 +34,15 @@ Live URL checks: **yes**
 | Count | Severity | Code | Title |
 |------:|----------|------|-------|
 | 92 | medium | `missing_menu` | No menu sections |
-| 75 | high | `website_unreachable` | Website does not load |
-| 39 | low | `image_source_off_venue_site` | imageSource off-domain |
+| 38 | low | `image_source_off_venue_site` | imageSource off-domain |
+| 25 | high | `postal_borough_mismatch` | Postal code ≠ borough |
+| 18 | high | `forbidden_district_copy` | Wrong district in description |
+| 10 | high | `canonical_location_mismatch` | Wrong borough / neighborhood / address |
+| 3 | critical | `landmark_neighborhood_mismatch` | Wrong area label for address |
+| 3 | high | `duplicate_address_inconsistent` | Same address, different districts |
 | 3 | high | `duplicate_meetup_cover` | Duplicate culture circle cover |
 | 2 | medium | `email_domain_mismatch` | Email domain ≠ website |
 | 1 | medium | `sources_host_mismatch` | Sources: URLs on wrong host |
-| 1 | high | `canonical_location_mismatch` | Wrong borough / neighborhood / address |
 
 ## Finding reference (from production incidents)
 
@@ -88,6 +93,30 @@ Row still uses a migrated-away prov-* id.
 Does not match CANONICAL_BY_ID or street-based inference (e.g. Budapest Park in Óbuda).
 
 **Fix:** Patch borough, neighborhood, address from official source; run location fix scripts.
+
+### `postal_borough_mismatch` (high)
+
+Budapest postal code or street landmark implies a different app borough than the row.
+
+**Fix:** Run node scripts/fix-venue-locations.cjs and ingest venue-location-fix.json.
+
+### `neighborhood_not_in_borough` (high)
+
+Neighborhood label is not listed under that borough in locations reference data.
+
+**Fix:** Pick a neighborhood from src/data/locations.ts for the correct borough.
+
+### `landmark_neighborhood_mismatch` (critical)
+
+e.g. Csörsz utca 18 (MOM / 1124) labeled as Infopark (1117 office park, different area).
+
+**Fix:** Use Ferencváros, Millenniumi Városközpont; fix copy that says Infopark.
+
+### `duplicate_address_inconsistent` (high)
+
+Multiple providers share one street address but use conflicting borough/neighborhood.
+
+**Fix:** Align all rows at that address to one canonical borough/neighborhood.
 
 ### `forbidden_district_copy` (high)
 
@@ -217,405 +246,212 @@ Event has booking URL or paid-sounding title but entryFees use FREE with amount 
 
 ## Providers (flagged)
 
-### prov-cov-varfok-taban — Varfok Kávézó
+### prov-cov-mom-eden-infopark — MOM Eden Restaurant
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, landmark_neighborhood_mismatch, duplicate_address_inconsistent, canonical_location_mismatch, canonical_location_mismatch, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, canonical_location_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Ferencváros (1124) but borough is Újbuda
+- **landmark_neighborhood_mismatch** (critical)
+  - Csörsz utca 18 (MOM Cultural Centre / 1124) is not in Infopark — use Ferencváros, Millenniumi Városközpont
+- **duplicate_address_inconsistent** (high)
+  - Same address as prov-momkult-ujbuda, prov-cov-mom-cafe-mill, prov-cov-cafe-mom-infopark but different borough labels
+- **canonical_location_mismatch** (high)
+  - prov-cov-mom-eden-infopark: borough must be Ferencváros for prov-cov-mom-eden-infopark (official address — id suffix is legacy, not the district)
+- **canonical_location_mismatch** (high)
+  - prov-cov-mom-eden-infopark: neighborhood must be Millenniumi Városközpont for prov-cov-mom-eden-infopark
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **canonical_location_mismatch** (high)
+  - Suggested: Ferencváros / Millenniumi Városközpont
 - **missing_menu** (medium)
 
-### prov-cov-gloriett-cafe-rozsadomb — Gloriett Café
+### prov-cov-cafe-mom-infopark — MOM Café
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, landmark_neighborhood_mismatch, duplicate_address_inconsistent, canonical_location_mismatch, canonical_location_mismatch, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, forbidden_district_copy, canonical_location_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP 404 https://www.gloriett.hu/cafe
-- **image_source_off_venue_site** (low)
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Ferencváros (1124) but borough is Újbuda
+- **landmark_neighborhood_mismatch** (critical)
+  - Csörsz utca 18 (MOM Cultural Centre / 1124) is not in Infopark — use Ferencváros, Millenniumi Városközpont
+- **duplicate_address_inconsistent** (high)
+  - Same address as prov-momkult-ujbuda, prov-cov-mom-cafe-mill, prov-cov-mom-eden-infopark but different borough labels
+- **canonical_location_mismatch** (high)
+  - prov-cov-cafe-mom-infopark: borough must be Ferencváros for prov-cov-cafe-mom-infopark (official address — id suffix is legacy, not the district)
+- **canonical_location_mismatch** (high)
+  - prov-cov-cafe-mom-infopark: neighborhood must be Millenniumi Városközpont for prov-cov-cafe-mom-infopark
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **forbidden_district_copy** (high)
+  - prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary
+- **canonical_location_mismatch** (high)
+  - Suggested: Ferencváros / Millenniumi Városközpont
 - **missing_menu** (medium)
+
+### prov-momkult-ujbuda — MOM Cultural Centre
+
+Issues: postal_borough_mismatch, landmark_neighborhood_mismatch, duplicate_address_inconsistent, canonical_location_mismatch, canonical_location_mismatch, canonical_location_mismatch
+
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Ferencváros (1124) but borough is Újbuda
+- **landmark_neighborhood_mismatch** (critical)
+  - Csörsz utca 18 (MOM Cultural Centre / 1124) is not in Infopark — use Ferencváros, Millenniumi Városközpont
+- **duplicate_address_inconsistent** (high)
+  - Same address as prov-cov-mom-cafe-mill, prov-cov-cafe-mom-infopark, prov-cov-mom-eden-infopark but different borough labels
+- **canonical_location_mismatch** (high)
+  - prov-momkult-ujbuda: borough must be Ferencváros for prov-momkult-ujbuda (official address — id suffix is legacy, not the district)
+- **canonical_location_mismatch** (high)
+  - prov-momkult-ujbuda: neighborhood must be Millenniumi Városközpont for prov-momkult-ujbuda
+- **canonical_location_mismatch** (high)
+  - Suggested: Ferencváros / Millenniumi Városközpont
 
 ### prov-cov-ebner-gellert — Ébner Confectionery
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-chez-snacky-obuda — Chez Snacky
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-liliom-moricz — Liliom Café
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-gelibi-gellert — Gelibi Café
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-legenda-parliament — Legenda Boat Party
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-spoon-party-prom — Spoon Cafe & Lounge
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-becketts-liszt — Beckett's Irish Pub
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP 403 https://www.becketts.hu/
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-bluebird-gozsdu — Blue Bird Bar
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-spiler-balna — Spíler Bálna
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-nehru-party — Nehru Part Beach Bar
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1114) but borough is Buda
 - **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
 ### prov-cov-gellert-bar-party — Gellért Lobby Bar
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-galiba-kolosy — Galiba Garden
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-morzsak-moricz — Morzsák Bar
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-binx-infopark — BinX Rooftop
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-golya-kosztolanyi — Golyó Kávé
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-korona-bikas — Korona Club
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-bocksay-wessel — Bocksay Bistro
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-stand25-rakoczi — Stand25 Bisztró
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-citadella-rest — Citadella Restaurant
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1114) but borough is Buda
 - **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
 ### prov-cov-gellert-brasserie — Gellért Brasserie
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-3d-aquincum — 3D Café & Bistro
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1114) but borough is Buda
 - **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
 ### prov-cov-kacsa-becsi — Kacsa Étterem
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Buda (1036) but borough is Óbuda
 - **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-vasut-obuda — Vasúrszálló Restaurant
+### prov-corvin-club-ferencvaros — Corvin Club
 
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-berenyi-moricz — Berényi Étterem
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-mika-gellert — Mika Kert
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-kekbello-kosztolanyi — Kékbello Bistro
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-contessa-jewish-q — Szpünik Café
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP 404 https://szimpla.hu/szpunik
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-melbourne-kazinczy — My Little Melbourne
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-fekete-wessel — Fekete
-
-Issues: website_unreachable, image_source_off_venue_site, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-- **missing_menu** (medium)
-
-### prov-cov-rudas-buda-party — Rudas Party Nights
-
-Issues: canonical_location_mismatch, website_unreachable, missing_menu
-
-- **canonical_location_mismatch** (high)
-  - Suggested: Buda / Tabán
-- **website_unreachable** (high)
-  - HTTP 404 https://www.rudasfurdo.hu/en/party
-- **missing_menu** (medium)
-
-### prov-otkert-belvaros — Ötkert
-
-Issues: website_unreachable, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP 404 https://otkert.hu/en/
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1085) but borough is Ferencváros
 - **missing_menu** (medium)
 
 ### prov-cov-kuplung-kiraly — Kuplung
 
-Issues: website_unreachable, image_source_off_venue_site
+Issues: postal_borough_mismatch, image_source_off_venue_site
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-
-### prov-cov-ellato-kazinczy — Ellátó Kert
-
-Issues: website_unreachable, image_source_off_venue_site
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-
-### prov-cov-ferenc-nagy — Ferenc Római Catholic Parish Cultural Events
-
-Issues: website_unreachable, image_source_off_venue_site
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1075) but borough is Terézváros
 - **image_source_off_venue_site** (low)
 
 ### prov-cov-gellert-spa-events — Gellért Spa Cultural Hall
 
-Issues: website_unreachable, image_source_off_venue_site
+Issues: postal_borough_mismatch, image_source_off_venue_site
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1114) but borough is Buda
 - **image_source_off_venue_site** (low)
 
-### prov-cov-obuda-becsi-events — Óbudai-sziget Cultural Hall
+### prov-cov-cafe-corvin — Café Frei Corvin
 
-Issues: website_unreachable, image_source_off_venue_site
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
-
-### prov-cov-gellert-events-ujbuda — Gellért Bath Palace Events
-
-Issues: website_unreachable, image_source_off_venue_site
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **image_source_off_venue_site** (low)
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1082) but borough is Ferencváros
+- **missing_menu** (medium)
 
 ### prov-cov-lucky-luciano — Lucky Luciano Coffee
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **missing_menu** (medium)
-
-### prov-cov-csendes-nagy — Csendes
-
-Issues: website_unreachable, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-- **missing_menu** (medium)
-
-### prov-cov-ruszwurm-castle — Ruszwurm Confectionery
-
-Issues: website_unreachable, missing_menu
-
-- **website_unreachable** (high)
-  - HTTP 403 https://www.ruszwurm.hu/
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1111) but borough is Ferencváros
 - **missing_menu** (medium)
 
 ### prov-cov-gellert-cafe — Gellért Café
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1114) but borough is Buda
 - **missing_menu** (medium)
 
-### prov-cov-manno-kolosy — Manno Caffè
+### prov-cov-varfok-taban — Varfok Kávézó
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-2b-becsi — 2B Coffee
+### prov-cov-gloriett-cafe-rozsadomb — Gloriett Café
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-hadik-kosztolanyi — Hadik Kávéház
+### prov-cov-chez-snacky-obuda — Chez Snacky
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-liliom-moricz — Liliom Café
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-gelibi-gellert — Gelibi Café
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
 ### prov-cov-hard-rock-vaci — Hard Rock Cafe Budapest
@@ -625,165 +461,254 @@ Issues: email_domain_mismatch, missing_menu
 - **email_domain_mismatch** (medium)
 - **missing_menu** (medium)
 
-### prov-cov-larm-deak — LÄRM
+### prov-cov-legenda-parliament — Legenda Boat Party
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-morrison-lit-wessel — Morrison's Lit
+### prov-cov-spoon-party-prom — Spoon Cafe & Lounge
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-here-rakoczi — HERE Budapest
+### prov-cov-instant-kiraly — Instant-Fogas
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1075) but borough is Terézváros
 - **missing_menu** (medium)
 
-### prov-cov-legio-nagy — Légió Hungarian Pub
+### prov-cov-becketts-liszt — Beckett's Irish Pub
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-bluebird-gozsdu — Blue Bird Bar
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-a38-muegyetem — A38 Ship
+
+Issues: postal_borough_mismatch, missing_menu
+
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1111) but borough is Ferencváros
+- **missing_menu** (medium)
+
+### prov-cov-spiler-balna — Spíler Bálna
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-nehru-party — Nehru Part Beach Bar
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
 ### prov-cov-robertson-castle — Robertson Bar
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Belváros (1011) but borough is Buda
 - **missing_menu** (medium)
 
-### prov-cov-taban-terrace — Tabán Terrace
+### prov-cov-galiba-kolosy — Galiba Garden
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-nappali-rozsadomb — Nappali Buda
+### prov-cov-morzsak-moricz — Morzsák Bar
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-kiscelli-aquincum — Kiscelli Pub District
+### prov-cov-binx-infopark — BinX Rooftop
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-johnnys-becsi — Johnny's American Bar
+### prov-cov-golya-kosztolanyi — Golyó Kávé
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-bock-deak — Bock Bistro
+### prov-cov-korona-bikas — Korona Club
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-spoon-rest-prom — Spoon Restaurant
+### prov-cov-mazel-tov-kiraly — Mazel Tov
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1075) but borough is Terézváros
 - **missing_menu** (medium)
 
-### prov-cov-aszu-andrassy — Aszu Étterem
+### prov-cov-bocksay-wessel — Bocksay Bistro
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-stand25-rakoczi — Stand25 Bisztró
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
 ### prov-cov-betes-corvin — Bétés Restaurant
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1082) but borough is Ferencváros
 - **missing_menu** (medium)
 
-### prov-cov-iz-millennium — Íz Étterem
+### prov-cov-bamba-marha — Bamba Marha
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Újbuda (1111) but borough is Ferencváros
 - **missing_menu** (medium)
 
-### prov-cov-remiz-taban — Remiz Restaurant
+### prov-cov-pestbuda-castle — Pest-Buda Bistro
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Belváros (1011) but borough is Buda
 - **missing_menu** (medium)
 
-### prov-cov-mom-eden-infopark — MOM Eden Restaurant
+### prov-cov-citadella-rest — Citadella Restaurant
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP 404 https://momkult.hu/en/restaurant
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-madal-deak — MADÁL - specialty coffee
+### prov-cov-21-rozsadomb — 21 Hungarian Kitchen
 
-Issues: website_unreachable, missing_menu
+Issues: postal_borough_mismatch, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Belváros (1012) but borough is Buda
 - **missing_menu** (medium)
 
-### prov-cov-callas-andrassy — Callas Café
+### prov-cov-3d-aquincum — 3D Café & Bistro
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-opera-cafe — Opera Café Budapest
+### prov-cov-vasut-obuda — Vasúrszálló Restaurant
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
 
-### prov-cov-park-party-ferencvaros — Budapest Park Club Nights
+### prov-cov-berenyi-moricz — Berényi Étterem
 
-Issues: website_unreachable, missing_menu
+Issues: image_source_off_venue_site, missing_menu
 
-- **website_unreachable** (high)
-  - HTTP 404 https://www.budapestpark.hu/en/parties
+- **image_source_off_venue_site** (low)
 - **missing_menu** (medium)
+
+### prov-cov-mika-gellert — Mika Kert
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-kekbello-kosztolanyi — Kékbello Bistro
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-pierrot-parliament — Pierrot Café
+
+Issues: postal_borough_mismatch, missing_menu
+
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Buda (1014) but borough is Belváros
+- **missing_menu** (medium)
+
+### prov-cov-espresso-embassy-kiraly — Espresso Embassy
+
+Issues: postal_borough_mismatch, missing_menu
+
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Belváros (1051) but borough is Terézváros
+- **missing_menu** (medium)
+
+### prov-cov-contessa-jewish-q — Szpünik Café
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-melbourne-kazinczy — My Little Melbourne
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-fekete-wessel — Fekete
+
+Issues: image_source_off_venue_site, missing_menu
+
+- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-rudas-buda-party — Rudas Party Nights
+
+Issues: canonical_location_mismatch, missing_menu
+
+- **canonical_location_mismatch** (high)
+  - Suggested: Buda / Tabán
+- **missing_menu** (medium)
+
+### prov-new-york-cafe-belvaros — New York Café
+
+Issues: postal_borough_mismatch
+
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1073) but borough is Belváros
 
 ### prov-okk-obuda — Óbuda Cultural Centre
 
@@ -791,17 +716,17 @@ Issues: sources_host_mismatch
 
 - **sources_host_mismatch** (medium)
 
+### prov-otkert-belvaros — Ötkert
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
 ### prov-doboz-erzsebetvaros — Doboz
 
 Issues: email_domain_mismatch
 
 - **email_domain_mismatch** (medium)
-
-### prov-corvin-club-ferencvaros — Corvin Club
-
-Issues: missing_menu
-
-- **missing_menu** (medium)
 
 ### prov-cov-pesti-vigado-vaci — Pesti Vigadó
 
@@ -809,70 +734,38 @@ Issues: image_source_off_venue_site
 
 - **image_source_off_venue_site** (low)
 
-### prov-cov-parliament-visitor — Hungarian Parliament Visitor Centre
+### prov-cov-ellato-kazinczy — Ellátó Kert
 
-Issues: website_unreachable
+Issues: image_source_off_venue_site
 
-- **website_unreachable** (high)
-  - HTTP 404 https://www.parlament.hu/en/web/house-of-parliament
+- **image_source_off_venue_site** (low)
 
-### prov-cov-danube-palace-prom — Danube Palace
+### prov-cov-corvin-cinema — Corvin Cinema
 
-Issues: website_unreachable
+Issues: postal_borough_mismatch
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **postal_borough_mismatch** (high)
+  - Postal/address implies Erzsébetváros (1082) but borough is Ferencváros
 
-### prov-cov-operetta-andrassy — Budapest Operetta Theatre
+### prov-cov-ferenc-nagy — Ferenc Római Catholic Parish Cultural Events
 
-Issues: website_unreachable
+Issues: image_source_off_venue_site
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 
-### prov-cov-liszt-academy — Liszt Ferenc Academy
+### prov-cov-obuda-becsi-events — Óbudai-sziget Cultural Hall
 
-Issues: website_unreachable
+Issues: image_source_off_venue_site
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 
-### prov-cov-dohany-jewish-q — Dohány Street Synagogue
+### prov-cov-gellert-events-ujbuda — Gellért Bath Palace Events
 
-Issues: website_unreachable
+Issues: image_source_off_venue_site
 
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
+- **image_source_off_venue_site** (low)
 
-### prov-cov-apollo-rakoczi — Apollo Cinema
-
-Issues: website_unreachable
-
-- **website_unreachable** (high)
-  - HTTP 403 https://www.apollomozi.hu/
-
-### prov-cov-balna-events — Bálna Budapest
-
-Issues: website_unreachable
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-
-### prov-cov-citadella-gellert — Citadella Events
-
-Issues: website_unreachable
-
-- **website_unreachable** (high)
-  - HTTP 404 https://www.citadella.hu/
-
-### prov-cov-bikas-expo — Budapest Expo Events
-
-Issues: website_unreachable
-
-- **website_unreachable** (high)
-  - HTTP ? fetch failed
-
-### prov-cov-cafe-corvin — Café Frei Corvin
+### prov-cov-csendes-nagy — Csendes
 
 Issues: missing_menu
 
@@ -884,19 +777,43 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
+### prov-cov-ruszwurm-castle — Ruszwurm Confectionery
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
 ### prov-cov-roman-cafe-aquincum — Aquincum Museum Café
 
 Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-cafe-mom-infopark — MOM Café
+### prov-cov-manno-kolosy — Manno Caffè
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-2b-becsi — 2B Coffee
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-hadik-kosztolanyi — Hadik Kávéház
 
 Issues: missing_menu
 
 - **missing_menu** (medium)
 
 ### prov-cov-obester-bikas — Obester Specialty Coffee
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-larm-deak — LÄRM
 
 Issues: missing_menu
 
@@ -914,19 +831,49 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-instant-kiraly — Instant-Fogas
+### prov-cov-morrison-lit-wessel — Morrison's Lit
 
 Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-a38-muegyetem — A38 Ship
+### prov-cov-here-rakoczi — HERE Budapest
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-legio-nagy — Légió Hungarian Pub
 
 Issues: missing_menu
 
 - **missing_menu** (medium)
 
 ### prov-cov-rudas-party — Rudas Rooftop Bar
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-taban-terrace — Tabán Terrace
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-nappali-rozsadomb — Nappali Buda
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-kiscelli-aquincum — Kiscelli Pub District
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-johnnys-becsi — Johnny's American Bar
 
 Issues: missing_menu
 
@@ -944,11 +891,23 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-kiosk-parliament — Kiosk Budapest
+### prov-cov-bock-deak — Bock Bistro
 
-Issues: image_source_off_venue_site
+Issues: missing_menu
 
-- **image_source_off_venue_site** (low)
+- **missing_menu** (medium)
+
+### prov-cov-spoon-rest-prom — Spoon Restaurant
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-aszu-andrassy — Aszu Étterem
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
 
 ### prov-cov-alabard-opera — Arany Kaviár
 
@@ -962,19 +921,7 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-mazel-tov-kiraly — Mazel Tov
-
-Issues: missing_menu
-
-- **missing_menu** (medium)
-
 ### prov-cov-vegazzi-kazinczy — Vegazzi
-
-Issues: missing_menu
-
-- **missing_menu** (medium)
-
-### prov-cov-bamba-marha — Bamba Marha
 
 Issues: missing_menu
 
@@ -986,13 +933,13 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-pestbuda-castle — Pest-Buda Bistro
+### prov-cov-iz-millennium — Íz Étterem
 
 Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-21-rozsadomb — 21 Hungarian Kitchen
+### prov-cov-remiz-taban — Remiz Restaurant
 
 Issues: missing_menu
 
@@ -1016,7 +963,7 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-pierrot-parliament — Pierrot Café
+### prov-cov-madal-deak — MADÁL - specialty coffee
 
 Issues: missing_menu
 
@@ -1028,7 +975,13 @@ Issues: missing_menu
 
 - **missing_menu** (medium)
 
-### prov-cov-espresso-embassy-kiraly — Espresso Embassy
+### prov-cov-callas-andrassy — Callas Café
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-opera-cafe — Opera Café Budapest
 
 Issues: missing_menu
 
@@ -1053,6 +1006,12 @@ Issues: missing_menu
 - **missing_menu** (medium)
 
 ### prov-cov-island-cafe-ferencvaros — Budapest Park Café
+
+Issues: missing_menu
+
+- **missing_menu** (medium)
+
+### prov-cov-park-party-ferencvaros — Budapest Park Club Nights
 
 Issues: missing_menu
 

@@ -9,6 +9,7 @@ Ingest **one or more** real Budapest concerts / festivals / ticketed shows as `r
 If the host venue is missing, upsert it first in the **same payload** (`category: "Venues"`).
 
 ## Read first (repo)
+- **Location rules (blocking):** `scripts/cursor-curator-location-rules.txt` — host venue address + borough
 - Rules (blocking): `src/lib/curator/eventIngestRules.ts` — entire checklist
 - Image catalog rules: `src/lib/curator/imageIngestRules.ts` (uniqueness across providers / meetups / events)
 - Locales: `src/lib/curator/eventLocaleIngestRules.ts`

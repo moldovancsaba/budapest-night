@@ -957,7 +957,7 @@
       "neighborhood": "Gellért Baths area"
     },
     {
-      "gapKey": "Events|Újbuda|Infopark",
+      "gapKey": "Events|Buda|MOM Park",
       "id": "prov-cov-mom-infopark",
       "name": "MOM Cultural Centre",
       "address": "1124 Budapest, Csörsz utca 18, Hungary",
@@ -980,11 +980,11 @@
         "Weekday"
       ],
       "pricePerClass": 0,
-      "shortDescription": "Glass atrium concerts in Infopark — MOM Cultural Centre theatre and gallery at Csörsz utca.",
-      "longDescription": "MOM Cultural Centre in the Infopark office district hosts theatre, jazz, and design exhibitions in a modern glass building. The venue anchors corporate-quarter culture near Lágymányosi bridge. Program on momkult.hu.",
+      "shortDescription": "Glass atrium concerts at MOM Cultural Centre — theatre and gallery at Csörsz utca 18.",
+      "longDescription": "MOM Cultural Centre at Csörsz utca 18 hosts theatre, jazz, and design exhibitions in a modern glass building in the Millennium quarter near Lágymányosi bridge. Program on momkult.hu.",
       "category": "Events",
-      "borough": "Újbuda",
-      "neighborhood": "Infopark"
+      "borough": "Buda",
+      "neighborhood": "MOM Park"
     },
     {
       "gapKey": "Events|Újbuda|Kosztolányi Dezső tér",
@@ -3049,7 +3049,7 @@
       "neighborhood": "Gellért Baths area"
     },
     {
-      "gapKey": "Restaurants|Újbuda|Infopark",
+      "gapKey": "Restaurants|Buda|MOM Park",
       "id": "prov-cov-mom-eden-infopark",
       "name": "MOM Eden Restaurant",
       "address": "1124 Budapest, Csörsz utca 18, Hungary",
@@ -3072,11 +3072,11 @@
         "Weekend"
       ],
       "pricePerClass": 0,
-      "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
-      "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.",
+      "shortDescription": "Fine dining at MOM Cultural Centre — modern European menu in the glass atrium at Csörsz utca.",
+      "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium at Csörsz utca 18. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.",
       "category": "Restaurants",
-      "borough": "Újbuda",
-      "neighborhood": "Infopark"
+      "borough": "Buda",
+      "neighborhood": "MOM Park"
     },
     {
       "gapKey": "Restaurants|Újbuda|Kosztolányi Dezső tér",
@@ -3723,8 +3723,8 @@
       "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
       "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.",
       "category": "Cafés",
-      "borough": "Ferencváros",
-      "neighborhood": "Millenniumi Városközpont"
+      "borough": "Buda",
+      "neighborhood": "MOM Park"
     },
     {
       "gapKey": "Cafés|Buda|Castle District",
@@ -4077,7 +4077,7 @@
       "neighborhood": "Gellért Baths area"
     },
     {
-      "gapKey": "Cafés|Újbuda|Infopark",
+      "gapKey": "Cafés|Buda|MOM Park",
       "id": "prov-cov-cafe-mom-infopark",
       "name": "MOM Café",
       "address": "1124 Budapest, Csörsz utca 18, Hungary",
@@ -4099,11 +4099,11 @@
         "Weekday"
       ],
       "pricePerClass": 0,
-      "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
-      "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.",
+      "shortDescription": "Atrium coffee bar at MOM Cultural Centre — espresso between meetings at Csörsz utca 18.",
+      "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to gallery visitors and office workers in the Millennium quarter. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.",
       "category": "Cafés",
-      "borough": "Újbuda",
-      "neighborhood": "Infopark"
+      "borough": "Buda",
+      "neighborhood": "MOM Park"
     },
     {
       "gapKey": "Cafés|Újbuda|Kosztolányi Dezső tér",

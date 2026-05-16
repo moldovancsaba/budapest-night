@@ -24,7 +24,7 @@ export const NEIGHBORHOODS: Record<Borough, string[]> = {
     "Millenniumi Városközpont",
     "Fábián Juli",
   ],
-  Buda: ["Castle District", "Gellért Hill", "Tabán", "Rózsadomb", "Szent Gellért tér"],
+  Buda: ["Castle District", "Gellért Hill", "Tabán", "Rózsadomb", "Szent Gellért tér", "MOM Park"],
   Óbuda: ["Óbuda Island", "Aquincum", "Kolosy tér", "Bécsi út", "Main Square Óbuda"],
   Újbuda: [
     "Móricz Zsigmond körtér",

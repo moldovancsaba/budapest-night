@@ -50,4 +50,16 @@ describe("resolveProviderLocation", () => {
     expect(loc.borough).toBe("Ferencváros");
     expect(loc.neighborhood).toBe("Fábián Juli");
   });
+
+  it("fixes MOM Café away from Infopark (1124 = XII. Hegyvidék → app bucket Buda)", () => {
+    const loc = resolveProviderLocation({
+      id: "prov-cov-cafe-mom-infopark",
+      borough: "Újbuda",
+      neighborhood: "Infopark",
+      address: "1124 Budapest, Csörsz utca 18, Hungary",
+    });
+    expect(loc.borough).toBe("Buda");
+    expect(loc.neighborhood).toBe("MOM Park");
+    expect(loc.address).toContain("Csörsz utca 18");
+  });
 });

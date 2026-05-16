@@ -1,5 +1,5 @@
 /**
- * Seed MongoDB with borough/neighborhood reference rows, site defaults, and brain defaults.
+ * Seed MongoDB with borough/neighborhood reference rows and site defaults.
  * Run from repo root: npm run db:seed
  *
  * Does **not** insert demo providers or meet-up groups — add real listings via /admin or `npm run ingest:listing`.
@@ -11,7 +11,7 @@ loadEnv({ path: path.join(process.cwd(), ".env") });
 loadEnv({ path: path.join(process.cwd(), ".env.local"), override: true });
 import { MongoClient } from "mongodb";
 import { NEIGHBORHOODS, BOROUGHS } from "../src/data/locations";
-import { DEFAULT_SITE, DEFAULT_BRAIN } from "../src/types/site";
+import { DEFAULT_SITE } from "../src/types/site";
 
 const uri = process.env.MONGODB_URI;
 if (!uri) {
@@ -50,13 +50,7 @@ async function main() {
     { $set: { _id: "main", ...DEFAULT_SITE } },
     { upsert: true },
   );
-  await db.collection("brainSettings").updateOne(
-    { _id: "main" },
-    { $set: { _id: "main", ...DEFAULT_BRAIN } },
-    { upsert: true },
-  );
-
-  console.log("Seed complete: cleared providers and meetup groups; seeded borough locations + site + brain defaults.");
+  console.log("Seed complete: cleared providers and meetup groups; seeded borough locations + site defaults.");
   await client.close();
 }
 

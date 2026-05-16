@@ -1,5 +1,6 @@
 import { locales, localeLabels, type AppLocale } from "@/i18n/config";
 import { getProviderImageIngestRulesForPrompt } from "@/lib/curator/imageIngestRules";
+import { getLocationIngestRulesForPrompt } from "@/lib/curator/locationIngestRules";
 
 /** Root provider fields are English; stored in Mongo as the default fallback. */
 export const PROVIDER_BASE_LOCALE: AppLocale = "en";
@@ -40,6 +41,9 @@ export function getProviderLocaleIngestRulesForPrompt(): string {
 - image: optional per locale; only https ImgBB URLs. Usually omit and reuse root "image".
 - **Do not** put activityTypes inside locales — keep English canonical tags only on the root "activityTypes" array (app translates tags via message files).
 - Structural enums stay on the root only: category, borough, neighborhood, ageRanges, dayTimeTags, badges, pricePerClass, priceCurrency (optional EUR|HUF), rating, reviewCount, website, phone, email, id.
+- address on root is required English format: {postal} Budapest, {street}, Hungary — see location rules.
+
+${getLocationIngestRulesForPrompt()}
 - **pricePerClass** is a typical **EUR** spend hint for bars/restaurants (cover, menu). For ticketed concert venues use \`0\` and put real ticket tiers on a timed \`event\` document (\`entryFees\` with HUF/EUR). Never store Hungarian forint ticket prices as EUR (e.g. 26999 HUF is not pricePerClass 26999).
 - Hebrew (he) and Arabic (ar) copy may use RTL scripts in text fields; slug stays Latin ASCII.
 

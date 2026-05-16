@@ -19,6 +19,9 @@ const {
   validateCanonicalEvent,
   locationNeedsFix,
   suggestProviderLocation,
+  auditProviderLocationFields,
+  buildAddressPeerIndex,
+  normalizeAddressKey,
 } = require("./lib/budapest-location.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
@@ -109,6 +112,41 @@ const FINDING_CATALOG = {
     title: "Wrong borough / neighborhood / address",
     description: "Does not match CANONICAL_BY_ID or street-based inference (e.g. Budapest Park in Óbuda).",
     remediation: "Patch borough, neighborhood, address from official source; run location fix scripts.",
+  },
+  postal_borough_mismatch: {
+    severity: "high",
+    category: "location",
+    title: "Postal code ≠ borough",
+    description: "Budapest postal code or street landmark implies a different app borough than the row.",
+    remediation: "Fix per scripts/cursor-curator-location-rules.txt; register postal in budapest-location-registry.json; run npm run audit:locations.",
+  },
+  postal_not_registered: {
+    severity: "critical",
+    category: "location",
+    title: "Postal code not in registry",
+    description: "Address postal is missing from src/data/budapest-location-registry.json.",
+    remediation: "Add postalToAppBorough row with kerulet + appBorough before ingest.",
+  },
+  neighborhood_not_in_borough: {
+    severity: "high",
+    category: "location",
+    title: "Neighborhood not in borough",
+    description: "Neighborhood label is not listed under that borough in locations reference data.",
+    remediation: "Pick a neighborhood from src/data/locations.ts for the correct borough.",
+  },
+  landmark_neighborhood_mismatch: {
+    severity: "critical",
+    category: "location",
+    title: "Wrong area label for address",
+    description: "e.g. Csörsz utca 18 (MOM / 1124 XII. ker.) labeled as Infopark (1117 office park, different area).",
+    remediation: "Use Buda, MOM Park; fix copy that says Infopark.",
+  },
+  duplicate_address_inconsistent: {
+    severity: "high",
+    category: "location",
+    title: "Same address, different districts",
+    description: "Multiple providers share one street address but use conflicting borough/neighborhood.",
+    remediation: "Align all rows at that address to one canonical borough/neighborhood.",
   },
   forbidden_district_copy: {
     severity: "high",
@@ -359,6 +397,16 @@ function auditProvider(p, ctx) {
   const website = (p.website || "").trim();
   const websiteHost = hostOf(website);
 
+  const addrKey = normalizeAddressKey(p.address);
+  const duplicateAddressPeers =
+    addrKey && ctx.addressPeerIndex
+      ? (ctx.addressPeerIndex.get(addrKey) || []).filter((peer) => peer.id !== p.id)
+      : [];
+
+  for (const err of auditProviderLocationFields(p, { duplicateAddressPeers })) {
+    issues.push(issue(err.code, { message: err.message, ...err }));
+  }
+
   if (LEGACY_PROVIDER_ID_ALIASES[p.id]) {
     issues.push(issue("legacy_provider_id", { replaceWith: LEGACY_PROVIDER_ID_ALIASES[p.id] }));
   }
@@ -546,6 +594,7 @@ function renderMarkdown(report) {
     "- **`website_unreachable`** — Many `prov-cov-*` bulk rows fail automated HEAD/GET (404, bot blocks). **Manually verify** on Maps before deleting; prioritize rows with wrong copy or images.",
     "- **`image_source_off_venue_site`** — Often **OK** when the venue uses Webflow (`cdn.prod.website-files.com`) or Wikimedia fixes.",
     "- **`missing_menu`** — Expected for most coverage-wave restaurants until menu curator batches land.",
+    "- **Location** (`postal_borough_mismatch`, `landmark_neighborhood_mismatch`, `duplicate_address_inconsistent`) — run `node scripts/fix-venue-locations.cjs` then ingest `scripts/ingest-payloads/venue-location-fix.json`.",
     "- **Critical image/identity issues** (`banned_imgbb_hash`, `duplicate_*`, `legacy_provider_id`, `stale_domain_in_copy`) — fix first; none flagged means production is clean on those checks.",
     "",
     "### By severity",
@@ -613,6 +662,11 @@ async function main() {
   const meetups = await meetRes.json();
 
   const providersById = new Map(providers.map((p) => [p.id, p]));
+  const rawAddressIndex = buildAddressPeerIndex(providers);
+  const addressPeerIndex = new Map();
+  for (const [key, list] of rawAddressIndex) {
+    addressPeerIndex.set(key, list);
+  }
   const imageIndex = buildImageIndex(providers, events, meetups);
 
   const websiteChecks = new Map();
@@ -622,7 +676,7 @@ async function main() {
     for (const { url, result } of results) websiteChecks.set(url, result);
   }
 
-  const ctx = { providersById, imageIndex, websiteChecks, urlChecks: !skipUrls };
+  const ctx = { providersById, addressPeerIndex, imageIndex, websiteChecks, urlChecks: !skipUrls };
 
   const providerRows = providers.map((p) => auditProvider(p, ctx));
   const eventRows = events.map((e) => auditEvent(e, ctx));

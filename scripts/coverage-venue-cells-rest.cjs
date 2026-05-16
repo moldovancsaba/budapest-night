@@ -624,7 +624,7 @@ module.exports = {
     longDescription:
       "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.",
   },
-  "Cafés|Ferencváros|Millenniumi Városközpont": {
+  "Cafés|Buda|MOM Park": {
     id: "prov-cov-mom-cafe-mill",
     name: "MOM Eden Café",
     address: "1124 Budapest, Csörsz utca 18, Hungary",
@@ -1408,7 +1408,7 @@ module.exports = {
     longDescription:
       "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.",
   },
-  "Events|Újbuda|Infopark": {
+  "Events|Buda|MOM Park": {
     id: "prov-cov-mom-infopark",
     name: "MOM Cultural Centre",
     address: "1124 Budapest, Csörsz utca 18, Hungary",
@@ -1420,9 +1420,9 @@ module.exports = {
     ageRanges: ["All ages", "Family"],
     dayTimeTags: ["Evening", "Weekend", "Weekday"],
     pricePerClass: 0,
-    shortDescription: "Glass atrium concerts in Infopark — MOM Cultural Centre theatre and gallery at Csörsz utca.",
+    shortDescription: "Glass atrium concerts at MOM Cultural Centre — theatre and gallery at Csörsz utca 18.",
     longDescription:
-      "MOM Cultural Centre in the Infopark office district hosts theatre, jazz, and design exhibitions in a modern glass building. The venue anchors corporate-quarter culture near Lágymányosi bridge. Program on momkult.hu.",
+      "MOM Cultural Centre at Csörsz utca 18 hosts theatre, jazz, and design exhibitions in a modern glass building in the Millennium quarter near Lágymányosi bridge. Program on momkult.hu.",
   },
   "Parties|Újbuda|Infopark": {
     id: "prov-cov-binx-infopark",
@@ -1440,7 +1440,7 @@ module.exports = {
     longDescription:
       "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.",
   },
-  "Restaurants|Újbuda|Infopark": {
+  "Restaurants|Buda|MOM Park": {
     id: "prov-cov-mom-eden-infopark",
     name: "MOM Eden Restaurant",
     address: "1124 Budapest, Csörsz utca 18, Hungary",
@@ -1452,11 +1452,11 @@ module.exports = {
     ageRanges: ["All ages", "18+"],
     dayTimeTags: ["Evening", "Weekday", "Weekend"],
     pricePerClass: 0,
-    shortDescription: "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+    shortDescription: "Fine dining at MOM Cultural Centre — modern European menu in the glass atrium at Csörsz utca.",
     longDescription:
-      "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.",
+      "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium at Csörsz utca 18. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.",
   },
-  "Cafés|Újbuda|Infopark": {
+  "Cafés|Buda|MOM Park": {
     id: "prov-cov-cafe-mom-infopark",
     name: "MOM Café",
     address: "1124 Budapest, Csörsz utca 18, Hungary",
@@ -1468,9 +1468,9 @@ module.exports = {
     ageRanges: ["All ages", "Family"],
     dayTimeTags: ["Morning", "Afternoon", "Weekday"],
     pricePerClass: 0,
-    shortDescription: "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+    shortDescription: "Atrium coffee bar at MOM Cultural Centre — espresso between meetings at Csörsz utca 18.",
     longDescription:
-      "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.",
+      "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to gallery visitors and office workers in the Millennium quarter. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.",
   },
   "Events|Újbuda|Kosztolányi Dezső tér": {
     id: "prov-cov-hadik-events",

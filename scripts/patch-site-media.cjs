@@ -3,6 +3,17 @@
 require("./load-env.cjs");
 const { MongoClient } = require("mongodb");
 
+const STALE_SITE_MEDIA_URLS = new Set([
+  "https://i.ibb.co/VWwV2Qt6/6699c3090ff3.jpg",
+  "https://i.ibb.co/GQCgxnm0/cbe8e6335604.jpg",
+]);
+
+function resolveHomeHeroUrl(candidate, fallback) {
+  const u = (candidate || "").trim();
+  if (!u || STALE_SITE_MEDIA_URLS.has(u)) return fallback;
+  return u;
+}
+
 const GUIDE_IMAGE_BY_ID = {
   "guide-belvaros": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg",
   "guide-jewish-quarter": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg",
@@ -25,9 +36,11 @@ async function main() {
   await client.connect();
   const db = client.db(dbName);
   const site = await db.collection("site").findOne({ _id: "main" });
+  const bakedHomeHero = "https://i.ibb.co/v068hnM/1bc7cfd47dfa.jpg";
+  const bakedDiscoverHero = "https://i.ibb.co/4g3Bf6n6/53e86654299f.jpg";
   const media = {
-    homeHeroUrl: process.env.NEXT_PUBLIC_IMG_BB_HOME_HERO || "https://i.ibb.co/v068hnM/1bc7cfd47dfa.jpg",
-    discoverHeroUrl: process.env.NEXT_PUBLIC_IMG_BB_DISCOVER_HERO || "https://i.ibb.co/4g3Bf6n6/53e86654299f.jpg",
+    homeHeroUrl: resolveHomeHeroUrl(process.env.NEXT_PUBLIC_IMG_BB_HOME_HERO, bakedHomeHero),
+    discoverHeroUrl: resolveHomeHeroUrl(process.env.NEXT_PUBLIC_IMG_BB_DISCOVER_HERO, bakedDiscoverHero),
   };
   const guides = Array.isArray(site?.guides)
     ? site.guides.map((g) => {

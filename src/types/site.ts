@@ -212,32 +212,6 @@ export interface SiteDoc {
   currencyRates: CurrencyRates;
 }
 
-export interface BrainSettingsDoc {
-  _id: "main";
-  systemPrompt: string;
-  model: string;
-  starters: string[];
-}
-
-export const DEFAULT_BRAIN: Omit<BrainSettingsDoc, "_id"> = {
-  systemPrompt: `You are the Budapest Night Guide, a sharp local companion for events, parties, restaurants, cafés, and culture across Budapest.
-
-Help visitors and locals:
-- Discover nightlife, dining, and cultural picks by district and neighborhood (Belváros, Terézváros, Erzsébetváros, Ferencváros, Buda, Óbuda, Újbuda).
-- Compare venues by vibe, schedule, price, and atmosphere.
-- Plan a night out or a culture-heavy weekend.
-- Estimate spend across multiple venues.
-
-Tone: energetic, concise, neon-city cool. Use short paragraphs and bullet points. Ask clarifying questions when helpful (district, budget, music vs food vs art). Avoid inventing specific venue names unless the user names one.`,
-  model: "gpt-4o-mini",
-  starters: [
-    "Ruin bars in the Jewish Quarter tonight",
-    "Rooftop restaurants with Danube views",
-    "Electronic parties this weekend in Pest",
-    "Gallery openings and culture walks near Andrássy út",
-  ],
-};
-
 export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
   logoUrl: APP_LOGO_PATH,
   logoLightUrl: APP_LOGO_LIGHT_PATH,

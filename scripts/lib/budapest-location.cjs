@@ -1,45 +1,17 @@
-/** Budapest district + neighborhood helpers for ingest location fixes. */
+/** Budapest location — registry-backed only (see src/data/budapest-location-registry.json). */
 
-const BOROUGHS = [
-  "Belváros",
-  "Terézváros",
-  "Erzsébetváros",
-  "Ferencváros",
-  "Buda",
-  "Óbuda",
-  "Újbuda",
-];
-
-const NEIGHBORHOODS = {
-  Belváros: ["Váci utca", "Deák tér", "Parliament", "Danube Promenade", "Inner City"],
-  Terézváros: ["Andrássy út", "Opera", "Oktogon", "Király utca", "Liszt Ferenc tér", "Stefánia út"],
-  Erzsébetváros: [
-    "Jewish Quarter",
-    "Gozsdu Udvar",
-    "Kazinczy utca",
-    "Wesselényi utca",
-    "Rákóczi tér",
-  ],
-  Ferencváros: [
-    "Corvin-negyed",
-    "Műegyetem",
-    "Petőfi Bridge",
-    "Nagytemplom utca",
-    "Boráros tér",
-    "Millenniumi Városközpont",
-    "Fábián Juli",
-  ],
-  Buda: ["Castle District", "Gellért Hill", "Tabán", "Rózsadomb", "Szent Gellért tér"],
-  Óbuda: ["Óbuda Island", "Aquincum", "Kolosy tér", "Bécsi út", "Main Square Óbuda"],
-  Újbuda: [
-    "Móricz Zsigmond körtér",
-    "Gellért Baths area",
-    "Infopark",
-    "Kosztolányi Dezső tér",
-    "Bikás park",
-    "Kelenföld",
-  ],
-};
+const {
+  BOROUGHS,
+  NEIGHBORHOODS,
+  registry,
+  resolveLocationFromRegistry,
+  neighborhoodAllowed,
+  checkForbiddenPairings,
+  checkForbiddenCopy,
+  normalizeAddressKey,
+  extractPostalCode,
+  postalEntry,
+} = require("./budapest-postal-registry.cjs");
 
 const LEGACY_PROVIDER_ID_ALIASES = {
   "prov-budapest-park-obuda": "prov-budapest-park-ferencvaros",
@@ -49,116 +21,51 @@ const LEGACY_PROVIDER_ID_ALIASES = {
   "prov-cov-rudas-ujbuda-party": "prov-cov-rudas-buda-party",
 };
 
-/** Verified overrides — official address + district (do not guess from postal alone). */
-const CANONICAL_BY_ID = {
-  "prov-mvm-dome-terezvaros": {
-    borough: "Terézváros",
-    neighborhood: "Stefánia út",
-    address: "1143 Budapest, Stefánia út 2, Hungary",
-  },
-  "prov-budapest-park-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Fábián Juli",
-    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
-  },
-  "prov-cov-island-cafe-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Fábián Juli",
-    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
-  },
-  "prov-cov-park-party-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Fábián Juli",
-    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
-  },
-  "prov-a38-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Petőfi Bridge",
-    address: "1117 Budapest, Petőfi rakpart, Buda bridge foot, Hungary",
-  },
-  "prov-mupa-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Műegyetem",
-    address: "1095 Budapest, Komor Marcell utca 1, Hungary",
-  },
-  "prov-cov-bartok-moricz": {
-    borough: "Ferencváros",
-    neighborhood: "Műegyetem",
-    address: "1095 Budapest, Komor Marcell utca 1, Hungary",
-  },
-  "prov-mng-castle-buda": {
-    borough: "Buda",
-    neighborhood: "Castle District",
-    address: "1014 Budapest, Szent György tér 2, Hungary",
-  },
-  "prov-rudas-buda": {
-    borough: "Buda",
-    neighborhood: "Tabán",
-    address: "1013 Budapest, Döbrentei tér 9, Hungary",
-  },
-  "prov-cov-varfok-taban": {
-    borough: "Buda",
-    neighborhood: "Tabán",
-    address: "1013 Budapest, Varfok utca 1, Hungary",
-  },
-  "prov-cov-citadella-gellert": {
-    borough: "Buda",
-    neighborhood: "Gellért Hill",
-    address: "1118 Budapest, Citadella sétány, Hungary",
-  },
-  "prov-cov-gellert-spa-events": {
-    borough: "Buda",
-    neighborhood: "Szent Gellért tér",
-    address: "1114 Budapest, Szent Gellért tér 2, Hungary",
-  },
-};
+const CANONICAL_BY_ID = Object.fromEntries(
+  registry.landmarks.map((l) => [
+    l.id,
+    { borough: l.borough, neighborhood: l.neighborhood, address: l.address },
+  ]),
+);
 
-const STREET_HINTS = [
-  { pattern: /fábián juli/i, borough: "Ferencváros", neighborhood: "Fábián Juli" },
-  { pattern: /stefánia|stefania/i, borough: "Terézváros", neighborhood: "Stefánia út" },
-  { pattern: /andrássy|andrassy/i, borough: "Terézváros", neighborhood: "Andrássy út" },
-  { pattern: /kazinczy/i, borough: "Erzsébetváros", neighborhood: "Kazinczy utca" },
-  { pattern: /gozsdu/i, borough: "Erzsébetváros", neighborhood: "Gozsdu Udvar" },
-  { pattern: /petőfi rakpart|petofi rakpart/i, borough: "Ferencváros", neighborhood: "Petőfi Bridge" },
-  { pattern: /komor marcell|müpa|mupa/i, borough: "Ferencváros", neighborhood: "Műegyetem" },
-  { pattern: /szent györgy|castle|budai vár/i, borough: "Buda", neighborhood: "Castle District" },
-  { pattern: /döbrentei|varfok|tabán/i, borough: "Buda", neighborhood: "Tabán" },
-  { pattern: /citadella|gellért|gellert/i, borough: "Buda", neighborhood: "Gellért Hill" },
-  { pattern: /hajógyári|óbuda-sziget/i, borough: "Óbuda", neighborhood: "Óbuda Island" },
-];
-
-function inferFromStreet(address) {
-  for (const h of STREET_HINTS) {
-    if (h.pattern.test(address)) return { borough: h.borough, neighborhood: h.neighborhood };
+function collectProviderTextFields(doc) {
+  const out = [];
+  if (typeof doc.shortDescription === "string") out.push(doc.shortDescription);
+  if (typeof doc.longDescription === "string") out.push(doc.longDescription);
+  for (const loc of Object.values(doc.locales || {})) {
+    if (loc && typeof loc === "object") {
+      if (typeof loc.shortDescription === "string") out.push(loc.shortDescription);
+      if (typeof loc.longDescription === "string") out.push(loc.longDescription);
+    }
   }
-  return null;
+  return out;
 }
 
 function suggestProviderLocation(provider) {
-  const id = provider.id;
   const address = (provider.address || "").trim();
+  const resolved = resolveLocationFromRegistry({
+    id: provider.id,
+    address,
+    borough: provider.borough,
+    neighborhood: provider.neighborhood,
+  });
+  if (resolved.error) return null;
 
-  if (CANONICAL_BY_ID[id]) {
-    const c = CANONICAL_BY_ID[id];
-    if (
-      c.borough !== provider.borough ||
-      c.neighborhood !== provider.neighborhood ||
-      c.address !== address
-    ) {
-      return { ...c, reason: "canonical" };
-    }
-    return null;
-  }
+  const highConfidence =
+    resolved.source.startsWith("landmark") || resolved.source.startsWith("addressOverride");
+  if (!highConfidence) return null;
 
-  const streetHint = address ? inferFromStreet(address) : null;
-  if (
-    streetHint &&
-    (streetHint.borough !== provider.borough || streetHint.neighborhood !== provider.neighborhood)
-  ) {
-    return { borough: streetHint.borough, neighborhood: streetHint.neighborhood, address, reason: "street" };
-  }
+  const forbidden = checkForbiddenPairings(address, provider.borough, provider.neighborhood);
+  const boroughWrong = provider.borough !== resolved.borough;
+  const hoodWrong = provider.neighborhood !== resolved.neighborhood;
+  if (!boroughWrong && !hoodWrong && !forbidden.length) return null;
 
-  return null;
+  return {
+    borough: resolved.borough,
+    neighborhood: resolved.neighborhood,
+    address: resolved.source.startsWith("landmark") ? resolved.address : address,
+    reason: resolved.source.split(":")[0],
+  };
 }
 
 function locationNeedsFix(provider) {
@@ -176,33 +83,7 @@ function applyLocationToProvider(provider, loc) {
 
 function syncEventFromHost(event, host) {
   if (!host) return event;
-  return {
-    ...event,
-    borough: host.borough,
-    neighborhood: host.neighborhood,
-  };
-}
-
-/** Copy that must not appear on canonical venues (false district names). */
-const FORBIDDEN_DISTRICT_COPY = {
-  "prov-mvm-dome-terezvaros": [/\bÚjbuda\b/i, /\bUjbuda\b/i, /\bKelenföld\b/i, /\bInfopark\b/i],
-  "prov-budapest-park-ferencvaros": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
-  "prov-cov-island-cafe-ferencvaros": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
-  "prov-cov-park-party-ferencvaros": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
-  "prov-cov-rudas-buda-party": [/\bÚjbuda\b/i, /\bUjbuda\b/i, /\bKelenföld\b/i],
-};
-
-function collectProviderTextFields(doc) {
-  const out = [];
-  if (typeof doc.shortDescription === "string") out.push(doc.shortDescription);
-  if (typeof doc.longDescription === "string") out.push(doc.longDescription);
-  for (const loc of Object.values(doc.locales || {})) {
-    if (loc && typeof loc === "object") {
-      if (typeof loc.shortDescription === "string") out.push(loc.shortDescription);
-      if (typeof loc.longDescription === "string") out.push(loc.longDescription);
-    }
-  }
-  return out;
+  return { ...event, borough: host.borough, neighborhood: host.neighborhood };
 }
 
 function validateCanonicalProvider(doc, pathPrefix) {
@@ -213,41 +94,25 @@ function validateCanonicalProvider(doc, pathPrefix) {
     );
     return errors;
   }
-  const canonicalId = doc.id;
-  const canonical = CANONICAL_BY_ID[canonicalId];
-  if (!canonical) return errors;
 
-  if (doc.borough && doc.borough !== canonical.borough) {
-    errors.push(
-      `${pathPrefix}: borough must be ${canonical.borough} for ${doc.id} (official address — id suffix is legacy, not the district)`,
-    );
-  }
-  if (doc.neighborhood && doc.neighborhood !== canonical.neighborhood) {
-    errors.push(`${pathPrefix}: neighborhood must be ${canonical.neighborhood} for ${doc.id}`);
-  }
-  if (doc.address && doc.address.trim() && doc.address !== canonical.address) {
+  errors.push(
+    ...require("./location-ingest-validate.cjs").validateProviderLocationForIngest(doc, pathPrefix),
+  );
+
+  const canonical = CANONICAL_BY_ID[doc.id];
+  if (canonical?.address && doc.address && doc.address.trim() !== canonical.address) {
     errors.push(`${pathPrefix}: address must be ${canonical.address} for ${doc.id}`);
   }
 
-  const forbidden = FORBIDDEN_DISTRICT_COPY[canonicalId];
-  if (forbidden) {
-    for (const text of collectProviderTextFields(doc)) {
-      for (const pattern of forbidden) {
-        if (pattern.test(text)) {
-          errors.push(
-            `${pathPrefix}: description mentions a wrong district for ${doc.id} — use ${canonical.borough}, ${canonical.address}`,
-          );
-          break;
-        }
-      }
-    }
+  if (doc.id === "prov-mvm-dome-terezvaros" && doc.website && !/^https:\/\/(www\.)?mvm-dome\.hu/i.test(doc.website)) {
+    errors.push(`${pathPrefix}: website should be https://mvm-dome.hu`);
   }
-
-  if (canonicalId === "prov-mvm-dome-terezvaros" && doc.website && !/^https:\/\/(www\.)?mvm-dome\.hu/i.test(doc.website)) {
-    errors.push(`${pathPrefix}: website should be https://mvm-dome.hu (promoter pages go on events, not the venue row)`);
-  }
-  if (canonicalId === "prov-budapest-park-ferencvaros" && doc.website && !/^https:\/\/(www\.)?budapestpark\.hu/i.test(doc.website)) {
-    errors.push(`${pathPrefix}: website should be https://www.budapestpark.hu/... for Budapest Park`);
+  if (
+    doc.id === "prov-budapest-park-ferencvaros" &&
+    doc.website &&
+    !/^https:\/\/(www\.)?budapestpark\.hu/i.test(doc.website)
+  ) {
+    errors.push(`${pathPrefix}: website should be https://www.budapestpark.hu/...`);
   }
 
   return errors;
@@ -266,36 +131,76 @@ function validateCanonicalEvent(doc, pathPrefix, providersById) {
   }
 
   const canonical = CANONICAL_BY_ID[hostId];
-  if (!canonical) return errors;
-
-  if (doc.borough && doc.borough !== canonical.borough) {
-    errors.push(
-      `${pathPrefix}: borough must be ${canonical.borough} for host ${hostId} (1095 Fábián Juli = Ferencváros; 1143 Stefánia = Terézváros — not Óbuda/Újbuda)`,
-    );
-  }
-  if (doc.neighborhood && doc.neighborhood !== canonical.neighborhood) {
-    errors.push(`${pathPrefix}: neighborhood must be ${canonical.neighborhood} for host ${hostId}`);
+  if (canonical) {
+    if (doc.borough && doc.borough !== canonical.borough) {
+      errors.push(`${pathPrefix}: borough must be ${canonical.borough} for host ${hostId}`);
+    }
+    if (doc.neighborhood && doc.neighborhood !== canonical.neighborhood) {
+      errors.push(`${pathPrefix}: neighborhood must be ${canonical.neighborhood} for host ${hostId}`);
+    }
   }
 
   const live = providersById?.get(hostId);
   if (live) {
-    if (live.borough !== canonical.borough) {
-      errors.push(
-        `${pathPrefix}: host ${hostId} in live catalog has borough ${live.borough} but must be ${canonical.borough} — patch provider before ingesting events`,
-      );
-    }
-    for (const pattern of FORBIDDEN_DISTRICT_COPY[hostId] || []) {
-      const text = [live.longDescription, live.shortDescription].filter(Boolean).join("\n");
-      if (pattern.test(text)) {
-        errors.push(
-          `${pathPrefix}: host ${hostId} still has wrong-district copy in catalog — run location fix payload before events`,
-        );
-        break;
-      }
+    errors.push(
+      ...require("./location-ingest-validate.cjs").validateProviderLocationForIngest(
+        live,
+        `${pathPrefix}: host ${hostId}`,
+      ),
+    );
+  }
+
+  return errors;
+}
+
+function auditProviderLocationFields(provider, ctx = {}) {
+  const errors = [];
+  const ingestErrors = require("./location-ingest-validate.cjs").validateProviderLocationForIngest(
+    provider,
+    provider.id,
+  );
+  for (const msg of ingestErrors) {
+    let code = "canonical_location_mismatch";
+    if (msg.includes("postal") && msg.includes("not registered")) code = "postal_not_registered";
+    else if (msg.includes(".borough:")) code = "postal_borough_mismatch";
+    else if (msg.includes("neighborhood")) code = "landmark_neighborhood_mismatch";
+    else if (msg.includes("copy —")) code = "forbidden_district_copy";
+    errors.push({ code, message: msg });
+  }
+
+  if (ctx.duplicateAddressPeers?.length) {
+    const boroughs = new Set(ctx.duplicateAddressPeers.map((p) => p.borough).filter(Boolean));
+    if (boroughs.size > 1) {
+      errors.push({
+        code: "duplicate_address_inconsistent",
+        message: `Same address as ${ctx.duplicateAddressPeers.map((p) => p.id).join(", ")} but different borough labels`,
+        peers: ctx.duplicateAddressPeers.map((p) => ({
+          id: p.id,
+          borough: p.borough,
+          neighborhood: p.neighborhood,
+        })),
+      });
     }
   }
 
   return errors;
+}
+
+function buildAddressPeerIndex(providers) {
+  const byKey = new Map();
+  for (const p of providers) {
+    const key = normalizeAddressKey(p.address);
+    if (!key) continue;
+    const list = byKey.get(key) || [];
+    list.push(p);
+    byKey.set(key, list);
+  }
+  return byKey;
+}
+
+/** @deprecated Copy patches removed — ingest rejects forbidden copy at validation time. */
+function applyMomCopyPatches(provider) {
+  return provider;
 }
 
 module.exports = {
@@ -306,7 +211,12 @@ module.exports = {
   suggestProviderLocation,
   locationNeedsFix,
   applyLocationToProvider,
+  applyMomCopyPatches,
   syncEventFromHost,
   validateCanonicalProvider,
   validateCanonicalEvent,
+  auditProviderLocationFields,
+  buildAddressPeerIndex,
+  normalizeAddressKey,
+  resolveLocationFromRegistry,
 };

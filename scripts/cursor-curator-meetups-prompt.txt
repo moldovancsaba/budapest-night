@@ -7,6 +7,7 @@ You are my **culture circle** curator for Budapest Night. Use tools (web search,
 Add one Budapest **culture circle** with production ingest `HTTP 200`, `ok: true`, a **unique** ImgBB `coverImageUrl`, and optional `venueIds` / `eventIds` when the circle hosts at real catalog rows.
 
 ## Read first (repo)
+- **Location rules (blocking):** `scripts/cursor-curator-location-rules.txt`
 - **Image rules (blocking):** `src/lib/curator/imageIngestRules.ts` — especially `getMeetupCoverImageIngestRulesForPrompt()`
 - Enums: `src/lib/curator/constants.ts` (meetup group types), neighborhoods: `src/data/locations.ts`
 - Main curator: `scripts/cursor-curator-prompt.txt` (meetup JSON shape)

@@ -377,19 +377,11 @@ interface SiteTrustPillar {
   icon: SiteIconKey;
 }`;
 
-const BRAIN_DOC = `interface BrainSettingsDoc {
-  _id: "main";
-  systemPrompt: string;
-  model: string;
-  starters: string[];
-}`;
-
 const INGEST_BATCH = `{
   "operations": [
     { "resource": "providers", "action": "list" },
     { "resource": "provider", "action": "get", "id": "my-studio" },
     { "resource": "site", "action": "get" },
-    { "resource": "brain", "action": "get" },
     { "resource": "locations", "action": "list" },
     {
       "resource": "provider",
@@ -462,7 +454,6 @@ const nav = [
   { href: "#overview", label: "Overview" },
   { href: "#urls", label: "Venue URLs" },
   { href: "#public", label: "Public" },
-  { href: "#brain", label: "Night Guide" },
   { href: "#ingest", label: "Ingest" },
   { href: "#admin", label: "Admin" },
   { href: "#errors", label: "Errors" },
@@ -481,7 +472,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
             </p>
             <h1 className="font-display text-xl font-bold sm:text-2xl">HTTP API reference</h1>
             <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-              Catalog, Night Guide AI, machine ingest, and admin endpoints (app package{" "}
+              Catalog, machine ingest, and admin endpoints (app package{" "}
               <span className="font-mono text-foreground/80">v{API_VERSION}</span>). Paths are relative to your deployment
               (for example <span className="font-mono text-foreground/80">{base}</span>).
             </p>
@@ -526,7 +517,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
         <main className="min-w-0 flex-1">
           <Section id="overview" title="Overview">
             <p>
-              Budapest Night exposes JSON APIs for the public catalog, a streaming Night Guide chat proxy, a{" "}
+              Budapest Night exposes JSON APIs for the public catalog, a{" "}
               <strong>machine ingest</strong> pipeline secured by <code className="rounded bg-muted px-1 font-mono text-sm">INGEST_API_KEY</code>, and{" "}
               <strong>browser session</strong> APIs for the admin console. Unless noted, request and response bodies use{" "}
               <code className="rounded bg-muted px-1 font-mono text-sm">application/json</code> with UTF-8.
@@ -699,12 +690,6 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <CodeBlock title="Shape (SiteDoc)">{SITE_DOC}</CodeBlock>
               </EndpointCard>
 
-              <EndpointCard method="GET" path="/api/public/brain" auth="None">
-                <p>
-                  Returns only public UI fields for Scout: <code className="font-mono">{"{ \"starters\": string[] }"}</code>. Server-side
-                  system prompt and model are not exposed here.
-                </p>
-              </EndpointCard>
             </div>
 
             <h3 className="mt-10 font-display text-lg font-semibold">Entity references</h3>
@@ -713,36 +698,6 @@ export function ApiDocsPage({ origin }: { origin: string }) {
             <CodeBlock title="VenueMenu &amp; MenuItem">{VENUE_MENU}</CodeBlock>
             <CodeBlock title="NightEvent &amp; PublicNightEvent">{NIGHT_EVENT}</CodeBlock>
             <CodeBlock title="MeetupGroup (Borough same as Provider)">{MEETUP_FIELDS}</CodeBlock>
-          </Section>
-
-          <Section id="brain" title="Night Guide chat (streaming)">
-            <EndpointCard method="POST" path="/api/brain/chat" auth="None (uses server OpenAI API key)">
-              <p>
-                Proxies to an OpenAI-compatible chat API with the configured model and system prompt from MongoDB{" "}
-                <code className="font-mono">brainSettings</code> (<code className="font-mono">_id: &quot;main&quot;</code>), falling back to app defaults when unset.
-              </p>
-              <p>
-                <strong>Request body (JSON):</strong>
-              </p>
-              <CodeBlock>{`{
-  "messages": [
-    { "role": "user", "content": "Ruin bars in Erzsébetváros tonight under €30" }
-  ]
-}`}</CodeBlock>
-              <p>
-                <strong>Response:</strong> <code className="font-mono">text/event-stream</code> (OpenAI-compatible SSE chunk stream). Consume with{" "}
-                <code className="font-mono">fetch</code> + <code className="font-mono">ReadableStream</code> or an SSE client.
-              </p>
-              <ul className="list-inside list-disc text-muted-foreground">
-                <li>
-                  <strong className="text-foreground">500</strong> if <code className="font-mono">BRAIN_OPENAI_API_KEY</code> /{" "}
-                  <code className="font-mono">CURATOR_OPENAI_API_KEY</code> is missing on the server.
-                </li>
-                <li>
-                  <strong className="text-foreground">429</strong> rate limit, <strong className="text-foreground">402</strong> credits exhausted, <strong className="text-foreground">502</strong> gateway error.
-                </li>
-              </ul>
-            </EndpointCard>
           </Section>
 
           <Section id="ingest" title="Machine ingest (full CMS via API)">
@@ -823,7 +778,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 auth="Bearer INGEST_API_KEY or header X-Ingest-Key: &lt;key&gt;"
               >
               <p>
-                Batch <strong>read + write</strong> operations for providers, timed events, meetup groups, site, brain, and locations.
+                Batch <strong>read + write</strong> operations for providers, timed events, meetup groups, site, and locations.
                 Up to <strong>100 operations</strong> per request. Each result may include <code className="font-mono">data</code> for successful reads or write metadata (e.g.{" "}
                 <code className="font-mono">{"{ \"replaced\": 12 }"}</code>, <code className="font-mono">{"{ \"deletedCount\": 3 }"}</code>).
               </p>
@@ -851,9 +806,6 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 </li>
                 <li>
                   <code className="font-mono">site</code> + <code className="font-mono">get</code> → <code className="font-mono">SiteDoc</code> (defaults merged if missing).
-                </li>
-                <li>
-                  <code className="font-mono">brain</code> + <code className="font-mono">get</code> → full <code className="font-mono">BrainSettingsDoc</code> (includes <code className="font-mono">systemPrompt</code> and <code className="font-mono">model</code>; treat as secret).
                 </li>
                 <li>
                   <code className="font-mono">locations</code> + <code className="font-mono">list</code> → raw Mongo rows{" "}
@@ -892,13 +844,9 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                   <code className="font-mono">site</code>: <code className="font-mono">patch</code> (partial merge) or <code className="font-mono">put</code> with full <code className="font-mono">document</code> (replaces <code className="font-mono">_id: &quot;main&quot;</code>).
                 </li>
                 <li>
-                  <code className="font-mono">brain</code>: <code className="font-mono">patch</code> or <code className="font-mono">put</code> with full <code className="font-mono">document</code> for <code className="font-mono">_id: &quot;main&quot;</code>.
-                </li>
-                <li>
                   <code className="font-mono">locations</code>: <code className="font-mono">replace</code> — deletes all rows, then inserts the provided array.
                 </li>
               </ul>
-              <CodeBlock title="Brain document shape (for patches)">{BRAIN_DOC}</CodeBlock>
               <p>
                 <strong>Response (JSON):</strong> per-operation results with optional <code className="font-mono">data</code>. HTTP <strong>200</strong> when every operation succeeded;{" "}
                 <strong>422</strong> when any operation failed.
@@ -984,13 +932,6 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <p>JSON partial patch merged into <code className="font-mono">_id: &quot;main&quot;</code>.</p>
               </EndpointCard>
 
-              <EndpointCard method="GET" path="/api/admin/brain" auth="Admin session">
-                <p>Returns full <code className="font-mono">BrainSettingsDoc</code> for editing.</p>
-              </EndpointCard>
-              <EndpointCard method="PATCH" path="/api/admin/brain" auth="Admin session">
-                <p>Partial patch for <code className="font-mono">_id: &quot;main&quot;</code>.</p>
-              </EndpointCard>
-
               <EndpointCard method="GET" path="/api/admin/locations" auth="Admin session">
                 <p>Array of <code className="font-mono">{"{ borough, neighborhoods }"}</code> rows.</p>
               </EndpointCard>
@@ -1013,7 +954,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
               <tbody className="text-foreground/90">
                 <tr className="border-b border-border/70">
                   <td className="py-2 pr-4 font-mono">400</td>
-                  <td>Malformed JSON or missing required fields (ingest, login, chat).</td>
+                  <td>Malformed JSON or missing required fields (ingest, login).</td>
                 </tr>
                 <tr className="border-b border-border/70">
                   <td className="py-2 pr-4 font-mono">401</td>
@@ -1025,7 +966,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 </tr>
                 <tr className="border-b border-border/70">
                   <td className="py-2 pr-4 font-mono">500 / 502</td>
-                  <td>Missing server env (OpenAI key, ImgBB, admin password), or upstream API/upload errors.</td>
+                  <td>Missing server env (ImgBB, admin password), or upstream API/upload errors.</td>
                 </tr>
                 <tr className="border-b border-border/70">
                   <td className="py-2 pr-4 font-mono">503</td>
@@ -1050,10 +991,6 @@ export function ApiDocsPage({ origin }: { origin: string }) {
               </li>
               <li>
                 <code className="font-mono">IMGBB_API_KEY</code> — admin image upload
-              </li>
-              <li>
-                Optional <code className="font-mono">BRAIN_OPENAI_API_KEY</code> (or reuse <code className="font-mono">CURATOR_OPENAI_API_KEY</code>) — Night Guide chat at{" "}
-                <code className="font-mono">/api/brain/chat</code>; omit if unused.
               </li>
             </ul>
             <p className="text-sm text-muted-foreground">

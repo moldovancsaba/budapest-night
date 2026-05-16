@@ -1,0 +1,758 @@
+{
+  "version": "2026-05-16",
+  "sources": [
+    "https://hungary.postcode.info/p/1124 (postal → Budapest kerület)",
+    "src/data/locations.ts (app borough + neighborhood allow-list)",
+    "Verified venue official sites (landmarks[] only)"
+  ],
+  "rules": {
+    "addressFormat": "{postal} Budapest, {street}, Hungary",
+    "boroughSourceOrder": [
+      "landmarks by provider id",
+      "landmarks by normalized address",
+      "addressOverrides (street pattern)",
+      "postalToAppBorough[postal]"
+    ],
+    "neverInferFrom": [
+      "marketing copy (Millennium quarter, Infopark in prose)",
+      "prov-* id suffix (-ujbuda, -ferencvaros)",
+      "gapKey from coverage waves"
+    ]
+  },
+  "postalToAppBorough": {
+    "1011": {
+      "appBorough": "Belváros",
+      "kerulet": "I",
+      "keruletName": "Budavár"
+    },
+    "1012": {
+      "appBorough": "Belváros",
+      "kerulet": "I",
+      "keruletName": "Budavár"
+    },
+    "1013": {
+      "appBorough": "Buda",
+      "kerulet": "I",
+      "keruletName": "Budavár"
+    },
+    "1014": {
+      "appBorough": "Buda",
+      "kerulet": "I",
+      "keruletName": "Budavár"
+    },
+    "1015": {
+      "appBorough": "Belváros",
+      "kerulet": "I",
+      "keruletName": "Budavár"
+    },
+    "1016": {
+      "appBorough": "Belváros",
+      "kerulet": "I",
+      "keruletName": "Budavár"
+    },
+    "1021": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1022": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1023": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1024": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1025": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1026": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1027": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1028": {
+      "appBorough": "Buda",
+      "kerulet": "II",
+      "keruletName": "Rózsadomb"
+    },
+    "1031": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1032": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1033": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1034": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1035": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1036": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1037": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1039": {
+      "appBorough": "Óbuda",
+      "kerulet": "III",
+      "keruletName": "Óbuda"
+    },
+    "1051": {
+      "appBorough": "Belváros",
+      "kerulet": "V",
+      "keruletName": "Belváros"
+    },
+    "1052": {
+      "appBorough": "Belváros",
+      "kerulet": "V",
+      "keruletName": "Belváros"
+    },
+    "1053": {
+      "appBorough": "Belváros",
+      "kerulet": "V",
+      "keruletName": "Belváros"
+    },
+    "1054": {
+      "appBorough": "Belváros",
+      "kerulet": "V",
+      "keruletName": "Belváros"
+    },
+    "1055": {
+      "appBorough": "Belváros",
+      "kerulet": "V",
+      "keruletName": "Belváros"
+    },
+    "1056": {
+      "appBorough": "Belváros",
+      "kerulet": "V",
+      "keruletName": "Belváros"
+    },
+    "1061": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1062": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1063": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1064": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1065": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1066": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1067": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1068": {
+      "appBorough": "Terézváros",
+      "kerulet": "VI",
+      "keruletName": "Terézváros"
+    },
+    "1071": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1072": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1073": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1074": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1075": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1076": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1077": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1078": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VII",
+      "keruletName": "Erzsébetváros"
+    },
+    "1081": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1082": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1083": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1084": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1085": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1086": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1087": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1088": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1089": {
+      "appBorough": "Erzsébetváros",
+      "kerulet": "VIII",
+      "keruletName": "Józsefváros"
+    },
+    "1091": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1092": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1093": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1094": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1095": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1096": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1097": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1098": {
+      "appBorough": "Ferencváros",
+      "kerulet": "IX",
+      "keruletName": "Ferencváros"
+    },
+    "1101": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1102": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1103": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1104": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1105": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1106": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1107": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1108": {
+      "appBorough": "Ferencváros",
+      "kerulet": "X",
+      "keruletName": "Kőbánya"
+    },
+    "1111": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1112": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1113": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1114": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1115": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1116": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1118": {
+      "appBorough": "Buda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1119": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
+    "1121": {
+      "appBorough": "Buda",
+      "kerulet": "XII",
+      "keruletName": "Hegyvidék"
+    },
+    "1122": {
+      "appBorough": "Buda",
+      "kerulet": "XII",
+      "keruletName": "Hegyvidék"
+    },
+    "1123": {
+      "appBorough": "Buda",
+      "kerulet": "XII",
+      "keruletName": "Hegyvidék"
+    },
+    "1124": {
+      "appBorough": "Buda",
+      "kerulet": "XII",
+      "keruletName": "Hegyvidék"
+    },
+    "1125": {
+      "appBorough": "Buda",
+      "kerulet": "XII",
+      "keruletName": "Hegyvidék"
+    },
+    "1126": {
+      "appBorough": "Buda",
+      "kerulet": "XII",
+      "keruletName": "Hegyvidék"
+    },
+    "1131": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1132": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1133": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1134": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1135": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1136": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1137": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1138": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1139": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIII",
+      "keruletName": "Angyalföld"
+    },
+    "1141": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1142": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1143": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1144": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1145": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1146": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1147": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1148": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    },
+    "1149": {
+      "appBorough": "Terézváros",
+      "kerulet": "XIV",
+      "keruletName": "Zugló"
+    }
+  },
+  "landmarks": [
+    {
+      "id": "prov-mvm-dome-terezvaros",
+      "borough": "Terézváros",
+      "neighborhood": "Stefánia út",
+      "address": "1143 Budapest, Stefánia út 2, Hungary",
+      "source": "https://mvm-dome.hu/"
+    },
+    {
+      "id": "prov-budapest-park-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Fábián Juli",
+      "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+      "source": "https://www.budapestpark.hu/"
+    },
+    {
+      "id": "prov-cov-island-cafe-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Fábián Juli",
+      "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+      "source": "https://www.budapestpark.hu/"
+    },
+    {
+      "id": "prov-cov-park-party-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Fábián Juli",
+      "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+      "source": "https://www.budapestpark.hu/"
+    },
+    {
+      "id": "prov-a38-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Petőfi Bridge",
+      "address": "1117 Budapest, Petőfi rakpart, Buda bridge foot, Hungary",
+      "source": "https://a38.hu/"
+    },
+    {
+      "id": "prov-mupa-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem",
+      "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
+      "source": "https://www.mupa.hu/"
+    },
+    {
+      "id": "prov-cov-bartok-moricz",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem",
+      "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
+      "source": "https://www.mupa.hu/"
+    },
+    {
+      "id": "prov-mng-castle-buda",
+      "borough": "Buda",
+      "neighborhood": "Castle District",
+      "address": "1014 Budapest, Szent György tér 2, Hungary",
+      "source": "https://www.mng.hu/"
+    },
+    {
+      "id": "prov-rudas-buda",
+      "borough": "Buda",
+      "neighborhood": "Tabán",
+      "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+      "source": "https://www.rudasfurdo.hu/"
+    },
+    {
+      "id": "prov-cov-varfok-taban",
+      "borough": "Buda",
+      "neighborhood": "Tabán",
+      "address": "1013 Budapest, Varfok utca 1, Hungary",
+      "source": "https://www.varfokkavezo.hu/"
+    },
+    {
+      "id": "prov-cov-citadella-gellert",
+      "borough": "Buda",
+      "neighborhood": "Gellért Hill",
+      "address": "1118 Budapest, Citadella sétány, Hungary",
+      "source": "https://citadella.hu/"
+    },
+    {
+      "id": "prov-cov-gellert-spa-events",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér",
+      "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+      "source": "https://www.gellertbath.com/"
+    },
+    {
+      "id": "prov-momkult-ujbuda",
+      "borough": "Buda",
+      "neighborhood": "MOM Park",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "source": "https://momkult.hu/"
+    },
+    {
+      "id": "prov-cov-mom-infopark",
+      "borough": "Buda",
+      "neighborhood": "MOM Park",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "source": "https://momkult.hu/"
+    },
+    {
+      "id": "prov-cov-cafe-mom-infopark",
+      "borough": "Buda",
+      "neighborhood": "MOM Park",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "source": "https://momkult.hu/"
+    },
+    {
+      "id": "prov-cov-mom-eden-infopark",
+      "borough": "Buda",
+      "neighborhood": "MOM Park",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "source": "https://momkult.hu/"
+    },
+    {
+      "id": "prov-cov-mom-cafe-mill",
+      "borough": "Buda",
+      "neighborhood": "MOM Park",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "source": "https://momkult.hu/"
+    },
+    {
+      "id": "prov-cov-binx-infopark",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark",
+      "address": "1117 Budapest, Infopark sétány 1, Hungary",
+      "source": "https://www.binxrooftop.hu/"
+    }
+  ],
+  "addressOverrides": [
+    {
+      "pattern": "infopark\\s+sétány|infopark setany",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark",
+      "note": "1117 office park only — not Csörsz utca"
+    },
+    {
+      "pattern": "petőfi\\s+rakpart|petofi\\s+rakpart",
+      "borough": "Ferencváros",
+      "neighborhood": "Petőfi Bridge",
+      "note": "A38 / Danube ship berths"
+    },
+    {
+      "pattern": "fábián\\s+juli",
+      "borough": "Ferencváros",
+      "neighborhood": "Fábián Juli",
+      "note": "Budapest Park"
+    },
+    {
+      "pattern": "stefánia|stefania",
+      "borough": "Terézváros",
+      "neighborhood": "Stefánia út",
+      "note": "MVM Dome"
+    },
+    {
+      "pattern": "komor\\s+marcell",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem",
+      "note": "Müpa"
+    },
+    {
+      "pattern": "csörsz|csorsz",
+      "borough": "Buda",
+      "neighborhood": "MOM Park",
+      "note": "1124 XII. — MOM Cultural Centre"
+    },
+    {
+      "pattern": "hajógyári|óbuda-sziget",
+      "borough": "Óbuda",
+      "neighborhood": "Óbuda Island",
+      "note": "Summer island venues"
+    },
+    {
+      "pattern": "szent\\s+gellért\\s+tér",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér",
+      "note": "Gellért thermal / hotel"
+    },
+    {
+      "pattern": "döbrentei|varfok",
+      "borough": "Buda",
+      "neighborhood": "Tabán",
+      "note": "Tabán venues"
+    },
+    {
+      "pattern": "fő\\s+utca|fo\\s+utca",
+      "borough": "Buda",
+      "neighborhood": "Castle District",
+      "note": "Castle quarter Fő utca"
+    }
+  ],
+  "forbiddenPairings": [
+    {
+      "addressPattern": "csörsz|csorsz",
+      "forbiddenNeighborhood": "Infopark",
+      "reason": "Csörsz utca 18 is XII. Hegyvidék (MOM Park), not XI. Infopark"
+    },
+    {
+      "addressPattern": "csörsz|csorsz",
+      "forbiddenBorough": "Újbuda",
+      "reason": "1124 is not Újbuda (XI.)"
+    },
+    {
+      "addressPattern": "csörsz|csorsz",
+      "forbiddenBorough": "Ferencváros",
+      "reason": "1124 is not Ferencváros (IX.)"
+    },
+    {
+      "addressPattern": "fábián\\s+juli",
+      "forbiddenBorough": "Óbuda",
+      "reason": "Budapest Park is Ferencváros, not Óbuda Island"
+    },
+    {
+      "addressPattern": "stefánia|stefania",
+      "forbiddenBorough": "Újbuda",
+      "reason": "MVM Dome is Terézváros, not Újbuda"
+    }
+  ],
+  "forbiddenCopyPatterns": [
+    {
+      "whenAddressPattern": "csörsz|csorsz",
+      "pattern": "\\bInfopark\\b",
+      "reason": "Do not call Csörsz / MOM venues Infopark"
+    },
+    {
+      "whenAddressPattern": "fábián\\s+juli",
+      "pattern": "Hajógyári|Óbuda-sziget|Obuda Island",
+      "reason": "Budapest Park is not Óbuda Island"
+    }
+  ]
+}

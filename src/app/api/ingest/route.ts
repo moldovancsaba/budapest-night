@@ -25,7 +25,6 @@ export async function GET(req: Request) {
       "meetupGroups (list, replaceAll, upsertMany, deleteMany)",
       "meetupGroup (get, upsert, patch, delete)",
       "site (get, patch, put)",
-      "brain (get, patch, put)",
       "locations (list, replace)",
     ],
     computedOnIngest: [

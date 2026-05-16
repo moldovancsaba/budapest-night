@@ -27,6 +27,5 @@ export const COL = {
   meetupGroups: "meetupGroups",
   locations: "locations",
   site: "site",
-  brain: "brainSettings",
   venueReviews: "venueReviews",
 } as const;

@@ -11,6 +11,7 @@ Add one Budapest nightlife/culture **venue** with production ingest `HTTP 200`, 
 For a **dated concert with tickets**, stop — use `scripts/cursor-curator-events-prompt.txt` instead.
 
 ## Read first (repo)
+- **Location rules (blocking):** `scripts/cursor-curator-location-rules.txt` + `src/data/budapest-location-registry.json`
 - **Image rules (blocking):** `src/lib/curator/imageIngestRules.ts`
 - Enums: `src/lib/curator/constants.ts`, neighborhoods: `src/data/locations.ts`
 - Schema: `src/lib/curator/providerSchema.ts`
@@ -49,8 +50,8 @@ Do **not** default to famous ruin bars when a smaller venue in a sparse district
 - `pricePerClass` in **EUR** (cover, average main) — not HUF ticket prices.
 - `id`: `^prov-[a-z0-9-]+$`
 - `longDescription` ends with `Sources: https://...`
-- Canonical `neighborhood` only (no invented names).
-- Correct address → correct `borough` (e.g. Budapest Park = Ferencváros / Fábián Juli, not Óbuda Island).
+- `address` format: `{postal} Budapest, {street}, Hungary` from the official site.
+- `borough` + `neighborhood` from **registry only** (`scripts/cursor-curator-location-rules.txt`) — ingest rejects guesses.
 
 ## Official website (blocking)
 1. **`website` must load** — run `curl -sI` or fetch the homepage; if DNS fails or returns 4xx/5xx, do not ingest until you have the **current** domain from the venue (Google Maps, Instagram bio, or printed contact).
@@ -103,7 +104,7 @@ npm run ingest:listing -- scripts/ingest-payloads/cursor-curated-venue-<slug>.js
 - [ ] Official venue site loads (`curl -sI`); `website` / `email` / `Sources:` share one live domain.
 - [ ] `locales`: `hu`, `es`, `it`, `he`, `ar` on the provider document.
 - [ ] **`image`**: unique ImgBB URL from **this venue’s** hero (not concert art — see image section).
-- [ ] Canonical `borough` + `neighborhood` from `src/data/locations.ts`.
+- [ ] `borough` + `neighborhood` pass `npm run ingest:listing -- --dry-run` (registry-backed).
 - [ ] **`notes`**: numeric catalog counts + scarcity gap (required for `cursor-curated-*.json`).
 
 ## Final reply

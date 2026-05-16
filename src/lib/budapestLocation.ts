@@ -1,3 +1,5 @@
+import registry from "@/data/budapest-location-registry.json";
+import { resolveLocationFromRegistry } from "@/lib/curator/locationIngestRules";
 import type { Borough } from "@/types/provider";
 import type { NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";
@@ -15,59 +17,16 @@ export function resolveLegacyProviderId(idOrPathKey: string): string | undefined
   return LEGACY_PROVIDER_ID_ALIASES[idOrPathKey];
 }
 
-/** Verified overrides for major venues (official address beats heuristics). */
+/** Verified overrides from budapest-location-registry.json landmarks. */
 export const CANONICAL_VENUE_LOCATIONS: Record<
   string,
   { borough: Borough; neighborhood: string; address: string }
-> = {
-  "prov-mvm-dome-terezvaros": {
-    borough: "Terézváros",
-    neighborhood: "Stefánia út",
-    address: "1143 Budapest, Stefánia út 2, Hungary",
-  },
-  "prov-budapest-park-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Fábián Juli",
-    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
-  },
-  "prov-cov-island-cafe-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Fábián Juli",
-    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
-  },
-  "prov-cov-park-party-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Fábián Juli",
-    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
-  },
-  "prov-mupa-ferencvaros": {
-    borough: "Ferencváros",
-    neighborhood: "Műegyetem",
-    address: "1095 Budapest, Komor Marcell utca 1, Hungary",
-  },
-  "prov-mng-castle-buda": {
-    borough: "Buda",
-    neighborhood: "Castle District",
-    address: "1014 Budapest, Szent György tér 2, Hungary",
-  },
-  "prov-rudas-buda": {
-    borough: "Buda",
-    neighborhood: "Tabán",
-    address: "1013 Budapest, Döbrentei tér 9, Hungary",
-  },
-};
-
-const STREET_HINTS: { pattern: RegExp; borough: Borough; neighborhood: string }[] = [
-  { pattern: /fábián juli/i, borough: "Ferencváros", neighborhood: "Fábián Juli" },
-  { pattern: /stefánia|stefania/i, borough: "Terézváros", neighborhood: "Stefánia út" },
-  { pattern: /andrássy|andrassy/i, borough: "Terézváros", neighborhood: "Andrássy út" },
-  { pattern: /kazinczy/i, borough: "Erzsébetváros", neighborhood: "Kazinczy utca" },
-  { pattern: /gozsdu/i, borough: "Erzsébetváros", neighborhood: "Gozsdu Udvar" },
-  { pattern: /petőfi rakpart|petofi rakpart/i, borough: "Ferencváros", neighborhood: "Petőfi Bridge" },
-  { pattern: /komor marcell|müpa|mupa/i, borough: "Ferencváros", neighborhood: "Műegyetem" },
-  { pattern: /szent györgy|castle|budai vár/i, borough: "Buda", neighborhood: "Castle District" },
-  { pattern: /döbrentei|varfok|citadella|gellért|gellert/i, borough: "Buda", neighborhood: "Gellért Hill" },
-];
+> = Object.fromEntries(
+  registry.landmarks.map((l) => [
+    l.id,
+    { borough: l.borough as Borough, neighborhood: l.neighborhood, address: l.address },
+  ]),
+) as Record<string, { borough: Borough; neighborhood: string; address: string }>;
 
 /** Resolve listing location from canonical registry or high-confidence street hints. */
 export function resolveProviderLocation(
@@ -81,16 +40,27 @@ export function resolveProviderLocation(
   if (canonical) return canonical;
 
   const address = provider.address?.trim() ?? "";
-  for (const h of STREET_HINTS) {
-    if (h.pattern.test(address)) {
-      return { borough: h.borough, neighborhood: h.neighborhood, address };
-    }
+  const resolved = resolveLocationFromRegistry({
+    id: provider.id,
+    address,
+    borough: provider.borough,
+    neighborhood: provider.neighborhood,
+  });
+  if ("error" in resolved) {
+    return {
+      borough: provider.borough,
+      neighborhood: provider.neighborhood,
+      address,
+    };
   }
 
   return {
-    borough: provider.borough,
-    neighborhood: provider.neighborhood,
-    address,
+    borough: resolved.borough as Borough,
+    neighborhood:
+      resolved.source.startsWith("landmark") || resolved.source.startsWith("addressOverride")
+        ? resolved.neighborhood
+        : provider.neighborhood,
+    address: resolved.address || address,
   };
 }
 

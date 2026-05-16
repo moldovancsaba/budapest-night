@@ -12,7 +12,7 @@
 - **Venue URLs** — Public links use **canonical slugs** (e.g. `/venue/budapest-park`), not misleading district segments in internal ids. Legacy `prov-*` paths redirect to the canonical slug.
 - **Venue profiles** — Show upcoming timed events hosted at that venue, menus, map, and shareable full-page URLs (`/venue/{slug}/full`).
 - **Machine ingest** — Batch JSON API (`POST /api/ingest`) for headless CMS, ImgBB image upload, and optional curator cron.
-- **Admin** — Site copy, hero images, currency rates, brain/Night Guide settings, and catalog editing.
+- **Admin** — Site copy, hero images, currency rates, and catalog editing.
 
 ## Stack
 
@@ -23,7 +23,7 @@ Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query.
 1. Copy `.env.example` to `.env` and/or `.env.local`.
 2. Generate secrets: `npm run env:generate`
 3. Set **MONGODB_URI**, **MONGODB_DB** (e.g. `budapest-night`), **IMGBB_API_KEY**, **INGEST_API_KEY**, **ADMIN_PASSWORD**.
-4. Optional: **CURATOR_OPENAI_API_KEY**, **SERPER_API_KEY**, **BRAIN_OPENAI_API_KEY** for Night Guide and curator cron.
+4. Optional: **CURATOR_OPENAI_API_KEY**, **SERPER_API_KEY** for automated curator cron.
 5. Push to Vercel: `npm run vercel:env:push`
 
 **Warning:** `npm run db:seed` resets locations and site defaults on the target database. Use a dedicated `MONGODB_DB` for this project.

@@ -34,7 +34,6 @@ const VIEW_TO_SECTION: Record<ViewKey, AppSection> = {
   Saved: "saved",
   Calculator: "budget",
   "Split Check": "split",
-  "Scout AI Assistant": "home",
   "My Account": "account",
 };
 

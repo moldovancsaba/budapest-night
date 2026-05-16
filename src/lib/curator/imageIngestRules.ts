@@ -11,6 +11,10 @@ export const BANNED_IMGBB_HASHES = [
   "cf91ad578e08", // wrong upload reused on MOM + others
   "5e673e7e0093", // wrong upload (e.g. Frici Papa)
   "038fd3264859", // wrong upload (e.g. Vegazzi)
+  "6699c3090ff3", // Heroes' Square relief wrongly used as home hero
+  "cbe8e6335604", // duplicate relief upload (NEXT_PUBLIC_IMG_BB_HOME_HERO mistake)
+  "126cf4283420", // Italian newspaper scan wrongly bulk-uploaded (e.g. Gellért Brasserie)
+  "0fe6d212760e", // same newspaper bytes under second ImgBB URL (e.g. Buena Vista Bistro)
 ] as const;
 
 export function getCatalogImageUniquenessRulesForPrompt(): string {

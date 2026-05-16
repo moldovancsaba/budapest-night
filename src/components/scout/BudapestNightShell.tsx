@@ -8,7 +8,6 @@ import { EventProfile } from "@/components/scout/panels/EventProfile";
 import { SavedView } from "@/components/scout/views/SavedView";
 import { CalculatorView } from "@/components/scout/views/CalculatorView";
 import { SplitCheckView } from "@/components/scout/views/SplitCheckView";
-import { ScoutAssistantView } from "@/components/scout/views/ScoutAssistantView";
 import { MeetupGroupsView } from "@/components/scout/views/MeetupGroupsView";
 import { HomeView } from "@/components/scout/views/HomeView";
 import { MyAccountView } from "@/components/scout/views/MyAccountView";
@@ -329,7 +328,6 @@ export default function BudapestNightShell() {
             )}
             {view === "Calculator" && <CalculatorView />}
             {view === "Split Check" && <SplitCheckView />}
-            {view === "Scout AI Assistant" && <ScoutAssistantView />}
             {view === "Meet-Up Groups" && (
               <MeetupGroupsView onOpen={openGroup} onShare={setShareGroup} />
             )}

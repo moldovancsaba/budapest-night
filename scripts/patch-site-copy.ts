@@ -1,11 +1,11 @@
 /**
- * Overwrite Mongo `site` + `brainSettings` copy from DEFAULT_* (does not touch listings).
+ * Overwrite Mongo `site` copy from DEFAULT_SITE (does not touch listings).
  * Run: npm run db:patch-copy
  */
 import { config as loadEnv } from "dotenv";
 import path from "node:path";
 import { MongoClient } from "mongodb";
-import { DEFAULT_SITE, DEFAULT_BRAIN } from "../src/types/site";
+import { DEFAULT_SITE } from "../src/types/site";
 
 loadEnv({ path: path.join(process.cwd(), ".env") });
 loadEnv({ path: path.join(process.cwd(), ".env.local"), override: true });
@@ -22,12 +22,7 @@ async function main() {
     { $set: { _id: "main", ...DEFAULT_SITE } },
     { upsert: true },
   );
-  await db.collection("brainSettings").updateOne(
-    { _id: "main" },
-    { $set: { _id: "main", ...DEFAULT_BRAIN } },
-    { upsert: true },
-  );
-  console.log("Patched site + brain copy from DEFAULT_SITE / DEFAULT_BRAIN");
+  console.log("Patched site copy from DEFAULT_SITE");
   await client.close();
 }
 

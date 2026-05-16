@@ -1,3 +1,5 @@
+import { isStaleSiteMediaUrl } from "@/lib/siteMedia";
+
 /** Hostnames ImgBB uses for direct image links (https only in product). */
 const IMG_BB_HOST_SUFFIXES = [".ibb.co"];
 
@@ -65,11 +67,17 @@ export function validateSiteRasterUrls(site: Partial<Record<string, unknown>>): 
   if (typeof hh === "string" && hh.trim()) {
     const e = imgbbImageFieldError("site.homeHeroUrl", hh);
     if (e) return e;
+    if (isStaleSiteMediaUrl(hh)) {
+      return "site.homeHeroUrl points to a banned/stale marketing image — upload home-hero.jpg and patch site media";
+    }
   }
   const dh = site.discoverHeroUrl;
   if (typeof dh === "string" && dh.trim()) {
     const e = imgbbImageFieldError("site.discoverHeroUrl", dh);
     if (e) return e;
+    if (isStaleSiteMediaUrl(dh)) {
+      return "site.discoverHeroUrl points to a banned/stale marketing image";
+    }
   }
   const byCat = site.discoverHeroByCategory;
   if (byCat && typeof byCat === "object") {

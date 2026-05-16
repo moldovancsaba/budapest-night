@@ -35,44 +35,50 @@
         "rating": 0,
         "reviewCount": 0,
         "badges": [],
-        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "image": "https://i.ibb.co/fYcCjxFp/5ee2a01d1193.jpg",
         "email": "info@danubiusgellert.com",
         "website": "https://www.danubiusgellert.com/dining",
         "phone": "+36 1 889 5500",
         "locales": {
           "hu": {
-            "name": "Gellért Brasserie",
-            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
-            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
-            "slug": "cov-gellert-brasserie-hu"
+            "name": "Gellért Étterem",
+            "shortDescription": "Nagyszállodai étkezés a Gellértben — brasserie-menü és vasárnapi brunch a Szent Gellért téren.",
+            "longDescription": "A Gellért Brasserie a Danubius Hotelben nemzetközi és magyar ételeket kínál a fürdővendégek számára folyókilátással. A vasárnapi brunch megtölti a szecessziós éttermet. Foglalás a danubiusgellert.com oldalon.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "gellert-brasserie-etterem"
           },
           "es": {
             "name": "Gellért Brasserie",
-            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
-            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
-            "slug": "cov-gellert-brasserie-es"
+            "shortDescription": "Comedor de gran hotel en el Gellért — menú brasserie y brunch dominical en Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie en el Hotel Danubius sirve platos internacionales y húngaros a los huéspedes del spa con vistas al río. El brunch dominical llena el comedor art nouveau. Reservas en danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "gellert-brasserie-danubius"
           },
           "it": {
             "name": "Gellért Brasserie",
-            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
-            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
-            "slug": "cov-gellert-brasserie-it"
+            "shortDescription": "Ristorazione di grand hotel al Gellért — menu brasserie e brunch della domenica a Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie nell'Hotel Danubius serve piatti internazionali e ungheresi agli ospiti della spa con vista sul fiume. Il brunch domenicale riempie la sala da pranzo art nouveau. Prenotazioni su danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "gellert-brasserie-danubius"
           },
           "he": {
-            "name": "Gellért Brasserie",
-            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
-            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
-            "slug": "cov-gellert-brasserie-he"
+            "name": "גלרט ברסרי",
+            "shortDescription": "אוכל של מלון גדול בגלרט — תפריט ברסרי וארוחת בוקר של יום ראשון ב-Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie במלון Danubius מגיש מנות בינלאומיות והונגריות לאורחי הספא עם נוף לנהר. ארוחת הבוקר של יום ראשון ממלאת את חדר האוכל בסגנון Art Nouveau. הזמנות באתר danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "gellert-brasserie-danubius"
           },
           "ar": {
-            "name": "Gellért Brasserie",
-            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
-            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
-            "slug": "cov-gellert-brasserie-ar"
+            "name": "جيليرت براسيري",
+            "shortDescription": "تناول طعام الفندق الكبير في جيليرت — قائمة براسيري وبروفست الأحد في Szent Gellért tér.",
+            "longDescription": "تقدم Gellért Brasserie في فندق Danubius أطباقاً دولية وهنغارية لضيوف المنتجع الصحي مع إطلالات على النهر. يمتلئ حجرة الطعام بطراز الفن الجديد بالبروفست يوم الأحد. الحجوزات على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "gellert-brasserie-danubius"
+          },
+          "en": {
+            "slug": "gellert-brasserie-etterem"
           }
         },
         "gapKey": "Restaurants|Buda|Szent Gellért tér",
-        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF",
+        "menuTags": null,
+        "localImagePath": "/Users/Shared/Projects/budapest-night/scripts/imgbb-asset-sources/providers/fixed-cov-gellert-brasserie.jpg"
       }
     }
   ]

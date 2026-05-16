@@ -12,230 +12,15 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-a38-ferencvaros",
-        "name": "A38 Ship",
+        "id": "prov-momkult-ujbuda",
+        "name": "MOM Cultural Centre",
         "category": "Venues",
-        "borough": "Ferencváros",
-        "neighborhood": "Petőfi Bridge",
-        "address": "1117 Budapest, Petőfi rakpart, Buda bridge foot, Hungary",
-        "activityTypes": [
-          "Live Music",
-          "Electronic",
-          "Boat Party",
-          "Craft Beer",
-          "Ruin Bar"
-        ],
-        "ageRanges": [
-          "18+"
-        ],
-        "dayTimeTags": [
-          "Evening",
-          "Late night",
-          "Weekend"
-        ],
-        "pricePerClass": 25,
-        "shortDescription": "Converted Ukrainian stone-carrier on the Danube — one of Europe's coolest concert venues.",
-        "longDescription": "A38 is a nightclub and concert hall on a ship moored on the Buda side of Petőfi Bridge. Check a38.hu for the calendar of live bands, DJ nights, and terrace sessions. Arrive early for riverside drinks before doors.\n\nSources: https://a38.hu/en/",
-        "rating": 4.7,
-        "reviewCount": 5400,
-        "badges": [
-          "Featured",
-          "Weekend Vibes"
-        ],
-        "image": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg",
-        "email": "",
-        "website": "https://a38.hu/en/",
-        "phone": "",
-        "locales": {
-          "hu": {
-            "name": "A38 Hajó",
-            "shortDescription": "Ukrajnai kőhordó hajóból koncerthelyszín a Dunán — Európa egyik legmenőbb szórakozóhelye.",
-            "longDescription": "Az A38 koncertterem és klub a Petőfi híd budai hídfőjénél horgonyzó hajón. Nézd meg az a38.hu naptárát élő zenés estekhez, DJ programokhoz és teraszból. Érkezz korán dunai italokra az ajtók nyitása előtt.\n\nSources: https://a38.hu/en/",
-            "slug": "a38-hajo"
-          },
-          "es": {
-            "name": "Barco A38",
-            "shortDescription": "Antiguo barco de piedra ucraniano convertido en sala de conciertos en el Danubio — uno de los locales más icónicos de Europa.",
-            "longDescription": "El A38 es una sala de conciertos y club en un barco amarrado en el lado de Buda del Puente Petőfi. Consulta el calendario en a38.hu para bandas en vivo, noches de DJ y la terraza. Llega pronto para tomar algo junto al río antes de la apertura.\n\nSources: https://a38.hu/en/",
-            "slug": "barco-a38"
-          },
-          "it": {
-            "name": "Nave A38",
-            "shortDescription": "Ex cargo di pietra ucraino trasformato in venue sul Danubio — uno dei locali più cool d'Europa.",
-            "longDescription": "L'A38 è una sala concerti e club su una nave ormeggiata sul lato Buda del Ponte Petőfi. Controlla a38.hu per live, DJ set e terrazza. Arriva presto per un drink sul fiume prima dell'apertura.\n\nSources: https://a38.hu/en/",
-            "slug": "nave-a38"
-          },
-          "he": {
-            "name": "ספינת A38",
-            "shortDescription": "אוניית אבן אוקראינית שהפכה לאולם הופעות על הדנובה — אחד המקומות הכי מגניבים באירופה.",
-            "longDescription": "A38 הוא אולם הופעות ומועדון על ספינה העוגנת בצד בודה של גשר פטואפי. בדקו את לוח ההופעות ב-a38.hu ללהקות חיות, לילות DJ וטרסה. הגיעו מוקדם לשתייה על הנהר לפני פתיחת הדלתות.\n\nSources: https://a38.hu/en/",
-            "slug": "oniyat-a38"
-          },
-          "ar": {
-            "name": "سفينة A38",
-            "shortDescription": "سفينة حجر أوكرانية سابقة تحولت إلى قاعة حفلات على الدانوب — من أشهر أماكن السهر في أوروبا.",
-            "longDescription": "A38 قاعة حفلات ونادٍ على متن سفينة راسية في جانب بودا من جسر بيتوفي. راجع التقويم على a38.hu للحفلات المباشرة وليالي الـDJ والتراس. احضر مبكراً لمشروب على النهر قبل فتح الأبواب.\n\nSources: https://a38.hu/en/",
-            "slug": "safinat-a38"
-          }
-        }
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-szimpla-kert-erzsebetvaros",
-        "name": "Szimpla Kert",
-        "category": "Parties",
-        "borough": "Erzsébetváros",
-        "neighborhood": "Kazinczy utca",
-        "address": "Kazinczy utca 14, 1075 Budapest, Hungary",
-        "activityTypes": [
-          "Ruin Bar",
-          "Live Music",
-          "Craft Beer",
-          "Late Kitchen",
-          "Fine Dining"
-        ],
-        "ageRanges": [
-          "18+",
-          "21+"
-        ],
-        "dayTimeTags": [
-          "Weekend",
-          "Evening",
-          "Late night"
-        ],
-        "pricePerClass": 0,
-        "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, and Budapest nightlife energy.",
-        "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars in the Jewish Quarter (Kazinczy utca). Expect eclectic rooms, street-food vendors, concerts, and a packed weekend crowd. Check szimpla.hu for current events and hours before you go.\n\nSources: https://szimpla.hu",
-        "rating": 4.6,
-        "reviewCount": 12000,
-        "badges": [
-          "Featured",
-          "Weekend Vibes",
-          "Popular"
-        ],
-        "image": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg",
-        "email": "",
-        "website": "https://szimpla.hu",
-        "phone": "",
-        "locales": {
-          "hu": {
-            "name": "Szimpla Kert",
-            "shortDescription": "Ikonikus romkocsma a Zsidó negyedben — udvarok, élő zene és budapesti éjszakai hangulat.",
-            "longDescription": "A Szimpla Kert Budapest egyik leghíresebb romkocsmája a Kazinczy utcában. Színes helyiségek, street food, koncertek és zsúfolt hétvégi tömeg. Aktuális program és nyitvatartás: szimpla.hu.\n\nSources: https://szimpla.hu",
-            "slug": "szimpla-kert"
-          },
-          "es": {
-            "name": "Szimpla Kert",
-            "shortDescription": "Ruin bar icónico en el Barrio Judío — patios, música en vivo y energía nocturna de Budapest.",
-            "longDescription": "Szimpla Kert es uno de los ruin bars más conocidos de Budapest en el Barrio Judío (Kazinczy utca). Salas eclécticas, street food, conciertos y multitud los fines de semana. Consulta szimpla.hu para eventos y horarios.\n\nSources: https://szimpla.hu",
-            "slug": "szimpla-kert-es"
-          },
-          "it": {
-            "name": "Szimpla Kert",
-            "shortDescription": "Ruin bar iconico nel Quartiere Ebraico — cortili, live e nightlife di Budapest.",
-            "longDescription": "Szimpla Kert è uno dei ruin bar più famosi di Budapest in Kazinczy utca. Stanze eclettiche, street food, concerti e folla nel weekend. Eventi e orari su szimpla.hu.\n\nSources: https://szimpla.hu",
-            "slug": "szimpla-kert-it"
-          },
-          "he": {
-            "name": "סימפלה קרט",
-            "shortDescription": "בר הריסות אייקוני ברובע היהודי — חצרות, מוזיקה חיה ואנרגיית לילה בבודפשט.",
-            "longDescription": "סימפלה קרט הוא אחד מבתי הבר הריסות המפורסמים בבודפשט ברובע היהודי (רחוב קזינצי). חדרים אקלקטיים, אוכל רחוב, הופעות וקהל עמוס בסופי שבוע. אירועים ושעות ב-szimpla.hu.\n\nSources: https://szimpla.hu",
-            "slug": "szimpla-kert-he"
-          },
-          "ar": {
-            "name": "سيمبلا كيرت",
-            "shortDescription": "بار أنقاض أيقوني في الحي اليهودي — ساحات وموسيقى حية وحياة ليلية في بودابست.",
-            "longDescription": "سيمبلا كيرت من أشهر بارات الأنقاض في بودابست في الحي اليهودي (كازينتسي). غرف متنوعة وطعام شارع وحفلات وحشود في عطلة نهاية الأسبوع. الفعاليات والمواعيد على szimpla.hu.\n\nSources: https://szimpla.hu",
-            "slug": "szimpla-kert-ar"
-          }
-        }
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-opera-terezvaros",
-        "name": "Hungarian State Opera",
-        "category": "Venues",
-        "borough": "Terézváros",
-        "neighborhood": "Andrássy út",
-        "address": "1061 Budapest, Andrássy út 22, Hungary",
+        "borough": "Buda",
+        "neighborhood": "MOM Park",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
         "activityTypes": [
           "Theatre",
-          "Live Music"
-        ],
-        "ageRanges": [
-          "All ages",
-          "Family"
-        ],
-        "dayTimeTags": [
-          "Evening",
-          "Weekend",
-          "Weekday"
-        ],
-        "pricePerClass": 25,
-        "shortDescription": "Neo-Renaissance opera house on Andrássy út — opera, ballet, and guided building tours.",
-        "longDescription": "The Hungarian State Opera (Magyar Állami Operaház) at Andrássy út 22 is the historic home of opera and ballet in Budapest. Book performances and building tours through opera.hu.\n\nSources: https://www.opera.hu/",
-        "rating": 0,
-        "reviewCount": 0,
-        "badges": [
-          "Featured"
-        ],
-        "image": "https://i.ibb.co/RpjYNY1P/1f34d4d25ba1.jpg",
-        "email": "",
-        "website": "https://www.opera.hu/",
-        "phone": "+36 1 814 7100",
-        "locales": {
-          "hu": {
-            "name": "Magyar Állami Operaház",
-            "shortDescription": "Neoreneszánsz operaház az Andrássy úton — opera, balett és épületbemutató túrák.",
-            "longDescription": "A Magyar Állami Operaház az Andrássy út 22. szám alatt Budapest opera- és balettközpontja. Előadások és épületi túrák: opera.hu.\n\nSources: https://www.opera.hu/",
-            "slug": "magyar-allami-operahaz"
-          },
-          "es": {
-            "name": "Ópera Estatal Húngara",
-            "shortDescription": "Ópera neorrenacentista en Andrássy út — ópera, ballet y visitas guiadas al edificio.",
-            "longDescription": "La Ópera Estatal Húngara (Magyar Állami Operaház) en Andrássy út 22 es la casa histórica de ópera y ballet en Budapest. Funciones y visitas en opera.hu.\n\nSources: https://www.opera.hu/",
-            "slug": "opera-estatal-hungara"
-          },
-          "it": {
-            "name": "Opera di Stato Ungherese",
-            "shortDescription": "Teatro dell'opera neorinascimentale su Andrássy út — opera, balletto e visite guidate.",
-            "longDescription": "L'Opera di Stato Ungherese (Magyar Állami Operaház) in Andrássy út 22 è la sede storica di opera e balletto a Budapest. Spettacoli e visite su opera.hu.\n\nSources: https://www.opera.hu/",
-            "slug": "opera-stato-ungherese"
-          },
-          "he": {
-            "name": "האופרה הממלכתית ההונגרית",
-            "shortDescription": "בית אופרה ניאו-רנסנס ברחוב אנדרסי — אופרה, בלט וסיורים מודרכים בבניין.",
-            "longDescription": "האופרה הממלכתית ההונגרית (Magyar Állami Operaház) באנדרסי 22 היא בית האופרה והבלט ההיסטורי בבודפשט. הופעות וסיורים ב-opera.hu.\n\nSources: https://www.opera.hu/",
-            "slug": "ha-opera-ha-mamlakhtit"
-          },
-          "ar": {
-            "name": "الأوبرا الحكومية المجرية",
-            "shortDescription": "دار أوبرا نيوكلاسيكية في شارع أندراسي — أوبرا وباليه وجولات في المبنى.",
-            "longDescription": "الأوبرا الحكومية المجرية (Magyar Állami Operaház) في أندراسي 22 هي موطن الأوبرا والباليه التاريخي في بودابست. العروض والجولات على opera.hu.\n\nSources: https://www.opera.hu/",
-            "slug": "al-opera-al-hukumiya"
-          }
-        }
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-mupa-ferencvaros",
-        "name": "MÜPA Budapest",
-        "category": "Venues",
-        "borough": "Ferencváros",
-        "neighborhood": "Műegyetem",
-        "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
-        "activityTypes": [
           "Live Music",
-          "Theatre",
           "Jazz"
         ],
         "ageRanges": [
@@ -247,324 +32,271 @@
           "Weekend",
           "Weekday"
         ],
-        "pricePerClass": 15,
-        "shortDescription": "Palace of Arts on the Danube — Béla Bartók National Concert Hall, Ludwig Museum, and festival programs.",
-        "longDescription": "MÜPA Budapest (Palace of Arts) at Komor Marcell utca 1 hosts classical, jazz, world music, dance, and contemporary programs in the Bartók National Concert Hall and other halls, plus the Ludwig Museum. Browse mupa.hu for tickets and schedules.\n\nSources: https://www.mupa.hu/en",
+        "pricePerClass": 4200,
+        "shortDescription": "Bauhaus cultural centre on the Buda hills — theatre, concerts, and courtyard events.",
+        "longDescription": "MOM Kulturális Központ (MOM Cultural Centre) at Csörsz utca 18 is a protected Bauhaus building with a 650-seat theatre, dome room, and outdoor stage. Ticket office hours and programs are listed on momkult.hu; email jegy@momkult.hu for tickets.\n\nSources: https://momkult.hu/",
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "Featured",
-          "Staff Pick"
+          "Hidden Gem"
         ],
-        "image": "https://i.ibb.co/qLV6b22h/ca46b91b7cab.jpg",
-        "email": "",
-        "website": "https://www.mupa.hu/en",
-        "phone": "+36 1 555 3355",
+        "image": "https://i.ibb.co/JF0x34L7/a14e016f8c08.jpg",
+        "email": "jegy@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 319 9854",
         "locales": {
           "hu": {
-            "name": "MÜPA Budapest",
-            "shortDescription": "Művészetek Palotája a Dunán — Bartók Nemzeti Koncertterem, Ludwig Múzeum és fesztiválprogramok.",
-            "longDescription": "A MÜPA Budapest a Komor Marcell utca 1. szám alatt klasszikus, jazz, world, tánc és kortárs programokat kínál a Bartók Nemzeti Koncertteremben és más termekben, valamint a Ludwig Múzeumban. Jegyek és műsor: mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "mupa-budapest"
+            "name": "MOM Kulturális Központ",
+            "shortDescription": "Bauhaus kulturális központ a budai hegyekben — színház, koncertek és udvari programok.",
+            "longDescription": "A MOM Kulturális Központ a Csörsz utca 18. szám alatt védett Bauhaus épület 650 fős színházzal, kupolateremmel és szabadtéri színpaddal. Jegyiroda és programok: momkult.hu; jegyek: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "mom-kulturalis-kozpont"
           },
           "es": {
-            "name": "MÜPA Budapest",
-            "shortDescription": "Palacio de las Artes en el Danubio — sala Bartók, Museo Ludwig y festivales.",
-            "longDescription": "MÜPA Budapest (Palacio de las Artes) en Komor Marcell utca 1 acoge programas clásicos, jazz, world, danza y contemporáneos en la Sala Nacional de Conciertos Bartók y otras salas, además del Museo Ludwig. Entradas y cartelera en mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "mupa-budapest-es"
+            "name": "Centro Cultural MOM",
+            "shortDescription": "Centro cultural Bauhaus en las colinas de Buda — teatro, conciertos y eventos en el patio.",
+            "longDescription": "MOM Kulturális Központ (Centro Cultural MOM) en Csörsz utca 18 es un edificio Bauhaus protegido con teatro de 650 plazas, sala cúpula y escenario exterior. Taquilla y programación en momkult.hu; entradas: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "centro-cultural-mom"
           },
           "it": {
-            "name": "MÜPA Budapest",
-            "shortDescription": "Palazzo delle Arti sul Danubio — sala Bartók, Museo Ludwig e festival.",
-            "longDescription": "MÜPA Budapest in Komor Marcell utca 1 ospita classica, jazz, world, danza e contemporaneo nella Sala Nazionale Bartók e altre sale, oltre al Museo Ludwig. Biglietti e programma su mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "mupa-budapest-it"
+            "name": "Centro Culturale MOM",
+            "shortDescription": "Centro culturale Bauhaus sulle colline di Buda — teatro, concerti ed eventi nel cortile.",
+            "longDescription": "MOM Kulturális Központ in Csörsz utca 18 è un edificio Bauhaus tutelato con teatro da 650 posti, sala cupola e palco esterno. Biglietteria e programma su momkult.hu; biglietti: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "centro-culturale-mom"
           },
           "he": {
-            "name": "מופה בודפשט",
-            "shortDescription": "ארמון האמנויות על הדנובה — אולם בארטוק, מוזיאון לודוויג ופסטיבלים.",
-            "longDescription": "מופה בודפשט (MÜPA) ברחוב קומור מרסל 1 מציע קלאסי, ג'אז, world, מחול ותוכניות עכשוויות באולם הקונצרטים הלאומי בארטוק ובאולמות נוספים, וכן במוזיאון לודוויג. כרטיסים ולוח הופעות ב-mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "mupa-budapest-he"
+            "name": "מרכז תרבות MOM",
+            "shortDescription": "מרכז תרבות באוהאוס גבעות בודה — תיאטרון, קונצרטים ואירועים בחצר.",
+            "longDescription": "מרכז MOM (MOM Kulturális Központ) ברחוב צ'ורס 18 הוא מבנה באוהאוס מוגן עם תיאטרון ל-650 מושבים, אולם כיפה ובמה חיצונית. שעות קופה ותוכנית ב-momkult.hu; כרטיסים: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "merkaz-tarbut-mom"
           },
           "ar": {
-            "name": "موبا بودابست",
-            "shortDescription": "قصر الفنون على الدانوب — قاعة بارتوك ومتحف لودفيج ومهرجانات.",
-            "longDescription": "موبا بودابست (MÜPA) في كومور مارسيل 1 يستضيف برامج كلاسيكية وجاز وعالمية ورقصاً ومعاصرة في قاعة بارتوك الوطنية وقاعات أخرى، إضافة إلى متحف لودفيج. التذاكر والبرنامج على mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "mupa-budapest-ar"
+            "name": "مركز MOM الثقافي",
+            "shortDescription": "مركز ثقافي باوهاوس في تلال بودا — مسرح وحفلات وفعاليات في الفناء.",
+            "longDescription": "مركز MOM الثقافي (MOM Kulturális Központ) في تشورس 18 مبنى باوهاوس محمي بمسرح 650 مقعداً وقاعة قبة ومسرح خارجي. شباك التذاكر والبرنامج على momkult.hu؛ التذاكر: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "markaz-mom-althaqafi"
+          },
+          "en": {
+            "slug": "mom-kulturalis-kozpont"
           }
-        }
+        },
+        "priceCurrency": "HUF"
       }
     },
     {
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-360-bar-terezvaros",
-        "name": "360 Bar",
-        "category": "Parties",
-        "borough": "Terézváros",
-        "neighborhood": "Andrássy út",
-        "address": "1061 Budapest, Andrássy út 39, Hungary",
-        "activityTypes": [
-          "Rooftop",
-          "Cocktails",
-          "Theatre"
-        ],
-        "ageRanges": [
-          "18+"
-        ],
-        "dayTimeTags": [
-          "Evening",
-          "Late night",
-          "Weekend"
-        ],
-        "pricePerClass": 0,
-        "shortDescription": "Rooftop cocktails on Andrássy út — heated igloo garden in winter, skyline views year-round.",
-        "longDescription": "360 Bar at Andrássy út 39 is a rooftop cocktail bar above Oktogon with seasonal Igloo Garden domes in colder months. Published hours: Mon–Wed 14:00–00:00, Thu–Sat 14:00–02:00, Sun 14:00–00:00. Reservations and events: info@360bar.hu, +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
-        "rating": 0,
-        "reviewCount": 0,
-        "badges": [
-          "Weekend Vibes"
-        ],
-        "image": "https://i.ibb.co/qFNJ4T1Q/9fdf236417b8.jpg",
-        "email": "info@360bar.hu",
-        "website": "https://www.360bar.hu/",
-        "phone": "+36 30 360 3600",
-        "locales": {
-          "hu": {
-            "name": "360 Bar",
-            "shortDescription": "Tetőteraszos koktélok az Andrássy úton — fűtött igloo kert télen, panoráma egész évben.",
-            "longDescription": "A 360 Bar az Andrássy út 39. szám alatt, az Oktogon felett koktélbár tetőterasszal; hidegebb hónapokban Igloo Garden sátrak. Nyitvatartás: H–Sze 14:00–00:00, Cs–Szo 14:00–02:00, V 14:00–00:00. Foglalás és események: info@360bar.hu, +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
-            "slug": "360-bar"
-          },
-          "es": {
-            "name": "360 Bar",
-            "shortDescription": "Cócteles en azotea en Andrássy út — jardín iglú climatizado en invierno, vistas todo el año.",
-            "longDescription": "360 Bar en Andrássy út 39 es un cocktail bar en la azotea sobre Oktogon con terraza; en invierno domos Igloo Garden. Horarios: lun–mié 14:00–00:00, jue–sáb 14:00–02:00, dom 14:00–00:00. Reservas: info@360bar.hu, +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
-            "slug": "360-bar-es"
-          },
-          "it": {
-            "name": "360 Bar",
-            "shortDescription": "Cocktail su rooftop su Andrássy út — giardino igloo riscaldato in inverno, skyline tutto l'anno.",
-            "longDescription": "360 Bar in Andrássy út 39 è un cocktail bar sul tetto sopra Oktogon; nei mesi freddi cupole Igloo Garden. Orari: lun–mer 14:00–00:00, gio–sab 14:00–02:00, dom 14:00–00:00. Prenotazioni: info@360bar.hu, +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
-            "slug": "360-bar-it"
-          },
-          "he": {
-            "name": "360 בר",
-            "shortDescription": "קוקטיילים על הגג באנדרסי — גן איגלו מחומם בחורף ונוף לכל העיר.",
-            "longDescription": "360 בר באנדרסי 39 הוא בר קוקטיילים על הגג מעל אוקטוגון; בחורף כיפות Igloo Garden. שעות: ב׳–ד׳ 14:00–00:00, ה׳–ש׳ 14:00–02:00, א׳ 14:00–00:00. הזמנות: info@360bar.hu, +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
-            "slug": "360-bar-he"
-          },
-          "ar": {
-            "name": "360 بار",
-            "shortDescription": "كوكتيلات على السطح في أندراسي — حديقة إيغلو مدفأة في الشتاء وإطلالة طوال العام.",
-            "longDescription": "360 بار في أندراسي 39 بار كوكتيل على السطح فوق أوكتوجون؛ في الشتاء قباب Igloo Garden. المواعيد: الإثنين–الأربعاء 14:00–00:00، الخميس–السبت 14:00–02:00، الأحد 14:00–00:00. الحجز: info@360bar.hu، +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
-            "slug": "360-bar-ar"
-          }
-        }
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-cov-bartok-moricz",
-        "name": "Béla Bartók National Concert Hall",
-        "category": "Venues",
-        "borough": "Ferencváros",
-        "neighborhood": "Műegyetem",
-        "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
-        "activityTypes": [
-          "Live Music",
-          "Theatre",
-          "Jazz"
-        ],
-        "ageRanges": [
-          "All ages",
-          "Family"
-        ],
-        "dayTimeTags": [
-          "Evening",
-          "Weekend",
-          "Weekday"
-        ],
-        "pricePerClass": 0,
-        "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
-        "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
-        "rating": 0,
-        "reviewCount": 0,
-        "badges": [],
-        "image": "https://i.ibb.co/DP8kRzt1/3216d19ee1d1.webp",
-        "email": "info@mupa.hu",
-        "website": "https://www.mupa.hu/en",
-        "phone": "+36 1 555 3055",
-        "locales": {
-          "hu": {
-            "name": "Béla Bartók Nemzeti Hangversenyterem",
-            "shortDescription": "Szimfonikus hangversenyterem a Moricz korter vonzasaban, világszínvonalú akusztikaval a Mupa Budapestben.",
-            "longDescription": "A Béla Bartók Nemzeti Hangversenyterem a Mupa Budapestben a Magyar Nemzeti Filharmonikusokat és turnéző zenekarokat fogadja a Moricz Zsigmond korter villamoscsomópontja közelében. Az építészeti tura kiegészítheti a koncertjegyet. Program a mupa.hu oldalon.\n\nSources: https://www.mupa.hu/en",
-            "slug": "bartok-hangversenyterem-hu"
-          },
-          "es": {
-            "name": "Sala Nacional de Conciertos Bela Bartok",
-            "shortDescription": "Sala sinfonica en el corredor de Moricz korter, con acustica de primer nivel dentro del complejo Mupa Budapest.",
-            "longDescription": "La Sala Nacional de Conciertos Bela Bartok, en Mupa Budapest, recibe a la Filarmonica Nacional Hungara y a orquestas de gira cerca del nodo de tranvias de Moricz Zsigmond korter. Las visitas arquitectonicas complementan la entrada del concierto. Programa en mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "sala-bartok-es"
-          },
-          "it": {
-            "name": "Sala Nazionale dei Concerti Bela Bartok",
-            "shortDescription": "Sala sinfonica nel corridoio di Moricz korter, con acustica di livello mondiale nel complesso Mupa Budapest.",
-            "longDescription": "La Sala Nazionale dei Concerti Bela Bartok, nel Mupa Budapest, ospita la Filarmonica Nazionale Ungherese e orchestre in tour vicino al nodo tramviario di Moricz Zsigmond korter. Le visite architettoniche completano il biglietto del concerto. Programma su mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "sala-bartok-it"
-          },
-          "he": {
-            "name": "היכל הקונצרטים הלאומי בלה ברטוק",
-            "shortDescription": "אולם סימפוני בציר Moricz korter עם אקוסטיקה ברמה עולמית בתוך מתחם Mupa Budapest.",
-            "longDescription": "היכל הקונצרטים הלאומי בלה ברטוק במתחם Mupa Budapest מארח את הפילהרמונית הלאומית ההונגרית ותזמורות אורחות ליד מרכז החשמליות של Moricz Zsigmond korter. סיורי אדריכלות משלימים את כרטיס הקונצרט. התוכנית באתר mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "bartok-concert-hall-he"
-          },
-          "ar": {
-            "name": "قاعة بيلا بارتوك الوطنية للحفلات",
-            "shortDescription": "قاعة سيمفونية في محور Moricz korter مع صوتيات عالمية المستوى داخل مجمع Mupa Budapest.",
-            "longDescription": "تستضيف قاعة بيلا بارتوك الوطنية للحفلات في Mupa Budapest الأوركسترا الفيلهارمونية الوطنية المجرية والأوركسترات الزائرة قرب عقدة ترام Moricz Zsigmond korter. تكمل الجولات المعمارية تذكرة الحفل. البرنامج على mupa.hu.\n\nSources: https://www.mupa.hu/en",
-            "slug": "bartok-concert-hall-ar"
-          }
-        }
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-cov-island-cafe-ferencvaros",
-        "name": "Budapest Park Café",
+        "id": "prov-cov-mom-cafe-mill",
+        "name": "MOM Eden Café",
         "category": "Cafés",
-        "borough": "Ferencváros",
-        "neighborhood": "Fábián Juli",
-        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "borough": "Buda",
+        "neighborhood": "MOM Park",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
         "activityTypes": [
           "Coffee & Brunch",
-          "Craft Beer",
-          "Street Food"
+          "Gallery",
+          "Jazz"
         ],
         "ageRanges": [
           "All ages",
           "Family"
         ],
         "dayTimeTags": [
+          "Morning",
           "Afternoon",
-          "Weekend",
-          "Evening"
+          "Weekday"
         ],
         "pricePerClass": 0,
-        "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
-        "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+        "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+        "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
         "rating": 0,
         "reviewCount": 0,
         "badges": [],
-        "image": "https://i.ibb.co/Zzv0wh56/dec449bf851e.jpg",
-        "email": "info@budapestpark.hu",
-        "website": "https://www.budapestpark.hu/en",
-        "phone": "+36 1 434 7800",
+        "image": "https://i.ibb.co/8DnVV8nr/b6f3830b7e3b.jpg",
+        "email": "info@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 555 3300",
         "locales": {
           "hu": {
-            "name": "Budapest Park Kávézó",
-            "shortDescription": "Napközbeni kávéállások a Budapest Parkon — kávé és harapnivalók a szigeti koncertek előtt.",
-            "longDescription": "A Budapest Park napközbeni ételudvara kávét, sört és gyors falatokat kínál az Óbudai-szigeten rendezvények között. A kapuk délután kinyitnak, hogy a látogatók bemelegíthessenek az esti koncertek előtt. Az árusok listája a budapestpark.hu oldalon található.\n\nSources: https://www.budapestpark.hu/en",
-            "slug": "island-cafe-obuda-hu"
+            "name": "MOM Eden Café",
+            "shortDescription": "Kávézó a MOM Kulturális Központban — kávé és sütemények a Csörsz utcai Millennium irodatornyok mellett.",
+            "longDescription": "A MOM Kulturális Központban található MOM Eden Café reggelit és ebédet kínál a millenniumi negyed galériáinak és irodáinak látogatói számára. Az üvegátrium a dél-budai hegyekre néz. Órák a momkult.hu-n.\n\nSources: https://momkult.hu/",
+            "slug": "mom-cafe-mill-hu"
           },
           "es": {
-            "name": "Budapest Park Café",
-            "shortDescription": "Puestos de café diurno en el Budapest Park — café y aperitivos antes de los conciertos en la isla.",
-            "longDescription": "Los vendedores del patio de comidas de Budapest Park sirven café, cerveza y bocados rápidos en la isla de Óbuda entre eventos. Las puertas abren por la tarde para los calentamientos previos a los conciertos nocturnos. La lista de vendedores está en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
-            "slug": "island-cafe-obuda-es"
+            "name": "MOM Eden Café",
+            "shortDescription": "Café en el Centro Cultural MOM: café y pasteles junto a las torres de oficinas Millennium en Csörsz utca.",
+            "longDescription": "MOM Eden Café dentro del Centro Cultural MOM sirve desayuno y almuerzo a los visitantes de galerías y oficinas en el barrio del Milenio. El atrio de cristal da a las colinas del sur de Buda. Horas en momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "mom-cafe-mill-es"
           },
           "it": {
-            "name": "Budapest Park Café",
-            "shortDescription": "Stand di caffè diurni al Budapest Park — caffè e spuntini prima dei concerti sull'isola.",
-            "longDescription": "I venditori del food court diurno di Budapest Park servono caffè, birra e spuntini veloci sull'Isola di Óbuda tra un evento e l'altro. I cancelli aprono nel pomeriggio per i warm-up prima dei concerti serali. L'elenco dei venditori è su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
-            "slug": "island-cafe-obuda-it"
+            "name": "MOM Eden Café",
+            "shortDescription": "Caffè nel Centro Culturale MOM — caffè e torte accanto alle torri degli uffici Millennium a Csörsz utca.",
+            "longDescription": "MOM Eden Café all'interno del MOM Cultural Centre serve colazione e pranzo ai visitatori delle gallerie e degli uffici nel quartiere Millennium. L'atrio di vetro si affaccia sulle colline meridionali di Buda. Ore su momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "mom-cafe-mill-it"
           },
           "he": {
-            "name": "בודפשט פארק קפה",
-            "shortDescription": "דוכני קפה בשעות היום בבודפשט פארק — קפה וחטיפים לפני הקונצרטים באי.",
-            "longDescription": "ספקי פוד קורט של בודפשט פארק מגישים קפה, בירה ומנות מהירות באי אובודה בין אירועים. השערים נפתחים אחר הצהריים לחימום לפני הקונצרטים הערביים. רשימת הספקים באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
-            "slug": "island-cafe-obuda-he"
+            "name": "קפה אמא עדן",
+            "shortDescription": "בית קפה במרכז התרבות MOM — קפה ועוגות ליד מגדלי המשרדים של Millennium ב - Csörsz utca.",
+            "longDescription": "קפה אמא עדן בתוך מרכז התרבות של אמא מגיש ארוחת בוקר וארוחת צהריים למבקרים בגלריות ובמשרדים ברובע המילניום. פרוזדור הזכוכית משקיף על גבעות בודה הדרומיות. שעות על momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "mom-cafe-mill-he"
           },
           "ar": {
-            "name": "بودابيست بارك كافيه",
-            "shortDescription": "أكشاك قهوة نهارية في بودابيست بارك — قهوة ووجبات خفيفة قبل حفلات الجزيرة الموسيقية.",
-            "longDescription": "يقدّم موردو ساحة الطعام في بودابيست بارك القهوة والبيرة والوجبات السريعة في جزيرة أوبودا بين الفعاليات. تُفتح البوابات بعد الظهر للإحماء قبل الحفلات الموسيقية المسائية. قائمة الموردين على موقع budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
-            "slug": "island-cafe-obuda-ar"
+            "name": "مقهى موم إيدن",
+            "shortDescription": "مقهى في المركز الثقافي MOM — قهوة وكعك بجانب أبراج مكاتب Millennium في Csörsz utca.",
+            "longDescription": "يقدم مقهى موم إيدن داخل مركز موم الثقافي وجبة الإفطار والغداء لزوار المعارض والمكاتب في ربع الألفية. يطل الردهة الزجاجية على تلال بودا الجنوبية. ساعات على momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "mom-cafe-mill-ar"
+          },
+          "en": {
+            "slug": "mom-cafe-mill"
           }
-        }
+        },
+        "priceCurrency": "HUF"
       }
     },
     {
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-rudas-party",
-        "name": "Rudas Rooftop Bar",
-        "category": "Parties",
+        "id": "prov-cov-gellert-cafe",
+        "name": "Gellért Café",
+        "category": "Cafés",
         "borough": "Buda",
-        "neighborhood": "Tabán",
-        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
         "activityTypes": [
-          "Rooftop",
-          "Thermal Bath",
-          "Cocktails"
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Thermal Bath"
         ],
         "ageRanges": [
-          "18+",
-          "21+"
+          "All ages",
+          "Family"
         ],
         "dayTimeTags": [
-          "Evening",
-          "Weekend",
-          "Late night"
+          "Morning",
+          "Afternoon",
+          "Weekend"
         ],
         "pricePerClass": 0,
-        "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
-        "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+        "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+        "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
         "rating": 0,
         "reviewCount": 0,
         "badges": [],
-        "image": "https://i.ibb.co/zHWT6qJ1/84d7ee8a3655.jpg",
-        "email": "info@rudasfurdo.hu",
-        "website": "https://www.rudasfurdo.hu/",
-        "phone": "+36 1 356 1010",
+        "image": "https://i.ibb.co/TxndT945/3ee43c9d2449.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/",
+        "phone": "+36 1 889 5500",
         "locales": {
           "hu": {
-            "name": "Rudas Tetőbár",
-            "shortDescription": "Tetőterasz a Rudas fürdőn — koktélok és Duna-panoráma a Gellért-hegyről.",
-            "longDescription": "A Rudas fürdő tetőterasz-bárja termálmedencéket ötvöz koktélokkal a Gellért-hegyről a Dunára nyíló kilátással. A pénteki és szombati éjszakai szessziókon nyáron DJ-setek is hallhatók. Csomagok a rudasfürdő.hu oldalon.\n\nSources: https://www.rudasfürdő.hu/",
-            "slug": "rudas-party-hu"
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau kávézó a Hotel Gellértben — kávé, sütemények és fürdőszünetek a Szent Gellért téren.",
+            "longDescription": "A Danubius Hotel Gellértben található Gellért Kávéház szecessziós belső tereket kínál a híres termálfürdők kávézóinak lépcsőivel. A szálloda vendégei és a túrázók megosztják a lobbiszalont. Részletek a danubiusgellert.com oldalon.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "gellert-cafe-hu"
           },
           "es": {
-            "name": "Rudas Rooftop Bar",
-            "shortDescription": "Bar de azotea en los Baños Rudas — cócteles y panorámica del Danubio desde la Colina Gellért.",
-            "longDescription": "El bar de bienestar en la azotea de los Baños Rudas combina piscinas termales con cócteles y vistas al Danubio desde la Colina Gellért. Las sesiones nocturnas de viernes y sábado incluyen DJ sets en verano. Paquetes en rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
-            "slug": "rudas-party-es"
+            "name": "Gellért Café",
+            "shortDescription": "Cafetería modernista en el Hotel Gellért: café, pasteles y escapadas de spa en Szent Gellért tér.",
+            "longDescription": "Gellért Café dentro del Danubius Hotel Gellért ofrece interiores modernistas con servicio de café a pasos de los famosos baños termales. Los huéspedes del hotel y los excursionistas comparten el salón del vestíbulo. Detalles en danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "gellert-cafe-es"
           },
           "it": {
-            "name": "Rudas Rooftop Bar",
-            "shortDescription": "Bar sul tetto dei Bagni Rudas — cocktail e panorama sul Danubio dal Colle Gellért.",
-            "longDescription": "Il bar wellness sul tetto dei Bagni Rudas combina piscine termali con cocktail e viste sul Danubio dal Colle Gellért. Le sessioni notturne del venerdì e del sabato includono DJ set in estate. Pacchetti su rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
-            "slug": "rudas-party-it"
+            "name": "Gellért Café",
+            "shortDescription": "Caffè Art Nouveau nell'Hotel Gellért: caffè, torte e pause benessere al Szent Gellért tér.",
+            "longDescription": "Gellért Café all'interno del Danubius Hotel Gellért offre interni in stile liberty con servizio di caffè a pochi passi dalle famose terme. Gli ospiti dell'hotel e gli escursionisti condividono il salone della hall. Dettagli su danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "gellert-cafe-it"
           },
           "he": {
-            "name": "רודאש בר גג",
-            "shortDescription": "בר גג במרחץ רודאש — קוקטיילים ופנורמת דנובה מגבעת גלרט.",
-            "longDescription": "בר הרווחה על גג מרחץ רודאש משלב בריכות תרמיות עם קוקטיילים ונוף לדנובה מגבעת גלרט. בשישי ושבת בלילה יש סטים של DJ בקיץ. חבילות באתר rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
-            "slug": "rudas-party-he"
+            "name": "Gellért Café",
+            "shortDescription": "בית קפה בסגנון אר — נובו במלון גלרט — קפה, עוגות וחופשות לימי ספא בסנט גלרט טר.",
+            "longDescription": "Gellért Café בתוך מלון Danubius Gellért מציע חללי פנים בסגנון אר - נובו עם מדרגות שירות קפה מהמרחצאות התרמיים המפורסמים. אורחי המלון והמטיילים חולקים את סלון הלובי. פרטים באתר danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "gellert-cafe-he"
           },
           "ar": {
-            "name": "رودوش بار السطح",
-            "shortDescription": "بار على السطح في حمام رودوش — كوكتيلات وبانوراما الدانوب من تل جيليرت.",
-            "longDescription": "يجمع بار الرعاية على سطح حمام رودوش بين أحواض السباحة الحرارية والكوكتيلات مع إطلالة على الدانوب من تل جيليرت. تشمل جلسات ليالي الجمعة والسبت عروض DJ في الصيف. الباقات على rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
-            "slug": "rudas-party-ar"
+            "name": "Gellért Café",
+            "shortDescription": "مقهى Art - noveau في فندق Gellért — استراحات القهوة والكعك والسبا في Szent Gellért tér.",
+            "longDescription": "يقدم Gellért Café داخل فندق Danubius Hotel Gellért تصاميم داخلية حديثة مع درجات خدمة القهوة من الحمامات الحرارية الشهيرة. يتشارك نزلاء الفندق والمتنزهون في صالون الردهة. التفاصيل على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "gellert-cafe-ar"
+          },
+          "en": {
+            "slug": "gellert-cafe"
           }
-        }
+        },
+        "gapKey": "Cafés|Buda|Gellért Hill",
+        "imageSource": "https://www.danubiusgellert.com/images/gellert-cafe.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-cafe-mom-infopark",
+        "name": "MOM Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "MOM Park",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Atrium coffee bar in MOM Cultural Centre — espresso between meetings at MOM Cultural Centre.",
+        "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to MOM Cultural Centre office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/1JKVYNrj/b3957fdc6711.jpg",
+        "email": "info@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 555 3300",
+        "locales": {
+          "hu": {
+            "name": "MOM Kávézó",
+            "shortDescription": "Atriumos kávézó az Infoparkban — eszpresszó megbeszélések között a MOM Kulturális Központban.",
+            "longDescription": "A MOM Kávézó a Csörsz utca 18. földszintjén specialty kávéval várja az MOM Cultural Centre irodai dolgozóit és a galéria látogatóit. Sütemények és szendvicsek kínálnak gyors szünetet Müpa-koncertek előtt is. Nyitvatartás a momkult.hu oldalon.\n\nSources: https://momkult.hu/",
+            "slug": "cafe-mom-infopark-hu"
+          },
+          "es": {
+            "name": "MOM Café",
+            "shortDescription": "Bar de café en el atrio del MOM Cultural Centre — espresso entre reuniones en el Centro Cultural MOM.",
+            "longDescription": "MOM Café en la planta baja de Csörsz utca 18 sirve café de especialidad a trabajadores de oficina del MOM Cultural Centre y visitantes de la galería. La bollería y los bocadillos son perfectos para un descanso rápido antes de los conciertos del Müpa. Horario en momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cafe-mom-infopark-es"
+          },
+          "it": {
+            "name": "MOM Café",
+            "shortDescription": "Bar caffè nell'atrio dell'MOM Cultural Centre — espresso tra riunioni al Centro Culturale MOM.",
+            "longDescription": "MOM Café al pianterreno di Csörsz utca 18 serve caffè specialty ai lavoratori dell'MOM Cultural Centre e ai visitatori della galleria. Pasticcini e panini si prestano a brevi pause prima dei concerti al Müpa. Orari su momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cafe-mom-infopark-it"
+          },
+          "he": {
+            "name": "MOM קפה",
+            "shortDescription": "בר קפה באטריום של אינפופארק — אספרסו בין פגישות במרכז התרבות MOM.",
+            "longDescription": "MOM קפה בקומת הקרקע של צ'ורס אוצה 18 מגיש קפה ספיישלטי לעובדי משרדים באינפופארק ולמבקרי הגלריה. מאפים וסנדוויצ'ים מתאימים להפסקות קצרות לפני קונצרטים במיופה. שעות פתיחה ב-momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cafe-mom-infopark-he"
+          },
+          "ar": {
+            "name": "MOM Café",
+            "shortDescription": "بار قهوة في ردهة إنفوبارك — إسبريسو بين الاجتماعات في المركز الثقافي MOM.",
+            "longDescription": "يقدّم MOM Café في الطابق الأرضي من مبنى Csörsz utca 18 قهوةً متخصصة لموظفي مكاتب إنفوبارك وزوار المعرض. تُناسب المعجنات والسندويشات الاستراحات السريعة قبل حفلات موسيقى Müpa. ساعات العمل على momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cafe-mom-infopark-ar"
+          },
+          "en": {
+            "slug": "cafe-mom-infopark"
+          }
+        },
+        "priceCurrency": "HUF"
       }
     },
     {
@@ -575,7 +307,7 @@
         "name": "Gellért Lobby Bar",
         "category": "Parties",
         "borough": "Buda",
-        "neighborhood": "Gellért Hill",
+        "neighborhood": "Szent Gellért tér",
         "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
         "activityTypes": [
           "Cocktails",
@@ -631,144 +363,14 @@
             "shortDescription": "ليالي البار الفندقي في جيليرت — جاز وكوكتيلات وخدمة ليلية في صالونات الفن الجديد.",
             "longDescription": "يستضيف بار لوبي فندق جيليرت موسيقى البيانو الجاز وخدمة الكوكتيلات تحت القبة الزجاجية الشهيرة في Szent Gellért tér. ارتدِ ملابس أنيقة لليالي نهاية الأسبوع بعد زيارات المنتجع الصحي. البرنامج على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
             "slug": "gellert-lobby-bar"
+          },
+          "en": {
+            "slug": "gellert-lobby-bar"
           }
         },
         "gapKey": "Parties|Buda|Szent Gellért tér",
-        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-cov-park-party-ferencvaros",
-        "name": "Budapest Park Club Nights",
-        "category": "Parties",
-        "borough": "Ferencváros",
-        "neighborhood": "Fábián Juli",
-        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
-        "activityTypes": [
-          "DJ Sets",
-          "Electronic",
-          "Festival"
-        ],
-        "ageRanges": [
-          "18+",
-          "Late night"
-        ],
-        "dayTimeTags": [
-          "Late night",
-          "Weekend"
-        ],
-        "pricePerClass": 0,
-        "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
-        "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
-        "rating": 0,
-        "reviewCount": 0,
-        "badges": [],
-        "image": "https://i.ibb.co/FLfLmSQ9/c24e1f6dc725.jpg",
-        "email": "info@budapestpark.hu",
-        "website": "https://www.budapestpark.hu/en/parties",
-        "phone": "+36 1 434 7800",
-        "locales": {
-          "hu": {
-            "name": "Budapest Park Bulik",
-            "shortDescription": "Szigeti táncos éjszakák a Budapest Parkban — elektronikus headliner-ek és éjfélen túli teraszok.",
-            "longDescription": "A Budapest Park klub-éjszakái nemzetközi DJ-ket hoznak az Óbudai-szigetre, több bárral és szabadtéri táncparkettekkel. Az eseményeket nyári hétvégéken éjfélen túl tartják, villamossal megközelíthetően Pestről. Műsor a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/parties",
-            "slug": "park-party-obuda-hu"
-          },
-          "es": {
-            "name": "Budapest Park Club Nights",
-            "shortDescription": "Noches de baile en la isla del Budapest Park — headliners electrónicos y terrazas de madrugada.",
-            "longDescription": "Las noches de club del Budapest Park traen DJs internacionales a la Isla de Óbuda con múltiples barras y pistas de baile al aire libre. Los eventos se prolongan pasada la medianoche los fines de semana de verano con acceso en tranvía desde Pest. Cartel en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
-            "slug": "park-party-obuda-es"
-          },
-          "it": {
-            "name": "Budapest Park Club Nights",
-            "shortDescription": "Notti danzanti sull'isola del Budapest Park — headliner elettronici e terrazze dopo mezzanotte.",
-            "longDescription": "Le notti club del Budapest Park portano DJ internazionali sull'Isola di Óbuda con più bar e piste da ballo all'aperto. Gli eventi si svolgono oltre la mezzanotte nei fine settimana estivi con accesso in tram da Pest. Programma su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
-            "slug": "park-party-obuda-it"
-          },
-          "he": {
-            "name": "לילות מועדון בודפשט פארק",
-            "shortDescription": "לילות ריקודים באי בודפשט פארק — כוכבי אלקטרוניקה ומרפסות לאחר חצות.",
-            "longDescription": "לילות המועדון של בודפשט פארק מביאים DJ-ים בינלאומיים לאי אובודה עם מספר ברים ורחבות ריקוד בחוץ. האירועים נמשכים מעבר לחצות בסופי שבוע קיצי עם גישה בטרמוואי מפשט. תוכנית באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
-            "slug": "park-party-obuda-he"
-          },
-          "ar": {
-            "name": "ليالي نادي بودابست بارك",
-            "shortDescription": "ليالي رقص على جزيرة بودابست بارك — نجوم الإلكترونيك وشرفات ما بعد منتصف الليل.",
-            "longDescription": "تجلب ليالي النادي في بودابست بارك DJ-ين دوليين إلى جزيرة أوبودا مع عدة بارات وحلبات رقص في الهواء الطلق. تمتد الفعاليات إلى ما بعد منتصف الليل في عطلات نهاية الأسبوع الصيفية مع وصول بالترام من بشت. البرنامج على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
-            "slug": "park-party-obuda-ar"
-          }
-        }
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-cov-rudas-buda-party",
-        "name": "Rudas Party Nights",
-        "category": "Parties",
-        "borough": "Buda",
-        "neighborhood": "Tabán",
-        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
-        "activityTypes": [
-          "Thermal Bath",
-          "DJ Sets",
-          "Cocktails"
-        ],
-        "ageRanges": [
-          "18+",
-          "21+"
-        ],
-        "dayTimeTags": [
-          "Late night",
-          "Weekend"
-        ],
-        "pricePerClass": 0,
-        "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
-        "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
-        "rating": 0,
-        "reviewCount": 0,
-        "badges": [],
-        "image": "https://i.ibb.co/spPHz6jH/09de1b36ddad.webp",
-        "email": "info@rudasfurdo.hu",
-        "website": "https://www.rudasfurdo.hu/en/party",
-        "phone": "+36 1 356 1010",
-        "locales": {
-          "hu": {
-            "name": "Rudas Party Nights",
-            "shortDescription": "Éjszakai fürdőbulók a Rudasban — DJ-szetek és medencék a Gellért-hegy lábánál.",
-            "longDescription": "A Rudas Fürdő éjszakai alkalmain termálmedencézés keveredik DJ-kel és bárokkal, a Dunára nyíló kilátással a Gellért-hegy lábánál. A szombat esti spa-bulik a budapesti bakancslistán szerepelnek. Jegyek a rudasfürdő.hu oldalon.\n\nSources: https://www.rudasfürdő.hu/en/party",
-            "slug": "rudas-ujbuda-party-hu"
-          },
-          "es": {
-            "name": "Rudas Party Nights",
-            "shortDescription": "Fiestas nocturnas de spa en Rudas — sesiones de DJ y piscinas en las estribaciones del monte Gellért.",
-            "longDescription": "Las sesiones nocturnas en el Baño Rudas combinan el baño termal con DJs y bares con vistas al Danubio desde las estribaciones del monte Gellért. Las fiestas de spa del sábado por la noche son una experiencia imprescindible en Budapest. Entradas en rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
-            "slug": "rudas-ujbuda-party-es"
-          },
-          "it": {
-            "name": "Rudas Party Nights",
-            "shortDescription": "Feste notturne alla spa Rudas — set DJ e piscine ai piedi del monte Gellért.",
-            "longDescription": "Le sessioni notturne alle Terme Rudas combinano il bagno termale con DJ e bar con vista sul Danubio ai piedi del monte Gellért. Le feste spa del sabato sera sono un'esperienza da non perdere a Budapest. Biglietti su rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
-            "slug": "rudas-ujbuda-party-it"
-          },
-          "he": {
-            "name": "רוּדאש פארטי נייטס",
-            "shortDescription": "מסיבות ספא לילות בבית המרחץ רוּדאש — סטים של DJ ובריכות בשולי גבעת גֶּלֶּרט.",
-            "longDescription": "הפגישות הלילות במרחצאות רוּדאש משלבות אמבטיה תרמית עם DJ ובארים עם נוף לדנובה מרגלי גבעת גֶּלֶּרט. מסיבות ספא ליל שבת הן חוויה ברשימת הדברים שחייבים לעשות בבודפשט. כרטיסים ב-rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
-            "slug": "rudas-ujbuda-party-he"
-          },
-          "ar": {
-            "name": "رودَش بارتي نايتس",
-            "shortDescription": "حفلات سبا ليلية في حمامات رودَش — حفلات DJ وأحواض سباحة عند سفح جبل غيلرت.",
-            "longDescription": "تجمع الجلسات الليلية في حمامات رودَش بين الاستحمام الحراري وحفلات DJ والبارات مع إطلالات على الدانوب من سفح جبل غيلرت. تُعدّ حفلات سبا ليالي السبت تجربة لا غنى عنها في بودابست. التذاكر على rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
-            "slug": "rudas-ujbuda-party-ar"
-          }
-        }
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF"
       }
     },
     {
@@ -779,7 +381,7 @@
         "name": "Gellért Brasserie",
         "category": "Restaurants",
         "borough": "Buda",
-        "neighborhood": "Gellért Hill",
+        "neighborhood": "Szent Gellért tér",
         "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
         "activityTypes": [
           "Fine Dining",
@@ -835,94 +437,30 @@
             "shortDescription": "تناول طعام الفندق الكبير في جيليرت — قائمة براسيري وبروفست الأحد في Szent Gellért tér.",
             "longDescription": "تقدم Gellért Brasserie في فندق Danubius أطباقاً دولية وهنغارية لضيوف المنتجع الصحي مع إطلالات على النهر. يمتلئ حجرة الطعام بطراز الفن الجديد بالبروفست يوم الأحد. الحجوزات على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
             "slug": "gellert-brasserie-danubius"
+          },
+          "en": {
+            "slug": "gellert-brasserie-etterem"
           }
         },
         "gapKey": "Restaurants|Buda|Szent Gellért tér",
-        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF"
       }
     },
     {
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-contessa-jewish-q",
-        "name": "Szpünik Café",
-        "category": "Cafés",
-        "borough": "Erzsébetváros",
-        "neighborhood": "Kazinczy utca",
-        "address": "1075 Budapest, Kazinczy utca 14, Hungary",
+        "id": "prov-cov-kacsa-becsi",
+        "name": "Kacsa Étterem",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1036 Budapest, Fő utca 82, Hungary",
         "activityTypes": [
-          "Coffee & Brunch",
-          "Ruin Bar"
-        ],
-        "ageRanges": [
-          "All ages",
-          "Family"
-        ],
-        "dayTimeTags": [
-          "Morning",
-          "Afternoon",
-          "Weekend"
-        ],
-        "pricePerClass": 0,
-        "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
-        "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
-        "rating": 0,
-        "reviewCount": 0,
-        "badges": [],
-        "image": "https://i.ibb.co/DgKbBT4x/669a8a6c72ee.jpg",
-        "email": "kert@szimpla.hu",
-        "website": "https://szimpla.hu/szpunik",
-        "phone": "+36 20 261 8669",
-        "locales": {
-          "hu": {
-            "name": "Szpünik Kávézó",
-            "shortDescription": "Nappali kávézó a Szimplán belül — reggeli és eszpresszó a romkocsma megnyitása előtt a Zsidó negyedben.",
-            "longDescription": "A Szpünik Kávézó nappal üzemel a Kazinczy utcai Szimpla Kert komplexumon belül, ahol kávét, reggelit és könnyű ebédet kínál. Csendesebb belépő a Zsidó negyed romkert-kertjeibe. Részletek a szimpla.hu oldalon.\n\nSources: https://szimpla.hu/szpunik",
-            "slug": "contessa-jewish-q-hu"
-          },
-          "es": {
-            "name": "Szpünik Café",
-            "shortDescription": "Cafetería diurna dentro de Szimpla — brunch y espresso antes de que abra el ruin bar en el Barrio Judío.",
-            "longDescription": "Szpünik Café opera en horario diurno dentro del complejo Szimpla Kert en Kazinczy utca con café, desayuno y almuerzo ligero. Es una entrada más tranquila a los jardines de ruinas del Barrio Judío. Detalles en szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
-            "slug": "contessa-jewish-q-es"
-          },
-          "it": {
-            "name": "Szpünik Café",
-            "shortDescription": "Caffetteria diurna dentro Szimpla — brunch e espresso prima dell'apertura del ruin bar nel Quartiere Ebraico.",
-            "longDescription": "Szpünik Café opera nelle ore diurne all'interno del complesso Szimpla Kert su Kazinczy utca con caffè, colazione e pranzo leggero. È un ingresso più tranquillo ai giardini di rovine del Quartiere Ebraico. Dettagli su szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
-            "slug": "contessa-jewish-q-it"
-          },
-          "he": {
-            "name": "שפיוניק קפה",
-            "shortDescription": "בית קפה יומי בתוך שימפלה — ברנץ' ואספרסו לפני פתיחת בר החורבות ברובע היהודי.",
-            "longDescription": "שפיוניק קפה פועל בשעות היום בתוך מתחם שימפלה קרט ברחוב קאזינצי עם קפה, ארוחת בוקר וצהריים קל. הוא נקודת כניסה שקטה יותר לגני החורבות של הרובע היהודי. פרטים דרך szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
-            "slug": "contessa-jewish-q-he"
-          },
-          "ar": {
-            "name": "سبيونيك كافيه",
-            "shortDescription": "مقهى نهاري داخل شيمبلا — برنش وإسبريسو قبل افتتاح بار الأطلال في الحي اليهودي.",
-            "longDescription": "يعمل سبيونيك كافيه خلال ساعات النهار داخل مجمع شيمبلا كرت في شارع كازينتسي مع القهوة والإفطار والغداء الخفيف. إنه نقطة دخول أهدأ لحدائق الأطلال في الحي اليهودي. التفاصيل على szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
-            "slug": "contessa-jewish-q-ar"
-          }
-        },
-        "gapKey": "Cafés|Erzsébetváros|Jewish Quarter",
-        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg"
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "upsert",
-      "document": {
-        "id": "prov-mvm-dome-terezvaros",
-        "name": "MVM Dome",
-        "category": "Venues",
-        "borough": "Terézváros",
-        "neighborhood": "Stefánia út",
-        "address": "1143 Budapest, Stefánia út 2, Hungary",
-        "activityTypes": [
-          "Live Music",
-          "Festival"
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
         ],
         "ageRanges": [
           "All ages",
@@ -930,123 +468,272 @@
         ],
         "dayTimeTags": [
           "Evening",
-          "Weekend"
+          "Weekend",
+          "Weekday"
         ],
         "pricePerClass": 0,
-        "shortDescription": "Major indoor arena on Stefánia út (Terézváros) — concerts and arena shows with published ticket tiers.",
-        "longDescription": "MVM Dome (formerly Budapest Arena) is at 1143 Budapest, Stefánia út 2 in Terézváros (southern Pest). Check mvm-dome.hu for door times, seated and standing zones, and on-sale windows.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact",
+        "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+        "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
         "rating": 0,
         "reviewCount": 0,
-        "badges": [
-          "Featured"
-        ],
-        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
-        "email": "",
-        "website": "https://mvm-dome.hu/en",
-        "phone": "",
+        "badges": [],
+        "image": "https://i.ibb.co/4nHZ9y0m/41e4be6d4237.jpg",
+        "email": "info@kacsaetterem.hu",
+        "website": "https://www.kacsaetterem.hu/",
+        "phone": "+36 1 388 8392",
         "locales": {
           "hu": {
-            "slug": "mvm-dome",
-            "name": "MVM Dome",
-            "shortDescription": "Nagy beltéri aréna a Stefánia úton (Terézváros) — koncertturnék és jegyek a hivatalos oldalon.",
-            "longDescription": "Az MVM Dome (korábban Budapest Aréna) a 1143 Budapest, Stefánia út 2. címen áll Terézvárosban. Kapunyitás és jegyárak: mvm-dome.hu.\n\nSources: https://mvm-dome.hu/hu https://mvm-dome.hu/hu/kapcsolat"
+            "name": "Kacsa Étterem",
+            "shortDescription": "Kacsa-specialista a Fő utcán — hagyományos magyar víziszárnyas-ételek a Bécsi út közelében Óbudán.",
+            "longDescription": "A Kacsa Étterem a Fő utcán kacsamájáról és sült kacsájáról ismert, amelyeket hagyományos óbudai étteremben tálalnak, a Bécsi úthoz közel. A borpárosítások kiemelik a magyar fehérborokat. Foglalás a kacsaetterem.hu oldalon.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "kacsa-etterem-becsi"
           },
           "es": {
-            "slug": "mvm-dome",
-            "name": "MVM Dome",
-            "shortDescription": "Gran arena cubierta en Stefánia út (Terézváros) — giras y entradas en la web oficial.",
-            "longDescription": "MVM Dome está en 1143 Budapest, Stefánia út 2, Terézváros. Entradas en mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
+            "name": "Kacsa Étterem",
+            "shortDescription": "Especialista en pato en Fő utca — platos clásicos húngaros de ave acuática cerca de Bécsi út en Óbuda.",
+            "longDescription": "Kacsa Étterem en Fő utca es famoso por el hígado de pato y el pato asado en un comedor tradicional de Óbuda a pasos de Bécsi út. Los maridajes de vino destacan los blancos húngaros. Reserve en kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "kacsa-etterem-becsi"
           },
           "it": {
-            "slug": "mvm-dome",
-            "name": "MVM Dome",
-            "shortDescription": "Grande arena indoor in Stefánia út (Terézváros) — tour e biglietti sul sito ufficiale.",
-            "longDescription": "MVM Dome si trova in 1143 Budapest, Stefánia út 2, Terézváros. Biglietti su mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
+            "name": "Kacsa Étterem",
+            "shortDescription": "Specialista in anatra su Fő utca — piatti classici ungheresi di volatili vicino a Bécsi út a Óbuda.",
+            "longDescription": "Kacsa Étterem in Fő utca è famoso per il fegato d'anatra e l'anatra arrosto in una sala da pranzo tradizionale di Óbuda a pochi passi da Bécsi út. Gli abbinamenti con il vino valorizzano i bianchi ungheresi. Prenota su kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "kacsa-etterem-becsi"
           },
           "he": {
-            "slug": "mvm-dome",
-            "name": "MVM Dome",
-            "shortDescription": "אולם מקורה גדול ברחוב סטפניה (טרזווארוש) — הופעות וכרטיסים באתר הרשמי.",
-            "longDescription": "MVM Dome נמצא ב-1143 Budapest, Stefánia út 2, Terézváros. כרטיסים ב-mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
+            "name": "מסעדת קאצ'ה",
+            "shortDescription": "מומחה לברווז ב-Fő utca — מנות ברווז הונגריות קלאסיות ליד Bécsi út באובודה.",
+            "longDescription": "מסעדת קאצ'ה ב-Fő utca מפורסמת בכבד ברווז וברווז צלוי בחדר אוכל אובודאי מסורתי צעד מ-Bécsi út. זיווגי יין מדגישים את היינות הלבנים ההונגריים. הזמנות באתר kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "kacsa-etterem-becsi"
           },
           "ar": {
-            "slug": "mvm-dome",
-            "name": "MVM Dome",
-            "shortDescription": "ساحة داخلية كبيرة في شارع ستيفانيا (تيريزفاروش) — جولات وحفلات وتذاكر عبر الموقع الرسمي.",
-            "longDescription": "يقع MVM Dome في 1143 Budapest، Stefánia út 2، Terézváros. التذاكر على mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
+            "name": "مطعم كاكسا",
+            "shortDescription": "متخصص في البط في شارع Fő — أطباق بط هنغارية كلاسيكية قرب Bécsi út في أوبودا.",
+            "longDescription": "مطعم Kacsa في شارع Fő مشهور بكبد البط والبط المشوي في غرفة طعام أوبودية تقليدية على بعد خطوات من Bécsi út. تبرز أزواج النبيذ اليبان الهنغاري. الحجز على kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "kacsa-etterem-becsi"
+          },
+          "en": {
+            "slug": "kacsa-etterem-becsi"
           }
-        }
+        },
+        "gapKey": "Restaurants|Óbuda|Bécsi út",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg",
+        "priceCurrency": "HUF"
       }
     },
     {
-      "resource": "event",
+      "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "event-sting-mvm-dome-2026",
-        "title": "Sting 3.0 — MVM Dome",
-        "shortDescription": "Sting brings the STING 3.0 tour to Budapest on Thursday 18 June 2026 with Dominic Miller and Chris Maas — special guest Dea Matrona.",
-        "longDescription": "The STING 3.0 European tour stops at MVM Dome on Thursday 18 June 2026. The lineup is a tight three-piece with Dominic Miller and Chris Maas; Dea Matrona is listed as special guest. Tickets via Live Nation Hungary.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
-        "startsAt": "2026-06-18T20:00:00+02:00",
-        "endsAt": "2026-06-18T22:30:00+02:00",
-        "timezone": "Europe/Budapest",
-        "venueIds": [
-          "prov-mvm-dome-terezvaros"
-        ],
-        "borough": "Terézváros",
-        "neighborhood": "Stefánia út",
-        "entryFees": [],
+        "id": "prov-cov-mom-eden-infopark",
+        "name": "MOM Eden Restaurant",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "MOM Park",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
         "activityTypes": [
-          "Live Music"
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
         ],
         "ageRanges": [
           "All ages",
           "18+"
         ],
         "dayTimeTags": [
+          "Evening",
           "Weekday",
-          "Evening"
+          "Weekend"
         ],
-        "badges": [
-          "Staff Pick"
-        ],
-        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
-        "website": "https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
-        "bookingUrl": "https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
-        "email": "",
-        "phone": "",
-        "status": "scheduled",
+        "pricePerClass": 0,
+        "shortDescription": "Business-district fine dining at MOM — modern European menu in MOM Cultural Centre glass atrium.",
+        "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in MOM Cultural Centre. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/N2FrKSfy/460152839d77.jpg",
+        "email": "info@momkult.hu",
+        "website": "https://momkult.hu/en/restaurant",
+        "phone": "+36 1 555 3301",
         "locales": {
           "hu": {
-            "slug": "sting-mvm-dome-2026",
-            "title": "Sting 3.0 — MVM Dome",
-            "shortDescription": "Sting a STING 3.0 turnén 2026. június 18-án az MVM Dome-ban.",
-            "longDescription": "A STING 3.0 európai turné budapesti állomása 2026. június 18-án. Vendég: Dea Matrona. Jegyek: livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "name": "MOM Eden Étterem",
+            "shortDescription": "Üzleti negyed fine dining a MOM-ban — modern európai menü az MOM Cultural Centre üveg atriumában.",
+            "longDescription": "A MOM Eden Étterem kortárs európai konyhaélményt kínál a MOM Kulturális Központ atriumában az Infoparkon belül. Ebéden irodai dolgozók töltik meg; vacsorán borpárosítások és kóstolómenük kapnak helyet. Foglalás a momkult.hu oldalon.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "mom-eden-etterem-infopark"
           },
           "es": {
-            "slug": "sting-mvm-dome-2026",
-            "title": "Sting 3.0 — MVM Dome",
-            "shortDescription": "Sting en gira STING 3.0 el 18 de junio de 2026 en MVM Dome.",
-            "longDescription": "Parada en Budapest del tour europeo STING 3.0. Invitada: Dea Matrona. Entradas en livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Fine dining en el distrito de negocios en MOM — menú europeo moderno en el atrio de cristal de MOM Cultural Centre.",
+            "longDescription": "MOM Eden Restaurant sirve cocina europea contemporánea dentro del atrio del MOM Cultural Centre en MOM Cultural Centre. El almuerzo atrae a trabajadores de oficina; las cenas ofrecen maridajes de vinos y menús degustación. Reserve en momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "mom-eden-restaurant-infopark"
           },
           "it": {
-            "slug": "sting-mvm-dome-2026",
-            "title": "Sting 3.0 — MVM Dome",
-            "shortDescription": "Sting con il tour STING 3.0 il 18 giugno 2026 all'MVM Dome.",
-            "longDescription": "Tappa di Budapest del tour europeo STING 3.0. Ospite: Dea Matrona. Biglietti su livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Fine dining nel distretto degli affari al MOM — menu europeo moderno nell'atrio di vetro di MOM Cultural Centre.",
+            "longDescription": "MOM Eden Restaurant serve cucina europea contemporanea nell'atrio del MOM Cultural Centre a MOM Cultural Centre. Il pranzo attrae lavoratori d'ufficio; le cene offrono abbinamenti con il vino e menù degustazione. Prenota su momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "mom-eden-restaurant-infopark"
           },
           "he": {
-            "slug": "sting-mvm-dome-2026",
-            "title": "סטינג 3.0 — MVM Dome",
-            "shortDescription": "סטינג בסיבוב STING 3.0 ב-18 ביוני 2026 ב-MVM Dome.",
-            "longDescription": "עצירת בודפשט בסיבוב האירופי. אורחת: Dea Matrona. כרטיסים ב-livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "name": "מסעדת MOM Eden",
+            "shortDescription": "מסעדה עדינה ב-MOM — תפריט אירופאי מודרני באטריום הזכוכית של MOM Cultural Centre.",
+            "longDescription": "מסעדת MOM Eden מגישה מטבח אירופאי עכשווי בתוך אטריום מרכז התרבות MOM ב-MOM Cultural Centre. ארוחות הצהריים מושכות עובדי משרד; ערב מציע זיווגי יין ותפריטי טעימות. הזמן באתר momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "mom-eden-restaurant-infopark"
           },
           "ar": {
-            "slug": "sting-mvm-dome-2026",
-            "title": "ستينغ 3.0 — MVM Dome",
-            "shortDescription": "ستينغ في جولة STING 3.0 في 18 يونيو 2026 في MVM Dome.",
-            "longDescription": "محطة بودابست في الجولة الأوروبية. ضيفة: Dea Matrona. التذاكر على livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "name": "مطعم MOM Eden",
+            "shortDescription": "مطعم راقٍ في حي الأعمال MOM — قائمة أوروبية حديثة في ردهة الزجاج في MOM Cultural Centre.",
+            "longDescription": "يقدم مطعم MOM Eden مطبخاً أوروبياً معاصراً داخل ردهة مركز MOM الثقافي في MOM Cultural Centre. يجذب الغداء موظفي المكاتب؛ تقدم العشاءات أزواج النبيذ وقوائم التذوق. احجز على momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "mom-eden-restaurant-infopark"
+          },
+          "en": {
+            "slug": "mom-eden-etterem-infopark"
           }
-        }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-pierrot-parliament",
+        "name": "Pierrot Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1014 Budapest, Fő utca 14, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+        "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/wjsqkB7/74d209489fbd.png",
+        "email": "info@pierrot.hu",
+        "website": "https://www.pierrot.hu/",
+        "phone": "+36 1 375 1287",
+        "locales": {
+          "hu": {
+            "name": "Pierrot Kávézó",
+            "shortDescription": "Kerti kávézó a budai parton — kávé és sütemények Parlament-kilátással a folyón át.",
+            "longDescription": "A Pierrot Kávézó a budai Fő utcán belső udvaros ülőhellyel és képeslapnyi kilátással fogadja vendégeit a Parlament épületére. Sütemények, kávé és könnyű ételek teszik nyugodt megállóvá a Duna Buda-oldali részén. Nyitvatartás és menü a pierrot.hu oldalon.\n\nSources: https://www.pierrot.hu/",
+            "slug": "pierrot-kavezo-parlament"
+          },
+          "es": {
+            "name": "Café Pierrot",
+            "shortDescription": "Café jardín en la orilla de Buda — café y pasteles con vistas al Parlamento al otro lado del río.",
+            "longDescription": "El Café Pierrot en Fő utca de Buda ofrece asientos en patio con vistas de postal al edificio del Parlamento. Pasteles, café y platos ligeros lo convierten en una parada tranquila al lado de Buda del Danubio. Horario y menús en pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "cafe-pierrot-parlamento"
+          },
+          "it": {
+            "name": "Caffè Pierrot",
+            "shortDescription": "Caffè giardino sulla riva di Buda — caffè e dolci con viste sul Parlamento dall'altro lato del fiume.",
+            "longDescription": "Il Caffè Pierrot in Fő utca di Buda offre posti a sedere in cortile con vedute da cartolina dell'edificio del Parlamento. Pasticcini, caffè e piatti leggeri ne fanno una sosta rilassante sul lato di Buda del Danubio. Orari e menù su pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "caffe-pierrot-parlamento"
+          },
+          "he": {
+            "name": "בית קפה פיירו",
+            "shortDescription": "בית קפה גינה על גדת בודה — קפה ועוגות עם נוף לבניין הפרלמנט מעבר לנהר.",
+            "longDescription": "בית הקפה פיירו ב-Fő utca בבודה מציע ישיבה בחצר עם נוף גלויה לבניין הפרלמנט. מאפים, קפה ומנות קלות הופכים אותו לעצירה שלווה בצד בודה של הדנובה. שעות ותפריטים באתר pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "beit-kafe-pierrot"
+          },
+          "ar": {
+            "name": "مقهى بييرو",
+            "shortDescription": "مقهى حديقة على ضفة بودا — قهوة وكعك مع مناظر البرلمان عبر النهر.",
+            "longDescription": "يقدم مقهى Pierrot في شارع Fő ببودا مقاعد في الفناء مع مناظر بطاقة بريدية لمبنى البرلمان. المعجنات والقهوة والأطباق الخفيفة تجعله توقفاً هادئاً على الجانب البودا من الدانوب. الساعات والقوائم على pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "maqha-pierrot-parliament"
+          },
+          "en": {
+            "slug": "pierrot-kavezo-parlament"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-rudas-buda-party",
+        "name": "Rudas Party Nights",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+        "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/spPHz6jH/09de1b36ddad.webp",
+        "email": "info@rudasfurdo.hu",
+        "website": "https://www.rudasfurdo.hu/en/party",
+        "phone": "+36 1 356 1010",
+        "locales": {
+          "hu": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Éjszakai fürdőbulók a Rudasban — DJ-szetek és medencék a Gellért-hegy lábánál.",
+            "longDescription": "A Rudas Fürdő éjszakai alkalmain termálmedencézés keveredik DJ-kel és bárokkal, a Dunára nyíló kilátással a Gellért-hegy lábánál. A szombat esti spa-bulik a budapesti bakancslistán szerepelnek. Jegyek a rudasfürdő.hu oldalon.\n\nSources: https://www.rudasfürdő.hu/en/party",
+            "slug": "rudas-party-hu"
+          },
+          "es": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Fiestas nocturnas de spa en Rudas — sesiones de DJ y piscinas en las estribaciones del monte Gellért.",
+            "longDescription": "Las sesiones nocturnas en el Baño Rudas combinan el baño termal con DJs y bares con vistas al Danubio desde las estribaciones del monte Gellért. Las fiestas de spa del sábado por la noche son una experiencia imprescindible en Budapest. Entradas en rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-es"
+          },
+          "it": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Feste notturne alla spa Rudas — set DJ e piscine ai piedi del monte Gellért.",
+            "longDescription": "Le sessioni notturne alle Terme Rudas combinano il bagno termale con DJ e bar con vista sul Danubio ai piedi del monte Gellért. Le feste spa del sabato sera sono un'esperienza da non perdere a Budapest. Biglietti su rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-it"
+          },
+          "he": {
+            "name": "רוּדאש פארטי נייטס",
+            "shortDescription": "מסיבות ספא לילות בבית המרחץ רוּדאש — סטים של DJ ובריכות בשולי גבעת גֶּלֶּרט.",
+            "longDescription": "הפגישות הלילות במרחצאות רוּדאש משלבות אמבטיה תרמית עם DJ ובארים עם נוף לדנובה מרגלי גבעת גֶּלֶּרט. מסיבות ספא ליל שבת הן חוויה ברשימת הדברים שחייבים לעשות בבודפשט. כרטיסים ב-rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-he"
+          },
+          "ar": {
+            "name": "رودَش بارتي نايتس",
+            "shortDescription": "حفلات سبا ليلية في حمامات رودَش — حفلات DJ وأحواض سباحة عند سفح جبل غيلرت.",
+            "longDescription": "تجمع الجلسات الليلية في حمامات رودَش بين الاستحمام الحراري وحفلات DJ والبارات مع إطلالات على الدانوب من سفح جبل غيلرت. تُعدّ حفلات سبا ليالي السبت تجربة لا غنى عنها في بودابست. التذاكر على rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-ar"
+          },
+          "en": {
+            "slug": "rudas-party"
+          }
+        },
+        "priceCurrency": "HUF"
       }
     }
   ]

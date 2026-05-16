@@ -16,6 +16,7 @@ const {
   applyLocationToProvider,
   syncEventFromHost,
 } = require("./lib/budapest-location.cjs");
+const { scrubForbiddenLocationCopy } = require("./lib/location-ingest-validate.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const OUT = path.join(__dirname, "ingest-payloads/venue-location-fix.json");
@@ -60,7 +61,9 @@ async function main() {
       providerById.set(p.id, p);
       continue;
     }
-    const document = cleanProviderDoc(applyLocationToProvider(p, loc));
+    const document = cleanProviderDoc(
+      scrubForbiddenLocationCopy(applyLocationToProvider(p, loc)),
+    );
     providerById.set(p.id, document);
     operations.push({ resource: "provider", action: "upsert", document });
     fixed.push({

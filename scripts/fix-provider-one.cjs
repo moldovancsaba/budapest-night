@@ -76,9 +76,20 @@ async function wikimediaThumb(name, category) {
       const pages = json?.query?.pages || {};
       for (const p of Object.values(pages)) {
         const title = p.title || "";
-        if (/\.webm|black hole|logo|icon|coat of arms|map\.svg/i.test(title)) continue;
+        if (
+          /\.webm|black hole|logo|icon|coat of arms|map\.svg|Il_Friuli|giornale|newspaper|\.pdf\//i.test(
+            title,
+          )
+        )
+          continue;
         const thumb = p.imageinfo?.[0]?.thumburl;
-        if (thumb && !isBadImageUrl(thumb) && !/\.webm/i.test(thumb)) return thumb;
+        if (
+          thumb &&
+          !isBadImageUrl(thumb) &&
+          !/\.webm/i.test(thumb) &&
+          !/Il_Friuli|giornale|newspaper|\.pdf\//i.test(thumb)
+        )
+          return thumb;
       }
     } catch {
       /* next query */
