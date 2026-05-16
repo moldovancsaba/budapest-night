@@ -9,11 +9,11 @@ export const CYBER_TONE_BG: Record<string, string> = {
 };
 
 export const CYBER_TONE_LINK: Record<string, string> = {
-  orange: "text-foreground hover:text-primary",
-  teal: "text-foreground hover:text-primary",
-  pink: "text-foreground hover:text-primary",
-  amber: "text-foreground hover:text-primary",
-  blue: "text-foreground hover:text-primary",
+  orange: "text-foreground hover:text-foreground",
+  teal: "text-foreground hover:text-foreground",
+  pink: "text-foreground hover:text-foreground",
+  amber: "text-foreground hover:text-foreground",
+  blue: "text-foreground hover:text-foreground",
 };
 
 export const CYBER_PANEL = "rounded-[2rem] border border-border bg-card";

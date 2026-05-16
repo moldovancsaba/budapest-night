@@ -126,6 +126,7 @@
     "tagline": "Curado. Local. Hecho para salir de noche.",
     "findByArea": "Encuentra {blurb} por distrito y barrio.",
     "heroAlt": {
+      "Venues": "Sala de conciertos, club y espacio cultural en Budapest",
       "Events": "Concierto y festival en Budapest",
       "Parties": "DJ y discoteca en Budapest",
       "Restaurants": "Restaurante en Budapest",
@@ -139,6 +140,7 @@
     "noMatches": "Sin resultados",
     "noMatchesHint": "Prueba otro distrito, barrio o filtro.",
     "blurb": {
+      "Venues": "salas de conciertos, clubs, galerías y espacios para eventos",
       "Events": "conciertos, festivales, fiestas en barco y azoteas",
       "Parties": "ruin bars, clubs, noches de DJ y fiestas tardías",
       "Restaurants": "bistrós, alta cocina y mesas junto al Danubio",
@@ -147,6 +149,33 @@
     "loading": "Cargando locales…",
     "loadErrorTitle": "No se pudo cargar",
     "loadErrorMessage": "Comprueba MONGODB_URI y la red."
+  },
+  "timedEvents": {
+    "eyebrow": "Qué hay",
+    "title": "Eventos en Budapest",
+    "subtitle": "Conciertos, festivales y actos con entrada con fechas y horas reales — enlazados a sus locales.",
+    "heroAlt": "Público en un concierto en vivo en Budapest",
+    "featured": "Destacados",
+    "results": "{count, plural, one {# evento} other {# eventos}}",
+    "resultsIn": "{count, plural, one {# evento} other {# eventos}} en {district}",
+    "noMatches": "No hay eventos próximos",
+    "noMatchesHint": "Prueba otro distrito o vuelve cuando haya nuevos listados.",
+    "loading": "Cargando eventos…",
+    "loadErrorTitle": "No se pudieron cargar los eventos",
+    "loadErrorMessage": "Comprueba MONGODB_URI y la red."
+  },
+  "event": {
+    "viewEvent": "Ver evento",
+    "close": "Cerrar",
+    "doorsOpen": "Apertura de puertas {time}",
+    "fromPrice": "Desde {price}",
+    "freeEntry": "Entrada gratuita",
+    "priceTba": "Precio por confirmar",
+    "entryFees": "Entradas y admisión",
+    "getTickets": "Comprar entradas",
+    "officialSite": "Página oficial",
+    "venues": "Locales anfitriones",
+    "venuesHint": "Este evento tiene lugar en estos espacios de Budapest."
   },
   "saved": {
     "title": "Locales guardados",
@@ -282,7 +311,10 @@
     "newsletterSuccess": "¡Estás en la lista! Pronto te escribimos.",
     "categories": {
       "events": {
-        "description": "Conciertos, festivales, fiestas en barco y azoteas"
+        "description": "Conciertos, festivales y espectáculos con entrada, con hora de inicio y fin"
+      },
+      "venues": {
+        "description": "Salas de conciertos, clubs, galerías y espacios que albergan la noche"
       },
       "parties": {
         "description": "Clubs, ruin bars, DJ sets y noches temáticas"

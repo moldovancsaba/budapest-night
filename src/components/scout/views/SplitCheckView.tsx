@@ -92,7 +92,7 @@ export function SplitCheckView() {
   if (isLoading) {
     return (
       <div className="flex justify-center py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
     );
   }
@@ -100,7 +100,7 @@ export function SplitCheckView() {
   return (
     <div className="space-y-6">
       <header>
-        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           <Sparkles className="h-3.5 w-3.5" />
           {t("eyebrow")}
         </p>
@@ -131,7 +131,7 @@ export function SplitCheckView() {
                   asChild
                   variant="outline"
                   size="sm"
-                  className="rounded-full border-primary/40 text-primary"
+                  className="rounded-full border-border text-foreground"
                 >
                   <Link href={buildPathForView("Calculator")}>
                     {t("editBudget")} <ArrowRight className="h-3.5 w-3.5" />
@@ -188,19 +188,19 @@ export function SplitCheckView() {
                     <button
                       type="button"
                       onClick={() => setPeople(settings.people - 1)}
-                      className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card hover:border-primary"
+                      className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card hover:border-foreground/40"
                       aria-label={t("fewerPeople")}
                     >
                       <Minus className="h-4 w-4" />
                     </button>
-                    <span className="flex min-w-[3rem] items-center justify-center gap-1 font-display text-2xl font-bold text-primary">
+                    <span className="flex min-w-[3rem] items-center justify-center gap-1 font-display text-2xl font-bold text-foreground">
                       <Users className="h-5 w-5" />
                       {settings.people}
                     </span>
                     <button
                       type="button"
                       onClick={() => setPeople(settings.people + 1)}
-                      className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card hover:border-primary"
+                      className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card hover:border-foreground/40"
                       aria-label={t("morePeople")}
                     >
                       <Plus className="h-4 w-4" />
@@ -234,8 +234,8 @@ export function SplitCheckView() {
                       className={cn(
                         "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
                         settings.tipPercent === pct
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border bg-card/80 hover:border-primary/50 hover:text-primary",
+                          ? "border-foreground bg-primary text-primary-foreground"
+                          : "border-border bg-card/80 hover:border-foreground/40 hover:text-foreground",
                       )}
                     >
                       {pct === 0 ? t("noTip") : `${pct}%`}
@@ -291,11 +291,11 @@ export function SplitCheckView() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/10 p-5 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <div className="mt-6 rounded-2xl border border-border bg-muted p-5 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               {t("eachPays")}
             </p>
-            <p className="mt-2 font-display text-5xl font-bold text-primary">
+            <p className="mt-2 font-display text-5xl font-bold text-foreground">
               €{split.perPerson}
             </p>
             <p className="mt-2 text-xs text-muted-foreground">

@@ -157,14 +157,14 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-primary/40 bg-card/50 px-6 text-primary hover:bg-primary/10"
+                className="rounded-full border-border bg-card/50 px-6 text-foreground hover:bg-muted"
                 onClick={scrollToNeighborhoods}
               >
                 {home.heroSecondaryCta}
               </Button>
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-primary/20 text-primary">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-muted text-foreground">
                 <Sparkles className="h-3.5 w-3.5" />
               </span>
               {home.heroTagline}
@@ -175,7 +175,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <CdnImage fill src={s.homeHeroUrl} alt={home.heroImageAlt} />
             </div>
             <span
-              className="absolute -right-2 -top-2 hidden text-primary md:block"
+              className="absolute -right-2 -top-2 hidden text-muted-foreground md:block"
               aria-hidden
             >
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
@@ -209,7 +209,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                       : (key as Category),
                 )
               }
-              className="group flex flex-col items-center rounded-3xl border border-border/80 bg-card/90 p-6 text-center transition-all hover:-translate-y-1 hover:border-primary/40"
+              className="group flex flex-col items-center rounded-3xl border border-border/80 bg-card/90 p-6 text-center transition-all hover:-translate-y-1 hover:border-foreground/40/40"
             >
               <span
                 className={cn(
@@ -274,8 +274,8 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 className={cn(
                   "rounded-full border px-5 py-2 text-sm font-semibold transition-colors",
                   active
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card/80 text-foreground hover:border-primary hover:text-primary",
+                    ? "border-foreground bg-primary text-primary-foreground"
+                    : "border-border bg-card/80 text-foreground hover:border-foreground/40 hover:text-foreground",
                 )}
               >
                 {label}
@@ -295,7 +295,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
             <button
               type="button"
               onClick={() => onNavigate("Events", { borough: "All" })}
-              className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+              className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
             >
               {home.openDiscoverAll}
             </button>
@@ -308,7 +308,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   onClick={() =>
                     onNavigate("Events", { borough, neighborhood: n })
                   }
-                  className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
                 >
                   {neighborhoodLabel(n)}
                 </button>
@@ -316,7 +316,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <button
                 type="button"
                 onClick={() => onNavigate("Events", { borough })}
-                className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-primary hover:text-primary"
+                className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
               >
                 {home.viewAllNeighborhoods}
               </button>
@@ -339,7 +339,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   onNavigate("Events");
                 })
               }
-              className="hidden items-center gap-1 text-sm font-semibold text-primary hover:text-primary sm:inline-flex"
+              className="hidden items-center gap-1 text-sm font-semibold text-foreground hover:text-foreground sm:inline-flex"
             >
               {home.guidesViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
             </button>
@@ -474,7 +474,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
             <button
               type="button"
               onClick={() => onNavigate("Events")}
-              className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:text-foreground"
             >
               {home.popularPicksViewAllLabel}{" "}
               <ArrowRight className="h-3.5 w-3.5" />
@@ -489,9 +489,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 onClick={() => onOpenGroup(popularGroup)}
                 className="group flex w-64 shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-card text-left transition-all hover:-translate-y-0.5 sm:w-auto"
               >
-                <div className="relative grid h-32 place-items-center bg-primary/10">
-                  <Users className="h-10 w-10 text-primary" />
-                  <span className="absolute left-2 top-2 rounded-full bg-primary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary-foreground">
+                <div className="relative grid h-32 place-items-center bg-muted">
+                  <Users className="h-10 w-10 text-foreground" />
+                  <span className="absolute left-2 top-2 rounded-full bg-brand px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-foreground">
                     {home.culturePickBadge}
                   </span>
                 </div>
@@ -508,7 +508,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   <p className="mt-1 text-[11px] text-muted-foreground">
                     {popularGroup.ageRange} · {home.cultureCircleLabel}
                   </p>
-                  <p className="mt-2 text-sm font-semibold text-primary">
+                  <p className="mt-2 text-sm font-semibold text-foreground">
                     {home.freeToJoin}
                   </p>
                 </div>
@@ -521,7 +521,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       {/* EMAIL */}
       <section className="overflow-hidden rounded-[2rem] border border-border bg-card px-6 py-10 sm:px-12">
         <div className="grid items-center gap-6 md:grid-cols-[auto_1fr_auto]">
-          <span className="grid h-14 w-14 place-items-center rounded-full bg-primary/20 text-primary ">
+          <span className="grid h-14 w-14 place-items-center rounded-full bg-muted text-foreground ">
             <Mail className="h-6 w-6" />
           </span>
           <div>
@@ -612,7 +612,7 @@ function PreviewCard({
           {activityLabel(provider.activityTypes[0])}
         </p>
         <div className="mt-2 flex items-center justify-between">
-          <span className="text-sm font-semibold text-primary">
+          <span className="text-sm font-semibold text-foreground">
             {price.main}
             {price.suffix && (
               <span className="text-[10px] font-normal text-muted-foreground">
@@ -620,7 +620,7 @@ function PreviewCard({
               </span>
             )}
           </span>
-          <Star className="h-3.5 w-3.5 fill-primary text-primary" />
+          <Star className="h-3.5 w-3.5 fill-foreground text-foreground" />
         </div>
       </div>
     </button>

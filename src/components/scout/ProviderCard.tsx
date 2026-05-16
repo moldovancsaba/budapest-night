@@ -56,7 +56,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
           className="transition-transform duration-500 group-hover:scale-105"
         />
         {provider.badges[0] && (
-          <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground ">
+          <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background ">
             {badgeLabel(provider.badges[0])}
           </span>
         )}
@@ -78,7 +78,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
           <Heart
             className={cn(
               "h-4 w-4",
-              saved ? "fill-primary text-primary" : "text-foreground",
+              saved ? "fill-foreground text-foreground" : "text-foreground",
             )}
           />
         </button>
@@ -86,7 +86,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
 
       <div className="flex flex-1 flex-col p-5">
         <button onClick={() => onOpen(provider)} className="text-left">
-          <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+          <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-foreground">
             {provider.name}
           </h3>
         </button>
@@ -130,7 +130,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
             )}
           </div>
           <div className="flex items-center gap-1 text-sm">
-            <Star className="h-4 w-4 fill-primary text-primary" />
+            <Star className="h-4 w-4 fill-foreground text-foreground" />
             <span className="font-semibold text-foreground">
               {provider.rating}
             </span>

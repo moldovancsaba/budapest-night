@@ -18,7 +18,7 @@
  *
  * Payload shape:
  *   { "sourceUrls": [], "notes": "", "missingOrUncertain": [],
- *     "operations": [ { "resource": "provider"|"meetupGroup", "action": "upsert", "document": {} } ]
+ *     "operations": [ { "resource": "provider"|"event"|"meetupGroup", "action": "upsert", "document": {} } ]
  *   }
  *   or a single operation `{ "resource", "action", "document", ... }`.
  */

@@ -48,14 +48,14 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
         <div className="flex items-start gap-4">
           <MeetupLogo group={group} />
           <div>
-            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+            <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground">
               {groupTypeLabel(group.groupType)}
             </span>
             <button
               onClick={() => onOpen(group)}
               className="mt-1.5 block text-left"
             >
-              <h3 className="font-display text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-primary">
+              <h3 className="font-display text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-foreground">
                 {group.name}
               </h3>
             </button>
@@ -75,7 +75,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted"
         >
           <Heart
-            className={cn("h-4 w-4", saved ? "fill-primary text-primary" : "")}
+            className={cn("h-4 w-4", saved ? "fill-foreground text-foreground" : "")}
           />
         </button>
       </div>
@@ -101,7 +101,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 font-medium text-foreground hover:text-primary"
+          className="inline-flex items-center gap-1.5 font-medium text-foreground hover:text-foreground"
           onClick={(e) => e.stopPropagation()}
         >
           <Instagram className="h-3.5 w-3.5" />

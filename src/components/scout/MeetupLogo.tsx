@@ -12,8 +12,8 @@ const ICONS = {
 } as const;
 
 const PALETTES: Record<MeetupGroup["palette"], { bg: string; fg: string; mark: string }> = {
-  teal: { bg: "bg-muted", fg: "text-foreground", mark: "bg-primary text-primary-foreground" },
-  orange: { bg: "bg-muted", fg: "text-foreground", mark: "bg-primary text-primary-foreground" },
+  teal: { bg: "bg-muted", fg: "text-foreground", mark: "bg-foreground text-background" },
+  orange: { bg: "bg-muted", fg: "text-foreground", mark: "bg-foreground text-background" },
   beige: { bg: "bg-secondary", fg: "text-foreground", mark: "bg-foreground text-background" },
   charcoal: { bg: "bg-foreground", fg: "text-background", mark: "bg-card text-foreground" },
 };

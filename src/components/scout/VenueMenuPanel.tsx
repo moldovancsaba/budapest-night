@@ -29,7 +29,7 @@ function MenuBlock({
               href={menu.menuUrl}
               target="_blank"
               rel="noreferrer"
-              className="text-primary hover:underline"
+              className="text-foreground hover:underline"
             >
               {menu.menuUrl.replace(/^https?:\/\//, "").slice(0, 48)}
             </a>
@@ -76,7 +76,7 @@ function MenuBlock({
                     ) : null}
                   </div>
                   {price ? (
-                    <span className="shrink-0 text-right text-sm font-semibold text-primary">
+                    <span className="shrink-0 text-right text-sm font-semibold text-foreground">
                       {price.main}
                       {price.suffix ? (
                         <span className="block text-[10px] font-normal text-muted-foreground">
@@ -113,7 +113,7 @@ export function VenueMenuPanel({ provider }: { provider: Provider }) {
       {offerings.map((ev: EventOffering) => (
         <div
           key={ev.id}
-          className="rounded-2xl border border-primary/30 bg-primary/5 p-4"
+          className="rounded-2xl border border-border bg-muted p-4"
         >
           <h4 className="font-display text-sm font-semibold text-foreground">
             {ev.title}
@@ -131,7 +131,7 @@ export function VenueMenuPanel({ provider }: { provider: Provider }) {
                 >
                   <span className="text-foreground">{item.name}</span>
                   {price ? (
-                    <span className="font-semibold text-primary">
+                    <span className="font-semibold text-foreground">
                       {price.main}
                       {price.suffix ?? ""}
                     </span>

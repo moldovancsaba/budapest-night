@@ -39,7 +39,7 @@ export function EventCard({ event, onOpen }: Props) {
           className="transition-transform duration-500 group-hover:scale-105"
         />
         {event.badges[0] ? (
-          <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
+          <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background">
             {badgeLabel(event.badges[0])}
           </span>
         ) : null}
@@ -51,11 +51,11 @@ export function EventCard({ event, onOpen }: Props) {
           onClick={() => onOpen(event)}
           className="text-left"
         >
-          <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-primary">
+          <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-foreground">
             {event.title}
           </h3>
         </button>
-        <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-primary">
+        <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-foreground">
           <CalendarDays className="h-4 w-4 shrink-0" />
           <span>
             {dateLine} · {timeLine}
@@ -73,7 +73,7 @@ export function EventCard({ event, onOpen }: Props) {
         </p>
         <div className="mt-4 flex items-center justify-between gap-2">
           <span className="flex items-center gap-1 text-sm font-semibold text-foreground">
-            <Ticket className="h-4 w-4 text-primary" />
+            <Ticket className="h-4 w-4 text-foreground" />
             {fromPrice(event.entryFees)}
           </span>
           <Button size="sm" variant="secondary" onClick={() => onOpen(event)}>

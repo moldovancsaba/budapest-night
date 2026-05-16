@@ -126,6 +126,7 @@
     "tagline": "Válogatott. Helyi. Éjszakára készült.",
     "findByArea": "Találj {blurb} kerület és városrész szerint.",
     "heroAlt": {
+      "Venues": "Koncertterem, klub és kulturális tér Budapesten",
       "Events": "Koncert és fesztivál Budapesten",
       "Parties": "DJ és klub Budapesten",
       "Restaurants": "Étterem Budapesten",
@@ -142,11 +143,39 @@
     "loadErrorTitle": "Nem sikerült betölteni",
     "loadErrorMessage": "Ellenőrizd a MONGODB_URI-t és a hálózatot.",
     "blurb": {
+      "Venues": "koncerttermek, klubok, galériák és rendezvényhelyszínek",
       "Events": "koncertek, fesztiválok, hajóbulik és tetőteraszok",
       "Parties": "romkocsmák, klubok, DJ-estek és késői bulik",
       "Restaurants": "bisztrók, fine dining és dunai asztalok",
       "Cafés": "kávé, brunch, desszert és egész napos helyek"
     }
+  },
+  "timedEvents": {
+    "eyebrow": "Mi zajlik",
+    "title": "Események Budapesten",
+    "subtitle": "Koncertek, fesztiválok és jegyes programok valós dátummal és idővel — a hoszt helyszínekkel.",
+    "heroAlt": "Élő koncert közönség Budapesten",
+    "featured": "Kiemelt",
+    "results": "{count, plural, one {# esemény} other {# esemény}}",
+    "resultsIn": "{count, plural, one {# esemény} other {# esemény}} itt: {district}",
+    "noMatches": "Nincs közelgő esemény",
+    "noMatchesHint": "Próbálj más kerületet, vagy nézz vissza később.",
+    "loading": "Események betöltése…",
+    "loadErrorTitle": "Nem sikerült betölteni az eseményeket",
+    "loadErrorMessage": "Ellenőrizd a MONGODB_URI-t és a hálózatot."
+  },
+  "event": {
+    "viewEvent": "Esemény megtekintése",
+    "close": "Bezárás",
+    "doorsOpen": "Kapunyitás: {time}",
+    "fromPrice": "Már {price}-tól",
+    "freeEntry": "Ingyenes belépés",
+    "priceTba": "Ár később",
+    "entryFees": "Jegyek és belépő",
+    "getTickets": "Jegyvásárlás",
+    "officialSite": "Hivatalos oldal",
+    "venues": "Helyszínek",
+    "venuesHint": "Ez a program az alábbi budapesti helyszíneken zajlik."
   },
   "saved": {
     "title": "Mentett helyek",
@@ -303,7 +332,10 @@
     "exploreCta": "Felfedezés",
     "categories": {
       "events": {
-        "description": "Koncertek, fesztiválok, hajóbulik, tetőteraszok és késő esti programok"
+        "description": "Dátumozott koncertek, fesztiválok és jegyes előadások kezdéssel és véggel"
+      },
+      "venues": {
+        "description": "Koncerttermek, klubok, galériák és helyszínek, ahol az éjszaka zajlik"
       },
       "parties": {
         "description": "Klubok, romkocsmák, DJ-setek, tematikus estek és hétvégi bulik"

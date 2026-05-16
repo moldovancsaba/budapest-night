@@ -60,7 +60,7 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
         <p className="text-sm">{t("loading")}</p>
       </div>
     );
@@ -81,7 +81,7 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
       <section className={cn("relative overflow-hidden", CYBER_PANEL)}>
         <div className="relative grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               {t("pageEyebrow")}
             </p>
             <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl">
@@ -95,7 +95,7 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
               {t("subtitle")}
             </p>
           </div>
-          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-primary/20 md:block">
+          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-border md:block">
             <CdnImage
               fill
               src={cultureDiscoverHero(site?.cultureHeroUrl)}

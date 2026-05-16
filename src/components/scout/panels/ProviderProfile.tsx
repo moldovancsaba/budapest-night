@@ -127,7 +127,7 @@ export function ProviderProfile({
             alt={provider.name}
           />
           {provider.badges[0] && (
-            <span className="absolute left-5 top-5 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
+            <span className="absolute left-5 top-5 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background">
               {badgeLabel(provider.badges[0])}
             </span>
           )}
@@ -163,7 +163,7 @@ export function ProviderProfile({
                     aria-label={t("goToPhoto", { n: i + 1 })}
                     className={cn(
                       "h-2 rounded-full transition-all",
-                      i === photoIdx ? "w-6 bg-primary" : "w-2 bg-card/80",
+                      i === photoIdx ? "w-6 bg-foreground" : "w-2 bg-card/80",
                     )}
                   />
                 ))}
@@ -174,8 +174,8 @@ export function ProviderProfile({
 
         <div className="space-y-6 p-6 pb-12">
           {provider.announcementTitle && bannerOpen && (
-            <div className="flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/10 p-4">
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
+            <div className="flex items-start gap-3 rounded-2xl border border-border bg-muted p-4">
+              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-muted text-foreground">
                 <Megaphone className="h-4 w-4" />
               </div>
               <div className="flex-1">
@@ -208,7 +208,7 @@ export function ProviderProfile({
                   className={cn(
                     "relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-all",
                     i === photoIdx
-                      ? "border-primary"
+                      ? "border-foreground"
                       : "border-transparent opacity-70 hover:opacity-100",
                   )}
                 >
@@ -224,7 +224,7 @@ export function ProviderProfile({
           )}
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               {categoryLabel(provider.category)}
             </p>
             <h2 className="mt-1 font-display text-2xl font-bold text-foreground">
@@ -236,7 +236,7 @@ export function ProviderProfile({
             </p>
             <div className="mt-3 flex items-center gap-3 text-sm">
               <span className="flex items-center gap-1">
-                <Star className="h-4 w-4 fill-primary text-primary" />
+                <Star className="h-4 w-4 fill-foreground text-foreground" />
                 <span className="font-semibold text-foreground">
                   {provider.rating}
                 </span>
@@ -246,7 +246,7 @@ export function ProviderProfile({
               </span>
               <span className="text-border">|</span>
               <span className="font-display text-base">
-                <span className="font-bold text-primary">{price.main}</span>
+                <span className="font-bold text-foreground">{price.main}</span>
                 {price.suffix && (
                   <span className="text-xs text-muted-foreground">
                     {price.suffix}
@@ -260,7 +260,7 @@ export function ProviderProfile({
             {provider.activityTypes.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground"
               >
                 {activityLabel(tag)}
               </span>
@@ -326,7 +326,7 @@ export function ProviderProfile({
               }}
             >
               <Heart
-                className={cn("h-4 w-4", saved && "fill-primary text-primary")}
+                className={cn("h-4 w-4", saved && "fill-foreground text-foreground")}
               />
               {saved ? t("saved") : t("save")}
             </Button>
@@ -345,7 +345,7 @@ export function ProviderProfile({
             <div className="mt-3 space-y-2 text-sm">
               <a
                 href={`mailto:${provider.email}`}
-                className="flex items-center gap-2 text-foreground hover:text-primary"
+                className="flex items-center gap-2 text-foreground hover:text-foreground"
               >
                 <Mail className="h-4 w-4 text-muted-foreground" />{" "}
                 {provider.email}
@@ -354,14 +354,14 @@ export function ProviderProfile({
                 href={provider.website}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-primary"
+                className="flex items-center gap-2 text-foreground hover:text-foreground"
               >
                 <Globe className="h-4 w-4 text-muted-foreground" />{" "}
                 {provider.website}
               </a>
               <a
                 href={`tel:${provider.phone}`}
-                className="flex items-center gap-2 text-foreground hover:text-primary"
+                className="flex items-center gap-2 text-foreground hover:text-foreground"
               >
                 <Phone className="h-4 w-4 text-muted-foreground" />{" "}
                 {provider.phone}

@@ -83,7 +83,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
       <div className="flex flex-wrap items-center gap-3">
         <Link
           href={buildSectionPath("eat-drink")}
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
         >
           <ChevronLeft className="h-4 w-4" />
           {t("backToEatDrink")}
@@ -112,7 +112,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
         </div>
       ) : error ? (
         <p className="rounded-2xl border border-dashed border-border py-12 text-center text-sm text-muted-foreground">
@@ -134,7 +134,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
                     src={stop.image || CMS_MEDIA.fallbackListing}
                     alt={stop.providerName}
                   />
-                  <span className="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  <span className="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-bold text-foreground-foreground">
                     {idx + 1}
                   </span>
                 </div>

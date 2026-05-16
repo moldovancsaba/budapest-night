@@ -122,7 +122,7 @@ export function CalculatorView() {
                       <Plus className="h-3.5 w-3.5" />
                     </button>
                   </div>
-                  <div className="w-20 text-right font-display font-bold text-primary">
+                  <div className="w-20 text-right font-display font-bold text-foreground">
                     €{r.subtotal}
                   </div>
                   <button
@@ -161,7 +161,7 @@ export function CalculatorView() {
               <span className="font-display text-sm font-semibold text-foreground">
                 {c.estimatedTotalLabel}
               </span>
-              <span className="font-display text-3xl font-bold text-primary">
+              <span className="font-display text-3xl font-bold text-foreground">
                 €{total}
               </span>
             </div>

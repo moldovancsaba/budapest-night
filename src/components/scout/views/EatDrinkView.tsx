@@ -102,7 +102,7 @@ export function EatDrinkView({ onOpen }: Props) {
         )}
       >
         <div className="relative z-10 max-w-2xl">
-          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             <Wine className="h-4 w-4" />
             {t("eyebrow")}
           </p>
@@ -113,7 +113,7 @@ export function EatDrinkView({ onOpen }: Props) {
             {t("subtitle")}
           </p>
         </div>
-        <Sparkles className="pointer-events-none absolute -right-4 top-4 h-32 w-32 text-primary/20" />
+        <Sparkles className="pointer-events-none absolute -right-4 top-4 h-32 w-32 text-muted-foreground/20" />
       </div>
 
       <section>
@@ -128,15 +128,15 @@ export function EatDrinkView({ onOpen }: Props) {
             <Link
               key={tpl.id}
               href={buildTourPath(tpl.id)}
-              className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-primary/50 hover:bg-primary/5"
+              className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-foreground/40 hover:bg-muted"
             >
-              <p className="font-display text-base font-semibold text-foreground group-hover:text-primary">
+              <p className="font-display text-base font-semibold text-foreground group-hover:text-foreground">
                 {t(`tours.${tpl.id}.title`)}
               </p>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 {t(`tours.${tpl.id}.description`)}
               </p>
-              <span className="mt-3 inline-block text-xs font-medium text-primary">
+              <span className="mt-3 inline-block text-xs font-medium text-foreground">
                 {t("startTour")} →
               </span>
             </Link>
@@ -226,7 +226,7 @@ export function EatDrinkView({ onOpen }: Props) {
 
         {loading ? (
           <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
           </div>
         ) : items.length === 0 ? (
           <p className="rounded-2xl border border-dashed border-border py-12 text-center text-sm text-muted-foreground">
@@ -254,7 +254,7 @@ export function EatDrinkView({ onOpen }: Props) {
                   <button
                     type="button"
                     onClick={() => openRow(row)}
-                    className="flex w-full flex-col rounded-2xl border border-border/70 bg-card/50 p-4 text-left transition hover:border-primary/40 hover:bg-card"
+                    className="flex w-full flex-col rounded-2xl border border-border/70 bg-card/50 p-4 text-left transition hover:border-foreground/40/40 hover:bg-card"
                   >
                     <p className="font-medium text-foreground">{row.name}</p>
                     <p className="mt-1 text-xs text-muted-foreground">
@@ -266,7 +266,7 @@ export function EatDrinkView({ onOpen }: Props) {
                       {row.borough} · {row.neighborhood}
                     </p>
                     {price ? (
-                      <p className="mt-2 text-sm font-semibold text-primary">
+                      <p className="mt-2 text-sm font-semibold text-foreground">
                         {price.main}
                         {price.suffix ? (
                           <span className="ml-1 text-xs font-normal text-muted-foreground">

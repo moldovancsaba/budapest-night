@@ -156,29 +156,29 @@ export default function BudapestNightShell() {
           <div className="flex items-center gap-2">
             <Link
               href={buildPathForView("Saved")}
-              className="relative grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground hover:border-primary"
+              className="relative grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground hover:border-foreground/40"
               aria-label={t("saved")}
             >
               <Heart className="h-4 w-4" />
               {saved.length > 0 && (
-                <span className="absolute -right-1 -top-1 grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                <span className="absolute -right-1 -top-1 grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-foreground-foreground">
                   {saved.length}
                 </span>
               )}
             </Link>
             <button
-              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground hover:border-primary"
+              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground hover:border-foreground/40"
               aria-label={t("notifications")}
             >
               <Bell className="h-4 w-4" />
             </button>
             <Link
               href={buildPathForView("Calculator")}
-              className="relative hidden items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-primary hover:text-primary sm:flex"
+              className="relative hidden items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-foreground/40 hover:text-foreground sm:flex"
             >
               {t("budget")}
               {items.length > 0 && (
-                <span className="grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                <span className="grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-foreground-foreground">
                   {items.length}
                 </span>
               )}
@@ -187,9 +187,9 @@ export default function BudapestNightShell() {
             <LocaleSwitcher variant="header" />
             <Link
               href={buildPathForView("My Account")}
-              className={`grid h-10 w-10 place-items-center rounded-full border text-foreground hover:border-primary ${
+              className={`grid h-10 w-10 place-items-center rounded-full border text-foreground hover:border-foreground/40 ${
                 view === "My Account"
-                  ? "border-primary bg-primary text-primary-foreground"
+                  ? "border-foreground bg-primary text-primary-foreground"
                   : "border-border bg-card"
               }`}
               aria-label={t("myAccount")}
@@ -253,7 +253,7 @@ export default function BudapestNightShell() {
               {t("brand")} · {tf("tagline")} ·{" "}
               <Link
                 href="/admin"
-                className="text-primary underline hover:text-primary/90"
+                className="text-foreground underline hover:text-foreground/90"
               >
                 {tf("admin")}
               </Link>

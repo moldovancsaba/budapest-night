@@ -80,7 +80,7 @@ export function ProviderMap({
         asChild
         variant="outline"
         size="sm"
-        className="mt-3 w-full border-primary/30"
+        className="mt-3 w-full border-border"
       >
         <a href={directionsUrl} target="_blank" rel="noreferrer">
           <Navigation className="h-4 w-4" /> Get directions

@@ -70,14 +70,14 @@ export function EventProfile({
         <div className="space-y-6 p-6 pb-12">
           <div>
             {event.badges[0] ? (
-              <span className="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
+              <span className="rounded-full bg-muted px-3 py-1 text-xs font-semibold text-foreground">
                 {badgeLabel(event.badges[0])}
               </span>
             ) : null}
             <h2 className="mt-2 font-display text-2xl font-bold text-foreground">
               {event.title}
             </h2>
-            <p className="mt-2 flex items-center gap-2 text-sm font-medium text-primary">
+            <p className="mt-2 flex items-center gap-2 text-sm font-medium text-foreground">
               <CalendarDays className="h-4 w-4" />
               {dateLine} · {timeLine}
             </p>
@@ -119,7 +119,7 @@ export function EventProfile({
           {event.entryFees.length > 0 && (
             <div className="rounded-2xl border border-border/70 bg-card/50 p-4">
               <h3 className="flex items-center gap-2 font-display text-sm font-semibold">
-                <Ticket className="h-4 w-4 text-primary" />
+                <Ticket className="h-4 w-4 text-foreground" />
                 {t("entryFees")}
               </h3>
               <ul className="mt-3 space-y-2">
@@ -129,7 +129,7 @@ export function EventProfile({
                     className="flex justify-between gap-3 text-sm"
                   >
                     <span className="text-foreground">{fee.label}</span>
-                    <span className="font-semibold text-primary">
+                    <span className="font-semibold text-foreground">
                       {formatFee(fee)}
                     </span>
                   </li>

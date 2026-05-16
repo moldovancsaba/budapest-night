@@ -166,13 +166,13 @@ export function MyAccountView({
                 className={cn(
                   "relative whitespace-nowrap px-4 py-3 text-sm font-semibold transition-colors",
                   active
-                    ? "text-primary"
+                    ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {t.label}
                 {active && (
-                  <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-primary" />
+                  <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-foreground" />
                 )}
               </button>
             );
@@ -199,7 +199,7 @@ export function MyAccountView({
           </div>
           <Button
             variant="outline"
-            className="rounded-full border-border bg-card/80 hover:border-primary/40 hover:bg-card"
+            className="rounded-full border-border bg-card/80 hover:border-foreground/40/40 hover:bg-card"
             onClick={() => onNavigate("Saved")}
           >
             {acc.saved.viewAllCta} <ArrowRight className="h-4 w-4" />
@@ -282,7 +282,7 @@ export function MyAccountView({
           {acc.privacy.supportTextBefore}{" "}
           <a
             href={`mailto:${acc.privacy.supportEmail}`}
-            className="font-semibold text-primary hover:underline"
+            className="font-semibold text-foreground hover:underline"
           >
             {acc.privacy.supportEmail}
           </a>
@@ -362,7 +362,7 @@ function SavedProviderCard({
           {b.label}
         </span>
         <span
-          className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card text-primary "
+          className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card text-foreground "
           aria-label={tv("saved")}
         >
           <Heart className="h-4 w-4 fill-primary" />
@@ -379,7 +379,7 @@ function SavedProviderCard({
           {ageLabel(provider.ageRanges[0])} ·{" "}
           {activityLabel(provider.activityTypes[0])}
         </p>
-        <p className="mt-2 text-sm font-bold text-primary">
+        <p className="mt-2 text-sm font-bold text-foreground">
           {price.main}
           {price.suffix ? (
             <span className="text-[11px] font-normal text-muted-foreground">
@@ -524,7 +524,7 @@ function ActivityPlanCard({
                         <Plus className="h-3 w-3" />
                       </button>
                     </div>
-                    <p className="w-16 text-right text-sm font-bold text-primary">
+                    <p className="w-16 text-right text-sm font-bold text-foreground">
                       €{r.subtotal}
                     </p>
                     <button
@@ -545,7 +545,7 @@ function ActivityPlanCard({
             <span className="font-display text-sm font-semibold text-foreground">
               {acc.activityPlan.estimatedTotalLabel}
             </span>
-            <span className="font-display text-2xl font-bold text-primary">
+            <span className="font-display text-2xl font-bold text-foreground">
               €{total}
             </span>
           </div>
@@ -688,7 +688,7 @@ function NeighborhoodCard({
 
       <div className="mt-5 rounded-2xl bg-card p-5">
         <div className="flex flex-wrap items-start gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-muted text-foreground">
             <MapPin className="h-5 w-5" />
           </span>
           <div className="min-w-0 flex-1">
@@ -729,7 +729,7 @@ function NeighborhoodCard({
                 neighborhood: hood,
               })
             }
-            className="rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+            className="rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
           >
             {hood}
           </button>
@@ -793,7 +793,7 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
                 onCheckedChange={(v) =>
                   setAlerts((s) => ({ ...s, [opt]: !!v }))
                 }
-                className="data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                className="data-[state=checked]:border-foreground data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
               />
               <label
                 htmlFor={`alert-${opt}`}

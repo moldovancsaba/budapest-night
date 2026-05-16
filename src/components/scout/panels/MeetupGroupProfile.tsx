@@ -89,7 +89,7 @@ export function MeetupGroupProfile({
           <div className="flex items-start gap-5">
             <MeetupLogo group={group} size="lg" />
             <div className="min-w-0 flex-1">
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+              <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground">
                 {groupTypeLabel(group.groupType)}
               </span>
               <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-foreground">
@@ -112,7 +112,7 @@ export function MeetupGroupProfile({
               <CalendarClock className="h-3.5 w-3.5" />
               {cadenceLabel(group.cadence)}
             </span>
-            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground">
               {groupTypeLabel(group.groupType)}
             </span>
           </div>
@@ -130,7 +130,7 @@ export function MeetupGroupProfile({
               }}
             >
               <Heart
-                className={cn("h-4 w-4", saved && "fill-primary text-primary")}
+                className={cn("h-4 w-4", saved && "fill-foreground text-foreground")}
               />
               {saved ? t("unsave") : t("save")}
             </Button>
@@ -156,7 +156,7 @@ export function MeetupGroupProfile({
                 href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-primary"
+                className="flex items-center gap-2 text-foreground hover:text-foreground"
               >
                 <Instagram className="h-4 w-4 text-muted-foreground" />{" "}
                 {group.instagram}
@@ -165,7 +165,7 @@ export function MeetupGroupProfile({
                 href={websiteUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-primary"
+                className="flex items-center gap-2 text-foreground hover:text-foreground"
               >
                 <Globe className="h-4 w-4 text-muted-foreground" />{" "}
                 {group.website}

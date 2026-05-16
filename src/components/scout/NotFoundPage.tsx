@@ -61,16 +61,16 @@ export function NotFoundPage({
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background px-4 py-16">
-      <div className="pointer-events-none absolute left-[8%] top-[18%] text-primary/20">
+      <div className="pointer-events-none absolute left-[8%] top-[18%] text-muted-foreground/20">
         <Martini className="h-16 w-16 animate-pulse" />
       </div>
-      <div className="pointer-events-none absolute right-[10%] top-[22%] text-primary/25">
+      <div className="pointer-events-none absolute right-[10%] top-[22%] text-muted-foreground/25">
         <Music2
           className="h-14 w-14 animate-pulse"
           style={{ animationDelay: "0.6s" }}
         />
       </div>
-      <div className="pointer-events-none absolute bottom-[20%] left-[12%] text-primary/20">
+      <div className="pointer-events-none absolute bottom-[20%] left-[12%] text-muted-foreground/20">
         <MapPin
           className="h-12 w-12 animate-pulse"
           style={{ animationDelay: "1.1s" }}
@@ -84,7 +84,7 @@ export function NotFoundPage({
           "p-8 sm:p-12",
         )}
       >
-        <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+        <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
           <Sparkles className="h-3.5 w-3.5" />
           {copy.subtitle}
           <Sparkles className="h-3.5 w-3.5" />
@@ -116,7 +116,7 @@ export function NotFoundPage({
           </p>
           <p
             key={excuseIdx}
-            className="mt-2 min-h-[2.5rem] font-display text-base font-semibold text-primary animate-in fade-in duration-300"
+            className="mt-2 min-h-[2.5rem] font-display text-base font-semibold text-foreground animate-in fade-in duration-300"
           >
             “{copy.excuses[excuseIdx] ?? "…"}”
           </p>
@@ -124,7 +124,7 @@ export function NotFoundPage({
 
         <div className="mt-6 flex items-center justify-center gap-3 text-xs text-muted-foreground">
           <span>{copy.statLabel}</span>
-          <span className="rounded-full bg-primary/20 px-2.5 py-0.5 font-mono font-bold text-primary">
+          <span className="rounded-full bg-muted px-2.5 py-0.5 font-mono font-bold text-foreground">
             {copy.statValue}
           </span>
         </div>
@@ -144,7 +144,7 @@ export function NotFoundPage({
             asChild
             size="lg"
             variant="outline"
-            className="w-full rounded-full border-primary/40 bg-primary/10 px-6 text-primary hover:bg-primary/20 sm:w-auto"
+            className="w-full rounded-full border-border bg-muted px-6 text-foreground hover:bg-muted sm:w-auto"
           >
             <Link href="/events">
               {copy.ctaEvents}

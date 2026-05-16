@@ -11,7 +11,7 @@
   --tw-translate-x: 100%;
 }
 
-/* Budapest Night — flat monochrome + red accent. */
+/* Budapest Night — flat monochrome; primary = CTA; brand = small red accent. */
 
 @layer base {
   :root {
@@ -24,8 +24,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 6%;
 
-    --primary: 358 92% 48%;
+    --primary: 0 0% 6%;
     --primary-foreground: 0 0% 100%;
+
+    --brand: 358 72% 46%;
+    --brand-foreground: 0 0% 100%;
 
     --secondary: 0 0% 94%;
     --secondary-foreground: 0 0% 12%;
@@ -36,34 +39,34 @@
     --accent: 0 0% 12%;
     --accent-foreground: 0 0% 100%;
 
-    --teal: 358 92% 48%;
+    --teal: 0 0% 6%;
     --teal-foreground: 0 0% 100%;
     --teal-soft: 0 0% 96%;
 
-    --orange: 358 92% 48%;
+    --orange: 358 72% 46%;
     --orange-foreground: 0 0% 100%;
     --orange-soft: 0 0% 96%;
 
     --beige: 0 0% 94%;
     --ivory: 0 0% 99%;
 
-    --destructive: 358 92% 48%;
+    --destructive: 358 72% 46%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 88%;
     --input: 0 0% 88%;
-    --ring: 358 92% 48%;
+    --ring: 0 0% 6%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 99%;
     --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 358 92% 48%;
+    --sidebar-primary: 0 0% 6%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 94%;
     --sidebar-accent-foreground: 0 0% 6%;
     --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 358 92% 48%;
+    --sidebar-ring: 0 0% 6%;
 
     --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -78,8 +81,11 @@
     --popover: 0 0% 7%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 358 90% 52%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 6%;
+
+    --brand: 358 70% 50%;
+    --brand-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 92%;
@@ -90,32 +96,32 @@
     --accent: 0 0% 92%;
     --accent-foreground: 0 0% 6%;
 
-    --teal: 358 90% 52%;
-    --teal-foreground: 0 0% 100%;
+    --teal: 0 0% 98%;
+    --teal-foreground: 0 0% 6%;
     --teal-soft: 0 0% 12%;
 
-    --orange: 358 90% 52%;
+    --orange: 358 70% 50%;
     --orange-foreground: 0 0% 100%;
     --orange-soft: 0 0% 12%;
 
     --beige: 0 0% 12%;
     --ivory: 0 0% 6%;
 
-    --destructive: 358 90% 52%;
+    --destructive: 358 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 358 90% 52%;
+    --ring: 0 0% 70%;
 
     --sidebar-background: 0 0% 3%;
     --sidebar-foreground: 0 0% 94%;
-    --sidebar-primary: 358 90% 52%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 6%;
     --sidebar-accent: 0 0% 10%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 358 90% 52%;
+    --sidebar-ring: 0 0% 70%;
   }
 }
 

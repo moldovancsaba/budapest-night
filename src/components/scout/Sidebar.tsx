@@ -158,18 +158,18 @@ export function Sidebar({
         </div>
 
         <nav className="flex-1 px-4 py-2" aria-label="Main">
-          <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+          <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             {t("explore")}
           </p>
           <ul className="space-y-1">{renderItems(EXPLORE_ITEMS)}</ul>
 
-          <p className="px-3 pb-2 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+          <p className="px-3 pb-2 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             {t("yourNight")}
           </p>
           <ul className="space-y-1">{renderItems(NIGHT_ITEMS)}</ul>
         </nav>
 
-        <div className="m-4 rounded-2xl border border-primary/20 bg-sidebar-accent p-5">
+        <div className="m-4 rounded-2xl border border-border bg-sidebar-accent p-5">
           <p className="font-display text-sm font-semibold text-sidebar-foreground">
             {sidebarPromo?.title ?? ts("listVenueTitle")}
           </p>
@@ -179,7 +179,7 @@ export function Sidebar({
           <Button
             size="sm"
             variant="secondary"
-            className="mt-3 w-full border border-primary bg-primary text-primary-foreground hover:bg-primary/90"
+            className="mt-3 w-full border border-foreground bg-primary text-primary-foreground hover:bg-primary/90"
           >
             {sidebarPromo?.cta ?? ts("listVenueCta")}
           </Button>
