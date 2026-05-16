@@ -171,7 +171,7 @@ export default function BudapestNightShell() {
     }
 
     return (
-      <ShareablePageChrome backHref={backHref} shareUrl={shareUrl} title={title}>
+      <ShareablePageChrome backHref={backHref} shareUrl={shareUrl} title={title} wide>
         {eventId &&
           (selectedEvent ? (
             <EventProfile

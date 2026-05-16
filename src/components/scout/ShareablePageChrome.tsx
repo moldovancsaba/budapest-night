@@ -10,17 +10,21 @@ import { LocaleSwitcher } from "@/components/i18n/LocaleSwitcher";
 import { ThemeToggle } from "@/components/i18n/ThemeToggle";
 import { CurrencySwitcher } from "@/components/i18n/CurrencySwitcher";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { useSiteCatalog } from "@/hooks/useCatalog";
 
 export function ShareablePageChrome({
   backHref,
   shareUrl,
   title,
+  wide = false,
   children,
 }: {
   backHref: string;
   shareUrl: string | null;
   title?: string;
+  /** Match main app width on desktop (`max-w-[1400px]`) instead of narrow share column. */
+  wide?: boolean;
   children: ReactNode;
 }) {
   const t = useTranslations("sharePage");
@@ -33,10 +37,14 @@ export function ShareablePageChrome({
     toast.success(t("linkCopied"));
   };
 
+  const containerClass = wide
+    ? "mx-auto w-full max-w-3xl px-4 sm:px-6 lg:max-w-[1400px] lg:px-8"
+    : "mx-auto w-full max-w-3xl px-4 sm:px-6";
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-30 border-b border-border/80 bg-background">
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        <div className={cn("flex items-center justify-between gap-3 py-3", containerClass)}>
           <div className="flex min-w-0 items-center gap-2">
             <Link
               href={backHref}
@@ -80,7 +88,7 @@ export function ShareablePageChrome({
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-3xl flex-1">{children}</main>
+      <main className={cn("flex-1", containerClass)}>{children}</main>
     </div>
   );
 }
