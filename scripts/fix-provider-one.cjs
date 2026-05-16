@@ -189,8 +189,8 @@ const CORRECTIONS = {
   },
   "prov-cov-kiosk-parliament": {
     website: "https://www.kiosk-budapest.hu/",
-    imageSource:
-      "https://cdn.prod.website-files.com/66be0d4de4926d5fa8d2c21d/67f74e0ae5c97e6e2d6d4284_66be0d4de4926d5fa8d2c21d_679ba373a97b79c67616fb25_Kiosk%20final-transcode%20%281%29-poster-00001.jpg",
+    localImagePath: "scripts/imgbb-asset-sources/providers/kiosk-parliament.png",
+    imageSource: "scripts/imgbb-asset-sources/providers/kiosk-parliament.png",
     email: "info@kiosk-budapest.hu",
     phone: "+36 70 585 5727",
     address: "1056 Budapest, Március 15. tér 4, Hungary",

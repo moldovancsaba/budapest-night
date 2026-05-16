@@ -17,8 +17,8 @@ const SOURCES = [
   "https://www.kiosk-budapest.hu/italaink",
   "https://www.kiosk-budapest.hu/heti-menu",
 ];
-const HERO =
-  "https://cdn.prod.website-files.com/66be0d4de4926d5fa8d2c21d/67f74e0ae5c97e6e2d6d4284_66be0d4de4926d5fa8d2c21d_679ba373a97b79c67616fb25_Kiosk%20final-transcode%20%281%29-poster-00001.jpg";
+/** Official brand mark (user-provided / repo asset) — not homepage video poster. */
+const HERO_ASSET = path.join(__dirname, "imgbb-asset-sources/providers/kiosk-parliament.png");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
@@ -184,14 +184,11 @@ for (const loc of Object.values(locales)) {
 }
 
 async function uploadHero() {
-  const assetDir = path.join(__dirname, "imgbb-asset-sources/providers");
-  fs.mkdirSync(assetDir, { recursive: true });
-  const dest = path.join(assetDir, "kiosk-parliament.jpg");
-  const res = await fetch(HERO, { headers: { "User-Agent": "BudapestNightPatch/1.0" } });
-  if (!res.ok) throw new Error(`Hero download failed: ${res.status}`);
-  fs.writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
+  if (!fs.existsSync(HERO_ASSET)) {
+    throw new Error(`Missing hero asset: ${HERO_ASSET}`);
+  }
   const form = new FormData();
-  form.append("file", new Blob([fs.readFileSync(dest)]), "kiosk-parliament.jpg");
+  form.append("file", new Blob([fs.readFileSync(HERO_ASSET)], { type: "image/png" }), "kiosk-parliament.png");
   const up = await fetch(`${BASE}/api/ingest/upload`, {
     method: "POST",
     headers: { Authorization: `Bearer ${KEY}` },
@@ -220,7 +217,7 @@ async function main() {
     phone: "+36 70 585 5727",
     email: "info@kiosk-budapest.hu",
     website: SITE,
-    imageSource: HERO,
+    imageSource: HERO_ASSET,
     activityTypes: ["Fine Dining", "Cocktails", "Wine Bar", "Late Kitchen"],
     shortDescription: docFields.shortDescription,
     longDescription: docFields.longDescription,

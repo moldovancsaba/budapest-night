@@ -1,11 +1,18 @@
 import type { Db } from "mongodb";
 import type { Provider } from "@/types/provider";
+import type { NightEvent } from "@/types/event";
+import type { MeetupGroup } from "@/types/meetup";
 import { COL } from "@/lib/mongodb";
 import { applyIngestOperation } from "@/lib/ingestOperations";
-import { CURATOR_SEARCH_QUERIES } from "@/lib/curator/constants";
 import { serperSearch } from "@/lib/curator/serperSearch";
 import { fetchPageText } from "@/lib/curator/fetchPageText";
 import { extractProviderWithLlm } from "@/lib/curator/extractProviderWithLlm";
+import { searchQueryForScarcestSlice } from "@/lib/curator/scarcityCatalog";
+import {
+  buildCatalogImageIndex,
+  isBannedImageUrl,
+  isImageUsedByOtherListing,
+} from "@/lib/curator/catalogImageValidate";
 
 function normName(s: string) {
   return s
@@ -53,8 +60,28 @@ export async function runCuratorDiscovery(db: Db): Promise<CuratorDiscoveryResul
     return { ok: false, error: "CURATOR_OPENAI_API_KEY missing", steps: ["Need OpenAI API key for extraction."] };
   }
 
-  const qIdx = Math.floor(Date.now() / 86_400_000) % CURATOR_SEARCH_QUERIES.length;
-  const searchQuery = CURATOR_SEARCH_QUERIES[qIdx] ?? CURATOR_SEARCH_QUERIES[0];
+  const catalogProviders = (await db
+    .collection(COL.providers)
+    .find({})
+    .project({ id: 1, name: 1, category: 1, borough: 1, image: 1 })
+    .toArray()) as Pick<Provider, "id" | "name" | "category" | "borough" | "image">[];
+
+  const catalogEvents = (await db
+    .collection(COL.events)
+    .find({})
+    .project({ id: 1, image: 1 })
+    .toArray()) as Pick<NightEvent, "id" | "image">[];
+
+  const catalogMeetups = (await db
+    .collection(COL.meetupGroups)
+    .find({})
+    .project({ id: 1, coverImageUrl: 1 })
+    .toArray()) as Pick<MeetupGroup, "id" | "coverImageUrl">[];
+
+  const catalogByUrl = buildCatalogImageIndex(catalogProviders, catalogEvents, catalogMeetups);
+
+  const { query: searchQuery, category, borough, count } = searchQueryForScarcestSlice(catalogProviders);
+  steps.push(`scarcity slice: ${category} × ${borough} (${count} providers)`);
   steps.push(`query: ${searchQuery}`);
 
   let organic: Awaited<ReturnType<typeof serperSearch>>;
@@ -66,14 +93,8 @@ export async function runCuratorDiscovery(db: Db): Promise<CuratorDiscoveryResul
   }
   steps.push(`serper results: ${organic.length}`);
 
-  const existing = (await db
-    .collection(COL.providers)
-    .find({})
-    .project({ id: 1, name: 1 })
-    .toArray()) as { id?: string; name?: string }[];
-
-  const idSet = new Set(existing.map((p) => p.id).filter(Boolean) as string[]);
-  const nameNorm = new Set(existing.map((p) => normName(String(p.name || ""))).filter(Boolean));
+  const idSet = new Set(catalogProviders.map((p) => p.id).filter(Boolean) as string[]);
+  const nameNorm = new Set(catalogProviders.map((p) => normName(String(p.name || ""))).filter(Boolean));
 
   for (const hit of organic) {
     const link = hit.link?.trim();
@@ -112,6 +133,20 @@ export async function runCuratorDiscovery(db: Db): Promise<CuratorDiscoveryResul
     }
     if (p.name && nameNorm.has(normName(p.name))) {
       steps.push(`skip duplicate name ${p.name}`);
+      continue;
+    }
+
+    const img = (p.image || "").trim();
+    if (!img) {
+      steps.push(`skip ${p.id}: empty image`);
+      continue;
+    }
+    if (isBannedImageUrl(img)) {
+      steps.push(`skip ${p.id}: banned image hash`);
+      continue;
+    }
+    if (isImageUsedByOtherListing(img, { kind: "provider", id: p.id }, catalogByUrl)) {
+      steps.push(`skip ${p.id}: image URL already in catalog`);
       continue;
     }
 

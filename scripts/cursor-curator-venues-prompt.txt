@@ -19,16 +19,30 @@ For a **dated concert with tickets**, stop — use `scripts/cursor-curator-event
 - Example: `scripts/ingest-payloads/budapest-a38.json` or any `cursor-curated-*.json`
 - Repair: `node scripts/fix-provider-one.cjs <prov-id>` or `npm run db:patch-venue-meetup-images`
 
-## Live catalog
-- `GET https://budapest-night.vercel.app/api/public/providers`
-- `GET https://budapest-night.vercel.app/api/public/locations`
+## Live catalog (before choosing — mandatory)
+You **must** fetch and use the live data. Do not ingest from memory.
 
-Dedupe by name, `id`, website.
+```bash
+curl -s https://budapest-night.vercel.app/api/public/providers
+curl -s https://budapest-night.vercel.app/api/public/locations
+```
 
-## Scarcity (providers)
-Rank **provider category** → **district** → **neighborhood** → **ageRanges** → **dayTimeTags** → **activityTypes** (fewest first). Choose a credible official listing that improves the scarcest combination.
+Dedupe by `id`, normalized name, and `website`.
 
-Do not always pick famous ruin bars if a smaller venue fills a gap.
+## Scarcity (providers catalog — mandatory)
+Measure **only** `GET /api/public/providers`. Document counts in `notes` before picking a venue.
+
+**Ranking (use in order; pragmatic fallback if no credible official source exists):**
+1. **Category** — Venues, Parties, Restaurants, Cafés (fewest listings first).
+2. **District (`borough`)** — fewest providers in that category per district.
+3. **Neighborhood** — within the chosen district, pick a canonical neighborhood from `src/data/locations.ts` with the fewest peers.
+4. **ageRanges** / **dayTimeTags** / **activityTypes** — prefer tags that are underused on similar rows.
+
+**Selection rule:** choose an official listing that improves the scarcest category × district (and neighborhood when possible). In `notes`, state **catalog counts before ingest** (e.g. “145 providers; Cafés in Óbuda 3; gap: Újbuda Restaurants”) and which slice this venue fills.
+
+Do **not** default to famous ruin bars when a smaller venue in a sparse district fills a documented gap.
+
+**Automated ingest will reject** `cursor-curated-*.json` without numeric counts and a scarcity/gap keyword in `notes`.
 
 ## Data quality
 - Facts from official source only; `rating`/`reviewCount` = 0 unless stated.
@@ -64,7 +78,7 @@ Full rules: `src/lib/curator/imageIngestRules.ts`.
 ```json
 {
   "sourceUrls": ["https://..."],
-  "notes": "scarcity slice targeted",
+  "notes": "145 providers; Cafés in Óbuda 3; gap: sparsest slice Újbuda Restaurants",
   "missingOrUncertain": [],
   "operations": [
     {
@@ -85,10 +99,17 @@ npm run ingest:listing -- --dry-run scripts/ingest-payloads/cursor-curated-venue
 npm run ingest:listing -- scripts/ingest-payloads/cursor-curated-venue-<slug>.json
 ```
 
+## Hard requirements (checklist)
+- [ ] Official venue site loads (`curl -sI`); `website` / `email` / `Sources:` share one live domain.
+- [ ] `locales`: `hu`, `es`, `it`, `he`, `ar` on the provider document.
+- [ ] **`image`**: unique ImgBB URL from **this venue’s** hero (not concert art — see image section).
+- [ ] Canonical `borough` + `neighborhood` from `src/data/locations.ts`.
+- [ ] **`notes`**: numeric catalog counts + scarcity gap (required for `cursor-curated-*.json`).
+
 ## Final reply
 - Name, id, category, borough, neighborhood
 - Locales confirmed (`GET .../providers?locale=hu`)
-- Scarcity summary with counts
+- **Scarcity table** (counts before ingest by category × district)
 - Sources, ImgBB URL, gaps
 
 Optional focus:

@@ -13,6 +13,8 @@
  * - Validates provider / event / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
  * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`).
  * - Event upserts require locales + HUF/EUR entryFees rules + **unique per-show ImgBB image** (not host `provider.image`); see `src/lib/curator/eventIngestRules.ts` and `scripts/cursor-curator-events-prompt.txt`. Gold examples: `seed-timed-events-moby-sting.json`, `cursor-curated-events-lp-idles-oliver-tree-2026.json`.
+ * - **Image enforcement:** banned ImgBB hashes, catalog-wide URL uniqueness, no empty images on upserts (`scripts/lib/image-ingest-validate.cjs`).
+ * - **Scarcity notes:** `cursor-curated*.json` listing payloads must document catalog counts + gap in `notes` (`scripts/lib/scarcity-ingest-validate.cjs`).
  * - Menu items/sections require `locales` for hu, es, it, he, ar on every menu patch/upsert (see `src/lib/curator/menuLocaleIngestRules.ts`).
  * - `provider` + `patch` is validated (menu, eventOfferings, optional provider locales) — not only upserts.
  * - Use `--skip-locale-check` only for legacy payloads (skips provider profile locales on upsert/patch; menu translations still required).
@@ -37,6 +39,8 @@ const {
   validateMenuSectionLocalesForIngest,
 } = require("./lib/menu-locale-ingest.cjs");
 const { validateCanonicalProvider, validateCanonicalEvent } = require("./lib/budapest-location.cjs");
+const { validatePayloadImages } = require("./lib/image-ingest-validate.cjs");
+const { validateScarcityNotes } = require("./lib/scarcity-ingest-validate.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
@@ -680,12 +684,16 @@ async function main() {
   const knownProviderIds = new Set(providers.map((p) => p.id).filter(Boolean));
   const knownEventIds = new Set(events.map((e) => e.id).filter(Boolean));
   const providersById = new Map(providers.map((p) => [p.id, p]));
-  const validationErrors = validateOperations(operations, {
-    skipLocaleCheck,
-    knownProviderIds,
-    knownEventIds,
-    providersById,
-  });
+  const validationErrors = [
+    ...validateOperations(operations, {
+      skipLocaleCheck,
+      knownProviderIds,
+      knownEventIds,
+      providersById,
+    }),
+    ...validateScarcityNotes(notes, payloadPath, operations),
+    ...validatePayloadImages(operations, { providers, events, meetups, providersById }),
+  ];
   if (validationErrors.length) {
     console.error("\nValidation failed:\n", validationErrors.map((e) => `  - ${e}`).join("\n"));
     process.exit(1);

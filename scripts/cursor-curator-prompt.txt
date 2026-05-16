@@ -8,7 +8,7 @@
 | **Timed concert / ticketed show** | `scripts/cursor-curator-events-prompt.txt` |
 | **Venue (place listing)** | `scripts/cursor-curator-venues-prompt.txt` |
 | **Menus for Eat & Drink / tours** | `scripts/cursor-curator-menu-prompt.txt` — transcribe menus + **`locales`** (`hu`, `es`, `it`, `he`, `ar`) on every item/section |
-| **Culture circle** | This file (meetup section below) |
+| **Culture circle** | `scripts/cursor-curator-meetups-prompt.txt` |
 
 Copy **one** specialist prompt into a new chat — not this whole index unless you need meetups or a mixed run.
 
