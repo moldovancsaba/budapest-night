@@ -11,6 +11,7 @@
  * Before POST (unless `--force` when duplicates were detected):
  * - Fetches public catalogs for id/name overlap checks.
  * - Validates provider / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
+ * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`). Use `--skip-locale-check` only for legacy payloads.
  *
  * Env: `INGEST_API_KEY` (required unless `--dry-run`), optional `INGEST_BASE_URL`
  * (default https://classscout.vercel.app). Loads `.env` then `.env.local`.
@@ -25,6 +26,7 @@
 require("./load-env.cjs");
 const fs = require("fs");
 const path = require("path");
+const { validateProviderLocalesForIngest } = require("./lib/provider-locale-ingest.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
@@ -62,8 +64,9 @@ function normName(s) {
 function parseArgs(argv) {
   const dryRun = argv.includes("--dry-run");
   const force = argv.includes("--force");
+  const skipLocaleCheck = argv.includes("--skip-locale-check");
   const files = argv.filter((a) => !a.startsWith("-"));
-  return { dryRun, force, payloadPath: files[0] || null };
+  return { dryRun, force, skipLocaleCheck, payloadPath: files[0] || null };
 }
 
 function loadPayload(payloadPath) {
@@ -144,7 +147,7 @@ function mustStrArray(doc, field, errors) {
   }
 }
 
-function validateProvider(doc, idx) {
+function validateProvider(doc, idx, { skipLocaleCheck = false } = {}) {
   const errors = [];
   const p = `operations[${idx}] provider`;
   if (!doc || typeof doc !== "object") {
@@ -189,8 +192,11 @@ function validateProvider(doc, idx) {
   }
   if (typeof doc.email !== "string") errors.push(`${p}: email must be string (empty ok)`);
   mustString(doc, "website", errors);
-  mustString(doc, "phone", errors);
+  if (typeof doc.phone !== "string") errors.push(`${p}: phone must be string (empty ok)`);
   if (doc.bookingEnabled !== undefined && typeof doc.bookingEnabled !== "boolean") errors.push(`${p}: bookingEnabled must be boolean`);
+  if (!skipLocaleCheck) {
+    errors.push(...validateProviderLocalesForIngest(doc.locales, p));
+  }
   return errors;
 }
 
@@ -227,7 +233,7 @@ function validateMeetup(doc, idx) {
   return errors;
 }
 
-function validateOperations(operations) {
+function validateOperations(operations, opts = {}) {
   const all = [];
   for (let i = 0; i < operations.length; i++) {
     const op = operations[i];
@@ -235,7 +241,9 @@ function validateOperations(operations) {
       all.push(`operations[${i}]: not an object`);
       continue;
     }
-    if (op.resource === "provider" && op.action === "upsert") all.push(...validateProvider(op.document, i));
+    if (op.resource === "provider" && op.action === "upsert") {
+      all.push(...validateProvider(op.document, i, opts));
+    }
     else if (op.resource === "meetupGroup" && op.action === "upsert") all.push(...validateMeetup(op.document, i));
     else if (op.action === "upsert") all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
   }
@@ -290,12 +298,13 @@ function printIngestReport({
 
 async function main() {
   const argv = process.argv.slice(2);
-  const { dryRun, force, payloadPath } = parseArgs(argv);
+  const { dryRun, force, skipLocaleCheck, payloadPath } = parseArgs(argv);
   if (!payloadPath) {
     console.error(
-      "Usage: npm run ingest:listing -- [--dry-run] [--force] <path-to-payload.json>\n" +
-        "  --dry-run   validate + dedupe only, no POST\n" +
-        "  --force     POST even if public catalog reports possible duplicate id/name overlap",
+      "Usage: npm run ingest:listing -- [--dry-run] [--force] [--skip-locale-check] <path-to-payload.json>\n" +
+        "  --dry-run            validate + dedupe only, no POST\n" +
+        "  --force              POST even if public catalog reports possible duplicate id/name overlap\n" +
+        "  --skip-locale-check  legacy payloads without locales.hu|es|it|he|ar (avoid for new listings)",
     );
     process.exit(1);
   }
@@ -308,7 +317,7 @@ async function main() {
   console.log("Base:", BASE);
   console.log("Operations:", operations.length);
 
-  const validationErrors = validateOperations(operations);
+  const validationErrors = validateOperations(operations, { skipLocaleCheck });
   if (validationErrors.length) {
     console.error("\nValidation failed:\n", validationErrors.map((e) => `  - ${e}`).join("\n"));
     process.exit(1);

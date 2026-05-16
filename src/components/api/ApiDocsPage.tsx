@@ -89,15 +89,17 @@ const PROVIDER_FIELDS = `interface Provider {
   announcementBadge?: string;
   galleryImages?: string[];
   bookingEnabled?: boolean;
-  /** Optional per-locale copy + slug; base fields are English fallback. */
-  locales?: Partial<Record<"en" | "es" | "it" | "hu" | "he" | "ar", {
-    name?: string;
-    shortDescription?: string;
-    longDescription?: string;
+  /** Required on curated ingest: hu, es, it, he, ar (base fields = English). See localeIngestRules. */
+  locales: Partial<Record<"hu" | "es" | "it" | "he" | "ar", {
+    name: string;
+    shortDescription: string;
+    longDescription: string;
+    slug: string;
     address?: string;
-    activityTypes?: string[];
+    announcementTitle?: string;
+    announcementDescription?: string;
+    announcementBadge?: string;
     image?: string;
-    slug?: string;
   }>>;
 }`;
 
@@ -433,12 +435,23 @@ export function ApiDocsPage({ origin }: { origin: string }) {
           </Section>
 
           <Section id="ingest" title="Machine ingest (full CMS via API)">
-            <p>
-              Use <code className="font-mono">INGEST_API_KEY</code> for headless content management: read catalog and
-              settings, bulk replace collections, patch singletons, upload images to ImgBB, and mirror everything the admin
-              UI can change in MongoDB. <strong>Stored raster URLs</strong> in provider, meet-up, and site documents must be{" "}
-              <code className="font-mono">https://</code> on <strong>imgbb.com</strong> (e.g. <code className="font-mono">i.ibb.co</code>) or empty; other hosts are rejected.
-            </p>
+              <p>
+                Use <code className="font-mono">INGEST_API_KEY</code> for headless content management: read catalog and
+                settings, bulk replace collections, patch singletons, upload images to ImgBB, and mirror everything the admin
+                UI can change in MongoDB. <strong>Stored raster URLs</strong> in provider, meet-up, and site documents must be{" "}
+                <code className="font-mono">https://</code> on <strong>imgbb.com</strong> (e.g. <code className="font-mono">i.ibb.co</code>) or empty; other hosts are rejected.
+              </p>
+              <p>
+                <strong>Provider locales:</strong> root fields are English. Every <code className="font-mono">provider</code>{" "}
+                upsert should include <code className="font-mono">locales</code> for{" "}
+                <code className="font-mono">hu</code>, <code className="font-mono">es</code>, <code className="font-mono">it</code>,{" "}
+                <code className="font-mono">he</code>, and <code className="font-mono">ar</code> (each with{" "}
+                <code className="font-mono">name</code>, <code className="font-mono">shortDescription</code>,{" "}
+                <code className="font-mono">longDescription</code>, <code className="font-mono">slug</code>). Public reads accept{" "}
+                <code className="font-mono">?locale=</code> on <code className="font-mono">GET /api/public/providers</code>. See{" "}
+                <code className="font-mono">scripts/cursor-curator-prompt.txt</code> and{" "}
+                <code className="font-mono">src/lib/curator/localeIngestRules.ts</code>.
+              </p>
 
             <div className="space-y-6">
               <EndpointCard method="GET" path="/api/cron/curator" auth="Bearer CRON_SECRET (Vercel Cron)">

@@ -10,6 +10,13 @@ import { MeetupGroupCard } from "../MeetupGroupCard";
 import type { MeetupGroup } from "@/types/meetup";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
+import {
+  useAgeRangeLabel,
+  useMeetupCadenceLabel,
+  useMeetupGroupTypeLabel,
+  useVenueLocationLine,
+} from "@/hooks/useVenueDisplay";
+import { useTranslations } from "next-intl";
 
 export function MeetupGroupProfile({
   group,
@@ -22,8 +29,14 @@ export function MeetupGroupProfile({
   onShare: (g: MeetupGroup) => void;
   onOpenAnother: (g: MeetupGroup) => void;
 }) {
+  const t = useTranslations("meetup");
+  const tv = useTranslations("venue");
   const { isSaved, toggle } = useSaved();
   const { data: allGroups = [] } = useMeetupGroupsCatalog();
+  const locationLine = useVenueLocationLine();
+  const groupTypeLabel = useMeetupGroupTypeLabel();
+  const cadenceLabel = useMeetupCadenceLabel();
+  const ageLabel = useAgeRangeLabel();
   if (!group) return null;
   const saved = isSaved(group.id);
 
@@ -34,13 +47,13 @@ export function MeetupGroupProfile({
   const websiteUrl = `https://${group.website.replace(/^https?:\/\//, "")}`;
 
   const shareEmail = () => {
-    const body = `Check out ${group.name} — a ${group.groupType.toLowerCase()} in ${group.neighborhood}, ${group.borough}.\n\n${group.description}\n\nInstagram: ${group.instagram}\nWebsite: ${group.website}`;
+    const body = `${group.name} — ${locationLine(group.borough, group.neighborhood)}.\n\n${group.description}\n\nInstagram: ${group.instagram}\n${websiteUrl}`;
     window.open(
-      `mailto:?subject=${encodeURIComponent(group.name + " on Budapest Night")}&body=${encodeURIComponent(body)}`,
+      `mailto:?subject=${encodeURIComponent(t("shareTitle", { name: group.name }))}&body=${encodeURIComponent(body)}`,
     );
   };
   const shareWhatsapp = () => {
-    const text = `${group.name} — ${group.neighborhood}, ${group.borough}. ${group.description} Instagram: ${group.instagram} • ${group.website}`;
+    const text = `${group.name} — ${locationLine(group.borough, group.neighborhood)}. ${group.description} ${group.instagram} ${websiteUrl}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -52,7 +65,7 @@ export function MeetupGroupProfile({
             fill
             resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
             src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
-            alt=""
+            alt={group.name}
           />
         </div>
         <div className="bg-secondary px-6 pb-6 pt-6">
@@ -60,12 +73,12 @@ export function MeetupGroupProfile({
             <MeetupLogo group={group} size="lg" />
             <div className="min-w-0 flex-1">
               <span className="rounded-full bg-teal-soft px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal">
-                {group.groupType}
+                {groupTypeLabel(group.groupType)}
               </span>
               <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-foreground">{group.name}</h2>
               <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                {group.neighborhood}, {group.borough}
+                {locationLine(group.borough, group.neighborhood)}
               </p>
             </div>
           </div>
@@ -74,14 +87,14 @@ export function MeetupGroupProfile({
         <div className="space-y-6 p-6 pb-12">
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-              {group.ageRange}
+              {ageLabel(group.ageRange)}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
               <CalendarClock className="h-3.5 w-3.5" />
-              {group.cadence}
+              {cadenceLabel(group.cadence)}
             </span>
             <span className="rounded-full bg-orange/10 px-3 py-1 text-xs font-medium text-orange">
-              {group.groupType}
+              {groupTypeLabel(group.groupType)}
             </span>
           </div>
 
@@ -92,27 +105,27 @@ export function MeetupGroupProfile({
               className="bg-foreground text-background hover:bg-foreground/90"
               onClick={() => {
                 toggle(group.id);
-                toast.success(saved ? "Removed from saved" : "Group saved");
+                toast.success(saved ? tv("removed") : tv("savedGroup"));
               }}
             >
               <Heart className={cn("h-4 w-4", saved && "fill-orange text-orange")} />
-              {saved ? "Saved" : "Save group"}
+              {saved ? t("unsave") : t("save")}
             </Button>
             <Button variant="outline" asChild>
               <a href={websiteUrl} target="_blank" rel="noreferrer">
-                <Globe className="h-4 w-4" /> Visit website
+                <Globe className="h-4 w-4" /> {t("visitWebsite")}
               </a>
             </Button>
             <Button variant="outline" onClick={shareEmail}>
-              <Mail className="h-4 w-4" /> Share via email
+              <Mail className="h-4 w-4" /> {tv("shareEmail")}
             </Button>
             <Button variant="outline" onClick={shareWhatsapp}>
-              <MessageCircle className="h-4 w-4" /> Share via WhatsApp
+              <MessageCircle className="h-4 w-4" /> {tv("shareWhatsapp")}
             </Button>
           </div>
 
           <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">Connect with this group</h3>
+            <h3 className="font-display text-sm font-semibold text-foreground">{t("connect")}</h3>
             <div className="mt-3 space-y-2 text-sm">
               <a
                 href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
@@ -135,7 +148,7 @@ export function MeetupGroupProfile({
 
           {similar.length > 0 && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">Similar circles nearby</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">{t("similarNearby")}</h3>
               <div className="mt-3 grid grid-cols-1 gap-4">
                 {similar.map((g) => (
                   <MeetupGroupCard key={g.id} group={g} onOpen={onOpenAnother} onShare={onShare} />

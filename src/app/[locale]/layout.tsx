@@ -4,6 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { notFound } from "next/navigation";
 import { Orbitron, Rajdhani } from "next/font/google";
 import { Providers } from "../providers";
+import { APP_FAVICON } from "@/config/brand";
 import { routing } from "@/i18n/routing";
 import { isRtlLocale, type AppLocale } from "@/i18n/config";
 import "../globals.css";
@@ -42,6 +43,11 @@ export async function generateMetadata({
       type: "website",
     },
     twitter: { card: "summary_large_image" },
+    icons: {
+      icon: [{ url: APP_FAVICON.icon, type: "image/png" }],
+      apple: [{ url: APP_FAVICON.apple, type: "image/png" }],
+      shortcut: APP_FAVICON.shortcut,
+    },
   };
 }
 

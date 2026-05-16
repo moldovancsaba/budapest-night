@@ -316,8 +316,12 @@ export default function AdminDashboard() {
             {site && (
               <>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <Field label="Logo URL (ImgBB)">
-                    <Input value={site.logoUrl ?? ""} onChange={(e) => setSite({ ...site, logoUrl: e.target.value })} />
+                  <Field label="Logo URL (ImgBB or leave default /images/logo.png)">
+                    <Input
+                      value={site.logoUrl ?? ""}
+                      onChange={(e) => setSite({ ...site, logoUrl: e.target.value })}
+                      placeholder="/images/logo.png"
+                    />
                   </Field>
                   <Field label="Home hero image URL">
                     <Input value={site.homeHeroUrl ?? ""} onChange={(e) => setSite({ ...site, homeHeroUrl: e.target.value })} />

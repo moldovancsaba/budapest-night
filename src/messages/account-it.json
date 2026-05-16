@@ -1,0 +1,214 @@
+{
+  "settings": {
+    "page": {
+      "title": "Il mio account",
+      "subtitle": "Locali salvati, piano serale e preferenze."
+    },
+    "navTabs": [
+      {
+        "id": "saved",
+        "label": "Salvati"
+      },
+      {
+        "id": "plan",
+        "label": "Piano serale"
+      },
+      {
+        "id": "prefs",
+        "label": "Preferenze"
+      },
+      {
+        "id": "neighborhood",
+        "label": "Il mio quartiere"
+      },
+      {
+        "id": "alerts",
+        "label": "Avvisi"
+      }
+    ],
+    "saved": {
+      "tabId": "saved",
+      "title": "Locali e circoli salvati",
+      "subtitle": "Tutto ciò che hai salvato in un posto.",
+      "viewAllCta": "Vedi tutti",
+      "filterChips": [
+        {
+          "label": "Tutti",
+          "categoryFilter": "All"
+        },
+        {
+          "label": "Eventi",
+          "categoryFilter": "Events"
+        },
+        {
+          "label": "Feste",
+          "categoryFilter": "Parties"
+        },
+        {
+          "label": "Ristoranti",
+          "categoryFilter": "Restaurants"
+        },
+        {
+          "label": "Caffè",
+          "categoryFilter": "Cafés"
+        },
+        {
+          "label": "Cultura",
+          "categoryFilter": "Culture"
+        }
+      ],
+      "emptyMessage": "Nessun elemento salvato in questa categoria.",
+      "card": {
+        "viewCta": "Vedi",
+        "shareCta": "Condividi",
+        "addToPlanCta": "Aggiungi al budget",
+        "removeCta": "Rimuovi"
+      },
+      "toastAddedToPlan": "{name} aggiunto al piano",
+      "toastRemoved": "{name} rimosso",
+      "toastSampleRemove": "Salva locali da Scopri per gestirli qui.",
+      "priceUnits": {
+        "class": "biglietto",
+        "week": "cover",
+        "party": "persona",
+        "visit": "visita"
+      },
+      "chips": [
+        "Tutti",
+        "Eventi",
+        "Feste",
+        "Ristoranti",
+        "Caffè",
+        "Cultura"
+      ]
+    },
+    "activityPlan": {
+      "tabId": "plan",
+      "title": "Il mio piano serale",
+      "subtitle": "Stima la spesa totale della serata.",
+      "emptyMessage": "Aggiungi locali dal budget in Scopri per vederli qui.",
+      "estimatedTotalLabel": "Totale stimato",
+      "viewFullCta": "Piano completo",
+      "clearCta": "Svuota piano",
+      "priceUnits": {
+        "class": "biglietto",
+        "week": "cover",
+        "party": "persona",
+        "visit": "visita"
+      }
+    },
+    "familyPreferences": {
+      "tabId": "prefs",
+      "title": "Le tue preferenze",
+      "subtitle": "Scegli cosa vedere a Budapest.",
+      "editCta": "Modifica preferenze",
+      "savedToast": "Preferenze salvate",
+      "sections": [
+        {
+          "id": "age",
+          "label": "Pubblico e atmosfera",
+          "options": [
+            "All ages",
+            "Family",
+            "18+",
+            "21+",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "18+"
+          ]
+        },
+        {
+          "id": "interests",
+          "label": "Interessi",
+          "options": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music",
+            "Ruin Bar",
+            "Fine Dining",
+            "Gallery",
+            "Rooftop",
+            "Craft Beer",
+            "Electronic"
+          ],
+          "defaultSelected": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music"
+          ]
+        },
+        {
+          "id": "times",
+          "label": "Orari preferiti",
+          "options": [
+            "Weekday",
+            "Weekend",
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "Weekend",
+            "Evening",
+            "Late night"
+          ]
+        }
+      ]
+    },
+    "neighborhood": {
+      "tabId": "neighborhood",
+      "title": "Il mio quartiere",
+      "subtitle": "La tua base per le serate a Budapest.",
+      "addressLine1": "",
+      "addressLine2": "",
+      "detectedLabelPrefix": "La tua zona:",
+      "detectedNeighborhood": "",
+      "detectedBorough": "Belváros",
+      "updateAddressCtaLabel": "Aggiorna indirizzo",
+      "nearbySectionLabel": "Zone vicine",
+      "nearbyNeighborhoods": [],
+      "nearbyNavigateBorough": "Belváros",
+      "browseCtaLabel": "Esplora vicino a me",
+      "browseNavigateBorough": "Belváros",
+      "browseNavigateNeighborhood": "",
+      "updateAddressToast": "Aggiornamento indirizzo in arrivo"
+    },
+    "alerts": {
+      "tabId": "alerts",
+      "title": "Avvisi ed email",
+      "subtitle": "Scegli di cosa vuoi essere informato.",
+      "emailSectionLabel": "Avvisi email",
+      "options": [
+        "Scelte settimanali per quartiere",
+        "Nuovi eventi vicino a te",
+        "Aggiornamenti party e club",
+        "Aperture ristoranti",
+        "Cultura del weekend",
+        "Nuovi circoli culturali",
+        "Aggiornamenti dai salvati"
+      ],
+      "frequencySectionLabel": "Frequenza email",
+      "frequencyChoices": [
+        "Settimanale",
+        "Solo importanti",
+        "Metti in pausa"
+      ],
+      "saveCta": "Salva impostazioni",
+      "savedToast": "Impostazioni salvate"
+    },
+    "privacy": {
+      "headline": "Rispettiamo la tua privacy. Non conmotioniamo i tuoi dati.",
+      "supportTextBefore": "Domande? Scrivici a",
+      "supportEmail": "hello@budapestnight.com",
+      "supportTextAfter": ""
+    }
+  }
+}

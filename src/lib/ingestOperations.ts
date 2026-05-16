@@ -6,6 +6,7 @@ import type { BrainSettingsDoc, SiteDoc } from "@/types/site";
 import { DEFAULT_BRAIN } from "@/types/site";
 import { mergeSiteDocument } from "@/lib/siteMerge";
 import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } from "@/lib/imgbbUrl";
+import { validateProviderLocalesForIngest } from "@/lib/curator/localeIngestRules";
 import { mergeProviderLocales } from "@/lib/providerLocale";
 
 export type IngestOpResult =
@@ -177,6 +178,8 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (!rest.id || typeof rest.id !== "string") return { ok: false, error: "provider.document.id required" };
     const imgErr = validateProviderImages(rest);
     if (imgErr) return { ok: false, error: imgErr };
+    const localeErrs = validateProviderLocalesForIngest(rest.locales, "provider.document");
+    if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
     await db.collection(COL.providers).replaceOne({ id: rest.id }, rest as Provider, { upsert: true });
     return { ok: true };
   }
@@ -221,6 +224,8 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
       if (!rest.id || typeof rest.id !== "string") return { ok: false, error: "providers.upsertMany: each document needs string id" };
       const imgErr = validateProviderImages(rest);
       if (imgErr) return { ok: false, error: imgErr };
+      const localeErrs = validateProviderLocalesForIngest(rest.locales, `providers.upsertMany document ${rest.id}`);
+      if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
       writes.push({
         replaceOne: {
           filter: { id: rest.id },

@@ -102,13 +102,21 @@
     "shareWhatsapp": "Share via WhatsApp",
     "shareTitle": "Share {name}",
     "shareDescription": "Send this venue to a friend.",
+    "shareSummary": "{name} — {category} in {neighborhood}, {borough}. {price}. {description}",
     "linkCopied": "Link copied",
+    "copyLink": "Copy link",
+    "photoCounter": "{current} / {total}",
+    "reviewsCount": "({count} reviews)",
+    "connectVenue": "Connect with this venue",
     "freeEntry": "Free entry",
     "free": "Free",
     "priceVaries": "Price varies",
     "perTicket": "/ticket",
     "perCover": "/cover",
-    "perPerson": "/person"
+    "perPerson": "/person",
+    "savedGroup": "Group saved",
+    "removeGroupSaved": "Removed from saved",
+    "saveGroup": "Save group"
   },
   "discover": {
     "eyebrow": "Budapest after dark",
@@ -165,7 +173,20 @@
     "listInDistrict": "Culture circles in {district}",
     "groupCount": "{count} groups",
     "filterEmptyTitle": "No circles here yet",
-    "filterEmptyMessage": "Try another district or neighborhood."
+    "filterEmptyMessage": "Try another district or neighborhood.",
+    "groupType": {
+      "artGallery": "Art & Gallery",
+      "liveCulture": "Live Culture",
+      "foodWine": "Food & Wine Circle",
+      "nightlifeCrew": "Nightlife Crew",
+      "localCreators": "Local Creators"
+    },
+    "cadence": {
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "weekend": "Weekend",
+      "popup": "Pop-up"
+    }
   },
   "assistant": {
     "title": "Night Guide",
@@ -453,5 +474,13 @@
     "electronic": "Electronic",
     "cocktails": "Cocktails",
     "lateKitchen": "Late Kitchen"
+  },
+  "badge": {
+    "featured": "Featured",
+    "popular": "Popular",
+    "new": "New",
+    "staffPick": "Staff Pick",
+    "hiddenGem": "Hidden Gem",
+    "weekendVibes": "Weekend Vibes"
   }
 }

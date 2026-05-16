@@ -6,6 +6,7 @@ import {
   CURATOR_AGE_RANGES,
   CURATOR_DAY_TAGS,
 } from "@/lib/curator/constants";
+import { getProviderLocaleIngestRulesForPrompt } from "@/lib/curator/localeIngestRules";
 import { curatedProviderSchema, type CuratedProvider } from "@/lib/curator/providerSchema";
 import { isImgBbHttpsImageUrl } from "@/lib/imgbbUrl";
 
@@ -33,6 +34,7 @@ Rules:
 - website: official https URL for the venue (prefer the source page origin if it is the official site).
 - galleryImages: only include if every URL is https on imgbb.com (i.ibb.co); otherwise omit.
 - longDescription MUST end with a line: Sources: <source url>
+- ${getProviderLocaleIngestRulesForPrompt()}
 - If you cannot satisfy the schema truthfully, return {"skip":true,"reason":"..."} instead of guessing.`;
 }
 

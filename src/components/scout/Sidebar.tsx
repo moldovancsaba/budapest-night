@@ -123,7 +123,7 @@ export function Sidebar({ active, mobileOpen, onCloseMobile, logoUrl, sidebarPro
             className="rounded-lg transition-opacity hover:opacity-80"
             aria-label={t("goHome")}
           >
-            <Logo logoUrl={logoUrl} />
+            <Logo logoUrl={logoUrl} size={96} />
           </Link>
           <button
             className="rounded-md p-2 text-sidebar-foreground/70 hover:bg-sidebar-accent lg:hidden"

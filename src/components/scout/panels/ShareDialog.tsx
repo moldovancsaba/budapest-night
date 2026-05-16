@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, Link2 } from "lucide-react";
 import type { Provider } from "@/types/provider";
 import { toast } from "sonner";
-import { useVenueSharePriceLine } from "@/hooks/useVenueDisplay";
+import { useVenueShareSummary } from "@/hooks/useVenueDisplay";
 import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
@@ -11,10 +11,10 @@ import type { AppLocale } from "@/i18n/config";
 export function ShareDialog({ provider, onClose }: { provider: Provider | null; onClose: () => void }) {
   const t = useTranslations("venue");
   const locale = useLocale() as AppLocale;
-  const sharePrice = useVenueSharePriceLine();
+  const shareSummary = useVenueShareSummary();
   if (!provider) return null;
   const url = buildAbsoluteVenueUrl(provider, locale);
-  const summary = `${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}. ${sharePrice(provider)}. ${provider.shortDescription}`;
+  const summary = shareSummary(provider);
 
   return (
     <Dialog open={!!provider} onOpenChange={(o) => !o && onClose()}>
@@ -46,7 +46,7 @@ export function ShareDialog({ provider, onClose }: { provider: Provider | null; 
               toast.success(t("linkCopied"));
             }}
           >
-            <Link2 className="h-4 w-4" /> Copy link
+            <Link2 className="h-4 w-4" /> {t("copyLink")}
           </Button>
         </div>
       </DialogContent>

@@ -33,7 +33,9 @@ Also read the repo’s canonical enums (do not guess):
 - Neighborhoods per district: `src/data/locations.ts` (must match ingest)
 - Discover activity filter chips: `src/data/catalogFilters.ts` (`ACTIVITY_TYPES`)
 - Provider Zod shape: `src/lib/curator/providerSchema.ts`
-- Example payloads: `scripts/ingest-payloads/*.json`
+- **Locale ingest rules (required):** `src/lib/curator/localeIngestRules.ts`
+- App locales: `en`, `es`, `it`, `hu`, `he`, `ar` (`src/i18n/config.ts`)
+- Example payloads: `scripts/ingest-payloads/*.json` (see `budapest-a38.json` for `locales.hu`)
 
 Use the live public data to estimate which parts of the catalog are most underrepresented.
 
@@ -127,6 +129,22 @@ Important:
 6. **`id`**: providers must match `^prov-[a-z0-9-]+$` (e.g. `prov-mazel-tov-erzsebetvaros`). Meetups should use `grp-` prefix and a unique slug (e.g. `grp-danube-jazz-circle-belvaros`).
 7. **`longDescription`**: must end with a line: `Sources: <url1> <url2> ...` (audit URLs; may duplicate `sourceUrls`).
 
+## Multilingual copy (blocking for providers)
+The public site serves **six locales**: `en`, `es`, `it`, `hu`, `he`, `ar`. Every **provider** upsert must ship translated copy for all non-English locales.
+
+1. **Root `document` fields** (`name`, `shortDescription`, `longDescription`, `address`, optional announcements) are **English** — default fallback.
+2. Add **`locales`** with keys **`hu`**, **`es`**, **`it`**, **`he`**, **`ar`** (do not omit any). Do **not** duplicate English under `locales.en`.
+3. Each locale object **must** include:
+   - `name` — venue name in that language (keep well-known brands if appropriate, e.g. “A38”)
+   - `shortDescription` — 1–2 sentences
+   - `longDescription` — full paragraph(s); must end with `Sources: <https://...>` (same audit URLs as English)
+   - `slug` — lowercase ASCII hyphenated URL segment for `/hu/venue/{slug}`, `/es/venue/{slug}`, etc. (unique per provider; no accents in slug)
+4. Optional per locale: `address` (localized line), `announcementTitle`, `announcementDescription`, `announcementBadge`, `image` (ImgBB only; usually omit).
+5. **Keep `activityTypes` only on the root** in English (from `ACTIVITY_TYPES`). The app translates tags via message files — do **not** put `activityTypes` inside `locales.*`.
+6. **Structural fields stay English on the root only:** `id`, `category`, `borough`, `neighborhood`, `ageRanges`, `dayTimeTags`, `badges`, `pricePerClass`, `rating`, `reviewCount`, `website`, `phone`, `email`.
+7. **Hebrew / Arabic:** use natural RTL copy in text fields; `slug` stays Latin ASCII.
+8. `npm run ingest:listing` **rejects** provider payloads missing any required locale or with invalid slugs.
+
 ## Image requirement (blocking)
 1. Source an **official** image from the venue/organizer site or organization-controlled asset URL.
 2. Download that image locally (e.g. under `scripts/imgbb-asset-sources/providers/<slug>.jpg`).
@@ -158,9 +176,27 @@ If it is a venue / program, produce JSON for `npm run ingest:listing`:
 ```
 
 The `document` must satisfy the provider schema and enums exactly, including:
-- `category`, `borough`, `neighborhood` (canonical), `ageRanges[]`, `dayTimeTags[]`, `badges[]`, `activityTypes[]`
+- `category`, `borough`, `neighborhood` (canonical), `ageRanges[]`, `dayTimeTags[]`, `badges[]`, `activityTypes[]` (English canonical tags only)
 - `announcementTitle`, `announcementDescription`, `announcementBadge` when useful
 - non-empty https ImgBB `image`; `galleryImages` only if every entry is ImgBB
+- **`locales`** with `hu`, `es`, `it`, `he`, `ar` each containing `name`, `shortDescription`, `longDescription`, `slug`
+
+Minimal `locales` shape (fill all five keys in real payloads):
+
+```json
+"locales": {
+  "hu": {
+    "name": "…",
+    "shortDescription": "…",
+    "longDescription": "…\n\nSources: https://…",
+    "slug": "venue-slug-hu"
+  },
+  "es": { "name": "…", "shortDescription": "…", "longDescription": "…\n\nSources: https://…", "slug": "venue-slug-es" },
+  "it": { "name": "…", "shortDescription": "…", "longDescription": "…\n\nSources: https://…", "slug": "venue-slug-it" },
+  "he": { "name": "…", "shortDescription": "…", "longDescription": "…\n\nSources: https://…", "slug": "venue-slug-he" },
+  "ar": { "name": "…", "shortDescription": "…", "longDescription": "…\n\nSources: https://…", "slug": "venue-slug-ar" }
+}
+```
 
 If it is a culture circle / community group:
 
@@ -205,6 +241,7 @@ From the repo root (`budapest-night`):
 ## Final reply
 After successful ingest, reply with:
 - **What was added or updated**: name, id, category or groupType, district, neighborhood
+- **Locales written**: confirm `hu`, `es`, `it`, `he`, `ar` slugs (and that `GET /api/public/providers?locale=hu` returns localized name for the new id)
 - **Why chosen**: scarcest coverage opportunity you targeted
 - **Scarcity summary**:
   - provider category counts (and meetup groupType counts if relevant)

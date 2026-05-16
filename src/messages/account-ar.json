@@ -1,0 +1,214 @@
+{
+  "settings": {
+    "page": {
+      "title": "حسابي",
+      "subtitle": "أماكن محفوظة وخطة ليلية وتفضيلات."
+    },
+    "navTabs": [
+      {
+        "id": "saved",
+        "label": "محفوظ"
+      },
+      {
+        "id": "plan",
+        "label": "خطة الليلة"
+      },
+      {
+        "id": "prefs",
+        "label": "التفضيلات"
+      },
+      {
+        "id": "neighborhood",
+        "label": "منطقتي"
+      },
+      {
+        "id": "alerts",
+        "label": "التنبيهات"
+      }
+    ],
+    "saved": {
+      "tabId": "saved",
+      "title": "أماكن ودوائر محفوظة",
+      "subtitle": "كل ما حفظته في مكان واحد.",
+      "viewAllCta": "عرض الكل",
+      "filterChips": [
+        {
+          "label": "الكل",
+          "categoryFilter": "All"
+        },
+        {
+          "label": "فعاليات",
+          "categoryFilter": "Events"
+        },
+        {
+          "label": "حفلات",
+          "categoryFilter": "Parties"
+        },
+        {
+          "label": "مطاعم",
+          "categoryFilter": "Restaurants"
+        },
+        {
+          "label": "مقاهٍ",
+          "categoryFilter": "Cafés"
+        },
+        {
+          "label": "ثقافة",
+          "categoryFilter": "Culture"
+        }
+      ],
+      "emptyMessage": "لا عناصر محفوظة في هذه الفئة بعد.",
+      "card": {
+        "viewCta": "عرض",
+        "shareCta": "مشاركة",
+        "addToPlanCta": "أضف للميزانية",
+        "removeCta": "إزالة"
+      },
+      "toastAddedToPlan": "أُضيف {name} إلى الخطة",
+      "toastRemoved": "أُزيل {name}",
+      "toastSampleRemove": "احفظ أماكن من اكتشف لإدارتها هنا.",
+      "priceUnits": {
+        "class": "تذكرة",
+        "week": "دخول",
+        "party": "شخص",
+        "visit": "زيارة"
+      },
+      "chips": [
+        "الكل",
+        "فعاليات",
+        "حفلات",
+        "مطاعم",
+        "مقاهٍ",
+        "ثقافة"
+      ]
+    },
+    "activityPlan": {
+      "tabId": "plan",
+      "title": "خطة ليلتي",
+      "subtitle": "قدّر إجمالي إنفاقك للسهرة.",
+      "emptyMessage": "أضف أماكن من الميزانية في اكتشف لرؤيتها هنا.",
+      "estimatedTotalLabel": "الإجمالي التقديري",
+      "viewFullCta": "الخطة الكاملة",
+      "clearCta": "مسح الخطة",
+      "priceUnits": {
+        "class": "تذكرة",
+        "week": "دخول",
+        "party": "شخص",
+        "visit": "زيارة"
+      }
+    },
+    "familyPreferences": {
+      "tabId": "prefs",
+      "title": "تفضيلاتك",
+      "subtitle": "اضبط ما تريد رؤيته في بودابست.",
+      "editCta": "تعديل التفضيلات",
+      "savedToast": "تم حفظ التفضيلات",
+      "sections": [
+        {
+          "id": "age",
+          "label": "الجمهور والأجواء",
+          "options": [
+            "All ages",
+            "Family",
+            "18+",
+            "21+",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "18+"
+          ]
+        },
+        {
+          "id": "interests",
+          "label": "الاهتمامات",
+          "options": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music",
+            "Ruin Bar",
+            "Fine Dining",
+            "Gallery",
+            "Rooftop",
+            "Craft Beer",
+            "Electronic"
+          ],
+          "defaultSelected": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music"
+          ]
+        },
+        {
+          "id": "times",
+          "label": "الأوقات المفضلة",
+          "options": [
+            "Weekday",
+            "Weekend",
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "Weekend",
+            "Evening",
+            "Late night"
+          ]
+        }
+      ]
+    },
+    "neighborhood": {
+      "tabId": "neighborhood",
+      "title": "منطقتي",
+      "subtitle": "قاعدتك لسهرات بودابست.",
+      "addressLine1": "",
+      "addressLine2": "",
+      "detectedLabelPrefix": "منطقتك:",
+      "detectedNeighborhood": "",
+      "detectedBorough": "Belváros",
+      "updateAddressCtaLabel": "تحديث العنوان",
+      "nearbySectionLabel": "أحياء قريبة",
+      "nearbyNeighborhoods": [],
+      "nearbyNavigateBorough": "Belváros",
+      "browseCtaLabel": "استكشف بالقرب مني",
+      "browseNavigateBorough": "Belváros",
+      "browseNavigateNeighborhood": "",
+      "updateAddressToast": "تحديث العنوان قريباً"
+    },
+    "alerts": {
+      "tabId": "alerts",
+      "title": "التنبيهات والبريد",
+      "subtitle": "اختر ما تريد معرفته.",
+      "emailSectionLabel": "تنبيهات البريد",
+      "options": [
+        "اختيارات أسبوعية للمنطقة",
+        "فعاليات جديدة قريبة",
+        "تحديثات الحفلات والنوادٍ",
+        "افتتاح مطاعم",
+        "ثقافة نهاية الأسبوع",
+        "دوائر ثقافية جديدة",
+        "تحديثات المحفوظات"
+      ],
+      "frequencySectionLabel": "تكرار البريد",
+      "frequencyChoices": [
+        "أسبوعي",
+        "المهم فقط",
+        "إيقاف البريد"
+      ],
+      "saveCta": "حفظ الإعدادات",
+      "savedToast": "تم حفظ الإعدادات"
+    },
+    "privacy": {
+      "headline": "نحترم خصوصيتك. لا نشارك معلوماتك.",
+      "supportTextBefore": "أسئلة؟ راسلنا على",
+      "supportEmail": "hello@budapestnight.com",
+      "supportTextAfter": ""
+    }
+  }
+}

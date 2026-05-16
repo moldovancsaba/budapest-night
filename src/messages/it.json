@@ -108,7 +108,15 @@
     "priceVaries": "Prezzo variabile",
     "perTicket": "/biglietto",
     "perCover": "/cover",
-    "perPerson": "/persona"
+    "perPerson": "/persona",
+    "copyLink": "Copia link",
+    "photoCounter": "{current} / {total}",
+    "reviewsCount": "({count} recensioni)",
+    "connectVenue": "Contatta questo locale",
+    "savedGroup": "Gruppo salvato",
+    "removeGroupSaved": "Rimosso dai salvati",
+    "saveGroup": "Salva gruppo",
+    "shareSummary": "{name} — {category} a {neighborhood}, {borough}. {price}. {description}"
   },
   "discover": {
     "eyebrow": "Budapest dopo il tramonto",
@@ -128,7 +136,10 @@
       "Parties": "ruin bar, club, serate DJ e feste tardive",
       "Restaurants": "bistrot, alta cucina e tavoli sul Danubio",
       "Cafés": "caffè, brunch, dolci e locali tutto il giorno"
-    }
+    },
+    "loading": "Caricamento locali…",
+    "loadErrorTitle": "Caricamento non riuscito",
+    "loadErrorMessage": "Controlla MONGODB_URI e la rete."
   },
   "saved": {
     "title": "Locali salvati",
@@ -149,7 +160,20 @@
     "similarNearby": "Circoli simili nelle vicinanze",
     "shareTitle": "Condividi {name}",
     "shareDescription": "Condividi questo circolo culturale con un amico.",
-    "onPlatform": "{name} su Budapest Night"
+    "onPlatform": "{name} su Budapest Night",
+    "groupType": {
+      "artGallery": "Arte e galleria",
+      "liveCulture": "Cultura dal vivo",
+      "foodWine": "Cerchio enogastronomico",
+      "nightlifeCrew": "Crew nightlife",
+      "localCreators": "Creatori locali"
+    },
+    "cadence": {
+      "weekly": "Settimanale",
+      "monthly": "Mensile",
+      "weekend": "Weekend",
+      "popup": "Pop-up"
+    }
   },
   "assistant": {
     "title": "Guida notturna",
@@ -170,7 +194,17 @@
     "increaseGuests": "Più ospiti",
     "remove": "Rimuovi {name}",
     "guest": "ospite",
-    "guests": "ospiti"
+    "guests": "ospiti",
+    "title": "Budget della serata",
+    "subtitle": "Stima la spesa totale tra locali ed eventi.",
+    "clearAllCta": "Cancella tutto",
+    "emptyTitle": "Il calcolatore è vuoto",
+    "emptyMessage": "Aggiungi locali per stimare il budget.",
+    "asideTitle": "Totale stimato",
+    "asideSubtitle": "In base ai locali ed eventi aggiunti.",
+    "asideFootnote": "Solo indicativo. Conferma i prezzi con ogni locale.",
+    "providerLinePriceSuffix": "/persona",
+    "estimatedTotalLabel": "Totale stimato"
   },
   "split": {
     "eyebrow": "Strumento live",
@@ -211,7 +245,116 @@
     "fromBudgetCta": "Dividi tra il gruppo"
   },
   "home": {
-    "explore": "Esplora"
+    "heroTitle": "Scopri Budapest dopo il tramonto",
+    "heroSubtitle": "Eventi, feste, ristoranti, caffè e cultura — per quartiere e zona.",
+    "heroPrimaryCta": "Inizia a esplorare",
+    "heroSecondaryCta": "Sfoglia per quartiere",
+    "heroTagline": "Neon. Locale. Pensato per le serate a Budapest.",
+    "heroImageAlt": "Luci di Budapest di notte sul Danubio",
+    "categoriesTitle": "Che serata vuoi?",
+    "exploreCta": "Esplora",
+    "neighborhoodSectionTitle": "Trova la serata nel tuo quartiere",
+    "popularNeighborhoodsCaption": "Posti popolari a {district}",
+    "allDistrictsHint": "Sfoglia tutti i quartieri in Scopri, oppure scegline uno sopra per le zone.",
+    "openDiscoverAll": "Apri Scopri (tutta Budapest)",
+    "viewAllNeighborhoods": "Vedi tutti",
+    "guidesSectionTitle": "Guide di quartiere in evidenza",
+    "guidesViewAllLabel": "Tutte le guide",
+    "guideCtaDefault": "Esplora guida",
+    "howItWorksSectionTitle": "Come funziona Budapest Night",
+    "popularPicksSectionTitle": "Scelte neon per iniziare",
+    "popularPicksViewAllLabel": "Vedi tutto",
+    "culturePickBadge": "Scelta cultura",
+    "cultureCircleLabel": "Circolo culturale",
+    "freeToJoin": "Gratuito",
+    "newsletterTitle": "Le migliori serate di Budapest nel tuo quartiere",
+    "newsletterSubtitle": "Eventi, feste, ristoranti, caffè e cultura — nella tua inbox.",
+    "newsletterPlaceholder": "La tua email",
+    "newsletterCta": "Iscrivimi!",
+    "newsletterFinePrint": "Niente spam. Cancellati quando vuoi.",
+    "newsletterSuccess": "Sei in lista! Ti scriviamo presto.",
+    "categories": {
+      "events": {
+        "description": "Concerti, festival, boat party e rooftop"
+      },
+      "parties": {
+        "description": "Club, ruin bar, DJ set e serate a tema"
+      },
+      "restaurants": {
+        "description": "Fine dining, bistrot, street food e tavoli sul Danubio"
+      },
+      "cafes": {
+        "description": "Caffè specialty, brunch, dessert bar e locali tutto il giorno"
+      },
+      "culture": {
+        "description": "Passeggiate d'arte, circoli culturali e meetup locali"
+      }
+    },
+    "guides": [
+      {
+        "id": "guide-belvaros",
+        "title": "Vita notturna e ristorazione a Belváros",
+        "desc": "Bar sul Danubio, bistrot classici e cucine tardive nel centro.",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "tone": "orange",
+        "ctaLabel": "Esplora guida",
+        "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
+      },
+      {
+        "id": "guide-jewish-quarter",
+        "title": "Ruin bar del Quartiere ebraico",
+        "desc": "Ruin pub, street food ed energia da festa a Erzsébetváros.",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "tone": "teal",
+        "ctaLabel": "Esplora guida",
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+      },
+      {
+        "id": "guide-andrassy",
+        "title": "Striscia culturale di Andrássy",
+        "desc": "Gallerie, caffè e serate eleganti a Terézváros.",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "tone": "pink",
+        "ctaLabel": "Esplora guida",
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+      },
+      {
+        "id": "guide-buda",
+        "title": "Castello di Buda e panorami",
+        "desc": "Wine bar sul castello, terme e terrazze al tramonto.",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "tone": "blue",
+        "ctaLabel": "Esplora guida",
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+      }
+    ],
+    "howItWorksSteps": [
+      {
+        "step": 1,
+        "title": "Scegli il quartiere",
+        "desc": "Inizia da dove alloggi o esci stasera.",
+        "tone": "orange",
+        "icon": "map-pin"
+      },
+      {
+        "step": 2,
+        "title": "Confronta le opzioni",
+        "desc": "Atmosfera, prezzi, orari e tag in un solo posto.",
+        "tone": "teal",
+        "icon": "list-checks"
+      },
+      {
+        "step": 3,
+        "title": "Salva, condividi e pianifica",
+        "desc": "Preferiti, condivisione e budget della serata.",
+        "tone": "pink",
+        "icon": "heart"
+      }
+    ]
   },
   "notFound": {
     "code": "404",
@@ -231,5 +374,100 @@
     "ctaEvents": "Trova locali veri",
     "statLabel": "Probabilità che questa URL esista",
     "statValue": "0,0%"
+  },
+  "trust": {
+    "pillars": [
+      {
+        "title": "Locale per design",
+        "desc": "Schede di Budapest per quartiere e zona.",
+        "tone": "orange",
+        "icon": "compass"
+      },
+      {
+        "title": "Dettagli utili",
+        "desc": "Orari, atmosfera, prezzi e tag in un posto.",
+        "tone": "teal",
+        "icon": "shield-check"
+      },
+      {
+        "title": "Pronto per la notte",
+        "desc": "Per residenti e visitatori che organizzano la serata.",
+        "tone": "pink",
+        "icon": "users"
+      },
+      {
+        "title": "Salva e confronta",
+        "desc": "Segna i locali e stima la spesa.",
+        "tone": "blue",
+        "icon": "calculator"
+      }
+    ]
+  },
+  "neighborhood": {
+    "label": "Zona",
+    "all": "Tutti",
+    "vaciUtca": "Váci utca",
+    "deakTer": "Deák tér",
+    "parliament": "Parlamento",
+    "danubePromenade": "Lungodanubio",
+    "innerCity": "Città interna",
+    "andrassyUt": "Andrássy út",
+    "opera": "Opera",
+    "oktogon": "Oktogon",
+    "kiralyUtca": "Király utca",
+    "lisztFerencTer": "Liszt Ferenc tér",
+    "jewishQuarter": "Quartiere ebraico",
+    "gozsduUdvar": "Gozsdu Udvar",
+    "kazinczyUtca": "Kazinczy utca",
+    "wesselenyiUtca": "Wesselényi utca",
+    "rakocziTer": "Rákóczi tér",
+    "corvinNegyed": "Quartiere Corvin",
+    "muegyetem": "Műegyetem",
+    "nagytemplomUtca": "Nagytemplom utca",
+    "borarosTer": "Boráros tér",
+    "millenniumiVaroskozpont": "Centro Millennium",
+    "castleDistrict": "Quartiere del Castello",
+    "gellertHill": "Collina Gellért",
+    "taban": "Tabán",
+    "rozsadomb": "Rózsadomb",
+    "szentGellertTer": "Szent Gellért tér",
+    "obudaIsland": "Isola Óbuda",
+    "aquincum": "Aquincum",
+    "kolosyTer": "Kolosy tér",
+    "becsiUt": "Bécsi út",
+    "mainSquareObuda": "Piazza principale Óbuda",
+    "moriczZsigmondKorut": "Móricz Zsigmond körút",
+    "gellertBathsArea": "Area terme Gellért",
+    "infopark": "Infopark",
+    "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
+    "bikasPark": "Bikás park"
+  },
+  "activityType": {
+    "liveMusic": "Musica dal vivo",
+    "djSets": "DJ set",
+    "rooftop": "Rooftop",
+    "ruinBar": "Ruin bar",
+    "fineDining": "Fine dining",
+    "streetFood": "Street food",
+    "wineBar": "Wine bar",
+    "craftBeer": "Birra artigianale",
+    "coffeeBrunch": "Caffè e brunch",
+    "gallery": "Galleria",
+    "theatre": "Teatro",
+    "festival": "Festival",
+    "boatParty": "Boat party",
+    "thermalBath": "Terme",
+    "jazz": "Jazz",
+    "electronic": "Elettronica",
+    "cocktails": "Cocktail",
+    "lateKitchen": "Cucina tardiva"
+  },
+  "badge": {
+    "featured": "In evidenza",
+    "popular": "Popolare",
+    "new": "Nuovo",
+    "staffPick": "Scelta del team",
+    "hiddenGem": "Perla nascosta",
+    "weekendVibes": "Vibes weekend"
   }
 }

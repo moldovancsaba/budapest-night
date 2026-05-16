@@ -26,8 +26,8 @@ async function main() {
   const db = client.db(dbName);
   const site = await db.collection("site").findOne({ _id: "main" });
   const media = {
-    homeHeroUrl: process.env.NEXT_PUBLIC_IMG_BB_HOME_HERO || "https://i.ibb.co/GQCgxnm0/cbe8e6335604.jpg",
-    discoverHeroUrl: process.env.NEXT_PUBLIC_IMG_BB_DISCOVER_HERO || "https://i.ibb.co/HLd5nwcK/27a9829853a0.jpg",
+    homeHeroUrl: process.env.NEXT_PUBLIC_IMG_BB_HOME_HERO || "https://i.ibb.co/VWwV2Qt6/6699c3090ff3.jpg",
+    discoverHeroUrl: process.env.NEXT_PUBLIC_IMG_BB_DISCOVER_HERO || "https://i.ibb.co/4g3Bf6n6/53e86654299f.jpg",
   };
   const guides = Array.isArray(site?.guides)
     ? site.guides.map((g) => {

@@ -2,9 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { activityTypeMessageKey } from "@/data/activityTypeKeys";
+import { badgeMessageKey } from "@/data/badgeKeys";
+import { MEETUP_CADENCE_KEY, MEETUP_GROUP_TYPE_KEY } from "@/data/meetupKeys";
 import { neighborhoodMessageKey } from "@/data/neighborhoodKeys";
 import type { Category, Provider, AgeRange, DayTimeTag } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
+import type { MeetupCadence, MeetupGroupType } from "@/types/meetup";
 
 const DISTRICT_KEY: Record<Exclude<Borough, never>, string> = {
   Belváros: "belvaros",
@@ -98,4 +101,67 @@ export function useVenueSharePriceLine() {
     if (p.main.startsWith("€")) return `${p.main}${p.suffix}`;
     return p.main;
   };
+}
+
+export function useBadgeLabel() {
+  const t = useTranslations("badge");
+  return (canonical: string) => {
+    const key = badgeMessageKey(canonical);
+    return key ? t(key) : canonical;
+  };
+}
+
+export function useMeetupGroupTypeLabel() {
+  const t = useTranslations("meetup.groupType");
+  return (type: MeetupGroupType | string) => {
+    const key = MEETUP_GROUP_TYPE_KEY[type as MeetupGroupType];
+    return key ? t(key) : type;
+  };
+}
+
+export function useMeetupCadenceLabel() {
+  const t = useTranslations("meetup.cadence");
+  return (cadence: MeetupCadence | string) => {
+    const key = MEETUP_CADENCE_KEY[cadence as MeetupCadence];
+    return key ? t(key) : cadence;
+  };
+}
+
+/** Translate account preference chips (canonical English values in JSON). */
+export function usePreferenceOptionLabel() {
+  const ageLabel = useAgeRangeLabel();
+  const dayLabel = useDayTimeLabel();
+  const activityLabel = useActivityTypeLabel();
+  const categoryLabel = useCategoryLabel();
+  const tNav = useTranslations("nav");
+
+  return (option: string) => {
+    if (option === "Culture") return tNav("culture");
+    if (activityTypeMessageKey(option)) return activityLabel(option);
+    const categories: Category[] = ["Events", "Parties", "Restaurants", "Cafés"];
+    if (categories.includes(option as Category)) return categoryLabel(option as Category);
+    const ages: AgeRange[] = ["All ages", "Family", "18+", "21+", "Late night"];
+    if (ages.includes(option as AgeRange)) return ageLabel(option as AgeRange);
+    const days: DayTimeTag[] = ["Weekday", "Weekend", "Morning", "Afternoon", "Evening", "Late night"];
+    if (days.includes(option as DayTimeTag)) return dayLabel(option as DayTimeTag);
+    return option;
+  };
+}
+
+export function useVenueShareSummary() {
+  const t = useTranslations("venue");
+  const categoryLabel = useCategoryLabel();
+  const sharePrice = useVenueSharePriceLine();
+  const neighborhoodLabel = useNeighborhoodLabel();
+  const districtLabel = useDistrictLabel();
+
+  return (provider: Pick<Provider, "name" | "category" | "borough" | "neighborhood" | "shortDescription" | "pricePerClass">) =>
+    t("shareSummary", {
+      name: provider.name,
+      category: categoryLabel(provider.category),
+      neighborhood: neighborhoodLabel(provider.neighborhood),
+      borough: districtLabel(provider.borough),
+      price: sharePrice(provider),
+      description: provider.shortDescription,
+    });
 }

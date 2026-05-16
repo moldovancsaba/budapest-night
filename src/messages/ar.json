@@ -108,7 +108,15 @@
     "priceVaries": "سعر متغير",
     "perTicket": "/تذكرة",
     "perCover": "/دخول",
-    "perPerson": "/شخص"
+    "perPerson": "/شخص",
+    "copyLink": "نسخ الرابط",
+    "photoCounter": "{current} / {total}",
+    "reviewsCount": "({count} مراجعات)",
+    "connectVenue": "تواصل مع هذا المكان",
+    "savedGroup": "تم حفظ المجموعة",
+    "removeGroupSaved": "أُزيل من المحفوظات",
+    "saveGroup": "حفظ المجموعة",
+    "shareSummary": "{name} — {category} في {neighborhood}، {borough}. {price}. {description}"
   },
   "discover": {
     "eyebrow": "بودابست بعد الغروب",
@@ -128,7 +136,10 @@
       "Parties": "حانات الأنقاض ونوادٍ وليالي دي جي وحفلات متأخرة",
       "Restaurants": "مطاعم بسترو ومطاعم راقية وطاولات على الدانوب",
       "Cafés": "قهوة وبرانش وحلويات وأماكن طوال اليوم"
-    }
+    },
+    "loading": "جاري تحميل الأماكن…",
+    "loadErrorTitle": "فشل التحميل",
+    "loadErrorMessage": "تحقق من MONGODB_URI والشبكة."
   },
   "saved": {
     "title": "أماكن محفوظة",
@@ -149,7 +160,20 @@
     "similarNearby": "دوائر مشابهة قريبة",
     "shareTitle": "مشاركة {name}",
     "shareDescription": "شارك هذه الدائرة الثقافية مع صديق.",
-    "onPlatform": "{name} على Budapest Night"
+    "onPlatform": "{name} على Budapest Night",
+    "groupType": {
+      "artGallery": "فن ومعرض",
+      "liveCulture": "ثقافة حية",
+      "foodWine": "دائرة طعام ونبيذ",
+      "nightlifeCrew": "طاقم السهر",
+      "localCreators": "مبدعون محليون"
+    },
+    "cadence": {
+      "weekly": "أسبوعي",
+      "monthly": "شهري",
+      "weekend": "نهاية الأسبوع",
+      "popup": "مؤقت"
+    }
   },
   "assistant": {
     "title": "دليل الليل",
@@ -170,7 +194,17 @@
     "increaseGuests": "زيادة الضيوف",
     "remove": "إزالة {name}",
     "guest": "ضيف",
-    "guests": "ضيوف"
+    "guests": "ضيوف",
+    "title": "ميزانية الليلة",
+    "subtitle": "قدّر إجمالي إنفاقك على الأماكن والفعاليات.",
+    "clearAllCta": "مسح الكل",
+    "emptyTitle": "الحاسبة فارغة",
+    "emptyMessage": "أضف أماكن لتقدير ميزانية ليلتك.",
+    "asideTitle": "الإجمالي التقديري",
+    "asideSubtitle": "بناءً على الأماكن والفعاليات المضافة.",
+    "asideFootnote": "للتخطيط فقط. أكد الأسعار مع كل مكان.",
+    "providerLinePriceSuffix": "/شخص",
+    "estimatedTotalLabel": "الإجمالي التقديري"
   },
   "split": {
     "eyebrow": "أداة مباشرة",
@@ -211,7 +245,116 @@
     "fromBudgetCta": "قسّم بين المجموعة"
   },
   "home": {
-    "explore": "استكشف"
+    "heroTitle": "اكتشف بودابست بعد الغروب",
+    "heroSubtitle": "فعاليات وحفلات ومطاعم ومقاهٍ وثقافة — حسب المنطقة والحي.",
+    "heroPrimaryCta": "ابدأ الاستكشاف",
+    "heroSecondaryCta": "تصفح حسب المنطقة",
+    "heroTagline": "نيون. محلي. صُمم لسهرات بودابست.",
+    "heroImageAlt": "أضواء بودابست ليلاً على نهر الدانوب",
+    "categoriesTitle": "أي ليلة تريد؟",
+    "exploreCta": "استكشف",
+    "neighborhoodSectionTitle": "اعثر على الليلة في حيك",
+    "popularNeighborhoodsCaption": "أماكن شائعة في {district}",
+    "allDistrictsHint": "تصفح كل المناطق في اكتشف، أو اختر منطقة أعلاه للأحياء.",
+    "openDiscoverAll": "افتح اكتشف (كل بودابست)",
+    "viewAllNeighborhoods": "عرض الكل",
+    "guidesSectionTitle": "أدلة المناطق المميزة",
+    "guidesViewAllLabel": "كل الأدلة",
+    "guideCtaDefault": "استكشف الدليل",
+    "howItWorksSectionTitle": "كيف يعمل Budapest Night",
+    "popularPicksSectionTitle": "اختيارات نيون للبداية",
+    "popularPicksViewAllLabel": "عرض الكل",
+    "culturePickBadge": "اختيار ثقافي",
+    "cultureCircleLabel": "دائرة ثقافية",
+    "freeToJoin": "مجاني",
+    "newsletterTitle": "أفضل ليالي بودابست لمنطقتك",
+    "newsletterSubtitle": "فعاليات وحفلات ومطاعم ومقاهٍ وثقافة — في بريدك.",
+    "newsletterPlaceholder": "بريدك الإلكتروني",
+    "newsletterCta": "سجّلني!",
+    "newsletterFinePrint": "بدون إزعاج. إلغاء في أي وقت.",
+    "newsletterSuccess": "أنت على القائمة! سنتواصل قريباً.",
+    "categories": {
+      "events": {
+        "description": "حفلات ومهرجانات وحفلات قوارب وأسطح"
+      },
+      "parties": {
+        "description": "نوادٍ وحانات أنقاض وDJ وليالي موضوعية"
+      },
+      "restaurants": {
+        "description": "مطاعم راقية وبسترو وطعام شارع وطاولات على الدانوب"
+      },
+      "cafes": {
+        "description": "قهوة مختصة وبرنش وحلويات ومقاهٍ طوال اليوم"
+      },
+      "culture": {
+        "description": "جولات فنية ودوائر ثقافية ولقاءات محلية"
+      }
+    },
+    "guides": [
+      {
+        "id": "guide-belvaros",
+        "title": "حياة ليلية ومطاعم في بلفاروس",
+        "desc": "حانات على الدانوب ومطابخ متأخرة في وسط المدينة.",
+        "borough": "بلفاروس",
+        "neighborhood": "المدينة الداخلية",
+        "tone": "orange",
+        "ctaLabel": "استكشف الدليل",
+        "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
+      },
+      {
+        "id": "guide-jewish-quarter",
+        "title": "حانات الأنقاض في الحي اليهودي",
+        "desc": "حانات أنقاض وطعام شارع وحفلات في إرزسيبيتفاروش.",
+        "borough": "إرزسيبيتفاروش",
+        "neighborhood": "الحي اليهودي",
+        "tone": "teal",
+        "ctaLabel": "استكشف الدليل",
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+      },
+      {
+        "id": "guide-andrassy",
+        "title": "شريط أندراشي الثقافي",
+        "desc": "معارض ومقاهٍ وأمسيات أنيقة في تيريزفاروش.",
+        "borough": "تيريزفاروش",
+        "neighborhood": "أندراشي",
+        "tone": "pink",
+        "ctaLabel": "استكشف الدليل",
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+      },
+      {
+        "id": "guide-buda",
+        "title": "قلعة بودا والإطلالات",
+        "desc": "حانات نبيذ وحمامات وتراسات عند الغروب.",
+        "borough": "بودا",
+        "neighborhood": "حي القلعة",
+        "tone": "blue",
+        "ctaLabel": "استكشف الدليل",
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+      }
+    ],
+    "howItWorksSteps": [
+      {
+        "step": 1,
+        "title": "اختر المنطقة",
+        "desc": "ابدأ حيث تسكن أو تخرج الليلة.",
+        "tone": "orange",
+        "icon": "map-pin"
+      },
+      {
+        "step": 2,
+        "title": "قارن الخيارات",
+        "desc": "الأجواء والأسعار والساعات والوسوم في مكان واحد.",
+        "tone": "teal",
+        "icon": "list-checks"
+      },
+      {
+        "step": 3,
+        "title": "احفظ وشارك وخطط",
+        "desc": "المفضلة والمشاركة وميزانية الليلة.",
+        "tone": "pink",
+        "icon": "heart"
+      }
+    ]
   },
   "notFound": {
     "code": "404",
@@ -231,5 +374,100 @@
     "ctaEvents": "اعثر على أماكن حقيقية",
     "statLabel": "احتمال أن هذا الرابط موجود",
     "statValue": "0.0%"
+  },
+  "trust": {
+    "pillars": [
+      {
+        "title": "محلي بالتصميم",
+        "desc": "قوائم بودابست حسب المنطقة والحي.",
+        "tone": "orange",
+        "icon": "compass"
+      },
+      {
+        "title": "تفاصيل مفيدة",
+        "desc": "ساعات وأجواء وأسعار ووسوم في مكان واحد.",
+        "tone": "teal",
+        "icon": "shield-check"
+      },
+      {
+        "title": "جاهز لليل",
+        "desc": "للسكان والزوار الذين يخططون للسهرة.",
+        "tone": "pink",
+        "icon": "users"
+      },
+      {
+        "title": "احفظ وقارن",
+        "desc": "احفظ الأماكن وقدّر الإنفاق.",
+        "tone": "blue",
+        "icon": "calculator"
+      }
+    ]
+  },
+  "neighborhood": {
+    "label": "الحي",
+    "all": "الكل",
+    "vaciUtca": "Váci utca",
+    "deakTer": "Deák tér",
+    "parliament": "البرلمان",
+    "danubePromenade": "واجهة الدانوب",
+    "innerCity": "المدينة الداخلية",
+    "andrassyUt": "Andrássy út",
+    "opera": "الأوبرا",
+    "oktogon": "Oktogon",
+    "kiralyUtca": "Király utca",
+    "lisztFerencTer": "Liszt Ferenc tér",
+    "jewishQuarter": "الحي اليهودي",
+    "gozsduUdvar": "Gozsdu Udvar",
+    "kazinczyUtca": "Kazinczy utca",
+    "wesselenyiUtca": "Wesselényi utca",
+    "rakocziTer": "Rákóczi tér",
+    "corvinNegyed": "حي كورفين",
+    "muegyetem": "Műegyetem",
+    "nagytemplomUtca": "Nagytemplom utca",
+    "borarosTer": "Boráros tér",
+    "millenniumiVaroskozpont": "مركز ميلينيوم",
+    "castleDistrict": "حي القلعة",
+    "gellertHill": "تل جيليرت",
+    "taban": "Tabán",
+    "rozsadomb": "Rózsadomb",
+    "szentGellertTer": "Szent Gellért tér",
+    "obudaIsland": "جزيرة أوبودا",
+    "aquincum": "Aquincum",
+    "kolosyTer": "Kolosy tér",
+    "becsiUt": "Bécsi út",
+    "mainSquareObuda": "الساحة الرئيسية أوبودا",
+    "moriczZsigmondKorut": "Móricz Zsigmond körút",
+    "gellertBathsArea": "منطقة حمامات جيليرت",
+    "infopark": "Infopark",
+    "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
+    "bikasPark": "Bikás park"
+  },
+  "activityType": {
+    "liveMusic": "موسيقى حية",
+    "djSets": "دي جي",
+    "rooftop": "سطح",
+    "ruinBar": "حانة أنقاض",
+    "fineDining": "مطعم راقٍ",
+    "streetFood": "طعام شارع",
+    "wineBar": "بار نبيذ",
+    "craftBeer": "بيرة حرفية",
+    "coffeeBrunch": "قهوة وبرنش",
+    "gallery": "معرض",
+    "theatre": "مسرح",
+    "festival": "مهرجان",
+    "boatParty": "حفلة قارب",
+    "thermalBath": "حمامات",
+    "jazz": "جاز",
+    "electronic": "إلكتروني",
+    "cocktails": "كوكتيلات",
+    "lateKitchen": "مطبخ متأخر"
+  },
+  "badge": {
+    "featured": "مميز",
+    "popular": "شائع",
+    "new": "جديد",
+    "staffPick": "اختيار الفريق",
+    "hiddenGem": "جوهرة مخفية",
+    "weekendVibes": "أجواء نهاية الأسبوع"
   }
 }

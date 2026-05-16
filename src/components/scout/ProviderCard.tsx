@@ -9,6 +9,8 @@ import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useActivityTypeLabel,
   useAgeRangeLabel,
+  useBadgeLabel,
+  useDayTimeLabel,
   useFormatVenuePrice,
   useVenueLocationLine,
 } from "@/hooks/useVenueDisplay";
@@ -25,7 +27,9 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
   const { add } = useCalculator();
   const t = useTranslations("venue");
   const ageLabel = useAgeRangeLabel();
+  const dayLabel = useDayTimeLabel();
   const activityLabel = useActivityTypeLabel();
+  const badgeLabel = useBadgeLabel();
   const locationLine = useVenueLocationLine();
   const formatPrice = useFormatVenuePrice();
   const saved = isSaved(provider.id);
@@ -45,7 +49,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
         />
         {provider.badges[0] && (
           <span className="absolute left-3 top-3 rounded-full bg-teal px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-teal-foreground shadow-sm">
-            {provider.badges[0]}
+            {badgeLabel(provider.badges[0])}
           </span>
         )}
         {provider.announcementBadge && (
@@ -90,7 +94,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
           ))}
           {provider.dayTimeTags.slice(0, 2).map((d) => (
             <span key={d} className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-              {d}
+              {dayLabel(d)}
             </span>
           ))}
         </div>

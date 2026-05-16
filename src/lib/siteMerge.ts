@@ -54,6 +54,7 @@ export function mergeSiteDocument(doc: Partial<SiteDoc> | null | undefined): Sit
   const merged = { _id: "main" as const, ...DEFAULT_SITE, ...rest } as SiteDoc;
   merged.account = mergeAccount(DEFAULT_SITE.account, accountPatch);
   merged.calculator = mergeCalculator(DEFAULT_SITE.calculator, calculatorPatch);
+  if (!merged.logoUrl?.trim()) merged.logoUrl = DEFAULT_SITE.logoUrl;
   if (!merged.homeHeroUrl?.trim()) merged.homeHeroUrl = DEFAULT_SITE.homeHeroUrl;
   if (!merged.discoverHeroUrl?.trim()) merged.discoverHeroUrl = DEFAULT_SITE.discoverHeroUrl;
   if (!merged.guides?.length) merged.guides = DEFAULT_SITE.guides;

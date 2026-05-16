@@ -1,17 +1,14 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
-import { useSiteCatalog } from "@/hooks/useCatalog";
+import { useTranslations } from "next-intl";
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
-import type { AppLocale } from "@/i18n/config";
 import type {
-  SiteAccountSettings,
-  SiteCalculatorCopy,
   SiteGuide,
   SiteHowStep,
   SiteTrustPillar,
+  SiteCalculatorCopy,
+  SiteAccountSettings,
 } from "@/types/site";
-import { DEFAULT_SITE } from "@/types/site";
 
 function withDistinctGuideImages(guides: SiteGuide[]): SiteGuide[] {
   const generic = CMS_MEDIA.guideCard;
@@ -22,18 +19,9 @@ function withDistinctGuideImages(guides: SiteGuide[]): SiteGuide[] {
   });
 }
 
-/** English may use CMS overrides; all other locales use message files only. */
-function useEnglishCms<T>(cmsValue: T | undefined, localized: T): T {
-  const locale = useLocale() as AppLocale;
-  if (locale === "en" && cmsValue !== undefined) return cmsValue;
-  return localized;
-}
-
 export function useCalculatorCopy(): SiteCalculatorCopy {
   const t = useTranslations("calculator");
-  const { data: site } = useSiteCatalog();
-
-  const localized: SiteCalculatorCopy = {
+  return {
     title: t("title"),
     subtitle: t("subtitle"),
     clearAllCta: t("clearAllCta"),
@@ -45,26 +33,16 @@ export function useCalculatorCopy(): SiteCalculatorCopy {
     providerLinePriceSuffix: t("providerLinePriceSuffix"),
     estimatedTotalLabel: t("estimatedTotalLabel"),
   };
-
-  return useEnglishCms(site?.calculator, localized);
 }
 
 export function useTrustPillars(): SiteTrustPillar[] {
   const t = useTranslations("trust");
-  const { data: site } = useSiteCatalog();
-  const localized = t.raw("pillars") as SiteTrustPillar[];
-  return useEnglishCms(site?.trustPillars, localized);
+  return t.raw("pillars") as SiteTrustPillar[];
 }
 
 export function useAccountCopy(): SiteAccountSettings {
-  const locale = useLocale() as AppLocale;
   const t = useTranslations("account");
-  const { data: site } = useSiteCatalog();
-
-  if (locale === "en" && site?.account) return site.account;
-
-  const localized = t.raw("settings") as SiteAccountSettings | undefined;
-  return localized ?? DEFAULT_SITE.account;
+  return t.raw("settings") as SiteAccountSettings;
 }
 
 export type HomeCopy = {
@@ -108,11 +86,8 @@ export type HomeCopy = {
 };
 
 export function useHomeCopy(): HomeCopy {
-  const locale = useLocale() as AppLocale;
   const t = useTranslations("home");
-  const { data: site } = useSiteCatalog();
-
-  const localized: HomeCopy = {
+  return {
     heroTitle: t("heroTitle"),
     heroSubtitle: t("heroSubtitle"),
     heroPrimaryCta: t("heroPrimaryCta"),
@@ -145,41 +120,12 @@ export function useHomeCopy(): HomeCopy {
     guides: withDistinctGuideImages(t.raw("guides") as SiteGuide[]),
     howItWorksSteps: t.raw("howItWorksSteps") as SiteHowStep[],
   };
-
-  if (locale !== "en" || !site) return localized;
-
-  return {
-    ...localized,
-    heroTitle: site.homeHeroTitle,
-    heroSubtitle: site.homeHeroSubtitle,
-    heroPrimaryCta: site.homeHeroPrimaryCta,
-    heroSecondaryCta: site.homeHeroSecondaryCta,
-    heroTagline: site.homeHeroTagline,
-    categoriesTitle: site.homeCategoriesTitle,
-    neighborhoodSectionTitle: site.neighborhoodSectionTitle,
-    popularNeighborhoodsCaption: site.popularNeighborhoodsCaption,
-    guidesSectionTitle: site.guidesSectionTitle,
-    guidesViewAllLabel: site.guidesViewAllLabel,
-    howItWorksSectionTitle: site.howItWorksSectionTitle,
-    popularPicksSectionTitle: site.popularPicksSectionTitle,
-    popularPicksViewAllLabel: site.popularPicksViewAllLabel,
-    newsletterTitle: site.newsletterTitle,
-    newsletterSubtitle: site.newsletterSubtitle,
-    newsletterPlaceholder: site.newsletterPlaceholder,
-    newsletterCta: site.newsletterCta,
-    newsletterFinePrint: site.newsletterFinePrint,
-    guides: withDistinctGuideImages(site.guides?.length ? site.guides : localized.guides),
-    howItWorksSteps: site.howItWorksSteps?.length ? site.howItWorksSteps : localized.howItWorksSteps,
-  };
 }
 
 export function useDiscoverChrome() {
-  const locale = useLocale() as AppLocale;
   const t = useTranslations("discover");
-  const { data: site } = useSiteCatalog();
-
   return {
-    eyebrow: locale === "en" && site?.discoverEyebrow ? site.discoverEyebrow : t("eyebrow"),
-    tagline: locale === "en" && site?.discoverTagline ? site.discoverTagline : t("tagline"),
+    eyebrow: t("eyebrow"),
+    tagline: t("tagline"),
   };
 }

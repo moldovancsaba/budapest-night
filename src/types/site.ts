@@ -1,4 +1,5 @@
 import type { Borough } from "@/types/provider";
+import { APP_LOGO_PATH } from "@/config/brand";
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 
 /** Lucide icon keys used by home marketing blocks (stored in Mongo). */
@@ -222,7 +223,7 @@ Tone: energetic, concise, neon-city cool. Use short paragraphs and bullet points
 };
 
 export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
-  logoUrl: "",
+  logoUrl: APP_LOGO_PATH,
   homeHeroUrl: CMS_MEDIA.homeHero,
   discoverHeroUrl: CMS_MEDIA.discoverHero,
   homeHeroTitle: "Discover Budapest after dark",

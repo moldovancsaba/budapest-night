@@ -6,18 +6,27 @@ import {
   CURATOR_AGE_RANGES,
   CURATOR_DAY_TAGS,
 } from "@/lib/curator/constants";
-import { locales } from "@/i18n/config";
+import { PROVIDER_INGEST_LOCALES } from "@/lib/curator/localeIngestRules";
 import { isImgBbHttpsImageUrl } from "@/lib/imgbbUrl";
 
-const localeKey = z.enum(locales);
+const sourcesLine = (s: string) => /Sources:\s*https?:\/\//i.test(s);
 
-const providerLocaleContentSchema = z
+/** One non-English locale block for curated ingest (see localeIngestRules). */
+export const providerLocaleIngestEntrySchema = z
   .object({
-    name: z.string().min(2).max(160).optional(),
-    shortDescription: z.string().min(10).max(400).optional(),
-    longDescription: z.string().min(40).max(8000).optional(),
+    name: z.string().min(2).max(160),
+    shortDescription: z.string().min(10).max(400),
+    longDescription: z
+      .string()
+      .min(40)
+      .max(8000)
+      .refine(sourcesLine, { message: "longDescription must include Sources: https://..." }),
+    slug: z
+      .string()
+      .min(2)
+      .max(80)
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     address: z.string().min(8).max(200).optional(),
-    activityTypes: z.array(z.string().min(1).max(60)).max(12).optional(),
     announcementTitle: z.string().max(120).optional(),
     announcementDescription: z.string().max(500).optional(),
     announcementBadge: z.string().max(60).optional(),
@@ -26,13 +35,15 @@ const providerLocaleContentSchema = z
       .max(2000)
       .refine((s) => !s.trim() || isImgBbHttpsImageUrl(s), { message: "locale image must be ImgBB https URL" })
       .optional(),
-    slug: z
-      .string()
-      .min(2)
-      .max(80)
-      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
-      .optional(),
   })
+  .strict();
+
+const providerLocalesIngestSchema = z
+  .object(
+    Object.fromEntries(
+      PROVIDER_INGEST_LOCALES.map((code) => [code, providerLocaleIngestEntrySchema]),
+    ) as Record<(typeof PROVIDER_INGEST_LOCALES)[number], typeof providerLocaleIngestEntrySchema>,
+  )
   .strict();
 
 const category = z.enum(CURATOR_CATEGORIES);
@@ -79,7 +90,7 @@ export const curatedProviderSchema = z
     announcementDescription: z.string().max(500).optional(),
     announcementBadge: z.string().max(60).optional(),
     bookingEnabled: z.boolean().optional(),
-    locales: z.record(localeKey, providerLocaleContentSchema).optional(),
+    locales: providerLocalesIngestSchema,
   })
   .strict();
 

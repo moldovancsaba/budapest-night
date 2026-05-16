@@ -12,14 +12,16 @@ import { ProviderCard } from "../ProviderCard";
 import { ProviderMap } from "./ProviderMap";
 import { resolveImageUrl } from "@/lib/resolveImageUrl";
 import { CMS_MEDIA } from "@/config/defaultMedia";
-import { formatVenuePrice, venueSharePriceLine } from "@/lib/venueDisplay";
 import {
   useActivityTypeLabel,
   useAgeRangeLabel,
+  useBadgeLabel,
   useCategoryLabel,
   useDayTimeLabel,
+  useFormatVenuePrice,
+  useVenueShareSummary,
 } from "@/hooks/useVenueDisplay";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
 
@@ -35,10 +37,14 @@ export function ProviderProfile({
   onOpenAnother: (p: Provider) => void;
 }) {
   const locale = useLocale() as AppLocale;
+  const t = useTranslations("venue");
   const categoryLabel = useCategoryLabel();
   const activityLabel = useActivityTypeLabel();
   const ageLabel = useAgeRangeLabel();
   const dayLabel = useDayTimeLabel();
+  const badgeLabel = useBadgeLabel();
+  const formatPrice = useFormatVenuePrice();
+  const shareSummary = useVenueShareSummary();
   const { data: allProviders = [] } = useProvidersCatalog();
   const { isSaved, toggle } = useSaved();
   const { add } = useCalculator();
@@ -63,7 +69,7 @@ export function ProviderProfile({
   if (!provider) return null;
 
   const saved = isSaved(provider.id);
-  const price = formatVenuePrice(provider);
+  const price = formatPrice(provider);
   const current = gallery.length > 0 ? gallery[Math.min(photoIdx, gallery.length - 1)] : undefined;
 
   const similar = allProviders.filter(
@@ -73,13 +79,13 @@ export function ProviderProfile({
   const shareUrl = buildAbsoluteVenueUrl(provider, locale);
 
   const shareEmail = () => {
-    const priceLine = venueSharePriceLine(provider);
-    const body = `Check out ${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}.\n\n${provider.shortDescription}\n${priceLine}.\n\n${shareUrl}`;
-    window.open(`mailto:?subject=${encodeURIComponent(provider.name + " on Budapest Night")}&body=${encodeURIComponent(body)}`);
+    const body = `${shareSummary(provider)}\n\n${shareUrl}`;
+    window.open(
+      `mailto:?subject=${encodeURIComponent(t("shareTitle", { name: provider.name }))}&body=${encodeURIComponent(body)}`,
+    );
   };
   const shareWhatsapp = () => {
-    const priceLine = venueSharePriceLine(provider);
-    const text = `${provider.name} (${provider.category}) in ${provider.neighborhood}, ${provider.borough} — ${priceLine}. ${provider.shortDescription} ${shareUrl}`;
+    const text = `${shareSummary(provider)} ${shareUrl}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -90,34 +96,34 @@ export function ProviderProfile({
           <CdnImage fill resolveBase={provider.website} src={current} alt={provider.name} />
           {provider.badges[0] && (
             <span className="absolute left-5 top-5 rounded-full bg-teal px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-teal-foreground">
-              {provider.badges[0]}
+              {badgeLabel(provider.badges[0])}
             </span>
           )}
           {gallery.length > 1 && (
             <>
               <button
                 onClick={() => setPhotoIdx((i) => (i - 1 + gallery.length) % gallery.length)}
-                aria-label="Previous photo"
+                aria-label={t("prevPhoto")}
                 className="absolute left-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card/95 shadow-sm backdrop-blur hover:bg-card"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={() => setPhotoIdx((i) => (i + 1) % gallery.length)}
-                aria-label="Next photo"
+                aria-label={t("nextPhoto")}
                 className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card/95 shadow-sm backdrop-blur hover:bg-card"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
               <span className="absolute right-3 top-3 rounded-full bg-foreground/70 px-2.5 py-1 text-[11px] font-semibold text-background">
-                {photoIdx + 1} / {gallery.length}
+                {t("photoCounter", { current: photoIdx + 1, total: gallery.length })}
               </span>
               <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
                 {gallery.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setPhotoIdx(i)}
-                    aria-label={`Go to photo ${i + 1}`}
+                    aria-label={t("goToPhoto", { n: i + 1 })}
                     className={cn(
                       "h-2 rounded-full transition-all",
                       i === photoIdx ? "w-6 bg-teal" : "w-2 bg-card/80",
@@ -143,7 +149,7 @@ export function ProviderProfile({
               </div>
               <button
                 onClick={() => setBannerOpen(false)}
-                aria-label="Dismiss announcement"
+                aria-label={t("dismissAnnouncement")}
                 className="rounded-full p-1 text-muted-foreground hover:bg-card"
               >
                 <X className="h-4 w-4" />
@@ -157,7 +163,7 @@ export function ProviderProfile({
                 <button
                   key={i}
                   onClick={() => setPhotoIdx(i)}
-                  aria-label={`View photo ${i + 1}`}
+                  aria-label={t("viewPhoto", { n: i + 1 })}
                   className={cn(
                     "relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-all",
                     i === photoIdx ? "border-teal" : "border-transparent opacity-70 hover:opacity-100",
@@ -180,7 +186,7 @@ export function ProviderProfile({
               <span className="flex items-center gap-1">
                 <Star className="h-4 w-4 fill-orange text-orange" />
                 <span className="font-semibold text-foreground">{provider.rating}</span>
-                <span className="text-muted-foreground">({provider.reviewCount} reviews)</span>
+                <span className="text-muted-foreground">{t("reviewsCount", { count: provider.reviewCount })}</span>
               </span>
               <span className="text-border">|</span>
               <span className="font-display text-base">
@@ -214,41 +220,41 @@ export function ProviderProfile({
             {provider.bookingEnabled && (
               <Button
                 className="col-span-2 bg-primary text-primary-foreground hover:bg-primary/90"
-                aria-label={`Reserve at ${provider.name}`}
-                onClick={() => toast.success("Booking link coming soon. Visit the venue website or contact them directly.")}
+                aria-label={t("reserveAt", { name: provider.name })}
+                onClick={() => toast.success(t("bookingSoon"))}
               >
-                <Calendar className="h-4 w-4" /> Reserve
+                <Calendar className="h-4 w-4" /> {t("reserve")}
               </Button>
             )}
             <Button
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={() => {
                 add(provider.id);
-                toast.success(`${provider.name} added to your night budget`);
+                toast.success(t("addedToBudget", { name: provider.name }));
               }}
             >
-              <Plus className="h-4 w-4" /> Add to budget
+              <Plus className="h-4 w-4" /> {t("addToBudget")}
             </Button>
             <Button
               variant="outline"
               onClick={() => {
                 toggle(provider.id);
-                toast.success(saved ? "Removed from saved" : "Saved");
+                toast.success(saved ? t("removed") : t("saved"));
               }}
             >
               <Heart className={cn("h-4 w-4", saved && "fill-orange text-orange")} />
-              {saved ? "Saved" : "Save"}
+              {saved ? t("saved") : t("save")}
             </Button>
             <Button variant="outline" onClick={shareEmail}>
-              <Mail className="h-4 w-4" /> Email
+              <Mail className="h-4 w-4" /> {t("shareEmail")}
             </Button>
             <Button variant="outline" onClick={shareWhatsapp}>
-              <MessageCircle className="h-4 w-4" /> WhatsApp
+              <MessageCircle className="h-4 w-4" /> {t("shareWhatsapp")}
             </Button>
           </div>
 
           <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">Contact this venue</h3>
+            <h3 className="font-display text-sm font-semibold text-foreground">{t("contactVenue")}</h3>
             <div className="mt-3 space-y-2 text-sm">
               <a href={`mailto:${provider.email}`} className="flex items-center gap-2 text-foreground hover:text-teal">
                 <Mail className="h-4 w-4 text-muted-foreground" /> {provider.email}
@@ -266,7 +272,7 @@ export function ProviderProfile({
 
           {similar.length > 0 && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">More nearby</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">{t("moreNearby")}</h3>
               <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {similar.map((p) => (
                   <ProviderCard key={p.id} provider={p} onOpen={onOpenAnother} onShare={onShare} />

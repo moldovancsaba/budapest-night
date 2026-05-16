@@ -5,8 +5,13 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { MeetupLogo } from "./MeetupLogo";
 import type { MeetupGroup } from "@/types/meetup";
-import { useVenueLocationLine } from "@/hooks/useVenueDisplay";
-
+import {
+  useAgeRangeLabel,
+  useMeetupCadenceLabel,
+  useMeetupGroupTypeLabel,
+  useVenueLocationLine,
+} from "@/hooks/useVenueDisplay";
+import { useTranslations } from "next-intl";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 
@@ -17,8 +22,12 @@ interface Props {
 }
 
 export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
+  const t = useTranslations("meetup");
   const { isSaved, toggle } = useSaved();
   const locationLine = useVenueLocationLine();
+  const groupTypeLabel = useMeetupGroupTypeLabel();
+  const cadenceLabel = useMeetupCadenceLabel();
+  const ageLabel = useAgeRangeLabel();
   const saved = isSaved(group.id);
 
   return (
@@ -28,7 +37,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           fill
           resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
           src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
-          alt=""
+          alt={group.name}
         />
       </div>
       <div className="flex items-start justify-between gap-4 p-5 pb-4">
@@ -36,7 +45,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           <MeetupLogo group={group} />
           <div>
             <span className="rounded-full bg-teal-soft px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal">
-              {group.groupType}
+              {groupTypeLabel(group.groupType)}
             </span>
             <button onClick={() => onOpen(group)} className="mt-1.5 block text-left">
               <h3 className="font-display text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-teal">
@@ -53,9 +62,9 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           onClick={(e) => {
             e.stopPropagation();
             toggle(group.id);
-            toast.success(saved ? "Removed from saved" : "Saved");
+            toast.success(saved ? t("unsave") : t("save"));
           }}
-          aria-label={saved ? "Remove from saved" : "Save circle"}
+          aria-label={saved ? t("unsave") : t("save")}
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted"
         >
           <Heart className={cn("h-4 w-4", saved ? "fill-orange text-orange" : "")} />
@@ -67,11 +76,11 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           <span className="rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium text-secondary-foreground">
-            {group.ageRange}
+            {ageLabel(group.ageRange)}
           </span>
           <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
             <CalendarClock className="h-3 w-3" />
-            {group.cadence}
+            {cadenceLabel(group.cadence)}
           </span>
         </div>
       </div>
@@ -91,9 +100,9 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
 
       <div className="flex gap-2 px-5 pb-5">
         <Button onClick={() => onOpen(group)} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
-          View details
+          {t("viewDetails")}
         </Button>
-        <Button variant="outline" size="icon" aria-label="Share group" onClick={() => onShare(group)}>
+        <Button variant="outline" size="icon" aria-label={t("share")} onClick={() => onShare(group)}>
           <Share2 className="h-4 w-4" />
         </Button>
       </div>

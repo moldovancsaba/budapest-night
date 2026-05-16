@@ -6,11 +6,17 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useAccountCopy } from "@/hooks/useLocalizedSiteCopy";
-import { useCategoryLabel, useVenueLocationLine } from "@/hooks/useVenueDisplay";
+import {
+  useActivityTypeLabel,
+  useAgeRangeLabel,
+  useCategoryLabel,
+  useFormatVenuePrice,
+  usePreferenceOptionLabel,
+  useVenueLocationLine,
+} from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
 import { useSaved, useCalculator } from "@/store/useScout";
 import type { Provider, BoroughChoice, Category } from "@/types/provider";
-import { formatCrowdLabel, formatVenuePrice, venueBudgetUnit } from "@/lib/venueDisplay";
 import type { AccountSavedCategoryFilter, SiteAccountSettings } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { CdnImage } from "@/components/ui/CdnImage";
@@ -25,21 +31,6 @@ interface Props {
   onNavigate: (view: Category | "Saved" | "Calculator" | "Meet-Up Groups", location?: { borough?: BoroughChoice; neighborhood?: string }) => void;
   onOpenProvider: (p: Provider) => void;
   onShareProvider: (p: Provider) => void;
-}
-
-function priceUnitLabel(p: Provider, units: SiteAccountSettings["saved"]["priceUnits"]) {
-  switch (p.category) {
-    case "Parties":
-      return units.week;
-    case "Restaurants":
-      return units.party;
-    case "Cafés":
-      return units.visit;
-    case "Events":
-      return units.class;
-    default:
-      return venueBudgetUnit(p.category);
-  }
 }
 
 function withSaved(tab: string, savedTabId: string, sectionTabId: string) {
@@ -173,7 +164,6 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
               key={`p-${item.data.id}`}
               provider={item.data}
               card={acc.saved.card}
-              priceUnits={acc.saved.priceUnits}
               onView={() => onOpenProvider(item.data)}
               onShare={() => onShareProvider(item.data)}
               onAddToPlan={() => {
@@ -217,7 +207,6 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
 function SavedProviderCard({
   provider,
   card,
-  priceUnits,
   onView,
   onShare,
   onAddToPlan,
@@ -225,15 +214,18 @@ function SavedProviderCard({
 }: {
   provider: Provider;
   card: SiteAccountSettings["saved"]["card"];
-  priceUnits: SiteAccountSettings["saved"]["priceUnits"];
   onView: () => void;
   onShare: () => void;
   onAddToPlan: () => void;
   onRemove: () => void;
 }) {
   const tNav = useTranslations("nav");
+  const tv = useTranslations("venue");
   const categoryLabel = useCategoryLabel();
   const locationLine = useVenueLocationLine();
+  const ageLabel = useAgeRangeLabel();
+  const activityLabel = useActivityTypeLabel();
+  const formatPrice = useFormatVenuePrice();
   const badgeFor = (cat: string) => {
     switch (cat) {
       case "Events":
@@ -251,8 +243,7 @@ function SavedProviderCard({
     }
   };
   const b = badgeFor(provider.category);
-  const unit = priceUnitLabel(provider, priceUnits);
-  const price = formatVenuePrice(provider);
+  const price = formatPrice(provider);
   return (
     <article className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card">
       <div className="relative h-36 overflow-hidden bg-muted">
@@ -265,7 +256,7 @@ function SavedProviderCard({
         <span className={cn("absolute left-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide shadow-sm", b.tone)}>
           {b.label}
         </span>
-        <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card/95 text-primary shadow-sm" aria-label="Saved">
+        <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card/95 text-primary shadow-sm" aria-label={tv("saved")}>
           <Heart className="h-4 w-4 fill-primary" />
         </span>
       </div>
@@ -273,15 +264,11 @@ function SavedProviderCard({
         <h3 className="font-display text-base font-semibold leading-snug text-foreground">{provider.name}</h3>
         <p className="mt-0.5 text-xs text-muted-foreground">{locationLine(provider.borough, provider.neighborhood)}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {formatCrowdLabel(provider.ageRanges[0])} · {provider.activityTypes[0]}
+          {ageLabel(provider.ageRanges[0])} · {activityLabel(provider.activityTypes[0])}
         </p>
         <p className="mt-2 text-sm font-bold text-primary">
           {price.main}
-          {price.suffix ? (
-            <span className="text-[11px] font-normal text-muted-foreground">{price.suffix}</span>
-          ) : (
-            <span className="text-[11px] font-normal text-muted-foreground"> · per {unit}</span>
-          )}
+          {price.suffix ? <span className="text-[11px] font-normal text-muted-foreground">{price.suffix}</span> : null}
         </p>
         <div className="mt-4 grid grid-cols-2 gap-2">
           <Button size="sm" variant="outline" className="rounded-full" onClick={onView}>
@@ -313,6 +300,9 @@ function ActivityPlanCard({
   onNavigate: Props["onNavigate"];
   providers: Provider[];
 }) {
+  const tCalc = useTranslations("calculator");
+  const formatPrice = useFormatVenuePrice();
+  const locationLine = useVenueLocationLine();
   const { items, setClasses, remove, clear } = useCalculator();
   const visible = withSaved(tab, acc.saved.tabId, acc.activityPlan.tabId);
 
@@ -327,7 +317,6 @@ function ActivityPlanCard({
   }, [items, providers]);
 
   const total = rows.reduce((s, r) => s + r.subtotal, 0);
-  const units = acc.activityPlan.priceUnits;
 
   return (
     <section
@@ -347,14 +336,14 @@ function ActivityPlanCard({
         <>
           <ul className="mt-5 space-y-2">
             {rows.map((r) => {
-              const unit = priceUnitLabel(r.provider, units);
-              const linePrice = formatVenuePrice(r.provider);
+              const linePrice = formatPrice(r.provider);
               return (
                 <li key={r.providerId} className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3">
                   <div className="min-w-0">
                     <p className="truncate font-display text-sm font-semibold text-foreground">{r.provider.name}</p>
                     <p className="text-xs text-muted-foreground">
-                      {linePrice.suffix ? `${linePrice.main}${linePrice.suffix}` : `${linePrice.main} · per ${unit}`}
+                      {locationLine(r.provider.borough, r.provider.neighborhood)} · {linePrice.main}
+                      {linePrice.suffix ?? ""}
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
@@ -363,7 +352,7 @@ function ActivityPlanCard({
                         type="button"
                         onClick={() => setClasses(r.providerId, r.qty - 1)}
                         className="grid h-7 w-7 place-items-center text-muted-foreground hover:text-foreground"
-                        aria-label="Fewer guests"
+                        aria-label={tCalc("decreaseGuests")}
                       >
                         <Minus className="h-3 w-3" />
                       </button>
@@ -372,7 +361,7 @@ function ActivityPlanCard({
                         type="button"
                         onClick={() => setClasses(r.providerId, r.qty + 1)}
                         className="grid h-7 w-7 place-items-center text-muted-foreground hover:text-foreground"
-                        aria-label="More guests"
+                        aria-label={tCalc("increaseGuests")}
                       >
                         <Plus className="h-3 w-3" />
                       </button>
@@ -382,7 +371,7 @@ function ActivityPlanCard({
                       type="button"
                       onClick={() => remove(r.providerId)}
                       className="grid h-7 w-7 place-items-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
-                      aria-label="Remove"
+                      aria-label={tCalc("remove", { name: r.provider.name })}
                     >
                       <X className="h-3.5 w-3.5" />
                     </button>
@@ -427,6 +416,7 @@ function PillToggle({ label, active, onClick }: { label: string; active: boolean
 }
 
 function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
+  const optionLabel = usePreferenceOptionLabel();
   const visible = withSaved(tab, acc.saved.tabId, acc.familyPreferences.tabId);
   const sections = acc.familyPreferences.sections;
 
@@ -463,7 +453,7 @@ function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: st
               {sec.options.map((a) => (
                 <PillToggle
                   key={a}
-                  label={a}
+                  label={optionLabel(a)}
                   active={(sel[sec.id] ?? []).includes(a)}
                   onClick={() => toggle(sec.id, sel[sec.id] ?? [], a)}
                 />

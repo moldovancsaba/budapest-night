@@ -17,7 +17,7 @@
         "dayTimeTags": ["Evening", "Late night", "Weekend"],
         "pricePerClass": 25,
         "shortDescription": "Converted Ukrainian stone-carrier on the Danube — one of Europe's coolest concert venues.",
-        "longDescription": "A38 is a nightclub and concert hall on a ship moored on the Buda side of Petőfi Bridge. Check a38.hu for the calendar of live bands, DJ nights, and terrace sessions. Arrive early for riverside drinks before doors.",
+        "longDescription": "A38 is a nightclub and concert hall on a ship moored on the Buda side of Petőfi Bridge. Check a38.hu for the calendar of live bands, DJ nights, and terrace sessions. Arrive early for riverside drinks before doors.\n\nSources: https://a38.hu/en/",
         "rating": 4.7,
         "reviewCount": 5400,
         "badges": ["Featured", "Weekend Vibes"],
@@ -29,9 +29,32 @@
           "hu": {
             "name": "A38 Hajó",
             "shortDescription": "Ukrajnai kőhordó hajóból koncerthelyszín a Dunán — Európa egyik legmenőbb szórakozóhelye.",
-            "longDescription": "Az A38 koncertterem és klub a Petőfi híd budai hídfőjénél horgonyzó hajón. Nézd meg az a38.hu naptárát élő zenés estekhez, DJ programokhoz és teraszból. Érkezz korán dunai italokra az ajtók nyitása előtt.",
-            "slug": "a38-hajo",
-            "activityTypes": ["Élő zene", "Elektronikus", "Hajóbulik", "Sör"]
+            "longDescription": "Az A38 koncertterem és klub a Petőfi híd budai hídfőjénél horgonyzó hajón. Nézd meg az a38.hu naptárát élő zenés estekhez, DJ programokhoz és teraszból. Érkezz korán dunai italokra az ajtók nyitása előtt.\n\nSources: https://a38.hu/en/",
+            "slug": "a38-hajo"
+          },
+          "es": {
+            "name": "Barco A38",
+            "shortDescription": "Antiguo barco de piedra ucraniano convertido en sala de conciertos en el Danubio — uno de los locales más icónicos de Europa.",
+            "longDescription": "El A38 es una sala de conciertos y club en un barco amarrado en el lado de Buda del Puente Petőfi. Consulta el calendario en a38.hu para bandas en vivo, noches de DJ y la terraza. Llega pronto para tomar algo junto al río antes de la apertura.\n\nSources: https://a38.hu/en/",
+            "slug": "barco-a38"
+          },
+          "it": {
+            "name": "Nave A38",
+            "shortDescription": "Ex cargo di pietra ucraino trasformato in venue sul Danubio — uno dei locali più cool d'Europa.",
+            "longDescription": "L'A38 è una sala concerti e club su una nave ormeggiata sul lato Buda del Ponte Petőfi. Controlla a38.hu per live, DJ set e terrazza. Arriva presto per un drink sul fiume prima dell'apertura.\n\nSources: https://a38.hu/en/",
+            "slug": "nave-a38"
+          },
+          "he": {
+            "name": "ספינת A38",
+            "shortDescription": "אוניית אבן אוקראינית שהפכה לאולם הופעות על הדנובה — אחד המקומות הכי מגניבים באירופה.",
+            "longDescription": "A38 הוא אולם הופעות ומועדון על ספינה העוגנת בצד בודה של גשר פטואפי. בדקו את לוח ההופעות ב-a38.hu ללהקות חיות, לילות DJ וטרסה. הגיעו מוקדם לשתייה על הנהר לפני פתיחת הדלתות.\n\nSources: https://a38.hu/en/",
+            "slug": "oniyat-a38"
+          },
+          "ar": {
+            "name": "سفينة A38",
+            "shortDescription": "سفينة حجر أوكرانية سابقة تحولت إلى قاعة حفلات على الدانوب — من أشهر أماكن السهر في أوروبا.",
+            "longDescription": "A38 قاعة حفلات ونادٍ على متن سفينة راسية في جانب بودا من جسر بيتوفي. راجع التقويم على a38.hu للحفلات المباشرة وليالي الـDJ والتراس. احضر مبكراً لمشروب على النهر قبل فتح الأبواب.\n\nSources: https://a38.hu/en/",
+            "slug": "safinat-a38"
           }
         }
       }

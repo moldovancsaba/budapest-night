@@ -19,7 +19,12 @@ import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import { useTranslations } from "next-intl";
 import { useCategoryLabel, useDistrictLabel, useNeighborhoodLabel, useVenueLocationLine } from "@/hooks/useVenueDisplay";
 import { useHomeCopy, useTrustPillars, type HomeCopy } from "@/hooks/useLocalizedSiteCopy";
-import { formatCrowdLabel, formatVenuePrice } from "@/lib/venueDisplay";
+import {
+  useActivityTypeLabel,
+  useAgeRangeLabel,
+  useBadgeLabel,
+  useFormatVenuePrice,
+} from "@/hooks/useVenueDisplay";
 import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc } from "@/types/site";
 import { DEFAULT_SITE } from "@/types/site";
@@ -426,8 +431,12 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
 
 function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Provider) => void }) {
   const locationLine = useVenueLocationLine();
+  const badgeLabel = useBadgeLabel();
+  const ageLabel = useAgeRangeLabel();
+  const activityLabel = useActivityTypeLabel();
+  const formatPrice = useFormatVenuePrice();
+  const price = formatPrice(provider);
   const badge = provider.badges[0];
-  const price = formatVenuePrice(provider);
   return (
     <button
       onClick={() => onOpen(provider)}
@@ -443,7 +452,7 @@ function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Pro
         />
         {badge && (
           <span className="absolute left-2 top-2 rounded-full bg-card/95 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground shadow-sm backdrop-blur">
-            {badge}
+            {badgeLabel(badge)}
           </span>
         )}
       </div>
@@ -451,7 +460,7 @@ function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Pro
         <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">{provider.name}</h3>
         <p className="mt-0.5 text-xs text-muted-foreground">{locationLine(provider.borough, provider.neighborhood)}</p>
         <p className="mt-1 text-[11px] text-muted-foreground">
-          {formatCrowdLabel(provider.ageRanges[0])} · {provider.activityTypes[0]}
+          {ageLabel(provider.ageRanges[0])} · {activityLabel(provider.activityTypes[0])}
         </p>
         <div className="mt-2 flex items-center justify-between">
           <span className="text-sm font-semibold text-primary">

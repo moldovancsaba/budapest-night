@@ -108,7 +108,15 @@
     "priceVaries": "מחיר משתנה",
     "perTicket": "/כרטיס",
     "perCover": "/כניסה",
-    "perPerson": "/אדם"
+    "perPerson": "/אדם",
+    "copyLink": "העתק קישור",
+    "photoCounter": "{current} / {total}",
+    "reviewsCount": "({count} ביקורות)",
+    "connectVenue": "צור קשר עם המקום",
+    "savedGroup": "הקבוצה נשמרה",
+    "removeGroupSaved": "הוסר מהשמורים",
+    "saveGroup": "שמור קבוצה",
+    "shareSummary": "{name} — {category} ב{neighborhood}, {borough}. {price}. {description}"
   },
   "discover": {
     "eyebrow": "בודפשט אחרי החשיכה",
@@ -128,7 +136,10 @@
       "Parties": "ברים בחורבות, מועדונים, ליילות DJ ומסיבות מאוחרות",
       "Restaurants": "ביסטרות, גורמה ושולחנות על הדנובה",
       "Cafés": "קפה, בראנץ', קינוחים ומקומות לכל היום"
-    }
+    },
+    "loading": "טוען מקומות…",
+    "loadErrorTitle": "הטעינה נכשלה",
+    "loadErrorMessage": "בדוק את MONGODB_URI והרשת."
   },
   "saved": {
     "title": "מקומות שמורים",
@@ -149,7 +160,20 @@
     "similarNearby": "מעגלים דומים בקרבת מקום",
     "shareTitle": "שתף את {name}",
     "shareDescription": "שתף מעגל תרבות זה עם חבר.",
-    "onPlatform": "{name} ב-Budapest Night"
+    "onPlatform": "{name} ב-Budapest Night",
+    "groupType": {
+      "artGallery": "אמנות וגלריה",
+      "liveCulture": "תרבות חיה",
+      "foodWine": "מעגל אוכל ויין",
+      "nightlifeCrew": "צוות לילה",
+      "localCreators": "יוצרים מקומיים"
+    },
+    "cadence": {
+      "weekly": "שבועי",
+      "monthly": "חודשי",
+      "weekend": "סוף שבוע",
+      "popup": "חד-פעמי"
+    }
   },
   "assistant": {
     "title": "מדריך לילה",
@@ -170,7 +194,17 @@
     "increaseGuests": "יותר אורחים",
     "remove": "הסר {name}",
     "guest": "אורח",
-    "guests": "אורחים"
+    "guests": "אורחים",
+    "title": "תקציב לילה",
+    "subtitle": "העריך את ההוצאה הכוללת במקומות ובאירועים.",
+    "clearAllCta": "נקה הכל",
+    "emptyTitle": "המחשבון ריק",
+    "emptyMessage": "הוסף מקומות להערכת תקציב הלילה.",
+    "asideTitle": "סה״כ משוער",
+    "asideSubtitle": "לפי המקומות והאירועים שהוספת.",
+    "asideFootnote": "להערכה בלבד. אשר מחירים מול כל מקום.",
+    "providerLinePriceSuffix": "/אדם",
+    "estimatedTotalLabel": "סה״כ משוער"
   },
   "split": {
     "eyebrow": "כלי חי",
@@ -211,7 +245,116 @@
     "fromBudgetCta": "חלקו בין הקבוצה"
   },
   "home": {
-    "explore": "לגלות"
+    "heroTitle": "גלה את בודפשט אחרי החשיכה",
+    "heroSubtitle": "אירועים, מסיבות, מסעדות, בתי קפה ותרבות — לפי מחוז ושכונה.",
+    "heroPrimaryCta": "התחל לגלות",
+    "heroSecondaryCta": "עיין לפי מחוז",
+    "heroTagline": "ניאון. מקומי. נבנה ליציאות בער בבודפשט.",
+    "heroImageAlt": "אורות בודפשט בלילה לאורך הדנובה",
+    "categoriesTitle": "איזו לילה אתה רוצה?",
+    "exploreCta": "לגלות",
+    "neighborhoodSectionTitle": "מצא את הלילה בשכונה שלך",
+    "popularNeighborhoodsCaption": "מקומות פופולריים ב{district}",
+    "allDistrictsHint": "עיין בכל המחוזות בגלו, או בחר מחוז למעלה לשכונות.",
+    "openDiscoverAll": "פתח גלו (כל בודפשט)",
+    "viewAllNeighborhoods": "הצג הכל",
+    "guidesSectionTitle": "מדריכי מחוז מומלצים",
+    "guidesViewAllLabel": "כל המדריכים",
+    "guideCtaDefault": "למדריך",
+    "howItWorksSectionTitle": "איך Budapest Night עובד",
+    "popularPicksSectionTitle": "בחירות ניאון להתחלה",
+    "popularPicksViewAllLabel": "הצג הכל",
+    "culturePickBadge": "בחירת תרבות",
+    "cultureCircleLabel": "מעגל תרבות",
+    "freeToJoin": "הצטרפות חינם",
+    "newsletterTitle": "הלילות הכי טובים בבודפשט למחוז שלך",
+    "newsletterSubtitle": "אירועים, מסיבות, מסעדות, בתי קפה ותרבות — למייל.",
+    "newsletterPlaceholder": "האימייל שלך",
+    "newsletterCta": "רשמו אותי!",
+    "newsletterFinePrint": "בלי ספאם. ביטול בכל עת.",
+    "newsletterSuccess": "נרשמת! נהיה בקשר בקרוב.",
+    "categories": {
+      "events": {
+        "description": "הופעות, פסטיבלים, מסיבות סירה וגגות"
+      },
+      "parties": {
+        "description": "מועדונים, רואין ברים, DJ ולילות סוף שבוע"
+      },
+      "restaurants": {
+        "description": "פיין דיינינג, ביסטרו, אוכל רחוב ושולחנות על הדנובה"
+      },
+      "cafes": {
+        "description": "קפה מיוחד, ברנץ', קינוחים ומקומות לכל היום"
+      },
+      "culture": {
+        "description": "סיורי אמנות, מעגלי תרבות ומפגשי יוצרים"
+      }
+    },
+    "guides": [
+      {
+        "id": "guide-belvaros",
+        "title": "חיי לילה ואוכל בבלווארוש",
+        "desc": "ברים על הדנובה, ביסטרות ומטבחים מאוחרים במרכז.",
+        "borough": "בלווארוש",
+        "neighborhood": "עיר פנים",
+        "tone": "orange",
+        "ctaLabel": "למדריך",
+        "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
+      },
+      {
+        "id": "guide-jewish-quarter",
+        "title": "רואין ברים ברובע היהודי",
+        "desc": "רואין ברים, אוכל רחוב ואנרגיית מסיבות בארזסבטווארוש.",
+        "borough": "ארזסבטווארוש",
+        "neighborhood": "הרובע היהודי",
+        "tone": "teal",
+        "ctaLabel": "למדריך",
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+      },
+      {
+        "id": "guide-andrassy",
+        "title": "מסלול תרבות באנדרשי",
+        "desc": "גלריות, בתי קפה וערבים אלגנטיים בטרזווארוש.",
+        "borough": "טרזווארוש",
+        "neighborhood": "אנדרשי",
+        "tone": "pink",
+        "ctaLabel": "למדריך",
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+      },
+      {
+        "id": "guide-buda",
+        "title": "טירת בודה ונופים",
+        "desc": "ברי יין, מעיינות חמים וטרסות בשקיעה.",
+        "borough": "בודה",
+        "neighborhood": "רובע הטירה",
+        "tone": "blue",
+        "ctaLabel": "למדריך",
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+      }
+    ],
+    "howItWorksSteps": [
+      {
+        "step": 1,
+        "title": "בחרו מחוז",
+        "desc": "התחילו איפה שאתם לנים או יוצאים הערב.",
+        "tone": "orange",
+        "icon": "map-pin"
+      },
+      {
+        "step": 2,
+        "title": "השוו אפשרויות",
+        "desc": "אווירה, מחירים, שעות ותגיות במקום אחד.",
+        "tone": "teal",
+        "icon": "list-checks"
+      },
+      {
+        "step": 3,
+        "title": "שמרו, שתפו ותכננו",
+        "desc": "מועדפים, שיתוף ותקציב לילי.",
+        "tone": "pink",
+        "icon": "heart"
+      }
+    ]
   },
   "notFound": {
     "code": "404",
@@ -231,5 +374,100 @@
     "ctaEvents": "מצא מקומות אמיתיים",
     "statLabel": "סיכוי שה-URL הזה קיים",
     "statValue": "0.0%"
+  },
+  "trust": {
+    "pillars": [
+      {
+        "title": "מקומי בעיצוב",
+        "desc": "רשימות בודפשט לפי מחוז ושכונה.",
+        "tone": "orange",
+        "icon": "compass"
+      },
+      {
+        "title": "פרטים שימושיים",
+        "desc": "שעות, אווירה, מחירים ותגיות במקום אחד.",
+        "tone": "teal",
+        "icon": "shield-check"
+      },
+      {
+        "title": "מוכן ללילה",
+        "desc": "לתושבים ומבקרים שמתכננים ערב.",
+        "tone": "pink",
+        "icon": "users"
+      },
+      {
+        "title": "שמור והשווה",
+        "desc": "סמן מקומות והעריך הוצאה.",
+        "tone": "blue",
+        "icon": "calculator"
+      }
+    ]
+  },
+  "neighborhood": {
+    "label": "שכונה",
+    "all": "הכל",
+    "vaciUtca": "Váci utca",
+    "deakTer": "Deák tér",
+    "parliament": "הפרלמנט",
+    "danubePromenade": "טיילת הדנובה",
+    "innerCity": "עיר פנים",
+    "andrassyUt": "Andrássy út",
+    "opera": "אופרה",
+    "oktogon": "Oktogon",
+    "kiralyUtca": "Király utca",
+    "lisztFerencTer": "Liszt Ferenc tér",
+    "jewishQuarter": "הרובע היהודי",
+    "gozsduUdvar": "Gozsdu Udvar",
+    "kazinczyUtca": "Kazinczy utca",
+    "wesselenyiUtca": "Wesselényi utca",
+    "rakocziTer": "Rákóczi tér",
+    "corvinNegyed": "מתחם קורווין",
+    "muegyetem": "Műegyetem",
+    "nagytemplomUtca": "Nagytemplom utca",
+    "borarosTer": "Boráros tér",
+    "millenniumiVaroskozpont": "מרכז מילניום",
+    "castleDistrict": "רובע הטירה",
+    "gellertHill": "גבעת גלרט",
+    "taban": "Tabán",
+    "rozsadomb": "Rózsadomb",
+    "szentGellertTer": "Szent Gellért tér",
+    "obudaIsland": "אי אובודה",
+    "aquincum": "Aquincum",
+    "kolosyTer": "Kolosy tér",
+    "becsiUt": "Bécsi út",
+    "mainSquareObuda": "כיכר ראשית אובודה",
+    "moriczZsigmondKorut": "Móricz Zsigmond körút",
+    "gellertBathsArea": "אזור מרחצאות גלרט",
+    "infopark": "Infopark",
+    "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
+    "bikasPark": "Bikás park"
+  },
+  "activityType": {
+    "liveMusic": "מוזיקה חיה",
+    "djSets": "סטי DJ",
+    "rooftop": "גג",
+    "ruinBar": "רואין בר",
+    "fineDining": "פיין דיינינג",
+    "streetFood": "אוכל רחוב",
+    "wineBar": "בר יין",
+    "craftBeer": "בירה מקומית",
+    "coffeeBrunch": "קפה וברנץ'",
+    "gallery": "גלריה",
+    "theatre": "תיאטרון",
+    "festival": "פסטיבל",
+    "boatParty": "מסיבת סירה",
+    "thermalBath": "מרחצאות",
+    "jazz": "ג'אז",
+    "electronic": "אלקטרוני",
+    "cocktails": "קוקטיילים",
+    "lateKitchen": "מטבח מאוחר"
+  },
+  "badge": {
+    "featured": "מומלץ",
+    "popular": "פופולרי",
+    "new": "חדש",
+    "staffPick": "בחירת הצוות",
+    "hiddenGem": "פנינה נסתרת",
+    "weekendVibes": "אווירת סוף שבוע"
   }
 }

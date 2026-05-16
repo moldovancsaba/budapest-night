@@ -58,20 +58,20 @@ export function ScoutAssistantView() {
       });
 
       if (resp.status === 429) {
-        toast({ title: "Slow down", description: "Too many requests — please try again in a moment." });
+        toast({ title: t("slowDown"), description: t("slowDownDesc") });
         setIsLoading(false);
         return;
       }
       if (resp.status === 402) {
-        toast({ title: "Out of credits", description: "Please add AI credits to continue." });
+        toast({ title: t("noCredits"), description: t("noCreditsDesc") });
         setIsLoading(false);
         return;
       }
       if (resp.status === 500 || resp.status === 502) {
         const err = await resp.json().catch(() => ({}));
         toast({
-          title: "Brain unavailable",
-          description: (err as { error?: string }).error || "Set LOVABLE_API_KEY in server .env",
+          title: t("unavailable"),
+          description: (err as { error?: string }).error || t("errorDesc"),
         });
         setIsLoading(false);
         return;
@@ -111,7 +111,7 @@ export function ScoutAssistantView() {
       }
     } catch (e) {
       console.error(e);
-      toast({ title: "Something went wrong", description: "Please try again." });
+      toast({ title: t("error"), description: t("errorDesc") });
     } finally {
       setIsLoading(false);
     }

@@ -108,7 +108,15 @@
     "priceVaries": "Változó ár",
     "perTicket": "/jegy",
     "perCover": "/belépő",
-    "perPerson": "/fő"
+    "perPerson": "/fő",
+    "copyLink": "Link másolása",
+    "photoCounter": "{current} / {total}",
+    "reviewsCount": "({count} értékelés)",
+    "connectVenue": "Kapcsolat a hellyel",
+    "savedGroup": "Kör mentve",
+    "removeGroupSaved": "Eltávolítva",
+    "saveGroup": "Kör mentése",
+    "shareSummary": "{name} — {category}, {neighborhood}, {borough}. {price}. {description}"
   },
   "discover": {
     "eyebrow": "Budapest éjszaka",
@@ -165,7 +173,20 @@
     "listInDistrict": "Kultúrkörök itt: {district}",
     "groupCount": "{count} csoport",
     "filterEmptyTitle": "Itt még nincs kör",
-    "filterEmptyMessage": "Próbálj más kerületet vagy városrészt."
+    "filterEmptyMessage": "Próbálj más kerületet vagy városrészt.",
+    "groupType": {
+      "artGallery": "Művészet és galéria",
+      "liveCulture": "Élő kultúra",
+      "foodWine": "Gasztro kör",
+      "nightlifeCrew": "Éjszakai csapat",
+      "localCreators": "Helyi alkotók"
+    },
+    "cadence": {
+      "weekly": "Heti",
+      "monthly": "Havi",
+      "weekend": "Hétvége",
+      "popup": "Pop-up"
+    }
   },
   "assistant": {
     "title": "Éjszakai útmutató",
@@ -453,5 +474,13 @@
     "electronic": "Elektronikus",
     "cocktails": "Koktélok",
     "lateKitchen": "Késői konyha"
+  },
+  "badge": {
+    "featured": "Kiemelt",
+    "popular": "Népszerű",
+    "new": "Új",
+    "staffPick": "Csapat választása",
+    "hiddenGem": "Rejtett gyöngyszem",
+    "weekendVibes": "Hétvégi hangulat"
   }
 }

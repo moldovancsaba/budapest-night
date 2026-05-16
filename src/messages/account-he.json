@@ -1,0 +1,214 @@
+{
+  "settings": {
+    "page": {
+      "title": "החשבון שלי",
+      "subtitle": "מקומות שמורים, תוכנית לילה והעדפות."
+    },
+    "navTabs": [
+      {
+        "id": "saved",
+        "label": "שמורים"
+      },
+      {
+        "id": "plan",
+        "label": "תוכנית לילה"
+      },
+      {
+        "id": "prefs",
+        "label": "העדפות"
+      },
+      {
+        "id": "neighborhood",
+        "label": "המחוז שלי"
+      },
+      {
+        "id": "alerts",
+        "label": "התראות"
+      }
+    ],
+    "saved": {
+      "tabId": "saved",
+      "title": "מקומות ומעגלים שמורים",
+      "subtitle": "כל מה ששמרת במקום אחד.",
+      "viewAllCta": "הצג הכל",
+      "filterChips": [
+        {
+          "label": "הכל",
+          "categoryFilter": "All"
+        },
+        {
+          "label": "אירועים",
+          "categoryFilter": "Events"
+        },
+        {
+          "label": "מסיבות",
+          "categoryFilter": "Parties"
+        },
+        {
+          "label": "מסעדות",
+          "categoryFilter": "Restaurants"
+        },
+        {
+          "label": "בתי קפה",
+          "categoryFilter": "Cafés"
+        },
+        {
+          "label": "תרבות",
+          "categoryFilter": "Culture"
+        }
+      ],
+      "emptyMessage": "אין פריטים שמורים בקטגוריה זו.",
+      "card": {
+        "viewCta": "צפייה",
+        "shareCta": "שיתוף",
+        "addToPlanCta": "הוסף לתקציב",
+        "removeCta": "הסר"
+      },
+      "toastAddedToPlan": "{name} נוסף לתוכנית",
+      "toastRemoved": "{name} הוסר",
+      "toastSampleRemove": "שמור מקומות מגלו כדי לנהל אותם כאן.",
+      "priceUnits": {
+        "class": "כרטיס",
+        "week": "כניסה",
+        "party": "אדם",
+        "visit": "ביקור"
+      },
+      "chips": [
+        "הכל",
+        "אירועים",
+        "מסיבות",
+        "מסעדות",
+        "בתי קפה",
+        "תרבות"
+      ]
+    },
+    "activityPlan": {
+      "tabId": "plan",
+      "title": "תוכנית הלילה שלי",
+      "subtitle": "העריך את ההוצאה הכוללת לערב.",
+      "emptyMessage": "הוסף מקומות מהתקציב בגלו כדי לראות אותם כאן.",
+      "estimatedTotalLabel": "סה״כ משוער",
+      "viewFullCta": "תוכנית מלאה",
+      "clearCta": "נקה תוכנית",
+      "priceUnits": {
+        "class": "כרטיס",
+        "week": "כניסה",
+        "party": "אדם",
+        "visit": "ביקור"
+      }
+    },
+    "familyPreferences": {
+      "tabId": "prefs",
+      "title": "ההעדפות שלך",
+      "subtitle": "כוונן מה תרצה לראות בבודפשט.",
+      "editCta": "ערוך העדפות",
+      "savedToast": "העדפות נשמרו",
+      "sections": [
+        {
+          "id": "age",
+          "label": "קהל ואווירה",
+          "options": [
+            "All ages",
+            "Family",
+            "18+",
+            "21+",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "18+"
+          ]
+        },
+        {
+          "id": "interests",
+          "label": "תחומי עניין",
+          "options": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music",
+            "Ruin Bar",
+            "Fine Dining",
+            "Gallery",
+            "Rooftop",
+            "Craft Beer",
+            "Electronic"
+          ],
+          "defaultSelected": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music"
+          ]
+        },
+        {
+          "id": "times",
+          "label": "זמנים מועדפים",
+          "options": [
+            "Weekday",
+            "Weekend",
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "Weekend",
+            "Evening",
+            "Late night"
+          ]
+        }
+      ]
+    },
+    "neighborhood": {
+      "tabId": "neighborhood",
+      "title": "המחוז שלי",
+      "subtitle": "הבסיס שלך ללילות בבודפשט.",
+      "addressLine1": "",
+      "addressLine2": "",
+      "detectedLabelPrefix": "האזור שלך:",
+      "detectedNeighborhood": "",
+      "detectedBorough": "Belváros",
+      "updateAddressCtaLabel": "עדכן כתובת",
+      "nearbySectionLabel": "שכונות קרובות",
+      "nearbyNeighborhoods": [],
+      "nearbyNavigateBorough": "Belváros",
+      "browseCtaLabel": "גלו לידי",
+      "browseNavigateBorough": "Belváros",
+      "browseNavigateNeighborhood": "",
+      "updateAddressToast": "עדכון כתובת בקרוב"
+    },
+    "alerts": {
+      "tabId": "alerts",
+      "title": "התראות ואימייל",
+      "subtitle": "בחר על מה לשמוע.",
+      "emailSectionLabel": "התראות אימייל",
+      "options": [
+        "בחירות שבועיות למחוז",
+        "אירועים חדשים בקרבתי",
+        "עדכוני מסיבות ומועדונים",
+        "פתיחות מסעדות",
+        "תרבות בסוף השבוע",
+        "מעגלי תרבות חדשים",
+        "עדכונים משמורים"
+      ],
+      "frequencySectionLabel": "תדירות אימייל",
+      "frequencyChoices": [
+        "שבועי",
+        "רק חשובים",
+        "השהה אימיילים"
+      ],
+      "saveCta": "שמור הגדרות",
+      "savedToast": "הגדרות נשמרו"
+    },
+    "privacy": {
+      "headline": "אנחנו מכבדים את הפרטיות שלך. המידע לא משותף.",
+      "supportTextBefore": "שאלות? כתוב ל",
+      "supportEmail": "hello@budapestnight.com",
+      "supportTextAfter": ""
+    }
+  }
+}

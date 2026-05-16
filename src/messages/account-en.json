@@ -1,0 +1,206 @@
+{
+  "settings": {
+    "page": {
+      "title": "My Account",
+      "subtitle": "Manage saved venues, your night plan, and preferences."
+    },
+    "navTabs": [
+      {
+        "id": "saved",
+        "label": "Saved"
+      },
+      {
+        "id": "plan",
+        "label": "Night plan"
+      },
+      {
+        "id": "prefs",
+        "label": "Preferences"
+      },
+      {
+        "id": "neighborhood",
+        "label": "My district"
+      },
+      {
+        "id": "alerts",
+        "label": "Alerts"
+      }
+    ],
+    "saved": {
+      "tabId": "saved",
+      "title": "Saved venues & circles",
+      "subtitle": "Everything you've bookmarked in one place.",
+      "viewAllCta": "View all saved",
+      "filterChips": [
+        {
+          "label": "All",
+          "categoryFilter": "All"
+        },
+        {
+          "label": "Events",
+          "categoryFilter": "Events"
+        },
+        {
+          "label": "Parties",
+          "categoryFilter": "Parties"
+        },
+        {
+          "label": "Restaurants",
+          "categoryFilter": "Restaurants"
+        },
+        {
+          "label": "Cafés",
+          "categoryFilter": "Cafés"
+        },
+        {
+          "label": "Culture",
+          "categoryFilter": "Culture"
+        }
+      ],
+      "emptyMessage": "No saved items in this category yet.",
+      "card": {
+        "viewCta": "View",
+        "shareCta": "Share",
+        "addToPlanCta": "Add to budget",
+        "removeCta": "Remove"
+      },
+      "toastAddedToPlan": "Added {name} to your plan",
+      "toastRemoved": "Removed {name}",
+      "toastSampleRemove": "Save venues from Discover to manage them here.",
+      "priceUnits": {
+        "class": "ticket",
+        "week": "cover",
+        "party": "person",
+        "visit": "visit"
+      }
+    },
+    "activityPlan": {
+      "tabId": "plan",
+      "title": "My night plan",
+      "subtitle": "Estimate your total spend for the evening.",
+      "emptyMessage": "Add venues from Discover to your budget tool to see them here.",
+      "estimatedTotalLabel": "Estimated total",
+      "viewFullCta": "View full plan",
+      "clearCta": "Clear plan",
+      "priceUnits": {
+        "class": "ticket",
+        "week": "cover",
+        "party": "person",
+        "visit": "visit"
+      }
+    },
+    "familyPreferences": {
+      "tabId": "prefs",
+      "title": "Your preferences",
+      "subtitle": "Tune what you want to see around Budapest.",
+      "editCta": "Edit preferences",
+      "savedToast": "Preferences saved",
+      "sections": [
+        {
+          "id": "age",
+          "label": "Crowd & vibe",
+          "options": [
+            "All ages",
+            "Family",
+            "18+",
+            "21+",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "18+"
+          ]
+        },
+        {
+          "id": "interests",
+          "label": "Interests",
+          "options": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music",
+            "Ruin Bar",
+            "Fine Dining",
+            "Gallery",
+            "Rooftop",
+            "Craft Beer",
+            "Electronic"
+          ],
+          "defaultSelected": [
+            "Events",
+            "Parties",
+            "Restaurants",
+            "Cafés",
+            "Culture",
+            "Live Music"
+          ]
+        },
+        {
+          "id": "times",
+          "label": "Preferred times",
+          "options": [
+            "Weekday",
+            "Weekend",
+            "Morning",
+            "Afternoon",
+            "Evening",
+            "Late night"
+          ],
+          "defaultSelected": [
+            "Weekend",
+            "Evening",
+            "Late night"
+          ]
+        }
+      ]
+    },
+    "neighborhood": {
+      "tabId": "neighborhood",
+      "title": "My district",
+      "subtitle": "Your home base for Budapest nights out.",
+      "addressLine1": "",
+      "addressLine2": "",
+      "detectedLabelPrefix": "Your area:",
+      "detectedNeighborhood": "",
+      "detectedBorough": "Belváros",
+      "updateAddressCtaLabel": "Update address",
+      "nearbySectionLabel": "Nearby neighborhoods",
+      "nearbyNeighborhoods": [],
+      "nearbyNavigateBorough": "Belváros",
+      "browseCtaLabel": "Browse spots near me",
+      "browseNavigateBorough": "Belváros",
+      "browseNavigateNeighborhood": "",
+      "updateAddressToast": "Update address coming soon"
+    },
+    "alerts": {
+      "tabId": "alerts",
+      "title": "Alerts & Email Settings",
+      "subtitle": "Choose what you want to hear about.",
+      "emailSectionLabel": "Email alerts",
+      "options": [
+        "Weekly district picks",
+        "New events near me",
+        "Party & club updates",
+        "Restaurant openings",
+        "Weekend culture picks",
+        "New culture circles",
+        "Updates from saved venues and groups"
+      ],
+      "frequencySectionLabel": "Email frequency",
+      "frequencyChoices": [
+        "Weekly",
+        "Only important updates",
+        "Pause emails"
+      ],
+      "saveCta": "Save settings",
+      "savedToast": "Settings saved"
+    },
+    "privacy": {
+      "headline": "We respect your privacy. Your information is never shared.",
+      "supportTextBefore": "Questions? Email us at",
+      "supportEmail": "hello@budapestnight.com",
+      "supportTextAfter": ""
+    }
+  }
+}
