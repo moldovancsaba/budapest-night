@@ -12,10 +12,16 @@ import {
 import { useSaved } from "@/store/useScout";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useMeetupGroupsCatalog } from "@/hooks/useCatalog";
+import { useFormatEventSchedule } from "@/hooks/useEventDisplay";
+import type { PublicMeetupGroup } from "@/lib/publicMeetup";
+import type { PublicNightEvent } from "@/lib/publicEvent";
+import type { Provider } from "@/types/provider";
 import { MeetupLogo } from "../MeetupLogo";
 import { MeetupGroupCard } from "../MeetupGroupCard";
-import type { MeetupGroup } from "@/types/meetup";
+import { ProviderCard } from "../ProviderCard";
+import { EventCard } from "../EventCard";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
@@ -31,18 +37,24 @@ export function MeetupGroupProfile({
   onClose,
   onShare,
   onOpenAnother,
+  onOpenVenue,
+  onOpenEvent,
   variant = "sheet",
 }: {
-  group: MeetupGroup | null;
+  group: PublicMeetupGroup | null;
   onClose: () => void;
-  onShare: (g: MeetupGroup) => void;
-  onOpenAnother: (g: MeetupGroup) => void;
+  onShare: (g: PublicMeetupGroup) => void;
+  onOpenAnother: (g: PublicMeetupGroup) => void;
+  onOpenVenue: (p: Provider) => void;
+  onOpenEvent: (e: PublicNightEvent) => void;
   variant?: "sheet" | "page";
 }) {
   const t = useTranslations("meetup");
   const tv = useTranslations("venue");
   const { isSaved, toggle } = useSaved();
   const { data: allGroups = [] } = useMeetupGroupsCatalog();
+  const { data: providers = [] } = useProvidersCatalog();
+  const formatSchedule = useFormatEventSchedule();
   const locationLine = useVenueLocationLine();
   const groupTypeLabel = useMeetupGroupTypeLabel();
   const cadenceLabel = useMeetupCadenceLabel();

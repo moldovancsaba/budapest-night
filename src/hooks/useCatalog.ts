@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
-import type { MeetupGroup } from "@/types/meetup";
+import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import type { Borough } from "@/types/provider";
 import type { SiteDoc } from "@/types/site";
 
@@ -50,7 +50,7 @@ export function useMeetupGroupsCatalog() {
         const j = await r.json().catch(() => ({}));
         throw new Error((j as { error?: string }).error || "Failed to load meetups");
       }
-      return r.json() as Promise<MeetupGroup[]>;
+      return r.json() as Promise<PublicMeetupGroup[]>;
     },
     staleTime: 60_000,
   });
