@@ -5,7 +5,7 @@ import { ApiDocsPage } from "@/components/api/ApiDocsPage";
 export const metadata: Metadata = {
   title: "HTTP API reference | BudapestNight Budapest",
   description:
-    "BudapestNight Budapest HTTP APIs: public catalog, Scout AI streaming chat, machine ingest, and admin session endpoints.",
+    "Budapest Night HTTP APIs: public catalog, Night Guide streaming chat, machine ingest, and admin session endpoints.",
   robots: { index: true, follow: true },
 };
 

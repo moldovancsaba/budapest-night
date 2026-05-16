@@ -21,12 +21,14 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated">
-      <CdnImage
-        resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
-        src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
-        alt=""
-        className="h-36 w-full object-cover"
-      />
+      <div className="relative h-36 overflow-hidden bg-muted">
+        <CdnImage
+          fill
+          resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
+          src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
+          alt=""
+        />
+      </div>
       <div className="flex items-start justify-between gap-4 p-5 pb-4">
         <div className="flex items-start gap-4">
           <MeetupLogo group={group} />
@@ -51,7 +53,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
             toggle(group.id);
             toast.success(saved ? "Removed from saved" : "Saved");
           }}
-          aria-label={saved ? "Remove from saved" : "Save group"}
+          aria-label={saved ? "Remove from saved" : "Save circle"}
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted"
         >
           <Heart className={cn("h-4 w-4", saved ? "fill-orange text-orange" : "")} />
@@ -63,7 +65,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           <span className="rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium text-secondary-foreground">
-            Ages {group.ageRange}
+            {group.ageRange}
           </span>
           <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
             <CalendarClock className="h-3 w-3" />

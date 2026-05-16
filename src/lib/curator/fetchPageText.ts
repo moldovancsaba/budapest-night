@@ -27,7 +27,7 @@ export async function fetchPageText(url: string, allowedHost: string): Promise<{
   const r = await fetch(url, {
     signal: ctrl.signal,
     headers: {
-      "User-Agent": "BudapestNightCuratorBot/1.0 (+https://classscout.vercel.app)",
+      "User-Agent": "BudapestNightCuratorBot/1.0 (+https://budapest-night.vercel.app)",
       Accept: "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
     },
     redirect: "follow",

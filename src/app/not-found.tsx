@@ -1,15 +1,34 @@
+"use client";
+
 import Link from "next/link";
+import { NotFoundPage, type NotFoundCopy } from "@/components/scout/NotFoundPage";
+
+const copy: NotFoundCopy = {
+  code: "404",
+  subtitle: "Signal lost somewhere in District VII",
+  headline: "This page went home before last call",
+  line1: "You took a wrong turn between the Danube, a ruin bar, and a thermal bath that definitely was not on the map.",
+  line2: "Our Night Guide AI shrugged, ordered a pálinka, and refused to give directions.",
+  excusesTitle: "Official explanation (rotating, suspiciously)",
+  excuses: [
+    "Szimpla Kert absorbed it during a jazz set",
+    "It only exists after 3 AM and you are early",
+    "The pálinka deleted it for sport",
+    "GPS gave up and moved to Buda",
+    "A party boat has it now. No refunds.",
+  ],
+  ctaHome: "Back to the lit streets",
+  ctaEvents: "Find real venues",
+  statLabel: "Probability this URL exists",
+  statValue: "0.0%",
+};
 
 export default function NotFound() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-muted">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">404</h1>
-        <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-        <Link href="/" className="text-primary underline hover:text-primary/90">
-          Return to Home
-        </Link>
-      </div>
-    </div>
+  const PageLink = ({ href, className, children }: { href: string; className?: string; children: React.ReactNode }) => (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
   );
+
+  return <NotFoundPage copy={copy} LinkComponent={PageLink} />;
 }

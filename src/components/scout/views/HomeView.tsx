@@ -16,6 +16,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
+import { useDistrictLabel } from "@/hooks/useVenueDisplay";
+import { formatCrowdLabel, formatVenuePrice } from "@/lib/venueDisplay";
 import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc } from "@/types/site";
 import { DEFAULT_SITE } from "@/types/site";
@@ -69,6 +71,7 @@ interface Props {
 }
 
 export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
+  const districtLabel = useDistrictLabel();
   const [borough, setBorough] = useState<BoroughChoice>("All");
   const [email, setEmail] = useState("");
   const { data: providers = [] } = useProvidersCatalog();
@@ -130,11 +133,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
           <div className="relative">
             <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] border border-accent/20 shadow-elevated ring-1 ring-primary/20">
               <CdnImage
+                fill
                 src={s.homeHeroUrl}
                 alt="Budapest city lights at night along the Danube"
-                width={1280}
-                height={1024}
-                className="h-full w-full object-cover"
               />
             </div>
             <span className="absolute -right-2 -top-2 hidden text-orange md:block" aria-hidden>
@@ -179,7 +180,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
         <div className="mt-7 flex flex-wrap justify-center gap-2">
           {HOME_BOROUGH_CHOICES.map((b) => {
             const active = b === borough;
-            const label = b === "All" ? "All" : b;
+            const label = districtLabel(b);
             return (
               <button
                 key={b}
@@ -200,7 +201,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
         <p className="mt-6 text-center text-sm font-medium text-muted-foreground">
           {borough === "All"
             ? "Browse every district at once in Discover, or pick a district above to explore its neighborhoods."
-            : s.popularNeighborhoodsCaption.replace(/\{borough\}/g, borough)}
+            : s.popularNeighborhoodsCaption.replace(/\{district\}/g, borough).replace(/\{borough\}/g, borough)}
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           {borough === "All" ? (
@@ -266,11 +267,10 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               >
                 <div className="relative h-36 overflow-hidden">
                   <CdnImage
+                    fill
                     src={g.imageUrl}
                     alt={g.title}
-                    width={800}
-                    height={512}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="transition-transform duration-500 group-hover:scale-105"
                   />
                   <span className={cn("absolute -bottom-4 left-4 grid h-10 w-10 place-items-center rounded-full ring-4 ring-card", TONE_BG[g.tone])}>
                     <Building2 className="h-4 w-4" />
@@ -410,17 +410,19 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
 
 function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Provider) => void }) {
   const badge = provider.badges[0];
+  const price = formatVenuePrice(provider);
   return (
     <button
       onClick={() => onOpen(provider)}
       className="group flex w-64 shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-card text-left shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated sm:w-auto"
     >
-      <div className="relative h-32 overflow-hidden">
+      <div className="relative h-32 overflow-hidden bg-muted">
         <CdnImage
+          fill
           resolveBase={provider.website}
           src={provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing}
           alt={provider.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="transition-transform duration-500 group-hover:scale-105"
         />
         {badge && (
           <span className="absolute left-2 top-2 rounded-full bg-card/95 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground shadow-sm backdrop-blur">
@@ -432,12 +434,12 @@ function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Pro
         <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">{provider.name}</h3>
         <p className="mt-0.5 text-xs text-muted-foreground">{provider.neighborhood}</p>
         <p className="mt-1 text-[11px] text-muted-foreground">
-          Ages {provider.ageRanges[0]} · {provider.activityTypes[0]}
+          {formatCrowdLabel(provider.ageRanges[0])} · {provider.activityTypes[0]}
         </p>
         <div className="mt-2 flex items-center justify-between">
           <span className="text-sm font-semibold text-primary">
-            €{provider.pricePerClass}
-            <span className="text-[10px] font-normal text-muted-foreground">/visit</span>
+            {price.main}
+            {price.suffix && <span className="text-[10px] font-normal text-muted-foreground">{price.suffix}</span>}
           </span>
           <Star className="h-3.5 w-3.5 fill-primary text-primary" />
         </div>

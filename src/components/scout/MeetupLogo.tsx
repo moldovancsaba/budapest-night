@@ -15,7 +15,7 @@ const PALETTES: Record<MeetupGroup["palette"], { bg: string; ring: string; fg: s
   teal:     { bg: "bg-teal-soft",        ring: "ring-teal/30",     fg: "text-teal",              mark: "bg-teal text-teal-foreground" },
   orange:   { bg: "bg-orange/10",        ring: "ring-orange/30",   fg: "text-orange",            mark: "bg-orange text-orange-foreground" },
   beige:    { bg: "bg-secondary",        ring: "ring-foreground/10", fg: "text-foreground",      mark: "bg-foreground text-background" },
-  charcoal: { bg: "bg-foreground",       ring: "ring-foreground/40", fg: "text-background",      mark: "bg-ivory text-foreground" },
+  charcoal: { bg: "bg-foreground",       ring: "ring-foreground/40", fg: "text-background",      mark: "bg-card text-foreground" },
 };
 
 export function MeetupLogo({ group, size = "md" }: { group: MeetupGroup; size?: "md" | "lg" }) {

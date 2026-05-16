@@ -17,3 +17,23 @@ export const CYBER_TONE_LINK: Record<string, string> = {
 
 export const CYBER_PANEL =
   "rounded-[2rem] border border-border/60 bg-gradient-to-br from-card via-[hsl(280_45%_9%)] to-[hsl(260_50%_6%)]";
+
+/** Account / saved sections — replaces legacy ClassScout beige panels. */
+export const ACCOUNT_PANEL = CYBER_PANEL;
+
+/** Category pills on saved cards and filters. */
+export const CATEGORY_BADGE: Record<string, string> = {
+  Events: CYBER_TONE_BG.teal,
+  Parties: CYBER_TONE_BG.pink,
+  Restaurants: CYBER_TONE_BG.amber,
+  Cafés: CYBER_TONE_BG.orange,
+  "Meet-Up Group": CYBER_TONE_BG.blue,
+  Culture: CYBER_TONE_BG.blue,
+  default: "bg-muted/80 text-foreground ring-1 ring-border",
+};
+
+export const FILTER_CHIP_ACTIVE =
+  "border-accent bg-accent text-accent-foreground shadow-[0_0_12px_hsl(180_100%_50%_/_0.3)]";
+
+export const FILTER_CHIP_IDLE =
+  "border-border bg-card/80 text-foreground hover:border-accent/50 hover:text-accent";

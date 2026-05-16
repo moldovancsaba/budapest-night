@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BoroughBar } from "../BoroughBar";
 import { NeighborhoodChips } from "../NeighborhoodChips";
 import { MeetupGroupCard } from "../MeetupGroupCard";
@@ -75,13 +75,13 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
               Gallery walks, food clubs, live culture crews, and local creator meetups across Budapest districts.
             </p>
           </div>
-          <CdnImage
-            src={site?.discoverHeroUrl || CMS_MEDIA.fallbackMeetup}
-            alt="Budapest culture and nightlife crowd"
-            width={1024}
-            height={640}
-            className="ml-auto hidden h-44 w-full max-w-md rounded-2xl border border-accent/20 object-cover ring-1 ring-primary/20 md:block"
-          />
+          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-accent/20 ring-1 ring-primary/20 md:block">
+            <CdnImage
+              fill
+              src={site?.discoverHeroUrl || CMS_MEDIA.fallbackMeetup}
+              alt="Budapest culture and nightlife crowd"
+            />
+          </div>
         </div>
       </section>
 

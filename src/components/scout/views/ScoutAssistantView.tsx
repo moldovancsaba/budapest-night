@@ -8,12 +8,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 import { useBrainStarters } from "@/hooks/useCatalog";
+import { useTranslations } from "next-intl";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = "/api/brain/chat";
 
 export function ScoutAssistantView() {
+  const t = useTranslations("assistant");
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -119,14 +121,12 @@ export function ScoutAssistantView() {
     <div className="mx-auto flex h-[calc(100vh-12rem)] max-w-3xl flex-col">
       <div className="mb-4">
         <div className="flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-teal text-teal-foreground">
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground">
             <Sparkles className="h-4 w-4" />
           </span>
           <div>
-            <h1 className="font-display text-2xl font-bold">Scout AI Assistant</h1>
-            <p className="text-sm text-muted-foreground">
-              Your AI guide to NYC kids' classes, camps, parties, and drop-ins.
-            </p>
+            <h1 className="font-display text-2xl font-bold">{t("title")}</h1>
+            <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
           </div>
         </div>
       </div>
@@ -137,9 +137,7 @@ export function ScoutAssistantView() {
       >
         {messages.length === 0 && (
           <div className="space-y-4">
-            <p className="text-sm text-muted-foreground">
-              Ask me anything — I can suggest programs by age, borough, schedule, or budget.
-            </p>
+            <p className="text-sm text-muted-foreground">{t("intro")}</p>
             {starters.length > 0 && (
               <div className="grid gap-2 sm:grid-cols-2">
                 {starters.map((s) => (
@@ -164,7 +162,7 @@ export function ScoutAssistantView() {
               className={cn(
                 "max-w-[85%] rounded-2xl px-4 py-2.5 text-sm",
                 m.role === "user"
-                  ? "bg-foreground text-background"
+                  ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-foreground",
               )}
             >
@@ -203,14 +201,14 @@ export function ScoutAssistantView() {
               send(input);
             }
           }}
-          placeholder="Ask Scout AI Assistant…"
+          placeholder={t("placeholder")}
           rows={1}
           className="min-h-[48px] resize-none rounded-xl bg-card"
         />
         <Button
           type="submit"
           disabled={isLoading || !input.trim()}
-          className="h-12 rounded-xl bg-teal text-teal-foreground hover:bg-teal/90"
+          className="h-12 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90"
         >
           {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
         </Button>

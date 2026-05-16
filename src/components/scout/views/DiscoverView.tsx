@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { BoroughBar } from "../BoroughBar";
 import { NeighborhoodChips } from "../NeighborhoodChips";
 import { Filters, EMPTY_FILTERS, type FilterState } from "../Filters";
@@ -11,6 +11,8 @@ import { CdnImage } from "@/components/ui/CdnImage";
 import { useProvidersCatalog, useNeighborhoodsCatalog, useSiteCatalog } from "@/hooks/useCatalog";
 import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
+import { useCategoryLabel, useDistrictLabel } from "@/hooks/useVenueDisplay";
 
 interface Props {
   category: Category;
@@ -20,20 +22,22 @@ interface Props {
   initialNeighborhood?: string | null;
 }
 
-const CATEGORY_BLURB: Record<Category, string> = {
-  Events: "concerts, festivals, boat parties, and rooftops",
-  Parties: "ruin bars, clubs, DJ nights, and late parties",
-  Restaurants: "bistros, fine dining, and Danube-side tables",
-  Cafés: "coffee, brunch, dessert bars, and all-day hangouts",
-};
-
 export function DiscoverView({ category, onOpen, onShare, initialBorough, initialNeighborhood }: Props) {
+  const t = useTranslations("discover");
+  const categoryLabel = useCategoryLabel();
+  const districtLabel = useDistrictLabel();
   const [borough, setBorough] = useState<BoroughChoice>(initialBorough ?? "All");
   const [neighborhood, setNeighborhood] = useState<string | null>(() => {
     const b = initialBorough ?? "All";
     return b === "All" ? null : (initialNeighborhood ?? null);
   });
   const [filters, setFilters] = useState<FilterState>(EMPTY_FILTERS);
+
+  useEffect(() => {
+    const b = initialBorough ?? "All";
+    setBorough(b);
+    setNeighborhood(b === "All" ? null : (initialNeighborhood ?? null));
+  }, [category, initialBorough, initialNeighborhood]);
 
   const { data: providers = [], isLoading: loadP, isError: errP } = useProvidersCatalog();
   const { data: neighborhoodsMap } = useNeighborhoodsCatalog();
@@ -83,8 +87,8 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
     return (
       <EmptyState
         icon={MapPin}
-        title="No listings in the database"
-        message="Add listings in /admin or run npm run ingest:listing with a curator JSON payload."
+        title={t("noDb")}
+        message={t("noDbHint")}
       />
     );
   }
@@ -95,25 +99,19 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(310_100%_50%_/_0.1),transparent_55%)]" />
         <div className="relative grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Budapest after dark</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              {site?.discoverEyebrow ?? t("eyebrow")}
+            </p>
             <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl">
-              <span className="neon-text">
-                Discover {category.toLowerCase()}
-                <br />
-                in Budapest
-              </span>
+              <span className="neon-text">{t("title", { category: categoryLabel(category) })}</span>
             </h1>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-              Find {CATEGORY_BLURB[category]} by district and neighborhood. Curated. Local. Built for nights out.
+              {t("findByArea", { blurb: t(`blurb.${category}`) })} {site?.discoverTagline ?? t("tagline")}
             </p>
           </div>
-          <CdnImage
-            src={site?.discoverHeroUrl}
-            alt="Budapest Chain Bridge and city lights at night"
-            width={1024}
-            height={640}
-            className="ml-auto hidden h-44 w-full max-w-md rounded-2xl border border-accent/20 object-cover ring-1 ring-primary/20 md:block"
-          />
+          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-accent/20 ring-1 ring-primary/20 md:block">
+            <CdnImage fill src={site?.discoverHeroUrl} alt={t("heroAlt")} />
+          </div>
         </div>
       </section>
 
@@ -135,7 +133,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
         <section>
           <div className="mb-4 flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-primary" />
-            <h2 className="font-display text-lg font-semibold text-foreground">Featured</h2>
+            <h2 className="font-display text-lg font-semibold text-foreground">{t("featured")}</h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => (
@@ -147,16 +145,13 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
 
       <section>
         <h2 className="mb-4 font-display text-lg font-semibold text-foreground">
-          {filtered.length} {category.toLowerCase()} {filtered.length === 1 ? "spot" : "spots"}
-          {borough !== "All" ? ` in ${borough}` : ""}
+          {borough !== "All"
+            ? t("resultsIn", { count: filtered.length, district: districtLabel(borough) })
+            : t("results", { count: filtered.length })}
           {neighborhood ? ` · ${neighborhood}` : ""}
         </h2>
         {filtered.length === 0 ? (
-          <EmptyState
-            icon={MapPin}
-            title="No matches"
-            message="Try another district, neighborhood, or filter."
-          />
+          <EmptyState icon={MapPin} title={t("noMatches")} message={t("noMatchesHint")} />
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((p) => (

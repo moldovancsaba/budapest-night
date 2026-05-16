@@ -13,16 +13,16 @@ type LlmOut = { skip?: boolean; reason?: string; provider?: unknown };
 
 function buildSystemPrompt(): string {
   const hoods = JSON.stringify(NEIGHBORHOODS, null, 0);
-  return `You are a careful data curator for BudapestNight, an Budapest visitors activity directory.
+  return `You are a careful data curator for Budapest Night, a Budapest nightlife and culture directory.
 
-Your job: decide if the page describes ONE concrete Budapest metro children's activity PROVIDER (class studio, camp, museum kids program, birthday party venue, drop-in play space, etc.). If not, return {"skip":true,"reason":"..."}.
+Your job: decide if the page describes ONE concrete Budapest venue or event PROVIDER (event space, club, ruin bar, restaurant, café, gallery, boat party, festival, etc.). If not, return {"skip":true,"reason":"..."}.
 
 Rules:
 - ONLY output JSON. No markdown.
 - If skip is false, include key "provider" with a single object matching the BudapestNight provider schema EXACTLY.
 - Never invent prices, hours, addresses, or phone numbers. Use only facts supported by the PAGE TEXT and SOURCE URL.
 - If a field is unknown, use sensible empties: email may be "". image must be "" unless you have an **https ImgBB** direct image URL (see project rules); never put a venue CDN URL in image. rating 0 and reviewCount 0 unless explicit ratings appear in the text.
-- pricePerClass: for drop-in/museum/day-pass, put the clearest single-ticket child or general admission price you can cite from the text; if only a range, pick the lower bound and mention uncertainty in longDescription.
+- pricePerClass: typical per-person spend (cover, tasting menu, ticket, or average main) in EUR; cite from the text only; if only a range, pick the lower bound and note uncertainty in longDescription.
 - id MUST match ^prov-[a-z0-9-]+$ (lowercase slug, unique), e.g. prov-cmom-visit.
 - category MUST be one of: ${CURATOR_CATEGORIES.join(", ")}
 - borough MUST be one of: ${CURATOR_BOROUGHS.join(", ")}

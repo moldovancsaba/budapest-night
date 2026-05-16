@@ -16,13 +16,12 @@ export function Logo({
   return (
     <div className={cn("flex items-center gap-3", className)}>
       {hasUrl ? (
-        <Image
-          src={logoUrl!}
-          alt="Budapest Night logo"
-          width={size}
-          height={size}
-          className="rounded-full object-cover ring-2 ring-accent/50"
-        />
+        <div
+          className="relative shrink-0 overflow-hidden rounded-full ring-2 ring-accent/50"
+          style={{ width: size, height: size }}
+        >
+          <Image src={logoUrl!} alt="Budapest Night logo" fill className="object-cover object-center" sizes={`${size}px`} />
+        </div>
       ) : (
         <div
           className="grid shrink-0 place-items-center rounded-full bg-gradient-to-br from-primary to-accent font-display text-lg font-bold text-primary-foreground shadow-[0_0_20px_hsl(180_100%_50%_/_0.4)]"

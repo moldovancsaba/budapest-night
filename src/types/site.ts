@@ -93,7 +93,7 @@ export interface SiteAccountSettings {
     toastAddedToPlan: string;
     toastRemoved: string;
     toastSampleRemove: string;
-    /** Shown after price for provider cards (e.g. “class”, “week”). */
+    /** Per-category budget line unit (Events→ticket, Parties→cover, etc.). */
     priceUnits: { class: string; week: string; party: string; visit: string };
   };
   activityPlan: {
@@ -145,7 +145,7 @@ export interface SiteCalculatorCopy {
   asideTitle: string;
   asideSubtitle: string;
   asideFootnote: string;
-  /** Appended to price in each row (e.g. "/class"). */
+  /** Appended to price in budget rows (e.g. "/person"). */
   providerLinePriceSuffix: string;
   estimatedTotalLabel: string;
 }
@@ -160,9 +160,12 @@ export interface SiteDoc {
   homeHeroPrimaryCta: string;
   homeHeroSecondaryCta: string;
   homeHeroTagline: string;
+  /** Discover category pages — eyebrow + closing tagline (category line is built in UI). */
+  discoverEyebrow: string;
+  discoverTagline: string;
   homeCategoriesTitle: string;
   neighborhoodSectionTitle: string;
-  /** Use {"{borough}"} as placeholder for the selected borough name. */
+  /** Use {"{district}"} as placeholder for the selected district name. */
   popularNeighborhoodsCaption: string;
   guidesSectionTitle: string;
   guidesViewAllLabel: string;
@@ -228,9 +231,11 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
   homeHeroPrimaryCta: "Start exploring",
   homeHeroSecondaryCta: "Browse by district",
   homeHeroTagline: "Neon-lit. Local. Built for nights out in Budapest.",
-  homeCategoriesTitle: "What are you looking for?",
+  discoverEyebrow: "Budapest after dark",
+  discoverTagline: "Curated. Local. Built for nights out.",
+  homeCategoriesTitle: "What's your night?",
   neighborhoodSectionTitle: "Find the night in your neighborhood",
-  popularNeighborhoodsCaption: "Popular spots in {borough}",
+  popularNeighborhoodsCaption: "Popular spots in {district}",
   guidesSectionTitle: "Featured district guides",
   guidesViewAllLabel: "View all guides",
   guidesViewAllHref: "",
@@ -295,7 +300,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
     {
       step: 3,
       title: "Save, share & plan",
-      desc: "Keep favorites, send ideas to another parent, and estimate total cost.",
+      desc: "Save favorites, share spots with friends, and estimate your night-out budget.",
       tone: "pink",
       icon: "heart",
     },
@@ -309,7 +314,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
     },
     {
       title: "Helpful details",
-      desc: "Provider details in one easy place.",
+      desc: "Hours, vibes, prices, and tags in one place.",
       tone: "teal",
       icon: "shield-check",
     },
@@ -321,7 +326,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
     },
     {
       title: "Save & compare",
-      desc: "Favorite providers and estimate total activity costs.",
+      desc: "Bookmark venues and estimate your total spend.",
       tone: "blue",
       icon: "calculator",
     },
@@ -348,25 +353,25 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
     asideTitle: "Estimated total",
     asideSubtitle: "Based on the venues and events you've added.",
     asideFootnote: "Estimates for planning only. Confirm rates with each provider.",
-    providerLinePriceSuffix: "/class",
+    providerLinePriceSuffix: "/person",
     estimatedTotalLabel: "Estimated total",
   },
   account: {
     page: {
       title: "My Account",
-      subtitle: "Manage your saved items, plan activities, and personalize your experience.",
+      subtitle: "Manage saved venues, your night plan, and preferences.",
     },
     navTabs: [
-      { id: "saved", label: "Saved Providers & Groups" },
-      { id: "plan", label: "My Activity Plan" },
-      { id: "prefs", label: "Family Preferences" },
-      { id: "neighborhood", label: "My Neighborhood" },
-      { id: "alerts", label: "Alerts & Email Settings" },
+      { id: "saved", label: "Saved" },
+      { id: "plan", label: "Night plan" },
+      { id: "prefs", label: "Preferences" },
+      { id: "neighborhood", label: "My district" },
+      { id: "alerts", label: "Alerts" },
     ],
     saved: {
       tabId: "saved",
-      title: "Saved Providers & Groups",
-      subtitle: "Everything you've saved in one place.",
+      title: "Saved venues & circles",
+      subtitle: "Everything you've bookmarked in one place.",
       viewAllCta: "View all saved",
       filterChips: [
         { label: "All", categoryFilter: "All" },
@@ -377,32 +382,32 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
         { label: "Culture", categoryFilter: "Culture" },
       ],
       emptyMessage: "No saved items in this category yet.",
-      card: { viewCta: "View", shareCta: "Share", addToPlanCta: "Add to Plan", removeCta: "Remove" },
+      card: { viewCta: "View", shareCta: "Share", addToPlanCta: "Add to budget", removeCta: "Remove" },
       toastAddedToPlan: "Added {name} to your plan",
       toastRemoved: "Removed {name}",
-      toastSampleRemove: "Save providers from Discover to manage them here.",
-      priceUnits: { class: "class", week: "week", party: "party", visit: "visit" },
+      toastSampleRemove: "Save venues from Discover to manage them here.",
+      priceUnits: { class: "ticket", week: "cover", party: "person", visit: "visit" },
     },
     activityPlan: {
       tabId: "plan",
-      title: "My Activity Plan",
-      subtitle: "Estimate your total cost.",
-      emptyMessage: "Add providers from Discover to your calculator to see them here.",
+      title: "My night plan",
+      subtitle: "Estimate your total spend for the evening.",
+      emptyMessage: "Add venues from Discover to your budget tool to see them here.",
       estimatedTotalLabel: "Estimated total",
       viewFullCta: "View full plan",
       clearCta: "Clear plan",
-      priceUnits: { class: "class", week: "week", party: "party", visit: "visit" },
+      priceUnits: { class: "ticket", week: "cover", party: "person", visit: "visit" },
     },
     familyPreferences: {
       tabId: "prefs",
-      title: "Family Preferences",
-      subtitle: "Update your family's interests.",
+      title: "Your preferences",
+      subtitle: "Tune what you want to see around Budapest.",
       editCta: "Edit preferences",
       savedToast: "Preferences saved",
       sections: [
         {
           id: "age",
-          label: "Child age range",
+          label: "Crowd & vibe",
           options: ["All ages", "Family", "18+", "21+", "Late night"],
           defaultSelected: ["18+"],
         },
@@ -428,18 +433,18 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
         {
           id: "times",
           label: "Preferred times",
-          options: ["Weekday", "Weekend", "Morning", "Afternoon", "After-school", "Evening"],
-          defaultSelected: ["Weekday", "Weekend", "After-school"],
+          options: ["Weekday", "Weekend", "Morning", "Afternoon", "Evening", "Late night"],
+          defaultSelected: ["Weekend", "Evening", "Late night"],
         },
       ],
     },
     neighborhood: {
       tabId: "neighborhood",
-      title: "My Neighborhood",
-      subtitle: "Your home base for local picks.",
+      title: "My district",
+      subtitle: "Your home base for Budapest nights out.",
       addressLine1: "",
       addressLine2: "",
-      detectedLabelPrefix: "Detected neighborhood:",
+      detectedLabelPrefix: "Your area:",
       detectedNeighborhood: "",
       detectedBorough: "Belváros",
       updateAddressCtaLabel: "Update address",

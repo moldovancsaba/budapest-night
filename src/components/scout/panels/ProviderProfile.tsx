@@ -12,6 +12,10 @@ import { ProviderCard } from "../ProviderCard";
 import { ProviderMap } from "./ProviderMap";
 import { resolveImageUrl } from "@/lib/resolveImageUrl";
 import { CMS_MEDIA } from "@/config/defaultMedia";
+import { formatVenuePrice, venueSharePriceLine } from "@/lib/venueDisplay";
+import { useLocale } from "next-intl";
+import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
+import type { AppLocale } from "@/i18n/config";
 
 export function ProviderProfile({
   provider,
@@ -24,6 +28,7 @@ export function ProviderProfile({
   onShare: (p: Provider) => void;
   onOpenAnother: (p: Provider) => void;
 }) {
+  const locale = useLocale() as AppLocale;
   const { data: allProviders = [] } = useProvidersCatalog();
   const { isSaved, toggle } = useSaved();
   const { add } = useCalculator();
@@ -48,18 +53,23 @@ export function ProviderProfile({
   if (!provider) return null;
 
   const saved = isSaved(provider.id);
+  const price = formatVenuePrice(provider);
   const current = gallery.length > 0 ? gallery[Math.min(photoIdx, gallery.length - 1)] : undefined;
 
   const similar = allProviders.filter(
     (p) => p.id !== provider.id && p.borough === provider.borough && p.category === provider.category,
   ).slice(0, 3);
 
+  const shareUrl = buildAbsoluteVenueUrl(provider.id, provider.category, locale);
+
   const shareEmail = () => {
-    const body = `Check out ${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}.\n\n${provider.shortDescription}\nFrom $${provider.pricePerClass}/class.\n\nhttps://budapestnight.app/p/${provider.id}`;
+    const priceLine = venueSharePriceLine(provider);
+    const body = `Check out ${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}.\n\n${provider.shortDescription}\n${priceLine}.\n\n${shareUrl}`;
     window.open(`mailto:?subject=${encodeURIComponent(provider.name + " on Budapest Night")}&body=${encodeURIComponent(body)}`);
   };
   const shareWhatsapp = () => {
-    const text = `${provider.name} (${provider.category}) in ${provider.neighborhood}, ${provider.borough} — $${provider.pricePerClass}/class. ${provider.shortDescription} https://budapestnight.app/p/${provider.id}`;
+    const priceLine = venueSharePriceLine(provider);
+    const text = `${provider.name} (${provider.category}) in ${provider.neighborhood}, ${provider.borough} — ${priceLine}. ${provider.shortDescription} ${shareUrl}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -67,7 +77,7 @@ export function ProviderProfile({
     <Sheet open={!!provider} onOpenChange={(o) => !o && onClose()}>
       <SheetContent side="right" className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background">
         <div className="relative h-64 w-full overflow-hidden">
-          <CdnImage resolveBase={provider.website} src={current} alt={provider.name} className="h-full w-full object-cover" />
+          <CdnImage fill resolveBase={provider.website} src={current} alt={provider.name} />
           {provider.badges[0] && (
             <span className="absolute left-5 top-5 rounded-full bg-teal px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-teal-foreground">
               {provider.badges[0]}
@@ -143,7 +153,7 @@ export function ProviderProfile({
                     i === photoIdx ? "border-teal" : "border-transparent opacity-70 hover:opacity-100",
                   )}
                 >
-                  <CdnImage resolveBase={provider.website} src={src} alt={`${provider.name} photo ${i + 1}`} className="h-full w-full object-cover" />
+                  <CdnImage fill resolveBase={provider.website} src={src} alt={`${provider.name} photo ${i + 1}`} />
                 </button>
               ))}
             </div>
@@ -164,8 +174,8 @@ export function ProviderProfile({
               </span>
               <span className="text-border">|</span>
               <span className="font-display text-base">
-                <span className="font-bold text-orange">${provider.pricePerClass}</span>
-                <span className="text-xs text-muted-foreground">/class</span>
+                <span className="font-bold text-orange">{price.main}</span>
+                {price.suffix && <span className="text-xs text-muted-foreground">{price.suffix}</span>}
               </span>
             </div>
           </div>
@@ -175,7 +185,7 @@ export function ProviderProfile({
               <span key={t} className="rounded-full bg-teal-soft px-3 py-1 text-xs font-medium text-teal">{t}</span>
             ))}
             {provider.ageRanges.map((a) => (
-              <span key={a} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">Ages {a}</span>
+              <span key={a} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{a}</span>
             ))}
             {provider.dayTimeTags.map((d) => (
               <span key={d} className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">{d}</span>
@@ -187,21 +197,21 @@ export function ProviderProfile({
           <div className="grid grid-cols-2 gap-2">
             {provider.bookingEnabled && (
               <Button
-                className="col-span-2 bg-teal text-teal-foreground hover:bg-teal/90"
-                aria-label={`Book now with ${provider.name}`}
-                onClick={() => toast.success("Booking link coming soon. Visit the provider website or contact them directly.")}
+                className="col-span-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                aria-label={`Reserve at ${provider.name}`}
+                onClick={() => toast.success("Booking link coming soon. Visit the venue website or contact them directly.")}
               >
-                <Calendar className="h-4 w-4" /> Book Now
+                <Calendar className="h-4 w-4" /> Reserve
               </Button>
             )}
             <Button
-              className="bg-foreground text-background hover:bg-foreground/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
               onClick={() => {
                 add(provider.id);
-                toast.success(`${provider.name} added to calculator`);
+                toast.success(`${provider.name} added to your night budget`);
               }}
             >
-              <Plus className="h-4 w-4" /> Add to calculator
+              <Plus className="h-4 w-4" /> Add to budget
             </Button>
             <Button
               variant="outline"
@@ -222,7 +232,7 @@ export function ProviderProfile({
           </div>
 
           <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">Contact this provider</h3>
+            <h3 className="font-display text-sm font-semibold text-foreground">Contact this venue</h3>
             <div className="mt-3 space-y-2 text-sm">
               <a href={`mailto:${provider.email}`} className="flex items-center gap-2 text-foreground hover:text-teal">
                 <Mail className="h-4 w-4 text-muted-foreground" /> {provider.email}
@@ -240,7 +250,7 @@ export function ProviderProfile({
 
           {similar.length > 0 && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">Similar providers nearby</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">More nearby</h3>
               <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {similar.map((p) => (
                   <ProviderCard key={p.id} provider={p} onOpen={onOpenAnother} onShare={onShare} />

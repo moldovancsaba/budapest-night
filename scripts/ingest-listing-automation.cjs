@@ -3,7 +3,7 @@
  * BudapestNight curator ingest automation
  *
  * Curator workflow (you research; this script validates, dedupes, POSTs, reports):
- * 1. Find one Budapest family/kids listing from an official or highly reliable source.
+ * 1. Find one Budapest nightlife/culture listing from an official or highly reliable source.
  * 2. Author `scripts/ingest-payloads/<name>.json` with `operations`, `sourceUrls`,
  *    optional `notes`, optional `missingOrUncertain` (string array).
  * 3. Run: `npm run ingest:listing -- [--dry-run] [--force] <payload.json>`
@@ -29,14 +29,14 @@ const path = require("path");
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
 
-const CATEGORIES = ["Classes", "Camps", "Birthday Parties", "Drop-In Activities"];
-const BOROUGHS = ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"];
-const AGE_RANGES = ["0–2", "3–5", "6–8", "9–12", "Teens"];
-const DAY_TAGS = ["Weekday", "Weekend", "Morning", "Afternoon", "Evening", "After-school"];
-const BADGES = ["Featured", "Popular", "New", "Staff Pick", "Great for Toddlers", "Weekend Friendly"];
+const CATEGORIES = ["Events", "Parties", "Restaurants", "Cafés"];
+const BOROUGHS = ["Belváros", "Terézváros", "Erzsébetváros", "Ferencváros", "Buda", "Óbuda", "Újbuda"];
+const AGE_RANGES = ["All ages", "Family", "18+", "21+", "Late night"];
+const DAY_TAGS = ["Weekday", "Weekend", "Morning", "Afternoon", "Evening", "Late night"];
+const BADGES = ["Featured", "Popular", "New", "Staff Pick", "Hidden Gem", "Weekend Vibes"];
 
-const MEETUP_TYPES = ["Parent Meetup", "Mom Group", "Playdate Group", "New Parents", "Neighborhood Families"];
-const MEETUP_AGES = ["0–2", "0–3", "0–5", "0–6", "2–5", "2–8", "3–5", "All ages"];
+const MEETUP_TYPES = ["Art & Gallery", "Live Culture", "Food & Wine Circle", "Nightlife Crew", "Local Creators"];
+const MEETUP_AGES = ["All ages", "18+", "21+", "Family", "Late night"];
 const MEETUP_CADENCE = ["Weekly", "Monthly", "Weekend", "Pop-up"];
 const MEETUP_ICONS = ["stroller", "skyline", "heart", "coffee", "playground", "community"];
 const MEETUP_PALETTES = ["teal", "orange", "beige", "charcoal"];

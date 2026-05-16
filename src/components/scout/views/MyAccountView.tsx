@@ -6,11 +6,18 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useProvidersCatalog, useSiteCatalog } from "@/hooks/useCatalog";
 import { useSaved, useCalculator } from "@/store/useScout";
-import type { Provider, Borough, BoroughChoice, Category } from "@/types/provider";
+import type { Provider, BoroughChoice, Category } from "@/types/provider";
+import { formatCrowdLabel, formatVenuePrice, venueBudgetUnit } from "@/lib/venueDisplay";
 import type { AccountSavedCategoryFilter, SiteAccountSettings, SiteDoc } from "@/types/site";
 import { DEFAULT_SITE } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { CdnImage } from "@/components/ui/CdnImage";
+import {
+  ACCOUNT_PANEL,
+  CATEGORY_BADGE,
+  FILTER_CHIP_ACTIVE,
+  FILTER_CHIP_IDLE,
+} from "@/lib/cyberTheme";
 
 interface Props {
   onNavigate: (view: Category | "Saved" | "Calculator" | "Meet-Up Groups", location?: { borough?: BoroughChoice; neighborhood?: string }) => void;
@@ -21,25 +28,33 @@ interface Props {
 function badgeFor(cat: string) {
   switch (cat) {
     case "Events":
-      return { label: "Event", filter: "Events", tone: "bg-teal-soft text-teal" };
+      return { label: "Event", filter: "Events", tone: CATEGORY_BADGE.Events };
     case "Parties":
-      return { label: "Party", filter: "Parties", tone: "bg-[hsl(140_40%_92%)] text-[hsl(150_50%_30%)]" };
+      return { label: "Party", filter: "Parties", tone: CATEGORY_BADGE.Parties };
     case "Restaurants":
-      return { label: "Restaurant", filter: "Restaurants", tone: "bg-[hsl(340_70%_94%)] text-[hsl(340_60%_45%)]" };
+      return { label: "Restaurant", filter: "Restaurants", tone: CATEGORY_BADGE.Restaurants };
     case "Cafés":
-      return { label: "Café", filter: "Cafés", tone: "bg-[hsl(40_90%_92%)] text-[hsl(35_85%_45%)]" };
+      return { label: "Café", filter: "Cafés", tone: CATEGORY_BADGE.Cafés };
     case "Meet-Up Group":
-      return { label: "Culture", filter: "Culture", tone: "bg-[hsl(210_80%_94%)] text-[hsl(210_70%_45%)]" };
+      return { label: "Culture", filter: "Culture", tone: CATEGORY_BADGE.Culture };
     default:
-      return { label: cat, filter: "All", tone: "bg-secondary text-foreground" };
+      return { label: cat, filter: "All", tone: CATEGORY_BADGE.default };
   }
 }
 
 function priceUnitLabel(p: Provider, units: SiteAccountSettings["saved"]["priceUnits"]) {
-  if (p.category === "Parties") return units.week;
-  if (p.category === "Restaurants") return units.party;
-  if (p.category === "Cafés") return units.visit;
-  return units.class;
+  switch (p.category) {
+    case "Parties":
+      return units.week;
+    case "Restaurants":
+      return units.party;
+    case "Cafés":
+      return units.visit;
+    case "Events":
+      return units.class;
+    default:
+      return venueBudgetUnit(p.category);
+  }
 }
 
 function withSaved(tab: string, savedTabId: string, sectionTabId: string) {
@@ -100,11 +115,11 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
                 }}
                 className={cn(
                   "relative whitespace-nowrap px-4 py-3 text-sm font-semibold transition-colors",
-                  active ? "text-teal" : "text-muted-foreground hover:text-foreground",
+                  active ? "text-accent" : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {t.label}
-                {active && <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-teal" />}
+                {active && <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-accent" />}
               </button>
             );
           })}
@@ -113,7 +128,7 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
 
       <section
         id={`section-${acc.saved.tabId}`}
-        className={cn("rounded-3xl bg-[hsl(36_35%_94%)] p-6 sm:p-8", tab !== acc.saved.tabId && "hidden")}
+        className={cn(ACCOUNT_PANEL, "p-6 sm:p-8", tab !== acc.saved.tabId && "hidden")}
       >
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
@@ -122,7 +137,7 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
           </div>
           <Button
             variant="outline"
-            className="rounded-full border-foreground/15 bg-card hover:bg-secondary"
+            className="rounded-full border-border bg-card/80 hover:border-accent/40 hover:bg-card"
             onClick={() => onNavigate("Saved")}
           >
             {acc.saved.viewAllCta} <ArrowRight className="h-4 w-4" />
@@ -138,9 +153,7 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
                 onClick={() => setFilter(c.categoryFilter)}
                 className={cn(
                   "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
-                  active
-                    ? "border-teal bg-teal text-teal-foreground"
-                    : "border-border bg-card text-foreground hover:border-teal hover:text-teal",
+                  active ? FILTER_CHIP_ACTIVE : FILTER_CHIP_IDLE,
                 )}
               >
                 {c.label}
@@ -185,11 +198,11 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
         <AlertsCard acc={acc} tab={tab} />
       </div>
 
-      <div className="rounded-2xl bg-[hsl(36_35%_94%)] px-6 py-5 text-center">
+      <div className={cn(ACCOUNT_PANEL, "rounded-2xl px-6 py-5 text-center")}>
         <p className="text-sm font-medium text-foreground">{acc.privacy.headline}</p>
         <p className="mt-1 text-xs text-muted-foreground">
           {acc.privacy.supportTextBefore}{" "}
-          <a href={`mailto:${acc.privacy.supportEmail}`} className="font-semibold text-teal hover:underline">
+          <a href={`mailto:${acc.privacy.supportEmail}`} className="font-semibold text-accent hover:underline">
             {acc.privacy.supportEmail}
           </a>
           {acc.privacy.supportTextAfter ? ` ${acc.privacy.supportTextAfter}` : null}
@@ -218,31 +231,36 @@ function SavedProviderCard({
 }) {
   const b = badgeFor(provider.category);
   const unit = priceUnitLabel(provider, priceUnits);
+  const price = formatVenuePrice(provider);
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl bg-card shadow-card">
-      <div className="relative h-36 overflow-hidden">
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card">
+      <div className="relative h-36 overflow-hidden bg-muted">
         <CdnImage
+          fill
           resolveBase={provider.website}
           src={provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing}
           alt={provider.name}
-          className="h-full w-full object-cover"
         />
         <span className={cn("absolute left-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide shadow-sm", b.tone)}>
           {b.label}
         </span>
-        <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card/95 text-orange shadow-sm" aria-label="Saved">
-          <Heart className="h-4 w-4 fill-orange" />
+        <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card/95 text-primary shadow-sm" aria-label="Saved">
+          <Heart className="h-4 w-4 fill-primary" />
         </span>
       </div>
       <div className="flex flex-1 flex-col p-4">
         <h3 className="font-display text-base font-semibold leading-snug text-foreground">{provider.name}</h3>
         <p className="mt-0.5 text-xs text-muted-foreground">{provider.neighborhood}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          Ages {provider.ageRanges[0]} · {provider.activityTypes[0]}
+          {formatCrowdLabel(provider.ageRanges[0])} · {provider.activityTypes[0]}
         </p>
-        <p className="mt-2 text-sm font-bold text-orange">
-          ${provider.pricePerClass}
-          <span className="text-[11px] font-normal text-muted-foreground"> / {unit}</span>
+        <p className="mt-2 text-sm font-bold text-primary">
+          {price.main}
+          {price.suffix ? (
+            <span className="text-[11px] font-normal text-muted-foreground">{price.suffix}</span>
+          ) : (
+            <span className="text-[11px] font-normal text-muted-foreground"> · per {unit}</span>
+          )}
         </p>
         <div className="mt-4 grid grid-cols-2 gap-2">
           <Button size="sm" variant="outline" className="rounded-full" onClick={onView}>
@@ -251,7 +269,7 @@ function SavedProviderCard({
           <Button size="sm" variant="outline" className="rounded-full" onClick={onShare}>
             <Share2 className="h-3.5 w-3.5" /> {card.shareCta}
           </Button>
-          <Button size="sm" className="rounded-full bg-teal text-teal-foreground hover:bg-teal/90" onClick={onAddToPlan}>
+          <Button size="sm" className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={onAddToPlan}>
             <Plus className="h-3.5 w-3.5" /> {card.addToPlanCta}
           </Button>
           <Button size="sm" variant="ghost" className="rounded-full text-muted-foreground hover:text-foreground" onClick={onRemove}>
@@ -293,7 +311,7 @@ function ActivityPlanCard({
   return (
     <section
       id={`section-${acc.activityPlan.tabId}`}
-      className={cn("rounded-3xl bg-[hsl(36_35%_94%)] p-6 sm:p-7", !visible && "hidden")}
+      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
     >
       <div className="flex items-start justify-between gap-3">
         <div>
@@ -309,12 +327,13 @@ function ActivityPlanCard({
           <ul className="mt-5 space-y-2">
             {rows.map((r) => {
               const unit = priceUnitLabel(r.provider, units);
+              const linePrice = formatVenuePrice(r.provider);
               return (
                 <li key={r.providerId} className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3">
                   <div className="min-w-0">
                     <p className="truncate font-display text-sm font-semibold text-foreground">{r.provider.name}</p>
                     <p className="text-xs text-muted-foreground">
-                      ${r.provider.pricePerClass} / {unit}
+                      {linePrice.suffix ? `${linePrice.main}${linePrice.suffix}` : `${linePrice.main} · per ${unit}`}
                     </p>
                   </div>
                   <div className="flex items-center gap-2">
@@ -323,7 +342,7 @@ function ActivityPlanCard({
                         type="button"
                         onClick={() => setClasses(r.providerId, r.qty - 1)}
                         className="grid h-7 w-7 place-items-center text-muted-foreground hover:text-foreground"
-                        aria-label="Decrease"
+                        aria-label="Fewer guests"
                       >
                         <Minus className="h-3 w-3" />
                       </button>
@@ -332,12 +351,12 @@ function ActivityPlanCard({
                         type="button"
                         onClick={() => setClasses(r.providerId, r.qty + 1)}
                         className="grid h-7 w-7 place-items-center text-muted-foreground hover:text-foreground"
-                        aria-label="Increase"
+                        aria-label="More guests"
                       >
                         <Plus className="h-3 w-3" />
                       </button>
                     </div>
-                    <p className="w-16 text-right text-sm font-bold text-orange">${r.subtotal}</p>
+                    <p className="w-16 text-right text-sm font-bold text-primary">€{r.subtotal}</p>
                     <button
                       type="button"
                       onClick={() => remove(r.providerId)}
@@ -354,13 +373,13 @@ function ActivityPlanCard({
 
           <div className="mt-5 flex items-center justify-between rounded-2xl bg-card p-4">
             <span className="font-display text-sm font-semibold text-foreground">{acc.activityPlan.estimatedTotalLabel}</span>
-            <span className="font-display text-2xl font-bold text-orange">${total}</span>
+            <span className="font-display text-2xl font-bold text-primary">€{total}</span>
           </div>
         </>
       )}
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <Button onClick={() => onNavigate("Calculator")} className="rounded-full bg-teal text-teal-foreground hover:bg-teal/90">
+        <Button onClick={() => onNavigate("Calculator")} className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
           {acc.activityPlan.viewFullCta}
         </Button>
         <Button variant="outline" onClick={() => clear()} className="rounded-full">
@@ -378,9 +397,7 @@ function PillToggle({ label, active, onClick }: { label: string; active: boolean
       onClick={onClick}
       className={cn(
         "rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors",
-        active
-          ? "border-teal bg-teal text-teal-foreground"
-          : "border-border bg-card text-foreground hover:border-teal hover:text-teal",
+        active ? FILTER_CHIP_ACTIVE : FILTER_CHIP_IDLE,
       )}
     >
       {label}
@@ -412,7 +429,7 @@ function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: st
   return (
     <section
       id={`section-${acc.familyPreferences.tabId}`}
-      className={cn("rounded-3xl bg-[hsl(36_35%_94%)] p-6 sm:p-7", !visible && "hidden")}
+      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
     >
       <h2 className="font-display text-xl font-bold text-foreground">{acc.familyPreferences.title}</h2>
       <p className="mt-1 text-sm text-muted-foreground">{acc.familyPreferences.subtitle}</p>
@@ -436,7 +453,7 @@ function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: st
       </div>
 
       <Button
-        className="mt-6 rounded-full bg-teal text-teal-foreground hover:bg-teal/90"
+        className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
         onClick={() => toast.success(acc.familyPreferences.savedToast)}
       >
         {acc.familyPreferences.editCta}
@@ -458,13 +475,13 @@ function NeighborhoodCard({
   const visible = withSaved(tab, acc.saved.tabId, n.tabId);
 
   return (
-    <section id={`section-${n.tabId}`} className={cn("rounded-3xl bg-[hsl(36_35%_94%)] p-6 sm:p-7", !visible && "hidden")}>
+    <section id={`section-${n.tabId}`} className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}>
       <h2 className="font-display text-xl font-bold text-foreground">{n.title}</h2>
       <p className="mt-1 text-sm text-muted-foreground">{n.subtitle}</p>
 
       <div className="mt-5 rounded-2xl bg-card p-5">
         <div className="flex flex-wrap items-start gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-orange/15 text-orange">
+          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
             <MapPin className="h-5 w-5" />
           </span>
           <div className="min-w-0 flex-1">
@@ -488,7 +505,7 @@ function NeighborhoodCard({
             key={hood}
             type="button"
             onClick={() => onNavigate("Events", { borough: n.nearbyNavigateBorough, neighborhood: hood })}
-            className="rounded-full border border-border bg-card px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-teal hover:text-teal"
+            className="rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-accent/50 hover:text-accent"
           >
             {hood}
           </button>
@@ -496,7 +513,7 @@ function NeighborhoodCard({
       </div>
 
       <Button
-        className="mt-6 rounded-full bg-teal text-teal-foreground hover:bg-teal/90"
+        className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
         onClick={() => onNavigate("Events", { borough: n.browseNavigateBorough, neighborhood: n.browseNavigateNeighborhood })}
       >
         {n.browseCtaLabel} <ArrowRight className="h-4 w-4" />
@@ -520,7 +537,7 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
   }, [a.frequencyChoices]);
 
   return (
-    <section id={`section-${a.tabId}`} className={cn("rounded-3xl bg-[hsl(36_35%_94%)] p-6 sm:p-7", !visible && "hidden")}>
+    <section id={`section-${a.tabId}`} className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}>
       <h2 className="font-display text-xl font-bold text-foreground">{a.title}</h2>
       <p className="mt-1 text-sm text-muted-foreground">{a.subtitle}</p>
 
@@ -533,7 +550,7 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
                 id={`alert-${opt}`}
                 checked={alerts[opt] ?? false}
                 onCheckedChange={(v) => setAlerts((s) => ({ ...s, [opt]: !!v }))}
-                className="data-[state=checked]:border-teal data-[state=checked]:bg-teal data-[state=checked]:text-teal-foreground"
+                className="data-[state=checked]:border-accent data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground"
               />
               <label htmlFor={`alert-${opt}`} className="cursor-pointer text-sm text-foreground">
                 {opt}
@@ -555,9 +572,7 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
                 onClick={() => setFreq(f)}
                 className={cn(
                   "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
-                  active
-                    ? "border-teal bg-teal text-teal-foreground"
-                    : "border-border bg-card text-foreground hover:border-teal hover:text-teal",
+                  active ? FILTER_CHIP_ACTIVE : FILTER_CHIP_IDLE,
                 )}
               >
                 {f}
@@ -567,7 +582,7 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
         </div>
       </div>
 
-      <Button className="mt-6 rounded-full bg-teal text-teal-foreground hover:bg-teal/90" onClick={() => toast.success(a.savedToast)}>
+      <Button className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => toast.success(a.savedToast)}>
         <Mail className="h-4 w-4" /> {a.saveCta}
       </Button>
     </section>

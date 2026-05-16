@@ -1,0 +1,44 @@
+{
+  "sourceUrls": [
+    "https://operett.hu/en",
+    "https://operett.hu/en/the-budapest-operetta--musical-theatre",
+    "https://operett.hu/en/contact",
+    "https://operett.hu/en/program",
+    "https://operett.hu/jegyarak"
+  ],
+  "notes": "Fills scarcest provider district (Terézváros, 0 rows) with official musical theatre on Nagymező utca.",
+  "missingOrUncertain": [
+    "Ticket prices use dynamic pricing per operett.hu/jegyarak; pricePerClass set to 0 EUR until a specific performance price is cited.",
+    "rating and reviewCount left at 0 — no explicit aggregate rating on official pages."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-operetta-terezvaros",
+        "name": "Budapest Operetta & Musical Theatre",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Nagymező u. 17, Hungary",
+        "activityTypes": ["Theatre", "Live Music"],
+        "ageRanges": ["All ages", "Family"],
+        "dayTimeTags": ["Evening", "Weekend", "Weekday"],
+        "pricePerClass": 0,
+        "shortDescription": "Historic operetta and musical theatre on Nagymező — grand auditorium, year-round Hungarian and international shows.",
+        "longDescription": "The Budapest Operetta & Musical Theatre (Budapesti Operettszínház) has been at Nagymező utca 17 since 1923 in a Fellner & Helmer building from 1894. The restored hall seats 901 and hosts operettas, musicals, and family productions across multiple stages. Buy tickets via operett.hu or the on-site box office (Mon–Fri 10:00–19:00, Sat–Sun 13:00–19:00). Some performances use dynamic pricing — check the online box office before you plan your evening.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": ["Staff Pick"],
+        "image": "https://i.ibb.co/nNmMm6Cf/0e45661c9f87.png",
+        "email": "jegy@operett.hu",
+        "website": "https://operett.hu/en",
+        "phone": "+36 1 312-4866",
+        "announcementTitle": "Check tonight's program",
+        "announcementDescription": "Operettas, musicals, and family shows — book on the official site.",
+        "announcementBadge": "Live culture"
+      }
+    }
+  ]
+}

@@ -12,7 +12,7 @@ loadEnv({ path: path.join(process.cwd(), ".env") });
 loadEnv({ path: path.join(process.cwd(), ".env.local"), override: true });
 
 const uri = process.env.MONGODB_URI;
-const dbName = process.env.MONGODB_DB ?? "classscout";
+const dbName = process.env.MONGODB_DB ?? "budapest-night";
 if (!uri) {
   console.error("Missing MONGODB_URI");
   process.exit(1);

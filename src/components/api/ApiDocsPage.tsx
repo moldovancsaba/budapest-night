@@ -96,8 +96,8 @@ const MEETUP_FIELDS = `interface MeetupGroup {
   name: string;
   borough: Borough;
   neighborhood: string;
-  groupType: "Parent Meetup" | "Mom Group" | "Playdate Group" | "New Parents" | "Neighborhood Families";
-  ageRange: "0–2" | "0–3" | "0–5" | "0–6" | "2–5" | "2–8" | "3–5" | "All ages";
+  groupType: "Art & Gallery" | "Live Culture" | "Food & Wine Circle" | "Nightlife Crew" | "Local Creators";
+  ageRange: "All ages" | "18+" | "21+" | "Family" | "Late night";
   cadence: "Weekly" | "Monthly" | "Weekend" | "Pop-up";
   instagram: string;
   website: string;
@@ -236,7 +236,7 @@ const INGEST_BATCH = `{
       "resource": "locations",
       "action": "replace",
       "locations": [
-        { "borough": "Manhattan", "neighborhoods": ["Upper West Side"] }
+        { "borough": "Belváros", "neighborhoods": ["Inner City", "Jewish Quarter"] }
       ]
     }
   ]
@@ -260,24 +260,24 @@ const INGEST_RESPONSE = `{
 const nav = [
   { href: "#overview", label: "Overview" },
   { href: "#public", label: "Public" },
-  { href: "#brain", label: "Scout AI" },
+  { href: "#brain", label: "Night Guide" },
   { href: "#ingest", label: "Ingest" },
   { href: "#admin", label: "Admin" },
   { href: "#errors", label: "Errors" },
 ];
 
 export function ApiDocsPage({ origin }: { origin: string }) {
-  const base = origin || "https://classscout.vercel.app";
+  const base = origin || "https://budapest-night.vercel.app";
 
   return (
     <div className="min-h-screen bg-ivory text-foreground">
       <header className="sticky top-0 z-10 border-b border-border/80 bg-ivory/95 backdrop-blur supports-[backdrop-filter]:bg-ivory/80">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-teal">BudapestNight Budapest</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-teal">Budapest Night</p>
             <h1 className="font-display text-xl font-bold sm:text-2xl">HTTP API reference</h1>
             <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-              Catalog, Scout AI, machine ingest, and admin endpoints. All paths are relative to your deployment (for
+              Catalog, Night Guide AI, machine ingest, and admin endpoints. All paths are relative to your deployment (for
               example <span className="font-mono text-foreground/80">{base}</span>).
             </p>
           </div>
@@ -321,7 +321,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
         <main className="min-w-0 flex-1">
           <Section id="overview" title="Overview">
             <p>
-              BudapestNight exposes JSON APIs for the public catalog, a streaming Scout AI chat proxy, a{" "}
+              Budapest Night exposes JSON APIs for the public catalog, a streaming Night Guide chat proxy, a{" "}
               <strong>machine ingest</strong> pipeline secured by <code className="rounded bg-muted px-1 font-mono text-sm">INGEST_API_KEY</code>, and{" "}
               <strong>browser session</strong> APIs for the admin console. Unless noted, request and response bodies use{" "}
               <code className="rounded bg-muted px-1 font-mono text-sm">application/json</code> with UTF-8.
@@ -393,7 +393,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
             <CodeBlock title="MeetupGroup (Borough same as Provider)">{MEETUP_FIELDS}</CodeBlock>
           </Section>
 
-          <Section id="brain" title="Scout AI chat (streaming)">
+          <Section id="brain" title="Night Guide chat (streaming)">
             <EndpointCard method="POST" path="/api/brain/chat" auth="None (uses server LOVABLE_API_KEY)">
               <p>
                 Proxies to the Lovable AI gateway with the configured model and system prompt from MongoDB{" "}
@@ -404,7 +404,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
               </p>
               <CodeBlock>{`{
   "messages": [
-    { "role": "user", "content": "Summer camps for a 6-year-old in Queens" }
+    { "role": "user", "content": "Ruin bars in Erzsébetváros tonight under €30" }
   ]
 }`}</CodeBlock>
               <p>
@@ -691,7 +691,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <code className="font-mono">IMGBB_API_KEY</code> — admin image upload
               </li>
               <li>
-                Optional <code className="font-mono">LOVABLE_API_KEY</code> — Scout AI chat at <code className="font-mono">/api/brain/chat</code> only; omit if unused.
+                Optional <code className="font-mono">LOVABLE_API_KEY</code> — Night Guide chat at <code className="font-mono">/api/brain/chat</code> only; omit if unused.
               </li>
             </ul>
             <p className="text-sm text-muted-foreground">

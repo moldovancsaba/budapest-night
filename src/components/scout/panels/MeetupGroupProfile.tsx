@@ -49,10 +49,10 @@ export function MeetupGroupProfile({
       <SheetContent side="right" className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background">
         <div className="relative h-44 w-full overflow-hidden">
           <CdnImage
+            fill
             resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
             src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
             alt=""
-            className="h-full w-full object-cover"
           />
         </div>
         <div className="bg-secondary px-6 pb-6 pt-6">
@@ -74,7 +74,7 @@ export function MeetupGroupProfile({
         <div className="space-y-6 p-6 pb-12">
           <div className="flex flex-wrap gap-2">
             <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-              Ages {group.ageRange}
+              {group.ageRange}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
               <CalendarClock className="h-3.5 w-3.5" />
@@ -135,7 +135,7 @@ export function MeetupGroupProfile({
 
           {similar.length > 0 && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">Similar meet-up groups nearby</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">Similar circles nearby</h3>
               <div className="mt-3 grid grid-cols-1 gap-4">
                 {similar.map((g) => (
                   <MeetupGroupCard key={g.id} group={g} onOpen={onOpenAnother} onShare={onShare} />

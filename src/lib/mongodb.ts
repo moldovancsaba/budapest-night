@@ -17,7 +17,7 @@ export async function getMongoClient(): Promise<MongoClient | null> {
 export async function getDb(): Promise<Db | null> {
   const c = await getMongoClient();
   if (!c) return null;
-  const name = process.env.MONGODB_DB ?? "classscout";
+  const name = process.env.MONGODB_DB ?? "budapest-night";
   return c.db(name);
 }
 

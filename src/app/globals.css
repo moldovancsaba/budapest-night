@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* RTL layout helpers */
+[dir="rtl"] aside.fixed {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] aside.-translate-x-full {
+  --tw-translate-x: 100%;
+}
+
 /* Budapest Night — cyberpunk neon design system (HSL tokens). */
 
 @layer base {
@@ -86,8 +95,14 @@
   /* Legacy ClassScout light panels — force dark surfaces in marketing views */
   .bg-ivory,
   .bg-\[hsl\(24_45\%_94\%\)\],
-  .bg-\[hsl\(340_70\%_96\%\)\] {
+  .bg-\[hsl\(36_35\%_94\%\)\],
+  .bg-\[hsl\(340_70\%_96\%\)\],
+  .bg-\[hsl\(340_70\%_94\%\)\],
+  .bg-\[hsl\(140_40\%_92\%\)\],
+  .bg-\[hsl\(40_90\%_92\%\)\],
+  .bg-\[hsl\(210_80\%_94\%\)\] {
     background-color: hsl(var(--card)) !important;
+    color: hsl(var(--foreground)) !important;
   }
 }
 

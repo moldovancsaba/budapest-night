@@ -3,18 +3,25 @@ import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, Link2 } from "lucide-react";
 import type { Provider } from "@/types/provider";
 import { toast } from "sonner";
+import { useVenueSharePriceLine } from "@/hooks/useVenueDisplay";
+import { useLocale, useTranslations } from "next-intl";
+import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
+import type { AppLocale } from "@/i18n/config";
 
 export function ShareDialog({ provider, onClose }: { provider: Provider | null; onClose: () => void }) {
+  const t = useTranslations("venue");
+  const locale = useLocale() as AppLocale;
+  const sharePrice = useVenueSharePriceLine();
   if (!provider) return null;
-  const url = `https://budapestnight.app/p/${provider.id}`;
-  const summary = `${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}. $${provider.pricePerClass}/class. ${provider.shortDescription}`;
+  const url = buildAbsoluteVenueUrl(provider.id, provider.category, locale);
+  const summary = `${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}. ${sharePrice(provider)}. ${provider.shortDescription}`;
 
   return (
     <Dialog open={!!provider} onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-display">Share {provider.name}</DialogTitle>
-          <DialogDescription>Send this provider to a friend or co-parent.</DialogDescription>
+          <DialogTitle className="font-display">{t("shareTitle", { name: provider.name })}</DialogTitle>
+          <DialogDescription>{t("shareDescription")}</DialogDescription>
         </DialogHeader>
         <div className="space-y-2">
           <Button
@@ -22,21 +29,21 @@ export function ShareDialog({ provider, onClose }: { provider: Provider | null; 
             className="w-full justify-start"
             onClick={() => window.open(`mailto:?subject=${encodeURIComponent(provider.name)}&body=${encodeURIComponent(summary + "\n\n" + url)}`)}
           >
-            <Mail className="h-4 w-4" /> Share via email
+            <Mail className="h-4 w-4" /> {t("shareEmail")}
           </Button>
           <Button
             variant="outline"
             className="w-full justify-start"
             onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(summary + " " + url)}`, "_blank")}
           >
-            <MessageCircle className="h-4 w-4" /> Share via WhatsApp
+            <MessageCircle className="h-4 w-4" /> {t("shareWhatsapp")}
           </Button>
           <Button
             variant="outline"
             className="w-full justify-start"
             onClick={() => {
               navigator.clipboard.writeText(url);
-              toast.success("Link copied");
+              toast.success(t("linkCopied"));
             }}
           >
             <Link2 className="h-4 w-4" /> Copy link

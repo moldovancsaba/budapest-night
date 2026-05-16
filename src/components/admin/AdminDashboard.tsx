@@ -276,7 +276,7 @@ export default function AdminDashboard() {
             <TabsTrigger value="meetups">Meet-Up Groups</TabsTrigger>
             <TabsTrigger value="locations">Neighborhoods</TabsTrigger>
             <TabsTrigger value="site">Site & images</TabsTrigger>
-            <TabsTrigger value="brain">Scout AI brain</TabsTrigger>
+            <TabsTrigger value="brain">Night Guide brain</TabsTrigger>
             <TabsTrigger value="upload">ImgBB upload</TabsTrigger>
           </TabsList>
 
@@ -475,7 +475,7 @@ export default function AdminDashboard() {
                   <code className="rounded bg-muted px-1">/api/public/brain</code>.
                 </p>
                 <Button onClick={saveBrain} disabled={busy}>
-                  Save Scout AI settings
+                  Save Night Guide settings
                 </Button>
               </>
             )}

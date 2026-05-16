@@ -1,8 +1,12 @@
+"use client";
+
 import { AGE_RANGES, DAY_TIME_TAGS, ACTIVITY_TYPES } from "@/data/providers";
 import type { AgeRange, DayTimeTag } from "@/types/provider";
+import { useAgeRangeLabel, useDayTimeLabel } from "@/hooks/useVenueDisplay";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { SlidersHorizontal, X } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 
 export interface FilterState {
@@ -15,6 +19,9 @@ export const EMPTY_FILTERS: FilterState = { ages: [], times: [], activity: null 
 
 export function Filters({ value, onChange }: { value: FilterState; onChange: (v: FilterState) => void }) {
   const [open, setOpen] = useState(false);
+  const t = useTranslations("filters");
+  const ageLabel = useAgeRangeLabel();
+  const dayLabel = useDayTimeLabel();
   const has = value.ages.length + value.times.length + (value.activity ? 1 : 0);
 
   const toggle = <T,>(arr: T[], v: T): T[] => (arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]);
@@ -22,48 +29,43 @@ export function Filters({ value, onChange }: { value: FilterState; onChange: (v:
   return (
     <div>
       <div className="flex items-center justify-between">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setOpen((o) => !o)}
-          className="gap-2"
-        >
+        <Button variant="outline" size="sm" onClick={() => setOpen((o) => !o)} className="gap-2">
           <SlidersHorizontal className="h-4 w-4" />
-          Filters {has > 0 && <span className="rounded-full bg-teal px-1.5 text-[11px] text-teal-foreground">{has}</span>}
+          {t("title")} {has > 0 && <span className="rounded-full bg-teal px-1.5 text-[11px] text-teal-foreground">{has}</span>}
         </Button>
         {has > 0 && (
           <button
             onClick={() => onChange(EMPTY_FILTERS)}
             className="text-xs font-medium text-muted-foreground hover:text-foreground"
           >
-            Clear all
+            {t("clearAll")}
           </button>
         )}
       </div>
 
       {open && (
         <div className="mt-3 space-y-4 rounded-2xl border border-border bg-card p-5 shadow-card animate-fade-in">
-          <FilterGroup label="Age">
+          <FilterGroup label={t("crowd")}>
             {AGE_RANGES.map((a) => (
               <Chip key={a} active={value.ages.includes(a)} onClick={() => onChange({ ...value, ages: toggle(value.ages, a) })}>
-                {a}
+                {ageLabel(a)}
               </Chip>
             ))}
           </FilterGroup>
-          <FilterGroup label="Day & time">
+          <FilterGroup label={t("dayTime")}>
             {DAY_TIME_TAGS.map((d) => (
               <Chip key={d} active={value.times.includes(d)} onClick={() => onChange({ ...value, times: toggle(value.times, d) })}>
-                {d}
+                {dayLabel(d)}
               </Chip>
             ))}
           </FilterGroup>
-          <FilterGroup label="Activity">
+          <FilterGroup label={t("vibe")}>
             <Chip active={value.activity === null} onClick={() => onChange({ ...value, activity: null })}>
-              Any
+              {t("any")}
             </Chip>
-            {ACTIVITY_TYPES.map((t) => (
-              <Chip key={t} active={value.activity === t} onClick={() => onChange({ ...value, activity: t })}>
-                {t}
+            {ACTIVITY_TYPES.map((act) => (
+              <Chip key={act} active={value.activity === act} onClick={() => onChange({ ...value, activity: act })}>
+                {act}
               </Chip>
             ))}
           </FilterGroup>
