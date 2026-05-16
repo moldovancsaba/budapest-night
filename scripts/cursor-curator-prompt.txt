@@ -323,10 +323,17 @@ Use `entryFees: []` only when the ticket page gives no fixed tiers; never use `{
     "initials": "XX",
     "icon": "community | skyline | heart | coffee | stroller | playground",
     "palette": "teal | orange | beige | charcoal",
-    "coverImageUrl": "https://i.ibb.co/..."
+    "coverImageUrl": "https://i.ibb.co/...",
+    "venueIds": ["prov-..."],
+    "eventIds": ["event-..."]
   }
 }
 ```
+
+Optional **organizer links** when the circle hosts at venues or runs timed events:
+- `venueIds`: `prov-*` host venues (same ids as Discover venues). Upsert providers **before** the meetup in `operations[]`.
+- `eventIds`: `event-*` timed shows the circle organizes. Upsert events **before** the meetup.
+- Do **not** send `venueLinks` or `eventLinks` — ingest computes snapshots from linked rows.
 
 ## Write and ingest
 From the repo root (`budapest-night`):

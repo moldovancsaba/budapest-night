@@ -15,11 +15,7 @@ import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
 import { isValidProviderId, prepareNightEventWithVenues } from "@/lib/eventVenueLink";
-import {
-  loadMeetupGroupEvents,
-  loadMeetupGroupHosts,
-  prepareMeetupGroupWithLinks,
-} from "@/lib/meetupGroupLink";
+import { isValidEventId, prepareMeetupGroupWithLinks } from "@/lib/meetupGroupLink";
 
 export type IngestOpResult =
   | { ok: true; data?: unknown }
@@ -86,6 +82,46 @@ function withResolvedLocation(provider: Provider): Provider {
 
 function finalizeProvider(doc: Provider): Provider {
   return withResolvedLocation(applyMenuToProvider(doc) as Provider);
+}
+
+async function loadMeetupGroupHosts(
+  db: Db,
+  venueIds: string[],
+): Promise<{ hosts: Provider[] } | { error: string }> {
+  const hosts: Provider[] = [];
+  for (const id of venueIds) {
+    if (!isValidProviderId(id)) {
+      return { error: `meetupGroup: invalid venueId ${JSON.stringify(id)} (expected prov-...)` };
+    }
+    const raw = (await db.collection(COL.providers).findOne({ id })) as unknown as Provider | null;
+    if (!raw) {
+      return {
+        error: `meetupGroup: unknown venueId ${id} — upsert the venue first (same payload, before the meetup)`,
+      };
+    }
+    hosts.push(withResolvedLocation(raw));
+  }
+  return { hosts };
+}
+
+async function loadMeetupGroupEvents(
+  db: Db,
+  eventIds: string[],
+): Promise<{ events: NightEvent[] } | { error: string }> {
+  const events: NightEvent[] = [];
+  for (const id of eventIds) {
+    if (!isValidEventId(id)) {
+      return { error: `meetupGroup: invalid eventId ${JSON.stringify(id)} (expected event-...)` };
+    }
+    const raw = (await db.collection(COL.events).findOne({ id })) as unknown as NightEvent | null;
+    if (!raw) {
+      return {
+        error: `meetupGroup: unknown eventId ${id} — upsert the timed event first (same payload, before the meetup)`,
+      };
+    }
+    events.push(raw);
+  }
+  return { events };
 }
 
 async function finalizeMeetupGroup(
@@ -372,7 +408,9 @@ export async function applyIngestOperation(
     if (typeof id !== "string" || !id) return { ok: false, error: "meetupGroup.patch requires id string" };
     const patchIn = op.patch;
     if (!isPlainObject(patchIn)) return { ok: false, error: "meetupGroup.patch requires patch object" };
-    const { id: _drop, venueLinks: _vl, eventLinks: _el, ...patch } = patchIn as { id?: string };
+    const { id: _drop, venueLinks: _vl, eventLinks: _el, ...patch } = patchIn as Partial<MeetupGroup> & {
+      id?: string;
+    };
     if (Object.keys(patch).length === 0) return { ok: false, error: "meetupGroup.patch patch must not be empty" };
     const cur = (await db.collection(COL.meetupGroups).findOne({ id })) as unknown as MeetupGroup | null;
     if (!cur) return { ok: false, error: `meetupGroup.patch: unknown id ${id}` };

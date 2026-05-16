@@ -254,6 +254,30 @@ const MEETUP_FIELDS = `interface MeetupGroup {
   icon: "stroller" | "skyline" | "heart" | "coffee" | "playground" | "community";
   palette: "teal" | "orange" | "beige" | "charcoal";
   coverImageUrl?: string;
+  /** Host venues (prov-*) — curators send ids only; ingest writes venueLinks. */
+  venueIds?: string[];
+  /** Organized timed events (event-*) — curators send ids only; ingest writes eventLinks. */
+  eventIds?: string[];
+  venueLinks?: VenueLink[];
+  eventLinks?: MeetupEventLink[];
+}
+
+interface MeetupEventLink {
+  id: string;
+  title: string;
+  startsAt: string;
+  endsAt: string;
+  borough: Borough;
+  neighborhood: string;
+  status: EventStatus;
+}
+
+/** GET /api/public/meetup-groups */
+interface PublicMeetupGroup extends MeetupGroup {
+  venues: VenueLink[];
+  events: MeetupEventLink[];
+  venuesResolved: boolean;
+  eventsResolved: boolean;
 }`;
 
 const SITE_DOC = `interface SiteDoc {
@@ -645,7 +669,10 @@ export function ApiDocsPage({ origin }: { origin: string }) {
 
               <EndpointCard method="GET" path="/api/public/meetup-groups" auth="None">
                 <p>
-                  Returns <code className="font-mono">MeetupGroup[]</code>. <code className="font-mono">_id</code> stripped.
+                  Returns <code className="font-mono">PublicMeetupGroup[]</code>: each row includes{" "}
+                  <code className="font-mono">venues</code> and <code className="font-mono">events</code> resolved from live
+                  catalogs plus stored <code className="font-mono">venueLinks</code> /{" "}
+                  <code className="font-mono">eventLinks</code> snapshots. <code className="font-mono">_id</code> stripped.
                 </p>
                 <p className="text-muted-foreground">
                   <strong>503</strong> if the database is not configured.

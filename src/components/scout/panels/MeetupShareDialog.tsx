@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, Link2 } from "lucide-react";
-import type { MeetupGroup } from "@/types/meetup";
+import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteGroupFullUrl } from "@/lib/appShareUrls";
@@ -18,7 +18,7 @@ export function MeetupShareDialog({
   group,
   onClose,
 }: {
-  group: MeetupGroup | null;
+  group: PublicMeetupGroup | null;
   onClose: () => void;
 }) {
   const locale = useLocale() as AppLocale;

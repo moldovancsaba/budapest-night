@@ -12,10 +12,9 @@ import {
 import { useSaved } from "@/store/useScout";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { useProvidersCatalog } from "@/hooks/useCatalog";
-import { useMeetupGroupsCatalog } from "@/hooks/useCatalog";
+import { useEventsCatalog, useMeetupGroupsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
 import { useFormatEventSchedule } from "@/hooks/useEventDisplay";
-import type { PublicMeetupGroup } from "@/lib/publicMeetup";
+import { eventStubFromMeetupLink, type PublicMeetupGroup } from "@/lib/publicMeetup";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Provider } from "@/types/provider";
 import { MeetupLogo } from "../MeetupLogo";
@@ -54,6 +53,7 @@ export function MeetupGroupProfile({
   const { isSaved, toggle } = useSaved();
   const { data: allGroups = [] } = useMeetupGroupsCatalog();
   const { data: providers = [] } = useProvidersCatalog();
+  const { data: allEvents = [] } = useEventsCatalog();
   const formatSchedule = useFormatEventSchedule();
   const locationLine = useVenueLocationLine();
   const groupTypeLabel = useMeetupGroupTypeLabel();
@@ -157,6 +157,87 @@ export function MeetupGroupProfile({
               <MessageCircle className="h-4 w-4" /> {tv("shareWhatsapp")}
             </Button>
           </div>
+
+          {(group.venueIds?.length ?? 0) > group.venues.length ? (
+            <p className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
+              {t("venueLinkMissing", {
+                count: (group.venueIds?.length ?? 0) - group.venues.length,
+              })}
+            </p>
+          ) : null}
+
+          {group.venues.length > 0 && (
+            <div>
+              <h3 className="font-display text-base font-semibold text-foreground">
+                {t("hostVenues")}
+              </h3>
+              <p className="mt-1 text-xs text-muted-foreground">{t("hostVenuesHint")}</p>
+              <div className="mt-4 grid gap-4">
+                {group.venues.map((link) => {
+                  const provider = providers.find((p) => p.id === link.id) ?? null;
+                  return provider ? (
+                    <ProviderCard
+                      key={link.id}
+                      provider={provider}
+                      onOpen={onOpenVenue}
+                      onShare={() => {}}
+                    />
+                  ) : (
+                    <div
+                      key={link.id}
+                      className="rounded-2xl border border-border/70 bg-card/50 p-4"
+                    >
+                      <p className="font-display font-semibold text-foreground">{link.name}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{link.address}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {(group.eventIds?.length ?? 0) > group.events.length ? (
+            <p className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
+              {t("eventLinkMissing", {
+                count: (group.eventIds?.length ?? 0) - group.events.length,
+              })}
+            </p>
+          ) : null}
+
+          {group.events.length > 0 && (
+            <div>
+              <h3 className="font-display text-base font-semibold text-foreground">
+                {t("organizedEvents")}
+              </h3>
+              <p className="mt-1 text-xs text-muted-foreground">{t("organizedEventsHint")}</p>
+              <div className="mt-4 grid gap-4">
+                {group.events.map((link) => {
+                  const full = allEvents.find((e) => e.id === link.id);
+                  if (full) {
+                    return <EventCard key={link.id} event={full} onOpen={onOpenEvent} />;
+                  }
+                  const stub = eventStubFromMeetupLink(link, group);
+                  const { dateLine, timeLine } = formatSchedule(stub);
+                  return (
+                    <button
+                      key={link.id}
+                      type="button"
+                      onClick={() => onOpenEvent(stub)}
+                      className="w-full rounded-2xl border border-border/70 bg-card/50 p-4 text-left"
+                    >
+                      <p className="font-display font-semibold text-foreground">{link.title}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {dateLine} · {timeLine}
+                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {link.borough} · {link.neighborhood}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           <div className="rounded-2xl bg-secondary p-5">
             <h3 className="font-display text-sm font-semibold text-foreground">

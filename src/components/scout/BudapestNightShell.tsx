@@ -22,7 +22,7 @@ import { TrustStrip } from "@/components/scout/TrustStrip";
 import { Logo } from "@/components/scout/Logo";
 import type { Provider, Category } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
-import type { MeetupGroup } from "@/types/meetup";
+import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import { Menu, Heart, Bell, UserCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
@@ -88,10 +88,10 @@ export default function BudapestNightShell() {
   const [openProvider, setOpenProvider] = useState<Provider | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<PublicNightEvent | null>(null);
   const [shareProvider, setShareProvider] = useState<Provider | null>(null);
-  const [openGroupState, setOpenGroupState] = useState<MeetupGroup | null>(
+  const [openGroupState, setOpenGroupState] = useState<PublicMeetupGroup | null>(
     null,
   );
-  const [shareGroup, setShareGroup] = useState<MeetupGroup | null>(null);
+  const [shareGroup, setShareGroup] = useState<PublicMeetupGroup | null>(null);
   const [mobileNav, setMobileNav] = useState(false);
   const { saved } = useSaved();
   const { items } = useCalculator();
@@ -207,6 +207,8 @@ export default function BudapestNightShell() {
               onClose={closeGroup}
               onShare={setShareGroup}
               onOpenAnother={openGroup}
+              onOpenVenue={openVenue}
+              onOpenEvent={openEvent}
             />
           ) : (
             <ShareableMissing backHref={backHref} />
@@ -378,6 +380,8 @@ export default function BudapestNightShell() {
         onClose={closeGroup}
         onShare={setShareGroup}
         onOpenAnother={openGroup}
+        onOpenVenue={openVenue}
+        onOpenEvent={openEvent}
       />
       <MeetupShareDialog
         group={shareGroup}

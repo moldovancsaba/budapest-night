@@ -321,6 +321,32 @@ function validateMeetup(doc, idx) {
   else if (doc.coverImageUrl && doc.coverImageUrl.trim() && !isImgBbHttpsImageUrl(doc.coverImageUrl)) {
     errors.push(`${p}: coverImageUrl must be empty or https ImgBB URL`);
   }
+  if (doc.venueIds !== undefined) {
+    if (!Array.isArray(doc.venueIds)) errors.push(`${p}: venueIds must be an array when set`);
+    else {
+      doc.venueIds.forEach((vid, vi) => {
+        if (typeof vid !== "string" || !/^prov-[a-z0-9-]+$/.test(vid)) {
+          errors.push(`${p}.venueIds[${vi}]: must match prov-...`);
+        }
+      });
+    }
+  }
+  if (doc.eventIds !== undefined) {
+    if (!Array.isArray(doc.eventIds)) errors.push(`${p}: eventIds must be an array when set`);
+    else {
+      doc.eventIds.forEach((eid, ei) => {
+        if (typeof eid !== "string" || !/^event-[a-z0-9-]+$/.test(eid)) {
+          errors.push(`${p}.eventIds[${ei}]: must match event-...`);
+        }
+      });
+    }
+  }
+  if (doc.venueLinks !== undefined) {
+    errors.push(`${p}: do not send venueLinks — computed on ingest from linked providers`);
+  }
+  if (doc.eventLinks !== undefined) {
+    errors.push(`${p}: do not send eventLinks — computed on ingest from linked timed events`);
+  }
   return errors;
 }
 
@@ -381,6 +407,7 @@ function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
 function validateOperations(operations, opts = {}) {
   const all = [];
   const providerIdsInPayload = new Set();
+  const eventIdsInPayload = new Set();
   for (let i = 0; i < operations.length; i++) {
     const op = operations[i];
     if (!op || typeof op !== "object") {
@@ -394,6 +421,7 @@ function validateOperations(operations, opts = {}) {
       all.push(...validateMeetup(op.document, i));
     } else if (op.resource === "event" && op.action === "upsert") {
       all.push(...validateEvent(op.document, i, opts));
+      if (op.document?.id) eventIdsInPayload.add(op.document.id);
       const ids = op.document?.venueIds;
       if (Array.isArray(ids)) {
         for (const vid of ids) {
@@ -406,6 +434,32 @@ function validateOperations(operations, opts = {}) {
       }
     } else if (op.action === "upsert") {
       all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
+    }
+  }
+  for (let i = 0; i < operations.length; i++) {
+    const op = operations[i];
+    if (op?.resource !== "meetupGroup" || op?.action !== "upsert") continue;
+    const doc = op.document;
+    const p = `operations[${i}] meetupGroup`;
+    for (const vid of doc?.venueIds ?? []) {
+      if (
+        typeof vid === "string" &&
+        !providerIdsInPayload.has(vid) &&
+        opts.knownProviderIds &&
+        !opts.knownProviderIds.has(vid)
+      ) {
+        all.push(`${p}: venueId ${vid} not in catalog — upsert provider before this meetup in operations[]`);
+      }
+    }
+    for (const eid of doc?.eventIds ?? []) {
+      if (
+        typeof eid === "string" &&
+        !eventIdsInPayload.has(eid) &&
+        opts.knownEventIds &&
+        !opts.knownEventIds.has(eid)
+      ) {
+        all.push(`${p}: eventId ${eid} not in catalog — upsert timed event before this meetup in operations[]`);
+      }
     }
   }
   return all;
@@ -478,14 +532,22 @@ async function main() {
   console.log("Base:", BASE);
   console.log("Operations:", operations.length);
 
-  const [pr, mr] = await Promise.all([fetchJson(`${BASE}/api/public/providers`), fetchJson(`${BASE}/api/public/meetup-groups`)]);
+  const [pr, er, mr] = await Promise.all([
+    fetchJson(`${BASE}/api/public/providers`),
+    fetchJson(`${BASE}/api/public/events`),
+    fetchJson(`${BASE}/api/public/meetup-groups`),
+  ]);
 
   const providers = Array.isArray(pr.body) ? pr.body : [];
+  const events = Array.isArray(er.body) ? er.body : [];
   const meetups = Array.isArray(mr.body) ? mr.body : [];
-  console.log(`Public catalog: providers HTTP ${pr.status} (${providers.length} rows); meetups HTTP ${mr.status} (${meetups.length} rows)`);
+  console.log(
+    `Public catalog: providers HTTP ${pr.status} (${providers.length}); events HTTP ${er.status} (${events.length}); meetups HTTP ${mr.status} (${meetups.length})`,
+  );
 
   const knownProviderIds = new Set(providers.map((p) => p.id).filter(Boolean));
-  const validationErrors = validateOperations(operations, { skipLocaleCheck, knownProviderIds });
+  const knownEventIds = new Set(events.map((e) => e.id).filter(Boolean));
+  const validationErrors = validateOperations(operations, { skipLocaleCheck, knownProviderIds, knownEventIds });
   if (validationErrors.length) {
     console.error("\nValidation failed:\n", validationErrors.map((e) => `  - ${e}`).join("\n"));
     process.exit(1);

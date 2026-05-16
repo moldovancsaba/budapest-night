@@ -4,7 +4,7 @@ import { useSaved } from "@/store/useScout";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { MeetupLogo } from "./MeetupLogo";
-import type { MeetupGroup } from "@/types/meetup";
+import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import {
   useAgeRangeLabel,
   useMeetupCadenceLabel,
@@ -16,9 +16,9 @@ import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 
 interface Props {
-  group: MeetupGroup;
-  onOpen: (g: MeetupGroup) => void;
-  onShare: (g: MeetupGroup) => void;
+  group: PublicMeetupGroup;
+  onOpen: (g: PublicMeetupGroup) => void;
+  onShare: (g: PublicMeetupGroup) => void;
 }
 
 export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
@@ -29,6 +29,12 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
   const cadenceLabel = useMeetupCadenceLabel();
   const ageLabel = useAgeRangeLabel();
   const saved = isSaved(group.id);
+  const venueCount = group.venueIds?.length ?? group.venues.length;
+  const eventCount = group.eventIds?.length ?? group.events.length;
+  const organizerParts = [
+    venueCount > 0 ? t("linkedVenuesCount", { count: venueCount }) : null,
+    eventCount > 0 ? t("linkedEventsCount", { count: eventCount }) : null,
+  ].filter(Boolean);
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
@@ -93,6 +99,11 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
             <CalendarClock className="h-3 w-3" />
             {cadenceLabel(group.cadence)}
           </span>
+          {organizerParts.length > 0 && (
+            <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-foreground">
+              {organizerParts.join(" · ")}
+            </span>
+          )}
         </div>
       </div>
 

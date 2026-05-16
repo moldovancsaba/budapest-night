@@ -6,7 +6,7 @@ import { MeetupGroupCard } from "../MeetupGroupCard";
 import { EmptyState } from "../EmptyState";
 import { NEIGHBORHOODS as FALLBACK_HOODS } from "@/data/locations";
 import type { BoroughChoice } from "@/types/provider";
-import type { MeetupGroup } from "@/types/meetup";
+import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import { MapPin, Users, Loader2 } from "lucide-react";
 import { CdnImage } from "@/components/ui/CdnImage";
 import {
@@ -23,8 +23,8 @@ import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
 
 interface Props {
-  onOpen: (g: MeetupGroup) => void;
-  onShare: (g: MeetupGroup) => void;
+  onOpen: (g: PublicMeetupGroup) => void;
+  onShare: (g: PublicMeetupGroup) => void;
 }
 
 export function MeetupGroupsView({ onOpen, onShare }: Props) {

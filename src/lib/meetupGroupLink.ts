@@ -1,6 +1,4 @@
-import { isValidProviderId } from "@/lib/eventVenueLink";
 import { buildMenuVenueLink } from "@/lib/menu/menuVenueLink";
-import { COL } from "@/lib/mongodb";
 import type { NightEvent } from "@/types/event";
 import type { MeetupEventLink, MeetupGroup } from "@/types/meetup";
 import type { Provider } from "@/types/provider";
@@ -32,46 +30,6 @@ export type PreparedMeetupGroup = MeetupGroup & {
   venueLinks: VenueLink[];
   eventLinks: MeetupEventLink[];
 };
-
-export async function loadMeetupGroupHosts(
-  db: { collection: (name: string) => { findOne: (q: object) => Promise<unknown> } },
-  venueIds: string[],
-): Promise<{ hosts: Provider[] } | { error: string }> {
-  const hosts: Provider[] = [];
-  for (const id of venueIds) {
-    if (!isValidProviderId(id)) {
-      return { error: `meetupGroup: invalid venueId ${JSON.stringify(id)} (expected prov-...)` };
-    }
-    const raw = (await db.collection(COL.providers).findOne({ id })) as Provider | null;
-    if (!raw) {
-      return {
-        error: `meetupGroup: unknown venueId ${id} — upsert the venue first (same payload, before the meetup)`,
-      };
-    }
-    hosts.push(raw);
-  }
-  return { hosts };
-}
-
-export async function loadMeetupGroupEvents(
-  db: { collection: (name: string) => { findOne: (q: object) => Promise<unknown> } },
-  eventIds: string[],
-): Promise<{ events: NightEvent[] } | { error: string }> {
-  const events: NightEvent[] = [];
-  for (const id of eventIds) {
-    if (!isValidEventId(id)) {
-      return { error: `meetupGroup: invalid eventId ${JSON.stringify(id)} (expected event-...)` };
-    }
-    const raw = (await db.collection(COL.events).findOne({ id })) as NightEvent | null;
-    if (!raw) {
-      return {
-        error: `meetupGroup: unknown eventId ${id} — upsert the timed event first (same payload, before the meetup)`,
-      };
-    }
-    events.push(raw);
-  }
-  return { events };
-}
 
 /** Attach venue/event snapshots; empty arrays when ids omitted. */
 export function prepareMeetupGroupWithLinks(
