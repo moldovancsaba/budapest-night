@@ -351,6 +351,7 @@
         "neighborhood": "Inner City",
         "tone": "orange",
         "ctaLabel": "Esplora guida",
+        "navigateTo": "Eat & Drink",
         "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
       },
       {
@@ -361,7 +362,8 @@
         "neighborhood": "Jewish Quarter",
         "tone": "teal",
         "ctaLabel": "Esplora guida",
-        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg",
+        "navigateTo": "Parties"
       },
       {
         "id": "guide-andrassy",
@@ -371,7 +373,8 @@
         "neighborhood": "Andrássy út",
         "tone": "pink",
         "ctaLabel": "Esplora guida",
-        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg",
+        "navigateTo": "Cafés"
       },
       {
         "id": "guide-buda",
@@ -381,7 +384,8 @@
         "neighborhood": "Castle District",
         "tone": "blue",
         "ctaLabel": "Esplora guida",
-        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg",
+        "navigateTo": "Venues"
       }
     ],
     "howItWorksSteps": [
@@ -577,9 +581,18 @@
     "tourNeedsMenus": "Servono menu — {eligible} su {required} locali pronti",
     "venuesWithMenus": "{count} locali con menu pubblicato",
     "tours": {
-      "palinka": { "title": "Percorso pálinka", "description": "Tre locali noti per il brandy di frutta ungherese." },
-      "foodie": { "title": "Giro foodie", "description": "Classici ungheresi e street food in tre quartieri." },
-      "coffee": { "title": "Coffee crawl specialty", "description": "Caffetterie third-wave per un pomeriggio lento." }
+      "palinka": {
+        "title": "Percorso pálinka",
+        "description": "Tre locali noti per il brandy di frutta ungherese."
+      },
+      "foodie": {
+        "title": "Giro foodie",
+        "description": "Classici ungheresi e street food in tre quartieri."
+      },
+      "coffee": {
+        "title": "Coffee crawl specialty",
+        "description": "Caffetterie third-wave per un pomeriggio lento."
+      }
     }
   },
   "tours": {
@@ -587,9 +600,18 @@
     "reshuffle": "Nuovo percorso casuale",
     "openVenue": "Apri locale",
     "shareHint": "Mescola e condividi l'URL.",
-    "palinka": { "title": "Percorso pálinka", "description": "Tre locali con pálinka in menu, distribuiti tra i quartieri quando possibile." },
-    "foodie": { "title": "Giro foodie", "description": "Sapori ungheresi in tre tappe." },
-    "coffee": { "title": "Coffee crawl specialty", "description": "Tre caffè per filtro, espresso e pasticceria." },
+    "palinka": {
+      "title": "Percorso pálinka",
+      "description": "Tre locali con pálinka in menu, distribuiti tra i quartieri quando possibile."
+    },
+    "foodie": {
+      "title": "Giro foodie",
+      "description": "Sapori ungheresi in tre tappe."
+    },
+    "coffee": {
+      "title": "Coffee crawl specialty",
+      "description": "Tre caffè per filtro, espresso e pasticceria."
+    },
     "errors": {
       "unknown_tour": "Questo tour non è disponibile.",
       "not_enough_venues": "Non ci sono ancora abbastanza locali con menu compatibili.",

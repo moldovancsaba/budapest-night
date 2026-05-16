@@ -389,9 +389,10 @@
         "title": "Belvárosi éjszaka és étkezés",
         "desc": "Dunai bárok, klasszikus bisztrók és késői konyhák a belvárosban.",
         "borough": "Belváros",
-        "neighborhood": "Belváros",
+        "neighborhood": "Inner City",
         "tone": "orange",
         "ctaLabel": "Útmutató",
+        "navigateTo": "Eat & Drink",
         "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
       },
       {
@@ -399,9 +400,10 @@
         "title": "Zsidó negyed romkocsmái",
         "desc": "Romkocsmák, street food és bulihangulat Erzsébetvárosban.",
         "borough": "Erzsébetváros",
-        "neighborhood": "Zsidó negyed",
+        "neighborhood": "Jewish Quarter",
         "tone": "teal",
         "ctaLabel": "Útmutató",
+        "navigateTo": "Parties",
         "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
       },
       {
@@ -412,6 +414,7 @@
         "neighborhood": "Andrássy út",
         "tone": "pink",
         "ctaLabel": "Útmutató",
+        "navigateTo": "Cafés",
         "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
       },
       {
@@ -419,9 +422,10 @@
         "title": "Budai vár és kilátások",
         "desc": "Várbeli borozók, termálvibe és naplemente a Budai Várban.",
         "borough": "Buda",
-        "neighborhood": "Várnegyed",
+        "neighborhood": "Castle District",
         "tone": "blue",
         "ctaLabel": "Útmutató",
+        "navigateTo": "Venues",
         "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
       }
     ],

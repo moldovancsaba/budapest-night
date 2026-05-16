@@ -16,6 +16,9 @@ export type SiteIconKey =
 
 export type SiteTone = "orange" | "teal" | "pink" | "amber" | "blue";
 
+/** In-app destination when a district guide card is tapped (unless `ctaHref` is external). */
+export type SiteGuideNavigateTo = Category | "Events" | "Eat & Drink" | "Meet-Up Groups";
+
 export interface SiteGuide {
   /** Stable id for React keys and ingest; falls back to title if omitted. */
   id?: string;
@@ -29,6 +32,8 @@ export interface SiteGuide {
   ctaLabel?: string;
   /** If set, card navigates here (http(s) opens new tab; otherwise treated as in-app path or hash). */
   ctaHref?: string;
+  /** Discover section to open when the card is tapped (default resolved from `id` in UI). */
+  navigateTo?: SiteGuideNavigateTo;
 }
 
 export interface SiteHowStep {
@@ -258,6 +263,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       imageUrl: guideImageForId("guide-belvaros"),
       tone: "orange",
       ctaLabel: "Explore guide",
+      navigateTo: "Eat & Drink",
     },
     {
       id: "guide-jewish-quarter",
@@ -268,6 +274,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       imageUrl: guideImageForId("guide-jewish-quarter"),
       tone: "teal",
       ctaLabel: "Explore guide",
+      navigateTo: "Parties",
     },
     {
       id: "guide-andrassy",
@@ -278,6 +285,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       imageUrl: guideImageForId("guide-andrassy"),
       tone: "pink",
       ctaLabel: "Explore guide",
+      navigateTo: "Cafés",
     },
     {
       id: "guide-buda",
@@ -288,6 +296,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       imageUrl: guideImageForId("guide-buda"),
       tone: "blue",
       ctaLabel: "Explore guide",
+      navigateTo: "Venues",
     },
   ],
   howItWorksSectionTitle: "How Budapest Night works",

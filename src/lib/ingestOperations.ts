@@ -15,6 +15,11 @@ import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
 import { isValidProviderId, prepareNightEventWithVenues } from "@/lib/eventVenueLink";
+import {
+  loadMeetupGroupEvents,
+  loadMeetupGroupHosts,
+  prepareMeetupGroupWithLinks,
+} from "@/lib/meetupGroupLink";
 
 export type IngestOpResult =
   | { ok: true; data?: unknown }
@@ -81,6 +86,22 @@ function withResolvedLocation(provider: Provider): Provider {
 
 function finalizeProvider(doc: Provider): Provider {
   return withResolvedLocation(applyMenuToProvider(doc) as Provider);
+}
+
+async function finalizeMeetupGroup(
+  db: Db,
+  group: MeetupGroup,
+): Promise<MeetupGroup | { error: string }> {
+  const venueIds = group.venueIds ?? [];
+  const eventIds = group.eventIds ?? [];
+  const hostsResult =
+    venueIds.length > 0 ? await loadMeetupGroupHosts(db, venueIds) : { hosts: [] as Provider[] };
+  if ("error" in hostsResult) return hostsResult;
+  const eventsResult =
+    eventIds.length > 0 ? await loadMeetupGroupEvents(db, eventIds) : { events: [] as NightEvent[] };
+  if ("error" in eventsResult) return eventsResult;
+  const { venueLinks: _vl, eventLinks: _el, ...rest } = group;
+  return prepareMeetupGroupWithLinks(rest as MeetupGroup, hostsResult.hosts, eventsResult.events);
 }
 
 export async function applyIngestOperation(

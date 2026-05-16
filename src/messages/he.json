@@ -351,6 +351,7 @@
         "neighborhood": "עיר פנים",
         "tone": "orange",
         "ctaLabel": "למדריך",
+        "navigateTo": "Eat & Drink",
         "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
       },
       {
@@ -361,7 +362,8 @@
         "neighborhood": "הרובע היהודי",
         "tone": "teal",
         "ctaLabel": "למדריך",
-        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg",
+        "navigateTo": "Parties"
       },
       {
         "id": "guide-andrassy",
@@ -371,7 +373,8 @@
         "neighborhood": "אנדרשי",
         "tone": "pink",
         "ctaLabel": "למדריך",
-        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg",
+        "navigateTo": "Cafés"
       },
       {
         "id": "guide-buda",
@@ -381,7 +384,8 @@
         "neighborhood": "רובע הטירה",
         "tone": "blue",
         "ctaLabel": "למדריך",
-        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg",
+        "navigateTo": "Venues"
       }
     ],
     "howItWorksSteps": [
@@ -577,9 +581,18 @@
     "tourNeedsMenus": "חסרים תפריטים — {eligible} מתוך {required} מקומות",
     "venuesWithMenus": "{count} מקומות עם תפריט מפורסם",
     "tours": {
-      "palinka": { "title": "מסלול פאלינקה", "description": "שלושה מקומות עם פאלינקה בתפריט." },
-      "foodie": { "title": "מסלול פודי", "description": "מנות הונגריות קלאסיות ואוכל רחוב." },
-      "coffee": { "title": "מסלול קפה מיוחד", "description": "בתי קפה third-wave לצהריים רגוע." }
+      "palinka": {
+        "title": "מסלול פאלינקה",
+        "description": "שלושה מקומות עם פאלינקה בתפריט."
+      },
+      "foodie": {
+        "title": "מסלול פודי",
+        "description": "מנות הונגריות קלאסיות ואוכל רחוב."
+      },
+      "coffee": {
+        "title": "מסלול קפה מיוחד",
+        "description": "בתי קפה third-wave לצהריים רגוע."
+      }
     }
   },
   "tours": {
@@ -587,9 +600,18 @@
     "reshuffle": "מסלול אקראי חדש",
     "openVenue": "פתח מקום",
     "shareHint": "ערבבו מחדש והעתיקו את ה-URL לשיתוף.",
-    "palinka": { "title": "מסלול פאלינקה", "description": "שלושה מקומות עם פאלינקה, מפוזרים בין רובעים כשאפשר." },
-    "foodie": { "title": "מסלול פודי", "description": "טעמים הונגריים בשלוש תחנות." },
-    "coffee": { "title": "מסלול קפה מיוחד", "description": "שלושה בתי קפה לפילטר ואספרסו." },
+    "palinka": {
+      "title": "מסלול פאלינקה",
+      "description": "שלושה מקומות עם פאלינקה, מפוזרים בין רובעים כשאפשר."
+    },
+    "foodie": {
+      "title": "מסלול פודי",
+      "description": "טעמים הונגריים בשלוש תחנות."
+    },
+    "coffee": {
+      "title": "מסלול קפה מיוחד",
+      "description": "שלושה בתי קפה לפילטר ואספרסו."
+    },
     "errors": {
       "unknown_tour": "הסיור הזה לא זמין.",
       "not_enough_venues": "אין עדיין מספיק מקומות עם תפריט תואם.",

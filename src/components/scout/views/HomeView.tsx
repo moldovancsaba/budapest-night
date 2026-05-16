@@ -35,7 +35,7 @@ import {
   useFormatVenuePrice,
 } from "@/hooks/useVenueDisplay";
 import type { MeetupGroup } from "@/types/meetup";
-import type { SiteDoc } from "@/types/site";
+import type { SiteDoc, SiteGuide, SiteGuideNavigateTo } from "@/types/site";
 import { DEFAULT_SITE } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { toast } from "sonner";
@@ -91,9 +91,30 @@ const CATEGORY_TILES: {
 const TONE_BG = CYBER_TONE_BG;
 const TONE_LINK = CYBER_TONE_LINK;
 
+const GUIDE_NAV_BY_ID: Record<string, SiteGuideNavigateTo> = {
+  "guide-belvaros": "Eat & Drink",
+  "guide-jewish-quarter": "Parties",
+  "guide-andrassy": "Cafés",
+  "guide-buda": "Venues",
+};
+
+function resolveGuideNavigateTo(g: SiteGuide): SiteGuideNavigateTo {
+  if (g.navigateTo) return g.navigateTo;
+  if (g.id && GUIDE_NAV_BY_ID[g.id]) return GUIDE_NAV_BY_ID[g.id];
+  return "Venues";
+}
+
+type HomeNavigateView =
+  | Category
+  | "Events"
+  | "Saved"
+  | "Calculator"
+  | "Meet-Up Groups"
+  | "Eat & Drink";
+
 interface Props {
   onNavigate: (
-    view: Category | "Events" | "Saved" | "Calculator" | "Meet-Up Groups",
+    view: HomeNavigateView,
     location?: { borough?: BoroughChoice; neighborhood?: string },
   ) => void;
   onOpenProvider: (p: Provider) => void;
@@ -336,7 +357,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               type="button"
               onClick={() =>
                 openMarketingLink(s.guidesViewAllHref, () => {
-                  onNavigate("Events");
+                  onNavigate("Venues");
                 })
               }
               className="hidden items-center gap-1 text-sm font-semibold text-foreground hover:text-foreground sm:inline-flex"
@@ -351,10 +372,12 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 type="button"
                 onClick={() =>
                   openMarketingLink(g.ctaHref, () => {
-                    onNavigate("Events", {
-                      borough: g.borough,
-                      neighborhood: g.neighborhood,
-                    });
+                    const target = resolveGuideNavigateTo(g);
+                    const location =
+                      target === "Eat & Drink" || target === "Meet-Up Groups"
+                        ? undefined
+                        : { borough: g.borough, neighborhood: g.neighborhood };
+                    onNavigate(target, location);
                   })
                 }
                 className="group flex flex-col overflow-hidden rounded-2xl bg-card text-left transition-all hover:-translate-y-0.5"

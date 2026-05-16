@@ -390,6 +390,7 @@
         "neighborhood": "Inner City",
         "tone": "orange",
         "ctaLabel": "Explore guide",
+        "navigateTo": "Eat & Drink",
         "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
       },
       {
@@ -400,6 +401,7 @@
         "neighborhood": "Jewish Quarter",
         "tone": "teal",
         "ctaLabel": "Explore guide",
+        "navigateTo": "Parties",
         "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
       },
       {
@@ -410,6 +412,7 @@
         "neighborhood": "Andrássy út",
         "tone": "pink",
         "ctaLabel": "Explore guide",
+        "navigateTo": "Cafés",
         "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
       },
       {
@@ -420,6 +423,7 @@
         "neighborhood": "Castle District",
         "tone": "blue",
         "ctaLabel": "Explore guide",
+        "navigateTo": "Venues",
         "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
       }
     ],
