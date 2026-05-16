@@ -107,6 +107,7 @@
     "linkCopied": "הקישור הועתק",
     "freeEntry": "כניסה חינם",
     "free": "חינם",
+    "fromPrice": "מ-€{amount}",
     "priceVaries": "מחיר משתנה",
     "perTicket": "/כרטיס",
     "perCover": "/כניסה",
@@ -175,7 +176,8 @@
     "getTickets": "רכישת כרטיסים",
     "officialSite": "עמוד רשמי",
     "venues": "מקומות מארחים",
-    "venuesHint": "האירוע מתקיים במיקומים אלה בבודפשט."
+    "venuesHint": "האירוע מתקיים במיקומים אלה בבודפשט.",
+    "hostAt": "{venue} · {place}"
   },
   "saved": {
     "title": "מקומות שמורים",
@@ -462,6 +464,7 @@
     "rakocziTer": "Rákóczi tér",
     "corvinNegyed": "מתחם קורווין",
     "muegyetem": "Műegyetem",
+    "petofiBridge": "גשר פטופי",
     "nagytemplomUtca": "Nagytemplom utca",
     "borarosTer": "Boráros tér",
     "millenniumiVaroskozpont": "מרכז מילניום",
@@ -480,7 +483,8 @@
     "gellertBathsArea": "אזור מרחצאות גלרט",
     "infopark": "Infopark",
     "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
-    "bikasPark": "Bikás park"
+    "bikasPark": "Bikás park",
+    "kelenfold": "קלןפלד"
   },
   "activityType": {
     "liveMusic": "מוזיקה חיה",

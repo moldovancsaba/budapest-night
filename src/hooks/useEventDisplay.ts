@@ -8,7 +8,13 @@ import {
   formatEventDateRange,
   lowestEntryFee,
 } from "@/lib/eventDisplay";
-import { useActivityTypeLabel, useAgeRangeLabel, useBadgeLabel, useVenueLocationLine } from "@/hooks/useVenueDisplay";
+import type { Provider } from "@/types/provider";
+import {
+  useActivityTypeLabel,
+  useAgeRangeLabel,
+  useBadgeLabel,
+  useVenueLocationLine,
+} from "@/hooks/useVenueDisplay";
 
 export function useFormatEventSchedule() {
   const locale = useLocale();
@@ -47,8 +53,30 @@ export function useEventFromPrice() {
 
 export function useEventLocationLine() {
   const locationLine = useVenueLocationLine();
-  return (event: Pick<NightEvent, "borough" | "neighborhood">) =>
-    locationLine(event.borough, event.neighborhood);
+  return (
+    event: Pick<NightEvent, "borough" | "neighborhood">,
+    host?: Pick<Provider, "borough" | "neighborhood"> | null,
+  ) => {
+    const borough = host?.borough ?? event.borough;
+    const neighborhood = host?.neighborhood ?? event.neighborhood;
+    return locationLine(borough, neighborhood);
+  };
+}
+
+/** Venue name + district line when a host venue is linked (falls back to event fields). */
+export function useEventPlaceLine() {
+  const locationLine = useVenueLocationLine();
+  const t = useTranslations("event");
+  return (
+    event: Pick<NightEvent, "borough" | "neighborhood">,
+    host?: Pick<Provider, "name" | "borough" | "neighborhood" | "address"> | null,
+  ) => {
+    if (host?.name) {
+      const place = locationLine(host.borough, host.neighborhood);
+      return t("hostAt", { venue: host.name, place });
+    }
+    return locationLine(event.borough, event.neighborhood);
+  };
 }
 
 export function useEventDisplayLabels() {

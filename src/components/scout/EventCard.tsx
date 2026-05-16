@@ -8,10 +8,11 @@ import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useEventDisplayLabels,
   useEventFromPrice,
-  useEventLocationLine,
+  useEventPlaceLine,
   useFormatDoorsOpen,
   useFormatEventSchedule,
 } from "@/hooks/useEventDisplay";
+import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -24,9 +25,12 @@ export function EventCard({ event, onOpen }: Props) {
   const schedule = useFormatEventSchedule();
   const doors = useFormatDoorsOpen();
   const fromPrice = useEventFromPrice();
-  const locationLine = useEventLocationLine();
+  const placeLine = useEventPlaceLine();
+  const { data: providers = [] } = useProvidersCatalog();
   const { badgeLabel } = useEventDisplayLabels();
   const { dateLine, timeLine } = schedule(event);
+  const primaryHost =
+    providers.find((p) => p.id === event.venueIds[0]) ?? null;
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
@@ -66,7 +70,7 @@ export function EventCard({ event, onOpen }: Props) {
         ) : null}
         <p className="mt-2 flex items-center gap-1 text-sm text-muted-foreground">
           <MapPin className="h-4 w-4 shrink-0" />
-          {locationLine(event)}
+          {placeLine(event, primaryHost)}
         </p>
         <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
           {event.shortDescription}

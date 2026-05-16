@@ -112,6 +112,7 @@
     "connectVenue": "Connect with this venue",
     "freeEntry": "Free entry",
     "free": "Free",
+    "fromPrice": "From €{amount}",
     "priceVaries": "Price varies",
     "perTicket": "/ticket",
     "perCover": "/cover",
@@ -173,7 +174,8 @@
     "getTickets": "Get tickets",
     "officialSite": "Official page",
     "venues": "Host venues",
-    "venuesHint": "This happening takes place at these Budapest locations."
+    "venuesHint": "This happening takes place at these Budapest locations.",
+    "hostAt": "{venue} · {place}"
   },
   "saved": {
     "title": "Saved venues",
@@ -473,6 +475,7 @@
     "rakocziTer": "Rákóczi tér",
     "corvinNegyed": "Corvin Quarter",
     "muegyetem": "Műegyetem",
+    "petofiBridge": "Petőfi Bridge",
     "nagytemplomUtca": "Nagytemplom utca",
     "borarosTer": "Boráros tér",
     "millenniumiVaroskozpont": "Millennium City Centre",
@@ -491,7 +494,8 @@
     "gellertBathsArea": "Gellért Baths area",
     "infopark": "Infopark",
     "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
-    "bikasPark": "Bikás park"
+    "bikasPark": "Bikás park",
+    "kelenfold": "Kelenföld"
   },
   "activityType": {
     "liveMusic": "Live Music",

@@ -11,7 +11,7 @@ import { useProvidersCatalog } from "@/hooks/useCatalog";
 import {
   useEventDisplayLabels,
   useEventFromPrice,
-  useEventLocationLine,
+  useEventPlaceLine,
   useFormatDoorsOpen,
   useFormatEntryFee,
   useFormatEventSchedule,
@@ -33,7 +33,7 @@ export function EventProfile({
   const doors = useFormatDoorsOpen();
   const fromPrice = useEventFromPrice();
   const formatFee = useFormatEntryFee();
-  const locationLine = useEventLocationLine();
+  const placeLine = useEventPlaceLine();
   const { activityLabel, ageLabel, badgeLabel } = useEventDisplayLabels();
   const { data: providers = [] } = useProvidersCatalog();
 
@@ -43,6 +43,7 @@ export function EventProfile({
   const hostVenues = event.venueIds
     .map((id) => providers.find((p) => p.id === id))
     .filter((p): p is Provider => !!p);
+  const primaryHost = hostVenues[0] ?? null;
 
   return (
     <Sheet open={!!event} onOpenChange={(o) => !o && onClose()}>
@@ -84,9 +85,14 @@ export function EventProfile({
             {doors(event) ? (
               <p className="text-xs text-muted-foreground">{doors(event)}</p>
             ) : null}
-            <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4" />
-              {locationLine(event)}
+            <p className="mt-2 flex items-start gap-1.5 text-sm text-muted-foreground">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
+              <span>
+                {placeLine(event, primaryHost)}
+                {primaryHost?.address ? (
+                  <span className="mt-0.5 block text-xs">{primaryHost.address}</span>
+                ) : null}
+              </span>
             </p>
             <p className="mt-1 text-lg font-semibold text-foreground">
               {fromPrice(event.entryFees)}

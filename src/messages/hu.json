@@ -107,6 +107,7 @@
     "linkCopied": "Link másolva",
     "freeEntry": "Ingyenes belépés",
     "free": "Ingyenes",
+    "fromPrice": "Már €{amount}-tól",
     "priceVaries": "Változó ár",
     "perTicket": "/jegy",
     "perCover": "/belépő",
@@ -175,7 +176,8 @@
     "getTickets": "Jegyvásárlás",
     "officialSite": "Hivatalos oldal",
     "venues": "Helyszínek",
-    "venuesHint": "Ez a program az alábbi budapesti helyszíneken zajlik."
+    "venuesHint": "Ez a program az alábbi budapesti helyszíneken zajlik.",
+    "hostAt": "{venue} · {place}"
   },
   "saved": {
     "title": "Mentett helyek",
@@ -475,6 +477,7 @@
     "rakocziTer": "Rákóczi tér",
     "corvinNegyed": "Corvin-negyed",
     "muegyetem": "Műegyetem",
+    "petofiBridge": "Petőfi híd",
     "nagytemplomUtca": "Nagytemplom utca",
     "borarosTer": "Boráros tér",
     "millenniumiVaroskozpont": "Millenniumi Városközpont",
@@ -493,7 +496,8 @@
     "gellertBathsArea": "Gellért fürdő környéke",
     "infopark": "Infopark",
     "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
-    "bikasPark": "Bikás park"
+    "bikasPark": "Bikás park",
+    "kelenfold": "Kelenföld"
   },
   "activityType": {
     "liveMusic": "Élő zene",

@@ -175,7 +175,8 @@
     "getTickets": "شراء التذاكر",
     "officialSite": "الصفحة الرسمية",
     "venues": "أماكن الاستضافة",
-    "venuesHint": "تُقام هذه الفعالية في هذه المواقع في بودابست."
+    "venuesHint": "تُقام هذه الفعالية في هذه المواقع في بودابست.",
+    "hostAt": "{venue} · {place}"
   },
   "saved": {
     "title": "أماكن محفوظة",
@@ -462,6 +463,7 @@
     "rakocziTer": "Rákóczi tér",
     "corvinNegyed": "حي كورفين",
     "muegyetem": "Műegyetem",
+    "petofiBridge": "جسر بيتوفي",
     "nagytemplomUtca": "Nagytemplom utca",
     "borarosTer": "Boráros tér",
     "millenniumiVaroskozpont": "مركز ميلينيوم",
@@ -480,7 +482,8 @@
     "gellertBathsArea": "منطقة حمامات جيليرت",
     "infopark": "Infopark",
     "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
-    "bikasPark": "Bikás park"
+    "bikasPark": "Bikás park",
+    "kelenfold": "كيلينفولد"
   },
   "activityType": {
     "liveMusic": "موسيقى حية",
