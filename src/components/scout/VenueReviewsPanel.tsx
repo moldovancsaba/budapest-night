@@ -20,7 +20,7 @@ function formatReviewDate(iso: string, locale: string): string {
 }
 
 export function VenueReviewsPanel({ provider }: { provider: Provider }) {
-  const t = useTranslations("provider");
+  const t = useTranslations("venue");
   const { data, isLoading, submit, locale, reviewerId } = useVenueReviews(provider.id);
   const [rating, setRating] = useState(0);
   const [displayName, setDisplayName] = useState("");

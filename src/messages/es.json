@@ -31,7 +31,6 @@
     "cafes": "Cafés",
     "culture": "Cultura",
     "eatDrink": "Comer y beber",
-    "nightGuide": "Guía nocturna",
     "saved": "Guardados",
     "budget": "Presupuesto",
     "split": "Dividir",
@@ -237,6 +236,19 @@
     "shareTitle": "Compartir {name}",
     "shareDescription": "Comparte este círculo cultural con un amigo.",
     "onPlatform": "{name} en Budapest Night",
+    "pageEyebrow": "Cultura y comunidad",
+    "heroTitleLine1": "Encuentra tu",
+    "heroTitleLine2": "círculo cultural",
+    "heroImageAlt": "Cultura y vida nocturna en Budapest",
+    "loading": "Cargando círculos culturales…",
+    "seedEmptyTitle": "Aún no hay círculos culturales",
+    "seedEmptyMessage": "Añade grupos en /admin o ejecuta npm run db:restore-payloads.",
+    "listInNeighborhood": "Círculos culturales en {place}",
+    "listAll": "Círculos culturales en Budapest",
+    "listInDistrict": "Círculos culturales en {district}",
+    "groupCount": "{count} grupos",
+    "filterEmptyTitle": "No hay círculos aquí",
+    "filterEmptyMessage": "Prueba otro distrito o barrio.",
     "groupType": {
       "artGallery": "Arte y galería",
       "liveCulture": "Cultura en vivo",
@@ -250,20 +262,6 @@
       "weekend": "Fin de semana",
       "popup": "Pop-up"
     }
-  },
-  "assistant": {
-    "title": "Guía nocturna",
-    "subtitle": "Tu compañero IA para eventos, fiestas, comida y cultura en Budapest.",
-    "intro": "Pregunta por distritos, ambiente, presupuesto o qué hacer esta noche.",
-    "placeholder": "Ruin bars, azoteas, galerías…",
-    "thinking": "Pensando…",
-    "slowDown": "Más despacio",
-    "slowDownDesc": "Demasiadas solicitudes — inténtalo en un momento.",
-    "noCredits": "Sin créditos",
-    "noCreditsDesc": "Añade créditos de IA para continuar.",
-    "unavailable": "Guía no disponible",
-    "error": "Algo salió mal",
-    "errorDesc": "Por favor, inténtalo de nuevo."
   },
   "calculator": {
     "decreaseGuests": "Menos personas",
@@ -451,7 +449,7 @@
     "subtitle": "Señal perdida en el Distrito VII",
     "headline": "Esta página se fue antes del cierre",
     "line1": "Te perdiste entre el Danubio, un ruin bar y un baño termal que no estaba en el mapa.",
-    "line2": "Nuestra IA nocturna se encogió de hombros, pidió pálinka y no dio direcciones.",
+    "line2": "Hasta el mapa se rindió y pidió otro pálinka.",
     "excusesTitle": "Explicación oficial (sospechosamente rotatoria)",
     "excuses": [
       "Szimpla Kert lo absorbió durante un set de jazz",

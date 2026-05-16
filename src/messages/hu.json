@@ -31,7 +31,6 @@
     "cafes": "Kávézók",
     "culture": "Kultúra",
     "eatDrink": "Enni és inni",
-    "nightGuide": "Éjszakai útmutató",
     "saved": "Mentve",
     "budget": "Költségvetés",
     "split": "Osztás",
@@ -264,20 +263,6 @@
       "popup": "Pop-up"
     }
   },
-  "assistant": {
-    "title": "Éjszakai útmutató",
-    "subtitle": "AI társad budapesti eseményekhez, bulikhoz, ételhez és kultúrához.",
-    "intro": "Kérdezz kerületekről, hangulatról, költségvetésről vagy a mai programról.",
-    "placeholder": "Romkocsmák, tetőteraszok, galériák…",
-    "thinking": "Gondolkodom…",
-    "slowDown": "Lassíts",
-    "slowDownDesc": "Túl sok kérés — próbáld újra egy pillanat múlva.",
-    "noCredits": "Nincs kredit",
-    "noCreditsDesc": "Adj hozzá AI kreditet a folytatáshoz.",
-    "unavailable": "Az útmutató nem elérhető",
-    "error": "Valami hiba történt",
-    "errorDesc": "Kérjük, próbáld újra."
-  },
   "calculator": {
     "title": "Éjszakai költségvetés",
     "subtitle": "Becsüld meg a teljes költésed helyszíneken és eseményeken.",
@@ -492,7 +477,7 @@
     "subtitle": "Jel elveszett valahol a VII. kerületben",
     "headline": "Ez az oldal hazament zárás előtt",
     "line1": "Félrementél a Duna, egy romkocsma és egy térképen nem szereplő fürdő között.",
-    "line2": "Az Éjszakai AI idegenvezetőnk vállat vont, pálinkát rendelt, és nem ad irányt.",
+    "line2": "Még a térkép is feladta, és rendelt egy újabb pálinkát.",
     "excusesTitle": "Hivatalos magyarázat (forog, gyanús)",
     "excuses": [
       "A Szimpla Kert elnyelte egy jazz szett alatt",
@@ -638,9 +623,18 @@
     "tourNeedsMenus": "Étlapok kellenek — {eligible} / {required} hely kész",
     "venuesWithMenus": "{count} hely közzétett étlappal",
     "tours": {
-      "palinka": { "title": "Pálinka út", "description": "Három hely, ahol pálinka szerepel az étlapon." },
-      "foodie": { "title": "Foodie kör", "description": "Magyar klasszikusok és street food három kerületben." },
-      "coffee": { "title": "Specialty kávé túra", "description": "Harmadgenerációs kávézók egy lassú délutánra." }
+      "palinka": {
+        "title": "Pálinka út",
+        "description": "Három hely, ahol pálinka szerepel az étlapon."
+      },
+      "foodie": {
+        "title": "Foodie kör",
+        "description": "Magyar klasszikusok és street food három kerületben."
+      },
+      "coffee": {
+        "title": "Specialty kávé túra",
+        "description": "Harmadgenerációs kávézók egy lassú délutánra."
+      }
     }
   },
   "tours": {
@@ -648,9 +642,18 @@
     "reshuffle": "Új véletlen útvonal",
     "openVenue": "Hely megnyitása",
     "shareHint": "Újrasorsolás után másold az URL-t a megosztáshoz.",
-    "palinka": { "title": "Pálinka út", "description": "Három pálinkás hely, lehetőleg különböző kerületekben." },
-    "foodie": { "title": "Foodie kör", "description": "Magyar ízek és street food három megállón." },
-    "coffee": { "title": "Specialty kávé túra", "description": "Három kávézó filterre, eszpresszóra és süteményre." },
+    "palinka": {
+      "title": "Pálinka út",
+      "description": "Három pálinkás hely, lehetőleg különböző kerületekben."
+    },
+    "foodie": {
+      "title": "Foodie kör",
+      "description": "Magyar ízek és street food három megállón."
+    },
+    "coffee": {
+      "title": "Specialty kávé túra",
+      "description": "Három kávézó filterre, eszpresszóra és süteményre."
+    },
     "errors": {
       "unknown_tour": "Ez a túra nem elérhető.",
       "not_enough_venues": "Még nincs elég egyező hely — nézz vissza később.",

@@ -31,7 +31,6 @@
     "cafes": "Caffè",
     "culture": "Cultura",
     "eatDrink": "Mangiare e bere",
-    "nightGuide": "Guida notturna",
     "saved": "Salvati",
     "budget": "Budget",
     "split": "Dividi",
@@ -237,6 +236,19 @@
     "shareTitle": "Condividi {name}",
     "shareDescription": "Condividi questo circolo culturale con un amico.",
     "onPlatform": "{name} su Budapest Night",
+    "pageEyebrow": "Cultura e comunità",
+    "heroTitleLine1": "Trova il tuo",
+    "heroTitleLine2": "circolo culturale",
+    "heroImageAlt": "Cultura e vita notturna a Budapest",
+    "loading": "Caricamento circoli culturali…",
+    "seedEmptyTitle": "Nessun circolo culturale ancora",
+    "seedEmptyMessage": "Aggiungi gruppi da /admin o esegui npm run db:restore-payloads.",
+    "listInNeighborhood": "Circoli culturali a {place}",
+    "listAll": "Circoli culturali a Budapest",
+    "listInDistrict": "Circoli culturali a {district}",
+    "groupCount": "{count} gruppi",
+    "filterEmptyTitle": "Nessun circolo qui",
+    "filterEmptyMessage": "Prova un altro distretto o quartiere.",
     "groupType": {
       "artGallery": "Arte e galleria",
       "liveCulture": "Cultura dal vivo",
@@ -250,20 +262,6 @@
       "weekend": "Weekend",
       "popup": "Pop-up"
     }
-  },
-  "assistant": {
-    "title": "Guida notturna",
-    "subtitle": "Il tuo compagno IA per eventi, feste, cibo e cultura a Budapest.",
-    "intro": "Chiedi quartieri, atmosfera, budget o cosa fare stasera.",
-    "placeholder": "Ruin bar, rooftop, gallerie…",
-    "thinking": "Sto pensando…",
-    "slowDown": "Rallenta",
-    "slowDownDesc": "Troppe richieste — riprova tra poco.",
-    "noCredits": "Crediti esauriti",
-    "noCreditsDesc": "Aggiungi crediti IA per continuare.",
-    "unavailable": "Guida non disponibile",
-    "error": "Qualcosa è andato storto",
-    "errorDesc": "Riprova per favore."
   },
   "calculator": {
     "decreaseGuests": "Meno ospiti",
@@ -451,7 +449,7 @@
     "subtitle": "Segnale perso nel Distretto VII",
     "headline": "Questa pagina è andata a casa prima dell'ultima chiamata",
     "line1": "Hai sbagliato strada tra il Danubio, un ruin bar e terme che non erano sulla mappa.",
-    "line2": "La nostra guida notturna AI ha alzato le spalle, ordinato pálinka e rifiutato indicazioni.",
+    "line2": "Anche la mappa ha gettato la spugna e ha ordinato un altro pálinka.",
     "excusesTitle": "Spiegazione ufficiale (a rotazione, sospetta)",
     "excuses": [
       "Szimpla Kert l'ha assorbita durante un set jazz",

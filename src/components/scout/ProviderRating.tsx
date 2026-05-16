@@ -11,7 +11,7 @@ type Props = {
 };
 
 export function ProviderRating({ provider, variant, className }: Props) {
-  const t = useTranslations("provider");
+  const t = useTranslations("venue");
   const hasScore = provider.rating > 0 || provider.reviewCount > 0;
   if (!hasScore) return null;
 

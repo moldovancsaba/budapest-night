@@ -31,7 +31,6 @@
     "cafes": "בתי קפה",
     "culture": "תרבות",
     "eatDrink": "אוכל ושתייה",
-    "nightGuide": "מדריך לילה",
     "saved": "שמורים",
     "budget": "תקציב",
     "split": "חלוקה",
@@ -237,6 +236,19 @@
     "shareTitle": "שתף את {name}",
     "shareDescription": "שתף מעגל תרבות זה עם חבר.",
     "onPlatform": "{name} ב-Budapest Night",
+    "pageEyebrow": "תרבות וקהילה",
+    "heroTitleLine1": "מצא את",
+    "heroTitleLine2": "מעגל התרבות שלך",
+    "heroImageAlt": "תרבות וחיי לילה בבודפשט",
+    "loading": "טוען מעגלי תרבות…",
+    "seedEmptyTitle": "אין עדיין מעגלי תרבות",
+    "seedEmptyMessage": "הוסף קבוצות ב-/admin או הרץ npm run db:restore-payloads.",
+    "listInNeighborhood": "מעגלי תרבות ב{place}",
+    "listAll": "מעגלי תרבות בבודפשט",
+    "listInDistrict": "מעגלי תרבות ב{district}",
+    "groupCount": "{count} קבוצות",
+    "filterEmptyTitle": "אין מעגלים כאן",
+    "filterEmptyMessage": "נסה מחוז או שכונה אחרים.",
     "groupType": {
       "artGallery": "אמנות וגלריה",
       "liveCulture": "תרבות חיה",
@@ -250,20 +262,6 @@
       "weekend": "סוף שבוע",
       "popup": "חד-פעמי"
     }
-  },
-  "assistant": {
-    "title": "מדריך לילה",
-    "subtitle": "עוזר ה-AI שלכם לאירועים, מסיבות, אוכל ותרבות בבודפשט.",
-    "intro": "שאלו על רובעים, אווירה, תקציב או מה לעשות הערב.",
-    "placeholder": "ברים בחורבות, גגות, גלריות…",
-    "thinking": "חושב…",
-    "slowDown": "לאט",
-    "slowDownDesc": "יותר מדי בקשות — נסו שוב בעוד רגע.",
-    "noCredits": "אין קרדיט",
-    "noCreditsDesc": "הוסיפו קרדיט AI כדי להמשיך.",
-    "unavailable": "המדריך לא זמין",
-    "error": "משהו השתבש",
-    "errorDesc": "אנא נסו שוב."
   },
   "calculator": {
     "decreaseGuests": "פחות אורחים",
@@ -451,7 +449,7 @@
     "subtitle": "האות אבד איפשהו ברובע השביעי",
     "headline": "הדף הזה הלך הביתה לפני סגירה",
     "line1": "פנית לא נכון בין הדנובה, בר הריסות ומרחצאות שלא היו על המפה.",
-    "line2": "מדריך הלילה שלנו משך בכתפיים, הזמין פאלינקה וסירב לתת כיוון.",
+    "line2": "אפילו המפה ויתרה והזמינה עוד פאלינקה.",
     "excusesTitle": "הסבר רשמי (מתחלף, חשוד)",
     "excuses": [
       "סימפלה קרט בלעה אותו במהלך סט ג'אז",

@@ -31,7 +31,6 @@
     "cafes": "Cafés",
     "culture": "Culture",
     "eatDrink": "Eat & Drink",
-    "nightGuide": "Night Guide",
     "saved": "Saved",
     "budget": "Budget",
     "split": "Split",
@@ -157,6 +156,7 @@
     "findByArea": "Find {blurb} by district and neighborhood.",
     "heroAlt": {
       "Venues": "Concert halls, clubs, and cultural spaces in Budapest",
+      "Events": "Concerts and festivals in Budapest",
       "Parties": "DJ and nightclub crowd in Budapest",
       "Restaurants": "Restaurant dining room in Budapest",
       "Cafés": "Café terrace and coffee culture in Budapest"
@@ -173,6 +173,7 @@
     "loadErrorMessage": "Check MONGODB_URI and your network. The API returned an error.",
     "blurb": {
       "Venues": "concert halls, clubs, galleries, and event spaces",
+      "Events": "concerts, festivals, boat parties, and rooftop shows",
       "Parties": "ruin bars, clubs, DJ nights, and late parties",
       "Restaurants": "bistros, fine dining, and Danube-side tables",
       "Cafés": "coffee, brunch, dessert bars, and all-day hangouts"
@@ -261,20 +262,6 @@
       "weekend": "Weekend",
       "popup": "Pop-up"
     }
-  },
-  "assistant": {
-    "title": "Night Guide",
-    "subtitle": "Your AI companion for Budapest events, parties, food, and culture.",
-    "intro": "Ask about districts, vibes, budgets, or what to do tonight.",
-    "placeholder": "Ruin bars, rooftops, galleries…",
-    "thinking": "Thinking…",
-    "slowDown": "Slow down",
-    "slowDownDesc": "Too many requests — please try again in a moment.",
-    "noCredits": "Out of credits",
-    "noCreditsDesc": "Please add AI credits to continue.",
-    "unavailable": "Guide unavailable",
-    "error": "Something went wrong",
-    "errorDesc": "Please try again."
   },
   "calculator": {
     "title": "Night out budget",
@@ -490,7 +477,7 @@
     "subtitle": "Signal lost somewhere in District VII",
     "headline": "This page went home before last call",
     "line1": "You took a wrong turn between the Danube, a ruin bar, and a thermal bath that definitely was not on the map.",
-    "line2": "Our Night Guide AI shrugged, ordered a pálinka, and refused to give directions.",
+    "line2": "Even the map gave up and ordered another pálinka.",
     "excusesTitle": "Official explanation (rotating, suspiciously)",
     "excuses": [
       "Szimpla Kert absorbed it during a jazz set",
