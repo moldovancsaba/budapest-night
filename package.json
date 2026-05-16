@@ -29,6 +29,8 @@
     "env:generate": "node scripts/generate-env-secrets.cjs",
     "env:generate:dry": "node scripts/generate-env-secrets.cjs --dry-run",
     "env:rotate-ingest-key": "node scripts/generate-env-secrets.cjs --ingest-only",
+    "env:rotate-session-secret": "node scripts/generate-env-secrets.cjs --session-only",
+    "vercel:env:push-session-secret": "node -r ./scripts/load-env.cjs scripts/sync-vercel-secret.cjs ADMIN_SESSION_SECRET",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ingest-validate": "node --test scripts/lib/image-ingest-validate.test.cjs scripts/lib/scarcity-ingest-validate.test.cjs"

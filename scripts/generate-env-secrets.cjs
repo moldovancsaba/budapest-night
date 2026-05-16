@@ -13,6 +13,7 @@
  *   node scripts/generate-env-secrets.cjs --dry-run  # preview only
  *   node scripts/generate-env-secrets.cjs --force    # rotate all auto-generated keys
  *   node scripts/generate-env-secrets.cjs --ingest-only   # rotate INGEST_API_KEY only (then vercel:env:push)
+ *   node scripts/generate-env-secrets.cjs --session-only  # mint/rotate ADMIN_SESSION_SECRET only
  */
 const fs = require("fs");
 const path = require("node:path");
@@ -105,7 +106,12 @@ function main() {
   const dry = process.argv.includes("--dry-run");
   const force = process.argv.includes("--force");
   const ingestOnly = process.argv.includes("--ingest-only");
-  const rotateKeys = ingestOnly ? ["INGEST_API_KEY"] : AUTO_KEYS;
+  const sessionOnly = process.argv.includes("--session-only");
+  const rotateKeys = ingestOnly
+    ? ["INGEST_API_KEY"]
+    : sessionOnly
+      ? ["ADMIN_SESSION_SECRET"]
+      : AUTO_KEYS;
 
   const existing = loadExisting();
   const merged = { ...existing };
@@ -114,7 +120,9 @@ function main() {
   for (const key of rotateKeys) {
     const cur = merged[key];
     const need =
-      (ingestOnly && key === "INGEST_API_KEY") || (!ingestOnly && (force || isEmpty(cur)));
+      (ingestOnly && key === "INGEST_API_KEY") ||
+      (sessionOnly && key === "ADMIN_SESSION_SECRET") ||
+      (!ingestOnly && !sessionOnly && (force || isEmpty(cur)));
     if (!need) continue;
     const next = generators[key]();
     const before = isEmpty(cur) ? "(empty)" : "(existing value, replacing)";
@@ -126,7 +134,7 @@ function main() {
   console.log("Target file:", envLocalPath);
   if (changes.length === 0) {
     console.log(
-      "\nNo changes: use --ingest-only to mint a new INGEST_API_KEY, or --force to rotate all auto-generated keys.",
+      "\nNo changes: use --ingest-only, --session-only, or --force to rotate auto-generated keys.",
     );
     process.exit(0);
   }
