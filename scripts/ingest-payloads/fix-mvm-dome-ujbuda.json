@@ -1,0 +1,80 @@
+{
+  "sourceUrls": [
+    "https://www.livenation.hu"
+  ],
+  "notes": "Image/data fix for prov-mvm-dome-ujbuda",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mvm-dome-ujbuda",
+        "name": "MVM Dome",
+        "category": "Venues",
+        "borough": "Terézváros",
+        "neighborhood": "Stefánia út",
+        "address": "1143 Budapest, Stefánia út 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Major indoor arena in southern Pest — concerts and arena shows with published ticket tiers.",
+        "longDescription": "MVM Dome (formerly Budapest Arena) is a large indoor venue in Újbuda used for international concert tours. Check the official promoter or venue listings for door times, seated and standing zones, and on-sale windows.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/FLdH3FZ7/f6f9df3f32bc.jpg",
+        "email": "",
+        "website": "https://www.livenation.hu",
+        "phone": "",
+        "locales": {
+          "hu": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Nagy beltéri aréna dél-Pesten — koncertturnék és jegyek a hivatalos oldalon.",
+            "longDescription": "Az MVM Dome (korábban Budapest Aréna) nagy beltéri helyszín Újbudán, nemzetközi koncertturnék számára. A kapunyitás és jegyárak a promoter oldalán.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "es": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Gran arena cubierta en el sur de Pest — giras y entradas en la web oficial.",
+            "longDescription": "MVM Dome es una gran sala cubierta en Újbuda para giras internacionales. Horarios de puerta y precios en el promotor.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "it": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Grande arena indoor a Pest sud — tour e biglietti sul sito ufficiale.",
+            "longDescription": "MVM Dome è una grande arena coperta a Újbuda per concerti internazionali. Orari e prezzi sul promoter.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "he": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "אולם מקורה גדול בדרום פשט — הופעות וכרטיסים באתר הרשמי.",
+            "longDescription": "MVM Dome הוא אולם מקורה גדול ב-Újbuda להופעות בינלאומיות. שעות פתיחה ומחירים אצל המארגן.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "ar": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "ساحة داخلية كبيرة في جنوب بودابست — جولات وحفلات وتذاكر عبر الموقع الرسمي.",
+            "longDescription": "MVM Dome ساحة مغطاة كبيرة في Újbuda للحفلات الدولية. أوقات الأبواب والأسعار لدى المنظم.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          }
+        },
+        "priceCurrency": "HUF",
+        "menuTags": null,
+        "localImagePath": "/Users/Shared/Projects/budapest-night/scripts/imgbb-asset-sources/providers/mvm-dome.jpg"
+      }
+    }
+  ]
+}

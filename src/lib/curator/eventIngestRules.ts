@@ -38,10 +38,12 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 - \`doorsOpenAt\`: optional gate time when published (e.g. 18:00 before 20:00 show).
 - \`timezone\`: \`Europe/Budapest\` when omitted, app still defaults correctly.
 
-### Host venues
-- \`venueIds\`: array of **existing** provider ids (\`prov-...\`). Minimum 1.
-- Upsert missing venues first in the same \`operations\` array (\`category: "Venues"\`).
-- \`borough\` + \`neighborhood\` on the event must **match the primary host venue** (denormalized for district filters). Copy from the venue’s official address — do not reuse an old/incorrect district.
+### Host venues (required link)
+- \`venueIds\`: array of **existing** provider ids (\`^prov-[a-z0-9-]+$\`). Minimum 1; **first id = primary host** (location, cards, filters).
+- Upsert every host venue **before** the event in the same \`operations\` array (\`category: "Venues"\`). Ingest **rejects** unknown \`venueIds\`.
+- On ingest, the server writes \`venueLinks[]\` snapshots (\`id\`, \`name\`, \`category\`, \`borough\`, \`neighborhood\`, \`address\`) from the live provider — do **not** author \`venueLinks\` manually.
+- \`borough\` + \`neighborhood\` on the event are **overwritten** from the primary host (denormalized for district filters). Still set them correctly in the payload for review.
+- Multi-venue festivals: list all hosts in \`venueIds\` order (primary first).
 
 ### Location pitfalls (Hungary)
 - Verify **postal address** vs historical names. Example: **Budapest Park** = 1095 Budapest, Fábián Juli tér 1, **Ferencváros** (south Pest), **not** Hajógyári-sziget / Óbuda unless the source explicitly says the show is on the island.

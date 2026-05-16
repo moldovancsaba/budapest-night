@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import type { EntryFee, NightEvent } from "@/types/event";
+import type { EntryFee, EventVenueLink, NightEvent } from "@/types/event";
 import { formatHufAsDisplay } from "@/lib/currency";
 import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import {
@@ -71,13 +71,18 @@ export function useEventLocationLine() {
   };
 }
 
+type EventHostPlace = Pick<
+  Provider,
+  "id" | "name" | "borough" | "neighborhood" | "address"
+> | EventVenueLink;
+
 /** Venue name + district line when a host venue is linked (falls back to event fields). */
 export function useEventPlaceLine() {
   const locationLine = useVenueLocationLine();
   const t = useTranslations("event");
   return (
     event: Pick<NightEvent, "borough" | "neighborhood">,
-    host?: Pick<Provider, "id" | "name" | "borough" | "neighborhood" | "address"> | null,
+    host?: EventHostPlace | null,
   ) => {
     if (host?.name) {
       const loc = resolveProviderLocation(host);
@@ -86,6 +91,16 @@ export function useEventPlaceLine() {
     }
     return locationLine(event.borough, event.neighborhood);
   };
+}
+
+export function primaryHostFromEvent(
+  event: Pick<NightEvent, "venueIds" | "venueLinks"> & { venues?: EventVenueLink[] },
+  providers: Provider[],
+): EventHostPlace | null {
+  if (event.venues?.[0]) return event.venues[0];
+  const live = providers.find((p) => p.id === event.venueIds[0]);
+  if (live) return live;
+  return event.venueLinks?.[0] ?? null;
 }
 
 export function useEventDisplayLabels() {

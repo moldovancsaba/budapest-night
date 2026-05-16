@@ -1,11 +1,15 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildEventFullPath,
+  buildGroupFullPath,
   buildGroupPath,
   buildPathForView,
   buildSectionPath,
   buildTourPath,
+  buildVenueFullPath,
   buildVenuePath,
   parseAppRoute,
+  parseEntityRouteKey,
 } from "./appPaths";
 
 describe("appPaths", () => {
@@ -48,5 +52,29 @@ describe("appPaths", () => {
     expect(buildSectionPath("events", { location: { borough: "Buda" } })).toBe("/events?borough=buda");
     expect(buildVenuePath("abc", { from: "cafes" })).toBe("/venue/abc?from=cafes");
     expect(buildGroupPath("g1")).toBe("/group/g1");
+    expect(buildVenueFullPath("abc", { from: "cafes" })).toBe("/venue/abc/full?from=cafes");
+    expect(buildEventFullPath("moby", { from: "events" })).toBe("/event/moby/full?from=events");
+    expect(buildGroupFullPath("g1")).toBe("/group/g1/full");
+  });
+
+  it("parses full-page entity routes", () => {
+    const slash = parseAppRoute(
+      "/event/event-moby-budapest-park-2026/full",
+      new URLSearchParams("from=events"),
+    );
+    expect(slash.fullPage).toBe(true);
+    expect(slash.eventId).toBe("event-moby-budapest-park-2026");
+
+    const suffix = parseAppRoute(
+      "/event/event-moby-budapest-park-2026-full",
+      new URLSearchParams(),
+    );
+    expect(suffix.fullPage).toBe(true);
+    expect(suffix.eventId).toBe("event-moby-budapest-park-2026");
+
+    expect(parseEntityRouteKey("foo-full", undefined)).toEqual({
+      entityKey: "foo",
+      fullPage: true,
+    });
   });
 });

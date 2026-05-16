@@ -35,7 +35,8 @@ Pick a real official listing that fills the scarcest slice you can source credib
 ## Hard requirements
 - Official promoter or venue ticket page; cite in `Sources:` lines.
 - `startsAt` / `endsAt` / optional `doorsOpenAt` as ISO 8601 with offset (e.g. `+02:00`); `timezone: "Europe/Budapest"`.
-- `venueIds` → existing `prov-*`; event `borough` / `neighborhood` = primary host venue address.
+- `venueIds` → existing `prov-*` (primary host **first**). Upsert venues before events in `operations[]`. Ingest rejects unknown ids and writes `venueLinks[]` snapshots automatically.
+- Event `borough` / `neighborhood` are synced from the primary host — must match the venue’s official address.
 - `entryFees`: real tiers; **HUF** for forint shops; never `FREE`/`amount:0` for paid shows. Use `[]` if tiers unknown.
 - Venue `pricePerClass: 0` for ticketed hosts; do not put forint ticket prices on the venue.
 - ImgBB `image` on event (poster or venue image).

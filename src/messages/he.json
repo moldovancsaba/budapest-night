@@ -187,6 +187,7 @@
     "officialSite": "עמוד רשמי",
     "venues": "מקומות מארחים",
     "venuesHint": "האירוע מתקיים במיקומים אלה בבודפשט.",
+    "venueLinkMissing": "{count, plural, one {מקום אירוח אחד עדיין לא מקושר לקטלוג.} other {# מקומות אירוח עדיין לא מקושרים לקטלוג.}}",
     "hostAt": "{venue} · {place}"
   },
   "saved": {
@@ -406,6 +407,13 @@
         "icon": "heart"
       }
     ]
+  },
+  "sharePage": {
+    "back": "חזרה",
+    "copyLink": "העתק קישור",
+    "linkCopied": "הקישור הועתק",
+    "notFoundTitle": "לא נמצא",
+    "notFoundBody": "ייתכן שהרישום הועבר או שהקישור אינו מעודכן."
   },
   "notFound": {
     "code": "404",

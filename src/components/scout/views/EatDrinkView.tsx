@@ -8,33 +8,13 @@ import { MENU_TAGS, menuTagMessageKey, type MenuTag } from "@/data/menuTags";
 import { TOUR_TEMPLATES } from "@/data/tourTemplates";
 import { buildTourPath } from "@/lib/appPaths";
 import { useFormatMenuPrice } from "@/hooks/useFormatMenuPrice";
+import type { PublicMenuItemRow } from "@/lib/publicMenuItem";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
-type MenuItemRow = {
-  id: string;
-  name: string;
-  kind: string;
-  tags: string[];
-  price: {
-    amount: number;
-    currency: string;
-    unit?: string;
-    source: string;
-  } | null;
-  providerId: string;
-  providerName: string;
-  category: string;
-  borough: string;
-  neighborhood: string;
-  sectionTitle: string;
-  source: string;
-  eventTitle: string | null;
-};
 
 interface Props {
   onOpen: (p: Provider) => void;
@@ -46,7 +26,7 @@ export function EatDrinkView({ onOpen }: Props) {
   const formatPrice = useFormatMenuPrice();
   const { data: providers = [] } = useProvidersCatalog();
 
-  const [items, setItems] = useState<MenuItemRow[]>([]);
+  const [items, setItems] = useState<PublicMenuItemRow[]>([]);
   const [total, setTotal] = useState(0);
   const [providersWithMenu, setProvidersWithMenu] = useState(0);
   const [tourReadiness, setTourReadiness] = useState<
@@ -96,10 +76,13 @@ export function EatDrinkView({ onOpen }: Props) {
     [providers],
   );
 
-  const openRow = (row: MenuItemRow) => {
+  const openRow = (row: PublicMenuItemRow) => {
     const p = providerById.get(row.providerId);
     if (p) onOpen(p);
   };
+
+  const categoryLabel = (cat: PublicMenuItemRow["venue"]["category"]) =>
+    t(`venueCategory.${cat}`);
 
   return (
     <div className="space-y-8">
@@ -295,12 +278,21 @@ export function EatDrinkView({ onOpen }: Props) {
                   >
                     <p className="font-medium text-foreground">{row.name}</p>
                     <p className="mt-1 text-xs text-muted-foreground">
-                      {row.providerName} · {row.sectionTitle}
+                      {t("atVenue", {
+                        venue: row.venue.name,
+                        category: categoryLabel(row.venue.category),
+                        section: row.sectionTitle,
+                      })}
                       {row.eventTitle ? ` · ${row.eventTitle}` : ""}
                     </p>
-                    <p className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
-                      <MapPin className="h-3 w-3" />
-                      {row.borough} · {row.neighborhood}
+                    <p className="mt-2 flex items-start gap-1 text-xs text-muted-foreground">
+                      <MapPin className="mt-0.5 h-3 w-3 shrink-0" />
+                      <span>
+                        <span className="block text-foreground">
+                          {row.venue.borough} · {row.venue.neighborhood}
+                        </span>
+                        <span className="mt-0.5 block">{row.venue.address}</span>
+                      </span>
                     </p>
                     {price ? (
                       <p className="mt-2 text-sm font-semibold text-foreground">

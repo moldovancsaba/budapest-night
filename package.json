@@ -10,6 +10,8 @@
     "db:seed": "npx tsx scripts/seed.ts",
     "db:restore-payloads": "npx tsx scripts/restore-from-payloads.ts",
     "db:seed-timed-events": "npx tsx scripts/seed-timed-events.ts",
+    "db:backfill-event-venue-links": "npx tsx -r ./scripts/load-env.cjs scripts/backfill-event-venue-links.ts",
+    "db:backfill-menu-venue-links": "npx tsx -r ./scripts/load-env.cjs scripts/backfill-menu-venue-links.ts",
     "db:recompute-menu-tags": "npx tsx scripts/recompute-menu-tags.ts",
     "db:migrate-events-to-venues": "node -r ./scripts/load-env.cjs scripts/migrate-provider-category-events-to-venues.cjs",
     "db:patch-media": "node -r ./scripts/load-env.cjs scripts/patch-site-media.cjs",

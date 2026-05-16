@@ -101,9 +101,25 @@ export interface AppRoute {
   groupId: string | null;
   tourId: string | null;
   eventId: string | null;
+  /** Dedicated full-page layout (e.g. `/event/{key}/full` or `/event/{key}-full`). */
+  fullPage: boolean;
   /** Section to return to when closing a venue/event sheet (from `?from=`). */
   fromSection: AppSection;
   invalid: boolean;
+}
+
+/** Parse `/entity/{key}` with optional `/full` suffix or `-full` on the key. */
+export function parseEntityRouteKey(
+  keySegment: string,
+  trailingSegment?: string,
+): { entityKey: string; fullPage: boolean } {
+  let fullPage = trailingSegment === "full";
+  let entityKey = decodeURIComponent(keySegment);
+  if (!fullPage && entityKey.endsWith("-full")) {
+    fullPage = true;
+    entityKey = entityKey.slice(0, -5);
+  }
+  return { entityKey, fullPage };
 }
 
 export function viewToSection(view: ViewKey): AppSection {
@@ -152,14 +168,16 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
 
   if (segments[0] === "venue" && segments[1]) {
     const fromSection = parseFromSection(search, "venues");
+    const { entityKey, fullPage } = parseEntityRouteKey(segments[1], segments[2]);
     return {
       view: sectionToView(fromSection),
       section: fromSection,
       location,
-      venueId: decodeURIComponent(segments[1]),
+      venueId: entityKey,
       groupId: null,
       tourId: null,
       eventId: null,
+      fullPage,
       fromSection,
       invalid: false,
     };
@@ -167,6 +185,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
 
   if (segments[0] === "event" && segments[1]) {
     const fromSection = parseFromSection(search, "events");
+    const { entityKey, fullPage } = parseEntityRouteKey(segments[1], segments[2]);
     return {
       view: "Events",
       section: "events",
@@ -174,7 +193,8 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       venueId: null,
       groupId: null,
       tourId: null,
-      eventId: decodeURIComponent(segments[1]),
+      eventId: entityKey,
+      fullPage,
       fromSection,
       invalid: false,
     };
@@ -190,20 +210,23 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       groupId: null,
       tourId: decodeURIComponent(segments[1]),
       eventId: null,
+      fullPage: false,
       fromSection: "eat-drink",
       invalid: false,
     };
   }
 
   if (segments[0] === "group" && segments[1]) {
+    const { entityKey, fullPage } = parseEntityRouteKey(segments[1], segments[2]);
     return {
       view: "Meet-Up Groups",
       section: "culture",
       location,
       venueId: null,
-      groupId: decodeURIComponent(segments[1]),
+      groupId: entityKey,
       tourId: null,
       eventId: null,
+      fullPage,
       fromSection: "culture",
       invalid: false,
     };
@@ -218,6 +241,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       groupId: null,
       tourId: null,
       eventId: null,
+      fullPage: false,
       fromSection: "home",
       invalid: false,
     };
@@ -233,6 +257,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       groupId: null,
       tourId: null,
       eventId: null,
+      fullPage: false,
       fromSection: "home",
       invalid: true,
     };
@@ -247,6 +272,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     groupId: null,
     tourId: null,
     eventId: null,
+    fullPage: false,
     fromSection: appSection,
     invalid: false,
   };
@@ -317,6 +343,30 @@ export function buildEventPath(
     if (loc.neighborhood) params.set("hood", loc.neighborhood);
   }
   return `/event/${encodeURIComponent(key)}?${params.toString()}`;
+}
+
+function withFullPageSuffix(path: string): string {
+  const q = path.indexOf("?");
+  if (q === -1) return `${path}/full`;
+  return `${path.slice(0, q)}/full?${path.slice(q + 1)}`;
+}
+
+export function buildVenueFullPath(
+  providerOrKey: Provider | string,
+  options?: { from?: AppSection; location?: LocationFilter; locale?: AppLocale },
+): string {
+  return withFullPageSuffix(buildVenuePath(providerOrKey, options));
+}
+
+export function buildEventFullPath(
+  eventOrKey: NightEvent | string,
+  options?: { from?: AppSection; location?: LocationFilter; locale?: AppLocale },
+): string {
+  return withFullPageSuffix(buildEventPath(eventOrKey, options));
+}
+
+export function buildGroupFullPath(groupId: string): string {
+  return `${buildGroupPath(groupId)}/full`;
 }
 
 export function tourSeedFromSearch(search: URLSearchParams): string | null {

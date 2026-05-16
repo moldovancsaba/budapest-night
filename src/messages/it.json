@@ -187,6 +187,7 @@
     "officialSite": "Pagina ufficiale",
     "venues": "Locali ospitanti",
     "venuesHint": "Questo evento si svolge in questi luoghi di Budapest.",
+    "venueLinkMissing": "{count, plural, one {# locale ospitante non è ancora collegato al catalogo.} other {# locali ospitanti non sono ancora collegati al catalogo.}}",
     "hostAt": "{venue} · {place}"
   },
   "saved": {
@@ -406,6 +407,13 @@
         "icon": "heart"
       }
     ]
+  },
+  "sharePage": {
+    "back": "Indietro",
+    "copyLink": "Copia link",
+    "linkCopied": "Link copiato",
+    "notFoundTitle": "Non trovato",
+    "notFoundBody": "Questa scheda potrebbe essere stata spostata o il link non è più valido."
   },
   "notFound": {
     "code": "404",

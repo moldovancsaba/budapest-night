@@ -27,6 +27,19 @@ export type IngestBatchContext = {
 
 const defaultBatchContext = (): IngestBatchContext => ({ providerIdsInBatch: new Set() });
 
+async function refreshEventsLinkedToHost(db: Db, hostId: string): Promise<void> {
+  const rows = (await db
+    .collection(COL.events)
+    .find({ venueIds: hostId })
+    .toArray()) as unknown as NightEvent[];
+  for (const ev of rows) {
+    const hostsResult = await loadEventHosts(db, ev.venueIds);
+    if ("error" in hostsResult) continue;
+    const stored = prepareNightEventWithVenues(ev, hostsResult.hosts);
+    await db.collection(COL.events).replaceOne({ id: ev.id }, stored as unknown as Document);
+  }
+}
+
 async function loadEventHosts(
   db: Db,
   venueIds: string[],
@@ -64,6 +77,10 @@ function stripId<T extends object>(doc: T): T {
 
 function withResolvedLocation(provider: Provider): Provider {
   return { ...provider, ...resolveProviderLocation(provider) };
+}
+
+function finalizeProvider(doc: Provider): Provider {
+  return withResolvedLocation(applyMenuToProvider(doc) as Provider);
 }
 
 export async function applyIngestOperation(
@@ -237,9 +254,10 @@ export async function applyIngestOperation(
     if (imgErr) return { ok: false, error: imgErr };
     const localeErrs = validateProviderLocalesForIngest(rest.locales, "provider.document");
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
-    const withMenu = withResolvedLocation(applyMenuToProvider(rest) as Provider);
+    const withMenu = finalizeProvider(rest as Provider);
     await db.collection(COL.providers).replaceOne({ id: withMenu.id }, withMenu, { upsert: true });
     batch.providerIdsInBatch.add(withMenu.id);
+    await refreshEventsLinkedToHost(db, withMenu.id);
     return { ok: true };
   }
 
@@ -252,15 +270,24 @@ export async function applyIngestOperation(
     const patch = patchRaw as Partial<Provider>;
     if (Object.keys(patch).length === 0) return { ok: false, error: "provider.patch patch must not be empty" };
     const cur = (await db.collection(COL.providers).findOne({ id })) as unknown as Provider | null;
-    const merged: Partial<Provider> = { ...(cur ?? {}), ...patch };
+    if (!cur) return { ok: false, error: `provider.patch: unknown id ${id}` };
+    const merged: Provider = { ...cur, ...patch };
     if (patch.locales) {
-      merged.locales = mergeProviderLocales(cur?.locales, patch.locales);
+      merged.locales = mergeProviderLocales(cur.locales, patch.locales);
     }
     const imgErr = validateProviderImages(merged);
     if (imgErr) return { ok: false, error: imgErr };
-    const setDoc: Partial<Provider> = applyMenuToProvider({ ...patch });
-    if (patch.locales) setDoc.locales = merged.locales;
+    const final = finalizeProvider(merged);
+    const setDoc: Partial<Provider> = {};
+    for (const key of Object.keys(patch) as (keyof Provider)[]) {
+      (setDoc as Record<string, unknown>)[key as string] = final[key];
+    }
+    if (patch.menu !== undefined) {
+      setDoc.menu = final.menu;
+      setDoc.menuTags = final.menuTags;
+    }
     await db.collection(COL.providers).updateOne({ id }, { $set: setDoc });
+    await refreshEventsLinkedToHost(db, id);
     return { ok: true };
   }
 

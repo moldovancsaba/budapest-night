@@ -1,6 +1,8 @@
 import { resolveProviderLocation } from "@/lib/budapestLocation";
+import { buildMenuVenueLink } from "@/lib/menu/menuVenueLink";
 import type { EventVenueLink, NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";
+import type { VenueLink } from "@/types/venueLink";
 
 const PROVIDER_ID_RE = /^prov-[a-z0-9-]+$/;
 
@@ -11,15 +13,9 @@ export function isValidProviderId(id: string): boolean {
 /** Snapshot host venues on the event for filters, cards, and broken-link fallback. */
 export function buildEventVenueLinks(hosts: Provider[]): EventVenueLink[] {
   return hosts.map((host) => {
-    const loc = resolveProviderLocation(host);
-    return {
-      id: host.id,
-      name: host.name,
-      category: host.category,
-      borough: loc.borough,
-      neighborhood: loc.neighborhood,
-      address: loc.address,
-    };
+    const link = buildMenuVenueLink(host);
+    const { website: _w, menuUrl: _m, ...core } = link;
+    return core;
   });
 }
 
@@ -39,7 +35,7 @@ export function resolveEventHostVenues(
       if (live) return providerToEventVenueLink(live);
       return linksById.get(id) ?? null;
     })
-    .filter((v): v is EventVenueLink => v !== null);
+    .filter((v): v is VenueLink => v !== null);
 }
 
 export function primaryEventHost(

@@ -185,6 +185,7 @@
     "officialSite": "Official page",
     "venues": "Host venues",
     "venuesHint": "This happening takes place at these Budapest locations.",
+    "venueLinkMissing": "{count, plural, one {# host venue is not linked in the catalog yet.} other {# host venues are not linked in the catalog yet.}}",
     "hostAt": "{venue} · {place}"
   },
   "saved": {
@@ -446,6 +447,13 @@
       }
     ]
   },
+  "sharePage": {
+    "back": "Back",
+    "copyLink": "Copy link",
+    "linkCopied": "Link copied",
+    "notFoundTitle": "Not found",
+    "notFoundBody": "This listing may have moved or the link is outdated."
+  },
   "notFound": {
     "code": "404",
     "subtitle": "Signal lost somewhere in District VII",
@@ -576,6 +584,13 @@
     "filterDrink": "Drink",
     "allTags": "All tags",
     "empty": "No menu items match yet. More venues are added as menus are verified.",
+    "atVenue": "{venue} ({category}) · {section}",
+    "venueCategory": {
+      "Restaurants": "Restaurant",
+      "Cafés": "Café",
+      "Parties": "Bar & nightlife",
+      "Venues": "Venue"
+    },
     "tourReady": "Ready — {count} venues with matching menus",
     "tourNeedsMenus": "Needs menus — {eligible} of {required} venues ready",
     "venuesWithMenus": "{count} venues with published menus",

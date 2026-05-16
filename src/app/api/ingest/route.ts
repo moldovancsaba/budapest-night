@@ -20,11 +20,17 @@ export async function GET(req: Request) {
     resources: [
       "providers (list, replaceAll, upsertMany, deleteMany)",
       "provider (get, upsert, patch, delete)",
+      "events (list)",
+      "event (get, upsert, patch, delete)",
       "meetupGroups (list, replaceAll, upsertMany, deleteMany)",
       "meetupGroup (get, upsert, patch, delete)",
       "site (get, patch, put)",
       "brain (get, patch, put)",
       "locations (list, replace)",
+    ],
+    computedOnIngest: [
+      "provider.menuTags and provider.menu.venueLink from menu items",
+      "event.venueLinks and event borough/neighborhood from venueIds[0]",
     ],
     limits: { maxOperationsPerRequest: MAX_OPS },
   });

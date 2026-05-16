@@ -187,6 +187,7 @@
     "officialSite": "Hivatalos oldal",
     "venues": "Helyszínek",
     "venuesHint": "Ez a program az alábbi budapesti helyszíneken zajlik.",
+    "venueLinkMissing": "{count, plural, one {# helyszín még nincs összekötve a katalógussal.} other {# helyszín még nincs összekötve a katalógussal.}}",
     "hostAt": "{venue} · {place}"
   },
   "saved": {
@@ -448,6 +449,13 @@
       }
     ]
   },
+  "sharePage": {
+    "back": "Vissza",
+    "copyLink": "Link másolása",
+    "linkCopied": "Link másolva",
+    "notFoundTitle": "Nem található",
+    "notFoundBody": "Ez a lista áthelyezésre kerülhetett, vagy a link elavult."
+  },
   "notFound": {
     "code": "404",
     "subtitle": "Jel elveszett valahol a VII. kerületben",
@@ -578,6 +586,13 @@
     "filterDrink": "Ital",
     "allTags": "Minden címke",
     "empty": "Még nincs egyező tétel. További helyek kerülnek fel, ahogy az étlapok ellenőrzésre kerülnek.",
+    "atVenue": "{venue} ({category}) · {section}",
+    "venueCategory": {
+      "Restaurants": "Étterem",
+      "Cafés": "Kávézó",
+      "Parties": "Bár és éjszaka",
+      "Venues": "Helyszín"
+    },
     "tourReady": "Kész — {count} hely megfelelő étlappal",
     "tourNeedsMenus": "Étlapok kellenek — {eligible} / {required} hely kész",
     "venuesWithMenus": "{count} hely közzétett étlappal",

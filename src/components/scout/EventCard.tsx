@@ -1,13 +1,14 @@
 "use client";
 
 import { CalendarDays, MapPin, Ticket } from "lucide-react";
-import type { NightEvent } from "@/types/event";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { Button } from "@/components/ui/button";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useEventDisplayLabels,
   useEventFromPrice,
+  primaryHostFromEvent,
   useEventPlaceLine,
   useFormatDoorsOpen,
   useFormatEventSchedule,
@@ -17,8 +18,8 @@ import { resolveProviderLocation } from "@/lib/budapestLocation";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  event: NightEvent;
-  onOpen: (e: NightEvent) => void;
+  event: PublicNightEvent;
+  onOpen: (e: PublicNightEvent) => void;
 }
 
 export function EventCard({ event, onOpen }: Props) {
@@ -30,7 +31,7 @@ export function EventCard({ event, onOpen }: Props) {
   const { data: providers = [] } = useProvidersCatalog();
   const { badgeLabel } = useEventDisplayLabels();
   const { dateLine, timeLine } = schedule(event);
-  const primaryHostRaw = providers.find((p) => p.id === event.venueIds[0]) ?? null;
+  const primaryHostRaw = primaryHostFromEvent(event, providers);
   const primaryHost = primaryHostRaw
     ? { ...primaryHostRaw, ...resolveProviderLocation(primaryHostRaw) }
     : null;

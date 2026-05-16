@@ -8,7 +8,13 @@ export function getMenuIngestRulesForPrompt(): string {
   const tags = MENU_TAGS.join(", ");
   return `## Eat & Drink menu ingest (provider \`menu\` field)
 
-Goal: publish **real food and drink items** so /eat-drink can search them and themed tours (pálinka, foodie, coffee) can pick three venues with matching dishes/drinks.
+Goal: publish **real food and drink items** on an **existing** \`prov-*\` venue so /eat-drink can search them and themed tours (pálinka, foodie, coffee) can pick three stops with matching dishes/drinks.
+
+### Venue link (required)
+- Menus attach to **one provider row** (\`resource: "provider"\`, \`action: "patch"\` or \`upsert\` with stable \`id: "prov-..."\`).
+- The venue must already exist in the catalog (or be upserted **before** the menu patch in the same payload).
+- On ingest, the server writes \`menu.venueLink\` (\`id\`, \`name\`, \`category\`, \`borough\`, \`neighborhood\`, \`address\`, \`website\`, \`menuUrl\`) — **do not** author \`venueLink\` manually.
+- \`category\` must match the host: **Restaurants**, **Cafés**, **Parties**, or **Venues** (bar, ruin pub, etc.).
 
 ### Source of truth
 - Official venue menu page, PDF, or on-site board — not guesses from vibes alone.
@@ -59,7 +65,7 @@ Goal: publish **real food and drink items** so /eat-drink can search them and th
 ### Coverage workflow
 1. \`GET /api/public/menu-items\` — see current board; \`providersWithMenu\` should rise.
 2. \`GET /api/public/providers\` — pick venues in scarcest district/category **without** a full menu yet.
-3. Prefer **patch** existing \`prov-*\` ids (\`resource: "provider", action: "patch", document: { id, menu }\`) to avoid duplicating venues.
+3. Prefer **patch** existing \`prov-*\` ids: \`{ "resource": "provider", "action": "patch", "id": "prov-...", "patch": { "menu": { ... } } }\`.
 4. After ingest, verify \`GET /api/public/menu-items?tag=coffee\` (or palinka, goulash) returns rows.
 5. Verify tour: \`GET /api/public/tours/palinka\` returns 3 stops (not \`not_enough_venues\`).
 

@@ -1,3 +1,5 @@
+import type { VenueLink } from "@/types/venueLink";
+
 /** Eat & drink menu model — attached to providers in Mongo. */
 
 export type MenuItemKind = "food" | "drink" | "other";
@@ -36,6 +38,8 @@ export type VenueMenu = {
   sourceUrls: string[];
   lastVerifiedAt: string;
   sections: MenuSection[];
+  /** Host venue snapshot — set on ingest from the provider row (do not author manually). */
+  venueLink?: VenueLink;
 };
 
 export type EventOffering = {

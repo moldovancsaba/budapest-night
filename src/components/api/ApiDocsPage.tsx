@@ -75,6 +75,8 @@ const PROVIDER_FIELDS = `interface Provider {
   ageRanges: ("All ages" | "Family" | "18+" | "21+" | "Late night")[];
   dayTimeTags: ("Weekday" | "Weekend" | "Morning" | "Afternoon" | "Evening" | "Late night")[];
   pricePerClass: number;
+  /** Optional; EUR hint on venue cards. Ticket prices belong on timed events (entryFees, HUF/EUR). */
+  priceCurrency?: "EUR" | "HUF";
   shortDescription: string;
   longDescription: string;
   rating: number;
@@ -89,6 +91,12 @@ const PROVIDER_FIELDS = `interface Provider {
   announcementBadge?: string;
   galleryImages?: string[];
   bookingEnabled?: boolean;
+  /** Optional published food & drink menu; menu.venueLink is computed on ingest. */
+  menu?: VenueMenu;
+  /** Optional dated packages (not timed events in the Events calendar). */
+  eventOfferings?: EventOffering[];
+  /** Union of item tags — computed on ingest; do not send in payloads. */
+  menuTags?: string[];
   /** Required on curated ingest: hu, es, it, he, ar (base fields = English). See localeIngestRules. */
   locales: Partial<Record<"hu" | "es" | "it" | "he" | "ar", {
     name: string;
@@ -101,6 +109,130 @@ const PROVIDER_FIELDS = `interface Provider {
     announcementBadge?: string;
     image?: string;
   }>>;
+}`;
+
+const VENUE_LINK = `interface VenueLink {
+  id: string;              // prov-...
+  name: string;
+  category: "Venues" | "Parties" | "Restaurants" | "Cafés";
+  borough: Borough;
+  neighborhood: string;
+  address: string;
+  website?: string;
+  menuUrl?: string;
+}`;
+
+const VENUE_MENU = `interface VenueMenu {
+  menuUrl?: string;
+  sourceUrls: string[];   // https official menu sources
+  lastVerifiedAt: string; // YYYY-MM-DD
+  sections: MenuSection[];
+  /** Set on ingest from the provider row — do not author in payloads. */
+  venueLink?: VenueLink;
+}
+
+interface MenuSection {
+  id: string;
+  title: string;
+  kind: "food" | "drink" | "mixed";
+  items: MenuItem[];
+}
+
+interface MenuItem {
+  id: string;
+  kind: "food" | "drink" | "other";
+  name: string;
+  description?: string;
+  price?: { amount: number; currency: "HUF" | "EUR"; unit?: "each" | "glass" | "bottle" | "portion" | "ticket"; source: "published" | "estimated" };
+  tags: string[];         // canonical tags — see GET /api/public/menu-items
+  dietary?: ("vegan" | "vegetarian" | "gluten-free")[];
+}`;
+
+const NIGHT_EVENT = `interface NightEvent {
+  id: string;               // event-...
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  startsAt: string;         // ISO 8601 with offset, e.g. 2026-08-01T20:00:00+02:00
+  endsAt: string;
+  timezone?: string;        // default Europe/Budapest
+  doorsOpenAt?: string;
+  /** Host provider ids; first = primary host (location + cards). */
+  venueIds: string[];
+  /** Snapshots written on ingest — do not author in payloads. */
+  venueLinks?: VenueLink[];
+  borough: Borough;
+  neighborhood: string;
+  entryFees: { id: string; label: string; amount: number; currency: "HUF" | "EUR" | "FREE"; source: "published" | "estimated"; notes?: string }[];
+  activityTypes: string[];
+  ageRanges: AgeRange[];
+  dayTimeTags: DayTimeTag[];
+  badges: FeaturedBadge[];
+  image: string;
+  galleryImages?: string[];
+  website: string;
+  bookingUrl: string;
+  email: string;
+  phone: string;
+  status: "scheduled" | "cancelled" | "sold_out" | "postponed";
+  locales?: Partial<Record<"hu" | "es" | "it" | "he" | "ar", { title: string; shortDescription: string; longDescription: string; slug: string }>>;
+}
+
+/** GET /api/public/events adds resolved hosts: */
+interface PublicNightEvent extends NightEvent {
+  venues: VenueLink[];
+  venuesResolved: boolean;
+}`;
+
+const MENU_ITEMS_RESPONSE = `{
+  "items": [
+    {
+      "id": "prov-cafe:espresso",
+      "name": "Espresso",
+      "kind": "drink",
+      "tags": ["coffee", "specialty-coffee"],
+      "price": { "amount": 890, "currency": "HUF", "unit": "each", "source": "published" },
+      "providerId": "prov-cafe",
+      "providerName": "Example Café",
+      "category": "Cafés",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar",
+      "address": "1075 Budapest, Kazinczy utca 1",
+      "venue": { "id": "prov-cafe", "name": "Example Café", "category": "Cafés", "...": "VenueLink" },
+      "sectionTitle": "Coffee",
+      "source": "venue",
+      "eventTitle": null,
+      "venueResolved": true
+    }
+  ],
+  "total": 42,
+  "providersWithMenu": 8,
+  "tourReadiness": {
+    "palinka": { "eligible": 2, "ready": false, "stopCount": 3 },
+    "foodie": { "eligible": 1, "ready": false, "stopCount": 3 },
+    "coffee": { "eligible": 3, "ready": true, "stopCount": 3 }
+  }
+}`;
+
+const TOUR_RESPONSE = `{
+  "tourId": "palinka",
+  "seed": "palinka-1715000000",
+  "templateId": "palinka",
+  "stops": [
+    {
+      "providerId": "prov-cellar",
+      "providerName": "Example Cellar",
+      "category": "Restaurants",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Jewish Quarter",
+      "address": "1075 Budapest, ...",
+      "website": "https://...",
+      "image": "https://i.ibb.co/...",
+      "highlightItems": [
+        { "name": "House plum pálinka (4 cl)", "priceLabel": "1,490 Ft" }
+      ]
+    }
+  ]
 }`;
 
 const MEETUP_FIELDS = `interface MeetupGroup {
@@ -250,6 +382,30 @@ const INGEST_BATCH = `{
       "locations": [
         { "borough": "Belváros", "neighborhoods": ["Inner City", "Jewish Quarter"] }
       ]
+    },
+    { "resource": "events", "action": "list" },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-example-2026",
+        "venueIds": ["prov-host-arena"],
+        "startsAt": "2026-08-01T20:00:00+02:00",
+        "...": "NightEvent fields — upsert host venue first"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cafe",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://cafe.hu/menu",
+          "sourceUrls": ["https://cafe.hu/menu"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [{ "id": "drinks", "title": "Drinks", "kind": "drink", "items": [] }]
+        }
+      }
     }
   ]
 }`;
@@ -362,9 +518,79 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <p>
                   Returns <code className="font-mono">Provider[]</code>. Mongo <code className="font-mono">_id</code> is stripped from each object.
                 </p>
+                <p>
+                  <strong>Query:</strong> <code className="font-mono">locale</code> — optional{" "}
+                  <code className="font-mono">en</code> | <code className="font-mono">hu</code> | <code className="font-mono">es</code> |{" "}
+                  <code className="font-mono">it</code> | <code className="font-mono">he</code> | <code className="font-mono">ar</code> (overlays{" "}
+                  <code className="font-mono">locales[locale]</code> on name, descriptions, slug).
+                </p>
                 <p className="text-muted-foreground">
                   <strong>503</strong> if the database is not configured.
                 </p>
+              </EndpointCard>
+
+              <EndpointCard method="GET" path="/api/public/events" auth="None">
+                <p>
+                  Returns <code className="font-mono">PublicNightEvent[]</code> — timed concerts and ticketed shows (not venue listings).
+                  Each event includes <code className="font-mono">venues</code> (resolved host snapshots) and{" "}
+                  <code className="font-mono">venuesResolved</code>.
+                </p>
+                <p>
+                  <strong>Query:</strong>{" "}
+                  <code className="font-mono">locale</code> (same as providers);{" "}
+                  <code className="font-mono">upcoming=0</code> to include past/cancelled;{" "}
+                  <code className="font-mono">borough</code> to filter by district. Default: upcoming scheduled events only, sorted by{" "}
+                  <code className="font-mono">startsAt</code>.
+                </p>
+                <p className="text-muted-foreground">
+                  Stored <code className="font-mono">venueIds</code> must reference existing <code className="font-mono">prov-*</code> ids. On ingest,{" "}
+                  <code className="font-mono">venueLinks</code> and district fields sync from the primary host.
+                </p>
+              </EndpointCard>
+
+              <EndpointCard method="GET" path="/api/public/menu-items" auth="None">
+                <p>
+                  Flat menu board for Eat &amp; Drink: dishes and drinks with prices, each row linked to a host venue via{" "}
+                  <code className="font-mono">venue</code> (<code className="font-mono">VenueLink</code>).
+                </p>
+                <p>
+                  <strong>Query:</strong>{" "}
+                  <code className="font-mono">tag</code> (canonical menu tag),{" "}
+                  <code className="font-mono">q</code> (search name, venue, section, address, category),{" "}
+                  <code className="font-mono">kind</code> (<code className="font-mono">food</code> | <code className="font-mono">drink</code> |{" "}
+                  <code className="font-mono">other</code>),{" "}
+                  <code className="font-mono">borough</code>,{" "}
+                  <code className="font-mono">categories</code> (comma-separated),{" "}
+                  <code className="font-mono">limit</code> (max 500, default 120).
+                </p>
+                <p>
+                  <strong>400</strong> if <code className="font-mono">tag</code> is not a canonical tag. Empty catalog returns{" "}
+                  <code className="font-mono">{"{ items: [], providersWithMenu: 0, tourReadiness: {...} }"}</code> when DB is missing.
+                </p>
+                <CodeBlock title="Example response">{MENU_ITEMS_RESPONSE}</CodeBlock>
+                <p className="text-sm text-muted-foreground">
+                  Canonical tags: <code className="font-mono">palinka</code>, <code className="font-mono">coffee</code>,{" "}
+                  <code className="font-mono">specialty-coffee</code>, <code className="font-mono">goulash</code>,{" "}
+                  <code className="font-mono">hungarian</code>, <code className="font-mono">street-food</code>, and others in{" "}
+                  <code className="font-mono">src/data/menuTags.ts</code>.
+                </p>
+              </EndpointCard>
+
+              <EndpointCard method="GET" path="/api/public/tours/{tourId}" auth="None">
+                <p>
+                  Generates a themed three-stop tour from venues with <strong>published menu items</strong> matching the template tags.
+                  Templates: <code className="font-mono">palinka</code>, <code className="font-mono">foodie</code>,{" "}
+                  <code className="font-mono">coffee</code>.
+                </p>
+                <p>
+                  <strong>Query:</strong> <code className="font-mono">seed</code> — optional shuffle seed (defaults to tour id + timestamp).
+                </p>
+                <p>
+                  <strong>404</strong> unknown <code className="font-mono">tourId</code>.{" "}
+                  <strong>422</strong> <code className="font-mono">{"{ \"error\": \"not_enough_venues\" }"}</code> when fewer than three eligible venues.
+                  Check readiness via <code className="font-mono">tourReadiness</code> on menu-items.
+                </p>
+                <CodeBlock title="Example response">{TOUR_RESPONSE}</CodeBlock>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/meetup-groups" auth="None">
@@ -401,7 +627,10 @@ export function ApiDocsPage({ origin }: { origin: string }) {
             </div>
 
             <h3 className="mt-10 font-display text-lg font-semibold">Entity references</h3>
+            <CodeBlock title="VenueLink (events, menus, API rows)">{VENUE_LINK}</CodeBlock>
             <CodeBlock title="Provider">{PROVIDER_FIELDS}</CodeBlock>
+            <CodeBlock title="VenueMenu &amp; MenuItem">{VENUE_MENU}</CodeBlock>
+            <CodeBlock title="NightEvent &amp; PublicNightEvent">{NIGHT_EVENT}</CodeBlock>
             <CodeBlock title="MeetupGroup (Borough same as Provider)">{MEETUP_FIELDS}</CodeBlock>
           </Section>
 
@@ -449,9 +678,23 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <code className="font-mono">he</code>, and <code className="font-mono">ar</code> (each with{" "}
                 <code className="font-mono">name</code>, <code className="font-mono">shortDescription</code>,{" "}
                 <code className="font-mono">longDescription</code>, <code className="font-mono">slug</code>). Public reads accept{" "}
-                <code className="font-mono">?locale=</code> on <code className="font-mono">GET /api/public/providers</code>. See{" "}
-                <code className="font-mono">scripts/cursor-curator-prompt.txt</code> and{" "}
-                <code className="font-mono">src/lib/curator/localeIngestRules.ts</code>.
+                <code className="font-mono">?locale=</code> on providers and events. See{" "}
+                <code className="font-mono">src/lib/curator/localeIngestRules.ts</code> and{" "}
+                <code className="font-mono">src/lib/curator/eventLocaleIngestRules.ts</code>.
+              </p>
+              <p>
+                <strong>Menus (Eat &amp; Drink):</strong> attach <code className="font-mono">menu</code> to an existing{" "}
+                <code className="font-mono">prov-*</code> via <code className="font-mono">provider</code> + <code className="font-mono">patch</code> or{" "}
+                <code className="font-mono">upsert</code>. Do not send <code className="font-mono">menuTags</code> or{" "}
+                <code className="font-mono">menu.venueLink</code>. Specialist prompt:{" "}
+                <code className="font-mono">scripts/cursor-curator-menu-prompt.txt</code> · rules:{" "}
+                <code className="font-mono">src/lib/curator/menuIngestRules.ts</code>.
+              </p>
+              <p>
+                <strong>Timed events:</strong> use <code className="font-mono">resource: &quot;event&quot;</code> (not provider category{" "}
+                <code className="font-mono">Events</code>). Upsert host venues first in the same <code className="font-mono">operations</code> array.
+                Ticket tiers go in <code className="font-mono">entryFees</code> (HUF/EUR), not <code className="font-mono">pricePerClass</code> on the venue.
+                Prompt: <code className="font-mono">scripts/cursor-curator-events-prompt.txt</code>.
               </p>
 
             <div className="space-y-6">
@@ -498,7 +741,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 auth="Bearer INGEST_API_KEY or header X-Ingest-Key: &lt;key&gt;"
               >
               <p>
-                Batch <strong>read + write</strong> operations for providers, meetup groups, site, brain, and locations.
+                Batch <strong>read + write</strong> operations for providers, timed events, meetup groups, site, brain, and locations.
                 Up to <strong>100 operations</strong> per request. Each result may include <code className="font-mono">data</code> for successful reads or write metadata (e.g.{" "}
                 <code className="font-mono">{"{ \"replaced\": 12 }"}</code>, <code className="font-mono">{"{ \"deletedCount\": 3 }"}</code>).
               </p>
@@ -534,6 +777,12 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                   <code className="font-mono">locations</code> + <code className="font-mono">list</code> → raw Mongo rows{" "}
                   <code className="font-mono">{"{ borough, neighborhoods }[]"}</code>.
                 </li>
+                <li>
+                  <code className="font-mono">events</code> + <code className="font-mono">list</code> → <code className="font-mono">NightEvent[]</code>.
+                </li>
+                <li>
+                  <code className="font-mono">event</code> + <code className="font-mono">get</code> + <code className="font-mono">id</code> → one event or error.
+                </li>
               </ul>
               <p>
                 <strong>Write actions</strong>
@@ -541,6 +790,12 @@ export function ApiDocsPage({ origin }: { origin: string }) {
               <ul className="list-inside list-disc space-y-1 text-sm">
                 <li>
                   <code className="font-mono">provider</code>: <code className="font-mono">upsert</code>, <code className="font-mono">patch</code>, <code className="font-mono">delete</code> (by <code className="font-mono">id</code>).
+                  Menu patches recompute <code className="font-mono">menuTags</code> and <code className="font-mono">menu.venueLink</code>; linked events refresh host snapshots when the venue changes.
+                </li>
+                <li>
+                  <code className="font-mono">event</code>: <code className="font-mono">upsert</code>, <code className="font-mono">patch</code>, <code className="font-mono">delete</code>.
+                  Every <code className="font-mono">venueIds[]</code> entry must exist before the event is saved. Ingest writes <code className="font-mono">venueLinks</code> and syncs district from <code className="font-mono">venueIds[0]</code>.
+                  Do not send <code className="font-mono">venueLinks</code> in payloads.
                 </li>
                 <li>
                   <code className="font-mono">providers</code>: <code className="font-mono">upsertMany</code> (bulk by <code className="font-mono">id</code>),{" "}

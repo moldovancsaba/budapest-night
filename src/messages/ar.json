@@ -186,6 +186,7 @@
     "officialSite": "الصفحة الرسمية",
     "venues": "أماكن الاستضافة",
     "venuesHint": "تُقام هذه الفعالية في هذه المواقع في بودابست.",
+    "venueLinkMissing": "{count, plural, one {مكان مضيف واحد غير مرتبط بالكتالوج بعد.} other {# أماكن مضيفة غير مرتبطة بالكتالوج بعد.}}",
     "hostAt": "{venue} · {place}"
   },
   "saved": {
@@ -405,6 +406,13 @@
         "icon": "heart"
       }
     ]
+  },
+  "sharePage": {
+    "back": "رجوع",
+    "copyLink": "نسخ الرابط",
+    "linkCopied": "تم نسخ الرابط",
+    "notFoundTitle": "غير موجود",
+    "notFoundBody": "ربما نُقل هذا العنصر أو أن الرابط قديم."
   },
   "notFound": {
     "code": "404",

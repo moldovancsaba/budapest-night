@@ -31,7 +31,7 @@ Prioritize venues that unlock tours and tag coverage:
 4. **District** — spread patches across boroughs.
 
 ## Patch shape (preferred)
-Do **not** re-upsert whole venue unless needed. Use **patch** with stable `id`:
+Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` id (menus are always tied to that provider row):
 
 ```json
 {
@@ -42,8 +42,8 @@ Do **not** re-upsert whole venue unless needed. Use **patch** with stable `id`:
     {
       "resource": "provider",
       "action": "patch",
-      "document": {
-        "id": "prov-existing-id",
+      "id": "prov-existing-id",
+      "patch": {
         "menu": {
           "menuUrl": "https://...",
           "sourceUrls": ["https://..."],
@@ -77,7 +77,8 @@ Do **not** re-upsert whole venue unless needed. Use **patch** with stable `id`:
 ```
 
 ## Rules (blocking)
-- **Do not** send `menuTags` — computed on ingest from item tags.
+- **Do not** send `menu.venueLink` or `menuTags` — computed on ingest from the provider row.
+- Every menu patch must target a real `prov-*` id that exists (or is upserted earlier in the same payload).
 - Tags only from: `palinka`, `wine`, `beer`, `craft-beer`, `cocktail`, `coffee`, `specialty-coffee`, `goulash`, `hungarian`, `street-food`, `dessert`, `vegan`, `vegetarian`, `ruin-bar`, `rooftop`, `danube-view`
 - **HUF** vs **EUR** must match the menu (1490 Ft ≠ €1490).
 - 3–12 representative items per venue; include food **and** drink sections when the source has both.

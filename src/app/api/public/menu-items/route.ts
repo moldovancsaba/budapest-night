@@ -3,6 +3,8 @@ import { getDb, COL } from "@/lib/mongodb";
 import { TOUR_TEMPLATES } from "@/data/tourTemplates";
 import { countEligibleForTour, isTourReady } from "@/lib/menu/generateTour";
 import { filterFlatMenuItems, flattenProviderMenu } from "@/lib/menu/flattenMenuItems";
+import { toPublicMenuItemRow } from "@/lib/publicMenuItem";
+import { resolveProviderLocation } from "@/lib/budapestLocation";
 import type { Provider } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
 import { isMenuTag } from "@/data/menuTags";
@@ -23,7 +25,10 @@ export async function GET(req: Request) {
   if (!db) return NextResponse.json({ items: [], providersWithMenu: 0 });
 
   const providers = (await db.collection(COL.providers).find({}).toArray()) as unknown as Provider[];
-  const withMenu = providers.filter((p) => (p.menu?.sections?.length ?? 0) > 0 || (p.eventOfferings?.length ?? 0) > 0);
+  const located = providers.map((p) => ({ ...p, ...resolveProviderLocation(p) }));
+  const withMenu = located.filter(
+    (p) => (p.menu?.sections?.length ?? 0) > 0 || (p.eventOfferings?.length ?? 0) > 0,
+  );
   let flat = withMenu.flatMap((p) => flattenProviderMenu(p));
 
   flat = filterFlatMenuItems(flat, {
@@ -35,27 +40,13 @@ export async function GET(req: Request) {
   });
 
   const limit = Math.min(Number(url.searchParams.get("limit") ?? 120), 500);
-  const items = flat.slice(0, limit).map((row) => ({
-    id: `${row.providerId}:${row.item.id}`,
-    name: row.item.name,
-    kind: row.item.kind,
-    tags: row.item.tags,
-    price: row.item.price ?? null,
-    providerId: row.providerId,
-    providerName: row.providerName,
-    category: row.category,
-    borough: row.borough,
-    neighborhood: row.neighborhood,
-    sectionTitle: row.sectionTitle,
-    source: row.source,
-    eventTitle: row.eventTitle ?? null,
-  }));
+  const items = flat.slice(0, limit).map(toPublicMenuItemRow);
 
   const tourReadiness: Record<string, { eligible: number; ready: boolean; stopCount: number }> = {};
   for (const tpl of TOUR_TEMPLATES) {
     tourReadiness[tpl.id] = {
-      eligible: countEligibleForTour(providers, tpl.id),
-      ready: isTourReady(providers, tpl.id),
+      eligible: countEligibleForTour(located, tpl.id),
+      ready: isTourReady(located, tpl.id),
       stopCount: tpl.stopCount,
     };
   }

@@ -10,7 +10,7 @@ import { Mail, MessageCircle, Link2 } from "lucide-react";
 import type { MeetupGroup } from "@/types/meetup";
 import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
-import { buildAbsoluteGroupUrl } from "@/lib/appShareUrls";
+import { buildAbsoluteGroupFullUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
 import { useVenueLocationLine } from "@/hooks/useVenueDisplay";
 
@@ -26,7 +26,7 @@ export function MeetupShareDialog({
   const tv = useTranslations("venue");
   const locationLine = useVenueLocationLine();
   if (!group) return null;
-  const url = buildAbsoluteGroupUrl(group.id, locale);
+  const url = buildAbsoluteGroupFullUrl(group.id, locale);
   const summary = `${group.name} — ${locationLine(group.borough, group.neighborhood)}. ${group.description} Instagram: ${group.instagram}`;
 
   return (

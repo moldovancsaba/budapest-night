@@ -1,11 +1,13 @@
 import type { Provider } from "@/types/provider";
 import { computeMenuTagsFromMenu } from "@/lib/menu/computeMenuTags";
+import { enrichProviderMenuVenueLink } from "@/lib/menu/menuVenueLink";
 
-/** Recompute denormalized menuTags after menu / eventOfferings change. */
+/** Recompute menuTags and menu.venueLink after menu / eventOfferings change. */
 export function applyMenuToProvider(doc: Partial<Provider>): Partial<Provider> {
   const menuTags = computeMenuTagsFromMenu(doc.menu, doc.eventOfferings);
-  return {
-    ...doc,
+  const withTags: Provider = {
+    ...(doc as Provider),
     menuTags: menuTags.length ? menuTags : undefined,
   };
+  return enrichProviderMenuVenueLink(withTags);
 }

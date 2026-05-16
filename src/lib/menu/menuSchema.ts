@@ -34,12 +34,26 @@ const menuSectionSchema = z
   })
   .strict();
 
+const venueLinkSchema = z
+  .object({
+    id: z.string().min(1),
+    name: z.string().min(1),
+    category: z.string().min(1),
+    borough: z.string().min(1),
+    neighborhood: z.string().min(1),
+    address: z.string().min(1),
+    website: z.string().max(500).optional(),
+    menuUrl: z.string().max(500).optional(),
+  })
+  .strict();
+
 export const venueMenuSchema = z
   .object({
     menuUrl: z.string().url().max(500).optional(),
     sourceUrls: z.array(z.string().url().max(500)).max(8),
     lastVerifiedAt: z.string().min(8).max(32),
     sections: z.array(menuSectionSchema).max(24),
+    venueLink: venueLinkSchema.optional(),
   })
   .strict();
 

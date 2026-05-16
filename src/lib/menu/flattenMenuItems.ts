@@ -1,5 +1,7 @@
+import { resolveMenuVenueLink } from "@/lib/menu/menuVenueLink";
 import type { Provider } from "@/types/provider";
 import type { MenuItem, MenuItemKind } from "@/types/menu";
+import type { VenueLink } from "@/types/venueLink";
 
 export type FlatMenuItem = {
   item: MenuItem;
@@ -8,6 +10,8 @@ export type FlatMenuItem = {
   category: Provider["category"];
   borough: Provider["borough"];
   neighborhood: string;
+  address: string;
+  venue: VenueLink;
   sectionTitle: string;
   source: "venue" | "event";
   eventTitle?: string;
@@ -24,6 +28,7 @@ function slugId(prefix: string, name: string): string {
 
 export function flattenProviderMenu(provider: Provider): FlatMenuItem[] {
   const out: FlatMenuItem[] = [];
+  const venue = resolveMenuVenueLink(provider);
   const menu = provider.menu;
   if (menu?.sections) {
     for (const sec of menu.sections) {
@@ -37,9 +42,11 @@ export function flattenProviderMenu(provider: Provider): FlatMenuItem[] {
           item,
           providerId: provider.id,
           providerName: provider.name,
-          category: provider.category,
-          borough: provider.borough,
-          neighborhood: provider.neighborhood,
+          category: venue.category,
+          borough: venue.borough,
+          neighborhood: venue.neighborhood,
+          address: venue.address,
+          venue,
           sectionTitle: sec.title,
           source: "venue",
         });
@@ -57,9 +64,11 @@ export function flattenProviderMenu(provider: Provider): FlatMenuItem[] {
         item,
         providerId: provider.id,
         providerName: provider.name,
-        category: provider.category,
-        borough: provider.borough,
-        neighborhood: provider.neighborhood,
+        category: venue.category,
+        borough: venue.borough,
+        neighborhood: venue.neighborhood,
+        address: venue.address,
+        venue,
         sectionTitle: ev.title,
         source: "event",
         eventTitle: ev.title,
@@ -99,7 +108,9 @@ export function filterFlatMenuItems(
       (row) =>
         row.item.name.toLowerCase().includes(q) ||
         row.providerName.toLowerCase().includes(q) ||
-        row.sectionTitle.toLowerCase().includes(q),
+        row.sectionTitle.toLowerCase().includes(q) ||
+        row.address.toLowerCase().includes(q) ||
+        row.venue.category.toLowerCase().includes(q),
     );
   }
   return list;

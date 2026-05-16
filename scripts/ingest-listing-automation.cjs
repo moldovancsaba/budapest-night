@@ -248,6 +248,9 @@ function validateVenueMenu(menu, prefix) {
   }
   if (!menu.lastVerifiedAt) errors.push(`${prefix}: lastVerifiedAt required (YYYY-MM-DD)`);
   if (!Array.isArray(menu.sourceUrls)) errors.push(`${prefix}: sourceUrls must be array`);
+  if (menu.venueLink !== undefined) {
+    errors.push(`${prefix}: do not send venueLink (computed on ingest from provider id)`);
+  }
   return errors;
 }
 
@@ -333,6 +336,16 @@ function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
   mustString(doc, "startsAt", errors);
   mustString(doc, "endsAt", errors);
   if (!Array.isArray(doc.venueIds) || doc.venueIds.length === 0) errors.push(`${p}: venueIds required`);
+  else {
+    doc.venueIds.forEach((vid, vi) => {
+      if (typeof vid !== "string" || !/^prov-[a-z0-9-]+$/.test(vid)) {
+        errors.push(`${p}.venueIds[${vi}]: must match prov-... (primary host first)`);
+      }
+    });
+  }
+  if (doc.venueLinks !== undefined) {
+    errors.push(`${p}: do not send venueLinks — computed on ingest from linked providers`);
+  }
   mustString(doc, "borough", errors);
   if (doc.borough && !BOROUGHS.includes(doc.borough)) errors.push(`${p}: invalid borough`);
   mustString(doc, "neighborhood", errors);
@@ -367,6 +380,7 @@ function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
 
 function validateOperations(operations, opts = {}) {
   const all = [];
+  const providerIdsInPayload = new Set();
   for (let i = 0; i < operations.length; i++) {
     const op = operations[i];
     if (!op || typeof op !== "object") {
@@ -375,10 +389,24 @@ function validateOperations(operations, opts = {}) {
     }
     if (op.resource === "provider" && op.action === "upsert") {
       all.push(...validateProvider(op.document, i, opts));
+      if (op.document?.id) providerIdsInPayload.add(op.document.id);
+    } else if (op.resource === "meetupGroup" && op.action === "upsert") {
+      all.push(...validateMeetup(op.document, i));
+    } else if (op.resource === "event" && op.action === "upsert") {
+      all.push(...validateEvent(op.document, i, opts));
+      const ids = op.document?.venueIds;
+      if (Array.isArray(ids)) {
+        for (const vid of ids) {
+          if (typeof vid === "string" && !providerIdsInPayload.has(vid) && opts.knownProviderIds && !opts.knownProviderIds.has(vid)) {
+            all.push(
+              `${`operations[${i}]`} event: venueId ${vid} not in catalog — upsert provider before this event in operations[]`,
+            );
+          }
+        }
+      }
+    } else if (op.action === "upsert") {
+      all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
     }
-    else if (op.resource === "meetupGroup" && op.action === "upsert") all.push(...validateMeetup(op.document, i));
-    else if (op.resource === "event" && op.action === "upsert") all.push(...validateEvent(op.document, i, opts));
-    else if (op.action === "upsert") all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
   }
   return all;
 }
@@ -450,18 +478,19 @@ async function main() {
   console.log("Base:", BASE);
   console.log("Operations:", operations.length);
 
-  const validationErrors = validateOperations(operations, { skipLocaleCheck });
-  if (validationErrors.length) {
-    console.error("\nValidation failed:\n", validationErrors.map((e) => `  - ${e}`).join("\n"));
-    process.exit(1);
-  }
-  console.log("Document validation: OK");
-
   const [pr, mr] = await Promise.all([fetchJson(`${BASE}/api/public/providers`), fetchJson(`${BASE}/api/public/meetup-groups`)]);
 
   const providers = Array.isArray(pr.body) ? pr.body : [];
   const meetups = Array.isArray(mr.body) ? mr.body : [];
   console.log(`Public catalog: providers HTTP ${pr.status} (${providers.length} rows); meetups HTTP ${mr.status} (${meetups.length} rows)`);
+
+  const knownProviderIds = new Set(providers.map((p) => p.id).filter(Boolean));
+  const validationErrors = validateOperations(operations, { skipLocaleCheck, knownProviderIds });
+  if (validationErrors.length) {
+    console.error("\nValidation failed:\n", validationErrors.map((e) => `  - ${e}`).join("\n"));
+    process.exit(1);
+  }
+  console.log("Document validation: OK");
 
   const upserts = collectUpserts(operations);
   const dupWarnings = checkDuplicates(upserts, providers, meetups);

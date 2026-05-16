@@ -31,11 +31,13 @@ export function MeetupGroupProfile({
   onClose,
   onShare,
   onOpenAnother,
+  variant = "sheet",
 }: {
   group: MeetupGroup | null;
   onClose: () => void;
   onShare: (g: MeetupGroup) => void;
   onOpenAnother: (g: MeetupGroup) => void;
+  variant?: "sheet" | "page";
 }) {
   const t = useTranslations("meetup");
   const tv = useTranslations("venue");
@@ -46,6 +48,7 @@ export function MeetupGroupProfile({
   const cadenceLabel = useMeetupCadenceLabel();
   const ageLabel = useAgeRangeLabel();
   if (!group) return null;
+  const isPage = variant === "page";
   const saved = isSaved(group.id);
 
   const similar = allGroups
@@ -65,13 +68,9 @@ export function MeetupGroupProfile({
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
-  return (
-    <Sheet open={!!group} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent
-        side="right"
-        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
-      >
-        <div className="relative h-44 w-full overflow-hidden">
+  const content = (
+    <>
+        <div className={isPage ? "relative h-56 w-full overflow-hidden" : "relative h-44 w-full overflow-hidden"}>
           <CdnImage
             fill
             resolveBase={
@@ -191,6 +190,20 @@ export function MeetupGroupProfile({
             </div>
           )}
         </div>
+    </>
+  );
+
+  if (isPage) {
+    return <div className="overflow-y-auto bg-background">{content}</div>;
+  }
+
+  return (
+    <Sheet open={!!group} onOpenChange={(o) => !o && onClose()}>
+      <SheetContent
+        side="right"
+        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
+      >
+        {content}
       </SheetContent>
     </Sheet>
   );

@@ -11,7 +11,7 @@ import type { Provider } from "@/types/provider";
 import { toast } from "sonner";
 import { useVenueShareSummary } from "@/hooks/useVenueDisplay";
 import { useLocale, useTranslations } from "next-intl";
-import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
+import { buildAbsoluteVenueFullUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
 
 export function ShareDialog({
@@ -25,7 +25,7 @@ export function ShareDialog({
   const locale = useLocale() as AppLocale;
   const shareSummary = useVenueShareSummary();
   if (!provider) return null;
-  const url = buildAbsoluteVenueUrl(provider, locale);
+  const url = buildAbsoluteVenueFullUrl(provider, locale);
   const summary = shareSummary(provider);
 
   return (

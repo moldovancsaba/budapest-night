@@ -13,10 +13,13 @@ import {
   type AppRoute,
   type AppSection,
   type LocationFilter,
+  buildEventFullPath,
   buildEventPath,
+  buildGroupFullPath,
   buildGroupPath,
   buildPathForView,
   buildSectionPath,
+  buildVenueFullPath,
   buildVenuePath,
   parseAppRoute,
   sectionFromCategory,
@@ -73,15 +76,16 @@ export function useAppNavigation() {
 
   const openVenue = useCallback(
     (provider: Provider) => {
+      const opts = {
+        from: sectionFromCategory(provider.category),
+        location: route.location ?? undefined,
+        locale,
+      };
       router.push(
-        buildVenuePath(provider, {
-          from: sectionFromCategory(provider.category),
-          location: route.location ?? undefined,
-          locale,
-        }),
+        route.fullPage ? buildVenueFullPath(provider, opts) : buildVenuePath(provider, opts),
       );
     },
-    [router, route.location, locale],
+    [router, route.location, route.fullPage, locale],
   );
 
   const closeVenue = useCallback(() => {
@@ -90,15 +94,16 @@ export function useAppNavigation() {
 
   const openEvent = useCallback(
     (event: PublicNightEvent) => {
+      const opts = {
+        from: "events" as const,
+        location: route.location ?? undefined,
+        locale,
+      };
       router.push(
-        buildEventPath(event, {
-          from: "events",
-          location: route.location ?? undefined,
-          locale,
-        }),
+        route.fullPage ? buildEventFullPath(event, opts) : buildEventPath(event, opts),
       );
     },
-    [router, route.location, locale],
+    [router, route.location, route.fullPage, locale],
   );
 
   const closeEvent = useCallback(() => {
@@ -107,9 +112,9 @@ export function useAppNavigation() {
 
   const openGroup = useCallback(
     (group: MeetupGroup) => {
-      router.push(buildGroupPath(group.id));
+      router.push(route.fullPage ? buildGroupFullPath(group.id) : buildGroupPath(group.id));
     },
-    [router],
+    [router, route.fullPage],
   );
 
   const closeGroup = useCallback(() => {
@@ -129,6 +134,7 @@ export function useAppNavigation() {
     tourId: route.tourId,
     tourSeed: tourSeedFromSearch(searchParams),
     eventId: route.eventId,
+    fullPage: route.fullPage,
     navigateToView,
     navigateToSection,
     openVenue,
