@@ -22,6 +22,9 @@ const BAD_IMAGE_MARKERS = [
   "5e673e7e0093",
   "038fd3264859",
   "cb56a463140e",
+  "126cf4283420", // Il Friuli newspaper scan (e.g. Gellért Brasserie)
+  "0fe6d212760e", // same newspaper under second ImgBB URL
+  "d61ba9ebae99", // re-upload of newspaper via bad Wikimedia fallback
 ];
 
 /** Local meetup placeholders that were bulk-copied (same file bytes). */
