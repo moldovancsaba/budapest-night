@@ -1,0 +1,2864 @@
+{
+  "generatedAt": "2026-05-16T17:01:01.501Z",
+  "baseUrl": "https://budapest-night.vercel.app",
+  "options": {
+    "liveUrlChecks": true
+  },
+  "catalogCounts": {
+    "providers": 145,
+    "events": 29,
+    "meetups": 37
+  },
+  "findingCatalog": {
+    "website_unreachable": {
+      "severity": "high",
+      "category": "contact",
+      "title": "Website does not load",
+      "description": "Homepage returns 4xx/5xx, DNS failure, or timeout (HEAD/GET).",
+      "remediation": "Find current domain on Maps/Instagram; patch website, email, Sources:, and menu URLs."
+    },
+    "website_empty": {
+      "severity": "high",
+      "category": "contact",
+      "title": "Missing website",
+      "description": "Provider has no website URL.",
+      "remediation": "Add official https URL from venue contact page."
+    },
+    "email_domain_mismatch": {
+      "severity": "medium",
+      "category": "contact",
+      "title": "Email domain ≠ website",
+      "description": "Contact email hostname does not match website hostname.",
+      "remediation": "Use info@ on the same domain as website (e.g. info@kiosk-budapest.hu)."
+    },
+    "sources_host_mismatch": {
+      "severity": "medium",
+      "category": "copy",
+      "title": "Sources: URLs on wrong host",
+      "description": "longDescription Sources: lists a hostname different from website (excluding ticket subdomains).",
+      "remediation": "Align all Sources: URLs with the live website domain."
+    },
+    "sources_missing": {
+      "severity": "low",
+      "category": "copy",
+      "title": "Missing Sources: block",
+      "description": "longDescription has no Sources: https://... audit line.",
+      "remediation": "Append Sources: with official URLs used for the listing."
+    },
+    "stale_domain_in_copy": {
+      "severity": "high",
+      "category": "contact",
+      "title": "Stale / dead domain in text",
+      "description": "Known retired domain still in website or description (e.g. kioskbudapest.com).",
+      "remediation": "Replace with current official domain everywhere."
+    },
+    "legacy_provider_id": {
+      "severity": "critical",
+      "category": "identity",
+      "title": "Retired provider id",
+      "description": "Row still uses a migrated-away prov-* id.",
+      "remediation": "Rename via migrate-legacy-venue-provider-ids.cjs or patch to canonical id."
+    },
+    "canonical_location_mismatch": {
+      "severity": "high",
+      "category": "location",
+      "title": "Wrong borough / neighborhood / address",
+      "description": "Does not match CANONICAL_BY_ID or street-based inference (e.g. Budapest Park in Óbuda).",
+      "remediation": "Patch borough, neighborhood, address from official source; run location fix scripts."
+    },
+    "forbidden_district_copy": {
+      "severity": "high",
+      "category": "location",
+      "title": "Wrong district in description",
+      "description": "Copy mentions Óbuda Island / Újbuda for a Ferencváros or Terézváros venue.",
+      "remediation": "Rewrite descriptions; sync events hosted at that venue."
+    },
+    "canonical_website_mismatch": {
+      "severity": "medium",
+      "category": "contact",
+      "title": "Wrong official website for venue",
+      "description": "MVM Dome or Budapest Park website is not the canonical .hu domain.",
+      "remediation": "Set venue website to mvm-dome.hu / budapestpark.hu; put promoters on events only."
+    },
+    "image_empty": {
+      "severity": "high",
+      "category": "image",
+      "title": "Missing image",
+      "description": "Empty image / coverImageUrl.",
+      "remediation": "Upload venue-appropriate photo via ingest/upload; unique ImgBB URL."
+    },
+    "image_not_imgbb": {
+      "severity": "high",
+      "category": "image",
+      "title": "Image not on ImgBB",
+      "description": "URL is not https i.ibb.co / *.ibb.co.",
+      "remediation": "Download official asset, upload, store returned ImgBB URL."
+    },
+    "banned_imgbb_hash": {
+      "severity": "critical",
+      "category": "image",
+      "title": "Banned ImgBB hash",
+      "description": "Reuses a known-bad filename from bulk mistakes (concert art, park generic, etc.).",
+      "remediation": "Replace with venue-specific upload; never reuse cde3b78d5c56, cb56a463140e, …"
+    },
+    "duplicate_provider_image": {
+      "severity": "high",
+      "category": "image",
+      "title": "Duplicate provider image",
+      "description": "Same ImgBB URL on multiple providers.",
+      "remediation": "One unique upload per provider row."
+    },
+    "duplicate_meetup_cover": {
+      "severity": "high",
+      "category": "image",
+      "title": "Duplicate culture circle cover",
+      "description": "Same coverImageUrl on multiple meetup groups.",
+      "remediation": "Distinct district/theme photo per grp-*."
+    },
+    "duplicate_event_image": {
+      "severity": "high",
+      "category": "image",
+      "title": "Duplicate event poster",
+      "description": "Same image on multiple timed events.",
+      "remediation": "Per-show poster from ticket page; unique ImgBB per event."
+    },
+    "image_shared_across_catalog": {
+      "severity": "critical",
+      "category": "image",
+      "title": "Same image on provider + event or meetup",
+      "description": "Concert poster on venue row, or one URL reused across listing types.",
+      "remediation": "Venue = interior/exterior; event = show art; meetup = district scene — all unique URLs."
+    },
+    "event_image_same_as_venue": {
+      "severity": "high",
+      "category": "image",
+      "title": "Event poster = venue card image",
+      "description": "Timed event image URL equals host provider image.",
+      "remediation": "Scrape per-show art from ticket URL for event.image only."
+    },
+    "meetup_cover_same_as_event": {
+      "severity": "high",
+      "category": "image",
+      "title": "Meetup cover = event poster",
+      "description": "Culture circle cover matches a timed event image.",
+      "remediation": "Upload dedicated coverImageUrl per meetup group."
+    },
+    "meetup_cover_same_as_venue": {
+      "severity": "medium",
+      "category": "image",
+      "title": "Meetup cover = venue image",
+      "description": "Culture circle cover matches a provider listing image.",
+      "remediation": "Use district/community scene, not a restaurant card photo."
+    },
+    "image_source_off_venue_site": {
+      "severity": "low",
+      "category": "image",
+      "description": "imageSource host differs from website (may be OK for Webflow/Wikimedia).",
+      "title": "imageSource off-domain",
+      "remediation": "Prefer hero from venue site; Webflow CDN and Commons are acceptable."
+    },
+    "unrelated_image_source": {
+      "severity": "high",
+      "category": "image",
+      "title": "imageSource from unrelated site",
+      "description": "imageSource hostname is not website, Webflow CDN, Wikimedia, or ImgBB.",
+      "remediation": "Re-scrape from official venue site; avoid random blogs/stock."
+    },
+    "possible_wrong_cuisine_copy": {
+      "severity": "medium",
+      "category": "copy",
+      "title": "Cuisine copy mismatch",
+      "description": "Mediterranean label on clearly Hungarian venue copy.",
+      "remediation": "Match cuisine to official positioning (e.g. modern Hungarian bistro)."
+    },
+    "missing_menu": {
+      "severity": "medium",
+      "category": "menu",
+      "title": "No menu sections",
+      "description": "Restaurant/Café/Party venue without menu.sections for Eat & Drink.",
+      "remediation": "Patch menu from official /eteleink, /italaink, or menu board images."
+    },
+    "menu_tags_without_body": {
+      "severity": "low",
+      "category": "menu",
+      "title": "menuTags without items",
+      "description": "Computed menuTags present but no menu sections (orphan tags).",
+      "remediation": "Add full menu patch or clear stale tags via re-ingest."
+    },
+    "event_legacy_venue_id": {
+      "severity": "critical",
+      "category": "identity",
+      "title": "Event links retired venue id",
+      "description": "venueIds references prov-* alias that was migrated.",
+      "remediation": "Update venueIds to canonical id in same payload as provider rename."
+    },
+    "event_host_location_mismatch": {
+      "severity": "high",
+      "category": "location",
+      "title": "Event district ≠ host venue",
+      "description": "Event borough/neighborhood does not match canonical host location.",
+      "remediation": "Set event borough/neighborhood from primary host; fix host provider first."
+    },
+    "event_host_catalog_location_wrong": {
+      "severity": "high",
+      "category": "location",
+      "title": "Host venue still has wrong district in catalog",
+      "description": "Live host provider fails canonical location rules.",
+      "remediation": "Patch host provider before ingesting or patching events."
+    },
+    "suspicious_free_tickets": {
+      "severity": "medium",
+      "category": "events",
+      "title": "Paid show marked FREE",
+      "description": "Event has booking URL or paid-sounding title but entryFees use FREE with amount 0.",
+      "remediation": "Use HUF/EUR tiers from ticket page or empty entryFees + missingOrUncertain."
+    }
+  },
+  "totals": {
+    "byCode": {
+      "sources_host_mismatch": 1,
+      "website_unreachable": 75,
+      "missing_menu": 92,
+      "email_domain_mismatch": 2,
+      "image_source_off_venue_site": 39,
+      "canonical_location_mismatch": 1,
+      "duplicate_meetup_cover": 3
+    },
+    "bySeverity": {
+      "medium": 95,
+      "high": 79,
+      "low": 39
+    },
+    "totalFindings": 213,
+    "rowsWithFindings": 114
+  },
+  "providers": {
+    "summary": {
+      "byCode": {
+        "sources_host_mismatch": 1,
+        "website_unreachable": 75,
+        "missing_menu": 92,
+        "email_domain_mismatch": 2,
+        "image_source_off_venue_site": 39,
+        "canonical_location_mismatch": 1
+      },
+      "bySeverity": {
+        "medium": 95,
+        "high": 76,
+        "low": 39
+      },
+      "totalFindings": 210,
+      "rowsWithFindings": 111
+    },
+    "flagged": [
+      {
+        "type": "provider",
+        "id": "prov-cov-varfok-taban",
+        "name": "Varfok Kávézó",
+        "website": "https://www.varfokkavezo.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "varfokkavezo.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gloriett-cafe-rozsadomb",
+        "name": "Gloriett Café",
+        "website": "https://www.gloriett.hu/cafe",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://www.gloriett.hu/cafe"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "gloriett.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-ebner-gellert",
+        "name": "Ébner Confectionery",
+        "website": "https://www.ebnercukraszda.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "ebnercukraszda.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-chez-snacky-obuda",
+        "name": "Chez Snacky",
+        "website": "https://www.chezsnacky.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "chezsnacky.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-liliom-moricz",
+        "name": "Liliom Café",
+        "website": "https://www.liliomcafe.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "liliomcafe.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gelibi-gellert",
+        "name": "Gelibi Café",
+        "website": "https://www.gelibi.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "gelibi.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-legenda-parliament",
+        "name": "Legenda Boat Party",
+        "website": "https://www.legendaboatparty.com/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "legendaboatparty.com",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-spoon-party-prom",
+        "name": "Spoon Cafe & Lounge",
+        "website": "https://www.spoon.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "spoon.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-becketts-liszt",
+        "name": "Beckett's Irish Pub",
+        "website": "https://www.becketts.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 403,
+              "finalUrl": "https://www.becketts.hu/"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "becketts.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bluebird-gozsdu",
+        "name": "Blue Bird Bar",
+        "website": "https://www.bluebirdbar.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "bluebirdbar.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-spiler-balna",
+        "name": "Spíler Bálna",
+        "website": "https://spilerbalna.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "spilerbalna.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-nehru-party",
+        "name": "Nehru Part Beach Bar",
+        "website": "https://www.nehrupart.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "nehrupart.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gellert-bar-party",
+        "name": "Gellért Lobby Bar",
+        "website": "https://www.danubiusgellert.com/bars",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "danubiusgellert.com",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-galiba-kolosy",
+        "name": "Galiba Garden",
+        "website": "https://www.galibagarden.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "galibagarden.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-morzsak-moricz",
+        "name": "Morzsák Bar",
+        "website": "https://www.morzsakbar.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "morzsakbar.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-binx-infopark",
+        "name": "BinX Rooftop",
+        "website": "https://www.binxrooftop.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "binxrooftop.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-golya-kosztolanyi",
+        "name": "Golyó Kávé",
+        "website": "https://www.golyokave.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "golyokave.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-korona-bikas",
+        "name": "Korona Club",
+        "website": "https://www.koronaclub.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "koronaclub.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bocksay-wessel",
+        "name": "Bocksay Bistro",
+        "website": "https://www.bocksay.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "bocksay.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-stand25-rakoczi",
+        "name": "Stand25 Bisztró",
+        "website": "https://www.stand25bisztro.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "stand25bisztro.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-citadella-rest",
+        "name": "Citadella Restaurant",
+        "website": "https://www.citadellarestaurant.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "citadellarestaurant.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gellert-brasserie",
+        "name": "Gellért Brasserie",
+        "website": "https://www.danubiusgellert.com/dining",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "danubiusgellert.com",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-3d-aquincum",
+        "name": "3D Café & Bistro",
+        "website": "https://www.3dcafe.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "3dcafe.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kacsa-becsi",
+        "name": "Kacsa Étterem",
+        "website": "https://www.kacsaetterem.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "kacsaetterem.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-vasut-obuda",
+        "name": "Vasúrszálló Restaurant",
+        "website": "https://www.vasurszallo.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "vasurszallo.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-berenyi-moricz",
+        "name": "Berényi Étterem",
+        "website": "https://www.berenyi.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "berenyi.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-mika-gellert",
+        "name": "Mika Kert",
+        "website": "https://www.mikakert.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "mikakert.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kekbello-kosztolanyi",
+        "name": "Kékbello Bistro",
+        "website": "https://www.kekbello.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "kekbello.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-contessa-jewish-q",
+        "name": "Szpünik Café",
+        "website": "https://szimpla.hu/szpunik",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://szimpla.hu/szpunik"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "szimpla.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-melbourne-kazinczy",
+        "name": "My Little Melbourne",
+        "website": "https://mylittlemelbourne.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "mylittlemelbourne.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-fekete-wessel",
+        "name": "Fekete",
+        "website": "https://www.feketebudapest.com/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "feketebudapest.com",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-rudas-buda-party",
+        "name": "Rudas Party Nights",
+        "website": "https://www.rudasfurdo.hu/en/party",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "canonical_location_mismatch",
+            "severity": "high",
+            "category": "location",
+            "message": "Suggested: Buda / Tabán",
+            "reason": "street"
+          },
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://www.rudasfurdo.hu/en/party"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-otkert-belvaros",
+        "name": "Ötkert",
+        "website": "https://otkert.hu/en/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://otkert.hu/en/"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kuplung-kiraly",
+        "name": "Kuplung",
+        "website": "https://www.kuplung.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "kuplung.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-ellato-kazinczy",
+        "name": "Ellátó Kert",
+        "website": "https://ellatokert.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "ellatokert.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-ferenc-nagy",
+        "name": "Ferenc Római Catholic Parish Cultural Events",
+        "website": "https://www.ferenciektere.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "ferenciektere.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gellert-spa-events",
+        "name": "Gellért Spa Cultural Hall",
+        "website": "https://www.gellertspa.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "gellertspa.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-obuda-becsi-events",
+        "name": "Óbudai-sziget Cultural Hall",
+        "website": "https://www.obudaisziget.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "obudaisziget.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gellert-events-ujbuda",
+        "name": "Gellért Bath Palace Events",
+        "website": "https://www.gellertspa.hu/events",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "gellertspa.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-lucky-luciano",
+        "name": "Lucky Luciano Coffee",
+        "website": "https://luckyluciano.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-csendes-nagy",
+        "name": "Csendes",
+        "website": "https://www.csendes.com/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-ruszwurm-castle",
+        "name": "Ruszwurm Confectionery",
+        "website": "https://www.ruszwurm.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 403,
+              "finalUrl": "https://www.ruszwurm.hu/"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gellert-cafe",
+        "name": "Gellért Café",
+        "website": "https://www.danubiusgellert.com/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-manno-kolosy",
+        "name": "Manno Caffè",
+        "website": "https://www.mannocaffe.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-2b-becsi",
+        "name": "2B Coffee",
+        "website": "https://www.2bcoffee.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-hadik-kosztolanyi",
+        "name": "Hadik Kávéház",
+        "website": "https://www.hadikkavehaz.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-hard-rock-vaci",
+        "name": "Hard Rock Cafe Budapest",
+        "website": "https://cafe.hardrock.com/budapest/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "email_domain_mismatch",
+            "severity": "medium",
+            "category": "contact",
+            "emailHost": "hardrock.com",
+            "websiteHost": "cafe.hardrock.com"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-larm-deak",
+        "name": "LÄRM",
+        "website": "https://www.larm.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-morrison-lit-wessel",
+        "name": "Morrison's Lit",
+        "website": "https://www.morrisons.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-here-rakoczi",
+        "name": "HERE Budapest",
+        "website": "https://herebudapest.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-legio-nagy",
+        "name": "Légió Hungarian Pub",
+        "website": "https://www.legio.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-robertson-castle",
+        "name": "Robertson Bar",
+        "website": "https://www.robertsonbar.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-taban-terrace",
+        "name": "Tabán Terrace",
+        "website": "https://www.tabanterrace.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-nappali-rozsadomb",
+        "name": "Nappali Buda",
+        "website": "https://www.nappali.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kiscelli-aquincum",
+        "name": "Kiscelli Pub District",
+        "website": "https://www.kiscellimuzeum.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-johnnys-becsi",
+        "name": "Johnny's American Bar",
+        "website": "https://www.johnnysbar.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bock-deak",
+        "name": "Bock Bistro",
+        "website": "https://www.bockbistro.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-spoon-rest-prom",
+        "name": "Spoon Restaurant",
+        "website": "https://www.spoon.hu/en/restaurant",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-aszu-andrassy",
+        "name": "Aszu Étterem",
+        "website": "https://www.aszuetterem.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-betes-corvin",
+        "name": "Bétés Restaurant",
+        "website": "https://www.betesetterem.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-iz-millennium",
+        "name": "Íz Étterem",
+        "website": "https://www.izetterem.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-remiz-taban",
+        "name": "Remiz Restaurant",
+        "website": "https://www.remizrestaurant.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-mom-eden-infopark",
+        "name": "MOM Eden Restaurant",
+        "website": "https://momkult.hu/en/restaurant",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://momkult.hu/en/restaurant"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-madal-deak",
+        "name": "MADÁL - specialty coffee",
+        "website": "https://madalcoffee.com/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-callas-andrassy",
+        "name": "Callas Café",
+        "website": "https://www.callascafe.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-opera-cafe",
+        "name": "Opera Café Budapest",
+        "website": "https://www.operacafe.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-park-party-ferencvaros",
+        "name": "Budapest Park Club Nights",
+        "website": "https://www.budapestpark.hu/en/parties",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://www.budapestpark.hu/en/parties"
+            }
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-okk-obuda",
+        "name": "Óbuda Cultural Centre",
+        "website": "https://kulturkozpont.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "sources_host_mismatch",
+            "severity": "medium",
+            "category": "copy",
+            "websiteHost": "kulturkozpont.hu",
+            "sourceHosts": [
+              "kulturkozpont.hu",
+              "kulturkozpont.jegy.hu"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-doboz-erzsebetvaros",
+        "name": "Doboz",
+        "website": "https://doboz.co.hu/en/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "email_domain_mismatch",
+            "severity": "medium",
+            "category": "contact",
+            "emailHost": "doboz.pm",
+            "websiteHost": "doboz.co.hu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-corvin-club-ferencvaros",
+        "name": "Corvin Club",
+        "website": "https://corvinclub.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-pesti-vigado-vaci",
+        "name": "Pesti Vigadó",
+        "website": "https://www.vigado.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "vigado.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-parliament-visitor",
+        "name": "Hungarian Parliament Visitor Centre",
+        "website": "https://www.parlament.hu/en/web/house-of-parliament",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://www.parlament.hu/en/web/house-of-parliament"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-danube-palace-prom",
+        "name": "Danube Palace",
+        "website": "https://www.danubepalace.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-operetta-andrassy",
+        "name": "Budapest Operetta Theatre",
+        "website": "https://www.operettszinhaz.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-liszt-academy",
+        "name": "Liszt Ferenc Academy",
+        "website": "https://www.liszacademy.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-dohany-jewish-q",
+        "name": "Dohány Street Synagogue",
+        "website": "https://www.jewishmuseum.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-apollo-rakoczi",
+        "name": "Apollo Cinema",
+        "website": "https://www.apollomozi.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 403,
+              "finalUrl": "https://www.apollomozi.hu/"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-balna-events",
+        "name": "Bálna Budapest",
+        "website": "https://balnabudapest.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-citadella-gellert",
+        "name": "Citadella Events",
+        "website": "https://www.citadella.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 404,
+              "finalUrl": "https://www.citadella.hu/"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bikas-expo",
+        "name": "Budapest Expo Events",
+        "website": "https://www.budapestexpo.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "website_unreachable",
+            "severity": "high",
+            "category": "contact",
+            "detail": {
+              "ok": false,
+              "status": 0,
+              "error": "fetch failed"
+            }
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-cafe-corvin",
+        "name": "Café Frei Corvin",
+        "website": "https://www.cafefrei.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-mom-cafe-mill",
+        "name": "MOM Eden Café",
+        "website": "https://momkult.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-roman-cafe-aquincum",
+        "name": "Aquincum Museum Café",
+        "website": "https://www.aquincum.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-cafe-mom-infopark",
+        "name": "MOM Café",
+        "website": "https://momkult.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-obester-bikas",
+        "name": "Obester Specialty Coffee",
+        "website": "https://www.obester.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-360bar-andrassy",
+        "name": "360 Bar",
+        "website": "https://www.360bar.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-highnote-opera",
+        "name": "High Note SkyBar",
+        "website": "https://www.highnoteskybar.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-instant-kiraly",
+        "name": "Instant-Fogas",
+        "website": "https://instant.co.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-a38-muegyetem",
+        "name": "A38 Ship",
+        "website": "https://www.a38.hu/en",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-rudas-party",
+        "name": "Rudas Rooftop Bar",
+        "website": "https://www.rudasfurdo.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-zsindelyes-obuda",
+        "name": "Zsindelyes Music Pub",
+        "website": "https://www.zsindelyes.hu/",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gerbeaud-vaci",
+        "name": "Gerbeaud",
+        "website": "https://www.gerbeaud.hu/en",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kiosk-parliament",
+        "name": "Kiosk Budapest",
+        "website": "https://www.kiosk-budapest.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "kiosk-budapest.hu",
+            "imageSourceHost": "cdn.prod.website-files.com"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-alabard-opera",
+        "name": "Arany Kaviár",
+        "website": "https://www.aranykaviar.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-ket-szerecsen-oktogon",
+        "name": "Két Szerecsen",
+        "website": "https://www.ketszerecsen.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-mazel-tov-kiraly",
+        "name": "Mazel Tov",
+        "website": "https://mazeltov.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-vegazzi-kazinczy",
+        "name": "Vegazzi",
+        "website": "https://www.vegazzi.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bamba-marha",
+        "name": "Bamba Marha",
+        "website": "https://www.bambamarha.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-borsso-nagy",
+        "name": "Borssó Bistro",
+        "website": "https://www.borsso.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-pestbuda-castle",
+        "name": "Pest-Buda Bistro",
+        "website": "https://www.pestbuda.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-21-rozsadomb",
+        "name": "21 Hungarian Kitchen",
+        "website": "https://www.21restaurant.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-buena-vista-obuda",
+        "name": "Buena Vista Bistro",
+        "website": "https://www.buenavista.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-sushi-kolosy",
+        "name": "Sushi Sei",
+        "website": "https://www.sushisei.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-csillagker-bikas",
+        "name": "Csillagkért Étterem",
+        "website": "https://www.csillagkert.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-pierrot-parliament",
+        "name": "Pierrot Café",
+        "website": "https://www.pierrot.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-szamos-prom",
+        "name": "Szamos Café Vigadó",
+        "website": "https://www.szamos.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-espresso-embassy-kiraly",
+        "name": "Espresso Embassy",
+        "website": "https://espressoembassy.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-froccterasz-liszt",
+        "name": "Fröccsterasz",
+        "website": "https://www.froccsterasz.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-spiler-gozsdu",
+        "name": "Spíler Shanghai",
+        "website": "https://spilershanghai.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-embassy-rakoczi",
+        "name": "Espresso Embassy Rákóczi",
+        "website": "https://espressoembassy.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-island-cafe-ferencvaros",
+        "name": "Budapest Park Café",
+        "website": "https://www.budapestpark.hu/en",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      }
+    ]
+  },
+  "events": {
+    "summary": {
+      "byCode": {},
+      "bySeverity": {},
+      "totalFindings": 0,
+      "rowsWithFindings": 0
+    },
+    "flagged": []
+  },
+  "meetups": {
+    "summary": {
+      "byCode": {
+        "duplicate_meetup_cover": 3
+      },
+      "bySeverity": {
+        "high": 3
+      },
+      "totalFindings": 3,
+      "rowsWithFindings": 3
+    },
+    "flagged": [
+      {
+        "type": "meetup",
+        "id": "grp-cov-meet-vaci",
+        "name": "Váci utca After-Work Circle",
+        "issues": [
+          {
+            "code": "duplicate_meetup_cover",
+            "severity": "high",
+            "category": "image",
+            "sharedWith": [
+              {
+                "type": "meetup",
+                "id": "grp-cov-meet-parliament",
+                "name": "Parliament Riverside Walk"
+              },
+              {
+                "type": "meetup",
+                "id": "grp-cov-meet-promenade",
+                "name": "Promenade Boat & Jazz Circle"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "meetup",
+        "id": "grp-cov-meet-parliament",
+        "name": "Parliament Riverside Walk",
+        "issues": [
+          {
+            "code": "duplicate_meetup_cover",
+            "severity": "high",
+            "category": "image",
+            "sharedWith": [
+              {
+                "type": "meetup",
+                "id": "grp-cov-meet-vaci",
+                "name": "Váci utca After-Work Circle"
+              },
+              {
+                "type": "meetup",
+                "id": "grp-cov-meet-promenade",
+                "name": "Promenade Boat & Jazz Circle"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "meetup",
+        "id": "grp-cov-meet-promenade",
+        "name": "Promenade Boat & Jazz Circle",
+        "issues": [
+          {
+            "code": "duplicate_meetup_cover",
+            "severity": "high",
+            "category": "image",
+            "sharedWith": [
+              {
+                "type": "meetup",
+                "id": "grp-cov-meet-vaci",
+                "name": "Váci utca After-Work Circle"
+              },
+              {
+                "type": "meetup",
+                "id": "grp-cov-meet-parliament",
+                "name": "Parliament Riverside Walk"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

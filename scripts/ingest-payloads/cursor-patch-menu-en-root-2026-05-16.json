@@ -1,0 +1,1261 @@
+{
+  "sourceUrls": [
+    "https://newyorkcafe.hu/en/cafe-menu/",
+    "https://mazeltov.hu/itallap",
+    "https://fakanaletterem.hu/etlap/",
+    "https://www.fricipapa.hu/menus",
+    "http://daubnercukraszda.hu/content/kiegeszitok"
+  ],
+  "notes": "Normalize menu root title/name to English (en fallback); Hungarian lines moved to locales.hu only. Five providers with bilingual or HU-only printed menus.",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-new-york-cafe-belvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://newyorkcafe.hu/en/cafe-menu/",
+          "sourceUrls": [
+            "https://newyorkcafe.hu/wp-content/uploads/2026/04/new-york-cafe-etlap-2026-04-frissitett.pdf",
+            "https://newyorkcafe.hu/en/cafe-menu/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee specialities",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 2960,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 4255,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "latte-macchiato",
+                  "kind": "drink",
+                  "name": "Latte macchiato",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 4255,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Latte macchiato"
+                    },
+                    "es": {
+                      "name": "Latte macchiato"
+                    },
+                    "it": {
+                      "name": "Latte macchiato"
+                    },
+                    "he": {
+                      "name": "לאטה מקיאטו"
+                    },
+                    "ar": {
+                      "name": "لاتيه ماكياتو"
+                    }
+                  }
+                },
+                {
+                  "id": "hungarian-coffee",
+                  "kind": "drink",
+                  "name": "Hungarian coffee",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 4810,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Magyar kávé"
+                    },
+                    "es": {
+                      "name": "Café húngaro"
+                    },
+                    "it": {
+                      "name": "Caffè ungherese"
+                    },
+                    "he": {
+                      "name": "קפה הונגרי"
+                    },
+                    "ar": {
+                      "name": "قهوة مجرية"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Kávé specialitások"
+                },
+                "es": {
+                  "title": "Especialidades de café"
+                },
+                "it": {
+                  "title": "Specialità di caffè"
+                },
+                "he": {
+                  "title": "מיוחדות קפה"
+                },
+                "ar": {
+                  "title": "تخصصات القهوة"
+                }
+              }
+            },
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "beef-goulash-soup",
+                  "kind": "food",
+                  "name": "Beef goulash soup with homemade pinched pasta",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 5735,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Marhagulyás házi csipetkével"
+                    },
+                    "es": {
+                      "name": "Sopa goulash de ternera con pasta casera"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash di manzo con pasta fatta in casa"
+                    },
+                    "he": {
+                      "name": "מרק גולאש בקר עם פסטה ביתית"
+                    },
+                    "ar": {
+                      "name": "حساء غولاش لحم بقري مع معكرونة منزلية"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Levesek"
+                },
+                "es": {
+                  "title": "Sopas"
+                },
+                "it": {
+                  "title": "Zuppe"
+                },
+                "he": {
+                  "title": "מרקים"
+                },
+                "ar": {
+                  "title": "حساء"
+                }
+              }
+            },
+            {
+              "id": "spirits",
+              "title": "Pálinka (4 cl)",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "arpad-valogatas",
+                  "kind": "drink",
+                  "name": "Árpád selection 60% (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 6105,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Árpád válogatás 60% (4 cl)"
+                    },
+                    "es": {
+                      "name": "Selección Árpád 60% (4 cl)"
+                    },
+                    "it": {
+                      "name": "Selezione Árpád 60% (4 cl)"
+                    },
+                    "he": {
+                      "name": "Árpád מבחר 60% (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "تشكيلة Árpád 60% (4 سم)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Pálinkák (4 cl)"
+                },
+                "es": {
+                  "title": "Pálinka (4 cl)"
+                },
+                "it": {
+                  "title": "Pálinka (4 cl)"
+                },
+                "he": {
+                  "title": "פלינקה (4 מ״ל)"
+                },
+                "ar": {
+                  "title": "بالينكا (4 سم)"
+                }
+              }
+            },
+            {
+              "id": "mains",
+              "title": "Main courses",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "paprikas-csirke",
+                  "kind": "food",
+                  "name": "Chicken paprikash with homemade dumplings",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 9805,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Paprikás csirke házi galuskával"
+                    },
+                    "es": {
+                      "name": "Pollo al pimentón con ñoquis caseros"
+                    },
+                    "it": {
+                      "name": "Pollo al paprika con gnocchi fatti in casa"
+                    },
+                    "he": {
+                      "name": "עוף פפריקה עם גנוקי ביתי"
+                    },
+                    "ar": {
+                      "name": "دجاج بالفلفل الحلو مع نيوكي منزلي"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Főételek"
+                },
+                "es": {
+                  "title": "Platos principales"
+                },
+                "it": {
+                  "title": "Piatti principali"
+                },
+                "he": {
+                  "title": "מנות עיקריות"
+                },
+                "ar": {
+                  "title": "أطباق رئيسية"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-mazel-tov-erzsebetvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://mazeltov.hu/itallap",
+          "sourceUrls": [
+            "https://mazeltov.hu/itallap",
+            "https://mazeltov.hu/szeszes-italok",
+            "https://mazeltov.hu/kokt%C3%A9llap"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee & tea",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 1050,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "flat-white",
+                  "kind": "drink",
+                  "name": "Flat white",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 1950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Flat white"
+                    },
+                    "es": {
+                      "name": "Flat white"
+                    },
+                    "it": {
+                      "name": "Flat white"
+                    },
+                    "he": {
+                      "name": "פלאט וויט"
+                    },
+                    "ar": {
+                      "name": "فلات وايت"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Kávék és tea"
+                },
+                "es": {
+                  "title": "Cafés y té"
+                },
+                "it": {
+                  "title": "Caffè e tè"
+                },
+                "he": {
+                  "title": "קפה ותה"
+                },
+                "ar": {
+                  "title": "قهوة وشاي"
+                }
+              }
+            },
+            {
+              "id": "palinka",
+              "title": "Pálinka",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "arpad-kajszibarack",
+                  "kind": "drink",
+                  "name": "Árpád Hungarian apricot (40 ml)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 2950,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Árpád Magyar kajszibarack (40 ml)"
+                    },
+                    "es": {
+                      "name": "Árpád albaricoque húngaro (40 ml)"
+                    },
+                    "it": {
+                      "name": "Árpád albicocca ungherese (40 ml)"
+                    },
+                    "he": {
+                      "name": "Árpád משמש הונגרי (40 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "Árpád مشمش مجري (40 مل)"
+                    }
+                  }
+                },
+                {
+                  "id": "arpad-irsai",
+                  "kind": "drink",
+                  "name": "Árpád Irsai Oliver (40 ml)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 2750,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Árpád Irsai olivér (40 ml)"
+                    },
+                    "es": {
+                      "name": "Árpád Irsai Oliver (40 ml)"
+                    },
+                    "it": {
+                      "name": "Árpád Irsai Oliver (40 ml)"
+                    },
+                    "he": {
+                      "name": "Árpád אירסאי אוליבר (40 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "Árpád إيرساي أوليفر (40 مل)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Pálinkák"
+                },
+                "es": {
+                  "title": "Pálinka"
+                },
+                "it": {
+                  "title": "Pálinka"
+                },
+                "he": {
+                  "title": "פלינקה"
+                },
+                "ar": {
+                  "title": "بالينكا"
+                }
+              }
+            },
+            {
+              "id": "cocktails",
+              "title": "Cocktails",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "aperol-spritz",
+                  "kind": "drink",
+                  "name": "Aperol Spritz",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "price": {
+                    "amount": 3950,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Aperol Spritz"
+                    },
+                    "es": {
+                      "name": "Aperol Spritz"
+                    },
+                    "it": {
+                      "name": "Aperol Spritz"
+                    },
+                    "he": {
+                      "name": "אפרול ספריץ"
+                    },
+                    "ar": {
+                      "name": "أبيرول سبرتز"
+                    }
+                  }
+                },
+                {
+                  "id": "espresso-martini",
+                  "kind": "drink",
+                  "name": "Espresso Martini",
+                  "tags": [
+                    "cocktail",
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 3950,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó martini"
+                    },
+                    "es": {
+                      "name": "Espresso Martini"
+                    },
+                    "it": {
+                      "name": "Espresso Martini"
+                    },
+                    "he": {
+                      "name": "אספרסו מרטיני"
+                    },
+                    "ar": {
+                      "name": "إسبريسو مارتيني"
+                    }
+                  }
+                },
+                {
+                  "id": "mojito",
+                  "kind": "drink",
+                  "name": "Jungle Mojito",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "price": {
+                    "amount": 3950,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Jungle Mojito"
+                    },
+                    "es": {
+                      "name": "Jungle Mojito"
+                    },
+                    "it": {
+                      "name": "Jungle Mojito"
+                    },
+                    "he": {
+                      "name": "ג'ונגל מוחיטו"
+                    },
+                    "ar": {
+                      "name": "جونغل موهيتو"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Koktélok"
+                },
+                "es": {
+                  "title": "Cócteles"
+                },
+                "it": {
+                  "title": "Cocktail"
+                },
+                "he": {
+                  "title": "קוקטיילים"
+                },
+                "ar": {
+                  "title": "كوكتيلات"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-central-market-ferencvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://fakanaletterem.hu/etlap/",
+          "sourceUrls": [
+            "https://fakanaletterem.hu/etlap/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "lunch",
+              "title": "Homestyle specialties",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "gulyasleves",
+                  "kind": "food",
+                  "name": "Beef goulash soup",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3100,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Gulyásleves marhahússal"
+                    },
+                    "es": {
+                      "name": "Sopa goulash con ternera"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash con manzo"
+                    },
+                    "he": {
+                      "name": "מרק גולאש עם בקר"
+                    },
+                    "ar": {
+                      "name": "حساء غولاش بلحم البقر"
+                    }
+                  }
+                },
+                {
+                  "id": "sertes-porkolt",
+                  "kind": "food",
+                  "name": "Pork stew with dumplings",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 5100,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Sertéspörkölt galuskával"
+                    },
+                    "es": {
+                      "name": "Estofado de cerdo con ñoquis"
+                    },
+                    "it": {
+                      "name": "Stufato di maiale con gnocchi"
+                    },
+                    "he": {
+                      "name": "תבשיל חזיר עם גנוקי"
+                    },
+                    "ar": {
+                      "name": "يخنة لحم الخنزير مع نيوكي"
+                    }
+                  }
+                },
+                {
+                  "id": "goulash-tasting-plate",
+                  "kind": "food",
+                  "name": "Goulash tasting plate (goulash soup, chicken stew, pork stew)",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 8700,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "„Goulash” kóstolótál (gulyásleves, csirkepörkölt, sertéspörkölt)"
+                    },
+                    "es": {
+                      "name": "Bandeja degustación «Goulash» (goulash, pollo, cerdo)"
+                    },
+                    "it": {
+                      "name": "Piatto degustazione «Goulash» (goulash, pollo, maiale)"
+                    },
+                    "he": {
+                      "name": "מגש טעימות «גולאש» (מרק, עוף, חזיר)"
+                    },
+                    "ar": {
+                      "name": "طبق تذوق «غولاش» (حساء، دجاج، لحم خنزير)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Házias specialitások"
+                },
+                "es": {
+                  "title": "Especialidades caseras"
+                },
+                "it": {
+                  "title": "Specialità della casa"
+                },
+                "he": {
+                  "title": "מנות ביתיות"
+                },
+                "ar": {
+                  "title": "أطباق منزلية"
+                }
+              }
+            },
+            {
+              "id": "drinks",
+              "title": "House drinks",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "fakanal-palinka",
+                  "kind": "drink",
+                  "name": "Fakanál pálinka (swing-top bottle, Villány muscat)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 3400,
+                    "currency": "HUF",
+                    "unit": "bottle",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Fakanál pálinka (csatos üvegben, Villányi muskotály)"
+                    },
+                    "es": {
+                      "name": "Pálinka Fakanál (botella con tapón, Villány muscat)"
+                    },
+                    "it": {
+                      "name": "Pálinka Fakanál (bottiglia a vite, Villány muscat)"
+                    },
+                    "he": {
+                      "name": "פלינקה Fakanál (בקבוק בורג, וילאני מוסקט)"
+                    },
+                    "ar": {
+                      "name": "بالينكا Fakanál (زجاجة بغطاء، فيلاني موسكات)"
+                    }
+                  }
+                },
+                {
+                  "id": "lavazza-espresso",
+                  "kind": "drink",
+                  "name": "Lavazza espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 1200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Lavazza presszókávé"
+                    },
+                    "es": {
+                      "name": "Espresso Lavazza"
+                    },
+                    "it": {
+                      "name": "Espresso Lavazza"
+                    },
+                    "he": {
+                      "name": "אספרסו Lavazza"
+                    },
+                    "ar": {
+                      "name": "إسبريسو Lavazza"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Házi italok"
+                },
+                "es": {
+                  "title": "Bebidas de la casa"
+                },
+                "it": {
+                  "title": "Bevande della casa"
+                },
+                "he": {
+                  "title": "משקאות הבית"
+                },
+                "ar": {
+                  "title": "مشروبات منزلية"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-frici-jewish-q",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.fricipapa.hu/menus?menu=%C3%A9tlap",
+          "sourceUrls": [
+            "https://www.fricipapa.hu/menus?menu=%C3%A9tlap"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "gulyasleves",
+                  "kind": "food",
+                  "name": "Goulash soup",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3599,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Gulyásleves"
+                    },
+                    "es": {
+                      "name": "Sopa goulash"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash"
+                    },
+                    "he": {
+                      "name": "מרק גולאש"
+                    },
+                    "ar": {
+                      "name": "حساء غولاش"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Levesek"
+                },
+                "es": {
+                  "title": "Sopas"
+                },
+                "it": {
+                  "title": "Zuppe"
+                },
+                "he": {
+                  "title": "מרקים"
+                },
+                "ar": {
+                  "title": "حساء"
+                }
+              }
+            },
+            {
+              "id": "mains",
+              "title": "Main dishes",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "vorosboros-marhaporkolt",
+                  "kind": "food",
+                  "name": "Beef stew in red wine",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3999,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vörösboros marhapörkölt"
+                    },
+                    "es": {
+                      "name": "Estofado de ternera al vino tinto"
+                    },
+                    "it": {
+                      "name": "Stufato di manzo al vino rosso"
+                    },
+                    "he": {
+                      "name": "תבשיל בקר ביין אדום"
+                    },
+                    "ar": {
+                      "name": "يخنة لحم بقري بالنبيذ الأحمر"
+                    }
+                  }
+                },
+                {
+                  "id": "paprikas-csirkemell",
+                  "kind": "food",
+                  "name": "Chicken breast paprikash",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3799,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Paprikás csirkemell"
+                    },
+                    "es": {
+                      "name": "Pechuga de pollo al pimentón"
+                    },
+                    "it": {
+                      "name": "Petto di pollo al paprika"
+                    },
+                    "he": {
+                      "name": "חזה עוף פפריקה"
+                    },
+                    "ar": {
+                      "name": "صدر دجاج بالفلفل الحلو"
+                    }
+                  }
+                },
+                {
+                  "id": "brassoi",
+                  "kind": "food",
+                  "name": "Brassói small roast (pork and potatoes)",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3799,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Brassói aprópecsenye"
+                    },
+                    "es": {
+                      "name": "Brassói (guiso de cerdo y patatas)"
+                    },
+                    "it": {
+                      "name": "Brassói (stufato di maiale e patate)"
+                    },
+                    "he": {
+                      "name": "בראסוי (תבשיל חזיר ותפוחי אדמה)"
+                    },
+                    "ar": {
+                      "name": "براسوي (يخنة لحم خنزير وبطاطس)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Készételek"
+                },
+                "es": {
+                  "title": "Platos preparados"
+                },
+                "it": {
+                  "title": "Piatti pronti"
+                },
+                "he": {
+                  "title": "מנות מוכנות"
+                },
+                "ar": {
+                  "title": "أطباق جاهزة"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-daubner-oktogon",
+      "patch": {
+        "menu": {
+          "menuUrl": "http://daubnercukraszda.hu/content/kiegeszitok",
+          "sourceUrls": [
+            "http://daubnercukraszda.hu/content/kiegeszitok"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 550,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 650,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "latte-macchiato",
+                  "kind": "drink",
+                  "name": "Latte macchiato",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 750,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Latte macchiato"
+                    },
+                    "es": {
+                      "name": "Latte macchiato"
+                    },
+                    "it": {
+                      "name": "Latte macchiato"
+                    },
+                    "he": {
+                      "name": "לאטה מקיאטו"
+                    },
+                    "ar": {
+                      "name": "لاتيه ماكياتو"
+                    }
+                  }
+                },
+                {
+                  "id": "tejes-kave",
+                  "kind": "drink",
+                  "name": "Coffee with milk",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 700,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Tejes kávé"
+                    },
+                    "es": {
+                      "name": "Café con leche"
+                    },
+                    "it": {
+                      "name": "Caffè al latte"
+                    },
+                    "he": {
+                      "name": "קפה עם חלב"
+                    },
+                    "ar": {
+                      "name": "قهوة بالحليب"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Cafés"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -3,7 +3,8 @@ import { resolveMenuVenueLink } from "@/lib/menu/menuVenueLink";
 import type { AppLocale } from "@/i18n/config";
 import { defaultLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
-import type { MenuItem, MenuItemKind } from "@/types/menu";
+import { isDrinkMenuTag, isFoodMenuTag } from "@/data/menuTags";
+import type { MenuItem, MenuItemKind, MenuSectionKind } from "@/types/menu";
 import type { VenueLink } from "@/types/venueLink";
 
 export type FlatMenuItem = {
@@ -16,9 +17,38 @@ export type FlatMenuItem = {
   address: string;
   venue: VenueLink;
   sectionTitle: string;
+  sectionKind: MenuSectionKind;
   source: "venue" | "event";
   eventTitle?: string;
 };
+
+const DRINK_KIND: MenuItemKind = "drink";
+const FOOD_KIND: MenuItemKind = "food";
+
+/** When legacy rows omit item.kind, infer from tags (never from venue-vibe tags). */
+export function inferMenuItemKind(item: MenuItem): MenuItemKind {
+  if (item.kind === "food" || item.kind === "drink" || item.kind === "other") {
+    return item.kind;
+  }
+  const tags = item.tags ?? [];
+  const hasDrink = tags.some((t) => isDrinkMenuTag(t));
+  const hasFood = tags.some((t) => isFoodMenuTag(t));
+  if (hasDrink && !hasFood) return DRINK_KIND;
+  if (hasFood && !hasDrink) return FOOD_KIND;
+  if (hasDrink) return DRINK_KIND;
+  if (hasFood) return FOOD_KIND;
+  return "other";
+}
+
+function effectiveItemKind(row: FlatMenuItem): MenuItemKind {
+  const fromItem = row.item.kind;
+  if (fromItem === "food" || fromItem === "drink") return fromItem;
+  if (fromItem === "other") return "other";
+  const inferred = inferMenuItemKind(row.item);
+  if (inferred !== "other") return inferred;
+  if (row.sectionKind === "food" || row.sectionKind === "drink") return row.sectionKind;
+  return inferred;
+}
 
 function slugId(prefix: string, name: string): string {
   const base = name
@@ -56,6 +86,7 @@ export function flattenProviderMenu(
           address: venue.address,
           venue,
           sectionTitle: resolvedSec.title,
+          sectionKind: sec.kind ?? "mixed",
           source: "venue",
         });
       }
@@ -79,6 +110,7 @@ export function flattenProviderMenu(
         address: venue.address,
         venue,
         sectionTitle: ev.title,
+        sectionKind: "mixed",
         source: "event",
         eventTitle: ev.title,
       });
@@ -102,7 +134,7 @@ export function filterFlatMenuItems(
     list = list.filter((row) => row.item.tags.includes(opts.tag!));
   }
   if (opts.kind) {
-    list = list.filter((row) => row.item.kind === opts.kind);
+    list = list.filter((row) => effectiveItemKind(row) === opts.kind);
   }
   if (opts.categories?.length) {
     const set = new Set(opts.categories);

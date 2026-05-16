@@ -5,7 +5,7 @@ import { Loader2, MapPin, Search, Sparkles, Wine } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import { Link } from "@/i18n/routing";
-import { MENU_TAGS, menuTagMessageKey, type MenuTag } from "@/data/menuTags";
+import { menuBoardTagsForKind, menuTagMessageKey, type MenuTag } from "@/data/menuTags";
 import { TOUR_TEMPLATES } from "@/data/tourTemplates";
 import { buildTourPath } from "@/lib/appPaths";
 import { useFormatMenuPrice } from "@/hooks/useFormatMenuPrice";
@@ -73,6 +73,13 @@ export function EatDrinkView({ onOpen }: Props) {
   useEffect(() => {
     void loadItems();
   }, [loadItems]);
+
+  const boardTags = useMemo(() => menuBoardTagsForKind(kind), [kind]);
+
+  useEffect(() => {
+    if (!tag) return;
+    if (!boardTags.includes(tag)) setTag(null);
+  }, [tag, boardTags]);
 
   const providerById = useMemo(
     () => new Map(providers.map((p) => [p.id, p])),
@@ -194,21 +201,30 @@ export function EatDrinkView({ onOpen }: Props) {
           <Button
             size="sm"
             variant={kind === null ? "default" : "outline"}
-            onClick={() => setKind(null)}
+            onClick={() => {
+              setKind(null);
+              setTag(null);
+            }}
           >
             {t("filterAll")}
           </Button>
           <Button
             size="sm"
             variant={kind === "food" ? "default" : "outline"}
-            onClick={() => setKind("food")}
+            onClick={() => {
+              setKind("food");
+              setTag(null);
+            }}
           >
             {t("filterFood")}
           </Button>
           <Button
             size="sm"
             variant={kind === "drink" ? "default" : "outline"}
-            onClick={() => setKind("drink")}
+            onClick={() => {
+              setKind("drink");
+              setTag(null);
+            }}
           >
             {t("filterDrink")}
           </Button>
@@ -227,7 +243,7 @@ export function EatDrinkView({ onOpen }: Props) {
           >
             {t("allTags")}
           </button>
-          {MENU_TAGS.map((tg) => {
+          {boardTags.map((tg) => {
             const key = menuTagMessageKey(tg);
             return (
               <button
