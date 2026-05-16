@@ -14,7 +14,7 @@ export type CmsMediaUrls = {
 
 /** Budapest nightlife defaults (re-run `npm run imgbb:upload-assets` to rotate). */
 const BAKED_IMG_BB: CmsMediaUrls = {
-  homeHero: "https://i.ibb.co/VWwV2Qt6/6699c3090ff3.jpg",
+  homeHero: "https://i.ibb.co/v068hnM/1bc7cfd47dfa.jpg",
   discoverHero: "https://i.ibb.co/4g3Bf6n6/53e86654299f.jpg",
   fallbackListing: "https://i.ibb.co/1f00nn4X/b4bef39e5fc5.jpg",
   fallbackMeetup: "https://i.ibb.co/Mx9DQ6X7/44603dce365f.jpg",
