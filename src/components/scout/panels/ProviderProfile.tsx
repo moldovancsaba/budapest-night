@@ -13,6 +13,12 @@ import { ProviderMap } from "./ProviderMap";
 import { resolveImageUrl } from "@/lib/resolveImageUrl";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { formatVenuePrice, venueSharePriceLine } from "@/lib/venueDisplay";
+import {
+  useActivityTypeLabel,
+  useAgeRangeLabel,
+  useCategoryLabel,
+  useDayTimeLabel,
+} from "@/hooks/useVenueDisplay";
 import { useLocale } from "next-intl";
 import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
@@ -29,6 +35,10 @@ export function ProviderProfile({
   onOpenAnother: (p: Provider) => void;
 }) {
   const locale = useLocale() as AppLocale;
+  const categoryLabel = useCategoryLabel();
+  const activityLabel = useActivityTypeLabel();
+  const ageLabel = useAgeRangeLabel();
+  const dayLabel = useDayTimeLabel();
   const { data: allProviders = [] } = useProvidersCatalog();
   const { isSaved, toggle } = useSaved();
   const { add } = useCalculator();
@@ -60,7 +70,7 @@ export function ProviderProfile({
     (p) => p.id !== provider.id && p.borough === provider.borough && p.category === provider.category,
   ).slice(0, 3);
 
-  const shareUrl = buildAbsoluteVenueUrl(provider.id, provider.category, locale);
+  const shareUrl = buildAbsoluteVenueUrl(provider, locale);
 
   const shareEmail = () => {
     const priceLine = venueSharePriceLine(provider);
@@ -160,7 +170,7 @@ export function ProviderProfile({
           )}
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">{provider.category}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">{categoryLabel(provider.category)}</p>
             <h2 className="mt-1 font-display text-2xl font-bold text-foreground">{provider.name}</h2>
             <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4" />
@@ -181,14 +191,20 @@ export function ProviderProfile({
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {provider.activityTypes.map((t) => (
-              <span key={t} className="rounded-full bg-teal-soft px-3 py-1 text-xs font-medium text-teal">{t}</span>
+            {provider.activityTypes.map((tag) => (
+              <span key={tag} className="rounded-full bg-teal-soft px-3 py-1 text-xs font-medium text-teal">
+                {activityLabel(tag)}
+              </span>
             ))}
             {provider.ageRanges.map((a) => (
-              <span key={a} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">{a}</span>
+              <span key={a} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                {ageLabel(a)}
+              </span>
             ))}
             {provider.dayTimeTags.map((d) => (
-              <span key={d} className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">{d}</span>
+              <span key={d} className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+                {dayLabel(d)}
+              </span>
             ))}
           </div>
 

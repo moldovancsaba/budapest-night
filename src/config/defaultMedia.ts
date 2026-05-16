@@ -19,6 +19,19 @@ const BAKED_IMG_BB: CmsMediaUrls = {
   guideCard: "https://i.ibb.co/xK672jw6/6a4e4e8ea50c.jpg",
 };
 
+/** Featured district guide cards — one distinct scene per guide id. */
+export const GUIDE_IMAGE_BY_ID: Record<string, string> = {
+  "guide-belvaros": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg",
+  "guide-jewish-quarter": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg",
+  "guide-andrassy": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg",
+  "guide-buda": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg",
+};
+
+export function guideImageForId(id: string | undefined): string {
+  if (id && GUIDE_IMAGE_BY_ID[id]) return GUIDE_IMAGE_BY_ID[id];
+  return BAKED_IMG_BB.guideCard;
+}
+
 const ENV_KEYS: Record<keyof CmsMediaUrls, string> = {
   homeHero: "NEXT_PUBLIC_IMG_BB_HOME_HERO",
   discoverHero: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO",

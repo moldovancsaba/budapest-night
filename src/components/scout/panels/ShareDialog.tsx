@@ -13,7 +13,7 @@ export function ShareDialog({ provider, onClose }: { provider: Provider | null; 
   const locale = useLocale() as AppLocale;
   const sharePrice = useVenueSharePriceLine();
   if (!provider) return null;
-  const url = buildAbsoluteVenueUrl(provider.id, provider.category, locale);
+  const url = buildAbsoluteVenueUrl(provider, locale);
   const summary = `${provider.name} — ${provider.category} in ${provider.neighborhood}, ${provider.borough}. ${sharePrice(provider)}. ${provider.shortDescription}`;
 
   return (

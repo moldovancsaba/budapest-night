@@ -1,0 +1,202 @@
+{
+  "settings": {
+    "page": {
+      "title": "Fiókom",
+      "subtitle": "Mentett helyek, éjszakai terv és beállítások."
+    },
+    "navTabs": [
+      {
+        "id": "saved",
+        "label": "Mentve"
+      },
+      {
+        "id": "plan",
+        "label": "Éjszakai terv"
+      },
+      {
+        "id": "prefs",
+        "label": "Beállítások"
+      },
+      {
+        "id": "neighborhood",
+        "label": "Kerületem"
+      },
+      {
+        "id": "alerts",
+        "label": "Értesítések"
+      }
+    ],
+    "saved": {
+      "tabId": "saved",
+      "title": "Mentett helyek és körök",
+      "subtitle": "Minden könyvjelző egy helyen.",
+      "viewAllCta": "Összes mentett",
+      "filterChips": [
+        {
+          "label": "Összes",
+          "categoryFilter": "All"
+        },
+        {
+          "label": "Események",
+          "categoryFilter": "Events"
+        },
+        {
+          "label": "Bulik",
+          "categoryFilter": "Parties"
+        },
+        {
+          "label": "Éttermek",
+          "categoryFilter": "Restaurants"
+        },
+        {
+          "label": "Kávézók",
+          "categoryFilter": "Cafés"
+        },
+        {
+          "label": "Kultúra",
+          "categoryFilter": "Culture"
+        }
+      ],
+      "emptyMessage": "Ebben a kategóriában még nincs mentett elem.",
+      "card": {
+        "viewCta": "Megtekintés",
+        "shareCta": "Megosztás",
+        "addToPlanCta": "Költségvetéshez",
+        "removeCta": "Eltávolítás"
+      },
+      "toastAddedToPlan": "{name} hozzáadva a tervhez",
+      "toastRemoved": "{name} eltávolítva",
+      "toastSampleRemove": "Ments helyeket a Felfedezésből.",
+      "priceUnits": {
+        "class": "jegy",
+        "week": "belépő",
+        "party": "fő",
+        "visit": "látogatás"
+      }
+    },
+    "activityPlan": {
+      "tabId": "plan",
+      "title": "Éjszakai tervem",
+      "subtitle": "Becsült költés az estére.",
+      "emptyMessage": "Adj helyszíneket a költségvetéshez a Felfedezésből.",
+      "estimatedTotalLabel": "Becsült összesen",
+      "viewFullCta": "Teljes terv",
+      "clearCta": "Terv törlése",
+      "priceUnits": {
+        "class": "jegy",
+        "week": "belépő",
+        "party": "fő",
+        "visit": "látogatás"
+      }
+    },
+    "familyPreferences": {
+      "tabId": "prefs",
+      "title": "Preferenciáid",
+      "subtitle": "Állítsd be, mit szeretnél látni Budapesten.",
+      "editCta": "Preferenciák szerkesztése",
+      "savedToast": "Preferenciák mentve",
+      "sections": [
+        {
+          "id": "age",
+          "label": "Közönség és hangulat",
+          "options": [
+            "Minden korosztály",
+            "Családbarát",
+            "18+",
+            "21+",
+            "Késő éjjel"
+          ],
+          "defaultSelected": [
+            "18+"
+          ]
+        },
+        {
+          "id": "interests",
+          "label": "Érdeklődés",
+          "options": [
+            "Események",
+            "Bulik",
+            "Éttermek",
+            "Kávézók",
+            "Kultúra",
+            "Élő zene",
+            "Romkocsma",
+            "Fine dining",
+            "Galéria",
+            "Tetőterasz",
+            "Sör",
+            "Elektronikus"
+          ],
+          "defaultSelected": [
+            "Események",
+            "Bulik",
+            "Éttermek"
+          ]
+        },
+        {
+          "id": "times",
+          "label": "Időpontok",
+          "options": [
+            "Hétköznap",
+            "Hétvége",
+            "Reggel",
+            "Délután",
+            "Este",
+            "Késő éjjel"
+          ],
+          "defaultSelected": [
+            "Hétvége",
+            "Este"
+          ]
+        }
+      ]
+    },
+    "neighborhood": {
+      "tabId": "neighborhood",
+      "title": "Kerületem",
+      "subtitle": "Az otthonod Budapest éjszakájához.",
+      "addressLine1": "",
+      "addressLine2": "",
+      "detectedLabelPrefix": "Környéked:",
+      "detectedNeighborhood": "",
+      "detectedBorough": "Belváros",
+      "updateAddressCtaLabel": "Cím frissítése",
+      "nearbySectionLabel": "Közeli városrészek",
+      "nearbyNeighborhoods": [],
+      "nearbyNavigateBorough": "Belváros",
+      "browseCtaLabel": "Helyek a közelemben",
+      "browseNavigateBorough": "Belváros",
+      "browseNavigateNeighborhood": "",
+      "updateAddressToast": "Címfrissítés hamarosan"
+    },
+    "alerts": {
+      "tabId": "alerts",
+      "title": "Értesítések és e-mail",
+      "subtitle": "Válaszd ki, miről szeretnél értesítést.",
+      "emailSectionLabel": "E-mail értesítések",
+      "options": [
+        "Heti kerületi ajánlók",
+        "Új események a közelemben",
+        "Bulik és klubok",
+        "Új éttermek",
+        "Hétvégi kultúra",
+        "Új kultúrkörök",
+        "Mentett helyek frissítései"
+      ],
+      "frequencySectionLabel": "E-mail gyakoriság",
+      "frequencyChoices": [
+        "Hetente",
+        "Csak fontosak",
+        "Szüneteltetés"
+      ],
+      "saveCta": "Beállítások mentése",
+      "savedToast": "Beállítások mentve"
+    },
+    "privacy": {
+      "headline": "Tiszteletben tartjuk a magánéleted. Adataidat nem adjuk tovább.",
+      "supportTextBefore": "Kérdésed van? Írj:",
+      "supportEmail": "hello@budapestnight.com",
+      "supportTextAfter": ""
+    }
+  }
+}

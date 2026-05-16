@@ -6,6 +6,7 @@ import type { BrainSettingsDoc, SiteDoc } from "@/types/site";
 import { DEFAULT_BRAIN } from "@/types/site";
 import { mergeSiteDocument } from "@/lib/siteMerge";
 import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } from "@/lib/imgbbUrl";
+import { mergeProviderLocales } from "@/lib/providerLocale";
 
 export type IngestOpResult =
   | { ok: true; data?: unknown }
@@ -185,13 +186,19 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (typeof id !== "string" || !id) return { ok: false, error: "provider.patch requires id string" };
     const patchIn = op.patch;
     if (!isPlainObject(patchIn)) return { ok: false, error: "provider.patch requires patch object" };
-    const { id: _drop, ...patch } = patchIn as { id?: string };
+    const { id: _drop, ...patchRaw } = patchIn as { id?: string };
+    const patch = patchRaw as Partial<Provider>;
     if (Object.keys(patch).length === 0) return { ok: false, error: "provider.patch patch must not be empty" };
     const cur = (await db.collection(COL.providers).findOne({ id })) as unknown as Provider | null;
     const merged: Partial<Provider> = { ...(cur ?? {}), ...patch };
+    if (patch.locales) {
+      merged.locales = mergeProviderLocales(cur?.locales, patch.locales);
+    }
     const imgErr = validateProviderImages(merged);
     if (imgErr) return { ok: false, error: imgErr };
-    await db.collection(COL.providers).updateOne({ id }, { $set: patch });
+    const setDoc: Partial<Provider> = { ...patch };
+    if (patch.locales) setDoc.locales = merged.locales;
+    await db.collection(COL.providers).updateOne({ id }, { $set: setDoc });
     return { ok: true };
   }
 

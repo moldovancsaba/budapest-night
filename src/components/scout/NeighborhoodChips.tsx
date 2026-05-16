@@ -1,3 +1,7 @@
+"use client";
+
+import { useNeighborhoodLabel } from "@/hooks/useVenueDisplay";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 export function NeighborhoodChips({
@@ -9,11 +13,15 @@ export function NeighborhoodChips({
   value: string | null;
   onChange: (n: string | null) => void;
 }) {
+  const t = useTranslations("neighborhood");
+  const neighborhoodLabel = useNeighborhoodLabel();
+
   return (
     <div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">Neighborhood</p>
+      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t("label")}</p>
       <div className="flex flex-wrap gap-2">
         <button
+          type="button"
           onClick={() => onChange(null)}
           className={cn(
             "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
@@ -22,13 +30,14 @@ export function NeighborhoodChips({
               : "border-border bg-card text-foreground hover:border-foreground",
           )}
         >
-          All
+          {t("all")}
         </button>
         {options.map((n) => {
           const active = value === n;
           return (
             <button
               key={n}
+              type="button"
               onClick={() => onChange(n)}
               className={cn(
                 "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
@@ -38,7 +47,7 @@ export function NeighborhoodChips({
               )}
               aria-pressed={active}
             >
-              {n}
+              {neighborhoodLabel(n)}
             </button>
           );
         })}

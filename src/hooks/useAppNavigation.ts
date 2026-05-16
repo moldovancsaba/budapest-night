@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
+import type { AppLocale } from "@/i18n/config";
 import type { ViewKey } from "@/components/scout/Sidebar";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
@@ -20,6 +22,7 @@ import {
 } from "@/lib/appPaths";
 
 export function useAppNavigation() {
+  const locale = useLocale() as AppLocale;
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -59,13 +62,14 @@ export function useAppNavigation() {
   const openVenue = useCallback(
     (provider: Provider) => {
       router.push(
-        buildVenuePath(provider.id, {
+        buildVenuePath(provider, {
           from: sectionFromCategory(provider.category),
           location: route.location ?? undefined,
+          locale,
         }),
       );
     },
-    [router, route.location],
+    [router, route.location, locale],
   );
 
   const closeVenue = useCallback(() => {

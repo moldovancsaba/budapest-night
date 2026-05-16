@@ -123,6 +123,9 @@
     "noDbHint": "Adj hozzá listákat az /admin felületen vagy futtasd az ingest:listing parancsot.",
     "noMatches": "Nincs találat",
     "noMatchesHint": "Próbálj más kerületet, városrészt vagy szűrőt.",
+    "loading": "Helyszínek betöltése…",
+    "loadErrorTitle": "Nem sikerült betölteni",
+    "loadErrorMessage": "Ellenőrizd a MONGODB_URI-t és a hálózatot.",
     "blurb": {
       "Events": "koncertek, fesztiválok, hajóbulik és tetőteraszok",
       "Parties": "romkocsmák, klubok, DJ-estek és késői bulik",
@@ -149,7 +152,20 @@
     "similarNearby": "Hasonló körök a közelben",
     "shareTitle": "{name} megosztása",
     "shareDescription": "Oszd meg ezt a kulturális kört egy barátoddal.",
-    "onPlatform": "{name} a Budapest Night-on"
+    "onPlatform": "{name} a Budapest Night-on",
+    "pageEyebrow": "Kultúra és közösség",
+    "heroTitleLine1": "Találd meg a",
+    "heroTitleLine2": "kultúrkörödet",
+    "heroImageAlt": "Budapesti kultúra és éjszakai közösség",
+    "loading": "Kultúrkörök betöltése…",
+    "seedEmptyTitle": "Még nincs kultúrkör",
+    "seedEmptyMessage": "Adj hozzá csoportokat az /admin felületen, vagy futtasd a db:restore-payloads parancsot.",
+    "listInNeighborhood": "Kultúrkörök itt: {place}",
+    "listAll": "Kultúrkörök egész Budapesten",
+    "listInDistrict": "Kultúrkörök itt: {district}",
+    "groupCount": "{count} csoport",
+    "filterEmptyTitle": "Itt még nincs kör",
+    "filterEmptyMessage": "Próbálj más kerületet vagy városrészt."
   },
   "assistant": {
     "title": "Éjszakai útmutató",
@@ -166,11 +182,49 @@
     "errorDesc": "Kérjük, próbáld újra."
   },
   "calculator": {
+    "title": "Éjszakai költségvetés",
+    "subtitle": "Becsüld meg a teljes költésed helyszíneken és eseményeken.",
+    "clearAllCta": "Összes törlése",
+    "emptyTitle": "A kalkulátor üres",
+    "emptyMessage": "Adj hozzá helyszíneket az éjszakai költségvetéshez.",
+    "asideTitle": "Becsült összesen",
+    "asideSubtitle": "A hozzáadott helyszínek és események alapján.",
+    "asideFootnote": "Csak tervezéshez. Az árakat mindig egyeztesd a hellyel.",
+    "providerLinePriceSuffix": "/fő",
+    "estimatedTotalLabel": "Becsült összesen",
     "decreaseGuests": "Kevesebb vendég",
     "increaseGuests": "Több vendég",
     "remove": "{name} eltávolítása",
     "guest": "vendég",
     "guests": "vendég"
+  },
+  "trust": {
+    "pillars": [
+      {
+        "title": "Helyi fókusz",
+        "desc": "Budapesti helyek kerület és városrész szerint.",
+        "tone": "orange",
+        "icon": "compass"
+      },
+      {
+        "title": "Hasznos részletek",
+        "desc": "Nyitvatartás, hangulat, árak és címkék egy helyen.",
+        "tone": "teal",
+        "icon": "shield-check"
+      },
+      {
+        "title": "Éjszakára kész",
+        "desc": "Helyieknek és látogatóknak, tökéletes estéhez.",
+        "tone": "pink",
+        "icon": "users"
+      },
+      {
+        "title": "Mentés és összehasonlítás",
+        "desc": "Könyvjelzőzd a helyeket és számold a költséget.",
+        "tone": "blue",
+        "icon": "calculator"
+      }
+    ]
   },
   "split": {
     "eyebrow": "Élő eszköz",
@@ -211,7 +265,116 @@
     "fromBudgetCta": "Oszd el a csapat között"
   },
   "home": {
-    "explore": "Felfedezés"
+    "heroTitle": "Fedezd fel Budapestet éjjel",
+    "heroSubtitle": "Események, bulik, éttermek, kávézók és kultúra — kerület és városrész szerint.",
+    "heroPrimaryCta": "Felfedezés",
+    "heroSecondaryCta": "Kerület szerint",
+    "heroTagline": "Neon. Helyi. Budapest estéire készítve.",
+    "heroImageAlt": "Budapest éjszakai fényei a Duna partján",
+    "categoriesTitle": "Milyen éjszakád lesz?",
+    "exploreCta": "Felfedezés",
+    "categories": {
+      "events": {
+        "description": "Koncertek, fesztiválok, hajóbulik, tetőteraszok és késő esti programok"
+      },
+      "parties": {
+        "description": "Klubok, romkocsmák, DJ-setek, tematikus estek és hétvégi bulik"
+      },
+      "restaurants": {
+        "description": "Fine dining, bisztrók, street food és dunai éttermek"
+      },
+      "cafes": {
+        "description": "Specialty kávé, brunch, desszertbárok és egész napos helyek"
+      },
+      "culture": {
+        "description": "Műséták, kultúrkörök, gasztro klubok és helyi alkotói találkozók"
+      }
+    },
+    "neighborhoodSectionTitle": "Találd meg az éjszakát a környékeden",
+    "popularNeighborhoodsCaption": "Népszerű helyek itt: {district}",
+    "allDistrictsHint": "Böngészd az összes kerületet a Felfedezésben, vagy válassz kerületet fent a városrészekhez.",
+    "openDiscoverAll": "Felfedezés (egész Budapest)",
+    "viewAllNeighborhoods": "Összes",
+    "guidesSectionTitle": "Kiemelt kerületi útmutatók",
+    "guidesViewAllLabel": "Összes útmutató",
+    "guideCtaDefault": "Útmutató megnyitása",
+    "howItWorksSectionTitle": "Így működik a Budapest Night",
+    "popularPicksSectionTitle": "Neon ajánlatok indulásnak",
+    "popularPicksViewAllLabel": "Összes",
+    "culturePickBadge": "Kultúra ajánlat",
+    "cultureCircleLabel": "Kultúrkör",
+    "freeToJoin": "Ingyenes csatlakozás",
+    "newsletterTitle": "Legfrissebb budapesti éjszakai tippek a kerületedre",
+    "newsletterSubtitle": "Új események, bulik, éttermek, kávézók és kultúra — e-mailben.",
+    "newsletterPlaceholder": "E-mail címed",
+    "newsletterCta": "Feliratkozom",
+    "newsletterFinePrint": "Nincs spam. Bármikor leiratkozhatsz.",
+    "newsletterSuccess": "Feliratkoztál! Hamarosan jelentkezünk.",
+    "guides": [
+      {
+        "id": "guide-belvaros",
+        "title": "Belvárosi éjszaka és étkezés",
+        "desc": "Dunai bárok, klasszikus bisztrók és késői konyhák a belvárosban.",
+        "borough": "Belváros",
+        "neighborhood": "Belváros",
+        "tone": "orange",
+        "ctaLabel": "Útmutató",
+        "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
+      },
+      {
+        "id": "guide-jewish-quarter",
+        "title": "Zsidó negyed romkocsmái",
+        "desc": "Romkocsmák, street food és bulihangulat Erzsébetvárosban.",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Zsidó negyed",
+        "tone": "teal",
+        "ctaLabel": "Útmutató",
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+      },
+      {
+        "id": "guide-andrassy",
+        "title": "Andrássy kultúrsáv",
+        "desc": "Galériák, kávézók és elegáns estek Terézvárosban.",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "tone": "pink",
+        "ctaLabel": "Útmutató",
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+      },
+      {
+        "id": "guide-buda",
+        "title": "Budai vár és kilátások",
+        "desc": "Várbeli borozók, termálvibe és naplemente a Budai Várban.",
+        "borough": "Buda",
+        "neighborhood": "Várnegyed",
+        "tone": "blue",
+        "ctaLabel": "Útmutató",
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+      }
+    ],
+    "howItWorksSteps": [
+      {
+        "step": 1,
+        "title": "Válassz kerületet",
+        "desc": "Kezdd ott, ahol szállsz vagy ma este jársz.",
+        "tone": "orange",
+        "icon": "map-pin"
+      },
+      {
+        "step": 2,
+        "title": "Hasonlítsd össze a helyeket",
+        "desc": "Hangulat, árak, nyitvatartás és címkék egy helyen.",
+        "tone": "teal",
+        "icon": "list-checks"
+      },
+      {
+        "step": 3,
+        "title": "Ments, oszd meg, tervezz",
+        "desc": "Kedvencek mentése, megosztás barátokkal és éjszakai költségvetés.",
+        "tone": "pink",
+        "icon": "heart"
+      }
+    ]
   },
   "notFound": {
     "code": "404",
@@ -231,5 +394,64 @@
     "ctaEvents": "Igazi helyszínek",
     "statLabel": "Esély, hogy ez az URL létezik",
     "statValue": "0,0%"
+  },
+  "neighborhood": {
+    "label": "Városrész",
+    "all": "Összes",
+    "vaciUtca": "Váci utca",
+    "deakTer": "Deák tér",
+    "parliament": "Országház",
+    "danubePromenade": "Dunakorzó",
+    "innerCity": "Belváros",
+    "andrassyUt": "Andrássy út",
+    "opera": "Opera",
+    "oktogon": "Oktogon",
+    "kiralyUtca": "Király utca",
+    "lisztFerencTer": "Liszt Ferenc tér",
+    "jewishQuarter": "Zsidó negyed",
+    "gozsduUdvar": "Gozsdu udvar",
+    "kazinczyUtca": "Kazinczy utca",
+    "wesselenyiUtca": "Wesselényi utca",
+    "rakocziTer": "Rákóczi tér",
+    "corvinNegyed": "Corvin-negyed",
+    "muegyetem": "Műegyetem",
+    "nagytemplomUtca": "Nagytemplom utca",
+    "borarosTer": "Boráros tér",
+    "millenniumiVaroskozpont": "Millenniumi Városközpont",
+    "castleDistrict": "Várnegyed",
+    "gellertHill": "Gellért-hegy",
+    "taban": "Tabán",
+    "rozsadomb": "Rózsadomb",
+    "szentGellertTer": "Szent Gellért tér",
+    "obudaIsland": "Óbudai-sziget",
+    "aquincum": "Aquincum",
+    "kolosyTer": "Kolosy tér",
+    "becsiUt": "Bécsi út",
+    "mainSquareObuda": "Óbuda főtér",
+    "moriczZsigmondKorut": "Móricz Zsigmond körtér",
+    "gellertBathsArea": "Gellért fürdő környéke",
+    "infopark": "Infopark",
+    "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
+    "bikasPark": "Bikás park"
+  },
+  "activityType": {
+    "liveMusic": "Élő zene",
+    "djSets": "DJ-setek",
+    "rooftop": "Tetőterasz",
+    "ruinBar": "Romkocsma",
+    "fineDining": "Fine dining",
+    "streetFood": "Street food",
+    "wineBar": "Borozó",
+    "craftBeer": "Sör",
+    "coffeeBrunch": "Kávé és brunch",
+    "gallery": "Galéria",
+    "theatre": "Színház",
+    "festival": "Fesztivál",
+    "boatParty": "Hajóbulik",
+    "thermalBath": "Fürdő",
+    "jazz": "Jazz",
+    "electronic": "Elektronikus",
+    "cocktails": "Koktélok",
+    "lateKitchen": "Késői konyha"
   }
 }

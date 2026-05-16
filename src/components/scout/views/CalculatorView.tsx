@@ -6,19 +6,19 @@ import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
 import { EmptyState } from "../EmptyState";
 import { CdnImage } from "@/components/ui/CdnImage";
-import { useProvidersCatalog, useSiteCatalog } from "@/hooks/useCatalog";
-import type { SiteDoc } from "@/types/site";
-import { DEFAULT_SITE } from "@/types/site";
+import { useProvidersCatalog } from "@/hooks/useCatalog";
+import { useCalculatorCopy } from "@/hooks/useLocalizedSiteCopy";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { formatVenuePrice } from "@/lib/venueDisplay";
+import { useVenueLocationLine } from "@/hooks/useVenueDisplay";
 
 export function CalculatorView() {
+  const t = useTranslations("calculator");
   const ts = useTranslations("split");
+  const c = useCalculatorCopy();
   const { items, setClasses, remove, clear } = useCalculator();
   const { data: providers = [], isLoading } = useProvidersCatalog();
-  const { data: siteData } = useSiteCatalog();
-  const s = siteData ?? ({ _id: "main", ...DEFAULT_SITE } as SiteDoc);
-  const c = s.calculator;
+  const locationLine = useVenueLocationLine();
 
   const rows = items
     .map((i) => {
@@ -72,7 +72,7 @@ export function CalculatorView() {
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-display font-semibold text-foreground">{r.provider.name}</p>
                   <p className="text-xs text-muted-foreground">
-                    {r.provider.neighborhood}, {r.provider.borough} · {linePrice.main}
+                    {locationLine(r.provider.borough, r.provider.neighborhood)} · {linePrice.main}
                     {linePrice.suffix ?? ""}
                   </p>
                 </div>
@@ -80,7 +80,7 @@ export function CalculatorView() {
                   <button
                     onClick={() => setClasses(r.providerId, r.classes - 1)}
                     className="grid h-7 w-7 place-items-center rounded-full hover:bg-secondary"
-                    aria-label="Decrease guests"
+                    aria-label={t("decreaseGuests")}
                   >
                     <Minus className="h-3.5 w-3.5" />
                   </button>
@@ -88,7 +88,7 @@ export function CalculatorView() {
                   <button
                     onClick={() => setClasses(r.providerId, r.classes + 1)}
                     className="grid h-7 w-7 place-items-center rounded-full hover:bg-secondary"
-                    aria-label="Increase guests"
+                    aria-label={t("increaseGuests")}
                   >
                     <Plus className="h-3.5 w-3.5" />
                   </button>
@@ -96,7 +96,7 @@ export function CalculatorView() {
                 <div className="w-20 text-right font-display font-bold text-orange">€{r.subtotal}</div>
                 <button
                   onClick={() => remove(r.providerId)}
-                  aria-label={`Remove ${r.provider.name}`}
+                  aria-label={t("remove", { name: r.provider.name })}
                   className="grid h-9 w-9 place-items-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
                 >
                   <X className="h-4 w-4" />
@@ -113,7 +113,7 @@ export function CalculatorView() {
               {rows.map((r) => (
                 <div key={r.providerId} className="flex justify-between">
                   <span className="truncate pr-2 text-muted-foreground">
-                    {r.provider.name} × {r.classes} {r.classes === 1 ? "guest" : "guests"}
+                    {r.provider.name} × {r.classes} {r.classes === 1 ? t("guest") : t("guests")}
                   </span>
                   <span className="font-medium text-foreground">€{r.subtotal}</span>
                 </div>

@@ -1,5 +1,7 @@
+import type { AppLocale } from "@/i18n/config";
 import type { ViewKey } from "@/components/scout/Sidebar";
-import type { Borough, BoroughChoice, Category } from "@/types/provider";
+import { getVenuePathKey } from "@/lib/providerLocale";
+import type { Borough, BoroughChoice, Category, Provider } from "@/types/provider";
 
 /** URL path segment (no leading slash, no locale). */
 export type AppSection =
@@ -220,9 +222,13 @@ export function buildPathForView(view: ViewKey, location?: LocationFilter): stri
 }
 
 export function buildVenuePath(
-  venueId: string,
-  options?: { from?: AppSection; location?: LocationFilter },
+  providerOrKey: Provider | string,
+  options?: { from?: AppSection; location?: LocationFilter; locale?: AppLocale },
 ): string {
+  const key =
+    typeof providerOrKey === "string"
+      ? providerOrKey
+      : getVenuePathKey(providerOrKey, options?.locale);
   const from = options?.from ?? "events";
   const params = new URLSearchParams();
   params.set("from", from);
@@ -231,7 +237,7 @@ export function buildVenuePath(
     params.set("borough", boroughToSlug(loc.borough));
     if (loc.neighborhood) params.set("hood", loc.neighborhood);
   }
-  return `/venue/${encodeURIComponent(venueId)}?${params.toString()}`;
+  return `/venue/${encodeURIComponent(key)}?${params.toString()}`;
 }
 
 export function buildGroupPath(groupId: string): string {

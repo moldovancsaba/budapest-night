@@ -2,7 +2,7 @@
 
 import { AGE_RANGES, DAY_TIME_TAGS, ACTIVITY_TYPES } from "@/data/providers";
 import type { AgeRange, DayTimeTag } from "@/types/provider";
-import { useAgeRangeLabel, useDayTimeLabel } from "@/hooks/useVenueDisplay";
+import { useActivityTypeLabel, useAgeRangeLabel, useDayTimeLabel } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,7 @@ export function Filters({ value, onChange }: { value: FilterState; onChange: (v:
   const t = useTranslations("filters");
   const ageLabel = useAgeRangeLabel();
   const dayLabel = useDayTimeLabel();
+  const activityLabel = useActivityTypeLabel();
   const has = value.ages.length + value.times.length + (value.activity ? 1 : 0);
 
   const toggle = <T,>(arr: T[], v: T): T[] => (arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]);
@@ -65,7 +66,7 @@ export function Filters({ value, onChange }: { value: FilterState; onChange: (v:
             </Chip>
             {ACTIVITY_TYPES.map((act) => (
               <Chip key={act} active={value.activity === act} onClick={() => onChange({ ...value, activity: act })}>
-                {act}
+                {activityLabel(act)}
               </Chip>
             ))}
           </FilterGroup>

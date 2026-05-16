@@ -1,0 +1,43 @@
+{
+  "sourceUrls": [
+    "https://www.rudasfurdo.hu/en",
+    "https://www.rudasfurdo.hu/en/opening-hours",
+    "https://www.rudasfurdo.hu/arak",
+    "https://tickets.rudasfurdo.hu/"
+  ],
+  "notes": "First Buda-district provider; fills Thermal Bath activity gap and underrepresented Morning/Weekday day-time tags.",
+  "missingOrUncertain": [
+    "pricePerClass uses weekday adult all-zones ticket 12,000 HUF (≈30 EUR at planning rate); Fri–Sun and peak-season tickets are 15,000–16,000 HUF per rudasfurdo.hu/arak.",
+    "rating and reviewCount left at 0 — no aggregate rating on official pages."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-rudas-buda",
+        "name": "Rudas Thermal Bath",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "activityTypes": ["Thermal Bath", "Rooftop"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Morning", "Weekday", "Weekend", "Evening", "Late night"],
+        "pricePerClass": 30,
+        "shortDescription": "16th-century Turkish dome baths under Gellért Hill — wellness pools, sauna world, and Danube-view night bathing.",
+        "longDescription": "Rudas Gyógyfürdő (Rudas Thermal Bath) at Döbrentei tér 9 is a historic Ottoman-era bath at the foot of Gellért Hill. The complex includes Turkish and wellness zones, a sauna world, drinking hall, and Friday–Saturday night bathing (22:00–03:00) on the rooftop. Weekday Turkish-bath access is gender-segregated until late morning—check the official opening-hours table before you visit. Adult tickets to all zones start at 12,000 HUF Mon–Thu and 15,000 HUF Fri–Sun (2026 prices on rudasfurdo.hu/arak); buy online at tickets.rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en https://www.rudasfurdo.hu/en/opening-hours https://www.rudasfurdo.hu/arak",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": ["Hidden Gem"],
+        "image": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg",
+        "email": "",
+        "website": "https://www.rudasfurdo.hu/en",
+        "phone": "+36 20 321 4568",
+        "announcementTitle": "Night bathing on weekends",
+        "announcementDescription": "Rooftop pools open Fri–Sat 22:00–03:00 — see opening hours on the official site.",
+        "announcementBadge": "Late night"
+      }
+    }
+  ]
+}

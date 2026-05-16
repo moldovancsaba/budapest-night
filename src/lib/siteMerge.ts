@@ -1,4 +1,4 @@
-import { CMS_MEDIA } from "@/config/defaultMedia";
+import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 import { DEFAULT_SITE, type SiteAccountSettings, type SiteCalculatorCopy, type SiteDoc } from "@/types/site";
 
 function mergeCalculator(base: SiteCalculatorCopy, patch: Partial<SiteCalculatorCopy> | undefined): SiteCalculatorCopy {
@@ -58,8 +58,12 @@ export function mergeSiteDocument(doc: Partial<SiteDoc> | null | undefined): Sit
   if (!merged.discoverHeroUrl?.trim()) merged.discoverHeroUrl = DEFAULT_SITE.discoverHeroUrl;
   if (!merged.guides?.length) merged.guides = DEFAULT_SITE.guides;
   else {
-    const fb = CMS_MEDIA.guideCard;
-    merged.guides = merged.guides.map((g) => (g.imageUrl?.trim() ? g : { ...g, imageUrl: fb }));
+    const generic = CMS_MEDIA.guideCard;
+    merged.guides = merged.guides.map((g) => {
+      const url = g.imageUrl?.trim();
+      const useDistinct = !url || url === generic;
+      return { ...g, imageUrl: useDistinct ? guideImageForId(g.id) : url };
+    });
   }
   return merged;
 }

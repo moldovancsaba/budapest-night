@@ -23,7 +23,9 @@ export function imgbbImageFieldError(label: string, url: string | undefined | nu
   return null;
 }
 
-export function validateProviderImages(doc: Partial<{ image?: string; galleryImages?: string[] }>): string | null {
+export function validateProviderImages(
+  doc: Partial<{ image?: string; galleryImages?: string[]; locales?: Record<string, { image?: string }> }>,
+): string | null {
   const e1 = imgbbImageFieldError("provider.image", doc.image);
   if (e1) return e1;
   if (Array.isArray(doc.galleryImages)) {
@@ -31,6 +33,13 @@ export function validateProviderImages(doc: Partial<{ image?: string; galleryIma
       const g = doc.galleryImages[i];
       if (typeof g !== "string") return `provider.galleryImages[${i}] must be a string`;
       const e = imgbbImageFieldError(`provider.galleryImages[${i}]`, g);
+      if (e) return e;
+    }
+  }
+  if (doc.locales && typeof doc.locales === "object") {
+    for (const [loc, variant] of Object.entries(doc.locales)) {
+      if (!variant || typeof variant !== "object") continue;
+      const e = imgbbImageFieldError(`provider.locales.${loc}.image`, variant.image);
       if (e) return e;
     }
   }

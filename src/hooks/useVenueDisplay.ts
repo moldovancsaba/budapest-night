@@ -1,6 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { activityTypeMessageKey } from "@/data/activityTypeKeys";
+import { neighborhoodMessageKey } from "@/data/neighborhoodKeys";
 import type { Category, Provider, AgeRange, DayTimeTag } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
 
@@ -39,6 +41,32 @@ export function useAgeRangeLabel() {
 export function useDayTimeLabel() {
   const t = useTranslations("dayTime");
   return (tag: DayTimeTag | string) => t(tag as DayTimeTag);
+}
+
+/** Display label for canonical neighborhood names stored in Mongo / URL params. */
+export function useNeighborhoodLabel() {
+  const t = useTranslations("neighborhood");
+  return (canonical: string) => {
+    const key = neighborhoodMessageKey(canonical);
+    return key ? t(key) : canonical;
+  };
+}
+
+/** Display label for activity / vibe filter tags. */
+export function useActivityTypeLabel() {
+  const t = useTranslations("activityType");
+  return (canonical: string) => {
+    const key = activityTypeMessageKey(canonical);
+    return key ? t(key) : canonical;
+  };
+}
+
+/** Neighborhood + district line for cards and profiles. */
+export function useVenueLocationLine() {
+  const districtLabel = useDistrictLabel();
+  const neighborhoodLabel = useNeighborhoodLabel();
+  return (borough: Borough, neighborhood: string) =>
+    `${neighborhoodLabel(neighborhood)}, ${districtLabel(borough)}`;
 }
 
 export type VenuePriceDisplay = { main: string; suffix?: string };

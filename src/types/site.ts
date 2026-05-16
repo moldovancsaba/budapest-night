@@ -1,5 +1,5 @@
 import type { Borough } from "@/types/provider";
-import { CMS_MEDIA } from "@/config/defaultMedia";
+import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 
 /** Lucide icon keys used by home marketing blocks (stored in Mongo). */
 export type SiteIconKey =
@@ -246,7 +246,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       desc: "Riverside bars, classic bistros, and late kitchens in the inner city.",
       borough: "Belváros",
       neighborhood: "Inner City",
-      imageUrl: CMS_MEDIA.guideCard,
+      imageUrl: guideImageForId("guide-belvaros"),
       tone: "orange",
       ctaLabel: "Explore guide",
     },
@@ -256,7 +256,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       desc: "Ruin pubs, street food, and party energy in Erzsébetváros.",
       borough: "Erzsébetváros",
       neighborhood: "Jewish Quarter",
-      imageUrl: CMS_MEDIA.guideCard,
+      imageUrl: guideImageForId("guide-jewish-quarter"),
       tone: "teal",
       ctaLabel: "Explore guide",
     },
@@ -266,7 +266,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       desc: "Galleries, cafés, and elegant nights along Terézváros.",
       borough: "Terézváros",
       neighborhood: "Andrássy út",
-      imageUrl: CMS_MEDIA.guideCard,
+      imageUrl: guideImageForId("guide-andrassy"),
       tone: "pink",
       ctaLabel: "Explore guide",
     },
@@ -276,7 +276,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       desc: "Castle district wine bars, thermal vibes, and sunset terraces.",
       borough: "Buda",
       neighborhood: "Castle District",
-      imageUrl: CMS_MEDIA.guideCard,
+      imageUrl: guideImageForId("guide-buda"),
       tone: "blue",
       ctaLabel: "Explore guide",
     },

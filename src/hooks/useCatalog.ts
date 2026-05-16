@@ -1,16 +1,19 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { useLocale } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import type { Borough } from "@/types/provider";
 import type { SiteDoc } from "@/types/site";
 
 export function useProvidersCatalog() {
+  const locale = useLocale() as AppLocale;
   return useQuery({
-    queryKey: ["catalog", "providers"],
+    queryKey: ["catalog", "providers", locale],
     queryFn: async () => {
-      const r = await fetch("/api/public/providers");
+      const r = await fetch(`/api/public/providers?locale=${encodeURIComponent(locale)}`);
       if (!r.ok) {
         const j = await r.json().catch(() => ({}));
         throw new Error((j as { error?: string }).error || "Failed to load providers");

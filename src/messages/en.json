@@ -123,6 +123,9 @@
     "noDbHint": "Add listings in /admin or run npm run ingest:listing with a curator JSON payload.",
     "noMatches": "No matches",
     "noMatchesHint": "Try another district, neighborhood, or filter.",
+    "loading": "Loading listings…",
+    "loadErrorTitle": "Can't load listings",
+    "loadErrorMessage": "Check MONGODB_URI and your network. The API returned an error.",
     "blurb": {
       "Events": "concerts, festivals, boat parties, and rooftops",
       "Parties": "ruin bars, clubs, DJ nights, and late parties",
@@ -149,7 +152,20 @@
     "similarNearby": "Similar circles nearby",
     "shareTitle": "Share {name}",
     "shareDescription": "Share this culture circle with a friend.",
-    "onPlatform": "{name} on Budapest Night"
+    "onPlatform": "{name} on Budapest Night",
+    "pageEyebrow": "Culture & community",
+    "heroTitleLine1": "Find your",
+    "heroTitleLine2": "culture circle",
+    "heroImageAlt": "Budapest culture and nightlife crowd",
+    "loading": "Loading culture circles…",
+    "seedEmptyTitle": "No culture circles yet",
+    "seedEmptyMessage": "Add groups via /admin or seed with npm run db:restore-payloads.",
+    "listInNeighborhood": "Culture circles in {place}",
+    "listAll": "Culture circles across Budapest",
+    "listInDistrict": "Culture circles in {district}",
+    "groupCount": "{count} groups",
+    "filterEmptyTitle": "No circles here yet",
+    "filterEmptyMessage": "Try another district or neighborhood."
   },
   "assistant": {
     "title": "Night Guide",
@@ -166,11 +182,49 @@
     "errorDesc": "Please try again."
   },
   "calculator": {
+    "title": "Night out budget",
+    "subtitle": "Estimate your total spend across venues and events.",
+    "clearAllCta": "Clear all",
+    "emptyTitle": "Calculator is empty",
+    "emptyMessage": "Add venues to estimate your night-out budget.",
+    "asideTitle": "Estimated total",
+    "asideSubtitle": "Based on the venues and events you've added.",
+    "asideFootnote": "Estimates for planning only. Confirm rates with each provider.",
+    "providerLinePriceSuffix": "/person",
+    "estimatedTotalLabel": "Estimated total",
     "decreaseGuests": "Decrease guests",
     "increaseGuests": "Increase guests",
     "remove": "Remove {name}",
     "guest": "guest",
     "guests": "guests"
+  },
+  "trust": {
+    "pillars": [
+      {
+        "title": "Local by design",
+        "desc": "Budapest-focused listings organized by district and neighborhood.",
+        "tone": "orange",
+        "icon": "compass"
+      },
+      {
+        "title": "Helpful details",
+        "desc": "Hours, vibes, prices, and tags in one place.",
+        "tone": "teal",
+        "icon": "shield-check"
+      },
+      {
+        "title": "Night-ready",
+        "desc": "Built for locals and visitors planning the perfect evening.",
+        "tone": "pink",
+        "icon": "users"
+      },
+      {
+        "title": "Save & compare",
+        "desc": "Bookmark venues and estimate your total spend.",
+        "tone": "blue",
+        "icon": "calculator"
+      }
+    ]
   },
   "split": {
     "eyebrow": "Live tool",
@@ -211,7 +265,116 @@
     "fromBudgetCta": "Split among crew"
   },
   "home": {
-    "explore": "Explore"
+    "heroTitle": "Discover Budapest after dark",
+    "heroSubtitle": "Events, parties, restaurants, cafés, and culture — curated by district and neighborhood.",
+    "heroPrimaryCta": "Start exploring",
+    "heroSecondaryCta": "Browse by district",
+    "heroTagline": "Neon-lit. Local. Built for nights out in Budapest.",
+    "heroImageAlt": "Budapest city lights at night along the Danube",
+    "categoriesTitle": "What's your night?",
+    "exploreCta": "Explore",
+    "categories": {
+      "events": {
+        "description": "Concerts, festivals, boat parties, rooftops & late-night happenings"
+      },
+      "parties": {
+        "description": "Clubs, ruin bars, DJ sets, themed nights & weekend blowouts"
+      },
+      "restaurants": {
+        "description": "Fine dining, bistro gems, street food courts & Danube-side tables"
+      },
+      "cafes": {
+        "description": "Specialty coffee, brunch spots, dessert bars & all-day hangouts"
+      },
+      "culture": {
+        "description": "Gallery walks, culture circles, food clubs & local creator meetups"
+      }
+    },
+    "neighborhoodSectionTitle": "Find the night in your neighborhood",
+    "popularNeighborhoodsCaption": "Popular spots in {district}",
+    "allDistrictsHint": "Browse every district at once in Discover, or pick a district above to explore its neighborhoods.",
+    "openDiscoverAll": "Open Discover (all Budapest)",
+    "viewAllNeighborhoods": "View all",
+    "guidesSectionTitle": "Featured district guides",
+    "guidesViewAllLabel": "View all guides",
+    "guideCtaDefault": "Explore guide",
+    "howItWorksSectionTitle": "How Budapest Night works",
+    "popularPicksSectionTitle": "Neon picks to get you started",
+    "popularPicksViewAllLabel": "View all",
+    "culturePickBadge": "Culture pick",
+    "cultureCircleLabel": "Culture circle",
+    "freeToJoin": "Free to join",
+    "newsletterTitle": "Get the latest Budapest night picks for your district",
+    "newsletterSubtitle": "New events, parties, restaurants, cafés, and culture — in your inbox.",
+    "newsletterPlaceholder": "Enter your email",
+    "newsletterCta": "Sign me up!",
+    "newsletterFinePrint": "No spam. Unsubscribe anytime.",
+    "newsletterSuccess": "You're on the list! We'll be in touch soon.",
+    "guides": [
+      {
+        "id": "guide-belvaros",
+        "title": "Belváros nightlife & dining",
+        "desc": "Riverside bars, classic bistros, and late kitchens in the inner city.",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "tone": "orange",
+        "ctaLabel": "Explore guide",
+        "imageUrl": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg"
+      },
+      {
+        "id": "guide-jewish-quarter",
+        "title": "Jewish Quarter ruin bars",
+        "desc": "Ruin pubs, street food, and party energy in Erzsébetváros.",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "tone": "teal",
+        "ctaLabel": "Explore guide",
+        "imageUrl": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg"
+      },
+      {
+        "id": "guide-andrassy",
+        "title": "Andrássy culture strip",
+        "desc": "Galleries, cafés, and elegant nights along Terézváros.",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "tone": "pink",
+        "ctaLabel": "Explore guide",
+        "imageUrl": "https://i.ibb.co/99x7Yxzt/e18ce39c1140.jpg"
+      },
+      {
+        "id": "guide-buda",
+        "title": "Buda castle & hill views",
+        "desc": "Castle district wine bars, thermal vibes, and sunset terraces.",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "tone": "blue",
+        "ctaLabel": "Explore guide",
+        "imageUrl": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg"
+      }
+    ],
+    "howItWorksSteps": [
+      {
+        "step": 1,
+        "title": "Choose your district",
+        "desc": "Start where you are staying or going out tonight.",
+        "tone": "orange",
+        "icon": "map-pin"
+      },
+      {
+        "step": 2,
+        "title": "Compare local options",
+        "desc": "See vibes, prices, hours, tags, and what makes each spot special.",
+        "tone": "teal",
+        "icon": "list-checks"
+      },
+      {
+        "step": 3,
+        "title": "Save, share & plan",
+        "desc": "Save favorites, share spots with friends, and estimate your night-out budget.",
+        "tone": "pink",
+        "icon": "heart"
+      }
+    ]
   },
   "notFound": {
     "code": "404",
@@ -231,5 +394,64 @@
     "ctaEvents": "Find real venues",
     "statLabel": "Probability this URL exists",
     "statValue": "0.0%"
+  },
+  "neighborhood": {
+    "label": "Neighborhood",
+    "all": "All",
+    "vaciUtca": "Váci utca",
+    "deakTer": "Deák tér",
+    "parliament": "Parliament",
+    "danubePromenade": "Danube Promenade",
+    "innerCity": "Inner City",
+    "andrassyUt": "Andrássy út",
+    "opera": "Opera",
+    "oktogon": "Oktogon",
+    "kiralyUtca": "Király utca",
+    "lisztFerencTer": "Liszt Ferenc tér",
+    "jewishQuarter": "Jewish Quarter",
+    "gozsduUdvar": "Gozsdu Udvar",
+    "kazinczyUtca": "Kazinczy utca",
+    "wesselenyiUtca": "Wesselényi utca",
+    "rakocziTer": "Rákóczi tér",
+    "corvinNegyed": "Corvin Quarter",
+    "muegyetem": "Műegyetem",
+    "nagytemplomUtca": "Nagytemplom utca",
+    "borarosTer": "Boráros tér",
+    "millenniumiVaroskozpont": "Millennium City Centre",
+    "castleDistrict": "Castle District",
+    "gellertHill": "Gellért Hill",
+    "taban": "Tabán",
+    "rozsadomb": "Rózsadomb",
+    "szentGellertTer": "Szent Gellért tér",
+    "obudaIsland": "Óbuda Island",
+    "aquincum": "Aquincum",
+    "kolosyTer": "Kolosy tér",
+    "becsiUt": "Bécsi út",
+    "mainSquareObuda": "Main Square Óbuda",
+    "moriczZsigmondKorut": "Móricz Zsigmond körtér",
+    "gellertBathsArea": "Gellért Baths area",
+    "infopark": "Infopark",
+    "kosztolanyiDezsoTer": "Kosztolányi Dezső tér",
+    "bikasPark": "Bikás park"
+  },
+  "activityType": {
+    "liveMusic": "Live Music",
+    "djSets": "DJ Sets",
+    "rooftop": "Rooftop",
+    "ruinBar": "Ruin Bar",
+    "fineDining": "Fine Dining",
+    "streetFood": "Street Food",
+    "wineBar": "Wine Bar",
+    "craftBeer": "Craft Beer",
+    "coffeeBrunch": "Coffee & Brunch",
+    "gallery": "Gallery",
+    "theatre": "Theatre",
+    "festival": "Festival",
+    "boatParty": "Boat Party",
+    "thermalBath": "Thermal Bath",
+    "jazz": "Jazz",
+    "electronic": "Electronic",
+    "cocktails": "Cocktails",
+    "lateKitchen": "Late Kitchen"
   }
 }

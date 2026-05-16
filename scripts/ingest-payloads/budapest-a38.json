@@ -24,7 +24,16 @@
         "image": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg",
         "email": "",
         "website": "https://a38.hu/en/",
-        "phone": ""
+        "phone": "",
+        "locales": {
+          "hu": {
+            "name": "A38 Hajó",
+            "shortDescription": "Ukrajnai kőhordó hajóból koncerthelyszín a Dunán — Európa egyik legmenőbb szórakozóhelye.",
+            "longDescription": "Az A38 koncertterem és klub a Petőfi híd budai hídfőjénél horgonyzó hajón. Nézd meg az a38.hu naptárát élő zenés estekhez, DJ programokhoz és teraszból. Érkezz korán dunai italokra az ajtók nyitása előtt.",
+            "slug": "a38-hajo",
+            "activityTypes": ["Élő zene", "Elektronikus", "Hajóbulik", "Sör"]
+          }
+        }
       }
     }
   ]

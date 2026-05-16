@@ -89,6 +89,16 @@ const PROVIDER_FIELDS = `interface Provider {
   announcementBadge?: string;
   galleryImages?: string[];
   bookingEnabled?: boolean;
+  /** Optional per-locale copy + slug; base fields are English fallback. */
+  locales?: Partial<Record<"en" | "es" | "it" | "hu" | "he" | "ar", {
+    name?: string;
+    shortDescription?: string;
+    longDescription?: string;
+    address?: string;
+    activityTypes?: string[];
+    image?: string;
+    slug?: string;
+  }>>;
 }`;
 
 const MEETUP_FIELDS = `interface MeetupGroup {

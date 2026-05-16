@@ -6,7 +6,12 @@ import { useSaved, useCalculator } from "@/store/useScout";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { CMS_MEDIA } from "@/config/defaultMedia";
-import { useAgeRangeLabel, useFormatVenuePrice } from "@/hooks/useVenueDisplay";
+import {
+  useActivityTypeLabel,
+  useAgeRangeLabel,
+  useFormatVenuePrice,
+  useVenueLocationLine,
+} from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
 
 interface Props {
@@ -20,6 +25,8 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
   const { add } = useCalculator();
   const t = useTranslations("venue");
   const ageLabel = useAgeRangeLabel();
+  const activityLabel = useActivityTypeLabel();
+  const locationLine = useVenueLocationLine();
   const formatPrice = useFormatVenuePrice();
   const saved = isSaved(provider.id);
   const price = formatPrice(provider);
@@ -68,11 +75,11 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
         </button>
         <p className="mt-1 flex items-center gap-1 text-sm text-muted-foreground">
           <MapPin className="h-3.5 w-3.5" />
-          {provider.neighborhood}, {provider.borough}
+          {locationLine(provider.borough, provider.neighborhood)}
         </p>
 
         <p className="mt-3 text-xs text-muted-foreground">
-          {provider.activityTypes.slice(0, 3).join(" · ")}
+          {provider.activityTypes.slice(0, 3).map(activityLabel).join(" · ")}
         </p>
 
         <div className="mt-3 flex flex-wrap gap-1.5">

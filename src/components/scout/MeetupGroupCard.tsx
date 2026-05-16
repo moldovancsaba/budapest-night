@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { MeetupLogo } from "./MeetupLogo";
 import type { MeetupGroup } from "@/types/meetup";
+import { useVenueLocationLine } from "@/hooks/useVenueDisplay";
 
 import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
@@ -17,6 +18,7 @@ interface Props {
 
 export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
   const { isSaved, toggle } = useSaved();
+  const locationLine = useVenueLocationLine();
   const saved = isSaved(group.id);
 
   return (
@@ -43,7 +45,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
             </button>
             <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
               <MapPin className="h-3.5 w-3.5" />
-              {group.neighborhood}, {group.borough}
+              {locationLine(group.borough, group.neighborhood)}
             </p>
           </div>
         </div>

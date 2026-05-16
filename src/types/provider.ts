@@ -21,6 +21,10 @@ export type DayTimeTag =
 export type FeaturedBadge =
   | "Featured" | "Popular" | "New" | "Staff Pick" | "Hidden Gem" | "Weekend Vibes";
 
+import type { ProviderLocalesMap } from "@/types/providerLocale";
+
+export type { ProviderLocaleContent, ProviderLocalesMap } from "@/types/providerLocale";
+
 export interface Provider {
   id: string;
   name: string;
@@ -46,4 +50,6 @@ export interface Provider {
   announcementBadge?: string;
   galleryImages?: string[];
   bookingEnabled?: boolean;
+  /** Language-specific copy and slugs; base fields are the default (English) fallback. */
+  locales?: ProviderLocalesMap;
 }

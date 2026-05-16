@@ -12,7 +12,8 @@ import { useProvidersCatalog, useNeighborhoodsCatalog, useSiteCatalog } from "@/
 import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { useCategoryLabel, useDistrictLabel } from "@/hooks/useVenueDisplay";
+import { useCategoryLabel, useDistrictLabel, useNeighborhoodLabel } from "@/hooks/useVenueDisplay";
+import { useDiscoverChrome } from "@/hooks/useLocalizedSiteCopy";
 
 interface Props {
   category: Category;
@@ -26,6 +27,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
   const t = useTranslations("discover");
   const categoryLabel = useCategoryLabel();
   const districtLabel = useDistrictLabel();
+  const neighborhoodLabel = useNeighborhoodLabel();
   const [borough, setBorough] = useState<BoroughChoice>(initialBorough ?? "All");
   const [neighborhood, setNeighborhood] = useState<string | null>(() => {
     const b = initialBorough ?? "All";
@@ -42,6 +44,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
   const { data: providers = [], isLoading: loadP, isError: errP } = useProvidersCatalog();
   const { data: neighborhoodsMap } = useNeighborhoodsCatalog();
   const { data: site } = useSiteCatalog();
+  const discoverChrome = useDiscoverChrome();
 
   const hoodOptions = useMemo(() => {
     if (borough === "All") return [];
@@ -68,7 +71,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
     return (
       <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
         <Loader2 className="h-8 w-8 animate-spin text-accent" />
-        <p className="text-sm">Loading listings…</p>
+        <p className="text-sm">{t("loading")}</p>
       </div>
     );
   }
@@ -77,8 +80,8 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
     return (
       <EmptyState
         icon={MapPin}
-        title="Can't load listings"
-        message="Check MONGODB_URI and your network. The API returned an error."
+        title={t("loadErrorTitle")}
+        message={t("loadErrorMessage")}
       />
     );
   }
@@ -100,13 +103,13 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
         <div className="relative grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              {site?.discoverEyebrow ?? t("eyebrow")}
+              {discoverChrome.eyebrow}
             </p>
             <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl">
               <span className="neon-text">{t("title", { category: categoryLabel(category) })}</span>
             </h1>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-              {t("findByArea", { blurb: t(`blurb.${category}`) })} {site?.discoverTagline ?? t("tagline")}
+              {t("findByArea", { blurb: t(`blurb.${category}`) })} {discoverChrome.tagline}
             </p>
           </div>
           <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-accent/20 ring-1 ring-primary/20 md:block">
@@ -148,7 +151,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
           {borough !== "All"
             ? t("resultsIn", { count: filtered.length, district: districtLabel(borough) })
             : t("results", { count: filtered.length })}
-          {neighborhood ? ` · ${neighborhood}` : ""}
+          {neighborhood ? ` · ${neighborhoodLabel(neighborhood)}` : ""}
         </h2>
         {filtered.length === 0 ? (
           <EmptyState icon={MapPin} title={t("noMatches")} message={t("noMatchesHint")} />

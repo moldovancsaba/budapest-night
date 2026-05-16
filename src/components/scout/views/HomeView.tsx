@@ -16,7 +16,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
-import { useDistrictLabel } from "@/hooks/useVenueDisplay";
+import { useTranslations } from "next-intl";
+import { useCategoryLabel, useDistrictLabel, useNeighborhoodLabel, useVenueLocationLine } from "@/hooks/useVenueDisplay";
+import { useHomeCopy, useTrustPillars, type HomeCopy } from "@/hooks/useLocalizedSiteCopy";
 import { formatCrowdLabel, formatVenuePrice } from "@/lib/venueDisplay";
 import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc } from "@/types/site";
@@ -48,17 +50,17 @@ function openMarketingLink(href: string | undefined, inApp: () => void) {
   window.location.assign(h.startsWith("/") ? h : `/${h}`);
 }
 
-const CATEGORIES: {
+const CATEGORY_TILES: {
   key: Category | "Meet-Up Groups";
   icon: React.ComponentType<{ className?: string }>;
-  description: string;
+  descKey: keyof HomeCopy["categories"];
   tone: "orange" | "teal" | "pink" | "amber" | "blue";
 }[] = [
-  { key: "Events", icon: CalendarDays, description: "Concerts, festivals, boat parties, rooftops & late-night happenings", tone: "orange" },
-  { key: "Parties", icon: PartyPopper, description: "Clubs, ruin bars, DJ sets, themed nights & weekend blowouts", tone: "teal" },
-  { key: "Restaurants", icon: UtensilsCrossed, description: "Fine dining, bistro gems, street food courts & Danube-side tables", tone: "pink" },
-  { key: "Cafés", icon: Coffee, description: "Specialty coffee, brunch spots, dessert bars & all-day hangouts", tone: "amber" },
-  { key: "Meet-Up Groups", icon: Palette, description: "Gallery walks, culture circles, food clubs & local creator meetups", tone: "blue" },
+  { key: "Events", icon: CalendarDays, descKey: "events", tone: "orange" },
+  { key: "Parties", icon: PartyPopper, descKey: "parties", tone: "teal" },
+  { key: "Restaurants", icon: UtensilsCrossed, descKey: "restaurants", tone: "pink" },
+  { key: "Cafés", icon: Coffee, descKey: "cafes", tone: "amber" },
+  { key: "Meet-Up Groups", icon: Palette, descKey: "culture", tone: "blue" },
 ];
 
 const TONE_BG = CYBER_TONE_BG;
@@ -72,6 +74,12 @@ interface Props {
 
 export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
   const districtLabel = useDistrictLabel();
+  const neighborhoodLabel = useNeighborhoodLabel();
+  const locationLine = useVenueLocationLine();
+  const tNav = useTranslations("nav");
+  const categoryLabel = useCategoryLabel();
+  const home = useHomeCopy();
+  const trustPillars = useTrustPillars();
   const [borough, setBorough] = useState<BoroughChoice>("All");
   const [email, setEmail] = useState("");
   const { data: providers = [] } = useProvidersCatalog();
@@ -103,16 +111,16 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
         <div className="relative grid items-center gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_1fr] md:p-16">
           <div className="relative z-10">
             <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
-              <span className="neon-text">{s.homeHeroTitle}</span>
+              <span className="neon-text">{home.heroTitle}</span>
             </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">{s.homeHeroSubtitle}</p>
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">{home.heroSubtitle}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button
                 size="lg"
                 className="rounded-full bg-primary px-6 text-primary-foreground shadow-[0_0_24px_hsl(310_100%_62%_/_0.35)] hover:bg-primary/90"
                 onClick={() => onNavigate("Events")}
               >
-                {s.homeHeroPrimaryCta} <ArrowRight className="h-4 w-4" />
+                {home.heroPrimaryCta} <ArrowRight className="h-4 w-4" />
               </Button>
               <Button
                 size="lg"
@@ -120,14 +128,14 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 className="rounded-full border-accent/40 bg-card/50 px-6 text-accent hover:bg-accent/10"
                 onClick={scrollToNeighborhoods}
               >
-                {s.homeHeroSecondaryCta}
+                {home.heroSecondaryCta}
               </Button>
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
               <span className="grid h-6 w-6 place-items-center rounded-full bg-primary/20 text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
               </span>
-              {s.homeHeroTagline}
+              {home.heroTagline}
             </p>
           </div>
           <div className="relative">
@@ -135,7 +143,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <CdnImage
                 fill
                 src={s.homeHeroUrl}
-                alt="Budapest city lights at night along the Danube"
+                alt={home.heroImageAlt}
               />
             </div>
             <span className="absolute -right-2 -top-2 hidden text-orange md:block" aria-hidden>
@@ -149,9 +157,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
 
       {/* CATEGORIES */}
       <section>
-        <h2 className="text-center font-display text-3xl font-bold text-foreground sm:text-4xl">{s.homeCategoriesTitle}</h2>
+        <h2 className="text-center font-display text-3xl font-bold text-foreground sm:text-4xl">{home.categoriesTitle}</h2>
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {CATEGORIES.map(({ key, icon: Icon, description, tone }) => (
+          {CATEGORY_TILES.map(({ key, icon: Icon, descKey, tone }) => (
             <button
               key={key}
               onClick={() =>
@@ -162,10 +170,12 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <span className={cn("grid h-16 w-16 place-items-center rounded-full", TONE_BG[tone])}>
                 <Icon className="h-7 w-7" />
               </span>
-              <h3 className="mt-4 font-display text-lg font-semibold text-foreground">{key}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+              <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
+                {key === "Meet-Up Groups" ? tNav("culture") : categoryLabel(key as Category)}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{home.categories[descKey].description}</p>
               <span className={cn("mt-4 inline-flex items-center gap-1 text-sm font-semibold", TONE_LINK[tone])}>
-                Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                {home.exploreCta} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </span>
             </button>
           ))}
@@ -176,7 +186,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       <section id="home-neighborhoods" className={cn("relative overflow-hidden px-6 py-12 sm:px-12 sm:py-14", CYBER_PANEL)}>
         <Building2 className="pointer-events-none absolute -left-4 top-6 h-32 w-32 text-foreground/[0.04]" aria-hidden />
         <Building2 className="pointer-events-none absolute -right-4 bottom-6 h-32 w-32 text-foreground/[0.04]" aria-hidden />
-        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">{s.neighborhoodSectionTitle}</h2>
+        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">{home.neighborhoodSectionTitle}</h2>
         <div className="mt-7 flex flex-wrap justify-center gap-2">
           {HOME_BOROUGH_CHOICES.map((b) => {
             const active = b === borough;
@@ -200,8 +210,10 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
         </div>
         <p className="mt-6 text-center text-sm font-medium text-muted-foreground">
           {borough === "All"
-            ? "Browse every district at once in Discover, or pick a district above to explore its neighborhoods."
-            : s.popularNeighborhoodsCaption.replace(/\{district\}/g, borough).replace(/\{borough\}/g, borough)}
+            ? home.allDistrictsHint
+            : home.popularNeighborhoodsCaption
+                .replace(/\{district\}/g, districtLabel(borough))
+                .replace(/\{borough\}/g, districtLabel(borough))}
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           {borough === "All" ? (
@@ -210,7 +222,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               onClick={() => onNavigate("Events", { borough: "All" })}
               className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
             >
-              Open Discover (all Budapest)
+              {home.openDiscoverAll}
             </button>
           ) : (
             <>
@@ -221,7 +233,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   onClick={() => onNavigate("Events", { borough, neighborhood: n })}
                   className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
                 >
-                  {n}
+                  {neighborhoodLabel(n)}
                 </button>
               ))}
               <button
@@ -229,7 +241,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 onClick={() => onNavigate("Events", { borough })}
               className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
             >
-              View all
+              {home.viewAllNeighborhoods}
               </button>
             </>
           )}
@@ -237,10 +249,10 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       </section>
 
       {/* GUIDES */}
-      {s.guides.length > 0 && (
+      {home.guides.length > 0 && (
         <section>
           <div className="mb-6 flex items-end justify-between gap-4">
-            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{s.guidesSectionTitle}</h2>
+            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{home.guidesSectionTitle}</h2>
             <button
               type="button"
               onClick={() =>
@@ -250,11 +262,11 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               }
               className="hidden items-center gap-1 text-sm font-semibold text-accent hover:text-primary sm:inline-flex"
             >
-              {s.guidesViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
+              {home.guidesViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {s.guides.map((g) => (
+            {home.guides.map((g) => (
               <button
                 key={g.id ?? g.title}
                 type="button"
@@ -280,7 +292,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                   <h3 className="font-display text-base font-semibold leading-snug text-foreground">{g.title}</h3>
                   <p className="mt-2 flex-1 text-sm text-muted-foreground">{g.desc}</p>
                   <span className={cn("mt-4 inline-flex items-center gap-1 text-sm font-semibold", TONE_LINK[g.tone])}>
-                    {g.ctaLabel?.trim() || "Explore guide"}{" "}
+                    {g.ctaLabel?.trim() || home.guideCtaDefault}{" "}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </div>
@@ -292,9 +304,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
 
       {/* HOW IT WORKS */}
       <section>
-        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">{s.howItWorksSectionTitle}</h2>
+        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">{home.howItWorksSectionTitle}</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {s.howItWorksSteps.map((step) => (
+          {home.howItWorksSteps.map((step) => (
             <div key={step.step} className="rounded-3xl border border-border/80 bg-card/90 p-6 shadow-card">
               <div className="flex items-start gap-4">
                 <span className={cn("grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-bold", TONE_BG[step.tone])}>
@@ -316,7 +328,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       {/* TRUST STRIP */}
       <section className={cn("px-6 py-8 sm:px-10", CYBER_PANEL)}>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {s.trustPillars.map((pillar) => (
+          {trustPillars.map((pillar) => (
             <div key={pillar.title} className="flex items-start gap-3">
               <span className={cn("grid h-10 w-10 shrink-0 place-items-center rounded-full", TONE_BG[pillar.tone])}>
                 <SiteLucideIcon name={pillar.icon} className="h-5 w-5" />
@@ -334,13 +346,13 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
       {(popularPicks.length > 0 || popularGroup) && (
         <section>
           <div className="mb-6 flex items-end justify-between">
-            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{s.popularPicksSectionTitle}</h2>
+            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">{home.popularPicksSectionTitle}</h2>
             <button
               type="button"
               onClick={() => onNavigate("Events")}
               className="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-primary"
             >
-              {s.popularPicksViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
+              {home.popularPicksViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>
           <div className="-mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-2 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3 xl:grid-cols-6">
@@ -355,14 +367,18 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 <div className="relative grid h-32 place-items-center bg-accent/10">
                   <Users className="h-10 w-10 text-accent" />
                   <span className="absolute left-2 top-2 rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent-foreground">
-                    Culture pick
+                    {home.culturePickBadge}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-3">
                   <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">{popularGroup.name}</h3>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{popularGroup.neighborhood}</p>
-                  <p className="mt-1 text-[11px] text-muted-foreground">{popularGroup.ageRange} · Culture circle</p>
-                  <p className="mt-2 text-sm font-semibold text-accent">Free to join</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {locationLine(popularGroup.borough, popularGroup.neighborhood)}
+                  </p>
+                  <p className="mt-1 text-[11px] text-muted-foreground">
+                    {popularGroup.ageRange} · {home.cultureCircleLabel}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-accent">{home.freeToJoin}</p>
                 </div>
               </button>
             )}
@@ -377,14 +393,14 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
             <Mail className="h-6 w-6" />
           </span>
           <div>
-            <h2 className="font-display text-xl font-bold text-foreground sm:text-2xl">{s.newsletterTitle}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{s.newsletterSubtitle}</p>
+            <h2 className="font-display text-xl font-bold text-foreground sm:text-2xl">{home.newsletterTitle}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{home.newsletterSubtitle}</p>
           </div>
           <form
             onSubmit={(e) => {
               e.preventDefault();
               if (!email) return;
-              toast.success("You're on the list! We'll be in touch soon.");
+              toast.success(home.newsletterSuccess);
               setEmail("");
             }}
             className="flex w-full flex-col gap-2 sm:flex-row md:w-auto"
@@ -394,21 +410,22 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder={s.newsletterPlaceholder}
+              placeholder={home.newsletterPlaceholder}
               className="h-11 rounded-full border-border/80 bg-background/50 sm:w-64"
             />
             <Button type="submit" className="h-11 rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90">
-              {s.newsletterCta}
+              {home.newsletterCta}
             </Button>
           </form>
         </div>
-        <p className="mt-4 text-center text-xs text-muted-foreground md:text-left">{s.newsletterFinePrint}</p>
+        <p className="mt-4 text-center text-xs text-muted-foreground md:text-left">{home.newsletterFinePrint}</p>
       </section>
     </div>
   );
 }
 
 function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Provider) => void }) {
+  const locationLine = useVenueLocationLine();
   const badge = provider.badges[0];
   const price = formatVenuePrice(provider);
   return (
@@ -432,7 +449,7 @@ function PreviewCard({ provider, onOpen }: { provider: Provider; onOpen: (p: Pro
       </div>
       <div className="flex flex-1 flex-col p-3">
         <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">{provider.name}</h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">{provider.neighborhood}</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">{locationLine(provider.borough, provider.neighborhood)}</p>
         <p className="mt-1 text-[11px] text-muted-foreground">
           {formatCrowdLabel(provider.ageRanges[0])} · {provider.activityTypes[0]}
         </p>

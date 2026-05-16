@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
-import { useProvidersCatalog, useSiteCatalog } from "@/hooks/useCatalog";
+import { useProvidersCatalog } from "@/hooks/useCatalog";
+import { useAccountCopy } from "@/hooks/useLocalizedSiteCopy";
+import { useCategoryLabel, useVenueLocationLine } from "@/hooks/useVenueDisplay";
+import { useTranslations } from "next-intl";
 import { useSaved, useCalculator } from "@/store/useScout";
 import type { Provider, BoroughChoice, Category } from "@/types/provider";
 import { formatCrowdLabel, formatVenuePrice, venueBudgetUnit } from "@/lib/venueDisplay";
-import type { AccountSavedCategoryFilter, SiteAccountSettings, SiteDoc } from "@/types/site";
-import { DEFAULT_SITE } from "@/types/site";
+import type { AccountSavedCategoryFilter, SiteAccountSettings } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { CdnImage } from "@/components/ui/CdnImage";
 import {
@@ -23,23 +25,6 @@ interface Props {
   onNavigate: (view: Category | "Saved" | "Calculator" | "Meet-Up Groups", location?: { borough?: BoroughChoice; neighborhood?: string }) => void;
   onOpenProvider: (p: Provider) => void;
   onShareProvider: (p: Provider) => void;
-}
-
-function badgeFor(cat: string) {
-  switch (cat) {
-    case "Events":
-      return { label: "Event", filter: "Events", tone: CATEGORY_BADGE.Events };
-    case "Parties":
-      return { label: "Party", filter: "Parties", tone: CATEGORY_BADGE.Parties };
-    case "Restaurants":
-      return { label: "Restaurant", filter: "Restaurants", tone: CATEGORY_BADGE.Restaurants };
-    case "Cafés":
-      return { label: "Café", filter: "Cafés", tone: CATEGORY_BADGE.Cafés };
-    case "Meet-Up Group":
-      return { label: "Culture", filter: "Culture", tone: CATEGORY_BADGE.Culture };
-    default:
-      return { label: cat, filter: "All", tone: CATEGORY_BADGE.default };
-  }
 }
 
 function priceUnitLabel(p: Provider, units: SiteAccountSettings["saved"]["priceUnits"]) {
@@ -66,9 +51,26 @@ function interpolate(template: string, vars: Record<string, string>) {
 }
 
 export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: Props) {
-  const { data: siteData } = useSiteCatalog();
-  const s = siteData ?? ({ _id: "main", ...DEFAULT_SITE } as SiteDoc);
-  const acc = s.account;
+  const acc = useAccountCopy();
+  const tNav = useTranslations("nav");
+  const categoryLabel = useCategoryLabel();
+
+  const badgeFor = (cat: string) => {
+    switch (cat) {
+      case "Events":
+        return { label: categoryLabel("Events"), filter: "Events" as const, tone: CATEGORY_BADGE.Events };
+      case "Parties":
+        return { label: categoryLabel("Parties"), filter: "Parties" as const, tone: CATEGORY_BADGE.Parties };
+      case "Restaurants":
+        return { label: categoryLabel("Restaurants"), filter: "Restaurants" as const, tone: CATEGORY_BADGE.Restaurants };
+      case "Cafés":
+        return { label: categoryLabel("Cafés"), filter: "Cafés" as const, tone: CATEGORY_BADGE.Cafés };
+      case "Meet-Up Group":
+        return { label: tNav("culture"), filter: "Culture" as const, tone: CATEGORY_BADGE.Culture };
+      default:
+        return { label: cat, filter: "All" as const, tone: CATEGORY_BADGE.default };
+    }
+  };
 
   const [tab, setTab] = useState(acc.saved.tabId);
   const [filter, setFilter] = useState<AccountSavedCategoryFilter>("All");
@@ -229,6 +231,25 @@ function SavedProviderCard({
   onAddToPlan: () => void;
   onRemove: () => void;
 }) {
+  const tNav = useTranslations("nav");
+  const categoryLabel = useCategoryLabel();
+  const locationLine = useVenueLocationLine();
+  const badgeFor = (cat: string) => {
+    switch (cat) {
+      case "Events":
+        return { label: categoryLabel("Events"), tone: CATEGORY_BADGE.Events };
+      case "Parties":
+        return { label: categoryLabel("Parties"), tone: CATEGORY_BADGE.Parties };
+      case "Restaurants":
+        return { label: categoryLabel("Restaurants"), tone: CATEGORY_BADGE.Restaurants };
+      case "Cafés":
+        return { label: categoryLabel("Cafés"), tone: CATEGORY_BADGE.Cafés };
+      case "Meet-Up Group":
+        return { label: tNav("culture"), tone: CATEGORY_BADGE.Culture };
+      default:
+        return { label: cat, tone: CATEGORY_BADGE.default };
+    }
+  };
   const b = badgeFor(provider.category);
   const unit = priceUnitLabel(provider, priceUnits);
   const price = formatVenuePrice(provider);
@@ -250,7 +271,7 @@ function SavedProviderCard({
       </div>
       <div className="flex flex-1 flex-col p-4">
         <h3 className="font-display text-base font-semibold leading-snug text-foreground">{provider.name}</h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">{provider.neighborhood}</p>
+        <p className="mt-0.5 text-xs text-muted-foreground">{locationLine(provider.borough, provider.neighborhood)}</p>
         <p className="mt-1 text-xs text-muted-foreground">
           {formatCrowdLabel(provider.ageRanges[0])} · {provider.activityTypes[0]}
         </p>

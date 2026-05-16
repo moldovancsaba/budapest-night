@@ -20,6 +20,7 @@ import type { Provider, Category } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import { Menu, Heart, Bell, UserCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { findProviderByVenueKey } from "@/lib/providerLocale";
 import { useSaved, useCalculator } from "@/store/useScout";
 import { useMeetupGroupsCatalog, useProvidersCatalog, useSiteCatalog } from "@/hooks/useCatalog";
 import { useAppNavigation } from "@/hooks/useAppNavigation";
@@ -60,7 +61,7 @@ export default function BudapestNightShell() {
       setOpenProvider(null);
       return;
     }
-    const match = providers.find((p) => p.id === venueId);
+    const match = venueId ? findProviderByVenueKey(providers, venueId) : undefined;
     setOpenProvider(match ?? null);
   }, [venueId, providers]);
 
@@ -88,11 +89,7 @@ export default function BudapestNightShell() {
         mobileOpen={mobileNav}
         onCloseMobile={() => setMobileNav(false)}
         logoUrl={site?.logoUrl}
-        sidebarPromo={
-          site
-            ? { title: site.sidebarTitle, body: site.sidebarBody, cta: site.sidebarCtaLabel }
-            : undefined
-        }
+        sidebarPromo={undefined}
       />
 
       <div className="flex min-w-0 flex-1 flex-col">

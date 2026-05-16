@@ -6,7 +6,34 @@ import {
   CURATOR_AGE_RANGES,
   CURATOR_DAY_TAGS,
 } from "@/lib/curator/constants";
+import { locales } from "@/i18n/config";
 import { isImgBbHttpsImageUrl } from "@/lib/imgbbUrl";
+
+const localeKey = z.enum(locales);
+
+const providerLocaleContentSchema = z
+  .object({
+    name: z.string().min(2).max(160).optional(),
+    shortDescription: z.string().min(10).max(400).optional(),
+    longDescription: z.string().min(40).max(8000).optional(),
+    address: z.string().min(8).max(200).optional(),
+    activityTypes: z.array(z.string().min(1).max(60)).max(12).optional(),
+    announcementTitle: z.string().max(120).optional(),
+    announcementDescription: z.string().max(500).optional(),
+    announcementBadge: z.string().max(60).optional(),
+    image: z
+      .string()
+      .max(2000)
+      .refine((s) => !s.trim() || isImgBbHttpsImageUrl(s), { message: "locale image must be ImgBB https URL" })
+      .optional(),
+    slug: z
+      .string()
+      .min(2)
+      .max(80)
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
+      .optional(),
+  })
+  .strict();
 
 const category = z.enum(CURATOR_CATEGORIES);
 const borough = z.enum(CURATOR_BOROUGHS);
@@ -52,6 +79,7 @@ export const curatedProviderSchema = z
     announcementDescription: z.string().max(500).optional(),
     announcementBadge: z.string().max(60).optional(),
     bookingEnabled: z.boolean().optional(),
+    locales: z.record(localeKey, providerLocaleContentSchema).optional(),
   })
   .strict();
 
