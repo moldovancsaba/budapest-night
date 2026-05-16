@@ -75,8 +75,8 @@ const PROVIDER_FIELDS = `interface Provider {
   ageRanges: ("All ages" | "Family" | "18+" | "21+" | "Late night")[];
   dayTimeTags: ("Weekday" | "Weekend" | "Morning" | "Afternoon" | "Evening" | "Late night")[];
   pricePerClass: number;
-  /** Optional; EUR hint on venue cards. Ticket prices belong on timed events (entryFees, HUF/EUR). */
-  priceCurrency?: "EUR" | "HUF";
+  /** Canonical storage currency is HUF. Legacy EUR rows are converted on read until migrated. */
+  priceCurrency?: "HUF" | "EUR";
   shortDescription: string;
   longDescription: string;
   rating: number;
@@ -97,12 +97,16 @@ const PROVIDER_FIELDS = `interface Provider {
   eventOfferings?: EventOffering[];
   /** Union of item tags — computed on ingest; do not send in payloads. */
   menuTags?: string[];
-  /** Required on curated ingest: hu, es, it, he, ar (base fields = English). See localeIngestRules. */
-  locales: Partial<Record<"hu" | "es" | "it" | "he" | "ar", {
-    name: string;
-    shortDescription: string;
-    longDescription: string;
-    slug: string;
+  /**
+   * Localized copy + URL slugs. Base document fields = English.
+   * Set locales.en.slug to the canonical public path segment (district-neutral, e.g. budapest-park).
+   * Also provide hu, es, it, he, ar on curated ingest. See localeIngestRules + venueSlug.ts.
+   */
+  locales?: Partial<Record<"en" | "hu" | "es" | "it" | "he" | "ar", {
+    name?: string;
+    shortDescription?: string;
+    longDescription?: string;
+    slug?: string;
     address?: string;
     announcementTitle?: string;
     announcementDescription?: string;
@@ -286,6 +290,8 @@ const SITE_DOC = `interface SiteDoc {
   sidebarCtaLabel: string;
   homePopularPickProviderNames: string[];
   homePopularMeetupGroupId: string;
+  /** Fixed HUF conversion rates for the public currency switcher (defaults 350 / 300). */
+  currencyRates: { hufPerEur: number; hufPerUsd: number };
   calculator: SiteCalculatorCopy;
   account: SiteAccountSettings;
 }
@@ -425,8 +431,11 @@ const INGEST_RESPONSE = `{
   ]
 }`;
 
+const API_VERSION = "0.2.0";
+
 const nav = [
   { href: "#overview", label: "Overview" },
+  { href: "#urls", label: "Venue URLs" },
   { href: "#public", label: "Public" },
   { href: "#brain", label: "Night Guide" },
   { href: "#ingest", label: "Ingest" },
@@ -442,11 +451,14 @@ export function ApiDocsPage({ origin }: { origin: string }) {
       <header className="sticky top-0 z-10 border-b border-border/80 bg-ivory/95 backdrop-blur supports-[backdrop-filter]:bg-ivory/80">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-teal">Budapest Night</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-teal">
+              Budapest Night · API v{API_VERSION}
+            </p>
             <h1 className="font-display text-xl font-bold sm:text-2xl">HTTP API reference</h1>
             <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-              Catalog, Night Guide AI, machine ingest, and admin endpoints. All paths are relative to your deployment (for
-              example <span className="font-mono text-foreground/80">{base}</span>).
+              Catalog, Night Guide AI, machine ingest, and admin endpoints (app package{" "}
+              <span className="font-mono text-foreground/80">v{API_VERSION}</span>). Paths are relative to your deployment
+              (for example <span className="font-mono text-foreground/80">{base}</span>).
             </p>
           </div>
           <div className="flex flex-wrap gap-2 text-sm">
@@ -507,7 +519,43 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <strong>Ingest</strong> is intended for servers, ETL jobs, or trusted partners — never expose{" "}
                 <code className="font-mono">INGEST_API_KEY</code> in client-side code.
               </li>
+              <li>
+                <strong>Prices</strong> are stored in HUF on providers and menu items; the web app reads{" "}
+                <code className="font-mono">currencyRates</code> from <code className="font-mono">GET /api/public/site</code> for EUR/USD display.
+              </li>
             </ul>
+          </Section>
+
+          <Section id="urls" title="Venue &amp; event URLs (web app)">
+            <p>
+              These paths are implemented by the Next.js app (not separate JSON resources). They open the venue sheet or a
+              shareable full page and accept either a <strong>canonical slug</strong> or a legacy key.
+            </p>
+            <ul className="list-inside list-disc space-y-2 text-foreground/90">
+              <li>
+                <code className="font-mono">/venue/{"{slug}"}</code> — venue profile (query <code className="font-mono">?from=venues|events|…</code> controls back navigation).
+              </li>
+              <li>
+                <code className="font-mono">/venue/{"{slug}"}/full</code> — full-page venue layout with share chrome.
+              </li>
+              <li>
+                <code className="font-mono">/event/{"{slug}"}</code> and <code className="font-mono">/event/{"{slug}"}/full</code> — timed event profiles.
+              </li>
+              <li>
+                Locale prefix optional: <code className="font-mono">/hu/venue/budapest-park</code> uses Hungarian copy; slug resolution checks all locales.
+              </li>
+            </ul>
+            <p>
+              <strong>Canonical slugs</strong> must not embed the wrong Budapest district (e.g. use{" "}
+              <code className="font-mono">budapest-park</code> for the Ferencváros open-air park, not{" "}
+              <code className="font-mono">prov-budapest-park-obuda</code>). Set{" "}
+              <code className="font-mono">locales.en.slug</code> on ingest; logic lives in{" "}
+              <code className="font-mono">src/lib/venueSlug.ts</code>. Legacy <code className="font-mono">prov-*</code> URL segments still resolve but the app redirects to the canonical slug.
+            </p>
+            <p>
+              Timed events link to hosts via <code className="font-mono">venueIds</code> (internal ids). The venue UI lists upcoming events whose{" "}
+              <code className="font-mono">venueIds</code> include that provider.
+            </p>
           </Section>
 
           <Section id="public" title="Public catalog (read)">
@@ -522,7 +570,9 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                   <strong>Query:</strong> <code className="font-mono">locale</code> — optional{" "}
                   <code className="font-mono">en</code> | <code className="font-mono">hu</code> | <code className="font-mono">es</code> |{" "}
                   <code className="font-mono">it</code> | <code className="font-mono">he</code> | <code className="font-mono">ar</code> (overlays{" "}
-                  <code className="font-mono">locales[locale]</code> on name, descriptions, slug).
+                  <code className="font-mono">locales[locale]</code> on name, descriptions, and slug). Public venue links should use{" "}
+                  <code className="font-mono">locales.en.slug</code> when set, otherwise the canonical slug algorithm in{" "}
+                  <code className="font-mono">getCanonicalVenueSlug()</code> — not raw internal ids in marketing URLs.
                 </p>
                 <p className="text-muted-foreground">
                   <strong>503</strong> if the database is not configured.
@@ -613,7 +663,8 @@ export function ApiDocsPage({ origin }: { origin: string }) {
               <EndpointCard method="GET" path="/api/public/site" auth="None">
                 <p>
                   Returns the marketing shell document for <code className="font-mono">_id: &quot;main&quot;</code>, or merged defaults
-                  when missing.
+                  when missing. Includes <code className="font-mono">currencyRates</code> ({`{ hufPerEur, hufPerUsd }`}) used by the header
+                  currency switcher (HUF is canonical in Mongo provider/event documents).
                 </p>
                 <CodeBlock title="Shape (SiteDoc)">{SITE_DOC}</CodeBlock>
               </EndpointCard>
@@ -677,7 +728,8 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <code className="font-mono">hu</code>, <code className="font-mono">es</code>, <code className="font-mono">it</code>,{" "}
                 <code className="font-mono">he</code>, and <code className="font-mono">ar</code> (each with{" "}
                 <code className="font-mono">name</code>, <code className="font-mono">shortDescription</code>,{" "}
-                <code className="font-mono">longDescription</code>, <code className="font-mono">slug</code>). Public reads accept{" "}
+                <code className="font-mono">longDescription</code>, <code className="font-mono">slug</code>). Also set{" "}
+                <code className="font-mono">locales.en.slug</code> to the district-neutral canonical URL segment. Public reads accept{" "}
                 <code className="font-mono">?locale=</code> on providers and events. See{" "}
                 <code className="font-mono">src/lib/curator/localeIngestRules.ts</code> and{" "}
                 <code className="font-mono">src/lib/curator/eventLocaleIngestRules.ts</code>.
