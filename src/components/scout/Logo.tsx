@@ -23,7 +23,7 @@ export function Logo({
       <div
         className={cn(
           "relative shrink-0 overflow-hidden bg-black",
-          isBundledLogo ? "rounded-lg" : "rounded-full ring-2 ring-accent/50",
+          isBundledLogo ? "rounded-lg" : "rounded-full ring-2 ring-border",
         )}
         style={{ width: size, height: size }}
       >
@@ -31,15 +31,22 @@ export function Logo({
           src={src}
           alt={t("brand")}
           fill
-          className={cn("object-center", isBundledLogo ? "object-contain p-1" : "object-cover")}
+          className={cn(
+            "object-center",
+            isBundledLogo ? "object-contain p-1" : "object-cover",
+          )}
           sizes={`${size}px`}
           priority={isBundledLogo}
         />
       </div>
       {withWordmark && (
         <div className="leading-tight">
-          <div className="font-display text-lg font-bold tracking-widest text-sidebar-foreground">Budapest</div>
-          <div className="font-display text-[11px] font-semibold tracking-[0.35em] text-accent">NIGHT</div>
+          <div className="font-display text-lg font-bold tracking-widest text-sidebar-foreground">
+            Budapest
+          </div>
+          <div className="font-display text-[11px] font-semibold tracking-[0.35em] text-primary">
+            NIGHT
+          </div>
         </div>
       )}
     </div>

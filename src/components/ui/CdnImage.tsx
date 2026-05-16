@@ -31,7 +31,7 @@ export function CdnImage({ src, resolveBase, className, alt, fill, style, ...img
     return (
       <div
         className={cn(
-          "grid place-items-center bg-gradient-to-br from-[hsl(280_50%_12%)] via-card to-[hsl(260_50%_8%)] text-muted-foreground",
+          "grid place-items-center bg-muted text-muted-foreground",
           fill && "absolute inset-0 size-full",
           className,
         )}

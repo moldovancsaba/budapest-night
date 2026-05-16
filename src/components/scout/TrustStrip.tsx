@@ -9,7 +9,7 @@ export function TrustStrip() {
   const pillars = useTrustPillars();
 
   return (
-    <section className={cn("mt-12 p-8 neon-border", CYBER_PANEL)}>
+    <section className={cn("mt-12 p-8", CYBER_PANEL)}>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {pillars.map((pillar) => (
           <div key={pillar.title} className="flex items-start gap-3">
@@ -22,8 +22,12 @@ export function TrustStrip() {
               <SiteLucideIcon name={pillar.icon} className="h-5 w-5" />
             </div>
             <div>
-              <p className="font-display text-sm font-semibold text-foreground">{pillar.title}</p>
-              <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{pillar.desc}</p>
+              <p className="font-display text-sm font-semibold text-foreground">
+                {pillar.title}
+              </p>
+              <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                {pillar.desc}
+              </p>
             </div>
           </div>
         ))}

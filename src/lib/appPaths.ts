@@ -1,11 +1,14 @@
 import type { AppLocale } from "@/i18n/config";
 import type { ViewKey } from "@/components/scout/Sidebar";
 import { getVenuePathKey } from "@/lib/providerLocale";
+import { getEventPathKey } from "@/lib/eventLocale";
 import type { Borough, BoroughChoice, Category, Provider } from "@/types/provider";
+import type { NightEvent } from "@/types/event";
 
 /** URL path segment (no leading slash, no locale). */
 export type AppSection =
   | "home"
+  | "venues"
   | "events"
   | "parties"
   | "restaurants"
@@ -17,10 +20,11 @@ export type AppSection =
   | "split"
   | "account";
 
-export const DISCOVER_SECTIONS: AppSection[] = ["events", "parties", "restaurants", "cafes"];
+export const DISCOVER_SECTIONS: AppSection[] = ["venues", "parties", "restaurants", "cafes"];
 
 const VIEW_TO_SECTION: Record<ViewKey, AppSection> = {
   Home: "home",
+  Venues: "venues",
   Events: "events",
   Parties: "parties",
   Restaurants: "restaurants",
@@ -36,6 +40,7 @@ const VIEW_TO_SECTION: Record<ViewKey, AppSection> = {
 
 const SECTION_TO_VIEW: Record<AppSection, ViewKey> = {
   home: "Home",
+  venues: "Venues",
   events: "Events",
   parties: "Parties",
   restaurants: "Restaurants",
@@ -49,7 +54,7 @@ const SECTION_TO_VIEW: Record<AppSection, ViewKey> = {
 };
 
 const CATEGORY_TO_SECTION: Record<Category, AppSection> = {
-  Events: "events",
+  Venues: "venues",
   Parties: "parties",
   Restaurants: "restaurants",
   Cafés: "cafes",
@@ -70,6 +75,7 @@ const SLUG_TO_BOROUGH = Object.fromEntries(
 ) as Record<string, Borough>;
 
 const KNOWN_SECTIONS = new Set<string>([
+  "venues",
   "events",
   "parties",
   "restaurants",
@@ -94,7 +100,8 @@ export interface AppRoute {
   venueId: string | null;
   groupId: string | null;
   tourId: string | null;
-  /** Section to return to when closing a venue sheet (from `?from=`). */
+  eventId: string | null;
+  /** Section to return to when closing a venue/event sheet (from `?from=`). */
   fromSection: AppSection;
   invalid: boolean;
 }
@@ -144,7 +151,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
   const location = parseLocation(search);
 
   if (segments[0] === "venue" && segments[1]) {
-    const fromSection = parseFromSection(search, "events");
+    const fromSection = parseFromSection(search, "venues");
     return {
       view: sectionToView(fromSection),
       section: fromSection,
@@ -152,6 +159,22 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       venueId: decodeURIComponent(segments[1]),
       groupId: null,
       tourId: null,
+      eventId: null,
+      fromSection,
+      invalid: false,
+    };
+  }
+
+  if (segments[0] === "event" && segments[1]) {
+    const fromSection = parseFromSection(search, "events");
+    return {
+      view: "Events",
+      section: "events",
+      location,
+      venueId: null,
+      groupId: null,
+      tourId: null,
+      eventId: decodeURIComponent(segments[1]),
       fromSection,
       invalid: false,
     };
@@ -166,6 +189,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       venueId: null,
       groupId: null,
       tourId: decodeURIComponent(segments[1]),
+      eventId: null,
       fromSection: "eat-drink",
       invalid: false,
     };
@@ -179,6 +203,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       venueId: null,
       groupId: decodeURIComponent(segments[1]),
       tourId: null,
+      eventId: null,
       fromSection: "culture",
       invalid: false,
     };
@@ -192,6 +217,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       venueId: null,
       groupId: null,
       tourId: null,
+      eventId: null,
       fromSection: "home",
       invalid: false,
     };
@@ -206,6 +232,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       venueId: null,
       groupId: null,
       tourId: null,
+      eventId: null,
       fromSection: "home",
       invalid: true,
     };
@@ -219,6 +246,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     venueId: null,
     groupId: null,
     tourId: null,
+    eventId: null,
     fromSection: appSection,
     invalid: false,
   };
@@ -259,7 +287,7 @@ export function buildVenuePath(
     typeof providerOrKey === "string"
       ? providerOrKey
       : getVenuePathKey(providerOrKey, options?.locale);
-  const from = options?.from ?? "events";
+  const from = options?.from ?? "venues";
   const params = new URLSearchParams();
   params.set("from", from);
   const loc = options?.location;
@@ -272,6 +300,23 @@ export function buildVenuePath(
 
 export function buildGroupPath(groupId: string): string {
   return `/group/${encodeURIComponent(groupId)}`;
+}
+
+export function buildEventPath(
+  eventOrKey: NightEvent | string,
+  options?: { from?: AppSection; location?: LocationFilter; locale?: AppLocale },
+): string {
+  const key =
+    typeof eventOrKey === "string" ? eventOrKey : getEventPathKey(eventOrKey, options?.locale);
+  const from = options?.from ?? "events";
+  const params = new URLSearchParams();
+  params.set("from", from);
+  const loc = options?.location;
+  if (loc?.borough && loc.borough !== "All") {
+    params.set("borough", boroughToSlug(loc.borough));
+    if (loc.neighborhood) params.set("hood", loc.neighborhood);
+  }
+  return `/event/${encodeURIComponent(key)}?${params.toString()}`;
 }
 
 export function tourSeedFromSearch(search: URLSearchParams): string | null {

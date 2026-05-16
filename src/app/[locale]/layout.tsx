@@ -66,7 +66,12 @@ export default async function LocaleLayout({
   const dir = isRtlLocale(locale) ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} className={`${orbitron.variable} ${rajdhani.variable}`}>
+    <html
+      lang={locale}
+      dir={dir}
+      suppressHydrationWarning
+      className={`${orbitron.variable} ${rajdhani.variable}`}
+    >
       <body>
         <NextIntlClientProvider messages={messages}>
           <Providers>{children}</Providers>

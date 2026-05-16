@@ -56,6 +56,7 @@ export type HomeCopy = {
   exploreCta: string;
   categories: {
     events: { description: string };
+    venues: { description: string };
     parties: { description: string };
     restaurants: { description: string };
     cafes: { description: string };

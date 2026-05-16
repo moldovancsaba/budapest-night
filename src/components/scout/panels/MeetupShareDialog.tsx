@@ -1,4 +1,10 @@
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, Link2 } from "lucide-react";
 import type { MeetupGroup } from "@/types/meetup";
@@ -8,7 +14,13 @@ import { buildAbsoluteGroupUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
 import { useVenueLocationLine } from "@/hooks/useVenueDisplay";
 
-export function MeetupShareDialog({ group, onClose }: { group: MeetupGroup | null; onClose: () => void }) {
+export function MeetupShareDialog({
+  group,
+  onClose,
+}: {
+  group: MeetupGroup | null;
+  onClose: () => void;
+}) {
   const locale = useLocale() as AppLocale;
   const t = useTranslations("meetup");
   const tv = useTranslations("venue");
@@ -21,7 +33,9 @@ export function MeetupShareDialog({ group, onClose }: { group: MeetupGroup | nul
     <Dialog open={!!group} onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-display">{t("shareTitle", { name: group.name })}</DialogTitle>
+          <DialogTitle className="font-display">
+            {t("shareTitle", { name: group.name })}
+          </DialogTitle>
           <DialogDescription>{t("shareDescription")}</DialogDescription>
         </DialogHeader>
         <div className="space-y-2">
@@ -39,7 +53,12 @@ export function MeetupShareDialog({ group, onClose }: { group: MeetupGroup | nul
           <Button
             variant="outline"
             className="w-full justify-start"
-            onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(summary + " " + url)}`, "_blank")}
+            onClick={() =>
+              window.open(
+                `https://wa.me/?text=${encodeURIComponent(summary + " " + url)}`,
+                "_blank",
+              )
+            }
           >
             <MessageCircle className="h-4 w-4" /> {tv("shareWhatsapp")}
           </Button>

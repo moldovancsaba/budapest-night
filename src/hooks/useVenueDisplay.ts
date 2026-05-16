@@ -19,8 +19,8 @@ const DISTRICT_KEY: Record<Exclude<Borough, never>, string> = {
   Újbuda: "ujbuda",
 };
 
-const CATEGORY_KEY: Record<Category, "events" | "parties" | "restaurants" | "cafes"> = {
-  Events: "events",
+const CATEGORY_KEY: Record<Category, "venues" | "parties" | "restaurants" | "cafes"> = {
+  Venues: "venues",
   Parties: "parties",
   Restaurants: "restaurants",
   Cafés: "cafes",
@@ -80,11 +80,11 @@ export function useFormatVenuePrice() {
     const n = provider.pricePerClass;
     if (n === 0) {
       if (provider.category === "Parties") return { main: t("freeEntry") };
-      if (provider.category === "Events") return { main: t("free"), suffix: t("perTicket") };
+      if (provider.category === "Venues") return { main: t("free"), suffix: t("perTicket") };
       return { main: t("priceVaries") };
     }
     const suffix =
-      provider.category === "Events"
+      provider.category === "Venues"
         ? t("perTicket")
         : provider.category === "Parties"
           ? t("perCover")
@@ -138,7 +138,7 @@ export function usePreferenceOptionLabel() {
   return (option: string) => {
     if (option === "Culture") return tNav("culture");
     if (activityTypeMessageKey(option)) return activityLabel(option);
-    const categories: Category[] = ["Events", "Parties", "Restaurants", "Cafés"];
+    const categories: Category[] = ["Venues", "Parties", "Restaurants", "Cafés"];
     if (categories.includes(option as Category)) return categoryLabel(option as Category);
     const ages: AgeRange[] = ["All ages", "Family", "18+", "21+", "Late night"];
     if (ages.includes(option as AgeRange)) return ageLabel(option as AgeRange);

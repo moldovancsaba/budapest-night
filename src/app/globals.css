@@ -11,98 +11,133 @@
   --tw-translate-x: 100%;
 }
 
-/* Budapest Night — cyberpunk neon design system (HSL tokens). */
+/* Budapest Night — flat monochrome + red accent. */
 
 @layer base {
   :root {
-    --background: 260 45% 6%;
-    --foreground: 180 100% 95%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6%;
 
-    --card: 260 40% 10%;
-    --card-foreground: 180 100% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 6%;
 
-    --popover: 260 40% 11%;
-    --popover-foreground: 180 100% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
 
-    --primary: 310 100% 62%;
-    --primary-foreground: 260 45% 6%;
+    --primary: 358 92% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 260 30% 16%;
-    --secondary-foreground: 180 80% 90%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 12%;
 
-    --muted: 260 25% 18%;
-    --muted-foreground: 260 15% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 42%;
 
-    --accent: 180 100% 50%;
-    --accent-foreground: 260 45% 6%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 100%;
 
-    --teal: 180 100% 50%;
-    --teal-foreground: 260 45% 6%;
-    --teal-soft: 180 60% 12%;
+    --teal: 358 92% 48%;
+    --teal-foreground: 0 0% 100%;
+    --teal-soft: 0 0% 96%;
 
-    --orange: 310 100% 62%;
-    --orange-foreground: 260 45% 6%;
-    --orange-soft: 310 80% 14%;
+    --orange: 358 92% 48%;
+    --orange-foreground: 0 0% 100%;
+    --orange-soft: 0 0% 96%;
 
-    --beige: 260 30% 16%;
-    --ivory: 260 45% 8%;
+    --beige: 0 0% 94%;
+    --ivory: 0 0% 99%;
 
-    --destructive: 0 85% 58%;
+    --destructive: 358 92% 48%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 280 40% 22%;
-    --input: 280 35% 20%;
-    --ring: 180 100% 50%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 358 92% 48%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 260 50% 5%;
-    --sidebar-foreground: 180 90% 92%;
-    --sidebar-primary: 310 100% 62%;
-    --sidebar-primary-foreground: 260 45% 6%;
-    --sidebar-accent: 280 45% 14%;
-    --sidebar-accent-foreground: 180 100% 95%;
-    --sidebar-border: 280 40% 18%;
-    --sidebar-ring: 180 100% 50%;
+    --sidebar-background: 0 0% 99%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 358 92% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 6%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 358 92% 48%;
 
-    --shadow-card: 0 0 24px hsl(310 100% 50% / 0.12), 0 8px 32px -8px hsl(0 0% 0% / 0.5);
-    --shadow-elevated: 0 0 40px hsl(180 100% 50% / 0.15), 0 16px 48px -12px hsl(0 0% 0% / 0.6);
-    --gradient-warm: linear-gradient(135deg, hsl(280 50% 12%), hsl(260 45% 6%));
-    --gradient-neon: linear-gradient(90deg, hsl(310 100% 62%), hsl(180 100% 50%));
     --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 260 45% 6%;
-    --foreground: 180 100% 95%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 358 90% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 92%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 62%;
+
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 6%;
+
+    --teal: 358 90% 52%;
+    --teal-foreground: 0 0% 100%;
+    --teal-soft: 0 0% 12%;
+
+    --orange: 358 90% 52%;
+    --orange-foreground: 0 0% 100%;
+    --orange-soft: 0 0% 12%;
+
+    --beige: 0 0% 12%;
+    --ivory: 0 0% 6%;
+
+    --destructive: 358 90% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 358 90% 52%;
+
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 94%;
+    --sidebar-primary: 358 90% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 358 90% 52%;
   }
 }
 
 @layer base {
-  * { @apply border-border; }
-  html { font-family: var(--font-rajdhani), system-ui, sans-serif; }
+  * {
+    @apply border-border;
+  }
+  html {
+    font-family: var(--font-rajdhani), system-ui, sans-serif;
+  }
   body {
     @apply bg-background text-foreground antialiased;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, hsl(310 100% 50% / 0.15), transparent),
-      radial-gradient(ellipse 60% 40% at 100% 50%, hsl(180 100% 50% / 0.08), transparent);
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-orbitron), system-ui, sans-serif;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-  }
-  /* Legacy light panels — force dark surfaces in marketing views */
-  .bg-ivory,
-  .bg-\[hsl\(24_45\%_94\%\)\],
-  .bg-\[hsl\(36_35\%_94\%\)\],
-  .bg-\[hsl\(340_70\%_96\%\)\],
-  .bg-\[hsl\(340_70\%_94\%\)\],
-  .bg-\[hsl\(140_40\%_92\%\)\],
-  .bg-\[hsl\(40_90\%_92\%\)\],
-  .bg-\[hsl\(210_80\%_94\%\)\] {
-    background-color: hsl(var(--card)) !important;
-    color: hsl(var(--foreground)) !important;
   }
 }
 
@@ -111,17 +146,11 @@
     font-family: var(--font-orbitron), system-ui, sans-serif;
     letter-spacing: 0.06em;
   }
-  .shadow-card { box-shadow: var(--shadow-card); }
-  .shadow-elevated { box-shadow: var(--shadow-elevated); }
-  .neon-text {
-    background: var(--gradient-neon);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
-  .neon-border {
-    box-shadow: 0 0 12px hsl(180 100% 50% / 0.35), inset 0 0 12px hsl(310 100% 62% / 0.08);
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 }

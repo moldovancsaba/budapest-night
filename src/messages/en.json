@@ -17,6 +17,7 @@
     "yourNight": "Your night",
     "home": "Home",
     "events": "Events",
+    "venues": "Venues",
     "parties": "Parties",
     "restaurants": "Restaurants",
     "cafes": "Cafés",
@@ -125,7 +126,7 @@
     "tagline": "Curated. Local. Built for nights out.",
     "findByArea": "Find {blurb} by district and neighborhood.",
     "heroAlt": {
-      "Events": "Live concert and festival crowd in Budapest",
+      "Venues": "Concert halls, clubs, and cultural spaces in Budapest",
       "Parties": "DJ and nightclub crowd in Budapest",
       "Restaurants": "Restaurant dining room in Budapest",
       "Cafés": "Café terrace and coffee culture in Budapest"
@@ -141,11 +142,38 @@
     "loadErrorTitle": "Can't load listings",
     "loadErrorMessage": "Check MONGODB_URI and your network. The API returned an error.",
     "blurb": {
-      "Events": "concerts, festivals, boat parties, and rooftops",
+      "Venues": "concert halls, clubs, galleries, and event spaces",
       "Parties": "ruin bars, clubs, DJ nights, and late parties",
       "Restaurants": "bistros, fine dining, and Danube-side tables",
       "Cafés": "coffee, brunch, dessert bars, and all-day hangouts"
     }
+  },
+  "timedEvents": {
+    "eyebrow": "What's on",
+    "title": "Events in Budapest",
+    "subtitle": "Concerts, festivals, and ticketed happenings with real dates and times — linked to their host venues.",
+    "heroAlt": "Live concert crowd in Budapest",
+    "featured": "Featured",
+    "results": "{count, plural, one {# event} other {# events}}",
+    "resultsIn": "{count, plural, one {# event} other {# events}} in {district}",
+    "noMatches": "No upcoming events",
+    "noMatchesHint": "Try another district or check back after new listings are ingested.",
+    "loading": "Loading events…",
+    "loadErrorTitle": "Can't load events",
+    "loadErrorMessage": "Check MONGODB_URI and your network. The API returned an error."
+  },
+  "event": {
+    "viewEvent": "View event",
+    "close": "Close",
+    "doorsOpen": "Doors open {time}",
+    "fromPrice": "From {price}",
+    "freeEntry": "Free entry",
+    "priceTba": "Price TBA",
+    "entryFees": "Tickets & admission",
+    "getTickets": "Get tickets",
+    "officialSite": "Official page",
+    "venues": "Host venues",
+    "venuesHint": "This happening takes place at these Budapest locations."
   },
   "saved": {
     "title": "Saved venues",
@@ -302,7 +330,10 @@
     "exploreCta": "Explore",
     "categories": {
       "events": {
-        "description": "Concerts, festivals, boat parties, rooftops & late-night happenings"
+        "description": "Dated concerts, festivals & ticketed shows with start and end times"
+      },
+      "venues": {
+        "description": "Concert halls, clubs, galleries & spaces that host the night"
       },
       "parties": {
         "description": "Clubs, ruin bars, DJ sets, themed nights & weekend blowouts"

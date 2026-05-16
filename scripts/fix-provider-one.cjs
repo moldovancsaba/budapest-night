@@ -237,13 +237,13 @@ async function main() {
   let imgPath = path.join(assetDir, `fixed-${slug}.jpg`);
 
   const localFixed = path.join(assetDir, `fixed-${slug}.jpg`);
-  const localCov = path.join(assetDir, `cov-cov-${slug}.jpg`);
   let usedUrl;
-  if (fix.localImagePath && fs.existsSync(fix.localImagePath)) {
+  const preferRemote = Boolean(fix.imageSource && !fix.reuseImageFrom);
+  if (!preferRemote && fix.localImagePath && fs.existsSync(fix.localImagePath)) {
     fs.copyFileSync(fix.localImagePath, imgPath);
     usedUrl = fix.localImagePath;
     console.log("Using local file:", fix.localImagePath);
-  } else if (fs.existsSync(localFixed) && isValidImageBuffer(fs.readFileSync(localFixed))) {
+  } else if (!preferRemote && fs.existsSync(localFixed) && isValidImageBuffer(fs.readFileSync(localFixed))) {
     const sz = fs.statSync(localFixed).size;
     if (sz > 100000) {
       fs.copyFileSync(localFixed, imgPath);

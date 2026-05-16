@@ -35,7 +35,7 @@
         "rating": 0,
         "reviewCount": 0,
         "badges": [],
-        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "image": "https://i.ibb.co/Kpyx9mmZ/2155f8eae581.jpg",
         "email": "info@3dcafe.hu",
         "website": "https://www.3dcafe.hu/",
         "phone": "+36 1 388 1234",
@@ -72,7 +72,8 @@
           }
         },
         "gapKey": "Restaurants|Óbuda|Aquincum",
-        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg",
+        "menuTags": null
       }
     }
   ]

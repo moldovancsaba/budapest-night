@@ -9,8 +9,15 @@ import type { BoroughChoice } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import { MapPin, Users, Loader2 } from "lucide-react";
 import { CdnImage } from "@/components/ui/CdnImage";
-import { useMeetupGroupsCatalog, useNeighborhoodsCatalog, useSiteCatalog } from "@/hooks/useCatalog";
-import { useDistrictLabel, useNeighborhoodLabel } from "@/hooks/useVenueDisplay";
+import {
+  useMeetupGroupsCatalog,
+  useNeighborhoodsCatalog,
+  useSiteCatalog,
+} from "@/hooks/useCatalog";
+import {
+  useDistrictLabel,
+  useNeighborhoodLabel,
+} from "@/hooks/useVenueDisplay";
 import { cultureDiscoverHero } from "@/config/defaultMedia";
 import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
@@ -53,7 +60,7 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin text-accent" />
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
         <p className="text-sm">{t("loading")}</p>
       </div>
     );
@@ -71,20 +78,24 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
 
   return (
     <div className="space-y-8">
-      <section className={cn("relative overflow-hidden neon-border", CYBER_PANEL)}>
+      <section className={cn("relative overflow-hidden", CYBER_PANEL)}>
         <div className="relative grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">{t("pageEyebrow")}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              {t("pageEyebrow")}
+            </p>
             <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl">
-              <span className="neon-text">
+              <span className="text-foreground">
                 {t("heroTitleLine1")}
                 <br />
                 {t("heroTitleLine2")}
               </span>
             </h1>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">{t("subtitle")}</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+              {t("subtitle")}
+            </p>
           </div>
-          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-accent/20 ring-1 ring-primary/20 md:block">
+          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-primary/20 md:block">
             <CdnImage
               fill
               src={cultureDiscoverHero(site?.cultureHeroUrl)}
@@ -103,22 +114,39 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
           }}
         />
         {borough !== "All" && (
-          <NeighborhoodChips options={hoodOptions} value={neighborhood} onChange={setNeighborhood} />
+          <NeighborhoodChips
+            options={hoodOptions}
+            value={neighborhood}
+            onChange={setNeighborhood}
+          />
         )}
       </section>
 
       <section>
         <div className="mb-4 flex items-baseline justify-between">
-          <h2 className="font-display text-xl font-semibold text-foreground">{listTitle}</h2>
-          <span className="text-sm text-muted-foreground">{t("groupCount", { count: filtered.length })}</span>
+          <h2 className="font-display text-xl font-semibold text-foreground">
+            {listTitle}
+          </h2>
+          <span className="text-sm text-muted-foreground">
+            {t("groupCount", { count: filtered.length })}
+          </span>
         </div>
 
         {filtered.length === 0 ? (
-          <EmptyState icon={MapPin} title={t("filterEmptyTitle")} message={t("filterEmptyMessage")} />
+          <EmptyState
+            icon={MapPin}
+            title={t("filterEmptyTitle")}
+            message={t("filterEmptyMessage")}
+          />
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {filtered.map((g) => (
-              <MeetupGroupCard key={g.id} group={g} onOpen={onOpen} onShare={onShare} />
+              <MeetupGroupCard
+                key={g.id}
+                group={g}
+                onOpen={onOpen}
+                onShare={onShare}
+              />
             ))}
           </div>
         )}

@@ -6,14 +6,22 @@ import { useDistrictLabel } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
-export function BoroughBar({ value, onChange }: { value: BoroughChoice; onChange: (b: BoroughChoice) => void }) {
+export function BoroughBar({
+  value,
+  onChange,
+}: {
+  value: BoroughChoice;
+  onChange: (b: BoroughChoice) => void;
+}) {
   const t = useTranslations("district");
   const districtLabel = useDistrictLabel();
   const choices: BoroughChoice[] = ["All", ...BOROUGHS];
 
   return (
     <div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t("label")}</p>
+      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        {t("label")}
+      </p>
       <div className="flex flex-wrap gap-2">
         {choices.map((b) => {
           const active = value === b;
@@ -25,8 +33,8 @@ export function BoroughBar({ value, onChange }: { value: BoroughChoice; onChange
               className={cn(
                 "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
                 active
-                  ? "border-accent bg-accent text-accent-foreground neon-border"
-                  : "border-border bg-card text-foreground hover:border-accent hover:text-accent",
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-foreground hover:border-primary hover:text-primary",
               )}
               aria-pressed={active}
             >

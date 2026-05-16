@@ -12,6 +12,7 @@ describe("appPaths", () => {
   it("maps home and sections", () => {
     expect(parseAppRoute("/", new URLSearchParams()).view).toBe("Home");
     expect(parseAppRoute("/events", new URLSearchParams()).view).toBe("Events");
+    expect(parseAppRoute("/venues", new URLSearchParams()).view).toBe("Venues");
     expect(parseAppRoute("/cafes", new URLSearchParams()).view).toBe("Cafés");
     expect(parseAppRoute("/culture", new URLSearchParams()).view).toBe("Meet-Up Groups");
     expect(parseAppRoute("/budget", new URLSearchParams()).view).toBe("Calculator");

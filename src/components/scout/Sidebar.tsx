@@ -14,6 +14,7 @@ import {
   Home,
   UserCircle,
   Wine,
+  Building2,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -25,6 +26,7 @@ import type { Category } from "@/types/provider";
 
 export type ViewKey =
   | Category
+  | "Events"
   | "Saved"
   | "Calculator"
   | "Split Check"
@@ -44,12 +46,18 @@ type NavItem = {
 const EXPLORE_ITEMS: NavItem[] = [
   { key: "Home", labelKey: "home", icon: Home },
   { key: "Events", labelKey: "events", icon: CalendarDays },
+  { key: "Venues", labelKey: "venues", icon: Building2 },
   { key: "Parties", labelKey: "parties", icon: PartyPopper },
   { key: "Restaurants", labelKey: "restaurants", icon: UtensilsCrossed },
   { key: "Cafés", labelKey: "cafes", icon: Coffee },
   { key: "Meet-Up Groups", labelKey: "culture", icon: Palette },
   { key: "Eat & Drink", labelKey: "eatDrink", icon: Wine },
-  { key: "Scout AI Assistant", labelKey: "nightGuide", icon: Bot, disabled: true },
+  {
+    key: "Scout AI Assistant",
+    labelKey: "nightGuide",
+    icon: Bot,
+    disabled: true,
+  },
 ];
 
 const NIGHT_ITEMS: NavItem[] = [
@@ -71,11 +79,17 @@ const navLinkClass = (isActive: boolean) =>
   cn(
     "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
     isActive
-      ? "bg-primary text-primary-foreground shadow-[0_0_16px_hsl(310_100%_62%_/_0.35)]"
-      : "text-sidebar-foreground/85 hover:bg-sidebar-accent hover:text-accent",
+      ? "bg-primary text-primary-foreground"
+      : "text-sidebar-foreground/85 hover:bg-sidebar-accent hover:text-foreground",
   );
 
-export function Sidebar({ active, mobileOpen, onCloseMobile, logoUrl, sidebarPromo }: Props) {
+export function Sidebar({
+  active,
+  mobileOpen,
+  onCloseMobile,
+  logoUrl,
+  sidebarPromo,
+}: Props) {
   const t = useTranslations("nav");
   const ts = useTranslations("sidebar");
 
@@ -111,12 +125,18 @@ export function Sidebar({ active, mobileOpen, onCloseMobile, logoUrl, sidebarPro
   return (
     <>
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm lg:hidden" onClick={onCloseMobile} aria-hidden />
+        <div
+          className="fixed inset-0 z-40 bg-background lg:hidden"
+          onClick={onCloseMobile}
+          aria-hidden
+        />
       )}
       <aside
         className={cn(
           "fixed inset-y-0 start-0 z-50 flex w-72 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground transition-transform duration-300 lg:sticky lg:top-0 lg:h-screen lg:translate-x-0",
-          mobileOpen ? "translate-x-0" : "-translate-x-full rtl:translate-x-full",
+          mobileOpen
+            ? "translate-x-0"
+            : "-translate-x-full rtl:translate-x-full",
         )}
       >
         <div className="flex items-center justify-between p-6">
@@ -138,14 +158,18 @@ export function Sidebar({ active, mobileOpen, onCloseMobile, logoUrl, sidebarPro
         </div>
 
         <nav className="flex-1 px-4 py-2" aria-label="Main">
-          <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent/80">{t("explore")}</p>
+          <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+            {t("explore")}
+          </p>
           <ul className="space-y-1">{renderItems(EXPLORE_ITEMS)}</ul>
 
-          <p className="px-3 pb-2 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-accent/80">{t("yourNight")}</p>
+          <p className="px-3 pb-2 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+            {t("yourNight")}
+          </p>
           <ul className="space-y-1">{renderItems(NIGHT_ITEMS)}</ul>
         </nav>
 
-        <div className="m-4 rounded-2xl border border-accent/20 bg-sidebar-accent p-5 neon-border">
+        <div className="m-4 rounded-2xl border border-primary/20 bg-sidebar-accent p-5">
           <p className="font-display text-sm font-semibold text-sidebar-foreground">
             {sidebarPromo?.title ?? ts("listVenueTitle")}
           </p>
@@ -155,7 +179,7 @@ export function Sidebar({ active, mobileOpen, onCloseMobile, logoUrl, sidebarPro
           <Button
             size="sm"
             variant="secondary"
-            className="mt-3 w-full border border-accent/30 bg-accent/10 text-accent hover:bg-accent/20"
+            className="mt-3 w-full border border-primary bg-primary text-primary-foreground hover:bg-primary/90"
           >
             {sidebarPromo?.cta ?? ts("listVenueCta")}
           </Button>

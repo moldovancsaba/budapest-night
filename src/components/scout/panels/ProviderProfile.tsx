@@ -1,7 +1,21 @@
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import type { Provider } from "@/types/provider";
-import { Heart, Plus, Mail, Globe, Phone, MapPin, Star, MessageCircle, Megaphone, X, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Heart,
+  Plus,
+  Mail,
+  Globe,
+  Phone,
+  MapPin,
+  Star,
+  MessageCircle,
+  Megaphone,
+  X,
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { useMemo, useState } from "react";
 import { useSaved, useCalculator } from "@/store/useScout";
 import { toast } from "sonner";
@@ -72,11 +86,19 @@ export function ProviderProfile({
 
   const saved = isSaved(provider.id);
   const price = formatPrice(provider);
-  const current = gallery.length > 0 ? gallery[Math.min(photoIdx, gallery.length - 1)] : undefined;
+  const current =
+    gallery.length > 0
+      ? gallery[Math.min(photoIdx, gallery.length - 1)]
+      : undefined;
 
-  const similar = allProviders.filter(
-    (p) => p.id !== provider.id && p.borough === provider.borough && p.category === provider.category,
-  ).slice(0, 3);
+  const similar = allProviders
+    .filter(
+      (p) =>
+        p.id !== provider.id &&
+        p.borough === provider.borough &&
+        p.category === provider.category,
+    )
+    .slice(0, 3);
 
   const shareUrl = buildAbsoluteVenueUrl(provider, locale);
 
@@ -93,32 +115,45 @@ export function ProviderProfile({
 
   return (
     <Sheet open={!!provider} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent side="right" className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background">
+      <SheetContent
+        side="right"
+        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
+      >
         <div className="relative h-64 w-full overflow-hidden">
-          <CdnImage fill resolveBase={provider.website} src={current} alt={provider.name} />
+          <CdnImage
+            fill
+            resolveBase={provider.website}
+            src={current}
+            alt={provider.name}
+          />
           {provider.badges[0] && (
-            <span className="absolute left-5 top-5 rounded-full bg-teal px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-teal-foreground">
+            <span className="absolute left-5 top-5 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
               {badgeLabel(provider.badges[0])}
             </span>
           )}
           {gallery.length > 1 && (
             <>
               <button
-                onClick={() => setPhotoIdx((i) => (i - 1 + gallery.length) % gallery.length)}
+                onClick={() =>
+                  setPhotoIdx((i) => (i - 1 + gallery.length) % gallery.length)
+                }
                 aria-label={t("prevPhoto")}
-                className="absolute left-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card/95 shadow-sm backdrop-blur hover:bg-card"
+                className="absolute left-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card hover:bg-card"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={() => setPhotoIdx((i) => (i + 1) % gallery.length)}
                 aria-label={t("nextPhoto")}
-                className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card/95 shadow-sm backdrop-blur hover:bg-card"
+                className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card hover:bg-card"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
               <span className="absolute right-3 top-3 rounded-full bg-foreground/70 px-2.5 py-1 text-[11px] font-semibold text-background">
-                {t("photoCounter", { current: photoIdx + 1, total: gallery.length })}
+                {t("photoCounter", {
+                  current: photoIdx + 1,
+                  total: gallery.length,
+                })}
               </span>
               <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
                 {gallery.map((_, i) => (
@@ -128,7 +163,7 @@ export function ProviderProfile({
                     aria-label={t("goToPhoto", { n: i + 1 })}
                     className={cn(
                       "h-2 rounded-full transition-all",
-                      i === photoIdx ? "w-6 bg-teal" : "w-2 bg-card/80",
+                      i === photoIdx ? "w-6 bg-primary" : "w-2 bg-card/80",
                     )}
                   />
                 ))}
@@ -139,14 +174,18 @@ export function ProviderProfile({
 
         <div className="space-y-6 p-6 pb-12">
           {provider.announcementTitle && bannerOpen && (
-            <div className="flex items-start gap-3 rounded-2xl border border-teal/30 bg-teal-soft p-4">
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-teal/15 text-teal">
+            <div className="flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/10 p-4">
+              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
                 <Megaphone className="h-4 w-4" />
               </div>
               <div className="flex-1">
-                <p className="font-display text-sm font-semibold text-foreground">{provider.announcementTitle}</p>
+                <p className="font-display text-sm font-semibold text-foreground">
+                  {provider.announcementTitle}
+                </p>
                 {provider.announcementDescription && (
-                  <p className="mt-0.5 text-xs text-muted-foreground">{provider.announcementDescription}</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {provider.announcementDescription}
+                  </p>
                 )}
               </div>
               <button
@@ -168,59 +207,92 @@ export function ProviderProfile({
                   aria-label={t("viewPhoto", { n: i + 1 })}
                   className={cn(
                     "relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-all",
-                    i === photoIdx ? "border-teal" : "border-transparent opacity-70 hover:opacity-100",
+                    i === photoIdx
+                      ? "border-primary"
+                      : "border-transparent opacity-70 hover:opacity-100",
                   )}
                 >
-                  <CdnImage fill resolveBase={provider.website} src={src} alt={`${provider.name} photo ${i + 1}`} />
+                  <CdnImage
+                    fill
+                    resolveBase={provider.website}
+                    src={src}
+                    alt={`${provider.name} photo ${i + 1}`}
+                  />
                 </button>
               ))}
             </div>
           )}
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">{categoryLabel(provider.category)}</p>
-            <h2 className="mt-1 font-display text-2xl font-bold text-foreground">{provider.name}</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              {categoryLabel(provider.category)}
+            </p>
+            <h2 className="mt-1 font-display text-2xl font-bold text-foreground">
+              {provider.name}
+            </h2>
             <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
               <MapPin className="h-4 w-4" />
               {provider.address}
             </p>
             <div className="mt-3 flex items-center gap-3 text-sm">
               <span className="flex items-center gap-1">
-                <Star className="h-4 w-4 fill-orange text-orange" />
-                <span className="font-semibold text-foreground">{provider.rating}</span>
-                <span className="text-muted-foreground">{t("reviewsCount", { count: provider.reviewCount })}</span>
+                <Star className="h-4 w-4 fill-primary text-primary" />
+                <span className="font-semibold text-foreground">
+                  {provider.rating}
+                </span>
+                <span className="text-muted-foreground">
+                  {t("reviewsCount", { count: provider.reviewCount })}
+                </span>
               </span>
               <span className="text-border">|</span>
               <span className="font-display text-base">
-                <span className="font-bold text-orange">{price.main}</span>
-                {price.suffix && <span className="text-xs text-muted-foreground">{price.suffix}</span>}
+                <span className="font-bold text-primary">{price.main}</span>
+                {price.suffix && (
+                  <span className="text-xs text-muted-foreground">
+                    {price.suffix}
+                  </span>
+                )}
               </span>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-2">
             {provider.activityTypes.map((tag) => (
-              <span key={tag} className="rounded-full bg-teal-soft px-3 py-1 text-xs font-medium text-teal">
+              <span
+                key={tag}
+                className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+              >
                 {activityLabel(tag)}
               </span>
             ))}
             {provider.ageRanges.map((a) => (
-              <span key={a} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+              <span
+                key={a}
+                className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
+              >
                 {ageLabel(a)}
               </span>
             ))}
             {provider.dayTimeTags.map((d) => (
-              <span key={d} className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+              <span
+                key={d}
+                className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
+              >
                 {dayLabel(d)}
               </span>
             ))}
           </div>
 
-          <p className="text-sm leading-relaxed text-foreground/85">{provider.longDescription}</p>
+          <p className="text-sm leading-relaxed text-foreground/85">
+            {provider.longDescription}
+          </p>
 
-          {(provider.menu?.sections?.length || (provider.eventOfferings?.length ?? 0) > 0) && (
+          {(provider.menu?.sections?.length ||
+            (provider.eventOfferings?.length ?? 0) > 0) && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">{tMenu("title")}</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">
+                {tMenu("title")}
+              </h3>
               <div className="mt-3">
                 <VenueMenuPanel provider={provider} />
               </div>
@@ -253,7 +325,9 @@ export function ProviderProfile({
                 toast.success(saved ? t("removed") : t("saved"));
               }}
             >
-              <Heart className={cn("h-4 w-4", saved && "fill-orange text-orange")} />
+              <Heart
+                className={cn("h-4 w-4", saved && "fill-primary text-primary")}
+              />
               {saved ? t("saved") : t("save")}
             </Button>
             <Button variant="outline" onClick={shareEmail}>
@@ -265,16 +339,32 @@ export function ProviderProfile({
           </div>
 
           <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">{t("contactVenue")}</h3>
+            <h3 className="font-display text-sm font-semibold text-foreground">
+              {t("contactVenue")}
+            </h3>
             <div className="mt-3 space-y-2 text-sm">
-              <a href={`mailto:${provider.email}`} className="flex items-center gap-2 text-foreground hover:text-teal">
-                <Mail className="h-4 w-4 text-muted-foreground" /> {provider.email}
+              <a
+                href={`mailto:${provider.email}`}
+                className="flex items-center gap-2 text-foreground hover:text-primary"
+              >
+                <Mail className="h-4 w-4 text-muted-foreground" />{" "}
+                {provider.email}
               </a>
-              <a href={provider.website} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-foreground hover:text-teal">
-                <Globe className="h-4 w-4 text-muted-foreground" /> {provider.website}
+              <a
+                href={provider.website}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-foreground hover:text-primary"
+              >
+                <Globe className="h-4 w-4 text-muted-foreground" />{" "}
+                {provider.website}
               </a>
-              <a href={`tel:${provider.phone}`} className="flex items-center gap-2 text-foreground hover:text-teal">
-                <Phone className="h-4 w-4 text-muted-foreground" /> {provider.phone}
+              <a
+                href={`tel:${provider.phone}`}
+                className="flex items-center gap-2 text-foreground hover:text-primary"
+              >
+                <Phone className="h-4 w-4 text-muted-foreground" />{" "}
+                {provider.phone}
               </a>
             </div>
           </div>
@@ -283,10 +373,17 @@ export function ProviderProfile({
 
           {similar.length > 0 && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">{t("moreNearby")}</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">
+                {t("moreNearby")}
+              </h3>
               <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {similar.map((p) => (
-                  <ProviderCard key={p.id} provider={p} onOpen={onOpenAnother} onShare={onShare} />
+                  <ProviderCard
+                    key={p.id}
+                    provider={p}
+                    onOpen={onOpenAnother}
+                    onShare={onShare}
+                  />
                 ))}
               </div>
             </div>

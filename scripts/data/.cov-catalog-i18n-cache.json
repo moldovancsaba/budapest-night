@@ -1,0 +1,296 @@
+{
+  "prov-cov-cafe-corvin:hu": {
+    "name": "Café Frei Corvin",
+    "short": "Lánc specialitás kávézó a Corvin sétányon — eszpresszó, szendvicsek és laptopbarát ülőalkalmatosság.",
+    "long": "A Corvin sétányon található Café Frei megbízható kávékülönlegességeket és könnyű ételeket kínál a Corvin-negyed bevásárlóutcában. A reggeli ingázók és a diákok megtöltik az asztalokat a mozibemutatók előtt. A cafefrei.hu oldalon felsorolt helyszínek.\n\nSources: https://www.cafefrei.hu/",
+    "slug": "cafe-corvin-hu"
+  },
+  "prov-cov-cafe-corvin:es": {
+    "name": "Café Frei Corvin",
+    "short": "Cadena de cafeterías especializadas en Corvin sétány: café espresso, sándwiches y asientos aptos para portátiles.",
+    "long": "Café Frei en Corvin sétány ofrece café de especialidad confiable y comidas ligeras en el pasaje de compras de Corvin-negyed. Los viajeros de la mañana y los estudiantes llenan las mesas antes de los espectáculos de cine. Ubicaciones listadas en cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+    "slug": "cafe-corvin-es"
+  },
+  "prov-cov-cafe-corvin:it": {
+    "name": "Café Frei Corvin",
+    "short": "Catena di caffè specializzati su Corvin sétány: espresso, panini e posti a sedere adatti ai laptop.",
+    "long": "Il Café Frei su Corvin sétány offre caffè di specialità affidabili e pasti leggeri nel passaggio dello shopping negazionista di Corvin. Pendolari mattutini e studenti riempiono i tavoli prima degli spettacoli cinematografici. Località elencate su cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+    "slug": "cafe-corvin-it"
+  },
+  "prov-cov-cafe-corvin:he": {
+    "name": "קפה פריי קורבין",
+    "short": "בית קפה מיוחד בשרשרת ב — Corvin sétány — אספרסו, כריכים ומקומות ישיבה מותאמים למחשב נייד.",
+    "long": "Café Frei ב - Corvin sétány מציע קפה אמין וארוחות קלות במסעדת Corvin negyed shopping. נוסעים לעבודה בבוקר וסטודנטים ממלאים את השולחנות לפני הופעות בקולנוע. מיקומים רשומים ב - cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+    "slug": "cafe-corvin-he"
+  },
+  "prov-cov-cafe-corvin:ar": {
+    "name": "مقهى فراي كورفين",
+    "short": "مقهى Chain Specialty في Corvin sétány — إسبرسو وسندويشات ومقاعد مناسبة للكمبيوتر المحمول.",
+    "long": "يقدم مقهى فراي في كورفين سيتاني قهوة متخصصة موثوقة ووجبات خفيفة في ممر التسوق المخصص لكورفين. يملأ المسافرون والطلاب في الصباح الطاولات قبل العروض السينمائية. المواقع المدرجة في cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+    "slug": "cafe-corvin-ar"
+  },
+  "prov-cov-lucky-luciano:hu": {
+    "name": "Lucky Luciano Coffee",
+    "short": "Különleges kávé a Baross utcában — eszpresszó bár a Műegyetem és a Kálvin téri folyósón.",
+    "long": "A Lucky Luciano Coffee a Baross utcában, a Műegyetem metróállomástól sétatávolságra pörköli és szolgálja fel a harmadik hullámú eszpresszót. A kompakt üzlet egy tanulmánybarát megálló péksüteményekkel és szűrőopciókkal. Órák a luckyluciano.hu-n.\n\nSources: https://luckyluciano.hu/",
+    "slug": "lucky-luciano-hu"
+  },
+  "prov-cov-lucky-luciano:es": {
+    "name": "Lucky Luciano Coffee",
+    "short": "Café de especialidad en Baross utca — barra de café espresso que sirve el pasillo de M ?egyetem y Kálvin tér.",
+    "long": "Lucky Luciano Coffee tuesta y sirve café espresso de tercera ola en Baross utca a poca distancia del metro de Müegyetem. La tienda compacta es una parada apta para el estudio con opciones de pastelería y filtro. Horas en luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+    "slug": "lucky-luciano-es"
+  },
+  "prov-cov-lucky-luciano:it": {
+    "name": "Lucky Luciano Coffee",
+    "short": "Caffè d'eccellenza su Baross utca — espresso bar che serve il corridoio Mếegyetem e Kálvin tér.",
+    "long": "Lucky Luciano Coffee arrostisce e serve caffè espresso della terza ondata su Baross utca a pochi passi dalla metropolitana di M obesegyetem. Il negozio compatto è una tappa adatta allo studio con pasticcini e opzioni di filtro. Ore su luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+    "slug": "lucky-luciano-it"
+  },
+  "prov-cov-lucky-luciano:he": {
+    "name": "קפה לאקי לוצ'יאנו",
+    "short": "קפה מיוחד בברוס אוטקה — אספרסו בר המגיש את פרוזדור מויג'טם וקלווין טר.",
+    "long": "קפה לאקי לוצ'יאנו (Lucky Luciano Coffee) צולה ומגיש אספרסו בגל השלישי בבארוס אוטקה (Baross utca) במרחק הליכה ממטרו מוגיטם (MÍegyetem). החנות הקומפקטית היא תחנת עצירה ידידותית למחקר עם מאפים ואפשרויות סינון. שעות על luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+    "slug": "lucky-luciano-he"
+  },
+  "prov-cov-lucky-luciano:ar": {
+    "name": "قهوة لاكي لوتشيانو",
+    "short": "قهوة خاصة على باروس أوتكا — بار إسبريسو يقدم ممر ميجيتيم وكالفن تير.",
+    "long": "تحمص قهوة لاكي لوتشيانو وتقدم إسبريسو الموجة الثالثة في باروس أوتكا على بعد مسافة قصيرة سيرًا على الأقدام من مترو ميجيتيم. المتجر الصغير هو محطة مناسبة للدراسة مع خيارات المعجنات والفلتر. ساعات على luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+    "slug": "lucky-luciano-ar"
+  },
+  "prov-cov-csendes-nagy:hu": {
+    "name": "Csendes",
+    "short": "Art ruin kávézó a Magyar utcában — szobrok, eszpresszó és esti italok Ferenciek közelében.",
+    "long": "A Csendes a Magyar utcában nappali kávézóként és esti romkocsmaként is funkcionál, tele talált műalkotásokkal. Kreatív zseb a Nagytemplom utca és a Dunai sétány között. Események a csendes.com oldalon.\n\nSources: https://www.csendes.com/",
+    "slug": "csendes-nagy-hu"
+  },
+  "prov-cov-csendes-nagy:es": {
+    "name": "Csendes",
+    "short": "Art ruin café en Magyar utca: esculturas, espresso y bebidas nocturnas cerca de Ferenciek.",
+    "long": "Csendes on Magyar utca también funciona como cafetería diurna y bar en ruinas por la noche repleto de esculturas de arte encontrado. Es un bolsillo creativo entre Nagytemplom utca y el paseo marítimo del Danubio. Eventos en csendes.com.\n\nSources: https://www.csendes.com/",
+    "slug": "csendes-nagy-es"
+  },
+  "prov-cov-csendes-nagy:it": {
+    "name": "Csendes",
+    "short": "Caffè d'arte in rovina sull'utca magiara: sculture, caffè espresso e drink serali vicino a Ferenciek.",
+    "long": "Csendes su Magyar utca funge anche da caffè diurno e bar in rovina serale pieno di sculture d'arte. È una tasca creativa tra Nagytemplom utca e il lungomare del Danubio. Eventi su csendes.com.\n\nSources: https://www.csendes.com/",
+    "slug": "csendes-nagy-it"
+  },
+  "prov-cov-csendes-nagy:he": {
+    "name": "Csendes",
+    "short": "בית קפה להריסת אמנות באוטקה מגיאר — פסלים, אספרסו ומשקאות ערב ליד פרנצ'יק.",
+    "long": "Csendes on Magyar utca משמש גם כבית קפה בשעות היום ובר להריסות בערב, המלא בפסלי אמנות. זהו כיס יצירתי בין Nagytemplom utca לטיילת הדנובה. אירועים ב -csendes.com.\n\nSources: https://www.csendes.com/",
+    "slug": "csendes-nagy-he"
+  },
+  "prov-cov-csendes-nagy:ar": {
+    "name": "Csendes",
+    "short": "مقهى Art ruin في Magyar utca — منحوتات وإسبريسو ومشروبات مسائية بالقرب من Ferenciek.",
+    "long": "يتضاعف Csendes on Magyar utca كمقهى نهاري وبار أطلال مسائي محشو بالمنحوتات التي تم العثور عليها. إنه جيب إبداعي بين Nagytemplom utca وكورنيش الدانوب. الأحداث على csendes.com.\n\nSources: https://www.csendes.com/",
+    "slug": "csendes-nagy-ar"
+  },
+  "prov-cov-embassy-balna:hu": {
+    "name": "Espresso Embassy Bálna",
+    "short": "Nagykövetségi kávékiárus Bálnában — különleges eszpresszó a Boráros folyóparti sétányon.",
+    "long": "Az Espresso Embassy bálnai egysége a márka pörkölt eszpresszóját szolgálja fel a bálnaépület és a Boráros téri sétány látogatóinak. A gyors kiszolgálás megfelel a piaci reggeleknek és a délutáni szüneteknek. Órák az espressoembassy.hu-n.\n\nSources: https://espressoembassy.hu/",
+    "slug": "embassy-balna-hu"
+  },
+  "prov-cov-embassy-balna:es": {
+    "name": "Espresso Embassy Bálna",
+    "short": "Quiosco de café Embassy en Bálna — espresso de especialidad en el paseo fluvial de Boráros.",
+    "long": "La unidad de Bálna de Espresso Embassy sirve el espresso tostado de la marca a los visitantes que recorren el edificio de las ballenas y el paseo marítimo de Boráros tér. El servicio rápido se adapta a las mañanas del mercado y a los descansos de la tarde. Horas en espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+    "slug": "embassy-balna-es"
+  },
+  "prov-cov-embassy-balna:it": {
+    "name": "Espresso Embassy Bálna",
+    "short": "Caffetteria Embassy a Bálna — espresso speciale sul lungomare di Boráros.",
+    "long": "L'unità Bálna di Espresso Embassy serve l'espresso tostato del marchio ai visitatori che visitano l'edificio delle balene e il lungomare di Boráros tér. Il servizio rapido si adatta alle mattine del mercato e alle pause pomeridiane. Ore su espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+    "slug": "embassy-balna-it"
+  },
+  "prov-cov-embassy-balna:he": {
+    "name": "שגרירות אספרסו בלנה",
+    "short": "קיוסק קפה שגרירותי בבאלנה — אספרסו מיוחד בטיילת ריברסייד בוראוס.",
+    "long": "יחידת בלנה של שגרירות האספרסו מגישה את האספרסו הצלוי של המותג למבקרים המסיירים בבניין הלוויתנים ובטיילת בוראוס טר. שירות מהיר מתאים לבקרים בשוק ולחופשות אחר הצהריים. שעות על espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+    "slug": "embassy-balna-he"
+  },
+  "prov-cov-embassy-balna:ar": {
+    "name": "إسبريسو إمباسي بالنا",
+    "short": "كشك إمباسي للقهوة في بالنا — إسبرسو خاص على كورنيش بوراروس على ضفاف النهر.",
+    "long": "تقدم وحدة بالنا في سفارة إسبريسو الإسبريسو المحمص للعلامة التجارية للزوار الذين يقومون بجولة في مبنى الحيتان وممشى Boráros tér. خدمة سريعة تناسب صباح السوق واستراحات بعد الظهر. ساعات على espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+    "slug": "embassy-balna-ar"
+  },
+  "prov-cov-mom-cafe-mill:hu": {
+    "name": "MOM Eden Café",
+    "short": "Kávézó a MOM Kulturális Központban — kávé és sütemények a Csörsz utcai Millennium irodatornyok mellett.",
+    "long": "A MOM Kulturális Központban található MOM Eden Café reggelit és ebédet kínál a millenniumi negyed galériáinak és irodáinak látogatói számára. Az üvegátrium a dél-budai hegyekre néz. Órák a momkult.hu-n.\n\nSources: https://momkult.hu/",
+    "slug": "mom-cafe-mill-hu"
+  },
+  "prov-cov-mom-cafe-mill:es": {
+    "name": "MOM Eden Café",
+    "short": "Café en el Centro Cultural MOM: café y pasteles junto a las torres de oficinas Millennium en Csörsz utca.",
+    "long": "MOM Eden Café dentro del Centro Cultural MOM sirve desayuno y almuerzo a los visitantes de galerías y oficinas en el barrio del Milenio. El atrio de cristal da a las colinas del sur de Buda. Horas en momkult.hu.\n\nSources: https://momkult.hu/",
+    "slug": "mom-cafe-mill-es"
+  },
+  "prov-cov-mom-cafe-mill:it": {
+    "name": "MOM Eden Café",
+    "short": "Caffè nel Centro Culturale MOM — caffè e torte accanto alle torri degli uffici Millennium a Csörsz utca.",
+    "long": "MOM Eden Café all'interno del MOM Cultural Centre serve colazione e pranzo ai visitatori delle gallerie e degli uffici nel quartiere Millennium. L'atrio di vetro si affaccia sulle colline meridionali di Buda. Ore su momkult.hu.\n\nSources: https://momkult.hu/",
+    "slug": "mom-cafe-mill-it"
+  },
+  "prov-cov-mom-cafe-mill:he": {
+    "name": "קפה אמא עדן",
+    "short": "בית קפה במרכז התרבות MOM — קפה ועוגות ליד מגדלי המשרדים של Millennium ב - Csörsz utca.",
+    "long": "קפה אמא עדן בתוך מרכז התרבות של אמא מגיש ארוחת בוקר וארוחת צהריים למבקרים בגלריות ובמשרדים ברובע המילניום. פרוזדור הזכוכית משקיף על גבעות בודה הדרומיות. שעות על momkult.hu.\n\nSources: https://momkult.hu/",
+    "slug": "mom-cafe-mill-he"
+  },
+  "prov-cov-mom-cafe-mill:ar": {
+    "name": "مقهى موم إيدن",
+    "short": "مقهى في المركز الثقافي MOM — قهوة وكعك بجانب أبراج مكاتب Millennium في Csörsz utca.",
+    "long": "يقدم مقهى موم إيدن داخل مركز موم الثقافي وجبة الإفطار والغداء لزوار المعارض والمكاتب في ربع الألفية. يطل الردهة الزجاجية على تلال بودا الجنوبية. ساعات على momkult.hu.\n\nSources: https://momkult.hu/",
+    "slug": "mom-cafe-mill-ar"
+  },
+  "prov-cov-ruszwurm-castle:hu": {
+    "name": "Ruszwurm Confectionery",
+    "short": "A Várnegyed legrégebbi kávézója — klasszikus torták és kávé 1827 óta a Szentháromság utcában.",
+    "long": "A Szentháromság utcai Ruszwurm 1827 óta szolgál fel süteményeket és kávét egy kis Várnegyed szalonban. Várakozási sorok a kéménytortához és az eszpresszóhoz a közeli Mátyás-templomból nyíló kilátással. Órák a ruszwurm.hu-n.\n\nSources: https://www.ruszwurm.hu/",
+    "slug": "ruszwurm-castle-hu"
+  },
+  "prov-cov-ruszwurm-castle:es": {
+    "name": "Ruszwurm Confectionery",
+    "short": "Cafetería más antigua del distrito del Castillo: tortas clásicas y café desde 1827 en Szentháromság utca.",
+    "long": "Ruszwurm en Szentháromság utca ha servido pasteles y café desde 1827 en un pequeño salón de Castle District. Espera colas para tomar pastel de chimenea y café expreso con vistas a la iglesia de Matthias cerca. Horas en ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+    "slug": "ruszwurm-castle-es"
+  },
+  "prov-cov-ruszwurm-castle:it": {
+    "name": "Ruszwurm Confectionery",
+    "short": "La caffetteria più antica del quartiere del castello — classici tortini e caffè dal 1827 su Szentháromság utca.",
+    "long": "Ruszwurm su Szentháromság utca serve torte e caffè dal 1827 in un minuscolo salone del distretto del castello. Aspettatevi code per la torta al camino e l'espresso con vista sulla Chiesa di Matthias nelle vicinanze. Ore su ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+    "slug": "ruszwurm-castle-it"
+  },
+  "prov-cov-ruszwurm-castle:he": {
+    "name": "Ruszwurm Confectionery",
+    "short": "בית הקפה העתיק ביותר במחוז קאסל — טורטיות קלאסיות וקפה מאז 1827 ב - Szentháromság utca.",
+    "long": "Ruszwurm on Szentháromság utca מגישה עוגות וקפה מאז 1827 בסלון קטן במחוז קאסל. צפו לתורים לעוגת ארובה ולאספרסו עם נוף לכנסייה של מתיאס בקרבת מקום. שעות על ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+    "slug": "ruszwurm-castle-he"
+  },
+  "prov-cov-ruszwurm-castle:ar": {
+    "name": "حلويات روسزورم",
+    "short": "أقدم مقهى في منطقة القلعة — الكعك الكلاسيكي والقهوة منذ عام 1827 في Szentháromság utca.",
+    "long": "يقدم Ruszwurm في Szentháromság utca الكعك والقهوة منذ عام 1827 في صالون صغير في Castle District. توقع طوابير لكعكة المدخنة والإسبريسو مع إطلالات على كنيسة ماتياس في مكان قريب. ساعات على ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+    "slug": "ruszwurm-castle-ar"
+  },
+  "prov-cov-gellert-cafe:hu": {
+    "name": "Gellért Café",
+    "short": "Art-nouveau kávézó a Hotel Gellértben — kávé, sütemények és fürdőszünetek a Szent Gellért téren.",
+    "long": "A Danubius Hotel Gellértben található Gellért Kávéház szecessziós belső tereket kínál a híres termálfürdők kávézóinak lépcsőivel. A szálloda vendégei és a túrázók megosztják a lobbiszalont. Részletek a danubiusgellert.com oldalon.\n\nSources: https://www.danubiusgellert.com/",
+    "slug": "gellert-cafe-hu"
+  },
+  "prov-cov-gellert-cafe:es": {
+    "name": "Gellért Café",
+    "short": "Cafetería modernista en el Hotel Gellért: café, pasteles y escapadas de spa en Szent Gellért tér.",
+    "long": "Gellért Café dentro del Danubius Hotel Gellért ofrece interiores modernistas con servicio de café a pasos de los famosos baños termales. Los huéspedes del hotel y los excursionistas comparten el salón del vestíbulo. Detalles en danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+    "slug": "gellert-cafe-es"
+  },
+  "prov-cov-gellert-cafe:it": {
+    "name": "Gellért Café",
+    "short": "Caffè Art Nouveau nell'Hotel Gellért: caffè, torte e pause benessere al Szent Gellért tér.",
+    "long": "Gellért Café all'interno del Danubius Hotel Gellért offre interni in stile liberty con servizio di caffè a pochi passi dalle famose terme. Gli ospiti dell'hotel e gli escursionisti condividono il salone della hall. Dettagli su danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+    "slug": "gellert-cafe-it"
+  },
+  "prov-cov-gellert-cafe:he": {
+    "name": "Gellért Café",
+    "short": "בית קפה בסגנון אר — נובו במלון גלרט — קפה, עוגות וחופשות לימי ספא בסנט גלרט טר.",
+    "long": "Gellért Café בתוך מלון Danubius Gellért מציע חללי פנים בסגנון אר - נובו עם מדרגות שירות קפה מהמרחצאות התרמיים המפורסמים. אורחי המלון והמטיילים חולקים את סלון הלובי. פרטים באתר danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+    "slug": "gellert-cafe-he"
+  },
+  "prov-cov-gellert-cafe:ar": {
+    "name": "Gellért Café",
+    "short": "مقهى Art - noveau في فندق Gellért — استراحات القهوة والكعك والسبا في Szent Gellért tér.",
+    "long": "يقدم Gellért Café داخل فندق Danubius Hotel Gellért تصاميم داخلية حديثة مع درجات خدمة القهوة من الحمامات الحرارية الشهيرة. يتشارك نزلاء الفندق والمتنزهون في صالون الردهة. التفاصيل على danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+    "slug": "gellert-cafe-ar"
+  },
+  "prov-cov-varfok-taban:hu": {
+    "name": "Varfok Kávézó",
+    "short": "Hegyoldali kávézó a Varfok utcában — eszpresszó és sütemények a vár alatti Tabán sávokban.",
+    "long": "A Varfok utcában található Varfok Kávézó egy szomszédos kávézó, amely Tabántól a Várnegyed felé halad. Házi készítésű sütemények és filteres kávésruhás reggeli séták a budai lejtőkön. Órák a varfokkavezo.hu-n.\n\nSources: https://www.varfokkavezo.hu/",
+    "slug": "varfok-taban-hu"
+  },
+  "prov-cov-varfok-taban:es": {
+    "name": "Varfok Kávézó",
+    "short": "Cafetería en la ladera de Varfok utca: café expreso y pasteles en las calles de Tabán, debajo del castillo.",
+    "long": "Varfok Kávézó en Varfok utca es una parada de café de barrio que sube desde Tabán hacia el Distrito del Castillo. Pasteles caseros y paseos matutinos con traje de café con filtro por las laderas de Buda. Horas en varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+    "slug": "varfok-taban-es"
+  },
+  "prov-cov-varfok-taban:it": {
+    "name": "Varfok Kávézó",
+    "short": "Caffetteria in collina a Varfok utca: caffè espresso e torte nei vicoli Tabán sotto il Castello.",
+    "long": "Varfok Kávézó su Varfok utca è una fermata del caffè del quartiere che si arrampica da Tabán verso il quartiere del castello. Torte fatte in casa e tazze di caffè filtrate passeggiate mattutine sulle piste di Buda. Ore su varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+    "slug": "varfok-taban-it"
+  },
+  "prov-cov-varfok-taban:he": {
+    "name": "Varfok Kávézó",
+    "short": "בית קפה על הגבעה בוורפוק אוטקה — אספרסו ועוגות בנתיבי טבאן מתחת לטירה.",
+    "long": "Varfok Kávézó ב - Varfok utca היא תחנת קפה שכונתית המטפסת מטבאן לכיוון מחוז קאסל. עוגות ביתיות וחליפת קפה פילטר טיולי בוקר במורדות בודה. שעות על varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+    "slug": "varfok-taban-he"
+  },
+  "prov-cov-varfok-taban:ar": {
+    "name": "فارفوك كافيزو",
+    "short": "مقهى هيلسايد في فارفوك أوتكا — إسبرسو وكعك في ممرات تابان أسفل القلعة.",
+    "long": "Varfok Kávézó في Varfok utca هي محطة قهوة في الحي تتسلق من تابان نحو منطقة القلعة. يمشي الكعك المصنوع منزليًا وبذلة القهوة المرشحة صباحًا على منحدرات بودا. ساعات على varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+    "slug": "varfok-taban-ar"
+  },
+  "prov-cov-gloriett-cafe-rozsadomb:hu": {
+    "name": "Gloriett Café",
+    "short": "Reggeli kávézó a Rózsadombon — domboldali reggeli és eszpresszó budai panorámával a Török utcában.",
+    "long": "A Gloriett Café a Török utcában nyitja meg nappali óráit villásreggelivel és kávéval a Rózsadomb lakói és a túrázók számára. A teraszülések reggeli fényt kapnak a Dunakanyar félett. Órák a gloriett.hu-n.\n\nSources: https://www.gloriett.hu/cafe",
+    "slug": "gloriett-cafe-rozsadomb-hu"
+  },
+  "prov-cov-gloriett-cafe-rozsadomb:es": {
+    "name": "Gloriett Café",
+    "short": "Cafetería matutina en Rózsadomb: desayuno en la ladera y café expreso con panorama de Buda en Török utca.",
+    "long": "Gloriett Café abre durante el día en Török utca con platos de brunch y café para los residentes y excursionistas de Rózsadomb. Los asientos de la terraza reciben la luz de la mañana sobre la curva del Danubio. Horas en gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+    "slug": "gloriett-cafe-rozsadomb-es"
+  },
+  "prov-cov-gloriett-cafe-rozsadomb:it": {
+    "name": "Gloriett Café",
+    "short": "Caffetteria mattutina a Rózsadomb: colazione in collina ed espresso con panorama di Buda sull'utca di Török.",
+    "long": "Il Gloriett Café apre le ore diurne sull'utca di Török con piatti per il brunch e caffè per i residenti e gli escursionisti di Rózsadomb. I sedili della terrazza catturano la luce del mattino sopra l'ansa del Danubio. Ore su gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+    "slug": "gloriett-cafe-rozsadomb-it"
+  },
+  "prov-cov-gloriett-cafe-rozsadomb:he": {
+    "name": "קפה גלורייט",
+    "short": "קפה בוקר ברוזסאדומב - ארוחת בוקר על צלע ההר ואספרסו עם פנורמת בודה בטרוק אוטקה.",
+    "long": "קפה גלורייט פותח את שעות היום בטורק אוטקה עם צלחות בראנץ' וקפה לתושבי רוזאדומב ומטיילים. מושבי המרפסת תופסים אור בוקר מעל עיקול הדנובה. שעות על gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+    "slug": "gloriett-cafe-rozsadomb-he"
+  },
+  "prov-cov-gloriett-cafe-rozsadomb:ar": {
+    "name": "مقهى جلوريت",
+    "short": "مقهى الصباح في روزادومب — إفطار على التلال وإسبريسو مع بانوراما بودا على Török utca.",
+    "long": "يفتح مقهى Gloriett Café ساعات النهار في Török utca مع أطباق الغداء والقهوة لسكان Rózsadomb والمتنزهين. تلتقط مقاعد التراس ضوء الصباح فوق منحنى الدانوب. ساعات على gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+    "slug": "gloriett-cafe-rozsadomb-ar"
+  },
+  "prov-cov-ebner-gellert:hu": {
+    "name": "Ébner Confectionery",
+    "short": "Gellért téri családi cukrászda — sütemények és kávé a Bartók Béla úton a fürdő alatt.",
+    "long": "A Bartók Béla úti Ébner Cukrászda süteményekkel és eszpresszóval látja el a Szent Gellért tér és a fürdőkomplexum közelében élőket. Szezonális torták és dobozos ajándékok piknikezéshez alkalmasak a töltésen. Órák az ebnercukraszda.hu-n.\n\nSources: https://www.ebnercukraszda.hu/",
+    "slug": "ebner-gellert-hu"
+  },
+  "prov-cov-ebner-gellert:es": {
+    "name": "Ébner Confectionery",
+    "short": "Pastelería familiar de Gellért tér: pasteles y café en Bartók Béla út debajo del spa.",
+    "long": "Ébner Confectionery en Bartók Béla út suministra pasteles y café expreso a los lugareños cerca de Szent Gellért tér y del complejo del spa. Paseos de picnic con tortas de temporada y regalos en caja por el terraplén. Horas en ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+    "slug": "ebner-gellert-es"
+  },
+  "prov-cov-ebner-gellert:it": {
+    "name": "Ébner Confectionery",
+    "short": "Pasticceria familiare di Gellért tér — torte e caffè su Bartók Béla út sotto la spa.",
+    "long": "La pasticceria Ébner su Bartók Béla út fornisce torte ed espresso alla gente del posto vicino a Szent Gellért tér e al complesso termale. Le torte stagionali e i regali in scatola si adattano alle passeggiate al picnic sull'argine. Ore su ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+    "slug": "ebner-gellert-it"
+  },
+  "prov-cov-ebner-gellert:he": {
+    "name": "אבנר קונדיטוריה",
+    "short": "פטיסרי משפחתי של Gellért tér — עוגות וקפה ב - Bartók Béla út מתחת לספא.",
+    "long": "Ébner Confectionery on Bartók Béla út מספקת עוגות ואספרסו למקומיים ליד Szent Gellért tér ומתחם הספא. טורטיות עונתיות ומתנות ארוזות מתאימות לטיולי פיקניק על הסוללה. שעות על ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+    "slug": "ebner-gellert-he"
+  }
+}

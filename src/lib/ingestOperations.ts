@@ -1,7 +1,11 @@
 import type { AnyBulkWriteOperation, Db, Document } from "mongodb";
 import { COL } from "@/lib/mongodb";
 import type { Borough, Provider } from "@/types/provider";
+import type { NightEvent } from "@/types/event";
 import type { MeetupGroup } from "@/types/meetup";
+import { nightEventSchema } from "@/lib/eventSchema";
+import { mergeEventLocales } from "@/lib/eventLocale";
+import { validateEventLocalesForIngest } from "@/lib/curator/eventLocaleIngestRules";
 import type { BrainSettingsDoc, SiteDoc } from "@/types/site";
 import { DEFAULT_BRAIN } from "@/types/site";
 import { mergeSiteDocument } from "@/lib/siteMerge";
@@ -47,6 +51,21 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (typeof id !== "string" || !id) return { ok: false, error: "provider.get requires id string" };
     const doc = (await db.collection(COL.providers).findOne({ id })) as unknown as Provider | null;
     if (!doc) return { ok: false, error: "provider not found" };
+    return { ok: true, data: stripId(doc) };
+  }
+
+  if (resource === "events" && action === "list") {
+    const rows = (await db.collection(COL.events).find({}).toArray()) as unknown as (NightEvent & {
+      _id?: unknown;
+    })[];
+    return { ok: true, data: rows.map(stripId) };
+  }
+
+  if (resource === "event" && action === "get") {
+    const id = op.id;
+    if (typeof id !== "string" || !id) return { ok: false, error: "event.get requires id string" };
+    const doc = (await db.collection(COL.events).findOne({ id })) as unknown as NightEvent | null;
+    if (!doc) return { ok: false, error: "event not found" };
     return { ok: true, data: stripId(doc) };
   }
 
@@ -322,6 +341,47 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
       { $set: { ...rest, _id: "main" } },
       { upsert: true },
     );
+    return { ok: true };
+  }
+
+  if (resource === "event" && action === "upsert") {
+    const doc = op.document;
+    if (!isPlainObject(doc)) return { ok: false, error: "event.upsert requires document object" };
+    const parsed = nightEventSchema.safeParse(doc);
+    if (!parsed.success) return { ok: false, error: parsed.error.message };
+    const { _id, ...rest } = doc as unknown as NightEvent & { _id?: unknown };
+    if (!rest.id || typeof rest.id !== "string") return { ok: false, error: "event.document.id required" };
+    const imgErr = validateProviderImages({ image: rest.image, galleryImages: rest.galleryImages });
+    if (imgErr) return { ok: false, error: imgErr };
+    const localeErrs = validateEventLocalesForIngest(rest.locales, "event.document");
+    if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
+    await db.collection(COL.events).replaceOne({ id: rest.id }, parsed.data as unknown as Document, { upsert: true });
+    return { ok: true };
+  }
+
+  if (resource === "event" && action === "patch") {
+    const id = op.id;
+    if (typeof id !== "string" || !id) return { ok: false, error: "event.patch requires id string" };
+    const patchIn = op.patch;
+    if (!isPlainObject(patchIn)) return { ok: false, error: "event.patch requires patch object" };
+    const { id: _drop, ...patch } = patchIn as Partial<NightEvent> & { id?: string };
+    if (Object.keys(patch).length === 0) return { ok: false, error: "event.patch patch must not be empty" };
+    const cur = (await db.collection(COL.events).findOne({ id })) as unknown as NightEvent | null;
+    const merged: Partial<NightEvent> = { ...(cur ?? {}), ...patch };
+    if (patch.locales) merged.locales = mergeEventLocales(cur?.locales, patch.locales);
+    const imgErr = validateProviderImages({
+      image: merged.image,
+      galleryImages: merged.galleryImages,
+    });
+    if (imgErr) return { ok: false, error: imgErr };
+    await db.collection(COL.events).updateOne({ id }, { $set: patch });
+    return { ok: true };
+  }
+
+  if (resource === "event" && action === "delete") {
+    const id = op.id;
+    if (typeof id !== "string" || !id) return { ok: false, error: "event.delete requires id string" };
+    await db.collection(COL.events).deleteOne({ id });
     return { ok: true };
   }
 

@@ -27,11 +27,12 @@ require("./load-env.cjs");
 const fs = require("fs");
 const path = require("path");
 const { validateProviderLocalesForIngest } = require("./lib/provider-locale-ingest.cjs");
+const { validateEventLocalesForIngest } = require("./lib/event-locale-ingest.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
 
-const CATEGORIES = ["Events", "Parties", "Restaurants", "Cafés"];
+const CATEGORIES = ["Venues", "Parties", "Restaurants", "Cafés"];
 const BOROUGHS = ["Belváros", "Terézváros", "Erzsébetváros", "Ferencváros", "Buda", "Óbuda", "Újbuda"];
 const AGE_RANGES = ["All ages", "Family", "18+", "21+", "Late night"];
 const DAY_TAGS = ["Weekday", "Weekend", "Morning", "Afternoon", "Evening", "Late night"];
@@ -318,6 +319,32 @@ function validateMeetup(doc, idx) {
   return errors;
 }
 
+function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
+  const errors = [];
+  const p = `operations[${idx}] event`;
+  if (!doc || typeof doc !== "object") {
+    errors.push(`${p}: missing document`);
+    return errors;
+  }
+  mustString(doc, "id", errors);
+  mustString(doc, "title", errors);
+  mustString(doc, "startsAt", errors);
+  mustString(doc, "endsAt", errors);
+  if (!Array.isArray(doc.venueIds) || doc.venueIds.length === 0) errors.push(`${p}: venueIds required`);
+  mustString(doc, "borough", errors);
+  if (doc.borough && !BOROUGHS.includes(doc.borough)) errors.push(`${p}: invalid borough`);
+  mustString(doc, "neighborhood", errors);
+  if (!Array.isArray(doc.entryFees)) errors.push(`${p}: entryFees must be array`);
+  if (!Array.isArray(doc.ageRanges) || !doc.ageRanges.length) errors.push(`${p}: ageRanges required`);
+  if (!Array.isArray(doc.dayTimeTags) || !doc.dayTimeTags.length) errors.push(`${p}: dayTimeTags required`);
+  if (typeof doc.image !== "string") errors.push(`${p}: image must be string (empty ok)`);
+  else if (doc.image.trim() && !isImgBbHttpsImageUrl(doc.image)) errors.push(`${p}: image must be empty or https ImgBB`);
+  if (!skipLocaleCheck) {
+    errors.push(...validateEventLocalesForIngest(doc.locales, p));
+  }
+  return errors;
+}
+
 function validateOperations(operations, opts = {}) {
   const all = [];
   for (let i = 0; i < operations.length; i++) {
@@ -330,6 +357,7 @@ function validateOperations(operations, opts = {}) {
       all.push(...validateProvider(op.document, i, opts));
     }
     else if (op.resource === "meetupGroup" && op.action === "upsert") all.push(...validateMeetup(op.document, i));
+    else if (op.resource === "event" && op.action === "upsert") all.push(...validateEvent(op.document, i, opts));
     else if (op.action === "upsert") all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
   }
   return all;

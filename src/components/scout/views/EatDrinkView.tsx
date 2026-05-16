@@ -20,7 +20,12 @@ type MenuItemRow = {
   name: string;
   kind: string;
   tags: string[];
-  price: { amount: number; currency: string; unit?: string; source: string } | null;
+  price: {
+    amount: number;
+    currency: string;
+    unit?: string;
+    source: string;
+  } | null;
   providerId: string;
   providerName: string;
   category: string;
@@ -78,7 +83,10 @@ export function EatDrinkView({ onOpen }: Props) {
     void loadItems();
   }, [loadItems]);
 
-  const providerById = useMemo(() => new Map(providers.map((p) => [p.id, p])), [providers]);
+  const providerById = useMemo(
+    () => new Map(providers.map((p) => [p.id, p])),
+    [providers],
+  );
 
   const openRow = (row: MenuItemRow) => {
     const p = providerById.get(row.providerId);
@@ -87,33 +95,50 @@ export function EatDrinkView({ onOpen }: Props) {
 
   return (
     <div className="space-y-8">
-      <div className={cn("relative overflow-hidden rounded-3xl border border-border/80 p-8 sm:p-10", CYBER_PANEL)}>
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-3xl border border-border/80 p-8 sm:p-10",
+          CYBER_PANEL,
+        )}
+      >
         <div className="relative z-10 max-w-2xl">
-          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             <Wine className="h-4 w-4" />
             {t("eyebrow")}
           </p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-foreground sm:text-4xl">{t("title")}</h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("subtitle")}</p>
+          <h1 className="mt-2 font-display text-3xl font-bold text-foreground sm:text-4xl">
+            {t("title")}
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            {t("subtitle")}
+          </p>
         </div>
-        <Sparkles className="pointer-events-none absolute -right-4 top-4 h-32 w-32 text-accent/20" />
+        <Sparkles className="pointer-events-none absolute -right-4 top-4 h-32 w-32 text-primary/20" />
       </div>
 
       <section>
-        <h2 className="font-display text-lg font-semibold text-foreground">{t("toursTitle")}</h2>
-        <p className="mt-1 text-sm text-muted-foreground">{t("toursSubtitle")}</p>
+        <h2 className="font-display text-lg font-semibold text-foreground">
+          {t("toursTitle")}
+        </h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {t("toursSubtitle")}
+        </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
           {TOUR_TEMPLATES.map((tpl) => (
             <Link
               key={tpl.id}
               href={buildTourPath(tpl.id)}
-              className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-accent/50 hover:bg-accent/5"
+              className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-primary/50 hover:bg-primary/5"
             >
-              <p className="font-display text-base font-semibold text-foreground group-hover:text-accent">
+              <p className="font-display text-base font-semibold text-foreground group-hover:text-primary">
                 {t(`tours.${tpl.id}.title`)}
               </p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{t(`tours.${tpl.id}.description`)}</p>
-              <span className="mt-3 inline-block text-xs font-medium text-accent">{t("startTour")} →</span>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                {t(`tours.${tpl.id}.description`)}
+              </p>
+              <span className="mt-3 inline-block text-xs font-medium text-primary">
+                {t("startTour")} →
+              </span>
             </Link>
           ))}
         </div>
@@ -122,9 +147,13 @@ export function EatDrinkView({ onOpen }: Props) {
       <section className="space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="font-display text-lg font-semibold text-foreground">{t("browseTitle")}</h2>
+            <h2 className="font-display text-lg font-semibold text-foreground">
+              {t("browseTitle")}
+            </h2>
             <p className="text-sm text-muted-foreground">
-              {loading ? t("loading") : t("resultsCount", { shown: items.length, total })}
+              {loading
+                ? t("loading")
+                : t("resultsCount", { shown: items.length, total })}
             </p>
           </div>
           <div className="relative w-full sm:max-w-xs">
@@ -139,13 +168,25 @@ export function EatDrinkView({ onOpen }: Props) {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          <Button size="sm" variant={kind === null ? "default" : "outline"} onClick={() => setKind(null)}>
+          <Button
+            size="sm"
+            variant={kind === null ? "default" : "outline"}
+            onClick={() => setKind(null)}
+          >
             {t("filterAll")}
           </Button>
-          <Button size="sm" variant={kind === "food" ? "default" : "outline"} onClick={() => setKind("food")}>
+          <Button
+            size="sm"
+            variant={kind === "food" ? "default" : "outline"}
+            onClick={() => setKind("food")}
+          >
             {t("filterFood")}
           </Button>
-          <Button size="sm" variant={kind === "drink" ? "default" : "outline"} onClick={() => setKind("drink")}>
+          <Button
+            size="sm"
+            variant={kind === "drink" ? "default" : "outline"}
+            onClick={() => setKind("drink")}
+          >
             {t("filterDrink")}
           </Button>
         </div>
@@ -156,7 +197,9 @@ export function EatDrinkView({ onOpen }: Props) {
             onClick={() => setTag(null)}
             className={cn(
               "rounded-full px-3 py-1 text-xs font-medium transition",
-              tag === null ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+              tag === null
+                ? "bg-primary text-primary-foreground"
+                : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
             )}
           >
             {t("allTags")}
@@ -170,7 +213,9 @@ export function EatDrinkView({ onOpen }: Props) {
                 onClick={() => setTag(tg === tag ? null : tg)}
                 className={cn(
                   "rounded-full px-3 py-1 text-xs font-medium transition",
-                  tag === tg ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+                  tag === tg
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
                 )}
               >
                 {key ? tTag(key) : tg}
@@ -181,7 +226,7 @@ export function EatDrinkView({ onOpen }: Props) {
 
         {loading ? (
           <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-accent" />
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
         ) : items.length === 0 ? (
           <p className="rounded-2xl border border-dashed border-border py-12 text-center text-sm text-muted-foreground">
@@ -194,7 +239,13 @@ export function EatDrinkView({ onOpen }: Props) {
                 ? formatPrice({
                     amount: row.price.amount,
                     currency: row.price.currency as "HUF" | "EUR",
-                    unit: row.price.unit as "each" | "glass" | "bottle" | "portion" | "ticket" | undefined,
+                    unit: row.price.unit as
+                      | "each"
+                      | "glass"
+                      | "bottle"
+                      | "portion"
+                      | "ticket"
+                      | undefined,
                     source: row.price.source as "published" | "estimated",
                   })
                 : null;
@@ -203,7 +254,7 @@ export function EatDrinkView({ onOpen }: Props) {
                   <button
                     type="button"
                     onClick={() => openRow(row)}
-                    className="flex w-full flex-col rounded-2xl border border-border/70 bg-card/50 p-4 text-left transition hover:border-accent/40 hover:bg-card"
+                    className="flex w-full flex-col rounded-2xl border border-border/70 bg-card/50 p-4 text-left transition hover:border-primary/40 hover:bg-card"
                   >
                     <p className="font-medium text-foreground">{row.name}</p>
                     <p className="mt-1 text-xs text-muted-foreground">
@@ -217,7 +268,11 @@ export function EatDrinkView({ onOpen }: Props) {
                     {price ? (
                       <p className="mt-2 text-sm font-semibold text-primary">
                         {price.main}
-                        {price.suffix ? <span className="ml-1 text-xs font-normal text-muted-foreground">{price.suffix}</span> : null}
+                        {price.suffix ? (
+                          <span className="ml-1 text-xs font-normal text-muted-foreground">
+                            {price.suffix}
+                          </span>
+                        ) : null}
                       </p>
                     ) : null}
                   </button>

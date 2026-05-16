@@ -1,0 +1,207 @@
+{
+  "sourceUrls": [
+    "https://www.budapestpark.hu/index.php/en/events/moby-20260801",
+    "https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+  ],
+  "notes": "Test timed events (Moby, Sting 3.0) + MVM Dome venue + Budapest Park recategorized as Venues. Run migration script first if DB still has category Events.",
+  "missingOrUncertain": [
+    "Sting ticket prices vary by tier; entryFees use published on-sale reference only.",
+    "MVM Dome image uses Budapest arena placeholder until dedicated ImgBB asset is uploaded."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mvm-dome-ujbuda",
+        "name": "MVM Dome",
+        "category": "Venues",
+        "borough": "Újbuda",
+        "neighborhood": "Kelenföld",
+        "address": "1117 Budapest, Magyar tudósok körútja 3, Hungary",
+        "activityTypes": ["Live Music", "Festival"],
+        "ageRanges": ["All ages", "18+"],
+        "dayTimeTags": ["Evening", "Weekend"],
+        "pricePerClass": 0,
+        "shortDescription": "Major indoor arena in southern Pest — concerts and arena shows with published ticket tiers.",
+        "longDescription": "MVM Dome (formerly Budapest Arena) is a large indoor venue in Újbuda used for international concert tours. Check the official promoter or venue listings for door times, seated and standing zones, and on-sale windows.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "email": "",
+        "website": "https://www.livenation.hu",
+        "phone": "",
+        "locales": {
+          "hu": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Nagy beltéri aréna dél-Pesten — koncertturnék és jegyek a hivatalos oldalon.",
+            "longDescription": "Az MVM Dome (korábban Budapest Aréna) nagy beltéri helyszín Újbudán, nemzetközi koncertturnék számára. A kapunyitás és jegyárak a promoter oldalán.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "es": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Gran arena cubierta en el sur de Pest — giras y entradas en la web oficial.",
+            "longDescription": "MVM Dome es una gran sala cubierta en Újbuda para giras internacionales. Horarios de puerta y precios en el promotor.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "it": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Grande arena indoor a Pest sud — tour e biglietti sul sito ufficiale.",
+            "longDescription": "MVM Dome è una grande arena coperta a Újbuda per concerti internazionali. Orari e prezzi sul promoter.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "he": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "אולם מקורה גדול בדרום פשט — הופעות וכרטיסים באתר הרשמי.",
+            "longDescription": "MVM Dome הוא אולם מקורה גדול ב-Újbuda להופעות בינלאומיות. שעות פתיחה ומחירים אצל המארגן.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "ar": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "ساحة داخلية كبيرة في جنوب بودابست — جولات وحفلات وتذاكر عبر الموقع الرسمي.",
+            "longDescription": "MVM Dome ساحة مغطاة كبيرة في Újbuda للحفلات الدولية. أوقات الأبواب والأسعار لدى المنظم.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-moby-budapest-park-2026",
+        "title": "Moby — live at Budapest Park",
+        "shortDescription": "Moby returns to Budapest Park on Saturday 1 August 2026 — gates 18:00, electronic set on the island stage.",
+        "longDescription": "After 15 years, Moby plays an open-air show at Budapest Park (Hajógyári-sziget). The promoter lists gate opening at 18:00 on Saturday 1 August 2026. Buy tickets on budapestpark.hu; handling fees may apply online.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801",
+        "startsAt": "2026-08-01T20:00:00+02:00",
+        "endsAt": "2026-08-01T23:30:00+02:00",
+        "doorsOpenAt": "2026-08-01T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "entryFees": [
+          {
+            "id": "ga",
+            "label": "General admission",
+            "amount": 0,
+            "currency": "FREE",
+            "source": "published",
+            "notes": "See budapestpark.hu for current ticket tiers and fees"
+          }
+        ],
+        "activityTypes": ["Live Music", "Electronic"],
+        "ageRanges": ["18+", "21+"],
+        "dayTimeTags": ["Evening", "Weekend"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "website": "https://www.budapestpark.hu/index.php/en/events/moby-20260801",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/MOBY_20260801",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "moby-budapest-park-2026",
+            "title": "Moby — élőben a Budapest Parkban",
+            "shortDescription": "Moby visszatér 2026. augusztus 1-jén — kapunyitás 18:00.",
+            "longDescription": "Moby nyílt légi koncert a Budapest Parkban. Kapunyitás 18:00, jegyek a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
+          },
+          "es": {
+            "slug": "moby-budapest-park-2026",
+            "title": "Moby en directo en Budapest Park",
+            "shortDescription": "Moby vuelve el 1 de agosto de 2026 — puertas 18:00.",
+            "longDescription": "Concierto al aire libre en Budapest Park. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
+          },
+          "it": {
+            "slug": "moby-budapest-park-2026",
+            "title": "Moby live al Budapest Park",
+            "shortDescription": "Moby torna il 1 agosto 2026 — aperture porte 18:00.",
+            "longDescription": "Concerto all'aperto al Budapest Park. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
+          },
+          "he": {
+            "slug": "moby-budapest-park-2026",
+            "title": "מובי בבודפשט פארק",
+            "shortDescription": "מובי חוזר ב-1 באוגוסט 2026 — שערים 18:00.",
+            "longDescription": "הופעה בחוץ בבודפשט פארק. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
+          },
+          "ar": {
+            "slug": "moby-budapest-park-2026",
+            "title": "موبي في بودابست بارك",
+            "shortDescription": "عودة موبي في 1 أغسطس 2026 — الأبواب 18:00.",
+            "longDescription": "حفل في الهواء الطلق في بودابست بارك. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/index.php/en/events/moby-20260801"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-sting-mvm-dome-2026",
+        "title": "Sting 3.0 — MVM Dome",
+        "shortDescription": "Sting brings the STING 3.0 tour to Budapest on Thursday 18 June 2026 with Dominic Miller and Chris Maas — special guest Dea Matrona.",
+        "longDescription": "The STING 3.0 European tour stops at MVM Dome on Thursday 18 June 2026. The lineup is a tight three-piece with Dominic Miller and Chris Maas; Dea Matrona is listed as special guest. Tickets via Live Nation Hungary.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "startsAt": "2026-06-18T20:00:00+02:00",
+        "endsAt": "2026-06-18T22:30:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-mvm-dome-ujbuda"],
+        "borough": "Újbuda",
+        "neighborhood": "Kelenföld",
+        "entryFees": [
+          {
+            "id": "onsale",
+            "label": "General on sale",
+            "amount": 0,
+            "currency": "FREE",
+            "source": "published",
+            "notes": "See livenation.hu for tier pricing"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["All ages", "18+"],
+        "dayTimeTags": ["Weekday", "Evening"],
+        "badges": ["Staff Pick"],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "website": "https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "bookingUrl": "https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "email": "",
+        "phone": "",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "Sting 3.0 — MVM Dome",
+            "shortDescription": "Sting a STING 3.0 turnén 2026. június 18-án az MVM Dome-ban.",
+            "longDescription": "A STING 3.0 európai turné budapesti állomása 2026. június 18-án. Vendég: Dea Matrona. Jegyek: livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "es": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "Sting 3.0 — MVM Dome",
+            "shortDescription": "Sting en gira STING 3.0 el 18 de junio de 2026 en MVM Dome.",
+            "longDescription": "Parada en Budapest del tour europeo STING 3.0. Invitada: Dea Matrona. Entradas en livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "it": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "Sting 3.0 — MVM Dome",
+            "shortDescription": "Sting con il tour STING 3.0 il 18 giugno 2026 all'MVM Dome.",
+            "longDescription": "Tappa di Budapest del tour europeo STING 3.0. Ospite: Dea Matrona. Biglietti su livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "he": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "סטינג 3.0 — MVM Dome",
+            "shortDescription": "סטינג בסיבוב STING 3.0 ב-18 ביוני 2026 ב-MVM Dome.",
+            "longDescription": "עצירת בודפשט בסיבוב האירופי. אורחת: Dea Matrona. כרטיסים ב-livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "ar": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "ستينغ 3.0 — MVM Dome",
+            "shortDescription": "ستينغ في جولة STING 3.0 في 18 يونيو 2026 في MVM Dome.",
+            "longDescription": "محطة بودابست في الجولة الأوروبية. ضيفة: Dea Matrona. التذاكر على livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          }
+        }
+      }
+    }
+  ]
+}

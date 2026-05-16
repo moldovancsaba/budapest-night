@@ -8,7 +8,7 @@ export function formatCrowdLabel(age: string): string {
 /** Short unit after price on cards and profiles. */
 export function venuePriceUnit(category: Category): "ticket" | "cover" | "person" {
   switch (category) {
-    case "Events":
+    case "Venues":
       return "ticket";
     case "Parties":
       return "cover";
@@ -32,7 +32,7 @@ export function formatVenuePrice(provider: Pick<Provider, "category" | "pricePer
 
   if (n === 0) {
     if (provider.category === "Parties") return { main: "Free entry" };
-    if (provider.category === "Events") return { main: "Free", suffix: "/ticket" };
+    if (provider.category === "Venues") return { main: "Free", suffix: "/ticket" };
     return { main: "Price varies" };
   }
 
@@ -50,7 +50,7 @@ export function venueSharePriceLine(provider: Pick<Provider, "category" | "price
 
 export function venueBudgetUnit(category: Category): string {
   switch (category) {
-    case "Events":
+    case "Venues":
       return "ticket";
     case "Parties":
       return "cover";

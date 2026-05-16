@@ -31,12 +31,16 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
   const saved = isSaved(group.id);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl bg-card shadow-card transition-all hover:-translate-y-0.5 hover:shadow-elevated">
+    <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
       <div className="relative h-36 overflow-hidden bg-muted">
         <CdnImage
           fill
           resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
-          src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
+          src={
+            group.coverImageUrl?.trim()
+              ? group.coverImageUrl
+              : CMS_MEDIA.fallbackMeetup
+          }
           alt={group.name}
         />
       </div>
@@ -44,11 +48,14 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
         <div className="flex items-start gap-4">
           <MeetupLogo group={group} />
           <div>
-            <span className="rounded-full bg-teal-soft px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal">
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
               {groupTypeLabel(group.groupType)}
             </span>
-            <button onClick={() => onOpen(group)} className="mt-1.5 block text-left">
-              <h3 className="font-display text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-teal">
+            <button
+              onClick={() => onOpen(group)}
+              className="mt-1.5 block text-left"
+            >
+              <h3 className="font-display text-lg font-semibold leading-tight text-foreground transition-colors group-hover:text-primary">
                 {group.name}
               </h3>
             </button>
@@ -67,12 +74,16 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           aria-label={saved ? t("unsave") : t("save")}
           className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary text-foreground transition-colors hover:bg-muted"
         >
-          <Heart className={cn("h-4 w-4", saved ? "fill-orange text-orange" : "")} />
+          <Heart
+            className={cn("h-4 w-4", saved ? "fill-primary text-primary" : "")}
+          />
         </button>
       </div>
 
       <div className="flex-1 px-5">
-        <p className="text-sm leading-relaxed text-foreground/80">{group.description}</p>
+        <p className="text-sm leading-relaxed text-foreground/80">
+          {group.description}
+        </p>
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           <span className="rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium text-secondary-foreground">
@@ -90,7 +101,7 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
           href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-1.5 font-medium text-foreground hover:text-teal"
+          className="inline-flex items-center gap-1.5 font-medium text-foreground hover:text-primary"
           onClick={(e) => e.stopPropagation()}
         >
           <Instagram className="h-3.5 w-3.5" />
@@ -99,10 +110,18 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
       </div>
 
       <div className="flex gap-2 px-5 pb-5">
-        <Button onClick={() => onOpen(group)} className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
+        <Button
+          onClick={() => onOpen(group)}
+          className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+        >
           {t("viewDetails")}
         </Button>
-        <Button variant="outline" size="icon" aria-label={t("share")} onClick={() => onShare(group)}>
+        <Button
+          variant="outline"
+          size="icon"
+          aria-label={t("share")}
+          onClick={() => onShare(group)}
+        >
           <Share2 className="h-4 w-4" />
         </Button>
       </div>

@@ -24,7 +24,10 @@ export function ScoutAssistantView() {
   const starters = brainMeta?.starters?.length ? brainMeta.starters : [];
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    scrollRef.current?.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
   }, [messages]);
 
   const send = async (text: string) => {
@@ -101,7 +104,9 @@ export function ScoutAssistantView() {
           }
           try {
             const parsed = JSON.parse(jsonStr);
-            const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+            const content = parsed.choices?.[0]?.delta?.content as
+              | string
+              | undefined;
             if (content) upsert(content);
           } catch {
             textBuffer = line + "\n" + textBuffer;
@@ -156,7 +161,10 @@ export function ScoutAssistantView() {
         {messages.map((m, i) => (
           <div
             key={i}
-            className={cn("flex", m.role === "user" ? "justify-end" : "justify-start")}
+            className={cn(
+              "flex",
+              m.role === "user" ? "justify-end" : "justify-start",
+            )}
           >
             <div
               className={cn(
@@ -210,7 +218,11 @@ export function ScoutAssistantView() {
           disabled={isLoading || !input.trim()}
           className="h-12 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90"
         >
-          {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
+          {isLoading ? (
+            <Loader2 className="h-4 w-4 animate-spin" />
+          ) : (
+            <Send className="h-4 w-4" />
+          )}
         </Button>
       </form>
     </div>

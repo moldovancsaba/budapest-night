@@ -18,7 +18,9 @@ export function NeighborhoodChips({
 
   return (
     <div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">{t("label")}</p>
+      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        {t("label")}
+      </p>
       <div className="flex flex-wrap gap-2">
         <button
           type="button"
@@ -26,7 +28,7 @@ export function NeighborhoodChips({
           className={cn(
             "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
             value === null
-              ? "border-primary bg-primary text-primary-foreground shadow-[0_0_12px_hsl(310_100%_62%_/_0.3)]"
+              ? "border-primary bg-primary text-primary-foreground"
               : "border-border bg-card text-foreground hover:border-foreground",
           )}
         >
@@ -42,8 +44,8 @@ export function NeighborhoodChips({
               className={cn(
                 "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
                 active
-                  ? "border-accent bg-accent/15 text-accent"
-                  : "border-border bg-card/80 text-foreground hover:border-accent hover:text-accent",
+                  ? "border-primary bg-primary/15 text-primary"
+                  : "border-border bg-card/80 text-foreground hover:border-primary hover:text-primary",
               )}
               aria-pressed={active}
             >

@@ -23,6 +23,7 @@ export async function getDb(): Promise<Db | null> {
 
 export const COL = {
   providers: "providers",
+  events: "events",
   meetupGroups: "meetupGroups",
   locations: "locations",
   site: "site",

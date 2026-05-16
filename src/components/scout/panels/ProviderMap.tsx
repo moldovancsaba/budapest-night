@@ -12,14 +12,22 @@ const BOROUGH_CENTERS: Record<string, [number, number]> = {
   Újbuda: [47.473, 19.049],
 };
 
-export function ProviderMap({ address, borough }: { address: string; borough: string }) {
+export function ProviderMap({
+  address,
+  borough,
+}: {
+  address: string;
+  borough: string;
+}) {
   const [coords, setCoords] = useState<[number, number] | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(address)}`)
+    fetch(
+      `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(address)}`,
+    )
       .then((r) => r.json())
       .then((data) => {
         if (cancelled) return;
@@ -30,7 +38,8 @@ export function ProviderMap({ address, borough }: { address: string; borough: st
         }
       })
       .catch(() => {
-        if (!cancelled) setCoords(BOROUGH_CENTERS[borough] ?? BOROUGH_CENTERS.Belváros);
+        if (!cancelled)
+          setCoords(BOROUGH_CENTERS[borough] ?? BOROUGH_CENTERS.Belváros);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -51,7 +60,9 @@ export function ProviderMap({ address, borough }: { address: string; borough: st
 
   return (
     <div className="rounded-2xl border border-border/60 bg-secondary/50 p-5">
-      <h3 className="font-display text-sm font-semibold text-foreground">Location</h3>
+      <h3 className="font-display text-sm font-semibold text-foreground">
+        Location
+      </h3>
       <div className="mt-3 h-48 w-full overflow-hidden rounded-xl bg-muted">
         {loading || !coords ? (
           <div className="h-full w-full animate-pulse bg-muted" />
@@ -65,7 +76,12 @@ export function ProviderMap({ address, borough }: { address: string; borough: st
         )}
       </div>
       <p className="mt-3 text-sm text-muted-foreground">{address}</p>
-      <Button asChild variant="outline" size="sm" className="mt-3 w-full border-accent/30">
+      <Button
+        asChild
+        variant="outline"
+        size="sm"
+        className="mt-3 w-full border-primary/30"
+      >
         <a href={directionsUrl} target="_blank" rel="noreferrer">
           <Navigation className="h-4 w-4" /> Get directions
         </a>

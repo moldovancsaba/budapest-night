@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted px-4">
-      <form onSubmit={submit} className="w-full max-w-sm space-y-4 rounded-2xl border border-border bg-card p-8 shadow-card">
+      <form onSubmit={submit} className="w-full max-w-sm space-y-4 rounded-2xl border border-border bg-card p-8">
         <h1 className="font-display text-xl font-bold text-foreground">Budapest Night Admin</h1>
         <p className="text-sm text-muted-foreground">
           Use the value of <code className="rounded bg-muted px-1 font-mono text-xs">ADMIN_PASSWORD</code> from{" "}

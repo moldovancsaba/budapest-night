@@ -1,4 +1,4 @@
-export type Category = "Events" | "Parties" | "Restaurants" | "Cafés";
+export type Category = "Venues" | "Parties" | "Restaurants" | "Cafés";
 
 /** Budapest districts / areas (stored as `borough` in Mongo for schema compatibility). */
 export type Borough =
@@ -55,7 +55,7 @@ export interface Provider {
   locales?: ProviderLocalesMap;
   /** Food & drink menu when published by the venue. */
   menu?: VenueMenu;
-  /** Ticket / package lines for Events listings. */
+  /** Optional dated ticket packages sold at this venue (not discoverable timed events). */
   eventOfferings?: EventOffering[];
   /** Denormalized union of menu item tags (computed on ingest). */
   menuTags?: string[];

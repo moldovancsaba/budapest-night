@@ -67,7 +67,7 @@ function EndpointCard({
 const PROVIDER_FIELDS = `interface Provider {
   id: string;
   name: string;
-  category: "Events" | "Parties" | "Restaurants" | "Cafés";
+  category: "Venues" | "Parties" | "Restaurants" | "Cafés";
   borough: "Belváros" | "Terézváros" | "Erzsébetváros" | "Ferencváros" | "Buda" | "Óbuda" | "Újbuda";
   neighborhood: string;
   address: string;

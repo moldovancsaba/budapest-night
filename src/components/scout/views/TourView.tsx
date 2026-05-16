@@ -38,27 +38,32 @@ export function TourView({ tourId, seed, onOpen }: Props) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const load = useCallback(async (useSeed: string) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const params = useSeed ? `?seed=${encodeURIComponent(useSeed)}` : "";
-      const res = await fetch(`/api/public/tours/${encodeURIComponent(tourId)}${params}`);
-      const data = await res.json();
-      if (!res.ok) {
-        setError(data.error ?? "error");
+  const load = useCallback(
+    async (useSeed: string) => {
+      setLoading(true);
+      setError(null);
+      try {
+        const params = useSeed ? `?seed=${encodeURIComponent(useSeed)}` : "";
+        const res = await fetch(
+          `/api/public/tours/${encodeURIComponent(tourId)}${params}`,
+        );
+        const data = await res.json();
+        if (!res.ok) {
+          setError(data.error ?? "error");
+          setStops([]);
+          return;
+        }
+        setActiveSeed(data.seed);
+        setStops(data.stops ?? []);
+      } catch {
+        setError("error");
         setStops([]);
-        return;
+      } finally {
+        setLoading(false);
       }
-      setActiveSeed(data.seed);
-      setStops(data.stops ?? []);
-    } catch {
-      setError("error");
-      setStops([]);
-    } finally {
-      setLoading(false);
-    }
-  }, [tourId]);
+    },
+    [tourId],
+  );
 
   useEffect(() => {
     void load(seed ?? `${tourId}-${Date.now()}`);
@@ -78,7 +83,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
       <div className="flex flex-wrap items-center gap-3">
         <Link
           href={buildSectionPath("eat-drink")}
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-accent"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary"
         >
           <ChevronLeft className="h-4 w-4" />
           {t("backToEatDrink")}
@@ -86,10 +91,19 @@ export function TourView({ tourId, seed, onOpen }: Props) {
       </div>
 
       <div>
-        <h1 className="font-display text-3xl font-bold text-foreground">{title}</h1>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{description}</p>
+        <h1 className="font-display text-3xl font-bold text-foreground">
+          {title}
+        </h1>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+          {description}
+        </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button size="sm" variant="outline" onClick={reshuffle} disabled={loading}>
+          <Button
+            size="sm"
+            variant="outline"
+            onClick={reshuffle}
+            disabled={loading}
+          >
             <RefreshCw className="mr-2 h-4 w-4" />
             {t("reshuffle")}
           </Button>
@@ -98,7 +112,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <Loader2 className="h-8 w-8 animate-spin text-accent" />
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
         </div>
       ) : error ? (
         <p className="rounded-2xl border border-dashed border-border py-12 text-center text-sm text-muted-foreground">
@@ -126,7 +140,9 @@ export function TourView({ tourId, seed, onOpen }: Props) {
                 </div>
                 <div className="space-y-3 p-5">
                   <div>
-                    <h2 className="font-display text-xl font-semibold text-foreground">{stop.providerName}</h2>
+                    <h2 className="font-display text-xl font-semibold text-foreground">
+                      {stop.providerName}
+                    </h2>
                     <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
                       <MapPin className="h-3.5 w-3.5" />
                       {stop.address}
@@ -138,10 +154,15 @@ export function TourView({ tourId, seed, onOpen }: Props) {
                   {stop.highlightItems.length > 0 && (
                     <ul className="space-y-1 text-sm">
                       {stop.highlightItems.map((item) => (
-                        <li key={item.name} className="flex justify-between gap-2">
+                        <li
+                          key={item.name}
+                          className="flex justify-between gap-2"
+                        >
                           <span className="text-foreground">{item.name}</span>
                           {item.priceLabel ? (
-                            <span className="shrink-0 text-xs text-muted-foreground">{item.priceLabel}</span>
+                            <span className="shrink-0 text-xs text-muted-foreground">
+                              {item.priceLabel}
+                            </span>
                           ) : null}
                         </li>
                       ))}
@@ -160,7 +181,9 @@ export function TourView({ tourId, seed, onOpen }: Props) {
       )}
 
       {activeSeed ? (
-        <p className="text-center text-[10px] text-muted-foreground">{t("shareHint")}</p>
+        <p className="text-center text-[10px] text-muted-foreground">
+          {t("shareHint")}
+        </p>
       ) : null}
     </div>
   );

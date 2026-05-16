@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
+import type { NightEvent } from "@/types/event";
 import type { MeetupGroup } from "@/types/meetup";
 import type { Borough } from "@/types/provider";
 import type { SiteDoc } from "@/types/site";
@@ -19,6 +20,22 @@ export function useProvidersCatalog() {
         throw new Error((j as { error?: string }).error || "Failed to load providers");
       }
       return r.json() as Promise<Provider[]>;
+    },
+    staleTime: 60_000,
+  });
+}
+
+export function useEventsCatalog() {
+  const locale = useLocale() as AppLocale;
+  return useQuery({
+    queryKey: ["catalog", "events", locale],
+    queryFn: async () => {
+      const r = await fetch(`/api/public/events?locale=${encodeURIComponent(locale)}`);
+      if (!r.ok) {
+        const j = await r.json().catch(() => ({}));
+        throw new Error((j as { error?: string }).error || "Failed to load events");
+      }
+      return r.json() as Promise<NightEvent[]>;
     },
     staleTime: 60_000,
   });

@@ -1,6 +1,14 @@
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Heart, MapPin, Mail, MessageCircle, Instagram, Globe, CalendarClock } from "lucide-react";
+import {
+  Heart,
+  MapPin,
+  Mail,
+  MessageCircle,
+  Instagram,
+  Globe,
+  CalendarClock,
+} from "lucide-react";
 import { useSaved } from "@/store/useScout";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -40,9 +48,9 @@ export function MeetupGroupProfile({
   if (!group) return null;
   const saved = isSaved(group.id);
 
-  const similar = allGroups.filter(
-    (g) => g.id !== group.id && g.borough === group.borough,
-  ).slice(0, 3);
+  const similar = allGroups
+    .filter((g) => g.id !== group.id && g.borough === group.borough)
+    .slice(0, 3);
 
   const websiteUrl = `https://${group.website.replace(/^https?:\/\//, "")}`;
 
@@ -59,12 +67,21 @@ export function MeetupGroupProfile({
 
   return (
     <Sheet open={!!group} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent side="right" className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background">
+      <SheetContent
+        side="right"
+        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
+      >
         <div className="relative h-44 w-full overflow-hidden">
           <CdnImage
             fill
-            resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
-            src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
+            resolveBase={
+              group.coverImageUrl?.trim() ? group.website : undefined
+            }
+            src={
+              group.coverImageUrl?.trim()
+                ? group.coverImageUrl
+                : CMS_MEDIA.fallbackMeetup
+            }
             alt={group.name}
           />
         </div>
@@ -72,10 +89,12 @@ export function MeetupGroupProfile({
           <div className="flex items-start gap-5">
             <MeetupLogo group={group} size="lg" />
             <div className="min-w-0 flex-1">
-              <span className="rounded-full bg-teal-soft px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal">
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
                 {groupTypeLabel(group.groupType)}
               </span>
-              <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-foreground">{group.name}</h2>
+              <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-foreground">
+                {group.name}
+              </h2>
               <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
                 {locationLine(group.borough, group.neighborhood)}
@@ -93,12 +112,14 @@ export function MeetupGroupProfile({
               <CalendarClock className="h-3.5 w-3.5" />
               {cadenceLabel(group.cadence)}
             </span>
-            <span className="rounded-full bg-orange/10 px-3 py-1 text-xs font-medium text-orange">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
               {groupTypeLabel(group.groupType)}
             </span>
           </div>
 
-          <p className="text-sm leading-relaxed text-foreground/85">{group.description}</p>
+          <p className="text-sm leading-relaxed text-foreground/85">
+            {group.description}
+          </p>
 
           <div className="grid grid-cols-2 gap-2">
             <Button
@@ -108,7 +129,9 @@ export function MeetupGroupProfile({
                 toast.success(saved ? tv("removed") : tv("savedGroup"));
               }}
             >
-              <Heart className={cn("h-4 w-4", saved && "fill-orange text-orange")} />
+              <Heart
+                className={cn("h-4 w-4", saved && "fill-primary text-primary")}
+              />
               {saved ? t("unsave") : t("save")}
             </Button>
             <Button variant="outline" asChild>
@@ -125,33 +148,44 @@ export function MeetupGroupProfile({
           </div>
 
           <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">{t("connect")}</h3>
+            <h3 className="font-display text-sm font-semibold text-foreground">
+              {t("connect")}
+            </h3>
             <div className="mt-3 space-y-2 text-sm">
               <a
                 href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-teal"
+                className="flex items-center gap-2 text-foreground hover:text-primary"
               >
-                <Instagram className="h-4 w-4 text-muted-foreground" /> {group.instagram}
+                <Instagram className="h-4 w-4 text-muted-foreground" />{" "}
+                {group.instagram}
               </a>
               <a
                 href={websiteUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-teal"
+                className="flex items-center gap-2 text-foreground hover:text-primary"
               >
-                <Globe className="h-4 w-4 text-muted-foreground" /> {group.website}
+                <Globe className="h-4 w-4 text-muted-foreground" />{" "}
+                {group.website}
               </a>
             </div>
           </div>
 
           {similar.length > 0 && (
             <div>
-              <h3 className="font-display text-base font-semibold text-foreground">{t("similarNearby")}</h3>
+              <h3 className="font-display text-base font-semibold text-foreground">
+                {t("similarNearby")}
+              </h3>
               <div className="mt-3 grid grid-cols-1 gap-4">
                 {similar.map((g) => (
-                  <MeetupGroupCard key={g.id} group={g} onOpen={onOpenAnother} onShare={onShare} />
+                  <MeetupGroupCard
+                    key={g.id}
+                    group={g}
+                    onOpen={onOpenAnother}
+                    onShare={onShare}
+                  />
                 ))}
               </div>
             </div>

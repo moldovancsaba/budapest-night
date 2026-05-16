@@ -36,7 +36,7 @@ export function LocaleSwitcher({
       <SelectTrigger
         className={cn(
           isHeader
-            ? "h-10 w-[4.75rem] shrink-0 gap-1 rounded-full border-border bg-card px-2 text-foreground shadow-none hover:border-accent focus:ring-accent/40 sm:w-[7.25rem] sm:gap-1.5 sm:px-2.5"
+            ? "h-10 w-[4.75rem] shrink-0 gap-1 rounded-full border-border bg-card px-2 text-foreground shadow-none hover:border-primary focus:ring-primary/40 sm:w-[7.25rem] sm:gap-1.5 sm:px-2.5"
             : "h-10 w-[148px] gap-2 border-border bg-card text-sm",
           className,
         )}

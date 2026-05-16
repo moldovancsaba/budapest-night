@@ -1,5 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
-import { Heart, Share2, Plus, Minus, X, Eye, MapPin, Mail, ArrowRight } from "lucide-react";
+import {
+  Heart,
+  Share2,
+  Plus,
+  Minus,
+  X,
+  Eye,
+  MapPin,
+  Mail,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { cn } from "@/lib/utils";
@@ -17,7 +27,10 @@ import {
 import { useTranslations } from "next-intl";
 import { useSaved, useCalculator } from "@/store/useScout";
 import type { Provider, BoroughChoice, Category } from "@/types/provider";
-import type { AccountSavedCategoryFilter, SiteAccountSettings } from "@/types/site";
+import type {
+  AccountSavedCategoryFilter,
+  SiteAccountSettings,
+} from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { CdnImage } from "@/components/ui/CdnImage";
 import {
@@ -28,7 +41,10 @@ import {
 } from "@/lib/cyberTheme";
 
 interface Props {
-  onNavigate: (view: Category | "Saved" | "Calculator" | "Meet-Up Groups", location?: { borough?: BoroughChoice; neighborhood?: string }) => void;
+  onNavigate: (
+    view: Category | "Events" | "Saved" | "Calculator" | "Meet-Up Groups",
+    location?: { borough?: BoroughChoice; neighborhood?: string },
+  ) => void;
   onOpenProvider: (p: Provider) => void;
   onShareProvider: (p: Provider) => void;
 }
@@ -41,7 +57,11 @@ function interpolate(template: string, vars: Record<string, string>) {
   return template.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
 }
 
-export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: Props) {
+export function MyAccountView({
+  onNavigate,
+  onOpenProvider,
+  onShareProvider,
+}: Props) {
   const acc = useAccountCopy();
   const tNav = useTranslations("nav");
   const categoryLabel = useCategoryLabel();
@@ -49,17 +69,42 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
   const badgeFor = (cat: string) => {
     switch (cat) {
       case "Events":
-        return { label: categoryLabel("Events"), filter: "Events" as const, tone: CATEGORY_BADGE.Events };
+      case "Venues":
+        return {
+          label: categoryLabel("Venues"),
+          filter: "Venues" as const,
+          tone: CATEGORY_BADGE.Venues,
+        };
       case "Parties":
-        return { label: categoryLabel("Parties"), filter: "Parties" as const, tone: CATEGORY_BADGE.Parties };
+        return {
+          label: categoryLabel("Parties"),
+          filter: "Parties" as const,
+          tone: CATEGORY_BADGE.Parties,
+        };
       case "Restaurants":
-        return { label: categoryLabel("Restaurants"), filter: "Restaurants" as const, tone: CATEGORY_BADGE.Restaurants };
+        return {
+          label: categoryLabel("Restaurants"),
+          filter: "Restaurants" as const,
+          tone: CATEGORY_BADGE.Restaurants,
+        };
       case "Cafés":
-        return { label: categoryLabel("Cafés"), filter: "Cafés" as const, tone: CATEGORY_BADGE.Cafés };
+        return {
+          label: categoryLabel("Cafés"),
+          filter: "Cafés" as const,
+          tone: CATEGORY_BADGE.Cafés,
+        };
       case "Meet-Up Group":
-        return { label: tNav("culture"), filter: "Culture" as const, tone: CATEGORY_BADGE.Culture };
+        return {
+          label: tNav("culture"),
+          filter: "Culture" as const,
+          tone: CATEGORY_BADGE.Culture,
+        };
       default:
-        return { label: cat, filter: "All" as const, tone: CATEGORY_BADGE.default };
+        return {
+          label: cat,
+          filter: "All" as const,
+          tone: CATEGORY_BADGE.default,
+        };
     }
   };
 
@@ -74,25 +119,35 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
     [saved, providers],
   );
 
-  type Item = { kind: "provider"; data: Provider; categoryFilter: AccountSavedCategoryFilter };
+  type Item = {
+    kind: "provider";
+    data: Provider;
+    categoryFilter: AccountSavedCategoryFilter;
+  };
 
   const items: Item[] = useMemo(
     () =>
       savedProviders.map((p) => ({
         kind: "provider" as const,
         data: p,
-        categoryFilter: badgeFor(p.category).filter as AccountSavedCategoryFilter,
+        categoryFilter: badgeFor(p.category)
+          .filter as AccountSavedCategoryFilter,
       })),
     [savedProviders],
   );
 
-  const filtered = filter === "All" ? items : items.filter((i) => i.categoryFilter === filter);
+  const filtered =
+    filter === "All" ? items : items.filter((i) => i.categoryFilter === filter);
 
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">{acc.page.title}</h1>
-        <p className="mt-2 text-sm text-muted-foreground sm:text-base">{acc.page.subtitle}</p>
+        <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
+          {acc.page.title}
+        </h1>
+        <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+          {acc.page.subtitle}
+        </p>
       </header>
 
       <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
@@ -104,15 +159,21 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
                 key={t.id}
                 onClick={() => {
                   setTab(t.id);
-                  document.getElementById(`section-${t.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  document
+                    .getElementById(`section-${t.id}`)
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
                 className={cn(
                   "relative whitespace-nowrap px-4 py-3 text-sm font-semibold transition-colors",
-                  active ? "text-accent" : "text-muted-foreground hover:text-foreground",
+                  active
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {t.label}
-                {active && <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-accent" />}
+                {active && (
+                  <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-primary" />
+                )}
               </button>
             );
           })}
@@ -121,16 +182,24 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
 
       <section
         id={`section-${acc.saved.tabId}`}
-        className={cn(ACCOUNT_PANEL, "p-6 sm:p-8", tab !== acc.saved.tabId && "hidden")}
+        className={cn(
+          ACCOUNT_PANEL,
+          "p-6 sm:p-8",
+          tab !== acc.saved.tabId && "hidden",
+        )}
       >
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h2 className="font-display text-2xl font-bold text-foreground">{acc.saved.title}</h2>
-            <p className="mt-1 text-sm text-muted-foreground">{acc.saved.subtitle}</p>
+            <h2 className="font-display text-2xl font-bold text-foreground">
+              {acc.saved.title}
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {acc.saved.subtitle}
+            </p>
           </div>
           <Button
             variant="outline"
-            className="rounded-full border-border bg-card/80 hover:border-accent/40 hover:bg-card"
+            className="rounded-full border-border bg-card/80 hover:border-primary/40 hover:bg-card"
             onClick={() => onNavigate("Saved")}
           >
             {acc.saved.viewAllCta} <ArrowRight className="h-4 w-4" />
@@ -157,7 +226,9 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
 
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.length === 0 && (
-            <p className="col-span-full rounded-2xl bg-card p-8 text-center text-sm text-muted-foreground">{acc.saved.emptyMessage}</p>
+            <p className="col-span-full rounded-2xl bg-card p-8 text-center text-sm text-muted-foreground">
+              {acc.saved.emptyMessage}
+            </p>
           )}
           {filtered.map((item) => (
             <SavedProviderCard
@@ -168,12 +239,20 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
               onShare={() => onShareProvider(item.data)}
               onAddToPlan={() => {
                 addToCalc(item.data.id);
-                toast.success(interpolate(acc.saved.toastAddedToPlan, { name: item.data.name }));
+                toast.success(
+                  interpolate(acc.saved.toastAddedToPlan, {
+                    name: item.data.name,
+                  }),
+                );
               }}
               onRemove={() => {
                 if (saved.includes(item.data.id)) {
                   toggleSaved(item.data.id);
-                  toast(interpolate(acc.saved.toastRemoved, { name: item.data.name }));
+                  toast(
+                    interpolate(acc.saved.toastRemoved, {
+                      name: item.data.name,
+                    }),
+                  );
                 } else {
                   toast(acc.saved.toastSampleRemove);
                 }
@@ -184,20 +263,32 @@ export function MyAccountView({ onNavigate, onOpenProvider, onShareProvider }: P
       </section>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <ActivityPlanCard acc={acc} tab={tab} onNavigate={onNavigate} providers={providers} />
+        <ActivityPlanCard
+          acc={acc}
+          tab={tab}
+          onNavigate={onNavigate}
+          providers={providers}
+        />
         <FamilyPreferencesCard acc={acc} tab={tab} />
         <NeighborhoodCard acc={acc} tab={tab} onNavigate={onNavigate} />
         <AlertsCard acc={acc} tab={tab} />
       </div>
 
       <div className={cn(ACCOUNT_PANEL, "rounded-2xl px-6 py-5 text-center")}>
-        <p className="text-sm font-medium text-foreground">{acc.privacy.headline}</p>
+        <p className="text-sm font-medium text-foreground">
+          {acc.privacy.headline}
+        </p>
         <p className="mt-1 text-xs text-muted-foreground">
           {acc.privacy.supportTextBefore}{" "}
-          <a href={`mailto:${acc.privacy.supportEmail}`} className="font-semibold text-accent hover:underline">
+          <a
+            href={`mailto:${acc.privacy.supportEmail}`}
+            className="font-semibold text-primary hover:underline"
+          >
             {acc.privacy.supportEmail}
           </a>
-          {acc.privacy.supportTextAfter ? ` ${acc.privacy.supportTextAfter}` : null}
+          {acc.privacy.supportTextAfter
+            ? ` ${acc.privacy.supportTextAfter}`
+            : null}
         </p>
       </div>
     </div>
@@ -229,11 +320,18 @@ function SavedProviderCard({
   const badgeFor = (cat: string) => {
     switch (cat) {
       case "Events":
-        return { label: categoryLabel("Events"), tone: CATEGORY_BADGE.Events };
+      case "Venues":
+        return { label: categoryLabel("Venues"), tone: CATEGORY_BADGE.Venues };
       case "Parties":
-        return { label: categoryLabel("Parties"), tone: CATEGORY_BADGE.Parties };
+        return {
+          label: categoryLabel("Parties"),
+          tone: CATEGORY_BADGE.Parties,
+        };
       case "Restaurants":
-        return { label: categoryLabel("Restaurants"), tone: CATEGORY_BADGE.Restaurants };
+        return {
+          label: categoryLabel("Restaurants"),
+          tone: CATEGORY_BADGE.Restaurants,
+        };
       case "Cafés":
         return { label: categoryLabel("Cafés"), tone: CATEGORY_BADGE.Cafés };
       case "Meet-Up Group":
@@ -245,42 +343,80 @@ function SavedProviderCard({
   const b = badgeFor(provider.category);
   const price = formatPrice(provider);
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-card">
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card ">
       <div className="relative h-36 overflow-hidden bg-muted">
         <CdnImage
           fill
           resolveBase={provider.website}
-          src={provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing}
+          src={
+            provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing
+          }
           alt={provider.name}
         />
-        <span className={cn("absolute left-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide shadow-sm", b.tone)}>
+        <span
+          className={cn(
+            "absolute left-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ",
+            b.tone,
+          )}
+        >
           {b.label}
         </span>
-        <span className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card/95 text-primary shadow-sm" aria-label={tv("saved")}>
+        <span
+          className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card text-primary "
+          aria-label={tv("saved")}
+        >
           <Heart className="h-4 w-4 fill-primary" />
         </span>
       </div>
       <div className="flex flex-1 flex-col p-4">
-        <h3 className="font-display text-base font-semibold leading-snug text-foreground">{provider.name}</h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">{locationLine(provider.borough, provider.neighborhood)}</p>
+        <h3 className="font-display text-base font-semibold leading-snug text-foreground">
+          {provider.name}
+        </h3>
+        <p className="mt-0.5 text-xs text-muted-foreground">
+          {locationLine(provider.borough, provider.neighborhood)}
+        </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {ageLabel(provider.ageRanges[0])} · {activityLabel(provider.activityTypes[0])}
+          {ageLabel(provider.ageRanges[0])} ·{" "}
+          {activityLabel(provider.activityTypes[0])}
         </p>
         <p className="mt-2 text-sm font-bold text-primary">
           {price.main}
-          {price.suffix ? <span className="text-[11px] font-normal text-muted-foreground">{price.suffix}</span> : null}
+          {price.suffix ? (
+            <span className="text-[11px] font-normal text-muted-foreground">
+              {price.suffix}
+            </span>
+          ) : null}
         </p>
         <div className="mt-4 grid grid-cols-2 gap-2">
-          <Button size="sm" variant="outline" className="rounded-full" onClick={onView}>
+          <Button
+            size="sm"
+            variant="outline"
+            className="rounded-full"
+            onClick={onView}
+          >
             <Eye className="h-3.5 w-3.5" /> {card.viewCta}
           </Button>
-          <Button size="sm" variant="outline" className="rounded-full" onClick={onShare}>
+          <Button
+            size="sm"
+            variant="outline"
+            className="rounded-full"
+            onClick={onShare}
+          >
             <Share2 className="h-3.5 w-3.5" /> {card.shareCta}
           </Button>
-          <Button size="sm" className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={onAddToPlan}>
+          <Button
+            size="sm"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+            onClick={onAddToPlan}
+          >
             <Plus className="h-3.5 w-3.5" /> {card.addToPlanCta}
           </Button>
-          <Button size="sm" variant="ghost" className="rounded-full text-muted-foreground hover:text-foreground" onClick={onRemove}>
+          <Button
+            size="sm"
+            variant="ghost"
+            className="rounded-full text-muted-foreground hover:text-foreground"
+            onClick={onRemove}
+          >
             <X className="h-3.5 w-3.5" /> {card.removeCta}
           </Button>
         </div>
@@ -311,7 +447,12 @@ function ActivityPlanCard({
       .map((i) => {
         const p = providers.find((x) => x.id === i.providerId);
         if (!p) return null;
-        return { providerId: i.providerId, provider: p, qty: i.classes, subtotal: p.pricePerClass * i.classes };
+        return {
+          providerId: i.providerId,
+          provider: p,
+          qty: i.classes,
+          subtotal: p.pricePerClass * i.classes,
+        };
       })
       .filter((x): x is NonNullable<typeof x> => !!x);
   }, [items, providers]);
@@ -325,24 +466,39 @@ function ActivityPlanCard({
     >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h2 className="font-display text-xl font-bold text-foreground">{acc.activityPlan.title}</h2>
-          <p className="mt-1 text-sm text-muted-foreground">{acc.activityPlan.subtitle}</p>
+          <h2 className="font-display text-xl font-bold text-foreground">
+            {acc.activityPlan.title}
+          </h2>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {acc.activityPlan.subtitle}
+          </p>
         </div>
       </div>
 
       {rows.length === 0 ? (
-        <p className="mt-5 rounded-2xl bg-card p-6 text-center text-sm text-muted-foreground">{acc.activityPlan.emptyMessage}</p>
+        <p className="mt-5 rounded-2xl bg-card p-6 text-center text-sm text-muted-foreground">
+          {acc.activityPlan.emptyMessage}
+        </p>
       ) : (
         <>
           <ul className="mt-5 space-y-2">
             {rows.map((r) => {
               const linePrice = formatPrice(r.provider);
               return (
-                <li key={r.providerId} className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3">
+                <li
+                  key={r.providerId}
+                  className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3"
+                >
                   <div className="min-w-0">
-                    <p className="truncate font-display text-sm font-semibold text-foreground">{r.provider.name}</p>
+                    <p className="truncate font-display text-sm font-semibold text-foreground">
+                      {r.provider.name}
+                    </p>
                     <p className="text-xs text-muted-foreground">
-                      {locationLine(r.provider.borough, r.provider.neighborhood)} · {linePrice.main}
+                      {locationLine(
+                        r.provider.borough,
+                        r.provider.neighborhood,
+                      )}{" "}
+                      · {linePrice.main}
                       {linePrice.suffix ?? ""}
                     </p>
                   </div>
@@ -356,7 +512,9 @@ function ActivityPlanCard({
                       >
                         <Minus className="h-3 w-3" />
                       </button>
-                      <span className="w-6 text-center text-sm font-semibold">{r.qty}</span>
+                      <span className="w-6 text-center text-sm font-semibold">
+                        {r.qty}
+                      </span>
                       <button
                         type="button"
                         onClick={() => setClasses(r.providerId, r.qty + 1)}
@@ -366,7 +524,9 @@ function ActivityPlanCard({
                         <Plus className="h-3 w-3" />
                       </button>
                     </div>
-                    <p className="w-16 text-right text-sm font-bold text-primary">€{r.subtotal}</p>
+                    <p className="w-16 text-right text-sm font-bold text-primary">
+                      €{r.subtotal}
+                    </p>
                     <button
                       type="button"
                       onClick={() => remove(r.providerId)}
@@ -382,17 +542,28 @@ function ActivityPlanCard({
           </ul>
 
           <div className="mt-5 flex items-center justify-between rounded-2xl bg-card p-4">
-            <span className="font-display text-sm font-semibold text-foreground">{acc.activityPlan.estimatedTotalLabel}</span>
-            <span className="font-display text-2xl font-bold text-primary">€{total}</span>
+            <span className="font-display text-sm font-semibold text-foreground">
+              {acc.activityPlan.estimatedTotalLabel}
+            </span>
+            <span className="font-display text-2xl font-bold text-primary">
+              €{total}
+            </span>
           </div>
         </>
       )}
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <Button onClick={() => onNavigate("Calculator")} className="rounded-full bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button
+          onClick={() => onNavigate("Calculator")}
+          className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+        >
           {acc.activityPlan.viewFullCta}
         </Button>
-        <Button variant="outline" onClick={() => clear()} className="rounded-full">
+        <Button
+          variant="outline"
+          onClick={() => clear()}
+          className="rounded-full"
+        >
           {acc.activityPlan.clearCta}
         </Button>
       </div>
@@ -400,7 +571,15 @@ function ActivityPlanCard({
   );
 }
 
-function PillToggle({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
+function PillToggle({
+  label,
+  active,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  onClick: () => void;
+}) {
   return (
     <button
       type="button"
@@ -415,7 +594,13 @@ function PillToggle({ label, active, onClick }: { label: string; active: boolean
   );
 }
 
-function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
+function FamilyPreferencesCard({
+  acc,
+  tab,
+}: {
+  acc: SiteAccountSettings;
+  tab: string;
+}) {
   const optionLabel = usePreferenceOptionLabel();
   const visible = withSaved(tab, acc.saved.tabId, acc.familyPreferences.tabId);
   const sections = acc.familyPreferences.sections;
@@ -442,13 +627,19 @@ function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: st
       id={`section-${acc.familyPreferences.tabId}`}
       className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
     >
-      <h2 className="font-display text-xl font-bold text-foreground">{acc.familyPreferences.title}</h2>
-      <p className="mt-1 text-sm text-muted-foreground">{acc.familyPreferences.subtitle}</p>
+      <h2 className="font-display text-xl font-bold text-foreground">
+        {acc.familyPreferences.title}
+      </h2>
+      <p className="mt-1 text-sm text-muted-foreground">
+        {acc.familyPreferences.subtitle}
+      </p>
 
       <div className="mt-5 space-y-5">
         {sections.map((sec) => (
           <div key={sec.id}>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{sec.label}</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              {sec.label}
+            </p>
             <div className="flex flex-wrap gap-2">
               {sec.options.map((a) => (
                 <PillToggle
@@ -464,7 +655,7 @@ function FamilyPreferencesCard({ acc, tab }: { acc: SiteAccountSettings; tab: st
       </div>
 
       <Button
-        className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
+        className="mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
         onClick={() => toast.success(acc.familyPreferences.savedToast)}
       >
         {acc.familyPreferences.editCta}
@@ -486,8 +677,13 @@ function NeighborhoodCard({
   const visible = withSaved(tab, acc.saved.tabId, n.tabId);
 
   return (
-    <section id={`section-${n.tabId}`} className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}>
-      <h2 className="font-display text-xl font-bold text-foreground">{n.title}</h2>
+    <section
+      id={`section-${n.tabId}`}
+      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
+    >
+      <h2 className="font-display text-xl font-bold text-foreground">
+        {n.title}
+      </h2>
       <p className="mt-1 text-sm text-muted-foreground">{n.subtitle}</p>
 
       <div className="mt-5 rounded-2xl bg-card p-5">
@@ -496,27 +692,44 @@ function NeighborhoodCard({
             <MapPin className="h-5 w-5" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="font-display text-base font-semibold text-foreground">{n.addressLine1}</p>
+            <p className="font-display text-base font-semibold text-foreground">
+              {n.addressLine1}
+            </p>
             <p className="text-sm text-muted-foreground">{n.addressLine2}</p>
             <p className="mt-2 text-xs text-muted-foreground">
               {n.detectedLabelPrefix}{" "}
-              <span className="font-semibold text-foreground">{n.detectedNeighborhood}</span> · {n.detectedBorough}
+              <span className="font-semibold text-foreground">
+                {n.detectedNeighborhood}
+              </span>{" "}
+              · {n.detectedBorough}
             </p>
           </div>
-          <Button size="sm" variant="outline" className="rounded-full" onClick={() => toast(n.updateAddressToast)}>
+          <Button
+            size="sm"
+            variant="outline"
+            className="rounded-full"
+            onClick={() => toast(n.updateAddressToast)}
+          >
             {n.updateAddressCtaLabel}
           </Button>
         </div>
       </div>
 
-      <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{n.nearbySectionLabel}</p>
+      <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        {n.nearbySectionLabel}
+      </p>
       <div className="mt-2 flex flex-wrap gap-2">
         {n.nearbyNeighborhoods.map((hood) => (
           <button
             key={hood}
             type="button"
-            onClick={() => onNavigate("Events", { borough: n.nearbyNavigateBorough, neighborhood: hood })}
-            className="rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-accent/50 hover:text-accent"
+            onClick={() =>
+              onNavigate("Events", {
+                borough: n.nearbyNavigateBorough,
+                neighborhood: hood,
+              })
+            }
+            className="rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-primary/50 hover:text-primary"
           >
             {hood}
           </button>
@@ -524,8 +737,13 @@ function NeighborhoodCard({
       </div>
 
       <Button
-        className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90"
-        onClick={() => onNavigate("Events", { borough: n.browseNavigateBorough, neighborhood: n.browseNavigateNeighborhood })}
+        className="mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+        onClick={() =>
+          onNavigate("Events", {
+            borough: n.browseNavigateBorough,
+            neighborhood: n.browseNavigateNeighborhood,
+          })
+        }
       >
         {n.browseCtaLabel} <ArrowRight className="h-4 w-4" />
       </Button>
@@ -537,7 +755,9 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
   const visible = withSaved(tab, acc.saved.tabId, acc.alerts.tabId);
   const a = acc.alerts;
 
-  const [alerts, setAlerts] = useState<Record<string, boolean>>(() => Object.fromEntries(a.options.map((x) => [x, true])));
+  const [alerts, setAlerts] = useState<Record<string, boolean>>(() =>
+    Object.fromEntries(a.options.map((x) => [x, true])),
+  );
   useEffect(() => {
     setAlerts(Object.fromEntries(a.options.map((x) => [x, true])));
   }, [a.options]);
@@ -548,22 +768,37 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
   }, [a.frequencyChoices]);
 
   return (
-    <section id={`section-${a.tabId}`} className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}>
-      <h2 className="font-display text-xl font-bold text-foreground">{a.title}</h2>
+    <section
+      id={`section-${a.tabId}`}
+      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
+    >
+      <h2 className="font-display text-xl font-bold text-foreground">
+        {a.title}
+      </h2>
       <p className="mt-1 text-sm text-muted-foreground">{a.subtitle}</p>
 
       <div className="mt-5">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{a.emailSectionLabel}</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          {a.emailSectionLabel}
+        </p>
         <ul className="space-y-2">
           {a.options.map((opt) => (
-            <li key={opt} className="flex items-center gap-3 rounded-xl bg-card px-3 py-2">
+            <li
+              key={opt}
+              className="flex items-center gap-3 rounded-xl bg-card px-3 py-2"
+            >
               <Checkbox
                 id={`alert-${opt}`}
                 checked={alerts[opt] ?? false}
-                onCheckedChange={(v) => setAlerts((s) => ({ ...s, [opt]: !!v }))}
-                className="data-[state=checked]:border-accent data-[state=checked]:bg-accent data-[state=checked]:text-accent-foreground"
+                onCheckedChange={(v) =>
+                  setAlerts((s) => ({ ...s, [opt]: !!v }))
+                }
+                className="data-[state=checked]:border-primary data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
               />
-              <label htmlFor={`alert-${opt}`} className="cursor-pointer text-sm text-foreground">
+              <label
+                htmlFor={`alert-${opt}`}
+                className="cursor-pointer text-sm text-foreground"
+              >
                 {opt}
               </label>
             </li>
@@ -572,7 +807,9 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
       </div>
 
       <div className="mt-5">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{a.frequencySectionLabel}</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          {a.frequencySectionLabel}
+        </p>
         <div className="flex flex-wrap gap-2">
           {a.frequencyChoices.map((f) => {
             const active = f === freq;
@@ -593,7 +830,10 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
         </div>
       </div>
 
-      <Button className="mt-6 rounded-full bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => toast.success(a.savedToast)}>
+      <Button
+        className="mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+        onClick={() => toast.success(a.savedToast)}
+      >
         <Mail className="h-4 w-4" /> {a.saveCta}
       </Button>
     </section>

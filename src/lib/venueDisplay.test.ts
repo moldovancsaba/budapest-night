@@ -21,7 +21,7 @@ describe("formatVenuePrice", () => {
   });
 
   it("shows ticket suffix for events", () => {
-    expect(formatVenuePrice({ category: "Events", pricePerClass: 25 })).toEqual({
+    expect(formatVenuePrice({ category: "Venues", pricePerClass: 25 })).toEqual({
       main: "€25",
       suffix: "/ticket",
     });

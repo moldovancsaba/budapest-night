@@ -23,7 +23,7 @@ const BAKED_IMG_BB: CmsMediaUrls = {
 
 /** Discover category hero — one scene per Events / Parties / Restaurants / Cafés. */
 const BAKED_DISCOVER_HERO_BY_CATEGORY: Record<Category, string> = {
-  Events: "https://i.ibb.co/Z17xzwSm/7a7a1fab59a0.jpg",
+  Venues: "https://i.ibb.co/Z17xzwSm/7a7a1fab59a0.jpg",
   Parties: "https://i.ibb.co/4g3Bf6n6/53e86654299f.jpg",
   Restaurants: "https://i.ibb.co/fdZ1jDct/90043b184c36.jpg",
   "Cafés": "https://i.ibb.co/KjHkYtQs/53f3688c0a7b.png",
@@ -42,7 +42,7 @@ export const GUIDE_IMAGE_BY_ID: Record<string, string> = {
 };
 
 const DISCOVER_HERO_ENV: Record<Category, string> = {
-  Events: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_EVENTS",
+  Venues: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_EVENTS",
   Parties: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_PARTIES",
   Restaurants: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_RESTAURANTS",
   "Cafés": "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CAFES",
@@ -85,7 +85,10 @@ export function guideImageForId(id: string | undefined): string {
   return BAKED_IMG_BB.guideCard;
 }
 
-/** Hero image for Discover category pages (Events, Parties, etc.). */
+/** Timed events listing hero (concerts, festivals). */
+export const BAKED_EVENTS_LISTING_HERO = BAKED_DISCOVER_HERO_BY_CATEGORY.Venues;
+
+/** Hero image for Discover category pages (Venues, Parties, etc.). */
 export function discoverHeroForCategory(
   category: Category,
   siteOverride?: string | null,

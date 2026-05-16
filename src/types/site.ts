@@ -45,7 +45,7 @@ export interface SiteTrustPillar {
 }
 
 /** Saved-tab filter chip; `categoryFilter` must match `badgeFor(provider).filter` / meetup row. */
-export type AccountSavedCategoryFilter = "All" | "Events" | "Parties" | "Restaurants" | "Cafés" | "Culture";
+export type AccountSavedCategoryFilter = "All" | "Venues" | "Events" | "Parties" | "Restaurants" | "Cafés" | "Culture";
 
 export interface SiteAccountSavedFilterChip {
   label: string;

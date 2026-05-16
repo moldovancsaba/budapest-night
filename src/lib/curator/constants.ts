@@ -1,5 +1,5 @@
 /** Shared with ingest automation + Zod curator schema (keep in sync). */
-export const CURATOR_CATEGORIES = ["Events", "Parties", "Restaurants", "Cafés"] as const;
+export const CURATOR_CATEGORIES = ["Venues", "Parties", "Restaurants", "Cafés"] as const;
 export const CURATOR_BOROUGHS = [
   "Belváros",
   "Terézváros",

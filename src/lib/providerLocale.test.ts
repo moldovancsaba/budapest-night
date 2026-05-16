@@ -9,7 +9,7 @@ import {
 const base: Provider = {
   id: "prov-a38-ferencvaros",
   name: "A38 Ship",
-  category: "Events",
+  category: "Venues",
   borough: "Ferencváros",
   neighborhood: "Petőfi Bridge",
   address: "Petőfi rakpart, 1117 Budapest",

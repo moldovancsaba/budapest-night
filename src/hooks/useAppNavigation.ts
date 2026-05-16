@@ -8,10 +8,12 @@ import type { AppLocale } from "@/i18n/config";
 import type { ViewKey } from "@/components/scout/Sidebar";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
+import type { NightEvent } from "@/types/event";
 import {
   type AppRoute,
   type AppSection,
   type LocationFilter,
+  buildEventPath,
   buildGroupPath,
   buildPathForView,
   buildSectionPath,
@@ -39,7 +41,16 @@ export function useAppNavigation() {
 
   const navigateToView = useCallback(
     (
-      view: Category | "Saved" | "Calculator" | "Split Check" | "Meet-Up Groups" | "My Account" | "Home",
+      view:
+        | Category
+        | "Events"
+        | "Saved"
+        | "Calculator"
+        | "Split Check"
+        | "Meet-Up Groups"
+        | "Eat & Drink"
+        | "My Account"
+        | "Home",
       location?: { borough?: BoroughChoice; neighborhood?: string },
     ) => {
       const loc: LocationFilter | undefined =
@@ -77,6 +88,23 @@ export function useAppNavigation() {
     router.push(buildSectionPath(route.fromSection, { location: route.location ?? undefined }));
   }, [router, route.fromSection, route.location]);
 
+  const openEvent = useCallback(
+    (event: NightEvent) => {
+      router.push(
+        buildEventPath(event, {
+          from: "events",
+          location: route.location ?? undefined,
+          locale,
+        }),
+      );
+    },
+    [router, route.location, locale],
+  );
+
+  const closeEvent = useCallback(() => {
+    router.push(buildSectionPath(route.fromSection, { location: route.location ?? undefined }));
+  }, [router, route.fromSection, route.location]);
+
   const openGroup = useCallback(
     (group: MeetupGroup) => {
       router.push(buildGroupPath(group.id));
@@ -100,10 +128,13 @@ export function useAppNavigation() {
     groupId: route.groupId,
     tourId: route.tourId,
     tourSeed: tourSeedFromSearch(searchParams),
+    eventId: route.eventId,
     navigateToView,
     navigateToSection,
     openVenue,
     closeVenue,
+    openEvent,
+    closeEvent,
     openGroup,
     closeGroup,
     clearLocationFilter,
