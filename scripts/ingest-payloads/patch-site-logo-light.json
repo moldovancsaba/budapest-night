@@ -1,13 +1,13 @@
 {
-  "sourceUrls": ["https://i.ibb.co/4nf3M8NW/916c52d2b3dd.jpg"],
-  "notes": "Set CMS light-mode logo (EST on black square) for theme toggle.",
+  "sourceUrls": ["https://i.ibb.co/KckctvXz/72dc34675c4c.png"],
+  "notes": "Set CMS light-mode logo (EST on transparent PNG) for theme toggle.",
   "missingOrUncertain": [],
   "operations": [
     {
       "resource": "site",
       "action": "patch",
       "patch": {
-        "logoLightUrl": "https://i.ibb.co/4nf3M8NW/916c52d2b3dd.jpg"
+        "logoLightUrl": "https://i.ibb.co/KckctvXz/72dc34675c4c.png"
       }
     }
   ]

@@ -27,13 +27,18 @@ export function Logo({
   const theme = mounted && resolvedTheme === "light" ? "light" : "dark";
   const src = resolveThemeLogoUrl(theme, { logoUrl, logoLightUrl });
   const isBundledLogo = isBundledBrandLogo(src);
+  const isLight = theme === "light";
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div
         className={cn(
           "relative shrink-0 overflow-hidden",
-          isBundledLogo ? "rounded-lg bg-black" : "rounded-full bg-black ring-2 ring-border",
+          isLight
+            ? "bg-transparent"
+            : isBundledLogo
+              ? "rounded-lg bg-black"
+              : "rounded-full bg-black ring-2 ring-border",
         )}
         style={{ width: size, height: size }}
       >
@@ -41,10 +46,7 @@ export function Logo({
           src={src}
           alt={t("brand")}
           fill
-          className={cn(
-            "object-center",
-            isBundledLogo ? "object-contain p-1" : "object-cover",
-          )}
+          className={cn("object-center object-contain", !isLight && isBundledLogo && "p-1")}
           sizes={`${size}px`}
           priority={isBundledLogo}
         />

@@ -1,7 +1,7 @@
 /** Square brand mark for dark UI (also `src/app/icon.png` for favicon). */
 export const APP_LOGO_PATH = "/images/logo.png";
 
-/** EST mark on black square — used in light mode. */
+/** EST mark on transparent background — used in light mode. */
 export const APP_LOGO_LIGHT_PATH = "/images/logo-light.png";
 
 export const APP_FAVICON = {
