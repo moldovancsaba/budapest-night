@@ -38,7 +38,8 @@ export function getProviderLocaleIngestRulesForPrompt(): string {
 - announcementTitle / announcementDescription / announcementBadge: optional per locale when the English root uses them.
 - image: optional per locale; only https ImgBB URLs. Usually omit and reuse root "image".
 - **Do not** put activityTypes inside locales — keep English canonical tags only on the root "activityTypes" array (app translates tags via message files).
-- Structural enums stay on the root only: category, borough, neighborhood, ageRanges, dayTimeTags, badges, pricePerClass, rating, reviewCount, website, phone, email, id.
+- Structural enums stay on the root only: category, borough, neighborhood, ageRanges, dayTimeTags, badges, pricePerClass, priceCurrency (optional EUR|HUF), rating, reviewCount, website, phone, email, id.
+- **pricePerClass** is a typical **EUR** spend hint for bars/restaurants (cover, menu). For ticketed concert venues use \`0\` and put real ticket tiers on a timed \`event\` document (\`entryFees\` with HUF/EUR). Never store Hungarian forint ticket prices as EUR (e.g. 26999 HUF is not pricePerClass 26999).
 - Hebrew (he) and Arabic (ar) copy may use RTL scripts in text fields; slug stays Latin ASCII.`;
 }
 

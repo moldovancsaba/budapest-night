@@ -10,8 +10,10 @@
  *
  * Before POST (unless `--force` when duplicates were detected):
  * - Fetches public catalogs for id/name overlap checks.
- * - Validates provider / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
- * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`). Use `--skip-locale-check` only for legacy payloads.
+ * - Validates provider / event / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
+ * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`).
+ * - Event upserts require locales + HUF/EUR entryFees rules (see `src/lib/curator/eventIngestRules.ts`). Gold example: `seed-timed-events-moby-sting.json`.
+ * - Use `--skip-locale-check` only for legacy payloads.
  *
  * Env: `INGEST_API_KEY` (required unless `--dry-run`), optional `INGEST_BASE_URL`
  * (default https://budapest-night.vercel.app). Loads `.env` then `.env.local`.
@@ -335,6 +337,24 @@ function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
   if (doc.borough && !BOROUGHS.includes(doc.borough)) errors.push(`${p}: invalid borough`);
   mustString(doc, "neighborhood", errors);
   if (!Array.isArray(doc.entryFees)) errors.push(`${p}: entryFees must be array`);
+  else {
+    const CURRENCIES = ["HUF", "EUR", "FREE"];
+    doc.entryFees.forEach((fee, fi) => {
+      if (!fee || typeof fee !== "object") {
+        errors.push(`${p}.entryFees[${fi}]: invalid`);
+        return;
+      }
+      if (!CURRENCIES.includes(fee.currency)) {
+        errors.push(`${p}.entryFees[${fi}].currency: must be HUF, EUR, or FREE`);
+      }
+      if (fee.amount > 0 && fee.currency === "FREE") {
+        errors.push(`${p}.entryFees[${fi}]: paid amount with currency FREE — use HUF or EUR`);
+      }
+      if (fee.amount === 0 && fee.currency !== "FREE" && fee.currency !== undefined) {
+        errors.push(`${p}.entryFees[${fi}]: amount 0 requires currency FREE or omit tier`);
+      }
+    });
+  }
   if (!Array.isArray(doc.ageRanges) || !doc.ageRanges.length) errors.push(`${p}: ageRanges required`);
   if (!Array.isArray(doc.dayTimeTags) || !doc.dayTimeTags.length) errors.push(`${p}: dayTimeTags required`);
   if (typeof doc.image !== "string") errors.push(`${p}: image must be string (empty ok)`);

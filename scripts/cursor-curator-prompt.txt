@@ -6,11 +6,14 @@ You are my Budapest Night curator agent. Do ALL of the following in this order. 
 ## Goal
 Find exactly one new Budapest nightlife or culture listing that fits Budapest Night and successfully ingest it into production.
 
-Valid listing types:
-- **Providers** (venues / programs): category must be one of **Events**, **Parties**, **Restaurants**, **Cafés**
-- **Culture circles** (community groups): `resource: "meetupGroup"` with a supported `groupType`
+Valid listing types (pick what the source actually is):
+- **Venues** (`resource: "provider"`, `category: "Venues"`): physical places — parks, arenas, clubs, galleries, ruin bars, restaurants, cafés.
+- **Timed events** (`resource: "event"`): a **specific dated** concert, festival night, or ticketed show with `startsAt` / `endsAt`, ticket tiers, and `venueIds` linking to host venue(s).
+- **Culture circles** (`resource: "meetupGroup"`): recurring community groups with a supported `groupType`.
 
-Prefer official sources (venue `.hu` site, ticket office, cultural institution, or the organization’s own page). It must be clearly relevant to **Budapest**, with district (`borough`) + canonical **neighborhood** when possible.
+**Do not** confuse venues with timed events. A concert page is an **event** (plus venue upsert if missing). A venue’s general info page is a **provider** with `category: "Venues"`. **Never** use `category: "Events"` (removed).
+
+Prefer official sources (venue `.hu` site, promoter/ticket office, cultural institution). Must be clearly **Budapest**, with correct `borough` + canonical **neighborhood** from `src/data/locations.ts`.
 
 ## Hard requirements
 1. You must finish with a **successful production ingest** (`HTTP 200`, response `ok: true` from `POST /api/ingest`).
@@ -25,17 +28,23 @@ Prefer official sources (venue `.hu` site, ticket office, cultural institution, 
 ## First: inspect the live catalog and compute scarcity
 Before choosing a candidate, fetch:
 - `GET https://budapest-night.vercel.app/api/public/providers`
+- `GET https://budapest-night.vercel.app/api/public/events`
 - `GET https://budapest-night.vercel.app/api/public/meetup-groups`
 - `GET https://budapest-night.vercel.app/api/public/locations` (borough → neighborhoods map; fall back to repo file if empty)
 
 Also read the repo’s canonical enums (do not guess):
-- Categories, districts, ages, day/time tags, badges: `src/lib/curator/constants.ts`
+- Categories, districts, ages, day/time tags, badges: `src/lib/curator/constants.ts` (provider categories: **Venues**, Parties, Restaurants, Cafés)
 - Neighborhoods per district: `src/data/locations.ts` (must match ingest)
 - Discover activity filter chips: `src/data/catalogFilters.ts` (`ACTIVITY_TYPES`)
 - Provider Zod shape: `src/lib/curator/providerSchema.ts`
-- **Locale ingest rules (required):** `src/lib/curator/localeIngestRules.ts`
+- Event Zod shape: `src/lib/eventSchema.ts`
+- **Provider locale rules (required):** `src/lib/curator/localeIngestRules.ts`
+- **Timed event rules (required for events):** `src/lib/curator/eventIngestRules.ts` — read `getEventIngestRulesForPrompt()` and follow every bullet
+- **Event locale rules:** `src/lib/curator/eventLocaleIngestRules.ts`
 - App locales: `en`, `es`, `it`, `hu`, `he`, `ar` (`src/i18n/config.ts`)
-- Example payloads: `scripts/ingest-payloads/*.json` (see `budapest-a38.json` for `locales.hu`)
+- Example payloads: `scripts/ingest-payloads/*.json`
+  - Provider + locales: `budapest-a38.json`
+  - **Gold-standard timed events:** `seed-timed-events-moby-sting.json` (Moby @ Budapest Park, Sting @ MVM Dome — HUF tiers, Ferencváros address, full `locales`)
 
 Use the live public data to estimate which parts of the catalog are most underrepresented.
 
@@ -43,10 +52,13 @@ Use the live public data to estimate which parts of the catalog are most underre
 Measure coverage across these dimensions using the live catalog:
 
 ### Provider categories
-- Events
+- Venues (concert parks, arenas, clubs, galleries, cultural spaces — **not** individual show dates)
 - Parties
 - Restaurants
 - Cafés
+
+### Timed events (separate catalog)
+- Concerts, festivals, ticketed shows with real `startsAt` / `endsAt` — stored as `resource: "event"`, not as provider category
 
 ### Meetup group types (culture circles only)
 - Art & Gallery
@@ -123,11 +135,13 @@ Important:
 ## Data quality rules
 1. Use only facts supported by the official source.
 2. If something is unknown, leave it empty (`""`), `0`, or omit optional fields; list gaps under `missingOrUncertain`.
-3. **`pricePerClass`**: typical per-person spend in **EUR** (cover, tasting menu, average main, ticket, or spa entry) — cite from the source only. If only a range exists, use the lower bound and note uncertainty in `missingOrUncertain` and `longDescription`.
-4. **`rating` / `reviewCount`**: use `0` unless the source states explicit ratings or review counts; never fabricate TripAdvisor/Google numbers.
-5. Do not guess neighborhood names; map to the closest **canonical** neighborhood only when the address or source supports that district.
-6. **`id`**: providers must match `^prov-[a-z0-9-]+$` (e.g. `prov-mazel-tov-erzsebetvaros`). Meetups should use `grp-` prefix and a unique slug (e.g. `grp-danube-jazz-circle-belvaros`).
-7. **`longDescription`**: must end with a line: `Sources: <url1> <url2> ...` (audit URLs; may duplicate `sourceUrls`).
+3. **`pricePerClass`** (providers only): typical per-person spend in **EUR** (cover, tasting menu, average main, spa entry) — cite from the source only. **Never** put Hungarian forint ticket prices here (26999 HUF ≠ `pricePerClass: 26999`). For ticketed venues use `pricePerClass: 0` and put tiers on the **event** `entryFees` with `currency: "HUF"` or `"EUR"`. Optional `priceCurrency: "HUF"` only when intentionally surfacing a HUF hint on the venue card.
+4. **Timed event tickets**: each tier `{ id, label, amount, currency: "HUF"|"EUR", source: "published"|"estimated", notes? }`. Paid shows must **not** use `currency: "FREE"` or `amount: 0` unless the official site says free. If prices unknown, `entryFees: []` and note in `missingOrUncertain`.
+5. **Location**: `borough` / `neighborhood` / `address` must match the **official postal address** (e.g. Budapest Park = Ferencváros, Fábián Juli tér 1, 1095 — not Óbuda Island unless the source says so). Event `borough`/`neighborhood` must match the primary host venue.
+6. **`rating` / `reviewCount`**: use `0` unless the source states explicit ratings or review counts; never fabricate TripAdvisor/Google numbers.
+7. Do not guess neighborhood names; map to the closest **canonical** neighborhood only when the address or source supports that district.
+8. **`id`**: providers `^prov-[a-z0-9-]+$`; timed events `^event-[a-z0-9-]+$`; meetups `grp-` + unique slug.
+9. **`longDescription`** (provider or event root): must end with `Sources: <url1> <url2> ...` (audit URLs; may duplicate `sourceUrls`).
 
 ## Multilingual copy (blocking for providers)
 The public site serves **six locales**: `en`, `es`, `it`, `hu`, `he`, `ar`. Every **provider** upsert must ship translated copy for all non-English locales.
@@ -157,8 +171,25 @@ The public site serves **six locales**: `en`, `es`, `it`, `hu`, `he`, `ar`. Ever
 6. If upload fails, retry or choose another official image.
 7. If you cannot produce a valid ImgBB URL for that listing, **do not ingest it**; choose another listing.
 
+## Timed event workflow (when focus is a concert / ticketed show)
+
+Read **`src/lib/curator/eventIngestRules.ts`** in full before writing the payload. Summary of non-negotiables:
+
+1. **Upsert host venue(s) first** in the same `operations` array if not already in `GET /api/public/providers`.
+2. **Schedule**: `startsAt`, `endsAt` as ISO 8601 with `+02:00` (or correct offset); optional `doorsOpenAt`; `timezone: "Europe/Budapest"`.
+3. **`venueIds`**: existing `prov-*` ids; event `borough` / `neighborhood` = primary host venue’s district.
+4. **`entryFees`**: real tiers from the ticket page; **HUF** for budapestpark.hu / jegy.hu forint prices; **EUR** for € prices; admin fees in `notes`; never fake FREE for paid shows.
+5. **`locales`**: `hu`, `es`, `it`, `he`, `ar` each with `title`, `shortDescription`, `longDescription`, `slug` (see `eventLocaleIngestRules.ts`).
+6. **`bookingUrl`**: direct ticket link; `website`: official event page.
+7. Dedupe against `GET /api/public/events` by `id`, title, and `startsAt`.
+
+Mirror structure and quality of **`scripts/ingest-payloads/seed-timed-events-moby-sting.json`**.
+
 ## Output shape
-If it is a venue / program, produce JSON for `npm run ingest:listing`:
+
+### Venue (`resource: "provider"`)
+
+Produce JSON for `npm run ingest:listing`:
 
 ```json
 {
@@ -198,7 +229,65 @@ Minimal `locales` shape (fill all five keys in real payloads):
 }
 ```
 
-If it is a culture circle / community group:
+### Timed event (`resource: "event"`)
+
+Often **multiple operations** in one file (venue upsert + event upsert). Example event document shape:
+
+```json
+{
+  "resource": "event",
+  "action": "upsert",
+  "document": {
+    "id": "event-artist-venue-2026",
+    "title": "Artist — live at Venue Name",
+    "shortDescription": "One line with date, gates if known, district.",
+    "longDescription": "Full paragraph with address context and ticketing.\\n\\nSources: https://official-event-page",
+    "startsAt": "2026-08-01T20:00:00+02:00",
+    "endsAt": "2026-08-01T23:30:00+02:00",
+    "doorsOpenAt": "2026-08-01T18:00:00+02:00",
+    "timezone": "Europe/Budapest",
+    "venueIds": ["prov-host-venue-id"],
+    "borough": "Ferencváros",
+    "neighborhood": "Fábián Juli",
+    "entryFees": [
+      {
+        "id": "tier-slug",
+        "label": "Arena — general admission",
+        "amount": 26999,
+        "currency": "HUF",
+        "source": "published",
+        "notes": "+ 1,350 Ft admin fee at checkout (official site)"
+      }
+    ],
+    "activityTypes": ["Live Music", "Electronic"],
+    "ageRanges": ["18+"],
+    "dayTimeTags": ["Evening", "Weekend"],
+    "badges": ["Featured"],
+    "image": "https://i.ibb.co/....jpg",
+    "website": "https://official-event-page",
+    "bookingUrl": "https://official-ticket-shop/...",
+    "email": "info@venue.hu",
+    "phone": "+36 ...",
+    "status": "scheduled",
+    "locales": {
+      "hu": {
+        "slug": "artist-venue-2026",
+        "title": "…",
+        "shortDescription": "…",
+        "longDescription": "…\\n\\nSources: https://…"
+      },
+      "es": { "slug": "…", "title": "…", "shortDescription": "…", "longDescription": "…\\n\\nSources: https://…" },
+      "it": { "slug": "…", "title": "…", "shortDescription": "…", "longDescription": "…\\n\\nSources: https://…" },
+      "he": { "slug": "…", "title": "…", "shortDescription": "…", "longDescription": "…\\n\\nSources: https://…" },
+      "ar": { "slug": "…", "title": "…", "shortDescription": "…", "longDescription": "…\\n\\nSources: https://…" }
+    }
+  }
+}
+```
+
+Use `entryFees: []` only when the ticket page gives no fixed tiers; never use `{ "amount": 0, "currency": "FREE" }` for paid concerts.
+
+### Culture circle (`resource: "meetupGroup"`)
 
 ```json
 {
@@ -240,8 +329,10 @@ From the repo root (`budapest-night`):
 
 ## Final reply
 After successful ingest, reply with:
-- **What was added or updated**: name, id, category or groupType, district, neighborhood
-- **Locales written**: confirm `hu`, `es`, `it`, `he`, `ar` slugs (and that `GET /api/public/providers?locale=hu` returns localized name for the new id)
+- **What was added or updated**: name/title, id, type (venue / timed event / meetup), category or groupType, district, neighborhood
+- **Locales written**: confirm `hu`, `es`, `it`, `he`, `ar` slugs
+  - Venues: `GET /api/public/providers?locale=hu` shows localized `name`
+  - Events: `GET /api/public/events?locale=hu` shows localized `title` and correct `entryFees[].currency` (HUF/EUR, not FREE for paid shows)
 - **Why chosen**: scarcest coverage opportunity you targeted
 - **Scarcity summary**:
   - provider category counts (and meetup groupType counts if relevant)
@@ -255,5 +346,5 @@ After successful ingest, reply with:
 - **Confirmation**: re-fetch the relevant public API row and confirm the image URL is present
 
 Optional focus for this run (delete or edit one line):
-- Category: Events / Parties / Restaurants / Cafés / Meetup culture circle / no preference
+- Listing type: **Timed event** / Venue (Venues) / Parties / Restaurants / Cafés / Meetup culture circle / no preference
 - District: Belváros / Terézváros / Erzsébetváros / Ferencváros / Buda / Óbuda / Újbuda / no preference

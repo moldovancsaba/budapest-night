@@ -40,10 +40,13 @@ export function validateEventLocalesForIngest(localesMap: unknown, pathPrefix: s
 
 export function getEventLocaleIngestRulesForPrompt(): string {
   const localeList = EVENT_INGEST_LOCALES.map((code) => `${code} (${localeLabels[code]})`).join(", ");
-  return `Multilingual timed event copy (required on every event upsert):
-- Root fields (title, shortDescription, longDescription) are **English**.
-- Include "locales" with **all** of: ${localeList}.
-- Per locale: title, shortDescription, longDescription, slug (Latin ASCII hyphenated).
-- longDescription must end with: Sources: <https URLs>.
-- Structural fields stay on root only: startsAt, endsAt, venueIds, borough, entryFees, status, id.`;
+  return `### Multilingual timed event copy (required on every event upsert)
+- Root fields (\`title\`, \`shortDescription\`, \`longDescription\`) are **English** (default fallback).
+- Include \`locales\` with **all** of: ${localeList}. Do **not** add \`locales.en\`.
+- Per locale **required**: \`title\`, \`shortDescription\`, \`longDescription\`, \`slug\` (lowercase ASCII hyphenated, unique per event, e.g. \`moby-budapest-park-2026\`).
+- Each \`longDescription\` must end with: \`Sources: <https://...>\` (same audit URLs as English).
+- Translate faithfully; mention ticketed vs free and district in hu/es/it/he/ar when the source supports it.
+- **Do not** put \`entryFees\`, \`startsAt\`, \`venueIds\`, or \`activityTypes\` inside \`locales\` — root only.
+- Hebrew / Arabic: natural RTL in text fields; \`slug\` stays Latin ASCII.
+- \`npm run ingest:listing\` rejects missing locales or invalid slugs.`;
 }

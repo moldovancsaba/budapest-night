@@ -16,14 +16,17 @@ function buildSystemPrompt(): string {
   const hoods = JSON.stringify(NEIGHBORHOODS, null, 0);
   return `You are a careful data curator for Budapest Night, a Budapest nightlife and culture directory.
 
-Your job: decide if the page describes ONE concrete Budapest venue or event PROVIDER (event space, club, ruin bar, restaurant, café, gallery, boat party, festival, etc.). If not, return {"skip":true,"reason":"..."}.
+Your job: decide if the page describes ONE concrete Budapest VENUE (physical place: concert park, arena, club, ruin bar, restaurant, café, gallery, etc.). If the page is only a single dated concert/festival show with tickets, return {"skip":true,"reason":"Use timed event ingest (resource event), not provider"}.
+
+If not a venue, return {"skip":true,"reason":"..."}.
 
 Rules:
 - ONLY output JSON. No markdown.
 - If skip is false, include key "provider" with a single object matching the BudapestNight provider schema EXACTLY.
 - Never invent prices, hours, addresses, or phone numbers. Use only facts supported by the PAGE TEXT and SOURCE URL.
 - If a field is unknown, use sensible empties: email may be "". image must be "" unless you have an **https ImgBB** direct image URL (see project rules); never put a venue CDN URL in image. rating 0 and reviewCount 0 unless explicit ratings appear in the text.
-- pricePerClass: typical per-person spend (cover, tasting menu, ticket, or average main) in EUR; cite from the text only; if only a range, pick the lower bound and note uncertainty in longDescription.
+- pricePerClass: typical per-person spend in **EUR** (cover, tasting menu, average main) — cite from the text only. **Do not** put Hungarian forint ticket prices here (those belong on timed events as entryFees with currency HUF). For ticketed venues without a EUR equivalent, use 0.
+- priceCurrency: optional "EUR" (default) or "HUF" only when the source states a HUF planning figure for the venue listing itself (rare).
 - id MUST match ^prov-[a-z0-9-]+$ (lowercase slug, unique), e.g. prov-cmom-visit.
 - category MUST be one of: ${CURATOR_CATEGORIES.join(", ")}
 - borough MUST be one of: ${CURATOR_BOROUGHS.join(", ")}
@@ -36,7 +39,7 @@ Rules:
 - longDescription MUST end with a line: Sources: <source url>
 - ${getProviderLocaleIngestRulesForPrompt()}
 - If the official page lists food or drinks with prices, include optional "menu" (sections + items + tags from: palinka, wine, beer, craft-beer, cocktail, coffee, specialty-coffee, goulash, hungarian, street-food, dessert, vegan, vegetarian, ruin-bar, rooftop, danube-view). Use price only when printed; set price.source to "published". Omit menu entirely if no menu is on the page — do not invent dishes.
-- For Events with ticket or drink packages, optional "eventOfferings" array with dated offers and line items.
+- category must be Venues (not "Events"). For optional dated packages on the venue menu, use "eventOfferings" — this is NOT the app Events calendar; real concerts need resource "event" ingest separately.
 - Do not include menuTags in output (computed server-side).
 - If you cannot satisfy the schema truthfully, return {"skip":true,"reason":"..."} instead of guessing.`;
 }
