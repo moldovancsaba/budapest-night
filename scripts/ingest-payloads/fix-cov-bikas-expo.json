@@ -1,0 +1,80 @@
+{
+  "sourceUrls": [
+    "https://www.budapestexpo.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-bikas-expo",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bikas-expo",
+        "name": "Budapest Expo Events",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "address": "1117 Budapest, Albertirsai út 10, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Gallery",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+        "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/PGPfmXfD/9544f41fca93.jpg",
+        "email": "info@budapestexpo.hu",
+        "website": "https://www.budapestexpo.hu/",
+        "phone": "+36 1 555 3400",
+        "locales": {
+          "hu": {
+            "name": "Budapest Expo esemenyek",
+            "shortDescription": "Vasarok es expok a Bikas park kozeleben, konferenciacsarnokokkal az Albertirsai uton Ujbudan.",
+            "longDescription": "A Budapest Expo a Bikas park kozeleben szakvasaroknak, autoipari kiallitasoknak es nyilvanos rendezvenyeknek ad helyet del-Ujbudan. A csarnokok az M4-es metrohoz kapcsolodnak, es egesz evben vallalati esemenyeket is fogadnak. A naptar a budapestexpo.hu oldalon van.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "budapest-expo-hu"
+          },
+          "es": {
+            "name": "Eventos Budapest Expo",
+            "shortDescription": "Ferias y exposiciones junto a Bikas park, con pabellones de convenciones en Albertirsai ut en Ujbuda.",
+            "longDescription": "Budapest Expo, cerca de Bikas park, acoge ferias sectoriales, exposiciones de coches y eventos abiertos al publico en el sur de Ujbuda. Los pabellones conectan con la linea 4 del metro y reciben eventos corporativos durante todo el ano. Calendario en budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "budapest-expo-es"
+          },
+          "it": {
+            "name": "Eventi Budapest Expo",
+            "shortDescription": "Fiere ed esposizioni vicino a Bikas park, con padiglioni congressuali su Albertirsai ut a Ujbuda.",
+            "longDescription": "Budapest Expo, vicino a Bikas park, ospita fiere di settore, esposizioni automobilistiche e manifestazioni aperte al pubblico nella parte sud di Ujbuda. I padiglioni sono collegati alla linea 4 della metro e accolgono eventi aziendali tutto l anno. Calendario su budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "budapest-expo-it"
+          },
+          "he": {
+            "name": "אירועי Budapest Expo",
+            "shortDescription": "ירידים ותערוכות ליד Bikas park, עם אולמות כנסים ב-Albertirsai ut באויבודה.",
+            "longDescription": "Budapest Expo ליד Bikas park מארח תערוכות מקצועיות, תערוכות רכב וירידים פתוחים לקהל בדרום Ujbuda. האולמות מחוברים לקו מטרו 4 ומשרתים גם אירועים עסקיים לאורך כל השנה. לוח האירועים באתר budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "budapest-expo-he"
+          },
+          "ar": {
+            "name": "فعاليات Budapest Expo",
+            "shortDescription": "معارض وملتقيات قرب Bikas park مع قاعات مؤتمرات على Albertirsai ut في أويبودا.",
+            "longDescription": "يستضيف Budapest Expo قرب Bikas park معارض تجارية ومعارض سيارات وفعاليات عامة في جنوب Ujbuda. ترتبط القاعات بخط المترو 4 وتستقبل فعاليات الشركات طوال العام. الجدول على budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "budapest-expo-ar"
+          }
+        },
+        "gapKey": "Events|Újbuda|Bikás park",
+        "imageSource": "https://www.budapestexpo.hu/images/expo-hall.jpg"
+      }
+    }
+  ]
+}

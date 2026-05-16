@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.berenyi.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-berenyi-moricz",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-berenyi-moricz",
+        "name": "Berényi Étterem",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1114 Budapest, Berényi utca 1, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+        "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@berenyi.hu",
+        "website": "https://www.berenyi.hu/",
+        "phone": "+36 1 385 6789",
+        "locales": {
+          "hu": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-hu"
+          },
+          "es": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-es"
+          },
+          "it": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-it"
+          },
+          "he": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-he"
+          },
+          "ar": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-ar"
+          }
+        },
+        "gapKey": "Restaurants|Újbuda|Móricz Zsigmond körtér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

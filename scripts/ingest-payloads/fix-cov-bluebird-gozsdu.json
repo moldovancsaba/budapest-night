@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.bluebirdbar.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-bluebird-gozsdu",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bluebird-gozsdu",
+        "name": "Blue Bird Bar",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "DJ Sets",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+        "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4RvfwTs0/c91160125047.jpg",
+        "email": "info@bluebirdbar.hu",
+        "website": "https://www.bluebirdbar.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-hu"
+          },
+          "es": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-es"
+          },
+          "it": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-it"
+          },
+          "he": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-he"
+          },
+          "ar": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-ar"
+          }
+        },
+        "gapKey": "Parties|Erzsébetváros|Gozsdu Udvar",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg"
+      }
+    }
+  ]
+}

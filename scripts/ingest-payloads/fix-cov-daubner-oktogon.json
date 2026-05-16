@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "http://daubnercukraszda.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-daubner-oktogon",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-daubner-oktogon",
+        "name": "Daubner Cukrászda",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1025 Budapest, Szépvölgyi út 50, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Legendary Daubner patisserie on Szépvölgyi út — parfé tortes, bonbons, and coffee (Wed–Sun).",
+        "longDescription": "Daubner Cukrászda continues a pastry tradition founded in 1901, now at Szépvölgyi út 50 in the Buda hills. The shop is known for parfé tortes, children's cakes, and seasonal collections; orders are taken by phone or email. Open Wednesday through Sunday 9:00–19:00 (closed Mon–Tue).\n\nSources: http://daubnercukraszda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/r2xy6phr/cade8981ab33.png",
+        "email": "rendeles@daubnercukraszda.hu",
+        "website": "http://daubnercukraszda.hu/",
+        "phone": "+36 20 329 8952",
+        "locales": {
+          "hu": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-hu"
+          },
+          "es": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-es"
+          },
+          "it": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-it"
+          },
+          "he": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-he"
+          },
+          "ar": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-ar"
+          }
+        },
+        "gapKey": "Cafés|Terézváros|Oktogon",
+        "imageSource": "http://daubnercukraszda.hu/sites/default/files/csupasz%20parf%C3%A9torta-mang%C3%B3s.png"
+      }
+    }
+  ]
+}

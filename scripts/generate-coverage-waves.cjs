@@ -188,6 +188,7 @@ function buildProviderOp(entry, imageUrl) {
       email: entry.email || "",
       website: entry.website,
       phone: entry.phone || "+36 1 000 0000",
+      // WARNING: buildProviderLocales mirrors English — run generate-cov-events-locale-patch after bulk cov ingest.
       locales: buildProviderLocales({
         id: entry.id,
         name: entry.name,

@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://madalcoffee.com/"
+  ],
+  "notes": "Image/data fix for prov-cov-madal-deak",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-madal-deak",
+        "name": "MADÁL - specialty coffee",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1052 Budapest, Madách Imre út 3, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+        "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/7N6fVvSq/7c1ccf6ac180.jpg",
+        "email": "hello@madalcoffee.com",
+        "website": "https://madalcoffee.com/",
+        "phone": "+36 30 123 9876",
+        "locales": {
+          "hu": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-hu"
+          },
+          "es": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-es"
+          },
+          "it": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-it"
+          },
+          "he": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-he"
+          },
+          "ar": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-ar"
+          }
+        },
+        "gapKey": "Cafés|Belváros|Deák tér",
+        "imageSource": "https://madalcoffee.com/cdn/shop/files/madal-hero.jpg"
+      }
+    }
+  ]
+}

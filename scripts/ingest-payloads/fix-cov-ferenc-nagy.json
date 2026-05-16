@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.ferenciektere.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-ferenc-nagy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ferenc-nagy",
+        "name": "Ferenc Római Catholic Parish Cultural Events",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Ferenciek tere 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+        "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/bgyw5WyR/44745320a637.jpg",
+        "email": "",
+        "website": "https://www.ferenciektere.hu/",
+        "phone": "+36 1 317 2347",
+        "locales": {
+          "hu": {
+            "name": "Ferencvárosi Római Katolikus Plébánia kulturális eseményei",
+            "shortDescription": "Koncertek és orgonaestek a Ferenciek téren, barokk templomi programokkal a Nagytemplom utca közelében.",
+            "longDescription": "A Ferenciek teri bazilika környéke klasszikus koncerteknek és szezonális egyházzenei esteknek ad otthont, pár lépésre a Nagytemplom utcától, belső Ferencvárosban. Az építészet-bemutatok kiegészítik a jegyes recitalokat. A programok a ferenciektere.hu oldalon vannak.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "ferenciek-tere-hu"
+          },
+          "es": {
+            "name": "Eventos culturales de la parroquia catolica romana de Ferenc",
+            "shortDescription": "Conciertos y recitales de organo en Ferenciek tere, con actos barrocos de iglesia cerca de Nagytemplom utca.",
+            "longDescription": "La zona basilical de Ferenciek tere acoge conciertos clasicos y musica liturgica de temporada a pocos pasos de Nagytemplom utca, en el interior de Ferencvaros. Las visitas arquitectonicas complementan los recitales con entrada. Horarios en ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "ferenciek-tere-es"
+          },
+          "it": {
+            "name": "Eventi culturali della parrocchia cattolica romana di Ferenc",
+            "shortDescription": "Concerti e recital d organo a Ferenciek tere, con eventi barocchi in chiesa vicino a Nagytemplom utca.",
+            "longDescription": "L area della basilica di Ferenciek tere ospita concerti classici e musica liturgica stagionale a pochi passi da Nagytemplom utca, nel cuore di Ferencvaros. Le visite architettoniche completano i recital a pagamento. Programma su ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "ferenciek-tere-it"
+          },
+          "he": {
+            "name": "אירועי התרבות של הקהילה הקתולית הרומית פרנץ",
+            "shortDescription": "קונצרטים ורסיטלי עוגב ב-Ferenciek tere, עם אירועי כנסייה בארוקיים ליד Nagytemplom utca.",
+            "longDescription": "אזור הבזיליקה של Ferenciek tere מארח קונצרטים קלאסיים ומוזיקה ליטורגית עונתית במרחק צעדים מ-Nagytemplom utca בפנים Ferencvaros. סיורי האדריכלות משלימים את הרסיטלים בתשלום. לוחות זמנים דרך ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "ferenciek-tere-he"
+          },
+          "ar": {
+            "name": "الفعاليات الثقافية لرعية فرينتس الكاثوليكية الرومانية",
+            "shortDescription": "حفلات موسيقية وأمسيات أورغن في Ferenciek tere مع فعاليات كنسية باروكية قرب Nagytemplom utca.",
+            "longDescription": "تستضيف منطقة البازيليكا في Ferenciek tere حفلات كلاسيكية وموسيقى ليتورجية موسمية على بعد خطوات من Nagytemplom utca في قلب Ferencvaros. تكمل الجولات المعمارية الأمسيات الموسيقية المدفوعة. المواعيد عبر ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "ferenciek-tere-ar"
+          }
+        },
+        "gapKey": "Events|Ferencváros|Nagytemplom utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Budapest%2C_Vigad%C3%B3_t%C3%A9r_2%2C_Pesti_Vigad%C3%B3.jpg/1280px-Budapest%2C_Vigad%C3%B3_t%C3%A9r_2%2C_Pesti_Vigad%C3%B3.jpg"
+      }
+    }
+  ]
+}

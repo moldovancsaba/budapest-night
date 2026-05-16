@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://espressoembassy.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-embassy-balna",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-embassy-balna",
+        "name": "Espresso Embassy Bálna",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+        "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/r2JWGGYh/ecb9636bd3e4.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 30 180 0277",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-es"
+          },
+          "it": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-it"
+          },
+          "he": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-ar"
+          }
+        },
+        "gapKey": "Cafés|Ferencváros|Boráros tér",
+        "imageSource": "https://espressoembassy.hu/images/embassy-balna.jpg"
+      }
+    }
+  ]
+}

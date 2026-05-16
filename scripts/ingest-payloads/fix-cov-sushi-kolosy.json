@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.sushisei.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-sushi-kolosy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-sushi-kolosy",
+        "name": "Sushi Sei",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1036 Budapest, Lajos utca 103, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Street Food",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+        "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/fG1LMrQh/52204c7b3398.jpg",
+        "email": "info@sushisei.hu",
+        "website": "https://www.sushisei.hu/",
+        "phone": "+36 1 388 8888",
+        "locales": {
+          "hu": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-hu"
+          },
+          "es": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-es"
+          },
+          "it": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-it"
+          },
+          "he": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-he"
+          },
+          "ar": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-ar"
+          }
+        },
+        "gapKey": "Restaurants|Óbuda|Kolosy tér",
+        "imageSource": "https://www.sushisei.hu/images/sushi-sei-bar.jpg"
+      }
+    }
+  ]
+}

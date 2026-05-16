@@ -1,0 +1,80 @@
+{
+  "sourceUrls": [
+    "https://www.gerbeaud.hu/en"
+  ],
+  "notes": "Image/data fix for prov-cov-gerbeaud-vaci",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gerbeaud-vaci",
+        "name": "Gerbeaud",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "1051 Budapest, Vörösmarty tér 7-8, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Coffee & Brunch",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+        "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/v4Lkj6dt/dc4fbab043ea.jpg",
+        "email": "info@gerbeaud.hu",
+        "website": "https://www.gerbeaud.hu/en",
+        "phone": "+36 1 429 9000",
+        "locales": {
+          "hu": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-hu"
+          },
+          "es": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-es"
+          },
+          "it": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-it"
+          },
+          "he": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-he"
+          },
+          "ar": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-ar"
+          }
+        },
+        "gapKey": "Restaurants|Belváros|Váci utca",
+        "imageSource": "https://www.gerbeaud.hu/images/gerbeaud-hero.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.betesetterem.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-betes-corvin",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-betes-corvin",
+        "name": "Bétés Restaurant",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Corvin-negyed",
+        "address": "1082 Budapest, Futó utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+        "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/1t6X3xCJ/897e56d9ce27.jpg",
+        "email": "info@betesetterem.hu",
+        "website": "https://www.betesetterem.hu/",
+        "phone": "+36 1 456 7890",
+        "locales": {
+          "hu": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-hu"
+          },
+          "es": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-es"
+          },
+          "it": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-it"
+          },
+          "he": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-he"
+          },
+          "ar": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-ar"
+          }
+        },
+        "gapKey": "Restaurants|Ferencváros|Corvin-negyed",
+        "imageSource": "https://www.betesetterem.hu/images/betes-dining.jpg"
+      }
+    }
+  ]
+}

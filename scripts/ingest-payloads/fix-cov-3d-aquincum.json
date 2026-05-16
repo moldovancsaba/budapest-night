@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.3dcafe.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-3d-aquincum",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-3d-aquincum",
+        "name": "3D Café & Bistro",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "address": "1031 Budapest, Szentendrei út 125, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+        "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "email": "info@3dcafe.hu",
+        "website": "https://www.3dcafe.hu/",
+        "phone": "+36 1 388 1234",
+        "locales": {
+          "hu": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-hu"
+          },
+          "es": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-es"
+          },
+          "it": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-it"
+          },
+          "he": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-he"
+          },
+          "ar": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-ar"
+          }
+        },
+        "gapKey": "Restaurants|Óbuda|Aquincum",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+      }
+    }
+  ]
+}

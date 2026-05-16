@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.morzsakbar.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-morzsak-moricz",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-morzsak-moricz",
+        "name": "Morzsák Bar",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1114 Budapest, Bartók Béla út 27, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+        "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@morzsakbar.hu",
+        "website": "https://www.morzsakbar.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-hu"
+          },
+          "es": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-es"
+          },
+          "it": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-it"
+          },
+          "he": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-he"
+          },
+          "ar": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-ar"
+          }
+        },
+        "gapKey": "Parties|Újbuda|Móricz Zsigmond körtér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

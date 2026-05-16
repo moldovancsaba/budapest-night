@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.gellertspa.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-gellert-spa-events",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-spa-events",
+        "name": "Gellért Spa Cultural Hall",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+        "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@gellertspa.hu",
+        "website": "https://www.gellertspa.hu/",
+        "phone": "+36 1 466 6166",
+        "locales": {
+          "hu": {
+            "name": "Gellért fürdő kulturális csarnok",
+            "shortDescription": "Szecessziós fürdőkoncertek a Gellértnel, termalfürdővel és alkalmi elo zenes programokkal a Szent Gellért téren.",
+            "longDescription": "A Gellért Fürdő a Szent Gellért téren termalfürdőzest kapcsol ossze szezonális koncertekkel a szalloda szecesszios termeiben. A hullammedencek és szaunak Buda folyóparti wellnesskulturajanak alaphelyei. Jegyek a gellertspa.hu oldalon.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "gellert-furdo-hu"
+          },
+          "es": {
+            "name": "Sala Cultural del Balneario Gellert",
+            "shortDescription": "Conciertos spa art nouveau en Gellert, con banos termales y musica en directo ocasional en Szent Gellert ter.",
+            "longDescription": "El Balneario Gellert en Szent Gellert ter combina el bano termal con conciertos de temporada en las salas art nouveau del hotel. Las piscinas de olas y las saunas son parte central de la cultura wellness ribereña de Buda. Entradas en gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "balneario-gellert-es"
+          },
+          "it": {
+            "name": "Sala culturale delle terme Gellert",
+            "shortDescription": "Concerti spa art nouveau al Gellert, con terme e musica dal vivo occasionale in Szent Gellert ter.",
+            "longDescription": "Le Terme Gellert a Szent Gellert ter uniscono il bagno termale a concerti stagionali nelle sale art nouveau dell hotel. Piscina a onde e saune sono un pilastro della cultura benessere sul lungofiume di Buda. Biglietti su gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "terme-gellert-it"
+          },
+          "he": {
+            "name": "האולם התרבותי של מרחצאות גלרט",
+            "shortDescription": "קונצרטי ספא בסגנון אר נובו בגלרט, עם מרחצאות תרמיים ומוזיקה חיה מזדמנת בכיכר Szent Gellert.",
+            "longDescription": "מרחצאות גלרט ב-Szent Gellert ter משלבים רחצה תרמית עם קונצרטים עונתיים באולמות האר נובו של המלון. בריכת הגלים והסאונות הן חלק מרכזי מתרבות הוולנס שעל גדת הנהר בבודה. כרטיסים באתר gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "gellert-spa-he"
+          },
+          "ar": {
+            "name": "القاعة الثقافية لحمام غيليرت",
+            "shortDescription": "حفلات سبا على طراز الآرت نوفو في غيليرت مع حمامات حرارية وموسيقى حية بين حين وآخر في Szent Gellert ter.",
+            "longDescription": "يجمع حمام غيليرت في Szent Gellert ter بين الاستحمام الحراري وحفلات موسمية داخل قاعات الفندق ذات طراز الآرت نوفو. تشكل برك الأمواج والساونا جزءاً أساسياً من ثقافة العافية على ضفة بودا. التذاكر على gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "gellert-spa-ar"
+          }
+        },
+        "gapKey": "Events|Buda|Szent Gellért tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

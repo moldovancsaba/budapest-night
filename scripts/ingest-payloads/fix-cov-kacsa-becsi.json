@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.kacsaetterem.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-kacsa-becsi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kacsa-becsi",
+        "name": "Kacsa Étterem",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Fő utca 82, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+        "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "email": "info@kacsaetterem.hu",
+        "website": "https://www.kacsaetterem.hu/",
+        "phone": "+36 1 388 8392",
+        "locales": {
+          "hu": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-hu"
+          },
+          "es": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-es"
+          },
+          "it": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-it"
+          },
+          "he": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-he"
+          },
+          "ar": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-ar"
+          }
+        },
+        "gapKey": "Restaurants|Óbuda|Bécsi út",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+      }
+    }
+  ]
+}

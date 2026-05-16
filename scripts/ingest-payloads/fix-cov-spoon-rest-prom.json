@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.spoon.hu/en/restaurant"
+  ],
+  "notes": "Image/data fix for prov-cov-spoon-rest-prom",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spoon-rest-prom",
+        "name": "Spoon Restaurant",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "address": "1056 Budapest, Vigadó utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+        "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/jvjTF5Qk/e85d26374f26.jpg",
+        "email": "info@spoon.hu",
+        "website": "https://www.spoon.hu/en/restaurant",
+        "phone": "+36 1 269 0250",
+        "locales": {
+          "hu": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-hu"
+          },
+          "es": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-es"
+          },
+          "it": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-it"
+          },
+          "he": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-he"
+          },
+          "ar": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-ar"
+          }
+        },
+        "gapKey": "Restaurants|Belváros|Danube Promenade",
+        "imageSource": "https://www.spoon.hu/images/spoon-dining-room.jpg"
+      }
+    }
+  ]
+}

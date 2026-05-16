@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.morrisons.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-morrison-lit-wessel",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-morrison-lit-wessel",
+        "name": "Morrison's Lit",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1077 Budapest, Wesselényi utca 25, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Ruin Bar",
+          "Electronic"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+        "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/R4GM421Z/d40833899f9b.jpg",
+        "email": "",
+        "website": "https://www.morrisons.hu/",
+        "phone": "+36 1 311 9522",
+        "locales": {
+          "hu": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-hu"
+          },
+          "es": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-es"
+          },
+          "it": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-it"
+          },
+          "he": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-he"
+          },
+          "ar": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-ar"
+          }
+        },
+        "gapKey": "Parties|Erzsébetváros|Wesselényi utca",
+        "imageSource": "https://www.morrisons.hu/images/morrisons-lit.jpg"
+      }
+    }
+  ]
+}

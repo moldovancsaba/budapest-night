@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.gellertspa.hu/events"
+  ],
+  "notes": "Image/data fix for prov-cov-gellert-events-ujbuda",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-events-ujbuda",
+        "name": "Gellért Bath Palace Events",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1114 Budapest, Kelenhegyi út 4, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "Jazz",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+        "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@gellertspa.hu",
+        "website": "https://www.gellertspa.hu/events",
+        "phone": "+36 1 466 6166",
+        "locales": {
+          "hu": {
+            "name": "Gellért fürdőpalota események",
+            "shortDescription": "Fürdőkoncertek és wellnessprogramok a Gellértnel, szecesszios medencekkel a Gellért fürdőkörnyékén.",
+            "longDescription": "A Gellért Fürdő a Kelenhegyi uton szezonális zenei és wellness-eseményeket rendez a szecesszios fürdőkoplexumon belul. A napijegy termálmedenceket, szaunakat és napozóteraszokat is tartalmaz a Gellért fürdőkörnyékén. Menetrend a gellertspa.hu/events oldalon.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "gellert-furdopalota-hu"
+          },
+          "es": {
+            "name": "Eventos del Palacio de Banos Gellert",
+            "shortDescription": "Conciertos de spa y eventos wellness en Gellert, con piscinas art nouveau en la zona de los banos Gellert.",
+            "longDescription": "El Balneario Gellert en Kelenhegyi ut ofrece eventos musicales y de bienestar de temporada dentro del complejo termal art nouveau. La entrada diaria incluye piscinas termales, saunas y terrazas para tomar el sol en la zona de los banos Gellert. Horario en gellertspa.hu/events.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "eventos-gellert-es"
+          },
+          "it": {
+            "name": "Eventi del Palazzo termale Gellert",
+            "shortDescription": "Concerti spa ed eventi wellness al Gellert, con piscine art nouveau nella zona dei bagni Gellert.",
+            "longDescription": "Le Terme Gellert su Kelenhegyi ut ospitano eventi stagionali di musica e benessere all interno del complesso termale art nouveau. Il biglietto giornaliero comprende piscine termali, saune e terrazze solarium nella zona dei Bagni Gellert. Orari su gellertspa.hu/events.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "eventi-gellert-it"
+          },
+          "he": {
+            "name": "אירועי ארמון המרחצאות גלרט",
+            "shortDescription": "קונצרטי ספא ואירועי וולנס בגלרט, עם בריכות אר נובו באזור מרחצאות גלרט.",
+            "longDescription": "מרחצאות גלרט ב-Kelenhegyi ut מארחים אירועי מוזיקה ובריאות עונתיים בתוך מתחם הרחצה הארט-נובואי. כרטיס יומי כולל בריכות תרמיות, סאונות ומרפסות שמש באזור מרחצאות גלרט. לוח הזמנים באתר gellertspa.hu/events.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "gellert-bath-palace-he"
+          },
+          "ar": {
+            "name": "فعاليات قصر حمام غيليرت",
+            "shortDescription": "حفلات سبا وفعاليات عافية في غيليرت مع برك آرت نوفو في منطقة حمامات غيليرت.",
+            "longDescription": "يستضيف حمام غيليرت على Kelenhegyi ut فعاليات موسيقية وعافية موسمية داخل مجمع الحمامات الحرارية بطراز الآرت نوفو. تشمل تذكرة اليوم بركاً حرارية وساونا وشرفات شمسية في منطقة حمامات غيليرت. الجدول على gellertspa.hu/events.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "gellert-bath-palace-ar"
+          }
+        },
+        "gapKey": "Events|Újbuda|Gellért Baths area",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

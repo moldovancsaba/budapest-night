@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.buenavista.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-buena-vista-obuda",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-buena-vista-obuda",
+        "name": "Buena Vista Bistro",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "address": "1037 Budapest, Királyok útja 28, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+        "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/tT2DJ8P8/0fe6d212760e.jpg",
+        "email": "info@buenavista.hu",
+        "website": "https://www.buenavista.hu/",
+        "phone": "+36 1 388 3888",
+        "locales": {
+          "hu": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-hu"
+          },
+          "es": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-es"
+          },
+          "it": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-it"
+          },
+          "he": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-he"
+          },
+          "ar": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-ar"
+          }
+        },
+        "gapKey": "Restaurants|Óbuda|Óbuda Island",
+        "imageSource": "https://www.buenavista.hu/images/buena-vista-terrace.jpg"
+      }
+    }
+  ]
+}

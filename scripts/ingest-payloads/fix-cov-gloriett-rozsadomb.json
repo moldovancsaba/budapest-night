@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.gloriett.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-gloriett-rozsadomb",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gloriett-rozsadomb",
+        "name": "Gloriett Events",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1027 Budapest, Török utca 3, Hungary",
+        "activityTypes": [
+          "Wine Bar",
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+        "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrKLtNZ0/253eb909ca0a.jpg",
+        "email": "info@gloriett.hu",
+        "website": "https://www.gloriett.hu/",
+        "phone": "+36 1 356 7890",
+        "locales": {
+          "hu": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-hu"
+          },
+          "es": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-es"
+          },
+          "it": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-it"
+          },
+          "he": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-he"
+          },
+          "ar": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-ar"
+          }
+        },
+        "gapKey": "Events|Buda|Rózsadomb",
+        "imageSource": "https://www.gloriett.hu/images/gloriett-terrace.jpg"
+      }
+    }
+  ]
+}

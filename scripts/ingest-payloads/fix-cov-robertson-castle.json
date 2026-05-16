@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.robertsonbar.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-robertson-castle",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-robertson-castle",
+        "name": "Robertson Bar",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1011 Budapest, Robertson utca 1, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "DJ Sets",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+        "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/1fZZR3by/dafa03e3708f.jpg",
+        "email": "info@robertsonbar.hu",
+        "website": "https://www.robertsonbar.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-hu"
+          },
+          "es": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-es"
+          },
+          "it": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-it"
+          },
+          "he": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-he"
+          },
+          "ar": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-ar"
+          }
+        },
+        "gapKey": "Parties|Buda|Castle District",
+        "imageSource": "https://www.robertsonbar.hu/images/robertson-cellar.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://espressoembassy.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-embassy-rakoczi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-embassy-rakoczi",
+        "name": "Espresso Embassy Rákóczi",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Rákóczi út 57, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+        "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/r2JWGGYh/ecb9636bd3e4.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 20 445 0063",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-es"
+          },
+          "it": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-it"
+          },
+          "he": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-ar"
+          }
+        },
+        "gapKey": "Cafés|Erzsébetváros|Rákóczi tér",
+        "imageSource": "https://espressoembassy.hu/images/embassy-rakoczi.jpg"
+      }
+    }
+  ]
+}

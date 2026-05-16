@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.kekbello.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-kekbello-kosztolanyi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kekbello-kosztolanyi",
+        "name": "Kékbello Bistro",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1114 Budapest, Bocskai út 31, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+        "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@kekbello.hu",
+        "website": "https://www.kekbello.hu/",
+        "phone": "+36 1 385 4321",
+        "locales": {
+          "hu": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-it"
+          },
+          "he": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-ar"
+          }
+        },
+        "gapKey": "Restaurants|Újbuda|Kosztolányi Dezső tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

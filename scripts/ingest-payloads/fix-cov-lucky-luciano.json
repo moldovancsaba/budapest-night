@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://luckyluciano.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-lucky-luciano",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-lucky-luciano",
+        "name": "Lucky Luciano Coffee",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1111 Budapest, Baross utca 55, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+        "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/r2JWGGYh/ecb9636bd3e4.jpg",
+        "email": "hello@luckyluciano.hu",
+        "website": "https://luckyluciano.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-hu"
+          },
+          "es": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-es"
+          },
+          "it": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-it"
+          },
+          "he": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-he"
+          },
+          "ar": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-ar"
+          }
+        },
+        "gapKey": "Cafés|Ferencváros|Műegyetem",
+        "imageSource": "https://luckyluciano.hu/images/lucky-luciano-bar.jpg"
+      }
+    }
+  ]
+}

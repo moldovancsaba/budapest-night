@@ -1,4 +1,7 @@
-/** Mirror English provider copy into required ingest locales (hu, es, it, he, ar). */
+/**
+ * @deprecated Do not use for production ingest — copies English into every locale.
+ * Curator payloads need real translations (see scripts/data/*-locale-translations.cjs).
+ */
 const CODES = ["hu", "es", "it", "he", "ar"];
 
 function slugBaseFromId(id) {

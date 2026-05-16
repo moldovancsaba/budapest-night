@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.spoon.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-spoon-party-prom",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spoon-party-prom",
+        "name": "Spoon Cafe & Lounge",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "address": "1056 Budapest, Vigadó utca 3, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+        "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mF1YXQ9z/98567dcb61de.jpg",
+        "email": "info@spoon.hu",
+        "website": "https://www.spoon.hu/",
+        "phone": "+36 1 269 0250",
+        "locales": {
+          "hu": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-hu"
+          },
+          "es": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-es"
+          },
+          "it": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-it"
+          },
+          "he": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-he"
+          },
+          "ar": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-ar"
+          }
+        },
+        "gapKey": "Parties|Belváros|Danube Promenade",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/InterContinental%2C_RedJet%2C_Kossuth_Schiff%2C_Spoon_the_Boat%2C_2025_Budapest.jpg/1280px-InterContinental%2C_RedJet%2C_Kossuth_Schiff%2C_Spoon_the_Boat%2C_2025_Budapest.jpg"
+      }
+    }
+  ]
+}

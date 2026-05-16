@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.galibagarden.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-galiba-kolosy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-galiba-kolosy",
+        "name": "Galiba Garden",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1031 Budapest, Frankel Leó út 48, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+        "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "email": "info@galibagarden.hu",
+        "website": "https://www.galibagarden.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-hu"
+          },
+          "es": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-es"
+          },
+          "it": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-it"
+          },
+          "he": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-he"
+          },
+          "ar": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-ar"
+          }
+        },
+        "gapKey": "Parties|Óbuda|Kolosy tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+      }
+    }
+  ]
+}

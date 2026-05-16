@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.nehrupart.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-nehru-party",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-nehru-party",
+        "name": "Nehru Part Beach Bar",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1095 Budapest, Könyves Kálmán körút 12-14, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+        "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/F4QS8x0K/dcc429a29bb9.jpg",
+        "email": "info@nehrupart.hu",
+        "website": "https://www.nehrupart.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-hu"
+          },
+          "es": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-es"
+          },
+          "it": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-it"
+          },
+          "he": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-he"
+          },
+          "ar": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-ar"
+          }
+        },
+        "gapKey": "Parties|Ferencváros|Millenniumi Városközpont",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Conferentiecentrum_B%C3%A1lna.jpg/1280px-Conferentiecentrum_B%C3%A1lna.jpg"
+      }
+    }
+  ]
+}

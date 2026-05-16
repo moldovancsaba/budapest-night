@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.stand25bisztro.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-stand25-rakoczi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-stand25-rakoczi",
+        "name": "Stand25 Bisztró",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Hold utca 13, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Street Food",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+        "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/bgyw5WyR/44745320a637.jpg",
+        "email": "info@stand25bisztro.hu",
+        "website": "https://www.stand25bisztro.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-hu"
+          },
+          "es": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-es"
+          },
+          "it": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-it"
+          },
+          "he": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-he"
+          },
+          "ar": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-ar"
+          }
+        },
+        "gapKey": "Restaurants|Erzsébetváros|Rákóczi tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Budapest%2C_Vigad%C3%B3_t%C3%A9r_2%2C_Pesti_Vigad%C3%B3.jpg/1280px-Budapest%2C_Vigad%C3%B3_t%C3%A9r_2%2C_Pesti_Vigad%C3%B3.jpg"
+      }
+    }
+  ]
+}

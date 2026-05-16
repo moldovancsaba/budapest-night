@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.kuplung.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-kuplung-kiraly",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kuplung-kiraly",
+        "name": "Kuplung",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Király utca 46, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "DJ Sets",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+        "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Kj7W8h6N/cb0cae94056f.jpg",
+        "email": "info@kuplung.hu",
+        "website": "https://www.kuplung.hu/",
+        "phone": "+36 1 352 6153",
+        "locales": {
+          "hu": {
+            "name": "Kuplung",
+            "shortDescription": "Indie koncertbar a Király utcaban, eméleti galeriaval és bulinegyedi koncertnaptárral.",
+            "longDescription": "A Kuplung a Király utca 46. alatt egy pincebeli előzenei helyszint egyesit egy eméleti galerias barral. A programban magyar indie zenekarok és tematikus klubbulik szerepelnek, a Király utca éjszakai életének közepén. A fellistasok a kuplung.hu oldalon találhatók.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-hu"
+          },
+          "es": {
+            "name": "Kuplung",
+            "shortDescription": "Bar de conciertos indie en Kiraly utca, con galeria arriba y agenda de directos en el distrito de fiesta.",
+            "longDescription": "Kuplung, en Kiraly utca 46, combina una sala de musica en vivo en el sotano con un bar-galeria en la planta superior. El programa incluye bandas indie hungaras y noches de club tematicas en pleno ambiente nocturno de Kiraly utca. Cartelera en kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-es"
+          },
+          "it": {
+            "name": "Kuplung",
+            "shortDescription": "Bar da concerti indie in Kiraly utca, con galleria al piano superiore e calendario live nel quartiere della movida.",
+            "longDescription": "Kuplung, in Kiraly utca 46, unisce un locale di musica dal vivo nel seminterrato a un bar-galleria al piano superiore. Il programma propone band indie ungheresi e serate club a tema nel cuore della nightlife di Kiraly utca. Programmazione su kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-it"
+          },
+          "he": {
+            "name": "Kuplung",
+            "shortDescription": "בר הופעות אינדי ברחוב Kiraly, עם גלריה בקומה העליונה ולוח הופעות בלב אזור הבילויים.",
+            "longDescription": "Kuplung ב-Kiraly utca 46 משלב אולם מוזיקה חיה במרתף עם בר-גלריה בקומה העליונה. התוכנית כוללת להקות אינדי הונגריות ולילות מועדון נושאיים במרכז חיי הלילה של Kiraly utca. הרשימות מופיעות ב-kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-he"
+          },
+          "ar": {
+            "name": "Kuplung",
+            "shortDescription": "بار حفلات إندي في Kiraly utca مع غاليري في الطابق العلوي وجدول عروض في قلب منطقة السهر.",
+            "longDescription": "يجمع Kuplung في Kiraly utca 46 بين مساحة موسيقى حية في القبو وبار-غاليري في الطابق العلوي. يتضمن البرنامج فرقا إندي مجرية وليالي نادٍ ذات طابع خاص في قلب الحياة الليلية لشارع Kiraly. قائمة الفعاليات على kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-ar"
+          }
+        },
+        "gapKey": "Events|Terézváros|Király utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG/1280px-Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG"
+      }
+    }
+  ]
+}

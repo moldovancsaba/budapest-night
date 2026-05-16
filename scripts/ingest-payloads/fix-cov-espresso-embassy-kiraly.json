@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://espressoembassy.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-espresso-embassy-kiraly",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-espresso-embassy-kiraly",
+        "name": "Espresso Embassy",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "address": "1051 Budapest, Arany János utca 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Pioneer specialty coffee on Arany János utca — espresso, filter, and pastries (Mon–Fri from 7:30).",
+        "longDescription": "Espresso Embassy at Arany János utca 15 is one of Budapest's early third-wave cafés, a short walk from Király utca nightlife. Mon–Fri 7:30–17:00, Sat–Sun 8:30–17:00; no reservations. Weekend laptops only on communal tables.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/k28gKSf0/fdb9f8852e4d.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 20 445 0063",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-es"
+          },
+          "it": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-it"
+          },
+          "he": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-ar"
+          }
+        },
+        "gapKey": "Cafés|Terézváros|Király utca",
+        "imageSource": "https://espressoembassy.hu/images/embassy-bar.jpg"
+      }
+    }
+  ]
+}

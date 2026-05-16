@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.2bcoffee.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-2b-becsi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-2b-becsi",
+        "name": "2B Coffee",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Bécsi út 19, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+        "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/nydtSJf/a89903b3677d.jpg",
+        "email": "hello@2bcoffee.hu",
+        "website": "https://www.2bcoffee.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-hu"
+          },
+          "es": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-es"
+          },
+          "it": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-it"
+          },
+          "he": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-he"
+          },
+          "ar": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-ar"
+          }
+        },
+        "gapKey": "Cafés|Óbuda|Bécsi út",
+        "imageSource": "https://www.2bcoffee.hu/images/2b-barista.jpg"
+      }
+    }
+  ]
+}

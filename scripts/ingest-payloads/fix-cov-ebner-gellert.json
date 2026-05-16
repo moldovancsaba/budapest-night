@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.ebnercukraszda.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-ebner-gellert",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ebner-gellert",
+        "name": "Ébner Confectionery",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+        "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@ebnercukraszda.hu",
+        "website": "https://www.ebnercukraszda.hu/",
+        "phone": "+36 1 385 2411",
+        "locales": {
+          "hu": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-hu"
+          },
+          "es": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-es"
+          },
+          "it": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-it"
+          },
+          "he": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-he"
+          },
+          "ar": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-ar"
+          }
+        },
+        "gapKey": "Cafés|Buda|Szent Gellért tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

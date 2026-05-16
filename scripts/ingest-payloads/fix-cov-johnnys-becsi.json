@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.johnnysbar.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-johnnys-becsi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-johnnys-becsi",
+        "name": "Johnny's American Bar",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Bécsi út 44-46, Hungary",
+        "activityTypes": [
+          "Craft Beer",
+          "Live Music",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+        "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/sY7hksD/52674bc9fa53.jpg",
+        "email": "info@johnnysbar.hu",
+        "website": "https://www.johnnysbar.hu/",
+        "phone": "+36 1 388 5555",
+        "locales": {
+          "hu": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-hu"
+          },
+          "es": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-es"
+          },
+          "it": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-it"
+          },
+          "he": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-he"
+          },
+          "ar": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-ar"
+          }
+        },
+        "gapKey": "Parties|Óbuda|Bécsi út",
+        "imageSource": "https://www.johnnysbar.hu/images/johnnys-interior.jpg"
+      }
+    }
+  ]
+}

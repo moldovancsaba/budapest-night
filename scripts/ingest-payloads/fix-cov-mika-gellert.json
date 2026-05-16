@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.mikakert.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-mika-gellert",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-mika-gellert",
+        "name": "Mika Kert",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1114 Budapest, Bartók Béla út 11, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+        "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@mikakert.hu",
+        "website": "https://www.mikakert.hu/",
+        "phone": "+36 1 385 5678",
+        "locales": {
+          "hu": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-hu"
+          },
+          "es": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-es"
+          },
+          "it": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-it"
+          },
+          "he": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-he"
+          },
+          "ar": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-ar"
+          }
+        },
+        "gapKey": "Restaurants|Újbuda|Gellért Baths area",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

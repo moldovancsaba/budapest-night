@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.vasurszallo.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-vasut-obuda",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-vasut-obuda",
+        "name": "Vasúrszálló Restaurant",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1036 Budapest, Vörösvári út 50, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+        "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "email": "info@vasurszallo.hu",
+        "website": "https://www.vasurszallo.hu/",
+        "phone": "+36 1 388 6789",
+        "locales": {
+          "hu": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-hu"
+          },
+          "es": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-es"
+          },
+          "it": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-it"
+          },
+          "he": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-he"
+          },
+          "ar": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-ar"
+          }
+        },
+        "gapKey": "Restaurants|Óbuda|Main Square Óbuda",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+      }
+    }
+  ]
+}

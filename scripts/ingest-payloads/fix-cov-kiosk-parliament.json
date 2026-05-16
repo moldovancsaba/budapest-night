@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.kioskbudapest.com/"
+  ],
+  "notes": "Image/data fix for prov-cov-kiosk-parliament",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kiosk-parliament",
+        "name": "Kiosk Budapest",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "address": "1052 Budapest, Március 15. tér 4, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Cocktails",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "All ages"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+        "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/8LNJx6SK/6197b51aac21.jpg",
+        "email": "budapest@kioskbudapest.com",
+        "website": "https://www.kioskbudapest.com/",
+        "phone": "+36 1 235 0010",
+        "locales": {
+          "hu": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-hu"
+          },
+          "es": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-es"
+          },
+          "it": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-it"
+          },
+          "he": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-he"
+          },
+          "ar": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-ar"
+          }
+        },
+        "gapKey": "Restaurants|Belváros|Parliament",
+        "imageSource": "https://www.kioskbudapest.com/wp-content/uploads/kiosk-terrace.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.obudaisziget.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-obuda-becsi-events",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-obuda-becsi-events",
+        "name": "Óbudai-sziget Cultural Hall",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Bécsi út 38, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+        "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "email": "info@obudaisziget.hu",
+        "website": "https://www.obudaisziget.hu/",
+        "phone": "+36 1 437 8601",
+        "locales": {
+          "hu": {
+            "name": "Óbudai-sziget Kulturális Ház",
+            "shortDescription": "Közösségi koncertek a Becsi uton, kerületi rendezvényekkel Óbudán a fo vásárlofolyóso menten.",
+            "longDescription": "Az Óbudai-sziget Kulturális Ház a Becsi uton önkormányzati koncerteket, tanceelőadásokat és ünnepi programokat rendez Eszak-Buda lakoinak. Az avenu elhelyezkedes a Kolosy teret a Duna-kanyarral kotja ossze. A műsor az obudaisziget.hu oldalon van.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "obudai-sziget-kulturhaz-hu"
+          },
+          "es": {
+            "name": "Sala Cultural Obudai-sziget",
+            "shortDescription": "Conciertos comunitarios en Becsi ut, con eventos distritales de Obuda a lo largo del principal eje comercial.",
+            "longDescription": "La Sala Cultural Obudai-sziget en Becsi ut acoge conciertos municipales, recitales de danza y programas festivos para el norte de Buda. Su ubicacion conecta Kolosy ter con el recodo del Danubio. Horarios en obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "obudai-sziget-es"
+          },
+          "it": {
+            "name": "Sala culturale Obudai-sziget",
+            "shortDescription": "Concerti di comunita su Becsi ut, con eventi distrettuali di Obuda lungo l asse commerciale principale.",
+            "longDescription": "La Sala culturale Obudai-sziget su Becsi ut ospita concerti comunali, saggi di danza e programmi festivi per la Buda settentrionale. La sua posizione collega Kolosy ter alla curva del Danubio. Programma su obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "obudai-sziget-it"
+          },
+          "he": {
+            "name": "האולם התרבותי אובודאי-סיגט",
+            "shortDescription": "קונצרטים קהילתיים ב-Becsi ut, עם אירועי רובע של אובודה לאורך ציר הקניות הראשי.",
+            "longDescription": "האולם התרבותי אובודאי-סיגט ב-Becsi ut מארח קונצרטים עירוניים, רסיטלי מחול ותוכניות חג עבור צפון בודה. המיקום שעל השדרה מחבר בין Kolosy ter לעיקול הדנובה. לוח הזמנים באתר obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "obudai-sziget-he"
+          },
+          "ar": {
+            "name": "القاعة الثقافية أوبوداي-سيغيت",
+            "shortDescription": "حفلات مجتمعية على Becsi ut مع فعاليات منطقة أوبودا على طول محور التسوق الرئيسي.",
+            "longDescription": "تستضيف القاعة الثقافية أوبوداي-سيغيت على Becsi ut حفلات بلدية وعروض رقص وبرامج الأعياد لسكان شمال بودا. يربط موقعها على الشارع الرئيسي بين Kolosy ter وانحناءة الدانوب. البرنامج على obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "obudai-sziget-ar"
+          }
+        },
+        "gapKey": "Events|Óbuda|Bécsi út",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+      }
+    }
+  ]
+}

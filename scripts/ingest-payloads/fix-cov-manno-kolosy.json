@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.mannocaffe.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-manno-kolosy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-manno-kolosy",
+        "name": "Manno Caffè",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1036 Budapest, Bécsi út 52, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+        "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/zW80NfrR/7f092dd52bf3.jpg",
+        "email": "hello@mannocaffe.hu",
+        "website": "https://www.mannocaffe.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-hu"
+          },
+          "es": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-es"
+          },
+          "it": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-it"
+          },
+          "he": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-he"
+          },
+          "ar": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-ar"
+          }
+        },
+        "gapKey": "Cafés|Óbuda|Kolosy tér",
+        "imageSource": "https://www.mannocaffe.hu/images/manno-latte.jpg"
+      }
+    }
+  ]
+}

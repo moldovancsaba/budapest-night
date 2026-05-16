@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://herebudapest.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-here-rakoczi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-here-rakoczi",
+        "name": "HERE Budapest",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Erzsébet körút 13, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+        "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/DyRb4KG/a06221331f42.jpg",
+        "email": "info@herebudapest.hu",
+        "website": "https://herebudapest.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-hu"
+          },
+          "es": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-es"
+          },
+          "it": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-it"
+          },
+          "he": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-he"
+          },
+          "ar": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-ar"
+          }
+        },
+        "gapKey": "Parties|Erzsébetváros|Rákóczi tér",
+        "imageSource": "https://herebudapest.hu/images/here-bar.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.liliomcafe.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-liliom-moricz",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-liliom-moricz",
+        "name": "Liliom Café",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+        "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "hello@liliomcafe.hu",
+        "website": "https://www.liliomcafe.hu/",
+        "phone": "+36 1 385 1234",
+        "locales": {
+          "hu": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-hu"
+          },
+          "es": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-es"
+          },
+          "it": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-it"
+          },
+          "he": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-he"
+          },
+          "ar": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-ar"
+          }
+        },
+        "gapKey": "Cafés|Újbuda|Móricz Zsigmond körtér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

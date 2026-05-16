@@ -1,0 +1,80 @@
+{
+  "sourceUrls": [
+    "https://www.jewishmuseum.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-dohany-jewish-q",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-dohany-jewish-q",
+        "name": "Dohány Street Synagogue",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "1074 Budapest, Dohány utca 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+        "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/5g4K05RQ/8ce55b380f5f.jpg",
+        "email": "info@jewishmuseum.hu",
+        "website": "https://www.jewishmuseum.hu/",
+        "phone": "+36 1 343 0420",
+        "locales": {
+          "hu": {
+            "name": "Dohany utcai Zsinagoga",
+            "shortDescription": "Europa legnagyobb zsinagogaja, koncertekkel, vezetett setakkal es zsidonegyedi orokseggel a Dohany utcaban.",
+            "longDescription": "A Dohany utcai Zsinagoga egyuttes kulturális esemenyeknek, orgonahangversenyeknek es muzeumlatogatasoknak ad helyet a zsidonegyed sziveben. A mavr stilusu epület kozel van a Kazinczy utca ejszakai eletehez. Jegyek a jewishmuseum.hu oldalon.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "dohany-zsinagoga-hu"
+          },
+          "es": {
+            "name": "Sinagoga de la calle Dohany",
+            "shortDescription": "La sinagoga mas grande de Europa, con conciertos, visitas guiadas y patrimonio judio en Dohany utca.",
+            "longDescription": "El complejo de la Sinagoga de la calle Dohany acoge eventos culturales, recitales de organo y visitas al museo en pleno barrio judio. El edificio de estilo neomudejar se alza junto a la vida nocturna de Kazinczy utca. Entradas en jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "sinagoga-dohany-es"
+          },
+          "it": {
+            "name": "Sinagoga di via Dohany",
+            "shortDescription": "La piu grande sinagoga d Europa, con concerti, visite guidate e patrimonio del quartiere ebraico in Dohany utca.",
+            "longDescription": "Il complesso della Sinagoga di via Dohany ospita eventi culturali, recital d organo e visite museali nel cuore del quartiere ebraico. L edificio in stile moresco dialoga con la vita notturna vicina di Kazinczy utca. Biglietti su jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "sinagoga-dohany-it"
+          },
+          "he": {
+            "name": "בית הכנסת ברחוב דוהאני",
+            "shortDescription": "בית הכנסת הגדול באירופה, עם קונצרטים, סיורים מודרכים ומורשת הרובע היהודי ברחוב דוהאני.",
+            "longDescription": "מתחם בית הכנסת ברחוב דוהאני מארח אירועי תרבות, רסיטלי עוגב וביקורי מוזיאון בלב הרובע היהודי. המבנה בסגנון התחייה המורית ניצב סמוך לחיי הלילה של Kazinczy utca. כרטיסים דרך jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "dohany-synagogue-he"
+          },
+          "ar": {
+            "name": "كنيس شارع دوهاني",
+            "shortDescription": "أكبر كنيس في أوروبا مع حفلات موسيقية وجولات مرافقة وتراث الحي اليهودي في Dohany utca.",
+            "longDescription": "يستضيف مجمع كنيس شارع دوهاني فعاليات ثقافية وحفلات أورغن وزيارات للمتحف في قلب الحي اليهودي. يرسخ المبنى ذي الطراز الموريسكي الجديد حضورَه بجوار الحياة الليلية في Kazinczy utca. التذاكر عبر jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "dohany-synagogue-ar"
+          }
+        },
+        "gapKey": "Events|Erzsébetváros|Jewish Quarter",
+        "imageSource": "https://www.jewishmuseum.hu/images/synagogue-facade.jpg"
+      }
+    }
+  ]
+}

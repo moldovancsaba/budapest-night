@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.legio.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-legio-nagy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-legio-nagy",
+        "name": "Légió Hungarian Pub",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Pipa utca 4, Hungary",
+        "activityTypes": [
+          "Craft Beer",
+          "Live Music",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+        "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/HTnCgCF8/c0536385f80c.jpg",
+        "email": "",
+        "website": "https://www.legio.hu/",
+        "phone": "+36 1 318 9999",
+        "locales": {
+          "hu": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-hu"
+          },
+          "es": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-es"
+          },
+          "it": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-it"
+          },
+          "he": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-he"
+          },
+          "ar": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-ar"
+          }
+        },
+        "gapKey": "Parties|Ferencváros|Nagytemplom utca",
+        "imageSource": "https://www.legio.hu/images/legio-interior.jpg"
+      }
+    }
+  ]
+}

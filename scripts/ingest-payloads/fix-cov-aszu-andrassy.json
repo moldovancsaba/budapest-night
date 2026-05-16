@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.aszuetterem.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-aszu-andrassy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-aszu-andrassy",
+        "name": "Aszu Étterem",
+        "category": "Restaurants",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 2, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+        "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/99mWSGff/1d5d0d90e740.jpg",
+        "email": "info@aszuetterem.hu",
+        "website": "https://www.aszuetterem.hu/",
+        "phone": "+36 1 342 9342",
+        "locales": {
+          "hu": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-hu"
+          },
+          "es": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-es"
+          },
+          "it": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-it"
+          },
+          "he": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-he"
+          },
+          "ar": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-ar"
+          }
+        },
+        "gapKey": "Restaurants|Terézváros|Andrássy út",
+        "imageSource": "https://www.aszuetterem.hu/images/aszu-dining.jpg"
+      }
+    }
+  ]
+}

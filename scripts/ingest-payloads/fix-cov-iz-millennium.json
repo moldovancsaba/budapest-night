@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.izetterem.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-iz-millennium",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-iz-millennium",
+        "name": "Íz Étterem",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1093 Budapest, Bálint György utca 6, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+        "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/0p7dGX2W/0e01c7cb057d.jpg",
+        "email": "info@izetterem.hu",
+        "website": "https://www.izetterem.hu/",
+        "phone": "+36 1 456 7893",
+        "locales": {
+          "hu": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-hu"
+          },
+          "es": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-es"
+          },
+          "it": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-it"
+          },
+          "he": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-he"
+          },
+          "ar": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-ar"
+          }
+        },
+        "gapKey": "Restaurants|Ferencváros|Millenniumi Városközpont",
+        "imageSource": "https://www.izetterem.hu/images/iz-terrace.jpg"
+      }
+    }
+  ]
+}

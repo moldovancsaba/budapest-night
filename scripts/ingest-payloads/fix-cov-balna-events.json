@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://balnabudapest.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-balna-events",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-balna-events",
+        "name": "Bálna Budapest",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Gallery",
+          "Boat Party"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+        "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hRwK17bc/4ad9a9114fdc.jpg",
+        "email": "info@balnabudapest.hu",
+        "website": "https://balnabudapest.hu/",
+        "phone": "+36 1 456 7892",
+        "locales": {
+          "hu": {
+            "name": "Balna Budapest",
+            "shortDescription": "Balna alakú kulturkozpont a Duna partjan, dizajnvasarokkal, koncertekkel es piacokkal a Boraros ternel.",
+            "longDescription": "A Balna Budapest a Fovam teren folyoparti, balna formájú csarnok, ahol dizajnpiacok, borfesztivalok es berelt koncertek valtoznak egymast. A setany a Boraros ter villamosait a Nagyvasarcsarnokkal koti ossze. A naptar a balnabudapest.hu oldalon van.\n\nSources: https://balnabudapest.hu/",
+            "slug": "balna-budapest-hu"
+          },
+          "es": {
+            "name": "Balna Budapest",
+            "shortDescription": "Centro cultural con forma de ballena junto al Danubio, con ferias de diseno, conciertos y mercados en Boraros ter.",
+            "longDescription": "Balna Budapest, en Fovam ter, es un recinto ribereno con forma de ballena que acoge mercados de diseno, festivales de vino y conciertos alquilados. El paseo enlaza los tranvias de Boraros ter con el Gran Mercado Central. Calendario en balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "balna-budapest-es"
+          },
+          "it": {
+            "name": "Balna Budapest",
+            "shortDescription": "Centro culturale a forma di balena sul Danubio, con fiere di design, concerti e mercati a Boraros ter.",
+            "longDescription": "Balna Budapest a Fovam ter e una hall sul lungofiume a forma di balena che ospita mercati di design, festival del vino e concerti in affitto. La passeggiata collega i tram di Boraros ter al Mercato Coperto Centrale. Calendario su balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "balna-budapest-it"
+          },
+          "he": {
+            "name": "Balna Budapest",
+            "shortDescription": "מרכז תרבות בצורת לווייתן על הדנובה, עם ירידי עיצוב, קונצרטים ושווקים ב-Boraros ter.",
+            "longDescription": "Balna Budapest ב-Fovam ter הוא אולם נהר בצורת לווייתן שמארח שווקי עיצוב, פסטיבלי יין ואירועי קונצרט מושכרים. הטיילת מחברת בין החשמליות של Boraros ter לשוק המקורה הגדול. לוח האירועים באתר balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "balna-budapest-he"
+          },
+          "ar": {
+            "name": "Balna Budapest",
+            "shortDescription": "مركز ثقافي على شكل حوت على ضفة الدانوب مع معارض تصميم وحفلات وأسواق في Boraros ter.",
+            "longDescription": "يعد Balna Budapest في Fovam ter قاعة نهرية على شكل حوت تستضيف أسواق التصميم ومهرجانات النبيذ وحفلات مؤجرة. يربط الممشى ترام Boraros ter بسوق المدينة الكبير. الجدول على balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "balna-budapest-ar"
+          }
+        },
+        "gapKey": "Events|Ferencváros|Boráros tér",
+        "imageSource": "https://balnabudapest.hu/images/balna-exterior.jpg"
+      }
+    }
+  ]
+}

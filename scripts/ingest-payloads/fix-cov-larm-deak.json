@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.larm.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-larm-deak",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-larm-deak",
+        "name": "LÄRM",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1053 Budapest, Kossuth Lajos utca 17, Hungary",
+        "activityTypes": [
+          "Electronic",
+          "DJ Sets",
+          "Late night"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+        "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/pjQn46Gt/aef370d03359.jpg",
+        "email": "",
+        "website": "https://www.larm.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-hu"
+          },
+          "es": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-es"
+          },
+          "it": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-it"
+          },
+          "he": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-he"
+          },
+          "ar": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-ar"
+          }
+        },
+        "gapKey": "Parties|Belváros|Deák tér",
+        "imageSource": "https://www.larm.hu/images/larm-club.jpg"
+      }
+    }
+  ]
+}

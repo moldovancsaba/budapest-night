@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.danubiusgellert.com/"
+  ],
+  "notes": "Image/data fix for prov-cov-gellert-cafe",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-cafe",
+        "name": "Gellért Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Thermal Bath"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+        "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/TxndT945/3ee43c9d2449.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/",
+        "phone": "+36 1 889 5500",
+        "locales": {
+          "hu": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-hu"
+          },
+          "es": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-es"
+          },
+          "it": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-it"
+          },
+          "he": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-he"
+          },
+          "ar": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-ar"
+          }
+        },
+        "gapKey": "Cafés|Buda|Gellért Hill",
+        "imageSource": "https://www.danubiusgellert.com/images/gellert-cafe.jpg"
+      }
+    }
+  ]
+}

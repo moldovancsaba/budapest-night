@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.gelibi.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-gelibi-gellert",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gelibi-gellert",
+        "name": "Gelibi Café",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1114 Budapest, Bartók Béla út 9, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+        "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "hello@gelibi.hu",
+        "website": "https://www.gelibi.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-hu"
+          },
+          "es": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-es"
+          },
+          "it": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-it"
+          },
+          "he": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-he"
+          },
+          "ar": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-ar"
+          }
+        },
+        "gapKey": "Cafés|Újbuda|Gellért Baths area",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

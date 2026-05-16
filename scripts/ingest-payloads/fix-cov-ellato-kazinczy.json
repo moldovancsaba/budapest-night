@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://ellatokert.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-ellato-kazinczy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ellato-kazinczy",
+        "name": "Ellátó Kert",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "address": "1075 Budapest, Kazinczy utca 48, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Festival",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+        "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Kj7W8h6N/cb0cae94056f.jpg",
+        "email": "info@ellatokert.hu",
+        "website": "https://ellatokert.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Ellato Kert",
+            "shortDescription": "Nyitott romkerti helyszin a Kazinczy utcaban, koncertekkel, BBQ-val és nyári fesztiválokkal a bulifolyóson.",
+            "longDescription": "Az Ellato Kert a Kazinczy utca 48. alatt szezonális romkert, ahol elo zenekarok, food truckok és tematikus bulik varjak a vendegeket. A kert meleg hetvegeken megtelik a Szimpla és az Instant között. A programok az ellatokert.hu oldalon vannak.\n\nSources: https://ellatokert.hu/",
+            "slug": "ellato-kert-hu"
+          },
+          "es": {
+            "name": "Ellato Kert",
+            "shortDescription": "Jardin ruin al aire libre en Kazinczy utca, con conciertos, BBQ y festivales de verano en el corredor de fiesta.",
+            "longDescription": "Ellato Kert, en Kazinczy utca 48, es un ruin garden estacional con bandas en vivo, food trucks y fiestas tematicas. El patio se llena los fines de semana calidos entre Szimpla e Instant. Cartelera en ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "ellato-kert-es"
+          },
+          "it": {
+            "name": "Ellato Kert",
+            "shortDescription": "Ruin garden all aperto in Kazinczy utca, con concerti, barbecue e festival estivi nel corridoio della movida.",
+            "longDescription": "Ellato Kert, in Kazinczy utca 48, e un ruin garden stagionale che ospita band dal vivo, food truck e feste a tema. Il cortile si riempie nei weekend caldi tra Szimpla e Instant. Programmazione su ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "ellato-kert-it"
+          },
+          "he": {
+            "name": "Ellato Kert",
+            "shortDescription": "גן חורבות פתוח ברחוב Kazinczy, עם הופעות, ברביקיו ופסטיבלי קיץ במסדרון הבילויים.",
+            "longDescription": "Ellato Kert ב-Kazinczy utca 48 הוא גן חורבות עונתי עם להקות חיות, פוד טראקס ומסיבות נושא. החצר מתמלאת בסופי שבוע חמים בין Szimpla ל-Instant. הרשימות באתר ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "ellato-kert-he"
+          },
+          "ar": {
+            "name": "Ellato Kert",
+            "shortDescription": "حديقة روين مفتوحة في Kazinczy utca مع حفلات موسيقية وشواء ومهرجانات صيفية في ممر السهر.",
+            "longDescription": "يعد Ellato Kert في Kazinczy utca 48 حديقة روين موسمية تستضيف فرقاً حية وشاحنات طعام وحفلات ذات طابع خاص. يمتلئ الفناء في عطلات نهاية الأسبوع الدافئة بين Szimpla وInstant. الفعاليات على ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "ellato-kert-ar"
+          }
+        },
+        "gapKey": "Events|Erzsébetváros|Kazinczy utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG/1280px-Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG"
+      }
+    }
+  ]
+}

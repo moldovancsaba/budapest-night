@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.callascafe.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-callas-andrassy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-callas-andrassy",
+        "name": "Callas Café",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 20, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+        "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/bghqgZG1/ddebb99358f0.jpg",
+        "email": "info@callascafe.hu",
+        "website": "https://www.callascafe.hu/",
+        "phone": "+36 1 343 3333",
+        "locales": {
+          "hu": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-hu"
+          },
+          "es": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-es"
+          },
+          "it": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-it"
+          },
+          "he": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-he"
+          },
+          "ar": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-ar"
+          }
+        },
+        "gapKey": "Cafés|Terézváros|Andrássy út",
+        "imageSource": "https://www.callascafe.hu/images/callas-interior.jpg"
+      }
+    }
+  ]
+}

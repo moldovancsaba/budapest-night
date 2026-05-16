@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.feketebudapest.com/"
+  ],
+  "notes": "Image/data fix for prov-cov-fekete-wessel",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-fekete-wessel",
+        "name": "Fekete",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1075 Budapest, Wesselényi utca 13, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+        "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4RvfwTs0/c91160125047.jpg",
+        "email": "hello@feketebudapest.com",
+        "website": "https://www.feketebudapest.com/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-hu"
+          },
+          "es": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-es"
+          },
+          "it": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-it"
+          },
+          "he": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-he"
+          },
+          "ar": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-ar"
+          }
+        },
+        "gapKey": "Cafés|Erzsébetváros|Wesselényi utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg"
+      }
+    }
+  ]
+}

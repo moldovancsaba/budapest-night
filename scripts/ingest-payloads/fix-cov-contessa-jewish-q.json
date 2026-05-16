@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://szimpla.hu/szpunik"
+  ],
+  "notes": "Image/data fix for prov-cov-contessa-jewish-q",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-contessa-jewish-q",
+        "name": "Szpünik Café",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "1075 Budapest, Kazinczy utca 14, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+        "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4RvfwTs0/c91160125047.jpg",
+        "email": "kert@szimpla.hu",
+        "website": "https://szimpla.hu/szpunik",
+        "phone": "+36 20 261 8669",
+        "locales": {
+          "hu": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-hu"
+          },
+          "es": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-es"
+          },
+          "it": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-it"
+          },
+          "he": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-he"
+          },
+          "ar": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-ar"
+          }
+        },
+        "gapKey": "Cafés|Erzsébetváros|Jewish Quarter",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg"
+      }
+    }
+  ]
+}

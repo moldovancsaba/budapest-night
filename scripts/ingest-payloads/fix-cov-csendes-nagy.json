@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.csendes.com/"
+  ],
+  "notes": "Image/data fix for prov-cov-csendes-nagy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-csendes-nagy",
+        "name": "Csendes",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Magyar utca 12, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+        "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/TDCcvVR3/d89e915d37de.jpg",
+        "email": "info@csendes.com",
+        "website": "https://www.csendes.com/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-hu"
+          },
+          "es": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-es"
+          },
+          "it": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-it"
+          },
+          "he": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-he"
+          },
+          "ar": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-ar"
+          }
+        },
+        "gapKey": "Cafés|Ferencváros|Nagytemplom utca",
+        "imageSource": "https://www.csendes.com/images/csendes-art.jpg"
+      }
+    }
+  ]
+}

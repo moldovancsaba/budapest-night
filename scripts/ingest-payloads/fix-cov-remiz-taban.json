@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.remizrestaurant.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-remiz-taban",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-remiz-taban",
+        "name": "Remiz Restaurant",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Apáczai Csere János utca 1, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+        "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/v6bHd8NC/93c08e890b01.jpg",
+        "email": "info@remizrestaurant.hu",
+        "website": "https://www.remizrestaurant.hu/",
+        "phone": "+36 1 412 2560",
+        "locales": {
+          "hu": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-hu"
+          },
+          "es": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-es"
+          },
+          "it": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-it"
+          },
+          "he": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-he"
+          },
+          "ar": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-ar"
+          }
+        },
+        "gapKey": "Restaurants|Buda|Tabán",
+        "imageSource": "https://www.remizrestaurant.hu/images/remiz-dining.jpg"
+      }
+    }
+  ]
+}

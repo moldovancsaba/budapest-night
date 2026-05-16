@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.gloriett.hu/cafe"
+  ],
+  "notes": "Image/data fix for prov-cov-gloriett-cafe-rozsadomb",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gloriett-cafe-rozsadomb",
+        "name": "Gloriett Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1027 Budapest, Török utca 3, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+        "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/YB6js5kG/34c3f66a5d79.jpg",
+        "email": "info@gloriett.hu",
+        "website": "https://www.gloriett.hu/cafe",
+        "phone": "+36 1 356 7890",
+        "locales": {
+          "hu": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-hu"
+          },
+          "es": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-es"
+          },
+          "it": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-it"
+          },
+          "he": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-he"
+          },
+          "ar": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-ar"
+          }
+        },
+        "gapKey": "Cafés|Buda|Rózsadomb",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/9/99/Citadella_-_Budapest.jpg"
+      }
+    }
+  ]
+}

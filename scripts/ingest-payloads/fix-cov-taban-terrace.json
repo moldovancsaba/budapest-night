@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.tabanterrace.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-taban-terrace",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-taban-terrace",
+        "name": "Tabán Terrace",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Apáczai Csere János utca 1, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+        "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/NdMgFpFj/2a19267287fc.jpg",
+        "email": "info@tabanterrace.hu",
+        "website": "https://www.tabanterrace.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-hu"
+          },
+          "es": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-es"
+          },
+          "it": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-it"
+          },
+          "he": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-he"
+          },
+          "ar": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-ar"
+          }
+        },
+        "gapKey": "Parties|Buda|Tabán",
+        "imageSource": "https://www.tabanterrace.hu/images/taban-night.jpg"
+      }
+    }
+  ]
+}

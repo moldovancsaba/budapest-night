@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.becketts.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-becketts-liszt",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-becketts-liszt",
+        "name": "Beckett's Irish Pub",
+        "category": "Parties",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "address": "1065 Budapest, Liszt Ferenc tér 13, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+        "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/0y04NP3j/78b3cc17a28b.jpg",
+        "email": "info@becketts.hu",
+        "website": "https://www.becketts.hu/",
+        "phone": "+36 1 311 1033",
+        "locales": {
+          "hu": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-hu"
+          },
+          "es": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-es"
+          },
+          "it": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-it"
+          },
+          "he": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-he"
+          },
+          "ar": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-ar"
+          }
+        },
+        "gapKey": "Parties|Terézváros|Liszt Ferenc tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Becketts_%C3%ADr_pub%2C_t%C3%A1bla%2C_Liszt_Ferenc_t%C3%A9r_11%2C_2016_Budapest.jpg/1280px-Becketts_%C3%ADr_pub%2C_t%C3%A1bla%2C_Liszt_Ferenc_t%C3%A9r_11%2C_2016_Budapest.jpg"
+      }
+    }
+  ]
+}

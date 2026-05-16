@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.legendaboatparty.com/"
+  ],
+  "notes": "Image/data fix for prov-cov-legenda-parliament",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-legenda-parliament",
+        "name": "Legenda Boat Party",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "address": "1051 Budapest, Vigadó tér, Danube pier, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+        "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/TxhPC3dM/bba7160a0e45.jpg",
+        "email": "info@legendaboatparty.com",
+        "website": "https://www.legendaboatparty.com/",
+        "phone": "+36 30 999 1234",
+        "locales": {
+          "hu": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-hu"
+          },
+          "es": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-es"
+          },
+          "it": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-it"
+          },
+          "he": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-he"
+          },
+          "ar": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-ar"
+          }
+        },
+        "gapKey": "Parties|Belváros|Parliament",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Legenda_Budapest_2018_01.jpg/1280px-Legenda_Budapest_2018_01.jpg"
+      }
+    }
+  ]
+}

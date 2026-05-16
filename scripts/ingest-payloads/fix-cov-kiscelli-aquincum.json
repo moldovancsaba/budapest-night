@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.kiscellimuzeum.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-kiscelli-aquincum",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kiscelli-aquincum",
+        "name": "Kiscelli Pub District",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "address": "1037 Budapest, Kiscelli út 16, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Craft Beer",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+        "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/WWHqNx6d/fdd76e914e11.jpg",
+        "email": "info@kiscellimuzeum.hu",
+        "website": "https://www.kiscellimuzeum.hu/",
+        "phone": "+36 1 388 8551",
+        "locales": {
+          "hu": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-hu"
+          },
+          "es": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-es"
+          },
+          "it": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-it"
+          },
+          "he": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-he"
+          },
+          "ar": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-ar"
+          }
+        },
+        "gapKey": "Parties|Óbuda|Aquincum",
+        "imageSource": "https://www.kiscellimuzeum.hu/images/kiscelli-bar.jpg"
+      }
+    }
+  ]
+}

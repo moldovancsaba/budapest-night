@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.varfokkavezo.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-varfok-taban",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-varfok-taban",
+        "name": "Varfok Kávézó",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Varfok utca 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+        "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/YB6js5kG/34c3f66a5d79.jpg",
+        "email": "hello@varfokkavezo.hu",
+        "website": "https://www.varfokkavezo.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-hu"
+          },
+          "es": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-es"
+          },
+          "it": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-it"
+          },
+          "he": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-he"
+          },
+          "ar": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-ar"
+          }
+        },
+        "gapKey": "Cafés|Buda|Tabán",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/9/99/Citadella_-_Budapest.jpg"
+      }
+    }
+  ]
+}

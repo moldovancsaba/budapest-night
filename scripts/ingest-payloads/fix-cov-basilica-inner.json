@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.bazilika.biz/"
+  ],
+  "notes": "Image/data fix for prov-cov-basilica-inner",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-basilica-inner",
+        "name": "St. Stephen's Basilica Concerts",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "1051 Budapest, Szent István tér 1, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+        "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrxXKCdh/073af3dd3344.webp",
+        "email": "info@bazilika.biz",
+        "website": "https://www.bazilika.biz/",
+        "phone": "+36 1 311 0839",
+        "locales": {
+          "hu": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-hu"
+          },
+          "es": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-es"
+          },
+          "it": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-it"
+          },
+          "he": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-he"
+          },
+          "ar": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-ar"
+          }
+        },
+        "gapKey": "Events|Belváros|Inner City",
+        "imageSource": "https://www.bazilika.biz/images/basilica-organ.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://spilerbalna.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-spiler-balna",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spiler-balna",
+        "name": "Spíler Bálna",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Cocktails",
+          "Boat Party"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+        "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/F4QS8x0K/dcc429a29bb9.jpg",
+        "email": "info@spilerbalna.hu",
+        "website": "https://spilerbalna.hu/",
+        "phone": "+36 1 269 0251",
+        "locales": {
+          "hu": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-hu"
+          },
+          "es": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-es"
+          },
+          "it": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-it"
+          },
+          "he": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-he"
+          },
+          "ar": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-ar"
+          }
+        },
+        "gapKey": "Parties|Ferencváros|Boráros tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Conferentiecentrum_B%C3%A1lna.jpg/1280px-Conferentiecentrum_B%C3%A1lna.jpg"
+      }
+    }
+  ]
+}

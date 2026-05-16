@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://mylittlemelbourne.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-melbourne-kazinczy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-melbourne-kazinczy",
+        "name": "My Little Melbourne",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "address": "1075 Budapest, Rumbach Sebestyén utca 7, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+        "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4RvfwTs0/c91160125047.jpg",
+        "email": "hello@mylittlemelbourne.hu",
+        "website": "https://mylittlemelbourne.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-hu"
+          },
+          "es": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-es"
+          },
+          "it": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-it"
+          },
+          "he": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-he"
+          },
+          "ar": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-ar"
+          }
+        },
+        "gapKey": "Cafés|Erzsébetváros|Kazinczy utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg"
+      }
+    }
+  ]
+}

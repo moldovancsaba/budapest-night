@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.golyokave.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-golya-kosztolanyi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-golya-kosztolanyi",
+        "name": "Golyó Kávé",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1114 Budapest, Bartók Béla út 34, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Craft Beer",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+        "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@golyokave.hu",
+        "website": "https://www.golyokave.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-it"
+          },
+          "he": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-ar"
+          }
+        },
+        "gapKey": "Parties|Újbuda|Kosztolányi Dezső tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

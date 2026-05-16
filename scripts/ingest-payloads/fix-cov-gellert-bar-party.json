@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.danubiusgellert.com/bars"
+  ],
+  "notes": "Image/data fix for prov-cov-gellert-bar-party",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-bar-party",
+        "name": "Gellért Lobby Bar",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "Jazz",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+        "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/bars",
+        "phone": "+36 1 889 5500",
+        "locales": {
+          "hu": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-hu"
+          },
+          "es": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-es"
+          },
+          "it": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-it"
+          },
+          "he": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-he"
+          },
+          "ar": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-ar"
+          }
+        },
+        "gapKey": "Parties|Buda|Szent Gellért tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

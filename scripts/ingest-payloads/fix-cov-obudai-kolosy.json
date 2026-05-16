@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.obuda.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-obudai-kolosy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-obudai-kolosy",
+        "name": "Óbudai Cultural Centre",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1036 Budapest, Kiscelli utca 11, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+        "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/LzKJPfT4/a5d8380876ed.jpg",
+        "email": "info@obuda.hu",
+        "website": "https://www.obuda.hu/",
+        "phone": "+36 1 437 8600",
+        "locales": {
+          "hu": {
+            "name": "Obudai Kulturkozpont",
+            "shortDescription": "Keruleti muvelodesi haz a Kolosy ter kozeleben, koncertekkel, szinhazzal es kozossegi fesztivalokkal Obudan.",
+            "longDescription": "Az Obudai Kulturkozpont szinhazi es zenei programokat szervez a Kolosy ter kornyeken, a Kiscelli utca kozeleben. Az onkormanyzati rendezvenyek koze karacsonyi vasarok es nyari szabadtéri szinpadok is tartoznak. A naptar az obuda.hu oldalon erheto el.\n\nSources: https://www.obuda.hu/",
+            "slug": "obudai-kulturkozpont-hu"
+          },
+          "es": {
+            "name": "Centro Cultural de Obuda",
+            "shortDescription": "Sala cultural de distrito cerca de Kolosy ter, con conciertos, teatro y festivales comunitarios en Obuda.",
+            "longDescription": "El Centro Cultural de Obuda programa teatro y musica para el entorno de Kolosy ter, alrededor de Kiscelli utca. Los eventos municipales incluyen mercados navidenos y escenarios al aire libre en verano. Calendario en obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "centro-cultural-obuda-es"
+          },
+          "it": {
+            "name": "Centro culturale di Obuda",
+            "shortDescription": "Sala culturale di quartiere vicino a Kolosy ter, con concerti, teatro e festival di comunita a Obuda.",
+            "longDescription": "Il Centro culturale di Obuda propone teatro e musica per il quartiere di Kolosy ter intorno a Kiscelli utca. Gli eventi municipali comprendono mercatini natalizi e palchi estivi all aperto. Calendario su obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "centro-culturale-obuda-it"
+          },
+          "he": {
+            "name": "מרכז התרבות של אובודה",
+            "shortDescription": "אולם תרבות רובעי ליד Kolosy ter, עם קונצרטים, תיאטרון ופסטיבלים קהילתיים באובודה.",
+            "longDescription": "מרכז התרבות של אובודה מציג תיאטרון ומוזיקה לשכונת Kolosy ter סביב Kiscelli utca. האירועים העירוניים כוללים שווקי חג מולד ובמות קיץ פתוחות. לוח האירועים באתר obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "obuda-cultural-centre-he"
+          },
+          "ar": {
+            "name": "المركز الثقافي لأوبودا",
+            "shortDescription": "قاعة ثقافية محلية قرب Kolosy ter تستضيف حفلات ومسرحاً ومهرجانات مجتمعية في أوبودا.",
+            "longDescription": "يقدم المركز الثقافي لأوبودا برامج مسرحية وموسيقية لمنطقة Kolosy ter حول Kiscelli utca. تشمل الفعاليات البلدية أسواق عيد الميلاد ومسارح صيفية مفتوحة. الجدول على obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "obuda-cultural-centre-ar"
+          }
+        },
+        "gapKey": "Events|Óbuda|Kolosy tér",
+        "imageSource": "https://www.obuda.hu/images/kolosy-events.jpg"
+      }
+    }
+  ]
+}

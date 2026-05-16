@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.vigado.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-pesti-vigado-vaci",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-pesti-vigado-vaci",
+        "name": "Pesti Vigadó",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "1051 Budapest, Vigadó tér 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+        "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/BVpnS0zs/8d83458c42aa.jpg",
+        "email": "info@vigado.hu",
+        "website": "https://www.vigado.hu/",
+        "phone": "+36 1 411 6677",
+        "locales": {
+          "hu": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-hu"
+          },
+          "es": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-es"
+          },
+          "it": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-it"
+          },
+          "he": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-he"
+          },
+          "ar": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-ar"
+          }
+        },
+        "gapKey": "Events|Belváros|Váci utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Budapest%2C_Vigad%C3%B3_t%C3%A9r_2%2C_Pesti_Vigad%C3%B3.jpg/1280px-Budapest%2C_Vigad%C3%B3_t%C3%A9r_2%2C_Pesti_Vigad%C3%B3.jpg"
+      }
+    }
+  ]
+}

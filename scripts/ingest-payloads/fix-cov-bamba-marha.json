@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.bambamarha.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-bamba-marha",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bamba-marha",
+        "name": "Bamba Marha",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1111 Budapest, Október 23. utca 8, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+        "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/XkZp3bYM/6ab8b467a93d.webp",
+        "email": "info@bambamarha.hu",
+        "website": "https://www.bambamarha.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-hu"
+          },
+          "es": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-es"
+          },
+          "it": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-it"
+          },
+          "he": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-he"
+          },
+          "ar": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-ar"
+          }
+        },
+        "gapKey": "Restaurants|Ferencváros|Műegyetem",
+        "imageSource": "https://www.bambamarha.hu/images/bamba-burger.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.hadikkavehaz.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-hadik-kosztolanyi",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-hadik-kosztolanyi",
+        "name": "Hadik Kávéház",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1114 Budapest, Bartók Béla út 36, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+        "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/DPvs2hkK/a875cd7fbfa7.jpg",
+        "email": "info@hadikkavehaz.hu",
+        "website": "https://www.hadikkavehaz.hu/",
+        "phone": "+36 1 385 9010",
+        "locales": {
+          "hu": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-it"
+          },
+          "he": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-ar"
+          }
+        },
+        "gapKey": "Cafés|Újbuda|Kosztolányi Dezső tér",
+        "imageSource": "https://www.hadikkavehaz.hu/images/hadik-cafe.jpg"
+      }
+    }
+  ]
+}

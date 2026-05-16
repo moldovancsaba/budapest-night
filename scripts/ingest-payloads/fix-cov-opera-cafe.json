@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.operacafe.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-opera-cafe",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-opera-cafe",
+        "name": "Opera Café Budapest",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Hajós utca 8, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+        "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/gFds8KHN/e6656b4f6e3f.jpg",
+        "email": "hello@operacafe.hu",
+        "website": "https://www.operacafe.hu/",
+        "phone": "+36 1 800 9211",
+        "locales": {
+          "hu": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-hu"
+          },
+          "es": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-es"
+          },
+          "it": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-it"
+          },
+          "he": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-he"
+          },
+          "ar": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-ar"
+          }
+        },
+        "gapKey": "Cafés|Terézváros|Opera",
+        "imageSource": "https://www.operacafe.hu/images/opera-cafe-pastry.jpg"
+      }
+    }
+  ]
+}

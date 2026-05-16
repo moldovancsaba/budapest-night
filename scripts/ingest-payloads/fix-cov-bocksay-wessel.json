@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.bocksay.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-bocksay-wessel",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bocksay-wessel",
+        "name": "Bocksay Bistro",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1075 Budapest, Wesselényi utca 18, Hungary",
+        "activityTypes": [
+          "Wine Bar",
+          "Fine Dining",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+        "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4RvfwTs0/c91160125047.jpg",
+        "email": "info@bocksay.hu",
+        "website": "https://www.bocksay.hu/",
+        "phone": "+36 1 342 2342",
+        "locales": {
+          "hu": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-hu"
+          },
+          "es": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-es"
+          },
+          "it": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-it"
+          },
+          "he": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-he"
+          },
+          "ar": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-ar"
+          }
+        },
+        "gapKey": "Restaurants|Erzsébetváros|Wesselényi utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg"
+      }
+    }
+  ]
+}

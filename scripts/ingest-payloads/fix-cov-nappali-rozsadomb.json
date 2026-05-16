@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.nappali.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-nappali-rozsadomb",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-nappali-rozsadomb",
+        "name": "Nappali Buda",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1024 Budapest, Széher út 1, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+        "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/MkqK27KN/e00af8abb410.jpg",
+        "email": "info@nappali.hu",
+        "website": "https://www.nappali.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-hu"
+          },
+          "es": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-es"
+          },
+          "it": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-it"
+          },
+          "he": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-he"
+          },
+          "ar": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-ar"
+          }
+        },
+        "gapKey": "Parties|Buda|Rózsadomb",
+        "imageSource": "https://www.nappali.hu/images/nappali-garden.jpg"
+      }
+    }
+  ]
+}

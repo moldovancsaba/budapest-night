@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.koronaclub.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-korona-bikas",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-korona-bikas",
+        "name": "Korona Club",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "address": "1119 Budapest, Fehérvári út 127, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Electronic",
+          "Late night"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+        "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/F4QS8x0K/dcc429a29bb9.jpg",
+        "email": "",
+        "website": "https://www.koronaclub.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-hu"
+          },
+          "es": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-es"
+          },
+          "it": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-it"
+          },
+          "he": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-he"
+          },
+          "ar": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-ar"
+          }
+        },
+        "gapKey": "Parties|Újbuda|Bikás park",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Conferentiecentrum_B%C3%A1lna.jpg/1280px-Conferentiecentrum_B%C3%A1lna.jpg"
+      }
+    }
+  ]
+}

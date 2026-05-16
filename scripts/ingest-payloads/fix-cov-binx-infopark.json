@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.binxrooftop.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-binx-infopark",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-binx-infopark",
+        "name": "BinX Rooftop",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1117 Budapest, Infopark sétány 1, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+        "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/F4QS8x0K/dcc429a29bb9.jpg",
+        "email": "info@binxrooftop.hu",
+        "website": "https://www.binxrooftop.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-hu"
+          },
+          "es": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-es"
+          },
+          "it": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-it"
+          },
+          "he": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-he"
+          },
+          "ar": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-ar"
+          }
+        },
+        "gapKey": "Parties|Újbuda|Infopark",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Conferentiecentrum_B%C3%A1lna.jpg/1280px-Conferentiecentrum_B%C3%A1lna.jpg"
+      }
+    }
+  ]
+}

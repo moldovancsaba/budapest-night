@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.citadellarestaurant.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-citadella-rest",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-citadella-rest",
+        "name": "Citadella Restaurant",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "address": "1118 Budapest, Citadella sétány 1, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Rooftop",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+        "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/YB6js5kG/34c3f66a5d79.jpg",
+        "email": "info@citadellarestaurant.hu",
+        "website": "https://www.citadellarestaurant.hu/",
+        "phone": "+36 1 466 4666",
+        "locales": {
+          "hu": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-hu"
+          },
+          "es": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-es"
+          },
+          "it": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-it"
+          },
+          "he": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-he"
+          },
+          "ar": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-ar"
+          }
+        },
+        "gapKey": "Restaurants|Buda|Gellért Hill",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/9/99/Citadella_-_Budapest.jpg"
+      }
+    }
+  ]
+}

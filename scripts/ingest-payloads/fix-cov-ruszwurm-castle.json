@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.ruszwurm.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-ruszwurm-castle",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ruszwurm-castle",
+        "name": "Ruszwurm Confectionery",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1014 Budapest, Szentháromság utca 7, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+        "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/zVwp1SNS/2c9b3b185ed2.jpg",
+        "email": "info@ruszwurm.hu",
+        "website": "https://www.ruszwurm.hu/",
+        "phone": "+36 1 375 5282",
+        "locales": {
+          "hu": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-hu"
+          },
+          "es": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-es"
+          },
+          "it": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-it"
+          },
+          "he": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-he"
+          },
+          "ar": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-ar"
+          }
+        },
+        "gapKey": "Cafés|Buda|Castle District",
+        "imageSource": "https://www.ruszwurm.hu/images/ruszwurm-cakes.jpg"
+      }
+    }
+  ]
+}

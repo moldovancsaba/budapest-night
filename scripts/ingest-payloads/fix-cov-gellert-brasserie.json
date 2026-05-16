@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.danubiusgellert.com/dining"
+  ],
+  "notes": "Image/data fix for prov-cov-gellert-brasserie",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-brasserie",
+        "name": "Gellért Brasserie",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Late Kitchen",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+        "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VWsZw3dB/fd57a43f7c81.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/dining",
+        "phone": "+36 1 889 5500",
+        "locales": {
+          "hu": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-hu"
+          },
+          "es": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-es"
+          },
+          "it": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-it"
+          },
+          "he": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-he"
+          },
+          "ar": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-ar"
+          }
+        },
+        "gapKey": "Restaurants|Buda|Szent Gellért tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
+      }
+    }
+  ]
+}

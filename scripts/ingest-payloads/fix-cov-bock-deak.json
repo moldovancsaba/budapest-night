@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.bockbistro.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-bock-deak",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bock-deak",
+        "name": "Bock Bistro",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1056 Budapest, Kért utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+        "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/tTNvBZkd/b4a22e621ed6.jpg",
+        "email": "info@bockbistro.hu",
+        "website": "https://www.bockbistro.hu/",
+        "phone": "+36 1 266 1434",
+        "locales": {
+          "hu": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-hu"
+          },
+          "es": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-es"
+          },
+          "it": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-it"
+          },
+          "he": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-he"
+          },
+          "ar": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-ar"
+          }
+        },
+        "gapKey": "Restaurants|Belváros|Deák tér",
+        "imageSource": "https://www.bockbistro.hu/wp-content/uploads/bock-hero.jpg"
+      }
+    }
+  ]
+}

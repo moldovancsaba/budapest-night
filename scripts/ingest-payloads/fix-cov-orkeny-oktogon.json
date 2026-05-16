@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://orkeny.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-orkeny-oktogon",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-orkeny-oktogon",
+        "name": "Örkény Theatre",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Oktogon",
+        "address": "1064 Budapest, Madách Imre tér 6, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+        "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/HTFxNY3P/abb9db1a40c2.jpg",
+        "email": "info@orkeny.hu",
+        "website": "https://orkeny.hu/",
+        "phone": "+36 1 472 2030",
+        "locales": {
+          "hu": {
+            "name": "Orkeny Szinhaz",
+            "shortDescription": "Kamaraszinhaz az Oktogon kozeleben, kortars dramakkal es kabare-eloadasokkal a Nagykorut csomopontja mellett.",
+            "longDescription": "Az Orkeny Szinhaz a Madach Imre teren eles hangvetelu magyar kortars darabokat es kisebb leptekű eloadasokat mutat be az Oktogon kozeleben. Az intim nezo ter kozeli ralatast ad a szinpadra. Program es jegyek az orkeny.hu oldalon.\n\nSources: https://orkeny.hu/",
+            "slug": "orkeny-szinhaz-hu"
+          },
+          "es": {
+            "name": "Teatro Orkeny",
+            "shortDescription": "Teatro de camara junto a Oktogon, con drama contemporaneo y cabaret a pasos del cruce del Gran Bulevar.",
+            "longDescription": "El Teatro Orkeny, en Madach Imre ter, presenta teatro hungaro contemporaneo y producciones de pequeno formato junto al nudo de Oktogon. La sala intima mantiene una vision muy cercana del escenario. Programa y entradas en orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "teatro-orkeny-es"
+          },
+          "it": {
+            "name": "Teatro Orkeny",
+            "shortDescription": "Teatro da camera presso Oktogon, con dramma contemporaneo e cabaret a pochi passi dall incrocio del Gran Boulevard.",
+            "longDescription": "Il Teatro Orkeny in Madach Imre ter propone taglienti opere contemporanee ungheresi e produzioni di piccola scala accanto al nodo di Oktogon. La sala intima garantisce una visuale ravvicinata del palco. Programma e biglietti su orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "teatro-orkeny-it"
+          },
+          "he": {
+            "name": "תיאטרון אורקני",
+            "shortDescription": "תיאטרון קאמרי ליד אוקטוגון, עם דרמה עכשווית וקברט במרחק צעדים מצומת השדרה הגדולה.",
+            "longDescription": "תיאטרון אורקני ב-Madach Imre ter מעלה מחזות הונגריים עכשוויים חדים והפקות בקנה מידה קטן ליד צומת Oktogon. האולם האינטימי שומר על קו ראייה קרוב לבמה. התוכנית והכרטיסים באתר orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "orkeny-theatre-he"
+          },
+          "ar": {
+            "name": "مسرح أوركيني",
+            "shortDescription": "مسرح حميم قرب Oktogon يقدم الدراما المعاصرة والكباريه على بعد خطوات من تقاطع الجادة الكبرى.",
+            "longDescription": "يقدم مسرح أوركيني في Madach Imre ter أعمالا مجرية معاصرة حادة وإنتاجات صغيرة الحجم بجوار عقدة Oktogon. تحافظ القاعة الحميمة على رؤية قريبة من الخشبة. البرنامج والتذاكر على orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "orkeny-theatre-ar"
+          }
+        },
+        "gapKey": "Events|Terézváros|Oktogon",
+        "imageSource": "https://orkeny.hu/images/orkeny-stage.jpg"
+      }
+    }
+  ]
+}

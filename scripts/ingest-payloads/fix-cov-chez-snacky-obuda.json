@@ -1,0 +1,78 @@
+{
+  "sourceUrls": [
+    "https://www.chezsnacky.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-chez-snacky-obuda",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-chez-snacky-obuda",
+        "name": "Chez Snacky",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1031 Budapest, Flórián tér 3, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+        "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/VYHPK4BL/677ce4b2a9c3.jpg",
+        "email": "hello@chezsnacky.hu",
+        "website": "https://www.chezsnacky.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-hu"
+          },
+          "es": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-es"
+          },
+          "it": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-it"
+          },
+          "he": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-he"
+          },
+          "ar": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-ar"
+          }
+        },
+        "gapKey": "Cafés|Óbuda|Main Square Óbuda",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
+      }
+    }
+  ]
+}

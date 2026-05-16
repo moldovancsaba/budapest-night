@@ -1,0 +1,79 @@
+{
+  "sourceUrls": [
+    "https://www.liszacademy.hu/"
+  ],
+  "notes": "Image/data fix for prov-cov-liszt-academy",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-liszt-academy",
+        "name": "Liszt Ferenc Academy",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "address": "1064 Budapest, Liszt Ferenc tér 8, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Jazz",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+        "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/qL6BNJQH/c830accca978.jpg",
+        "email": "info@liszacademy.hu",
+        "website": "https://www.liszacademy.hu/",
+        "phone": "+36 1 462 4600",
+        "locales": {
+          "hu": {
+            "name": "Liszt Ferenc Zenemuveszeti Egyetem",
+            "shortDescription": "Szecesszios koncertakademia a Liszt Ferenc teren, klasszikus recitalokkal es mesterkurzusok termeivel.",
+            "longDescription": "A Liszt Ferenc Akademia koncertkozpontja a Liszt Ferenc ter 8. alatt hallgatoi es professzionalis klasszikus eloadasoknak ad otthont egy ikonikus szecesszios teremben. Előadasok elott a kulso ter ettermek teraszaival telik meg. A naptar a liszacademy.hu oldalon van.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "liszt-akademia-hu"
+          },
+          "es": {
+            "name": "Academia Ferenc Liszt",
+            "shortDescription": "Academia de conciertos art nouveau en Liszt Ferenc ter, con recitales clasicos y actos en salas de masterclasses.",
+            "longDescription": "El Centro de Conciertos de la Academia Ferenc Liszt, en Liszt Ferenc ter 8, acoge actuaciones clasicas de estudiantes y profesionales en una sala art nouveau emblemática. Antes de las funciones, la plaza se llena de terrazas de restaurantes. Calendario en liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "academia-liszt-es"
+          },
+          "it": {
+            "name": "Accademia Ferenc Liszt",
+            "shortDescription": "Accademia concertistica art nouveau in Liszt Ferenc ter, con recital classici e eventi nelle sale delle masterclass.",
+            "longDescription": "Il Centro Concerti dell Accademia Ferenc Liszt, in Liszt Ferenc ter 8, ospita esibizioni classiche di studenti e professionisti in una storica sala art nouveau. Prima degli spettacoli la piazza si riempie di tavoli all aperto. Calendario su liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "accademia-liszt-it"
+          },
+          "he": {
+            "name": "אקדמיית פרנץ ליסט",
+            "shortDescription": "אקדמיית קונצרטים בסגנון אר נובו בכיכר ליסט פרנץ, עם רסיטלים קלאסיים ואירועים באולמות מאסטרקלאס.",
+            "longDescription": "מרכז הקונצרטים של אקדמיית פרנץ ליסט ב-Liszt Ferenc ter 8 מארח הופעות קלאסיות של סטודנטים ומקצוענים באולם אר נובו מפורסם. הכיכר בחוץ מתמלאת טרסות מסעדות לפני תחילת המופע. לוח האירועים נמצא ב-liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "liszt-academy-he"
+          },
+          "ar": {
+            "name": "أكاديمية فرانتس ليست",
+            "shortDescription": "أكاديمية حفلات على طراز الآرت نوفو في Liszt Ferenc ter تقدم ريسيتالات كلاسيكية وفعاليات في قاعات الدروس المتقدمة.",
+            "longDescription": "يستضيف مركز الحفلات في أكاديمية فرانتس ليست في Liszt Ferenc ter 8 عروضاً كلاسيكية لطلاب ومحترفين داخل قاعة آرت نوفو شهيرة. تمتلئ الساحة الخارجية بشرفات المطاعم قبل بدء العرض. الجدول متاح على liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "liszt-academy-ar"
+          }
+        },
+        "gapKey": "Events|Terézváros|Liszt Ferenc tér",
+        "imageSource": "https://www.liszacademy.hu/images/liszt-hall.jpg"
+      }
+    }
+  ]
+}
