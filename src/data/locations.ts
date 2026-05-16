@@ -18,6 +18,7 @@ export const NEIGHBORHOODS: Record<Borough, string[]> = {
   Ferencváros: [
     "Corvin-negyed",
     "Műegyetem",
+    "Petőfi Bridge",
     "Nagytemplom utca",
     "Boráros tér",
     "Millenniumi Városközpont",
@@ -25,5 +26,12 @@ export const NEIGHBORHOODS: Record<Borough, string[]> = {
   ],
   Buda: ["Castle District", "Gellért Hill", "Tabán", "Rózsadomb", "Szent Gellért tér"],
   Óbuda: ["Óbuda Island", "Aquincum", "Kolosy tér", "Bécsi út", "Main Square Óbuda"],
-  Újbuda: ["Móricz Zsigmond körtér", "Gellért Baths area", "Infopark", "Kosztolányi Dezső tér", "Bikás park"],
+  Újbuda: [
+    "Móricz Zsigmond körtér",
+    "Gellért Baths area",
+    "Infopark",
+    "Kosztolányi Dezső tér",
+    "Bikás park",
+    "Kelenföld",
+  ],
 };

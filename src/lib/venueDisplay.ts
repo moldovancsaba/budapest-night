@@ -1,3 +1,4 @@
+import { formatMoneyAmount, providerPriceCurrency } from "@/lib/formatMoney";
 import type { Category, Provider } from "@/types/provider";
 
 /** Crowd / age chip — values are already human-readable (e.g. "18+", "All ages"). */
@@ -26,17 +27,21 @@ export type VenuePriceDisplay = {
   suffix?: string;
 };
 
-export function formatVenuePrice(provider: Pick<Provider, "category" | "pricePerClass">): VenuePriceDisplay {
+export function formatVenuePrice(
+  provider: Pick<Provider, "category" | "pricePerClass" | "priceCurrency">,
+  locale = "en",
+): VenuePriceDisplay {
   const unit = venuePriceUnit(provider.category);
   const n = provider.pricePerClass;
 
   if (n === 0) {
     if (provider.category === "Parties") return { main: "Free entry" };
-    if (provider.category === "Venues") return { main: "Free", suffix: "/ticket" };
     return { main: "Price varies" };
   }
 
-  return { main: `€${n}`, suffix: `/${unit}` };
+  const currency = providerPriceCurrency(n, provider.priceCurrency);
+  const amount = formatMoneyAmount(n, currency, locale);
+  return { main: `From ${amount}`, suffix: `/${unit}` };
 }
 
 /** Budget / saved row unit word (no slash). */
@@ -44,8 +49,7 @@ export function formatVenuePrice(provider: Pick<Provider, "category" | "pricePer
 export function venueSharePriceLine(provider: Pick<Provider, "category" | "pricePerClass">): string {
   const p = formatVenuePrice(provider);
   if (!p.suffix) return p.main;
-  if (p.main.startsWith("€")) return `From ${p.main}${p.suffix}`;
-  return p.main;
+  return `${p.main}${p.suffix}`;
 }
 
 export function venueBudgetUnit(category: Category): string {

@@ -37,6 +37,8 @@ export interface Provider {
   ageRanges: AgeRange[];
   dayTimeTags: DayTimeTag[];
   pricePerClass: number;
+  /** Listing price currency; defaults to EUR when omitted. Use HUF for forint ticket hints. */
+  priceCurrency?: "EUR" | "HUF";
   shortDescription: string;
   longDescription: string;
   rating: number;

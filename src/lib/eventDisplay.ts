@@ -1,4 +1,5 @@
 import type { EntryFee, NightEvent } from "@/types/event";
+import { formatMoneyAmount } from "@/lib/formatMoney";
 
 const TZ = "Europe/Budapest";
 
@@ -48,10 +49,7 @@ export function formatDoorsOpen(
 
 export function formatEntryFee(fee: EntryFee, locale: string): string {
   if (fee.currency === "FREE" || fee.amount === 0) return "Free";
-  if (fee.currency === "HUF") {
-    return `${Math.round(fee.amount).toLocaleString(locale)} Ft`;
-  }
-  return `€${fee.amount}`;
+  return formatMoneyAmount(fee.amount, fee.currency, locale);
 }
 
 export function lowestEntryFee(fees: EntryFee[]): EntryFee | null {

@@ -107,7 +107,7 @@
     "linkCopied": "Link copiato",
     "freeEntry": "Ingresso gratuito",
     "free": "Gratis",
-    "fromPrice": "Da €{amount}",
+    "fromPrice": "Da {price}",
     "priceVaries": "Prezzo variabile",
     "perTicket": "/biglietto",
     "perCover": "/cover",

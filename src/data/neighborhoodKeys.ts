@@ -20,6 +20,7 @@ export const NEIGHBORHOOD_KEY: Record<string, string> = {
   "Rákóczi tér": "rakocziTer",
   "Corvin-negyed": "corvinNegyed",
   Műegyetem: "muegyetem",
+  "Petőfi Bridge": "petofiBridge",
   "Nagytemplom utca": "nagytemplomUtca",
   "Boráros tér": "borarosTer",
   "Millenniumi Városközpont": "millenniumiVaroskozpont",
@@ -39,6 +40,7 @@ export const NEIGHBORHOOD_KEY: Record<string, string> = {
   Infopark: "infopark",
   "Kosztolányi Dezső tér": "kosztolanyiDezsoTer",
   "Bikás park": "bikasPark",
+  Kelenföld: "kelenfold",
 };
 
 export const ALL_NEIGHBORHOOD_CANONICAL = Object.values(NEIGHBORHOODS).flat();

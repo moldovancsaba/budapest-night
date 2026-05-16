@@ -112,7 +112,7 @@
     "connectVenue": "Connect with this venue",
     "freeEntry": "Free entry",
     "free": "Free",
-    "fromPrice": "From €{amount}",
+    "fromPrice": "From {price}",
     "priceVaries": "Price varies",
     "perTicket": "/ticket",
     "perCover": "/cover",

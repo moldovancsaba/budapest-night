@@ -15,14 +15,20 @@ describe("formatVenuePrice", () => {
 
   it("shows cover suffix for priced parties", () => {
     expect(formatVenuePrice({ category: "Parties", pricePerClass: 12 })).toEqual({
-      main: "€12",
+      main: "From €12",
       suffix: "/cover",
     });
   });
 
-  it("shows ticket suffix for events", () => {
+  it("shows price varies for ticketed venues without a listed price", () => {
+    expect(formatVenuePrice({ category: "Venues", pricePerClass: 0 })).toEqual({
+      main: "Price varies",
+    });
+  });
+
+  it("shows from-price with ticket suffix for venues", () => {
     expect(formatVenuePrice({ category: "Venues", pricePerClass: 25 })).toEqual({
-      main: "€25",
+      main: "From €25",
       suffix: "/ticket",
     });
   });

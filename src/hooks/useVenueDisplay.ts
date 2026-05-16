@@ -1,10 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { activityTypeMessageKey } from "@/data/activityTypeKeys";
 import { badgeMessageKey } from "@/data/badgeKeys";
 import { MEETUP_CADENCE_KEY, MEETUP_GROUP_TYPE_KEY } from "@/data/meetupKeys";
 import { neighborhoodMessageKey } from "@/data/neighborhoodKeys";
+import { formatMoneyAmount, providerPriceCurrency } from "@/lib/formatMoney";
 import type { Category, Provider, AgeRange, DayTimeTag } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
 import type { MeetupCadence, MeetupGroupType } from "@/types/meetup";
@@ -76,7 +77,8 @@ export type VenuePriceDisplay = { main: string; suffix?: string };
 
 export function useFormatVenuePrice() {
   const t = useTranslations("venue");
-  return (provider: Pick<Provider, "category" | "pricePerClass">): VenuePriceDisplay => {
+  const locale = useLocale();
+  return (provider: Pick<Provider, "category" | "pricePerClass" | "priceCurrency">): VenuePriceDisplay => {
     const n = provider.pricePerClass;
     if (n === 0) {
       if (provider.category === "Parties") return { main: t("freeEntry") };
@@ -89,7 +91,9 @@ export function useFormatVenuePrice() {
         : provider.category === "Parties"
           ? t("perCover")
           : t("perPerson");
-    return { main: `€${n}`, suffix };
+    const currency = providerPriceCurrency(n, provider.priceCurrency);
+    const price = formatMoneyAmount(n, currency, locale);
+    return { main: t("fromPrice", { price }), suffix };
   };
 }
 
@@ -98,8 +102,7 @@ export function useVenueSharePriceLine() {
   return (provider: Pick<Provider, "category" | "pricePerClass">) => {
     const p = format(provider);
     if (!p.suffix) return p.main;
-    if (p.main.startsWith("€")) return `${p.main}${p.suffix}`;
-    return p.main;
+    return `${p.main}${p.suffix}`;
   };
 }
 

@@ -107,7 +107,7 @@
     "linkCopied": "הקישור הועתק",
     "freeEntry": "כניסה חינם",
     "free": "חינם",
-    "fromPrice": "מ-€{amount}",
+    "fromPrice": "מ-{price}",
     "priceVaries": "מחיר משתנה",
     "perTicket": "/כרטיס",
     "perCover": "/כניסה",

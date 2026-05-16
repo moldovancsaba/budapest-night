@@ -1,0 +1,866 @@
+{
+  "sourceUrls": [
+    "https://operett.hu/jegyarak",
+    "https://www.budapestpark.hu/en"
+  ],
+  "notes": "Set EUR from-prices for ticketed Venues (fixes HUF-as-EUR on Budapest Park and free-label venues with paid admission).",
+  "missingOrUncertain": [
+    "pricePerClass is a planning lower bound in EUR; show-specific tiers may be higher — see each venue site."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-budapest-park-obuda",
+        "name": "Budapest Park",
+        "category": "Venues",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 25,
+        "shortDescription": "South Pest open-air concert park at Fábián Juli tér — arena, terraces, and summer festival season.",
+        "longDescription": "Budapest Park is a seasonal open-air venue in southern Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1), not on Óbuda Island. It runs roughly April through early October with concerts, DJ nights, and food vendors. Gate times, cloakroom (499 HUF), and transport (tram 4/6, H7) are listed per show on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "slug": "budapest-park",
+            "name": "Budapest Park",
+            "shortDescription": "Dél-Pest nyílt légi koncertpark a Fábián Juli téren — aréna, teraszok, nyári szezon.",
+            "longDescription": "A Budapest Park szezonális szabadtéri helyszín dél-Pesten (Ferencváros, 1095 Budapest, Fábián Juli tér 1.), nem az óbudai Hajógyári-szigeten. Áprilistól október elejéig koncertek, DJ estek és ételárusok. Kapunyitás, ruhatár (499 Ft) és közlekedés (4/6-os villamos, H7) show-nként a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "es": {
+            "slug": "budapest-park-es",
+            "name": "Budapest Park",
+            "shortDescription": "Parque de conciertos al aire libre en el sur de Pest, plaza Fábián Juli — arena y terrazas.",
+            "longDescription": "Budapest Park es un recinto estacional al aire libre en el sur de Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1), no en la isla de Óbuda. Abierto aproximadamente de abril a principios de octubre. Entradas y horarios en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "it": {
+            "slug": "budapest-park-it",
+            "name": "Budapest Park",
+            "shortDescription": "Parco concerti all'aperto a Pest sud, piazza Fábián Juli — arena e terrazze.",
+            "longDescription": "Budapest Park è una venue stagionale all'aperto a Pest sud (Ferencváros, 1095 Budapest, Fábián Juli tér 1), non sull'isola di Óbuda. Aperta circa da aprile a inizio ottobre. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "he": {
+            "slug": "budapest-park-he",
+            "name": "בודפשט פארק",
+            "shortDescription": "פארק הופעות בחוץ בדרום פשט, כיכר פביאן יולי — זירה וטרסות.",
+            "longDescription": "בודפשט פארק הוא מתחם עונתי בחוץ בדרום פשט (Ferencváros, 1095 Budapest, Fábián Juli tér 1), לא באי אובודה. פתוח בערך מאפריל עד תחילת אוקטובר. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "ar": {
+            "slug": "budapest-park-ar",
+            "name": "بودابست بارك",
+            "shortDescription": "حديقة حفلات في الهواء الطلق جنوب بودابست، ساحة فابيان جولي.",
+            "longDescription": "بودابست بارك مكان موسمي في الهواء الطلق في جنوب بودابست (Ferencváros، 1095 Budapest، Fábián Juli tér 1) وليس في جزيرة أوبودا. مفتوح تقريباً من أبريل حتى أوائل أكتوبر. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-operetta-terezvaros",
+        "name": "Budapest Operetta & Musical Theatre",
+        "category": "Venues",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Nagymező u. 17, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 20,
+        "shortDescription": "Historic operetta and musical theatre on Nagymező — grand auditorium, year-round Hungarian and international shows.",
+        "longDescription": "The Budapest Operetta & Musical Theatre (Budapesti Operettszínház) has been at Nagymező utca 17 since 1923 in a Fellner & Helmer building from 1894. The restored hall seats 901 and hosts operettas, musicals, and family productions across multiple stages. Buy tickets via operett.hu or the on-site box office (Mon–Fri 10:00–19:00, Sat–Sun 13:00–19:00). Some performances use dynamic pricing — check the online box office before you plan your evening.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/nNmMm6Cf/0e45661c9f87.png",
+        "email": "jegy@operett.hu",
+        "website": "https://operett.hu/en",
+        "phone": "+36 1 312-4866",
+        "announcementTitle": "Check tonight's program",
+        "announcementDescription": "Operettas, musicals, and family shows — book on the official site.",
+        "announcementBadge": "Live culture",
+        "locales": {
+          "hu": {
+            "name": "Budapesti Operettszínház",
+            "shortDescription": "Történelmi operett- és musicalszínház a Nagymező utcán — nagytermi előadások egész évben.",
+            "longDescription": "A Budapesti Operettszínház 1923 óta működik a Nagymező utca 17. szám alatt, az 1894-es Fellner–Helmer épületben. A felújított terem 901 főt fogad operettekkel, musicalokkal és családi előadásokkal. Jegyek az operett.hu-n vagy a helyszíni pénztárban (H–P 10:00–19:00, Szo–V 13:00–19:00). Egyes előadások dinamikus árazásúak — ellenőrizd az online jegypénztárat.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+            "slug": "budapesti-operettszinhaz",
+            "announcementTitle": "Nézd meg a mai műsort",
+            "announcementDescription": "Operettek, musicalok, családi előadások — foglalj a hivatalos oldalon.",
+            "announcementBadge": "Élő kultúra"
+          },
+          "es": {
+            "name": "Teatro de Opereta y Musical de Budapest",
+            "shortDescription": "Teatro histórico de opereta y musical en Nagymező — gran sala y cartelera durante todo el año.",
+            "longDescription": "El Teatro de Opereta y Musical de Budapest (Budapesti Operettszínház) está en Nagymező utca 17 desde 1923, en un edificio Fellner & Helmer de 1894. La sala restaurada tiene 901 butacas para operetas, musicales y producciones familiares. Entradas en operett.hu o taquilla (lun–vie 10:00–19:00, sáb–dom 13:00–19:00). Algunas funciones usan precios dinámicos — consulta la taquilla online.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+            "slug": "teatro-operetta-budapest",
+            "announcementTitle": "Consulta el programa de hoy",
+            "announcementDescription": "Operetas, musicales y espectáculos familiares — reserva en la web oficial.",
+            "announcementBadge": "Cultura en vivo"
+          },
+          "it": {
+            "name": "Teatro dell'Operetta e Musical di Budapest",
+            "shortDescription": "Storico teatro di operetta e musical in Nagymező — grande sala e programmazione tutto l'anno.",
+            "longDescription": "Il Teatro dell'Operetta e Musical di Budapest (Budapesti Operettszínház) è in Nagymező utca 17 dal 1923, in un edificio Fellner & Helmer del 1894. La sala restaurata ospita 901 posti per operette, musical e spettacoli per famiglie. Biglietti su operett.hu o in biglietteria (lun–ven 10:00–19:00, sab–dom 13:00–19:00). Alcuni spettacoli hanno prezzi dinamici — controlla la biglietteria online.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+            "slug": "teatro-operetta-budapest-it",
+            "announcementTitle": "Programma di stasera",
+            "announcementDescription": "Operette, musical e spettacoli per famiglie — prenota sul sito ufficiale.",
+            "announcementBadge": "Cultura dal vivo"
+          },
+          "he": {
+            "name": "תיאטרון האופרטה והמחזמר בודפשט",
+            "shortDescription": "תיאטרון אופרטה ומחזמר היסטורי ברחוב נאגימזו — אולם גדול ומופעים לאורך כל השנה.",
+            "longDescription": "תיאטרון האופרטה והמחזמר בבודפשט (Budapesti Operettszínház) נמצא ברחוב נאגימזו 17 מאז 1923, בבניין Fellner & Helmer מ-1894. האולם המשוחזר מכיל 901 מקומות לאופרטות, מחזמרים והפקות משפחתיות. כרטיסים ב-operett.hu או בקופה (ב׳–ו׳ 10:00–19:00, ש׳–א׳ 13:00–19:00). חלק מהמופעים במחיר דינמי — בדקו בקופה המקוונת.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+            "slug": "teatron-operetta-budapest",
+            "announcementTitle": "בדקו את המופע הערב",
+            "announcementDescription": "אופרטות, מחזמרים ומופעי משפחה — הזמינו באתר הרשמי.",
+            "announcementBadge": "תרבות חיה"
+          },
+          "ar": {
+            "name": "مسرح الأوبريت والموسيقى في بودابست",
+            "shortDescription": "مسرح أوبريت وموسيقى تاريخي في شارع ناغيميزو — قاعة كبرى وعروض على مدار العام.",
+            "longDescription": "يقع مسرح الأوبريت والموسيقى في بودابست (Budapesti Operettszínház) في ناغيميزو 17 منذ 1923، في مبنى Fellner & Helmer عام 1894. تتسع القاعة المرممة لـ901 مقعداً لعروض الأوبريت والمسرحيات الموسيقية والعائلة. التذاكر عبر operett.hu أو شباك التذاكر (الإثنين–الجمعة 10:00–19:00، السبت–الأحد 13:00–19:00). بعض العروض بأسعار ديناميكية — راجع شباك التذاكر الإلكتروني.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+            "slug": "masrah-al-operetta-budapest",
+            "announcementTitle": "اطلع على برنامج الليلة",
+            "announcementDescription": "أوبريتات ومسرحيات موسيقية وعروض عائلية — احجز من الموقع الرسمي.",
+            "announcementBadge": "ثقافة حية"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-operetta-andrassy",
+        "name": "Budapest Operetta Theatre",
+        "category": "Venues",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 17, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 20,
+        "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+        "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/39LBnPpX/06e161c3f16b.jpg",
+        "email": "info@operettszinhaz.hu",
+        "website": "https://www.operettszinhaz.hu/",
+        "phone": "+36 1 332 5000",
+        "locales": {
+          "hu": {
+            "name": "Budapesti Operettszínház",
+            "shortDescription": "Nagy operettszínház az Andrássy uton, musicalekkel, operettekkel és gala-premierekkel az UNESCO-sugaruton.",
+            "longDescription": "A Budapesti Operettszínház az Andrássy ut 17. alatt magyar és nemzetközi musicalprodukciokat játssza egy díszes 19. századi teremben. Elhelyezkedese az Oktogon és az Opera metróállomás között van az avenue tengelyen. Jegyek és évadfüzet az operettszínház.hu oldalon.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "budapesti-operettszinhaz-hu"
+          },
+          "es": {
+            "name": "Teatro de Opereta de Budapest",
+            "shortDescription": "Gran teatro de opereta en Andrassy ut, con musicales, operetas y estrenos de gala en una avenida UNESCO.",
+            "longDescription": "El Teatro de Opereta de Budapest, en Andrassy ut 17, presenta producciones musicales hungaras e internacionales en una elegante sala del siglo XIX. Su ubicacion queda entre Oktogon y la estacion de Opera. Entradas y programa de temporada en operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "teatro-opereta-budapest-es"
+          },
+          "it": {
+            "name": "Teatro dell Operetta di Budapest",
+            "shortDescription": "Grande teatro dell operetta su Andrassy ut, con musical, operette e prime di gala in un viale UNESCO.",
+            "longDescription": "Il Teatro dell Operetta di Budapest, in Andrassy ut 17, mette in scena produzioni musicali ungheresi e internazionali in un elegante salone del XIX secolo. Si trova tra Oktogon e la fermata metro Opera. Biglietti e brochure di stagione su operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "operetta-andrassy-it"
+          },
+          "he": {
+            "name": "תיאטרון האופרטה של בודפשט",
+            "shortDescription": "בית אופרטה מפואר בשדרת אנדראשי, עם מחזות זמר, אופרטות והפקות גאלה בשדרה המוכרת על ידי אונסקו.",
+            "longDescription": "תיאטרון האופרטה של בודפשט ב-Andrassy ut 17 מעלה הפקות מוזיקליות הונגריות ובינלאומיות באולם מעוטר מהמאה ה-19. המיקום שלו נמצא בין אוקטוגון לתחנת המטרו Opera. כרטיסים וחוברות עונה זמינים ב-operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "budapest-operetta-he"
+          },
+          "ar": {
+            "name": "مسرح الأوبريت في بودابست",
+            "shortDescription": "مسرح أوبريت كبير على Andrassy ut يقدم المسرحيات الغنائية والأوبريتات والعروض الافتتاحية الاحتفالية في شارع مدرج لدى اليونسكو.",
+            "longDescription": "يقدم مسرح الأوبريت في بودابست في Andrassy ut 17 إنتاجات موسيقية مجرية ودولية داخل قاعة مزخرفة من القرن التاسع عشر. يقع بين Oktogon ومحطة مترو Opera. التذاكر وكتيبات الموسم متاحة عبر operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "budapest-operetta-ar"
+          }
+        },
+        "gapKey": "Events|Terézváros|Andrássy út",
+        "imageSource": "https://www.operettszinhaz.hu/images/operetta-facade.jpg"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-opera-terezvaros",
+        "name": "Hungarian State Opera",
+        "category": "Venues",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1061 Budapest, Andrássy út 22, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 25,
+        "shortDescription": "Neo-Renaissance opera house on Andrássy út — opera, ballet, and guided building tours.",
+        "longDescription": "The Hungarian State Opera (Magyar Állami Operaház) at Andrássy út 22 is the historic home of opera and ballet in Budapest. Book performances and building tours through opera.hu.\n\nSources: https://www.opera.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/RpjYNY1P/1f34d4d25ba1.jpg",
+        "email": "",
+        "website": "https://www.opera.hu/",
+        "phone": "+36 1 814 7100",
+        "locales": {
+          "hu": {
+            "name": "Magyar Állami Operaház",
+            "shortDescription": "Neoreneszánsz operaház az Andrássy úton — opera, balett és épületbemutató túrák.",
+            "longDescription": "A Magyar Állami Operaház az Andrássy út 22. szám alatt Budapest opera- és balettközpontja. Előadások és épületi túrák: opera.hu.\n\nSources: https://www.opera.hu/",
+            "slug": "magyar-allami-operahaz"
+          },
+          "es": {
+            "name": "Ópera Estatal Húngara",
+            "shortDescription": "Ópera neorrenacentista en Andrássy út — ópera, ballet y visitas guiadas al edificio.",
+            "longDescription": "La Ópera Estatal Húngara (Magyar Állami Operaház) en Andrássy út 22 es la casa histórica de ópera y ballet en Budapest. Funciones y visitas en opera.hu.\n\nSources: https://www.opera.hu/",
+            "slug": "opera-estatal-hungara"
+          },
+          "it": {
+            "name": "Opera di Stato Ungherese",
+            "shortDescription": "Teatro dell'opera neorinascimentale su Andrássy út — opera, balletto e visite guidate.",
+            "longDescription": "L'Opera di Stato Ungherese (Magyar Állami Operaház) in Andrássy út 22 è la sede storica di opera e balletto a Budapest. Spettacoli e visite su opera.hu.\n\nSources: https://www.opera.hu/",
+            "slug": "opera-stato-ungherese"
+          },
+          "he": {
+            "name": "האופרה הממלכתית ההונגרית",
+            "shortDescription": "בית אופרה ניאו-רנסנס ברחוב אנדרסי — אופרה, בלט וסיורים מודרכים בבניין.",
+            "longDescription": "האופרה הממלכתית ההונגרית (Magyar Állami Operaház) באנדרסי 22 היא בית האופרה והבלט ההיסטורי בבודפשט. הופעות וסיורים ב-opera.hu.\n\nSources: https://www.opera.hu/",
+            "slug": "ha-opera-ha-mamlakhtit"
+          },
+          "ar": {
+            "name": "الأوبرا الحكومية المجرية",
+            "shortDescription": "دار أوبرا نيوكلاسيكية في شارع أندراسي — أوبرا وباليه وجولات في المبنى.",
+            "longDescription": "الأوبرا الحكومية المجرية (Magyar Állami Operaház) في أندراسي 22 هي موطن الأوبرا والباليه التاريخي في بودابست. العروض والجولات على opera.hu.\n\nSources: https://www.opera.hu/",
+            "slug": "al-opera-al-hukumiya"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mupa-ferencvaros",
+        "name": "MÜPA Budapest",
+        "category": "Venues",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 15,
+        "shortDescription": "Palace of Arts on the Danube — Béla Bartók National Concert Hall, Ludwig Museum, and festival programs.",
+        "longDescription": "MÜPA Budapest (Palace of Arts) at Komor Marcell utca 1 hosts classical, jazz, world music, dance, and contemporary programs in the Bartók National Concert Hall and other halls, plus the Ludwig Museum. Browse mupa.hu for tickets and schedules.\n\nSources: https://www.mupa.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/qLV6b22h/ca46b91b7cab.jpg",
+        "email": "",
+        "website": "https://www.mupa.hu/en",
+        "phone": "+36 1 555 3355",
+        "locales": {
+          "hu": {
+            "name": "MÜPA Budapest",
+            "shortDescription": "Művészetek Palotája a Dunán — Bartók Nemzeti Koncertterem, Ludwig Múzeum és fesztiválprogramok.",
+            "longDescription": "A MÜPA Budapest a Komor Marcell utca 1. szám alatt klasszikus, jazz, world, tánc és kortárs programokat kínál a Bartók Nemzeti Koncertteremben és más termekben, valamint a Ludwig Múzeumban. Jegyek és műsor: mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "mupa-budapest"
+          },
+          "es": {
+            "name": "MÜPA Budapest",
+            "shortDescription": "Palacio de las Artes en el Danubio — sala Bartók, Museo Ludwig y festivales.",
+            "longDescription": "MÜPA Budapest (Palacio de las Artes) en Komor Marcell utca 1 acoge programas clásicos, jazz, world, danza y contemporáneos en la Sala Nacional de Conciertos Bartók y otras salas, además del Museo Ludwig. Entradas y cartelera en mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "mupa-budapest-es"
+          },
+          "it": {
+            "name": "MÜPA Budapest",
+            "shortDescription": "Palazzo delle Arti sul Danubio — sala Bartók, Museo Ludwig e festival.",
+            "longDescription": "MÜPA Budapest in Komor Marcell utca 1 ospita classica, jazz, world, danza e contemporaneo nella Sala Nazionale Bartók e altre sale, oltre al Museo Ludwig. Biglietti e programma su mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "mupa-budapest-it"
+          },
+          "he": {
+            "name": "מופה בודפשט",
+            "shortDescription": "ארמון האמנויות על הדנובה — אולם בארטוק, מוזיאון לודוויג ופסטיבלים.",
+            "longDescription": "מופה בודפשט (MÜPA) ברחוב קומור מרסל 1 מציע קלאסי, ג'אז, world, מחול ותוכניות עכשוויות באולם הקונצרטים הלאומי בארטוק ובאולמות נוספים, וכן במוזיאון לודוויג. כרטיסים ולוח הופעות ב-mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "mupa-budapest-he"
+          },
+          "ar": {
+            "name": "موبا بودابست",
+            "shortDescription": "قصر الفنون على الدانوب — قاعة بارتوك ومتحف لودفيج ومهرجانات.",
+            "longDescription": "موبا بودابست (MÜPA) في كومور مارسيل 1 يستضيف برامج كلاسيكية وجاز وعالمية ورقصاً ومعاصرة في قاعة بارتوك الوطنية وقاعات أخرى، إضافة إلى متحف لودفيج. التذاكر والبرنامج على mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "mupa-budapest-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mvm-dome-ujbuda",
+        "name": "MVM Dome",
+        "category": "Venues",
+        "borough": "Újbuda",
+        "neighborhood": "Kelenföld",
+        "address": "1117 Budapest, Magyar tudósok körútja 3, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 35,
+        "shortDescription": "Major indoor arena in southern Pest — concerts and arena shows with published ticket tiers.",
+        "longDescription": "MVM Dome (formerly Budapest Arena) is a large indoor venue in Újbuda used for international concert tours. Check the official promoter or venue listings for door times, seated and standing zones, and on-sale windows.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "email": "",
+        "website": "https://www.livenation.hu",
+        "phone": "",
+        "locales": {
+          "hu": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Nagy beltéri aréna dél-Pesten — koncertturnék és jegyek a hivatalos oldalon.",
+            "longDescription": "Az MVM Dome (korábban Budapest Aréna) nagy beltéri helyszín Újbudán, nemzetközi koncertturnék számára. A kapunyitás és jegyárak a promoter oldalán.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "es": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Gran arena cubierta en el sur de Pest — giras y entradas en la web oficial.",
+            "longDescription": "MVM Dome es una gran sala cubierta en Újbuda para giras internacionales. Horarios de puerta y precios en el promotor.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "it": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "Grande arena indoor a Pest sud — tour e biglietti sul sito ufficiale.",
+            "longDescription": "MVM Dome è una grande arena coperta a Újbuda per concerti internazionali. Orari e prezzi sul promoter.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "he": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "אולם מקורה גדול בדרום פשט — הופעות וכרטיסים באתר הרשמי.",
+            "longDescription": "MVM Dome הוא אולם מקורה גדול ב-Újbuda להופעות בינלאומיות. שעות פתיחה ומחירים אצל המארגן.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          },
+          "ar": {
+            "slug": "mvm-dome",
+            "name": "MVM Dome",
+            "shortDescription": "ساحة داخلية كبيرة في جنوب بودابست — جولات وحفلات وتذاكر عبر الموقع الرسمي.",
+            "longDescription": "MVM Dome ساحة مغطاة كبيرة في Újbuda للحفلات الدولية. أوقات الأبواب والأسعار لدى المنظم.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mng-castle-buda",
+        "name": "Hungarian National Gallery",
+        "category": "Venues",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1014 Budapest, Szent György tér 2, Hungary",
+        "activityTypes": [
+          "Gallery",
+          "Theatre",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 12,
+        "shortDescription": "Hungary's national art museum in Buda Castle — permanent collections, dome views, and rotating exhibitions.",
+        "longDescription": "The Hungarian National Gallery (Magyar Nemzeti Galéria) occupies the Buda Castle complex at Szent György tér 2. General opening hours are Tuesday–Sunday 10:00–18:00 (ticket office until 17:00; last entry 17:00). The dome may open depending on weather. Check en.mng.hu for current exhibitions and ticket options.\n\nSources: https://en.mng.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/RkT7WgPH/c003da54c918.jpg",
+        "email": "",
+        "website": "https://en.mng.hu/",
+        "phone": "+36 1 201 9082",
+        "locales": {
+          "hu": {
+            "name": "Magyar Nemzeti Galéria",
+            "shortDescription": "Országos képzőművészeti múzeum a Budai Várban — állandó gyűjtemények, kupola és váltó kiállítások.",
+            "longDescription": "A Magyar Nemzeti Galéria a Budai Várban, a Szent György tér 2. szám alatt. Általános nyitvatartás: kedd–vasárnap 10:00–18:00 (pénztár 17:00-ig; utolsó belépés 17:00). A kupola időjárásfüggően nyithat. Aktuális kiállítások és jegyek: en.mng.hu.\n\nSources: https://en.mng.hu/",
+            "slug": "magyar-nemzeti-galeria"
+          },
+          "es": {
+            "name": "Galería Nacional Húngara",
+            "shortDescription": "Museo nacional de arte en el Castillo de Buda — colecciones permanentes, cúpula y exposiciones temporales.",
+            "longDescription": "La Galería Nacional Húngara (Magyar Nemzeti Galéria) ocupa el Castillo de Buda en Szent György tér 2. Horario general: martes–domingo 10:00–18:00 (taquilla hasta 17:00; última entrada 17:00). La cúpula puede abrir según el tiempo. Exposiciones y entradas en en.mng.hu.\n\nSources: https://en.mng.hu/",
+            "slug": "galeria-nacional-hungara"
+          },
+          "it": {
+            "name": "Galleria Nazionale Ungherese",
+            "shortDescription": "Museo nazionale d'arte al Castello di Buda — collezioni permanenti, cupola e mostre temporanee.",
+            "longDescription": "La Galleria Nazionale Ungherese (Magyar Nemzeti Galéria) occupa il Castello di Buda in Szent György tér 2. Orari: martedì–domenica 10:00–18:00 (biglietteria fino alle 17:00; ultimo ingresso 17:00). La cupola può aprire in base al meteo. Mostre e biglietti su en.mng.hu.\n\nSources: https://en.mng.hu/",
+            "slug": "galleria-nazionale-ungherese"
+          },
+          "he": {
+            "name": "הגלריה הלאומית ההונגרית",
+            "shortDescription": "מוזיאון האמנות הלאומי בטירת בודה — אוספים קבועים, כיפה ותערוכות מתחלפות.",
+            "longDescription": "הגלריה הלאומית ההונגרית (Magyar Nemzeti Galéria) בטירת בודה, כיכר סנט גיורגי 2. שעות כלליות: שלישי–ראשון 10:00–18:00 (קופה עד 17:00; כניסה אחרונה 17:00). הכיפה עשויה להיפתח לפי מזג האוויר. תערוכות וכרטיסים ב-en.mng.hu.\n\nSources: https://en.mng.hu/",
+            "slug": "galeria-leumit-hungria"
+          },
+          "ar": {
+            "name": "المعرض الوطني المجري",
+            "shortDescription": "المتحف الوطني للفنون في قلعة بودا — مجموعات دائمة وقبة ومعارض متناوبة.",
+            "longDescription": "يشغل المعرض الوطني المجري (Magyar Nemzeti Galéria) مجمع قلعة بودا في ساحة سانت جيورجي 2. المواعيد العامة: الثلاثاء–الأحد 10:00–18:00 (شباك التذاكر حتى 17:00؛ آخر دخول 17:00). قد تفتح القبة حسب الطقس. المعارض والتذاكر على en.mng.hu.\n\nSources: https://en.mng.hu/",
+            "slug": "al-maarid-al-watani-al-majari"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-akvarium-belvaros",
+        "name": "Akvárium Klub",
+        "category": "Venues",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1051 Budapest, Erzsébet tér 12, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "DJ Sets",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 15,
+        "shortDescription": "Central Pest club under Erzsébet tér — indoor hall and garden gigs steps from Deák Ferenc tér.",
+        "longDescription": "Akvárium Klub is a long-running concert and club venue at Erzsébet tér 12 near Deák Ferenc tér. The program mixes Hungarian and international live acts and club nights in the main hall and garden areas. Check akvariumklub.hu for the calendar and tickets.\n\nSources: https://akvariumklub.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/s9WG1S2w/6113897a4e42.png",
+        "email": "info@akvariumklub.hu",
+        "website": "https://akvariumklub.hu/",
+        "phone": "+36 30 860 3368",
+        "locales": {
+          "hu": {
+            "name": "Akvárium Klub",
+            "shortDescription": "Belvárosi klub az Erzsébet tér alatt — beltéri terem és kerti koncertek a Deák tértől pár lépésre.",
+            "longDescription": "Az Akvárium Klub régóta koncert- és klubhelyszín az Erzsébet tér 12. szám alatt, a Deák Ferenc tér közelében. Magyar és nemzetközi élőzenés, klubestek a főcsarnokban és a kertben. Naptár és jegyek: akvariumklub.hu.\n\nSources: https://akvariumklub.hu/",
+            "slug": "akvarium-klub"
+          },
+          "es": {
+            "name": "Akvárium Klub",
+            "shortDescription": "Club céntrico bajo Erzsébet tér — sala interior y conciertos en el jardín junto a Deák Ferenc tér.",
+            "longDescription": "Akvárium Klub es un local de conciertos y club en Erzsébet tér 12, cerca de Deák Ferenc tér. Programa de actos en vivo húngaros e internacionales y noches de club en la sala principal y el jardín. Calendario y entradas en akvariumklub.hu.\n\nSources: https://akvariumklub.hu/",
+            "slug": "akvarium-klub-es"
+          },
+          "it": {
+            "name": "Akvárium Klub",
+            "shortDescription": "Club nel centro sotto Erzsébet tér — sala indoor e concerti in giardino vicino a Deák Ferenc tér.",
+            "longDescription": "Akvárium Klub è una venue storica in Erzsébet tér 12, vicino a Deák Ferenc tér. Live ungheresi e internazionali e serate club nella sala principale e nel giardino. Calendario e biglietti su akvariumklub.hu.\n\nSources: https://akvariumklub.hu/",
+            "slug": "akvarium-klub-it"
+          },
+          "he": {
+            "name": "אקווריום קלאב",
+            "shortDescription": "מועדון מרכזי מתחת לכיכר ארז'בט — אולם וחצר הופעות צעדים מדיאק פרנץ.",
+            "longDescription": "אקווריום קלאב הוא מקום הופעות ומועדון ותיק בכיכר ארז'בט 12 ליד דיאק פרנץ. תוכנית של להקות חיות הונגריות ובינלאומיות ולילות מועדון באולם הראשי ובגינה. לוח הופעות וכרטיסים ב-akvariumklub.hu.\n\nSources: https://akvariumklub.hu/",
+            "slug": "akvarium-klub-he"
+          },
+          "ar": {
+            "name": "نادي أكفاريوم",
+            "shortDescription": "نادٍ وسط المدينة تحت ساحة إرزسيبيت — قاعة داخلية وحفلات في الحديقة قرب دياك فيرينك.",
+            "longDescription": "أكفاريوم كلوب مكان حفلات ونادٍ عريق في إرزسيبيت 12 قرب دياك فيرينك. برنامج من فرق حية مجارية ودولية وليالي نادي في القاعة الرئيسية والحديقة. التقويم والتذاكر على akvariumklub.hu.\n\nSources: https://akvariumklub.hu/",
+            "slug": "akvarium-klub-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-trafo-ferencvaros",
+        "name": "Trafó House of Contemporary Arts",
+        "category": "Venues",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1094 Budapest, Liliom utca 41, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 12,
+        "shortDescription": "Contemporary theatre, dance, and music in a former transformer station near Rákóczi tér.",
+        "longDescription": "Trafó Kortárs Művészeti Központ (Trafó House of Contemporary Arts) at Liliom utca 41 presents experimental theatre, dance, concerts, and DJ programs. Browse trafo.hu for the season program and tickets.\n\nSources: https://trafo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/JFRSdt1N/7c5003c380da.jpg",
+        "email": "",
+        "website": "https://trafo.hu/",
+        "phone": "+36 1 456 2040",
+        "locales": {
+          "hu": {
+            "name": "Trafó Kortárs Művészeti Központ",
+            "shortDescription": "Kortárs színház, tánc és zene egykori transzformátorállomásban a Rákóczi tér közelében.",
+            "longDescription": "A Trafó Kortárs Művészeti Központ a Liliom utca 41. szám alatt kísérleti színházat, táncot, koncerteket és DJ programokat kínál. Szezon és jegyek: trafo.hu.\n\nSources: https://trafo.hu/",
+            "slug": "trafo-kortars"
+          },
+          "es": {
+            "name": "Trafó House of Contemporary Arts",
+            "shortDescription": "Teatro, danza y música contemporáneos en una antigua subestación cerca de Rákóczi tér.",
+            "longDescription": "Trafó Kortárs Művészeti Központ (Trafó House of Contemporary Arts) en Liliom utca 41 presenta teatro experimental, danza, conciertos y programas DJ. Temporada y entradas en trafo.hu.\n\nSources: https://trafo.hu/",
+            "slug": "trafo-casa-artes"
+          },
+          "it": {
+            "name": "Trafó House of Contemporary Arts",
+            "shortDescription": "Teatro, danza e musica contemporanei in un'ex sottostazione vicino a Rákóczi tér.",
+            "longDescription": "Trafó Kortárs Művészeti Központ in Liliom utca 41 propone teatro sperimentale, danza, concerti e DJ set. Programma e biglietti su trafo.hu.\n\nSources: https://trafo.hu/",
+            "slug": "trafo-arti-contemporanee"
+          },
+          "he": {
+            "name": "בית טרפו לאמנויות עכשוויות",
+            "shortDescription": "תיאטרון, מחול ומוזיקה עכשוויים בתחנת שנאים לשעבר ליד כיכר ראקוצ'י.",
+            "longDescription": "מרכז טרפו (Trafó) ברחוב ליליום 41 מציג תיאטרון ניסיוני, מחול, קונצרטים ותוכניות DJ. עונה וכרטיסים ב-trafo.hu.\n\nSources: https://trafo.hu/",
+            "slug": "trafo-omanuyot-akhshavit"
+          },
+          "ar": {
+            "name": "ترافو بيت الفنون المعاصرة",
+            "shortDescription": "مسرح ورقص وموسيقى معاصرة في محطة محولات سابقة قرب ساحة راكوتشي.",
+            "longDescription": "مركز ترافو (Trafó) في ليليوم 41 يقدم مسرحاً تجريبياً ورقصاً وحفلات وبرامج DJ. الموسم والتذاكر على trafo.hu.\n\nSources: https://trafo.hu/",
+            "slug": "trafo-funun-muasira"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-fono-ujbuda",
+        "name": "Fonó Budai Zene Ház",
+        "category": "Venues",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1116 Budapest, Sztregova utca 3, Hungary",
+        "activityTypes": [
+          "Jazz",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 10,
+        "shortDescription": "Roots, folk, and jazz club in Újbuda — nightly concerts and the annual Budapest Folk Festival hub.",
+        "longDescription": "Fonó Budai Zene Ház at Sztregova utca 3 is one of Budapest's key venues for folk, world, and jazz, including the Budapest Folk Festival program. See fono.hu for concert dates, ticket prices, and table reservations.\n\nSources: https://fono.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/tjbWRYL/6862ec15396a.jpg",
+        "email": "fono@fono.hu",
+        "website": "https://fono.hu/",
+        "phone": "+36 1 206 5300",
+        "locales": {
+          "hu": {
+            "name": "Fonó Budai Zene Ház",
+            "shortDescription": "Folk-, világ- és jazzklub Újbudán — esti koncertek és a Budapesti Táncház Fesztivál központja.",
+            "longDescription": "A Fonó Budai Zene Ház a Sztregova utca 3. szám alatt Budapest egyik legfontosabb folk-, world- és jazzhelyszíne, beleértve a Budapesti Táncház Fesztivál programját is. Koncertek, jegyárak, asztalfoglalás: fono.hu.\n\nSources: https://fono.hu/",
+            "slug": "fono-budai-zene-haz"
+          },
+          "es": {
+            "name": "Fonó Budai Zene Ház",
+            "shortDescription": "Club de folk, world y jazz en Újbuda — conciertos nocturnos y sede del Festival Folk de Budapest.",
+            "longDescription": "Fonó Budai Zene Ház en Sztregova utca 3 es una de las salas clave de Budapest para folk, world y jazz, incluido el programa del Budapest Folk Festival. Fechas, precios y reservas de mesa en fono.hu.\n\nSources: https://fono.hu/",
+            "slug": "fono-budai-zene-haz-es"
+          },
+          "it": {
+            "name": "Fonó Budai Zene Ház",
+            "shortDescription": "Club folk, world e jazz a Újbuda — concerti serali e hub del Budapest Folk Festival.",
+            "longDescription": "Fonó Budai Zene Ház in Sztregova utca 3 è una delle venue principali di Budapest per folk, world e jazz, incluso il programma del Budapest Folk Festival. Date, prezzi e prenotazioni tavoli su fono.hu.\n\nSources: https://fono.hu/",
+            "slug": "fono-budai-zene-haz-it"
+          },
+          "he": {
+            "name": "פונו בודאי זנה האז",
+            "shortDescription": "מועדון פולק, וורלד וג'אז באוג'בודה — קונצרטים ערב ומרכז פסטיבל הפולק של בודפשט.",
+            "longDescription": "פונו בודאי זנה האז ברחוב סזטרגובה 3 הוא אחד ממוקדי הפולק, הוורלד והג'אז בבודפשט, כולל תוכנית פסטיבל הפולק. תאריכים, מחירים והזמנת שולחן ב-fono.hu.\n\nSources: https://fono.hu/",
+            "slug": "fono-budai-zene-haz-he"
+          },
+          "ar": {
+            "name": "فونو بوداي زيني هاز",
+            "shortDescription": "نادٍ للفولك والموسيقى العالمية والجاز في أوجبودا — حفلات مسائية ومركز مهرجان الفولك في بودابست.",
+            "longDescription": "فونو بوداي زيني هاز في شارع سزتريغوفا 3 من أهم أماكن الفولك والعالمي والجاز في بودابست، بما في ذلك برنامج مهرجان الفولك. مواعيد وأسعار وحجز طاولات على fono.hu.\n\nSources: https://fono.hu/",
+            "slug": "fono-budai-zene-haz-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-momkult-ujbuda",
+        "name": "MOM Cultural Centre",
+        "category": "Venues",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 12,
+        "shortDescription": "Bauhaus cultural centre on the Buda hills — theatre, concerts, and courtyard events.",
+        "longDescription": "MOM Kulturális Központ (MOM Cultural Centre) at Csörsz utca 18 is a protected Bauhaus building with a 650-seat theatre, dome room, and outdoor stage. Ticket office hours and programs are listed on momkult.hu; email jegy@momkult.hu for tickets.\n\nSources: https://momkult.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/B57LN2rb/cf91ad578e08.jpg",
+        "email": "jegy@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 319 9854",
+        "locales": {
+          "hu": {
+            "name": "MOM Kulturális Központ",
+            "shortDescription": "Bauhaus kulturális központ a budai hegyekben — színház, koncertek és udvari programok.",
+            "longDescription": "A MOM Kulturális Központ a Csörsz utca 18. szám alatt védett Bauhaus épület 650 fős színházzal, kupolateremmel és szabadtéri színpaddal. Jegyiroda és programok: momkult.hu; jegyek: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "mom-kulturalis-kozpont"
+          },
+          "es": {
+            "name": "Centro Cultural MOM",
+            "shortDescription": "Centro cultural Bauhaus en las colinas de Buda — teatro, conciertos y eventos en el patio.",
+            "longDescription": "MOM Kulturális Központ (Centro Cultural MOM) en Csörsz utca 18 es un edificio Bauhaus protegido con teatro de 650 plazas, sala cúpula y escenario exterior. Taquilla y programación en momkult.hu; entradas: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "centro-cultural-mom"
+          },
+          "it": {
+            "name": "Centro Culturale MOM",
+            "shortDescription": "Centro culturale Bauhaus sulle colline di Buda — teatro, concerti ed eventi nel cortile.",
+            "longDescription": "MOM Kulturális Központ in Csörsz utca 18 è un edificio Bauhaus tutelato con teatro da 650 posti, sala cupola e palco esterno. Biglietteria e programma su momkult.hu; biglietti: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "centro-culturale-mom"
+          },
+          "he": {
+            "name": "מרכז תרבות MOM",
+            "shortDescription": "מרכז תרבות באוהאוס גבעות בודה — תיאטרון, קונצרטים ואירועים בחצר.",
+            "longDescription": "מרכז MOM (MOM Kulturális Központ) ברחוב צ'ורס 18 הוא מבנה באוהאוס מוגן עם תיאטרון ל-650 מושבים, אולם כיפה ובמה חיצונית. שעות קופה ותוכנית ב-momkult.hu; כרטיסים: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "merkaz-tarbut-mom"
+          },
+          "ar": {
+            "name": "مركز MOM الثقافي",
+            "shortDescription": "مركز ثقافي باوهاوس في تلال بودا — مسرح وحفلات وفعاليات في الفناء.",
+            "longDescription": "مركز MOM الثقافي (MOM Kulturális Központ) في تشورس 18 مبنى باوهاوس محمي بمسرح 650 مقعداً وقاعة قبة ومسرح خارجي. شباك التذاكر والبرنامج على momkult.hu؛ التذاكر: jegy@momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "markaz-mom-althaqafi"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-okk-obuda",
+        "name": "Óbuda Cultural Centre",
+        "category": "Venues",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1032 Budapest, San Marco utca 81, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 10,
+        "shortDescription": "District cultural centre in Óbuda — theatre, concerts, and community programs across local venues.",
+        "longDescription": "Óbudai Kulturális Központ (Óbuda Cultural Centre) at San Marco utca 81 programmes theatre, music, and family events across Óbuda and partner houses. Tickets via kulturkozpont.hu and kulturkozpont.jegy.hu; office phone (06-1) 388-7370 on weekdays 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/pjMy0r3r/91c1158de41b.jpg",
+        "email": "",
+        "website": "https://kulturkozpont.hu/",
+        "phone": "+36 1 388 7370",
+        "locales": {
+          "hu": {
+            "name": "Óbudai Kulturális Központ",
+            "shortDescription": "Kerületi kulturális központ Óbudán — színház, koncertek és közösségi programok több helyszínen.",
+            "longDescription": "Az Óbudai Kulturális Központ a San Marco utca 81. szám alatt színházi, zenei és családi programokat szervez Óbudán és partnerhelyszíneken. Jegyek: kulturkozpont.hu és kulturkozpont.jegy.hu; iroda (06-1) 388-7370 hétköznap 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+            "slug": "obudai-kulturalis-kozpont"
+          },
+          "es": {
+            "name": "Centro Cultural de Óbuda",
+            "shortDescription": "Centro cultural distrital en Óbuda — teatro, conciertos y programas comunitarios en varios espacios.",
+            "longDescription": "Óbudai Kulturális Központ (Centro Cultural de Óbuda) en San Marco utca 81 programa teatro, música y eventos familiares en Óbuda y sedes asociadas. Entradas en kulturkozpont.hu y kulturkozpont.jegy.hu; oficina (06-1) 388-7370 lun–vie 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+            "slug": "centro-cultural-obuda"
+          },
+          "it": {
+            "name": "Centro Culturale di Óbuda",
+            "shortDescription": "Centro culturale di quartiere a Óbuda — teatro, concerti e programmi comunitari in più sedi.",
+            "longDescription": "Óbudai Kulturális Központ in San Marco utca 81 organizza teatro, musica ed eventi per famiglie a Óbuda e in sedi partner. Biglietti su kulturkozpont.hu e kulturkozpont.jegy.hu; ufficio (06-1) 388-7370 lun–ven 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+            "slug": "centro-culturale-obuda"
+          },
+          "he": {
+            "name": "מרכז התרבות של אובודה",
+            "shortDescription": "מרכז תרבות מחוזי באובודה — תיאטרון, קונצרטים ותוכניות קהילתיות במספר מיקומים.",
+            "longDescription": "מרכז אובודה (Óbudai Kulturális Központ) ברחוב סן מרקו 81 מתכנן תיאטרון, מוזיקה ואירועי משפחה באובודה ובבתי שותף. כרטיסים ב-kulturkozpont.hu ו-kulturkozpont.jegy.hu; משרד (06-1) 388-7370 ב׳–ה׳ 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+            "slug": "merkaz-tarbut-obuda"
+          },
+          "ar": {
+            "name": "المركز الثقافي في أوبودا",
+            "shortDescription": "مركز ثقافي حي في أوبودا — مسرح وحفلات وبرامج مجتمعية في عدة مواقع.",
+            "longDescription": "المركز الثقافي في أوبودا (Óbudai Kulturális Központ) في سان ماركو 81 يبرمج مسرحاً وموسيقى وفعاليات عائلية في أوبودا وشركاء. التذاكر على kulturkozpont.hu وkulturkozpont.jegy.hu؛ المكتب (06-1) 388-7370 الإثنين–الجمعة 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+            "slug": "al-markaz-althaqafi-obuda"
+          }
+        }
+      }
+    }
+  ]
+}

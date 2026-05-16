@@ -66,6 +66,7 @@ export const curatedProviderSchema = z
     ageRanges: z.array(ageRange).min(1).max(5),
     dayTimeTags: z.array(dayTag).min(1).max(8),
     pricePerClass: z.number().nonnegative().max(50000),
+    priceCurrency: z.enum(["EUR", "HUF"]).optional(),
     shortDescription: z.string().min(10).max(400),
     longDescription: z.string().min(40).max(8000),
     rating: z.number().min(0).max(5),

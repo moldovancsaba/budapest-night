@@ -178,6 +178,7 @@ function buildProviderOp(entry, imageUrl) {
       activityTypes: entry.activityTypes,
       ageRanges: entry.ageRanges,
       dayTimeTags: entry.dayTimeTags,
+      // pricePerClass must be EUR (typical ticket/cover lower bound), never HUF amounts.
       pricePerClass: entry.pricePerClass ?? 0,
       shortDescription: entry.shortDescription,
       longDescription,

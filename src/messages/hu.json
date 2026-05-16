@@ -107,7 +107,7 @@
     "linkCopied": "Link másolva",
     "freeEntry": "Ingyenes belépés",
     "free": "Ingyenes",
-    "fromPrice": "Már €{amount}-tól",
+    "fromPrice": "Már {price}-tól",
     "priceVaries": "Változó ár",
     "perTicket": "/jegy",
     "perCover": "/belépő",
