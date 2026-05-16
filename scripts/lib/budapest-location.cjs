@@ -170,6 +170,104 @@ function syncEventFromHost(event, host) {
   };
 }
 
+/** Copy that must not appear on canonical venues (false district names). */
+const FORBIDDEN_DISTRICT_COPY = {
+  "prov-mvm-dome-ujbuda": [/\bÚjbuda\b/i, /\bUjbuda\b/i, /\bKelenföld\b/i, /\bInfopark\b/i],
+  "prov-budapest-park-obuda": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
+};
+
+function collectProviderTextFields(doc) {
+  const out = [];
+  if (typeof doc.shortDescription === "string") out.push(doc.shortDescription);
+  if (typeof doc.longDescription === "string") out.push(doc.longDescription);
+  for (const loc of Object.values(doc.locales || {})) {
+    if (loc && typeof loc === "object") {
+      if (typeof loc.shortDescription === "string") out.push(loc.shortDescription);
+      if (typeof loc.longDescription === "string") out.push(loc.longDescription);
+    }
+  }
+  return out;
+}
+
+function validateCanonicalProvider(doc, pathPrefix) {
+  const errors = [];
+  const canonical = CANONICAL_BY_ID[doc.id];
+  if (!canonical) return errors;
+
+  if (doc.borough && doc.borough !== canonical.borough) {
+    errors.push(
+      `${pathPrefix}: borough must be ${canonical.borough} for ${doc.id} (official address — id suffix is legacy, not the district)`,
+    );
+  }
+  if (doc.neighborhood && doc.neighborhood !== canonical.neighborhood) {
+    errors.push(`${pathPrefix}: neighborhood must be ${canonical.neighborhood} for ${doc.id}`);
+  }
+  if (doc.address && doc.address.trim() && doc.address !== canonical.address) {
+    errors.push(`${pathPrefix}: address must be ${canonical.address} for ${doc.id}`);
+  }
+
+  const forbidden = FORBIDDEN_DISTRICT_COPY[doc.id];
+  if (forbidden) {
+    for (const text of collectProviderTextFields(doc)) {
+      for (const pattern of forbidden) {
+        if (pattern.test(text)) {
+          errors.push(
+            `${pathPrefix}: description mentions a wrong district for ${doc.id} — use ${canonical.borough}, ${canonical.address}`,
+          );
+          break;
+        }
+      }
+    }
+  }
+
+  if (doc.id === "prov-mvm-dome-ujbuda" && doc.website && !/^https:\/\/(www\.)?mvm-dome\.hu/i.test(doc.website)) {
+    errors.push(`${pathPrefix}: website should be https://mvm-dome.hu (promoter pages go on events, not the venue row)`);
+  }
+  if (doc.id === "prov-budapest-park-obuda" && doc.website && !/^https:\/\/(www\.)?budapestpark\.hu/i.test(doc.website)) {
+    errors.push(`${pathPrefix}: website should be https://www.budapestpark.hu/... for Budapest Park`);
+  }
+
+  return errors;
+}
+
+function validateCanonicalEvent(doc, pathPrefix, providersById) {
+  const errors = [];
+  const hostId = Array.isArray(doc.venueIds) ? doc.venueIds[0] : undefined;
+  if (typeof hostId !== "string") return errors;
+
+  const canonical = CANONICAL_BY_ID[hostId];
+  if (!canonical) return errors;
+
+  if (doc.borough && doc.borough !== canonical.borough) {
+    errors.push(
+      `${pathPrefix}: borough must be ${canonical.borough} for host ${hostId} (1095 Fábián Juli = Ferencváros; 1143 Stefánia = Terézváros — not Óbuda/Újbuda)`,
+    );
+  }
+  if (doc.neighborhood && doc.neighborhood !== canonical.neighborhood) {
+    errors.push(`${pathPrefix}: neighborhood must be ${canonical.neighborhood} for host ${hostId}`);
+  }
+
+  const live = providersById?.get(hostId);
+  if (live) {
+    if (live.borough !== canonical.borough) {
+      errors.push(
+        `${pathPrefix}: host ${hostId} in live catalog has borough ${live.borough} but must be ${canonical.borough} — patch provider before ingesting events`,
+      );
+    }
+    for (const pattern of FORBIDDEN_DISTRICT_COPY[hostId] || []) {
+      const text = [live.longDescription, live.shortDescription].filter(Boolean).join("\n");
+      if (pattern.test(text)) {
+        errors.push(
+          `${pathPrefix}: host ${hostId} still has wrong-district copy in catalog — run location fix payload before events`,
+        );
+        break;
+      }
+    }
+  }
+
+  return errors;
+}
+
 module.exports = {
   BOROUGHS,
   NEIGHBORHOODS,
@@ -178,4 +276,6 @@ module.exports = {
   locationNeedsFix,
   applyLocationToProvider,
   syncEventFromHost,
+  validateCanonicalProvider,
+  validateCanonicalEvent,
 };

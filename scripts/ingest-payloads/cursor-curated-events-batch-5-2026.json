@@ -1,0 +1,366 @@
+{
+  "sourceUrls": [
+    "https://www.budapestpark.hu/tickets/event/RILES_20260531",
+    "https://www.budapestpark.hu/tickets/event/deva-20260627",
+    "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall",
+    "https://www.jegy.hu/program/wagner-parsifal-budapesti-wagner-napok-177306/1293533",
+    "https://www.barbanegra.hu/in-flames_20260725",
+    "https://www.budapestpark.hu/en/events/charlie-puth-20260727",
+    "https://www.budapestpark.hu/tickets/event/CHARLIEPUTH_20260727",
+    "https://www.ticketle.hu/en/charlie-puth-budapest-tickets-27-07-2026/event/641168"
+  ],
+  "notes": "Five timed events: May–July 2026 gap-fill (Rilès May 31), June opera + Déva, Újbuda metal (In Flames), Charlie Puth first HU show. Catalog before: 6 upcoming; adds Újbuda borough and late-May slot.",
+  "missingOrUncertain": [
+    "Rilès / Charlie Puth / Déva exact stage time not on budapestpark.hu — using 20:00 after 18:00 gates.",
+    "Déva ticket tiers not listed on budapestpark.hu ticket page at ingest — entryFees empty.",
+    "Charlie Puth arena/terrace breakdown not on budapestpark.hu — floor from 23,390 HUF via ticketle.hu reseller listing.",
+    "Wagner Parsifal uses dynamic pricing 8,500–34,900 HUF — single published floor tier only.",
+    "In Flames: Barba Negra Red Stage (Szállító u. 3) vs provider card address — event follows official show page."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-rilles-budapest-park-2026",
+        "title": "Rilès — Survival Mode at Budapest Park",
+        "shortDescription": "French–Algerian DIY star Rilès with support sierra delta — Sunday 31 May 2026, gates 18:00 at Budapest Park.",
+        "longDescription": "After his Sziget Main Stage set, Rilès returns for a headline show at Budapest Park on Sunday 31 May 2026 (Survival Mode era), with support sierra delta. Gates 18:00 at 1095 Budapest, Fábián Juli tér 1. Arena and terrace tiers on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/RILES_20260531",
+        "startsAt": "2026-05-31T20:00:00+02:00",
+        "endsAt": "2026-05-31T23:00:00+02:00",
+        "doorsOpenAt": "2026-05-31T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "arena",
+            "label": "Arena — general admission",
+            "amount": 17999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 900 Ft admin fee at online checkout"
+          },
+          {
+            "id": "terrace",
+            "label": "Terrace — general admission",
+            "amount": 29999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 1,500 Ft admin fee at online checkout"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekend", "Evening", "Late night"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/3504rCjm/4737b972ddab.jpg",
+        "website": "https://www.budapestpark.hu/tickets/event/RILES_20260531",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/RILES_20260531",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "rilles-budapest-park-2026",
+            "title": "Rilès — Survival Mode a Budapest Parkban",
+            "shortDescription": "Rilès, vendég: sierra delta — 2026. május 31., kapunyitás 18:00.",
+            "longDescription": "A Sziget főszínpad után Rilès visszatér főszereplős budapesti koncerttel a Budapest Parkban 2026. május 31-én (Survival Mode), vendég: sierra delta. Kapunyitás 18:00. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/RILES_20260531"
+          },
+          "es": {
+            "slug": "rilles-budapest-park-2026",
+            "title": "Rilès — Survival Mode en Budapest Park",
+            "shortDescription": "Rilès con sierra delta — 31 mayo 2026, puertas 18:00.",
+            "longDescription": "Rilès vuelve a Budapest Park el 31 de mayo de 2026 con sierra delta. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/RILES_20260531"
+          },
+          "it": {
+            "slug": "rilles-budapest-park-2026",
+            "title": "Rilès — Survival Mode al Budapest Park",
+            "shortDescription": "Rilès con sierra delta — 31 maggio 2026, porte 18:00.",
+            "longDescription": "Rilès torna al Budapest Park il 31 maggio 2026 con sierra delta. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/RILES_20260531"
+          },
+          "he": {
+            "slug": "rilles-budapest-park-2026",
+            "title": "Rilès — Survival Mode בבודפשט פארק",
+            "shortDescription": "Rilès עם sierra delta — 31 במאי 2026, שערים 18:00.",
+            "longDescription": "Rilès חוזר לבודפשט פארק ב-31 במאי 2026 עם sierra delta. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/RILES_20260531"
+          },
+          "ar": {
+            "slug": "rilles-budapest-park-2026",
+            "title": "Rilès — Survival Mode في بودابست بارك",
+            "shortDescription": "Rilès مع sierra delta — 31 مايو 2026، الأبواب 18:00.",
+            "longDescription": "يعود Rilès إلى بودابست بارك في 31 مايو 2026 مع sierra delta. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/RILES_20260531"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-deva-budapest-park-2026",
+        "title": "Déva with El Búho — Budapest Park",
+        "shortDescription": "Romanian singer Déva with special guest El Búho — Saturday 27 June 2026, gates 18:00 at Budapest Park.",
+        "longDescription": "Déva plays an open-air concert at Budapest Park on Saturday 27 June 2026 with special guest El Búho. Gates open at 18:00 (1095 Budapest, Fábián Juli tér 1). Tickets via budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/deva-20260627",
+        "startsAt": "2026-06-27T20:00:00+02:00",
+        "endsAt": "2026-06-27T23:00:00+02:00",
+        "doorsOpenAt": "2026-06-27T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["All ages", "18+"],
+        "dayTimeTags": ["Weekend", "Evening"],
+        "badges": ["Staff Pick"],
+        "image": "https://i.ibb.co/qFsG2sXN/37814e806030.jpg",
+        "website": "https://www.budapestpark.hu/tickets/event/deva-20260627",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/deva-20260627",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "deva-budapest-park-2026",
+            "title": "Déva, vendég: El Búho — Budapest Park",
+            "shortDescription": "Déva és El Búho — 2026. június 27., kapunyitás 18:00.",
+            "longDescription": "Déva nyílt légi koncertet ad a Budapest Parkban 2026. június 27-én, különleges vendég: El Búho. Kapunyitás 18:00. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/deva-20260627"
+          },
+          "es": {
+            "slug": "deva-budapest-park-2026",
+            "title": "Déva con El Búho — Budapest Park",
+            "shortDescription": "Déva y El Búho — 27 junio 2026, puertas 18:00.",
+            "longDescription": "Déva en concierto al aire libre en Budapest Park el 27 de junio de 2026 con El Búho. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/deva-20260627"
+          },
+          "it": {
+            "slug": "deva-budapest-park-2026",
+            "title": "Déva con El Búho — Budapest Park",
+            "shortDescription": "Déva e El Búho — 27 giugno 2026, porte 18:00.",
+            "longDescription": "Déva al Budapest Park il 27 giugno 2026 con El Búho. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/deva-20260627"
+          },
+          "he": {
+            "slug": "deva-budapest-park-2026",
+            "title": "Déva עם El Búho — בודפשט פארק",
+            "shortDescription": "Déva ו-El Búho — 27 ביוני 2026, שערים 18:00.",
+            "longDescription": "Déva מופיעה בבודפשט פארק ב-27 ביוני 2026 עם El Búho. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/deva-20260627"
+          },
+          "ar": {
+            "slug": "deva-budapest-park-2026",
+            "title": "Déva مع El Búho — بودابست بارك",
+            "shortDescription": "Déva وEl Búho — 27 يونيو 2026، الأبواب 18:00.",
+            "longDescription": "تقدّم Déva حفلاً في بودابست بارك في 27 يونيو 2026 مع El Búho. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/tickets/event/deva-20260627"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-wagner-parsifal-mupa-2026",
+        "title": "Wagner: Parsifal — Budapest Wagner Days at Müpa",
+        "shortDescription": "Semi-staged Parsifal opens the 20th Budapest Wagner Days — Tuesday 30 June 2026, 16:00–22:20, Béla Bartók National Concert Hall (Ádám Fischer).",
+        "longDescription": "Müpa Budapest presents Wagner’s Parsifal (Bühnenweihfestspiel) in a semi-staged concert performance on Tuesday 30 June 2026, 16:00–22:20 with two intervals. Ádám Fischer conducts; cast includes Magnus Vigilius (Parsifal), Anja Kampe (Kundry), and Kurt Rydl (Titurel). German with Hungarian surtitles. Béla Bartók National Concert Hall, 1095 Budapest, Komor Marcell utca 1.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall",
+        "startsAt": "2026-06-30T16:00:00+02:00",
+        "endsAt": "2026-06-30T22:20:00+02:00",
+        "doorsOpenAt": "2026-06-30T15:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-cov-bartok-moricz"],
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "entryFees": [
+          {
+            "id": "from-dynamic",
+            "label": "Seated — from (dynamic pricing)",
+            "amount": 8500,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Dynamic pricing up to 34,900 HUF on mupa.hu / jegy.hu"
+          }
+        ],
+        "activityTypes": ["Live Music", "Theatre"],
+        "ageRanges": ["All ages"],
+        "dayTimeTags": ["Weekday", "Afternoon", "Evening"],
+        "badges": ["Featured", "Staff Pick"],
+        "image": "https://i.ibb.co/HD5xPyJb/d4d97a5c8b25.webp",
+        "website": "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall",
+        "bookingUrl": "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall/shopping",
+        "email": "info@mupa.hu",
+        "phone": "+36 1 555 3300",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "wagner-parsifal-mupa-2026",
+            "title": "Wagner: Parsifal — Budapesti Wagner-napok a Müpában",
+            "shortDescription": "A 20. Budapesti Wagner-napok nyitóestje — 2026. június 30., 16:00–22:20, Bartók Béla Nemzeti Hangversenyterem.",
+            "longDescription": "A Müpa Budapest Wagner Parsifalját mutatja be félig színpadi koncert-előadásban 2026. június 30-án, két szünettel. Karmester: Ádám Fischer. Német nyelven, magyar felirattal. 1095 Budapest, Komor Marcell utca 1.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall"
+          },
+          "es": {
+            "slug": "wagner-parsifal-mupa-2026",
+            "title": "Wagner: Parsifal — Días Wagner en Müpa",
+            "shortDescription": "Apertura del 20.º festival — 30 junio 2026, 16:00–22:20, Sala Bartók.",
+            "longDescription": "Parsifal de Wagner en Müpa Budapest el 30 de junio de 2026. Ádám Fischer dirige. Alemán con subtítulos húngaros. Entradas en mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall"
+          },
+          "it": {
+            "slug": "wagner-parsifal-mupa-2026",
+            "title": "Wagner: Parsifal — Wagner Days alla Müpa",
+            "shortDescription": "Apertura del 20° festival — 30 giugno 2026, 16:00–22:20, Sala Bartók.",
+            "longDescription": "Parsifal di Wagner alla Müpa Budapest il 30 giugno 2026. Direttore Ádám Fischer. Tedesco con sottotitoli ungheresi. Biglietti su mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall"
+          },
+          "he": {
+            "slug": "wagner-parsifal-mupa-2026",
+            "title": "ואגנר: Parsifal — ימי ואגנר ב-Müpa",
+            "shortDescription": "פתיחת הפסטיבל ה-20 — 30 ביוני 2026, 16:00–22:20, אולם בארטוק.",
+            "longDescription": "Parsifal של ואגנר ב-Müpa בודפשט ב-30 ביוני 2026. מנצח: Ádám Fischer. גרמנית עם כתוביות הונגריות. כרטיסים ב-mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall"
+          },
+          "ar": {
+            "slug": "wagner-parsifal-mupa-2026",
+            "title": "فاغنر: Parsifal — أيام فاغنر في Müpa",
+            "shortDescription": "افتتاح المهرجان العشرين — 30 يونيو 2026، 16:00–22:20، قاعة بارتوك.",
+            "longDescription": "تقدّم Müpa بودابست Parsifal لفاغنر في 30 يونيو 2026. قائد الأوركسترا Ádám Fischer. ألمانية مع ترجمة مجرية. التذاكر على mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-parsifal-2026-06-30_16-00-bela-bartok-national-concert-hall"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-in-flames-barba-negra-2026",
+        "title": "IN FLAMES — Barba Negra Red Stage",
+        "shortDescription": "Swedish melodeath headliners with Napalm Death, Bleed From Within, Unearth, and Employed To Serve — Saturday 25 July 2026, doors 15:00, Újbuda.",
+        "longDescription": "IN FLAMES headline Barba Negra Red Stage on Saturday 25 July 2026 with Napalm Death, Bleed From Within, Unearth, and Employed To Serve. Doors 15:00 at 1211 Budapest, Szállító utca 3 (Újbuda). Advance tickets on barbanegra.hu until 24 July; day-of price higher.\n\nSources: https://www.barbanegra.hu/in-flames_20260725",
+        "startsAt": "2026-07-25T16:00:00+02:00",
+        "endsAt": "2026-07-25T23:30:00+02:00",
+        "doorsOpenAt": "2026-07-25T15:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-barba-negra-ujbuda"],
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "entryFees": [
+          {
+            "id": "advance-until-jul-24",
+            "label": "Advance — until 24 July 2026",
+            "amount": 23999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "24,999 HUF on concert day; VIP 29,999 HUF sold out on barbanegra.hu"
+          }
+        ],
+        "activityTypes": ["Live Music", "Festival"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Weekend", "Afternoon", "Evening", "Late night"],
+        "badges": ["Popular"],
+        "image": "https://i.ibb.co/8p3VGwz/b79ea3823538.jpg",
+        "website": "https://www.barbanegra.hu/in-flames_20260725",
+        "bookingUrl": "https://www.barbanegra.hu/in-flames_20260725",
+        "email": "info@barbanegra.hu",
+        "phone": "+36 20 563 2254",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "Melodeath főszereplők, vendégek: Napalm Death és mások — 2026. július 25., kapunyitás 15:00, Újbuda.",
+            "longDescription": "Az IN FLAMES főszereplős metal estet ad a Barba Negra Red Stage-en 2026. július 25-én, vendégek: Napalm Death, Bleed From Within, Unearth, Employed To Serve. Kapunyitás 15:00, 1211 Budapest, Szállító utca 3. Jegyek: barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "es": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "Melodeath con Napalm Death y más — 25 julio 2026, puertas 15:00, Újbuda.",
+            "longDescription": "IN FLAMES encabezan Barba Negra el 25 de julio de 2026 con Napalm Death y más bandas. Entradas en barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "it": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "Melodeath con Napalm Death e altri — 25 luglio 2026, porte 15:00, Újbuda.",
+            "longDescription": "IN FLAMES headliner al Barba Negra il 25 luglio 2026. Biglietti su barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "he": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "מלודית' עם Napalm Death ואחרים — 25 ביולי 2026, שערים 15:00, Újbuda.",
+            "longDescription": "IN FLAMES בראש ליין-אפ ב-Barba Negra ב-25 ביולי 2026. כרטיסים ב-barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "ar": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "ميلوديث مع Napalm Death وغيرهم — 25 يوليو 2026، الأبواب 15:00، Újbuda.",
+            "longDescription": "IN FLAMES في Barba Negra في 25 يوليو 2026 مع Napalm Death وفرق أخرى. التذاكر على barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-charlie-puth-budapest-park-2026",
+        "title": "Charlie Puth — first Hungary show at Budapest Park",
+        "shortDescription": "Whatever's Clever! 2026 World Tour with Bradley Simpson — Monday 27 July 2026, gates 18:00 at Budapest Park.",
+        "longDescription": "Charlie Puth plays his first Hungarian concert at Budapest Park on Monday 27 July 2026 as part of the Whatever's Clever! 2026 World Tour, with special guest Bradley Simpson. Gates 18:00 at 1095 Budapest, Fábián Juli tér 1. Tickets on budapestpark.hu and partner sellers.\n\nSources: https://www.budapestpark.hu/en/events/charlie-puth-20260727 https://www.budapestpark.hu/tickets/event/CHARLIEPUTH_20260727",
+        "startsAt": "2026-07-27T20:00:00+02:00",
+        "endsAt": "2026-07-27T23:00:00+02:00",
+        "doorsOpenAt": "2026-07-27T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "standing-from",
+            "label": "Standing — from",
+            "amount": 23390,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Higher tiers on budapestpark.hu checkout; + handling fee per park FAQ"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekday", "Evening", "Late night"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/k6DyWzC8/68492bdc62d1.jpg",
+        "website": "https://www.budapestpark.hu/en/events/charlie-puth-20260727",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/CHARLIEPUTH_20260727",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "charlie-puth-budapest-park-2026",
+            "title": "Charlie Puth — első magyarországi koncert a Budapest Parkban",
+            "shortDescription": "Whatever's Clever! világturné, vendég: Bradley Simpson — 2026. július 27., kapunyitás 18:00.",
+            "longDescription": "Charlie Puth először lép színpadra Magyarországon a Budapest Parkban 2026. július 27-én, vendég: Bradley Simpson. Kapunyitás 18:00. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/charlie-puth-20260727"
+          },
+          "es": {
+            "slug": "charlie-puth-budapest-park-2026",
+            "title": "Charlie Puth — primer concierto en Hungría en Budapest Park",
+            "shortDescription": "Gira Whatever's Clever! con Bradley Simpson — 27 julio 2026, puertas 18:00.",
+            "longDescription": "Charlie Puth en su primer concierto en Hungría en Budapest Park el 27 de julio de 2026 con Bradley Simpson. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/charlie-puth-20260727"
+          },
+          "it": {
+            "slug": "charlie-puth-budapest-park-2026",
+            "title": "Charlie Puth — primo concerto in Ungheria al Budapest Park",
+            "shortDescription": "Tour Whatever's Clever! con Bradley Simpson — 27 luglio 2026, porte 18:00.",
+            "longDescription": "Charlie Puth al primo concerto ungherese al Budapest Park il 27 luglio 2026 con Bradley Simpson. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/charlie-puth-20260727"
+          },
+          "he": {
+            "slug": "charlie-puth-budapest-park-2026",
+            "title": "Charlie Puth — הופעה ראשונה בהונגריה בבודפשט פארק",
+            "shortDescription": "סיבוב Whatever's Clever! עם Bradley Simpson — 27 ביולי 2026, שערים 18:00.",
+            "longDescription": "Charlie Puth בהופעה הראשונה בהונגריה בבודפשט פארק ב-27 ביולי 2026 עם Bradley Simpson. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/charlie-puth-20260727"
+          },
+          "ar": {
+            "slug": "charlie-puth-budapest-park-2026",
+            "title": "Charlie Puth — أول حفل في المجر في بودابست بارك",
+            "shortDescription": "جولة Whatever's Clever! مع Bradley Simpson — 27 يوليو 2026، الأبواب 18:00.",
+            "longDescription": "يقدّم Charlie Puth أول حفل له في المجر في بودابست بارك في 27 يوليو 2026 مع Bradley Simpson. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/charlie-puth-20260727"
+          }
+        }
+      }
+    }
+  ]
+}

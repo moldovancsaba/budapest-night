@@ -46,9 +46,17 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 - \`borough\` + \`neighborhood\` on the event are **overwritten** from the primary host (denormalized for district filters). Still set them correctly in the payload for review.
 - Multi-venue festivals: list all hosts in \`venueIds\` order (primary first).
 
-### Location pitfalls (Hungary)
-- Verify **postal address** vs historical names. Example: **Budapest Park** = 1095 Budapest, Fábián Juli tér 1, **Ferencváros** (south Pest), **not** Hajógyári-sziget / Óbuda unless the source explicitly says the show is on the island.
+### Scarcity (mandatory before picking shows)
+- Fetch \`GET /api/public/events\` and count upcoming rows by **month** and **borough** (real district from host address, not \`prov-*\` id suffix).
+- Document before/after counts in payload \`notes\`; pick shows that fill the scarcest month + district + \`activityTypes\` slice you can source officially.
+- Do not batch many shows at the same host/month unless scarcity data justifies it.
+
+### Location pitfalls (Hungary) — blocking
+- **Never** infer district from legacy \`prov-*\` suffixes (\`-obuda\`, \`-ujbuda\`). Use \`GET /api/public/providers\` **borough + address**.
+- **Budapest Park** (\`prov-budapest-park-obuda\`): **Ferencváros**, Fábián Juli tér 1, 1095 — **not** Óbuda / Hajógyári-sziget. Event + host copy must not claim Óbuda Island.
+- **MVM Dome** (\`prov-mvm-dome-ujbuda\`): **Terézváros**, Stefánia út 2, 1143 — **not** Újbuda / Kelenföld. Venue \`website\` = \`https://mvm-dome.hu\`; promoter URLs belong on the **event** only.
 - \`neighborhood\` must be a **canonical** name from \`src/data/locations.ts\` for that \`borough\`.
+- Ingest dry-run rejects wrong \`borough\` for canonical hosts and wrong-district provider copy (\`scripts/lib/budapest-location.cjs\`).
 
 ### Tickets & currencies (critical)
 - Ticket prices belong on the **event** as \`entryFees[]\`, **not** as venue \`pricePerClass\`.

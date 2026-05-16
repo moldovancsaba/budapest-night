@@ -1,0 +1,420 @@
+{
+  "sourceUrls": [
+    "https://gerbeaud.hu/en/our-selection/drinks/",
+    "http://daubnercukraszda.hu/content/kiegeszitok",
+    "https://menzaetterem.hu/en/food/",
+    "https://menzaetterem.hu/en/drinks/",
+    "https://fakanaletterem.hu/etlap/",
+    "https://www.fricipapa.hu/menus?menu=%C3%A9tlap",
+    "https://instant-fogas.com/"
+  ],
+  "notes": "Menu batch 2026-05-16: 8 venues — coffee (Gerbeaud, Daubner, Espresso Embassy), pálinka/foodie (Menza, Great Market Hall/Fakanál, Frici Papa, Instant-Fogas). Mixed districts.",
+  "missingOrUncertain": [
+    "prov-espresso-embassy-belvaros: No public price list on espressoembassy.hu (2026-05-16); espresso/cappuccino/flat white amounts from budapestbylocals.com (2023) — marked price.source estimated.",
+    "prov-instant-fogas-erzsebetvaros: No itemized spirits menu on instant-fogas.com; house pálinka (4 cl) priced in line with comparable Budapest ruin-pub pours (~1 990 Ft) — marked estimated."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-gerbeaud-belvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://gerbeaud.hu/en/our-selection/drinks/",
+          "sourceUrls": ["https://gerbeaud.hu/en/our-selection/drinks/"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee-tea",
+              "title": "Coffee & Tea",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 1990, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 2790, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "flat-white",
+                  "kind": "drink",
+                  "name": "Flat white",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 3250, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "caffe-latte",
+                  "kind": "drink",
+                  "name": "Caffé latte",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 3250, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "desserts-drinks",
+              "title": "Chocolate drinks",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "hot-dark-chocolate",
+                  "kind": "drink",
+                  "name": "Hot dark chocolate with whipped cream",
+                  "tags": ["dessert"],
+                  "price": { "amount": 4550, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-daubner-oktogon",
+      "patch": {
+        "menu": {
+          "menuUrl": "http://daubnercukraszda.hu/content/kiegeszitok",
+          "sourceUrls": ["http://daubnercukraszda.hu/content/kiegeszitok"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Kávék",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": ["coffee"],
+                  "price": { "amount": 550, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee"],
+                  "price": { "amount": 650, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "latte-macchiato",
+                  "kind": "drink",
+                  "name": "Latte macchiato",
+                  "tags": ["coffee"],
+                  "price": { "amount": 750, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "tejes-kave",
+                  "kind": "drink",
+                  "name": "Tejes kávé",
+                  "tags": ["coffee"],
+                  "price": { "amount": 700, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-espresso-embassy-belvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://espressoembassy.hu/",
+          "sourceUrls": ["https://espressoembassy.hu/", "https://www.budapestbylocals.com/espresso-embassy/"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 450, "currency": "HUF", "unit": "each", "source": "estimated" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 590, "currency": "HUF", "unit": "each", "source": "estimated" }
+                },
+                {
+                  "id": "flat-white",
+                  "kind": "drink",
+                  "name": "Flat white",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 650, "currency": "HUF", "unit": "each", "source": "estimated" }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 750, "currency": "HUF", "unit": "each", "source": "estimated" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-menza-liszt",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://menzaetterem.hu/en/food/",
+          "sourceUrls": [
+            "https://menzaetterem.hu/en/food/",
+            "https://menzaetterem.hu/en/drinks/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "hungarian-goulash-soup",
+                  "kind": "food",
+                  "name": "Hungarian goulash soup with homemade noodles (pinched pasta)",
+                  "tags": ["goulash", "hungarian"],
+                  "price": { "amount": 3590, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "starters",
+              "title": "Starters",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "hungarian-fried-bread-hummus",
+                  "kind": "food",
+                  "name": "Hungarian fried bread with hummus, fresh salad and goat cheese",
+                  "tags": ["street-food", "hungarian"],
+                  "price": { "amount": 3790, "currency": "HUF", "unit": "portion", "source": "published" }
+                },
+                {
+                  "id": "savoury-hungarian-crepe",
+                  "kind": "food",
+                  "name": "Savoury Hungarian crepe filled with chicken meat, sour cream paprika sauce",
+                  "tags": ["hungarian"],
+                  "price": { "amount": 3990, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "spirits",
+              "title": "Spirits (4 cl)",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "cibakhazi-plum",
+                  "kind": "drink",
+                  "name": "Cibakházi Plum (4 cl)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 2490, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "cibakhazi-apricot",
+                  "kind": "drink",
+                  "name": "Cibakházi Apricot (4 cl)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 3290, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": ["coffee"],
+                  "price": { "amount": 850, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee"],
+                  "price": { "amount": 990, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-central-market-ferencvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://fakanaletterem.hu/etlap/",
+          "sourceUrls": ["https://fakanaletterem.hu/etlap/"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "lunch",
+              "title": "Házias specialitások",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "gulyasleves",
+                  "kind": "food",
+                  "name": "Gulyásleves marhahússal",
+                  "tags": ["goulash", "hungarian"],
+                  "price": { "amount": 3100, "currency": "HUF", "unit": "portion", "source": "published" }
+                },
+                {
+                  "id": "sertes-porkolt",
+                  "kind": "food",
+                  "name": "Sertéspörkölt galuskával",
+                  "tags": ["hungarian"],
+                  "price": { "amount": 5100, "currency": "HUF", "unit": "portion", "source": "published" }
+                },
+                {
+                  "id": "goulash-tasting-plate",
+                  "kind": "food",
+                  "name": "\"Goulash\" kóstolótál (gulyásleves, csirkepörkölt, sertéspörkölt)",
+                  "tags": ["goulash", "hungarian"],
+                  "price": { "amount": 8700, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "drinks",
+              "title": "Házi italok",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "fakanal-palinka",
+                  "kind": "drink",
+                  "name": "Fakanál pálinka (csatos üvegben, Villányi muskotály)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 3400, "currency": "HUF", "unit": "bottle", "source": "published" }
+                },
+                {
+                  "id": "lavazza-espresso",
+                  "kind": "drink",
+                  "name": "Lavazza presszókávé",
+                  "tags": ["coffee"],
+                  "price": { "amount": 1200, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-frici-jewish-q",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.fricipapa.hu/menus?menu=%C3%A9tlap",
+          "sourceUrls": ["https://www.fricipapa.hu/menus?menu=%C3%A9tlap"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "soups",
+              "title": "Levesek",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "gulyasleves",
+                  "kind": "food",
+                  "name": "Gulyásleves",
+                  "tags": ["goulash", "hungarian"],
+                  "price": { "amount": 3599, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "mains",
+              "title": "Készételek",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "vorosboros-marhaporkolt",
+                  "kind": "food",
+                  "name": "Vörösboros marhapörkölt",
+                  "tags": ["hungarian"],
+                  "price": { "amount": 3999, "currency": "HUF", "unit": "portion", "source": "published" }
+                },
+                {
+                  "id": "paprikas-csirkemell",
+                  "kind": "food",
+                  "name": "Paprikás csirkemell",
+                  "tags": ["hungarian"],
+                  "price": { "amount": 3799, "currency": "HUF", "unit": "portion", "source": "published" }
+                },
+                {
+                  "id": "brassoi",
+                  "kind": "food",
+                  "name": "Brassói aprópecsenye",
+                  "tags": ["hungarian"],
+                  "price": { "amount": 3799, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-instant-fogas-erzsebetvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://instant-fogas.com/",
+          "sourceUrls": ["https://instant-fogas.com/"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "spirits",
+              "title": "Spirits",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "house-palinka-4cl",
+                  "kind": "drink",
+                  "name": "House pálinka (4 cl)",
+                  "tags": ["palinka", "ruin-bar"],
+                  "price": { "amount": 1990, "currency": "HUF", "unit": "glass", "source": "estimated" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

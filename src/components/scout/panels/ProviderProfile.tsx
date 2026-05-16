@@ -105,6 +105,7 @@ export function ProviderProfile({
       ? gallery[Math.min(photoIdx, gallery.length - 1)]
       : undefined;
 
+  const similarLimit = isPage ? 10 : 3;
   const similar = allProviders
     .filter(
       (p) =>
@@ -112,9 +113,12 @@ export function ProviderProfile({
         p.borough === provider.borough &&
         p.category === provider.category,
     )
-    .slice(0, 3);
+    .slice(0, similarLimit);
 
   const shareUrl = buildAbsoluteVenueUrl(provider, locale);
+
+  const pageCardGrid =
+    "grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5";
 
   const shareEmail = () => {
     const body = `${shareSummary(provider)}\n\n${shareUrl}`;
@@ -315,7 +319,7 @@ export function ProviderProfile({
                 {t("upcomingEvents")}
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">{t("upcomingEventsHint")}</p>
-              <div className="mt-4 grid gap-4">
+              <div className={cn("mt-4", isPage ? pageCardGrid : "grid gap-4")}>
                 {venueEvents.map((event) => (
                   <EventCard key={event.id} event={event} onOpen={onOpenEvent} />
                 ))}
@@ -400,7 +404,12 @@ export function ProviderProfile({
               <h3 className="font-display text-base font-semibold text-foreground">
                 {t("moreNearby")}
               </h3>
-              <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div
+                className={cn(
+                  "mt-3",
+                  isPage ? pageCardGrid : "grid grid-cols-1 gap-4 sm:grid-cols-2",
+                )}
+              >
                 {similar.map((p) => (
                   <ProviderCard
                     key={p.id}

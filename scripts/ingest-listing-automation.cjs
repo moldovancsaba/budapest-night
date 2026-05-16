@@ -36,6 +36,7 @@ const {
   validateMenuItemLocalesForIngest,
   validateMenuSectionLocalesForIngest,
 } = require("./lib/menu-locale-ingest.cjs");
+const { validateCanonicalProvider, validateCanonicalEvent } = require("./lib/budapest-location.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
@@ -229,6 +230,7 @@ function validateProvider(doc, idx, { skipLocaleCheck = false } = {}) {
   if (doc.menu !== undefined) errors.push(...validateVenueMenu(doc.menu, `${p}.menu`));
   if (doc.eventOfferings !== undefined) errors.push(...validateEventOfferings(doc.eventOfferings, p));
   if (doc.menuTags !== undefined) errors.push(`${p}: do not send menuTags (computed on ingest)`);
+  errors.push(...validateCanonicalProvider(doc, p));
   return errors;
 }
 
@@ -358,7 +360,7 @@ function validateMeetup(doc, idx) {
   return errors;
 }
 
-function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
+function validateEvent(doc, idx, { skipLocaleCheck = false, providersById } = {}) {
   const errors = [];
   const p = `operations[${idx}] event`;
   if (!doc || typeof doc !== "object") {
@@ -409,6 +411,7 @@ function validateEvent(doc, idx, { skipLocaleCheck = false } = {}) {
   if (!skipLocaleCheck) {
     errors.push(...validateEventLocalesForIngest(doc.locales, p));
   }
+  errors.push(...validateCanonicalEvent(doc, p, providersById));
   return errors;
 }
 
@@ -447,6 +450,9 @@ function validateProviderPatch(op, idx, { skipLocaleCheck = false } = {}) {
         errors.push(`${p}: galleryImages[${gi}] must be https ImgBB URL`);
       }
     });
+  }
+  if (typeof op.id === "string" && op.id) {
+    errors.push(...validateCanonicalProvider({ id: op.id, ...patch }, p));
   }
   return errors;
 }
@@ -599,7 +605,13 @@ async function main() {
 
   const knownProviderIds = new Set(providers.map((p) => p.id).filter(Boolean));
   const knownEventIds = new Set(events.map((e) => e.id).filter(Boolean));
-  const validationErrors = validateOperations(operations, { skipLocaleCheck, knownProviderIds, knownEventIds });
+  const providersById = new Map(providers.map((p) => [p.id, p]));
+  const validationErrors = validateOperations(operations, {
+    skipLocaleCheck,
+    knownProviderIds,
+    knownEventIds,
+    providersById,
+  });
   if (validationErrors.length) {
     console.error("\nValidation failed:\n", validationErrors.map((e) => `  - ${e}`).join("\n"));
     process.exit(1);

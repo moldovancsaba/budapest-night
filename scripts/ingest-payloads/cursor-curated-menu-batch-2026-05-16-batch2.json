@@ -1,0 +1,321 @@
+{
+  "sourceUrls": [
+    "https://newyorkcafe.hu/wp-content/uploads/2026/04/new-york-cafe-etlap-2026-04-frissitett.pdf",
+    "https://newyorkcafe.hu/en/cafe-menu/",
+    "https://mazeltov.hu/itallap",
+    "https://mazeltov.hu/szeszes-italok",
+    "https://mazeltov.hu/kokt%C3%A9llap",
+    "https://espressoembassy.hu/",
+    "https://szimpla.hu",
+    "https://doboz.co.hu/"
+  ],
+  "notes": "Menu batch 2 (2026-05-16): 5 venues — New York Café, Mazel Tov, Espresso Embassy Bálna, Szimpla Kert, Doboz. Expands coffee / pálinka / cocktail depth across Belváros, Erzsébetváros, Ferencváros.",
+  "missingOrUncertain": [
+    "prov-cov-embassy-balna: Same roastery brand as Espresso Embassy Arany János; no separate price list on site — coffee prices match batch-1 Embassy estimates (budapestbylocals.com 2023).",
+    "prov-szimpla-kert-erzsebetvaros: No itemized public spirits list; house pálinka (4 cl) ~1 990 Ft aligned with comparable ruin-bar pours.",
+    "prov-doboz-erzsebetvaros: Impeccable drinks menu advertised but no scrapeable itemized prices on doboz.co.hu; signature cocktails priced in line with peer ruin clubs (~2 900–3 400 Ft) — marked estimated."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-new-york-cafe-belvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://newyorkcafe.hu/en/cafe-menu/",
+          "sourceUrls": [
+            "https://newyorkcafe.hu/wp-content/uploads/2026/04/new-york-cafe-etlap-2026-04-frissitett.pdf",
+            "https://newyorkcafe.hu/en/cafe-menu/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee specialities",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Eszpresszó (Espresso)",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 2960, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 4255, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "latte-macchiato",
+                  "kind": "drink",
+                  "name": "Latte macchiato",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 4255, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "hungarian-coffee",
+                  "kind": "drink",
+                  "name": "Magyar kávé (Hungarian coffee)",
+                  "tags": ["coffee"],
+                  "price": { "amount": 4810, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "beef-goulash-soup",
+                  "kind": "food",
+                  "name": "Marhagulyás házi csipetkével",
+                  "tags": ["goulash", "hungarian"],
+                  "price": { "amount": 5735, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "spirits",
+              "title": "Pálinkák (4 cl)",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "arpad-valogatas",
+                  "kind": "drink",
+                  "name": "Árpád válogatás 60% (4 cl)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 6105, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "mains",
+              "title": "Main courses",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "paprikas-csirke",
+                  "kind": "food",
+                  "name": "Paprikás csirke házi galuskával",
+                  "tags": ["hungarian"],
+                  "price": { "amount": 9805, "currency": "HUF", "unit": "portion", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-mazel-tov-erzsebetvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://mazeltov.hu/itallap",
+          "sourceUrls": [
+            "https://mazeltov.hu/itallap",
+            "https://mazeltov.hu/szeszes-italok",
+            "https://mazeltov.hu/kokt%C3%A9llap"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Kávék & tea",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": ["coffee"],
+                  "price": { "amount": 950, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee"],
+                  "price": { "amount": 1050, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "flat-white",
+                  "kind": "drink",
+                  "name": "Flat white",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 1950, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "palinka",
+              "title": "Pálinkák",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "arpad-kajszibarack",
+                  "kind": "drink",
+                  "name": "Árpád Magyar kajszibarack (40 ml)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 2950, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "arpad-irsai",
+                  "kind": "drink",
+                  "name": "Árpád Irsai olivér (40 ml)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 2750, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "cocktails",
+              "title": "Cocktails",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "aperol-spritz",
+                  "kind": "drink",
+                  "name": "Aperol Spritz",
+                  "tags": ["cocktail"],
+                  "price": { "amount": 3950, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "espresso-martini",
+                  "kind": "drink",
+                  "name": "Espresso Martini",
+                  "tags": ["cocktail", "coffee"],
+                  "price": { "amount": 3950, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "mojito",
+                  "kind": "drink",
+                  "name": "Jungle Mojito",
+                  "tags": ["cocktail"],
+                  "price": { "amount": 3950, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-embassy-balna",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://espressoembassy.hu/",
+          "sourceUrls": ["https://espressoembassy.hu/"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 450, "currency": "HUF", "unit": "each", "source": "estimated" }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 590, "currency": "HUF", "unit": "each", "source": "estimated" }
+                },
+                {
+                  "id": "flat-white",
+                  "kind": "drink",
+                  "name": "Flat white",
+                  "tags": ["coffee", "specialty-coffee"],
+                  "price": { "amount": 650, "currency": "HUF", "unit": "each", "source": "estimated" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-szimpla-kert-erzsebetvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://szimpla.hu",
+          "sourceUrls": ["https://szimpla.hu"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "spirits",
+              "title": "Spirits",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "house-palinka-4cl",
+                  "kind": "drink",
+                  "name": "House pálinka (4 cl)",
+                  "tags": ["palinka", "ruin-bar"],
+                  "price": { "amount": 1990, "currency": "HUF", "unit": "glass", "source": "estimated" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-doboz-erzsebetvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://doboz.co.hu/en/",
+          "sourceUrls": ["https://doboz.co.hu/en/"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "cocktails",
+              "title": "Cocktails",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "signature-mojito",
+                  "kind": "drink",
+                  "name": "Mojito",
+                  "tags": ["cocktail", "ruin-bar"],
+                  "price": { "amount": 2890, "currency": "HUF", "unit": "glass", "source": "estimated" }
+                },
+                {
+                  "id": "signature-gin-tonic",
+                  "kind": "drink",
+                  "name": "Gin & tonic",
+                  "tags": ["cocktail"],
+                  "price": { "amount": 2990, "currency": "HUF", "unit": "glass", "source": "estimated" }
+                },
+                {
+                  "id": "draft-beer",
+                  "kind": "drink",
+                  "name": "Draft beer (0.4 l)",
+                  "tags": ["beer"],
+                  "price": { "amount": 1090, "currency": "HUF", "unit": "glass", "source": "estimated" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

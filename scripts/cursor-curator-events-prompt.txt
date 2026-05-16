@@ -18,7 +18,9 @@ If the host venue is missing, upsert it first in the **same payload** (`category
   - `scripts/ingest-payloads/patch-event-images-unique.json` (image-only patches — reference URLs)
 - Image repair script: `scripts/patch-event-images.cjs` (`npm run db:patch-event-images`)
 
-## Live catalog (before choosing)
+## Live catalog (before choosing — mandatory)
+You **must** fetch and use the live data to pick shows and hosts. Do not ingest from memory.
+
 ```bash
 curl -s https://budapest-night.vercel.app/api/public/events
 curl -s https://budapest-night.vercel.app/api/public/providers
@@ -81,17 +83,27 @@ Many open-air pages list **gate opening 18:00** but not stage time. Unless the s
 - `endsAt`: ~23:00–23:30 for concerts; **long opera** use published end (e.g. Parsifal 16:00–22:20)
 - `timezone`: `"Europe/Budapest"`
 
-### 4. Venue IDs and districts (common pitfalls)
-| Host | Typical `venueIds` | Event `borough` (from host) |
-|------|-------------------|-----------------------------|
-| Budapest Park | `prov-budapest-park-obuda` | **Ferencváros** / Fábián Juli (1095 — not Óbuda Island) |
-| MVM Dome / Live Nation arena | `prov-mvm-dome-ujbuda` | **Terézváros** / Stefánia út (1143) |
-| Müpa Bartók Hall | `prov-cov-bartok-moricz` | Ferencváros / Műegyetem |
-| A38 Ship | `prov-a38-ferencvaros` | Ferencváros / Petőfi Bridge |
-| Barba Negra | `prov-barba-negra-ujbuda` | **Újbuda** — show may be Red Stage (Szállító u.); follow **show page** address |
-| Akvárium | `prov-akvarium-belvaros` | Belváros |
+### 4. Host venue: catalog id vs real district (blocking)
+**Never infer district from `prov-*` id suffixes.** Legacy ids are misleading:
+- `prov-budapest-park-obuda` → venue is **Ferencváros**, Fábián Juli tér 1, **1095** (south Pest), **not** Óbuda / Hajógyári-sziget
+- `prov-mvm-dome-ujbuda` → venue is **Terézváros**, Stefánia út 2, **1143** (southern Pest), **not** Újbuda / Kelenföld / Infopark
 
-Provider id suffixes like `-obuda` are legacy slugs; trust the provider’s **address + borough** in the catalog, not the id string.
+**Before every event upsert:**
+1. `GET /api/public/providers` and find the host row by **name + address**, not by guessing `-obuda` / `-ujbuda`.
+2. Set event `borough` / `neighborhood` to the host’s **canonical** values (ingest overwrites from host anyway).
+3. Set `website` on the **event** to the **show/ticket URL** (e.g. `budapestpark.hu/en/events/...`, `livenation.hu/.../tickets/...`).
+4. Host venue `website` must be the **venue’s** site (`https://www.budapestpark.hu`, `https://mvm-dome.hu`) — not a random promoter URL on the provider row.
+
+| Venue (official) | Catalog `venueIds[0]` | Required `borough` | Official address |
+|-----------------|----------------------|-------------------|------------------|
+| Budapest Park | `prov-budapest-park-obuda` | **Ferencváros** | 1095 Budapest, Fábián Juli tér 1 |
+| MVM Dome | `prov-mvm-dome-ujbuda` | **Terézváros** | 1143 Budapest, Stefánia út 2 |
+| Müpa Bartók | `prov-cov-bartok-moricz` | Ferencváros | Komor Marcell utca 1 |
+| A38 Ship | `prov-a38-ferencvaros` | Ferencváros | Petőfi rakpart |
+| Barba Negra | `prov-barba-negra-ujbuda` | **Újbuda** (verify show page) | Szállító u. for Red Stage |
+| Akvárium | `prov-akvarium-belvaros` | Belváros | verify address |
+
+Dry-run **rejects** wrong `borough` for these hosts and wrong-district copy on canonical providers (see `scripts/lib/budapest-location.cjs`).
 
 ### 5. Tickets
 - Forint shops → `currency: "HUF"`, integer amounts (e.g. `17999` = 17,999 Ft).
@@ -101,16 +113,19 @@ Provider id suffixes like `-obuda` are legacy slugs; trust the provider’s **ad
 
 ---
 
-## Scarcity (events catalog)
-Measure the **events** collection separately from providers. Rank gaps:
+## Scarcity (events catalog — mandatory, same spirit as main curator prompt)
+Measure **only** `GET /api/public/events` (not providers). Document counts in `notes` before picking shows.
 
-1. **Upcoming window** — prefer shows in the next 3–12 months with `status: "scheduled"`.
-2. **District (`borough`)** on the event — fewest upcoming events per district.
-3. **Month** — sparse months in the calendar.
-4. **Activity** — e.g. Electronic, Live Music, Festival (root `activityTypes`, English).
-5. **Tag gaps** — boroughs with many venues but zero upcoming timed events.
+**Ranking (use in order; pragmatic fallback if no credible source exists):**
+1. **Upcoming window** — prefer `status: "scheduled"` shows in the next 3–12 months.
+2. **Month** — sparsest calendar months (e.g. zero events in September → prioritize September dates).
+3. **District (`borough`)** on the event — fewest upcoming events per district (use host’s real borough, not id suffix).
+4. **Activity** — e.g. Electronic, Live Music, Festival (`activityTypes`, English).
+5. **Venue density** — major hosts (Budapest Park, MVM Dome) with few dated events left in that month.
 
-Pick real official listings that fill the scarcest slice you can source credibly.
+**Selection rule:** choose official listings that improve the scarcest month + district + activity combination you can verify. In `notes`, state **catalog counts before ingest** (e.g. “14 events; Aug 2; Sep 1; Terézváros 2”) and which gap this batch fills.
+
+Do **not** stack five Budapest Park shows in one batch unless the scarcity table shows August/September (or Ferencváros) is still the scarcest slice **and** each show has unique art, tickets, and URLs.
 
 ---
 
@@ -175,11 +190,12 @@ npm run ingest:listing -- scripts/ingest-payloads/cursor-curated-event-<slug>.js
 ---
 
 ## Final reply
-- Each event: title, id, `startsAt`, borough, lowest ticket tier + currency
-- Host `venueIds`
+- Each event: title, id, `startsAt`, **borough** (real district), lowest ticket tier + currency
+- Host: **venue name + borough** from catalog (e.g. “Budapest Park — Ferencváros”), not raw `prov-…-obuda` ids alone
+- Event `website` / `bookingUrl` (show-specific URLs)
 - **ImgBB image URL per event** + original promo source URL
 - Locales confirmed: `GET /api/public/events?locale=hu`
-- Scarcity rationale (counts before/after)
+- **Scarcity table** (counts before/after by month and borough)
 - `missingOrUncertain` items
 - Confirm: **N events, N unique images** in API
 

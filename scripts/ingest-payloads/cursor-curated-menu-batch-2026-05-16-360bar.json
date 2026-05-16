@@ -1,0 +1,232 @@
+{
+  "sourceUrls": [
+    "https://www.360bar.hu/",
+    "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-2026.png",
+    "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-20265.png",
+    "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-20266.png",
+    "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-20269.png",
+    "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-202610.png",
+    "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-202612.png"
+  ],
+  "notes": "360 Bar menu transcribed from official PNG boards (May 2026) saved under scripts/menu-sources/360bar/.",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-360-bar-terezvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.360bar.hu/",
+          "sourceUrls": [
+            "https://www.360bar.hu/",
+            "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-20265.png",
+            "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-20266.png",
+            "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-20269.png",
+            "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-202610.png",
+            "https://www.360bar.hu/wp-content/uploads/2026/05/SHSS_360-BAR_MENU_2026__V4__11-MAY-202612.png"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "signature-cocktails",
+              "title": "Signature cocktails",
+              "kind": "drink",
+              "locales": {
+                "hu": { "title": "Signature koktélok" },
+                "es": { "title": "Cócteles de la casa" },
+                "it": { "title": "Cocktail signature" },
+                "he": { "title": "קוקטיילים של הבית" },
+                "ar": { "title": "كوكتيلات التوقيع" }
+              },
+              "items": [
+                {
+                  "id": "360-highlife",
+                  "kind": "drink",
+                  "name": "360 Highlife",
+                  "tags": ["cocktail", "rooftop"],
+                  "locales": {
+                    "hu": { "name": "360 Highlife" },
+                    "es": { "name": "360 Highlife" },
+                    "it": { "name": "360 Highlife" },
+                    "he": { "name": "360 Highlife" },
+                    "ar": { "name": "360 Highlife" }
+                  },
+                  "price": { "amount": 4900, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "espresso-martini",
+                  "kind": "drink",
+                  "name": "Espresso Martini",
+                  "tags": ["cocktail", "coffee"],
+                  "locales": {
+                    "hu": { "name": "Espresso Martini" },
+                    "es": { "name": "Espresso Martini" },
+                    "it": { "name": "Espresso Martini" },
+                    "he": { "name": "אספרסו מרטיני" },
+                    "ar": { "name": "إسبريسو مارتيني" }
+                  },
+                  "price": { "amount": 4900, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "negroni",
+                  "kind": "drink",
+                  "name": "Negroni",
+                  "tags": ["cocktail"],
+                  "locales": {
+                    "hu": { "name": "Negroni" },
+                    "es": { "name": "Negroni" },
+                    "it": { "name": "Negroni" },
+                    "he": { "name": "נגרוני" },
+                    "ar": { "name": "نيغروني" }
+                  },
+                  "price": { "amount": 4900, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "aperol-spritz",
+                  "kind": "drink",
+                  "name": "Aperol Spritz",
+                  "tags": ["cocktail"],
+                  "locales": {
+                    "hu": { "name": "Aperol Spritz" },
+                    "es": { "name": "Aperol Spritz" },
+                    "it": { "name": "Aperol Spritz" },
+                    "he": { "name": "אפרול ספריץ" },
+                    "ar": { "name": "أبيرول سبرتز" }
+                  },
+                  "price": { "amount": 4550, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "palinka",
+              "title": "Pálinka & fruit spirit (4 cl)",
+              "kind": "drink",
+              "locales": {
+                "hu": { "title": "Pálinka és gyümölcspárlat (4 cl)" },
+                "es": { "title": "Pálinka y destilado de fruta (4 cl)" },
+                "it": { "title": "Pálinka e distillato di frutta (4 cl)" },
+                "he": { "title": "פלינקה ומשקה פירות (4 מ״ל)" },
+                "ar": { "title": "بالينكا ومشروب فواكه (4 سم)" }
+              },
+              "items": [
+                {
+                  "id": "arpad-premium-kajszibarack",
+                  "kind": "drink",
+                  "name": "Árpád Premium peach fruit spirit (4 cl)",
+                  "tags": ["palinka"],
+                  "locales": {
+                    "hu": { "name": "Árpád Premium kajszibarack pálinka (4 cl)" },
+                    "es": { "name": "Árpád Premium destilado de melocotón (4 cl)" },
+                    "it": { "name": "Árpád Premium distillato di pesca (4 cl)" },
+                    "he": { "name": "Árpád Premium משקה אפרסק (4 מ״ל)" },
+                    "ar": { "name": "Árpád Premium مشروب خوخ (4 سم)" }
+                  },
+                  "price": { "amount": 3850, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "arpad-premium-malna",
+                  "kind": "drink",
+                  "name": "Árpád Premium raspberry fruit spirit (4 cl)",
+                  "tags": ["palinka"],
+                  "locales": {
+                    "hu": { "name": "Árpád Premium málnapálinka (4 cl)" },
+                    "es": { "name": "Árpád Premium destilado de frambuesa (4 cl)" },
+                    "it": { "name": "Árpád Premium distillato di lampone (4 cl)" },
+                    "he": { "name": "Árpád Premium משקה פטל (4 מ״ל)" },
+                    "ar": { "name": "Árpád Premium مشروب توت (4 سم)" }
+                  },
+                  "price": { "amount": 5250, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "beer",
+              "title": "Draft beer (0.36 l)",
+              "kind": "drink",
+              "locales": {
+                "hu": { "title": "Csapolt sör (0,36 l)" },
+                "es": { "title": "Cerveza de barril (0,36 l)" },
+                "it": { "title": "Birra alla spina (0,36 l)" },
+                "he": { "title": "בירה מהחבית (0,36 ל׳)" },
+                "ar": { "title": "بيرة من الصنبور (0.36 ل)" }
+              },
+              "items": [
+                {
+                  "id": "heineken-draft",
+                  "kind": "drink",
+                  "name": "Heineken (0.36 l)",
+                  "tags": ["beer"],
+                  "locales": {
+                    "hu": { "name": "Heineken (0,36 l)" },
+                    "es": { "name": "Heineken (0,36 l)" },
+                    "it": { "name": "Heineken (0,36 l)" },
+                    "he": { "name": "הייניקן (0,36 ל׳)" },
+                    "ar": { "name": "هاينكن (0.36 ل)" }
+                  },
+                  "price": { "amount": 1750, "currency": "HUF", "unit": "glass", "source": "published" }
+                },
+                {
+                  "id": "soproni-ipa-draft",
+                  "kind": "drink",
+                  "name": "Soproni IPA (0.36 l)",
+                  "tags": ["beer", "craft-beer"],
+                  "locales": {
+                    "hu": { "name": "Soproni IPA (0,36 l)" },
+                    "es": { "name": "Soproni IPA (0,36 l)" },
+                    "it": { "name": "Soproni IPA (0,36 l)" },
+                    "he": { "name": "סופרוני IPA (0,36 ל׳)" },
+                    "ar": { "name": "سوبروني IPA (0.36 ل)" }
+                  },
+                  "price": { "amount": 1750, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            },
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": { "title": "Kávé" },
+                "es": { "title": "Café" },
+                "it": { "title": "Caffè" },
+                "he": { "title": "קפה" },
+                "ar": { "title": "قهوة" }
+              },
+              "items": [
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": ["coffee"],
+                  "locales": {
+                    "hu": { "name": "Cappuccino" },
+                    "es": { "name": "Cappuccino" },
+                    "it": { "name": "Cappuccino" },
+                    "he": { "name": "קפוצ'ינו" },
+                    "ar": { "name": "كابتشينو" }
+                  },
+                  "price": { "amount": 1225, "currency": "HUF", "unit": "each", "source": "published" }
+                },
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso / Ristretto",
+                  "tags": ["coffee"],
+                  "locales": {
+                    "hu": { "name": "Espresso / Ristretto" },
+                    "es": { "name": "Espresso / Ristretto" },
+                    "it": { "name": "Espresso / Ristretto" },
+                    "he": { "name": "אספרסו / ריסטרטו" },
+                    "ar": { "name": "إسبريسو / ريستريتو" }
+                  },
+                  "price": { "amount": 1050, "currency": "HUF", "unit": "each", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

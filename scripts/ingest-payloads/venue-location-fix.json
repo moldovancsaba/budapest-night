@@ -933,8 +933,8 @@
           "Weekend"
         ],
         "pricePerClass": 0,
-        "shortDescription": "Major indoor arena in southern Pest — concerts and arena shows with published ticket tiers.",
-        "longDescription": "MVM Dome (formerly Budapest Arena) is a large indoor venue in Újbuda used for international concert tours. Check the official promoter or venue listings for door times, seated and standing zones, and on-sale windows.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026",
+        "shortDescription": "Major indoor arena on Stefánia út (Terézváros) — concerts and arena shows with published ticket tiers.",
+        "longDescription": "MVM Dome (formerly Budapest Arena) is at 1143 Budapest, Stefánia út 2 in Terézváros (southern Pest). Check mvm-dome.hu for door times, seated and standing zones, and on-sale windows.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact",
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -942,38 +942,38 @@
         ],
         "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
         "email": "",
-        "website": "https://www.livenation.hu",
+        "website": "https://mvm-dome.hu/en",
         "phone": "",
         "locales": {
           "hu": {
             "slug": "mvm-dome",
             "name": "MVM Dome",
-            "shortDescription": "Nagy beltéri aréna dél-Pesten — koncertturnék és jegyek a hivatalos oldalon.",
-            "longDescription": "Az MVM Dome (korábban Budapest Aréna) nagy beltéri helyszín Újbudán, nemzetközi koncertturnék számára. A kapunyitás és jegyárak a promoter oldalán.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "shortDescription": "Nagy beltéri aréna a Stefánia úton (Terézváros) — koncertturnék és jegyek a hivatalos oldalon.",
+            "longDescription": "Az MVM Dome (korábban Budapest Aréna) a 1143 Budapest, Stefánia út 2. címen áll Terézvárosban. Kapunyitás és jegyárak: mvm-dome.hu.\n\nSources: https://mvm-dome.hu/hu https://mvm-dome.hu/hu/kapcsolat"
           },
           "es": {
             "slug": "mvm-dome",
             "name": "MVM Dome",
-            "shortDescription": "Gran arena cubierta en el sur de Pest — giras y entradas en la web oficial.",
-            "longDescription": "MVM Dome es una gran sala cubierta en Újbuda para giras internacionales. Horarios de puerta y precios en el promotor.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "shortDescription": "Gran arena cubierta en Stefánia út (Terézváros) — giras y entradas en la web oficial.",
+            "longDescription": "MVM Dome está en 1143 Budapest, Stefánia út 2, Terézváros. Entradas en mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
           },
           "it": {
             "slug": "mvm-dome",
             "name": "MVM Dome",
-            "shortDescription": "Grande arena indoor a Pest sud — tour e biglietti sul sito ufficiale.",
-            "longDescription": "MVM Dome è una grande arena coperta a Újbuda per concerti internazionali. Orari e prezzi sul promoter.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "shortDescription": "Grande arena indoor in Stefánia út (Terézváros) — tour e biglietti sul sito ufficiale.",
+            "longDescription": "MVM Dome si trova in 1143 Budapest, Stefánia út 2, Terézváros. Biglietti su mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
           },
           "he": {
             "slug": "mvm-dome",
             "name": "MVM Dome",
-            "shortDescription": "אולם מקורה גדול בדרום פשט — הופעות וכרטיסים באתר הרשמי.",
-            "longDescription": "MVM Dome הוא אולם מקורה גדול ב-Újbuda להופעות בינלאומיות. שעות פתיחה ומחירים אצל המארגן.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "shortDescription": "אולם מקורה גדול ברחוב סטפניה (טרזווארוש) — הופעות וכרטיסים באתר הרשמי.",
+            "longDescription": "MVM Dome נמצא ב-1143 Budapest, Stefánia út 2, Terézváros. כרטיסים ב-mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
           },
           "ar": {
             "slug": "mvm-dome",
             "name": "MVM Dome",
-            "shortDescription": "ساحة داخلية كبيرة في جنوب بودابست — جولات وحفلات وتذاكر عبر الموقع الرسمي.",
-            "longDescription": "MVM Dome ساحة مغطاة كبيرة في Újbuda للحفلات الدولية. أوقات الأبواب والأسعار لدى المنظم.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026"
+            "shortDescription": "ساحة داخلية كبيرة في شارع ستيفانيا (تيريزفاروش) — جولات وحفلات وتذاكر عبر الموقع الرسمي.",
+            "longDescription": "يقع MVM Dome في 1143 Budapest، Stefánia út 2، Terézváros. التذاكر على mvm-dome.hu.\n\nSources: https://mvm-dome.hu/en https://mvm-dome.hu/en/contact"
           }
         }
       }

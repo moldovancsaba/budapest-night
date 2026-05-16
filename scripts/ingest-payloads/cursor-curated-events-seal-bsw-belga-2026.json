@@ -1,0 +1,232 @@
+{
+  "sourceUrls": [
+    "https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733",
+    "https://funcode.hu/en/event/3764-seal",
+    "https://www.budapestpark.hu/en/events/bsw-20260807",
+    "https://www.budapestpark.hu/tickets/event/BSW_20260807",
+    "https://www.budapestpark.hu/en/events/belga-20260912",
+    "https://www.budapestpark.hu/tickets/event/BELGA260912"
+  ],
+  "notes": "Scarcity fill: July Terézváros (Seal @ MVM Dome — 2nd arena show), August (BSW sold-out return), first September 2026 slot (Bëlga). Catalog before: 11 events; 0 in Sep; Aug had Moby only; Terézváros had Sting only. Promo sources: livenation dynamicmedia, budapestpark cdn-netpositive / uploads.",
+  "missingOrUncertain": [
+    "BSW / Bëlga exact stage time not on budapestpark.hu — using 20:00 after published gates (BSW 17:00, Bëlga 18:00).",
+    "Seal higher seated/standing tiers not enumerated on livenation.hu at ingest — single published floor from funcode.hu.",
+    "BSW early-bird 9,999 HUF phase passed — current arena tier 11,999 HUF on budapestpark.hu ticket shop."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-seal-mvm-dome-2026",
+        "title": "Seal — greatest hits at MVM Dome",
+        "shortDescription": "Seal returns to Hungary after 15 years — Thursday 30 July 2026, 19:00 at MVM Dome (Kiss From a Rose, Crazy, Killer).",
+        "longDescription": "British soul-pop icon Seal plays his greatest hits at MVM Dome on Thursday 30 July 2026 at 19:00 — his first Hungarian show in 15 years. The velvet voice behind Kiss From a Rose, Crazy, and Killer headlines the arena at 1143 Budapest, Stefánia út 2 (Terézváros). Tickets from 25,200 HUF via funcode.hu and livenation.hu (additional checkout fees may apply).\n\nSources: https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733 https://funcode.hu/en/event/3764-seal",
+        "startsAt": "2026-07-30T19:00:00+02:00",
+        "endsAt": "2026-07-30T22:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-mvm-dome-ujbuda"],
+        "borough": "Terézváros",
+        "neighborhood": "Stefánia út",
+        "entryFees": [
+          {
+            "id": "standing-from",
+            "label": "From — general on-sale",
+            "amount": 25200,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Higher tiers at checkout; payment/delivery fees per funcode.hu"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["All ages", "18+"],
+        "dayTimeTags": ["Weekday", "Evening"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/tPhyPBKD/34519d99aca5.jpg",
+        "website": "https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733",
+        "bookingUrl": "https://funcode.hu/en/event/3764-seal",
+        "email": "",
+        "phone": "",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "seal-mvm-dome-2026",
+            "title": "Seal — legnagyobb slágerei az MVM Dome-ban",
+            "shortDescription": "Seal 15 év után visszatér — 2026. július 30., 19:00, MVM Dome (Terézváros).",
+            "longDescription": "A brit soul-pop ikon Seal legnagyobb slágereit énekli az MVM Dome-ban 2026. július 30-án 19:00-kor — 15 év után először Magyarországon. Jegyek 25 200 Ft-tól a funcode.hu és livenation.hu oldalakon.\n\nSources: https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733 https://funcode.hu/en/event/3764-seal"
+          },
+          "es": {
+            "slug": "seal-mvm-dome-2026",
+            "title": "Seal — grandes éxitos en MVM Dome",
+            "shortDescription": "Seal vuelve a Hungría — 30 julio 2026, 19:00, MVM Dome.",
+            "longDescription": "Seal actúa en el MVM Dome el 30 de julio de 2026 a las 19:00 con sus grandes éxitos. Entradas desde 25.200 HUF en funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733 https://funcode.hu/en/event/3764-seal"
+          },
+          "it": {
+            "slug": "seal-mvm-dome-2026",
+            "title": "Seal — grandi successi all'MVM Dome",
+            "shortDescription": "Seal torna in Ungheria — 30 luglio 2026, ore 19:00, MVM Dome.",
+            "longDescription": "Seal si esibisce all'MVM Dome il 30 luglio 2026 alle 19:00. Biglietti da 25.200 HUF su funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733 https://funcode.hu/en/event/3764-seal"
+          },
+          "he": {
+            "slug": "seal-mvm-dome-2026",
+            "title": "Seal — להיטים ב-MVM Dome",
+            "shortDescription": "Seal חוזר להונגריה — 30 ביולי 2026, 19:00, MVM Dome.",
+            "longDescription": "Seal מופיע ב-MVM Dome ב-30 ביולי 2026 בשעה 19:00. כרטיסים מ-25,200 HUF ב-funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733 https://funcode.hu/en/event/3764-seal"
+          },
+          "ar": {
+            "slug": "seal-mvm-dome-2026",
+            "title": "Seal — أعظم الأغاني في MVM Dome",
+            "shortDescription": "عودة Seal إلى المجر — 30 يوليو 2026، 19:00، MVM Dome.",
+            "longDescription": "يقدّم Seal أعظم أغانيه في MVM Dome في 30 يوليو 2026 الساعة 19:00. التذاكر من 25,200 HUF على funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/seal-budapest-events-edp1655733 https://funcode.hu/en/event/3764-seal"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-bsw-budapest-park-2026",
+        "title": "BSW — sold-out return at Budapest Park",
+        "shortDescription": "Hungarian rap duo BSW round two after last year’s sell-out — Friday 7 August 2026, gates 17:00 at Budapest Park.",
+        "longDescription": "BSW return to Budapest Park on Friday 7 August 2026 for round two after last year’s sold-out open-air show. Gates open at 17:00 at 1095 Budapest, Fábián Juli tér 1 (Ferencváros). Arena and terrace tiers on budapestpark.hu; VIP presales ran ahead of general on-sale.\n\nSources: https://www.budapestpark.hu/en/events/bsw-20260807 https://www.budapestpark.hu/tickets/event/BSW_20260807",
+        "startsAt": "2026-08-07T20:00:00+02:00",
+        "endsAt": "2026-08-07T23:30:00+02:00",
+        "doorsOpenAt": "2026-08-07T17:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "arena-standing",
+            "label": "Arena — standing",
+            "amount": 11999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 600 Ft admin fee at online checkout"
+          },
+          {
+            "id": "terrace",
+            "label": "Terrace",
+            "amount": 24999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ admin fee per budapestpark.hu FAQ"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekday", "Evening", "Late night"],
+        "badges": ["Popular"],
+        "image": "https://i.ibb.co/1YM6M0mk/a296307c966d.jpg",
+        "website": "https://www.budapestpark.hu/en/events/bsw-20260807",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/BSW_20260807",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "bsw-budapest-park-2026",
+            "title": "BSW — visszatérés a Budapest Parkba",
+            "shortDescription": "A BSW második nagykoncertje a tavalyi teltház után — 2026. augusztus 7., kapunyitás 17:00.",
+            "longDescription": "A BSW visszatér a Budapest Parkba 2026. augusztus 7-én (péntek), a tavalyi teltházas show után. Kapunyitás 17:00, 1095 Budapest, Fábián Juli tér 1. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/bsw-20260807 https://www.budapestpark.hu/tickets/event/BSW_20260807"
+          },
+          "es": {
+            "slug": "bsw-budapest-park-2026",
+            "title": "BSW — regreso a Budapest Park",
+            "shortDescription": "Segunda fecha tras el sold out — 7 agosto 2026, puertas 17:00.",
+            "longDescription": "BSW vuelve a Budapest Park el 7 de agosto de 2026 tras el sold out del año pasado. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/bsw-20260807 https://www.budapestpark.hu/tickets/event/BSW_20260807"
+          },
+          "it": {
+            "slug": "bsw-budapest-park-2026",
+            "title": "BSW — ritorno al Budapest Park",
+            "shortDescription": "Secondo show dopo il sold out — 7 agosto 2026, porte 17:00.",
+            "longDescription": "BSW torna al Budapest Park il 7 agosto 2026. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/bsw-20260807 https://www.budapestpark.hu/tickets/event/BSW_20260807"
+          },
+          "he": {
+            "slug": "bsw-budapest-park-2026",
+            "title": "BSW — חוזרים לבודפשט פארק",
+            "shortDescription": "הופעה שנייה אחרי sold out — 7 באוגוסט 2026, שערים 17:00.",
+            "longDescription": "BSW חוזרים לבודפשט פארק ב-7 באוגוסט 2026. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/bsw-20260807 https://www.budapestpark.hu/tickets/event/BSW_20260807"
+          },
+          "ar": {
+            "slug": "bsw-budapest-park-2026",
+            "title": "BSW — عودة إلى بودابست بارك",
+            "shortDescription": "الحفلة الثانية بعد نفاد التذاكر — 7 أغسطس 2026، الأبواب 17:00.",
+            "longDescription": "يعود BSW إلى بودابست بارك في 7 أغسطس 2026. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/bsw-20260807 https://www.budapestpark.hu/tickets/event/BSW_20260807"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-belga-budapest-park-2026",
+        "title": "Bëlga — park in the park at Budapest Park",
+        "shortDescription": "Hungarian alt-rock legends Bëlga build another stage world — Saturday 12 September 2026, gates 18:00.",
+        "longDescription": "Bëlga return to Budapest Park on Saturday 12 September 2026 after last year’s “park inside the park” album show (Egyre gondolunk). Gates 18:00 at 1095 Budapest, Fábián Juli tér 1 (Ferencváros), with special guests teased on the official page. Tickets on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/belga-20260912 https://www.budapestpark.hu/tickets/event/BELGA260912",
+        "startsAt": "2026-09-12T20:00:00+02:00",
+        "endsAt": "2026-09-12T23:00:00+02:00",
+        "doorsOpenAt": "2026-09-12T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "arena-standing",
+            "label": "Arena — standing",
+            "amount": 8999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 450 Ft admin fee; price phases up to 9,999 HUF on budapestpark.hu"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekend", "Evening"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/pv5PS38Q/7210b268c1f3.jpg",
+        "website": "https://www.budapestpark.hu/en/events/belga-20260912",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/BELGA260912",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "belga-budapest-park-2026",
+            "title": "Bëlga — park a parkban, Budapest Park",
+            "shortDescription": "A Bëlga visszatér 2026. szeptember 12-én — kapunyitás 18:00, dél-Pest.",
+            "longDescription": "A Bëlga 2026. szeptember 12-én (szombat) újra a Budapest Parkban lép fel, az Egyre gondolunk-es hangulat után, vendégekkel. Kapunyitás 18:00. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/belga-20260912 https://www.budapestpark.hu/tickets/event/BELGA260912"
+          },
+          "es": {
+            "slug": "belga-budapest-park-2026",
+            "title": "Bëlga — parque en el parque, Budapest Park",
+            "shortDescription": "Leyendas del rock alternativo húngaro — 12 septiembre 2026, puertas 18:00.",
+            "longDescription": "Bëlga vuelve a Budapest Park el 12 de septiembre de 2026 con invitados especiales. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/belga-20260912 https://www.budapestpark.hu/tickets/event/BELGA260912"
+          },
+          "it": {
+            "slug": "belga-budapest-park-2026",
+            "title": "Bëlga — parco nel parco, Budapest Park",
+            "shortDescription": "Leggende dell'alt-rock ungherese — 12 settembre 2026, porte 18:00.",
+            "longDescription": "Bëlga torna al Budapest Park il 12 settembre 2026. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/belga-20260912 https://www.budapestpark.hu/tickets/event/BELGA260912"
+          },
+          "he": {
+            "slug": "belga-budapest-park-2026",
+            "title": "Bëlga — פארק בתוך הפארק, בודפשט פארק",
+            "shortDescription": "אגדות הרוק האלטרנטיבי ההונגרי — 12 בספטמבר 2026, שערים 18:00.",
+            "longDescription": "Bëlga חוזרים לבודפשט פארק ב-12 בספטמבר 2026. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/belga-20260912 https://www.budapestpark.hu/tickets/event/BELGA260912"
+          },
+          "ar": {
+            "slug": "belga-budapest-park-2026",
+            "title": "Bëlga — حديقة داخل الحديقة، بودابست بارك",
+            "shortDescription": "أساطير الروك البديل المجري — 12 سبتمبر 2026، الأبواب 18:00.",
+            "longDescription": "يعود Bëlga إلى بودابست بارك في 12 سبتمبر 2026. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/belga-20260912 https://www.budapestpark.hu/tickets/event/BELGA260912"
+          }
+        }
+      }
+    }
+  ]
+}

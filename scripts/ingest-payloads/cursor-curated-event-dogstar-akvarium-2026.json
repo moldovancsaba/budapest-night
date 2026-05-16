@@ -1,0 +1,92 @@
+{
+  "sourceUrls": [
+    "https://akvariumklub.hu/en/events/dogstar/",
+    "https://akvariumklub.hu/programok/dogstar",
+    "https://www.tixa.hu/dogstar20260718"
+  ],
+  "notes": "Scarcity: Belváros had 0 upcoming timed events (only Terézváros + Ferencváros had shows). July 2026 had 0 events before this ingest. Dogstar first Budapest date fills Belváros + July + Live Music rock gap at existing prov-akvarium-belvaros.",
+  "missingOrUncertain": [
+    "Concert start time not published on akvariumklub.hu — using 20:00 show / 22:30 end after 19:00 doors (kapunyitás).",
+    "VIP package price not listed (Superfan / Tixr only); omitted from entryFees.",
+    "Regular tier listed as from 19,990 HUF on official presale pages linked from Akvárium; exact dynamic pricing may vary on Tixa checkout."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-dogstar-akvarium-2026",
+        "title": "Dogstar — All In Now Tour at Akvárium Klub",
+        "shortDescription": "Dogstar’s first Budapest show — Bret Domrose, Keanu Reeves, and Robert Mailhouse play the Main Hall on Saturday 18 July 2026; doors 19:00, Belváros (Erzsébet tér).",
+        "longDescription": "Dogstar brings the All In Now Tour to Hungary for the first time at Akvárium Klub’s Main Hall (1051 Budapest, Erzsébet tér 12). Gates open at 19:00 on Saturday 18 July 2026. Regular and balcony tickets are on sale via Tixa and akvariumklub.hu; limited VIP Meet & Greet packages are sold separately on Superfan/Tixr. Ticket purchases include a 6% administration fee (minimum 300 HUF); mandatory cloakroom 600 HUF on site.\n\nSources: https://akvariumklub.hu/en/events/dogstar/ https://akvariumklub.hu/programok/dogstar https://www.tixa.hu/dogstar20260718",
+        "startsAt": "2026-07-18T20:00:00+02:00",
+        "endsAt": "2026-07-18T22:30:00+02:00",
+        "doorsOpenAt": "2026-07-18T19:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-akvarium-belvaros"],
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "entryFees": [
+          {
+            "id": "regular",
+            "label": "Regular — standing (Main Hall)",
+            "amount": 19990,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 6% admin fee (min. 300 HUF) at checkout; 600 HUF cloakroom on site"
+          },
+          {
+            "id": "balcony",
+            "label": "Balcony",
+            "amount": 29900,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 6% admin fee (min. 300 HUF) at checkout; 600 HUF cloakroom on site"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Weekend", "Evening", "Late night"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/8L9zN7fN/c0ce9a206c07.jpg",
+        "website": "https://akvariumklub.hu/en/events/dogstar/",
+        "bookingUrl": "https://www.tixa.hu/dogstar20260718",
+        "email": "info@akvariumklub.hu",
+        "phone": "+36 30 860 3368",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "dogstar-akvarium-2026",
+            "title": "Dogstar — All In Now Tour az Akvárium Klubban",
+            "shortDescription": "Dogstar először Budapesten — a Main Hallban, 2026. július 18-án (szombat); kapunyitás 19:00, Belváros (Erzsébet tér).",
+            "longDescription": "A Dogstar (Bret Domrose, Keanu Reeves, Robert Mailhouse) először lép fel Magyarországon az Akvárium Klub Nagytermében (1051 Budapest, Erzsébet tér 12.). Kapunyitás 19:00. Normál és erkély jegyek a Tixa és az akvariumklub.hu oldalon; limitált VIP Meet & Greet csomagok a Superfan/Tixr felületen. Jegyvásárláskor 6% kezelési díj (min. 300 Ft); kötelező ruhatár 600 Ft a helyszínen.\n\nSources: https://akvariumklub.hu/programok/dogstar https://www.tixa.hu/dogstar20260718"
+          },
+          "es": {
+            "slug": "dogstar-akvarium-2026",
+            "title": "Dogstar — All In Now Tour en Akvárium Klub",
+            "shortDescription": "Primera actuación de Dogstar en Budapest — sala principal, 18 de julio de 2026; puertas 19:00, Belváros.",
+            "longDescription": "Dogstar (Bret Domrose, Keanu Reeves y Robert Mailhouse) debuta en Budapest en la sala principal del Akvárium Klub (Erzsébet tér 12). Puertas 19:00. Entradas normales y de balcón en Tixa y akvariumklub.hu; VIP Meet & Greet en Superfan/Tixr. Tasa de gestión del 6% (mín. 300 HUF); guardarropa obligatorio 600 HUF en el local.\n\nSources: https://akvariumklub.hu/en/events/dogstar/ https://www.tixa.hu/dogstar20260718"
+          },
+          "it": {
+            "slug": "dogstar-akvarium-2026",
+            "title": "Dogstar — All In Now Tour all'Akvárium Klub",
+            "shortDescription": "Prima data di Dogstar a Budapest — Main Hall, 18 luglio 2026; aperture porte 19:00, Belváros.",
+            "longDescription": "Dogstar (Bret Domrose, Keanu Reeves, Robert Mailhouse) arriva per la prima volta a Budapest nella Main Hall dell'Akvárium Klub (Erzsébet tér 12). Porte 19:00. Biglietti regular e balconata su Tixa e akvariumklub.hu; pacchetti VIP Meet & Greet su Superfan/Tixr. Commissione del 6% (min. 300 HUF); guardaroba obbligatorio 600 HUF in loco.\n\nSources: https://akvariumklub.hu/en/events/dogstar/ https://www.tixa.hu/dogstar20260718"
+          },
+          "he": {
+            "slug": "dogstar-akvarium-2026",
+            "title": "דוגסטאר — All In Now Tour באקווריום קלאב",
+            "shortDescription": "הופעת הבכורה של דוגסטאר בבודפשט — אולם ראשי, 18 ביולי 2026; שערים 19:00, בלווארוש.",
+            "longDescription": "דוגסטאר (ברט דומרוז, קיאנו ריבס, רוברט מיילהאוס) מגיעים לראשונה לבודפשט באולם הראשי של אקווריום קלאב (כיכר ארז'בט 12). שערים 19:00. כרטיסים רגילים ומרפסת ב-Tixa ו-akvariumklub.hu; חבילות VIP Meet & Greet ב-Superfan/Tixr. עמלת ניהול 6% (מינימום 300 HUF); שירות מעילים חובה 600 HUF במקום.\n\nSources: https://akvariumklub.hu/en/events/dogstar/ https://www.tixa.hu/dogstar20260718"
+          },
+          "ar": {
+            "slug": "dogstar-akvarium-2026",
+            "title": "دوغستار — جولة All In Now في نادي أكفاريوم",
+            "shortDescription": "أول حفل لدوغستار في بودابست — القاعة الرئيسية، 18 يوليو 2026؛ الأبواب 19:00، بيلفاروش.",
+            "longDescription": "يقدّم ثلاثي دوغستار (بريت دومروز، كيانو ريفز، روبرت ميلهاوس) أول عرض له في بودابست في القاعة الرئيسية لنادي أكفاريوم (ساحة إرزسيبيت 12). الأبواب 19:00. تذاكر عادية وشرفة عبر Tixa وakvariumklub.hu؛ باقات VIP Meet & Greet عبر Superfan/Tixr. رسوم إدارية 6% (حد أدنى 300 فورنت)؛ خزانة إلزامية 600 فورنت في المكان.\n\nSources: https://akvariumklub.hu/en/events/dogstar/ https://www.tixa.hu/dogstar20260718"
+          }
+        }
+      }
+    }
+  ]
+}

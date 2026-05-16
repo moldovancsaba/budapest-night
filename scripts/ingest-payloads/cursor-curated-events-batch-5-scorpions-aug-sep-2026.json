@@ -1,0 +1,358 @@
+{
+  "sourceUrls": [
+    "https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072",
+    "https://mvm-dome.hu/en/events/scorpions",
+    "https://www.ticketle.hu/en/scorpions-budapest-tickets-20-06-2026/event/626257",
+    "https://www.budapestpark.hu/en/events/heaven-street-seven-20260808",
+    "https://www.budapestpark.hu/tickets/event/HS7260808",
+    "https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815",
+    "https://www.budapestpark.hu/tickets/event/ganxsta_20260815",
+    "https://www.budapestpark.hu/en/events/wellhello-20260828",
+    "https://www.budapestpark.hu/tickets/event/wellhello-20260828",
+    "https://www.budapestpark.hu/en/events/parov-stelar-20260926",
+    "https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926"
+  ],
+  "notes": "Five-show batch: June arena (Scorpions), August Park density (HS7, Ganxsta 60, WELLHELLO), September electronic headliner (Parov Stelar). Catalog before: 14 events; Aug had 2, Sep had 1; Terézváros had 2.",
+  "missingOrUncertain": [
+    "Scorpions ticket tiers not listed on livenation.hu / mvm-dome.hu at ingest — entryFees empty; show time 19:00 from ticketle.hu.",
+    "Heaven Street Seven / Ganxsta / WELLHELLO / Parov Stelar stage time assumed 20:00 after 18:00 gates.",
+    "Ganxsta advance 8,999 HUF valid until 15 July 2026 per budapestpark.hu price phase."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-scorpions-mvm-dome-2026",
+        "title": "Scorpions — 60th anniversary at MVM Dome",
+        "shortDescription": "German rock legends celebrate six decades — Saturday 20 June 2026, 19:00 at MVM Dome (Wind of Change, Rock You Like a Hurricane).",
+        "longDescription": "Scorpions bring their 60th-anniversary tour to MVM Dome on Saturday 20 June 2026 at 19:00 — timeless hits for Hungarian fans at 1143 Budapest, Stefánia út 2 (Terézváros). Tickets via Live Nation Hungary and funcode.hu when on sale.\n\nSources: https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072 https://mvm-dome.hu/en/events/scorpions",
+        "startsAt": "2026-06-20T19:00:00+02:00",
+        "endsAt": "2026-06-20T22:30:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-mvm-dome-ujbuda"],
+        "borough": "Terézváros",
+        "neighborhood": "Stefánia út",
+        "entryFees": [],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["All ages", "18+"],
+        "dayTimeTags": ["Weekend", "Evening"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/G4fwS9Tj/59ac21b49839.jpg",
+        "website": "https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072",
+        "bookingUrl": "https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072",
+        "email": "",
+        "phone": "",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "scorpions-mvm-dome-2026",
+            "title": "Scorpions — 60. évforduló az MVM Dome-ban",
+            "shortDescription": "A német rocklegendák 2026. június 20-án 19:00-kor az MVM Dome-ban (Terézváros).",
+            "longDescription": "A Scorpions 60. évfordulós turnéja 2026. június 20-án érkezik az MVM Dome-ba 19:00-kor. Jegyek: livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072 https://mvm-dome.hu/en/events/scorpions"
+          },
+          "es": {
+            "slug": "scorpions-mvm-dome-2026",
+            "title": "Scorpions — 60 aniversario en MVM Dome",
+            "shortDescription": "Leyendas del rock alemán — 20 junio 2026, 19:00, MVM Dome.",
+            "longDescription": "Scorpions celebran seis décadas en el MVM Dome el 20 de junio de 2026 a las 19:00. Entradas en livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072 https://mvm-dome.hu/en/events/scorpions"
+          },
+          "it": {
+            "slug": "scorpions-mvm-dome-2026",
+            "title": "Scorpions — 60° anniversario all'MVM Dome",
+            "shortDescription": "Leggende del rock tedesco — 20 giugno 2026, ore 19:00, MVM Dome.",
+            "longDescription": "Gli Scorpions all'MVM Dome il 20 giugno 2026 alle 19:00. Biglietti su livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072 https://mvm-dome.hu/en/events/scorpions"
+          },
+          "he": {
+            "slug": "scorpions-mvm-dome-2026",
+            "title": "Scorpions — 60 שנה ב-MVM Dome",
+            "shortDescription": "אגדות הרוק הגרמני — 20 ביוני 2026, 19:00, MVM Dome.",
+            "longDescription": "Scorpions ב-MVM Dome ב-20 ביוני 2026 בשעה 19:00. כרטיסים ב-livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072 https://mvm-dome.hu/en/events/scorpions"
+          },
+          "ar": {
+            "slug": "scorpions-mvm-dome-2026",
+            "title": "Scorpions — الذكرى الـ60 في MVM Dome",
+            "shortDescription": "أساطير الروك الألماني — 20 يونيو 2026، 19:00، MVM Dome.",
+            "longDescription": "يحيي Scorpions حفلاً في MVM Dome في 20 يونيو 2026 الساعة 19:00. التذاكر على livenation.hu.\n\nSources: https://www.livenation.hu/en/tickets/scorpions-budapest-events-edp1641072 https://mvm-dome.hu/en/events/scorpions"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-heaven-street-seven-budapest-park-2026",
+        "title": "Heaven Street Seven — ca. 30 reunion at Budapest Park",
+        "shortDescription": "Hungarian alt-rock icons reunite for one Budapest night — Saturday 8 August 2026, gates 18:00.",
+        "longDescription": "Heaven Street Seven reunite at Budapest Park on Saturday 8 August 2026 for the ca. 30 show — Krisztián Szűcs, Zsolt Ábrahám, Zoltán Takács-Brouwer, Róbert Németh and Gyula Orbán revisit two decades of Hungarian alternative hits. Gates 18:00 at 1095 Budapest, Fábián Juli tér 1.\n\nSources: https://www.budapestpark.hu/en/events/heaven-street-seven-20260808 https://www.budapestpark.hu/tickets/event/HS7260808",
+        "startsAt": "2026-08-08T20:00:00+02:00",
+        "endsAt": "2026-08-08T23:00:00+02:00",
+        "doorsOpenAt": "2026-08-08T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "arena-standing",
+            "label": "Arena — standing",
+            "amount": 11999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ admin fee; terrace from 19,999 HUF"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekend", "Evening"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/zVDc6cdD/26fbe31912c3.jpg",
+        "website": "https://www.budapestpark.hu/en/events/heaven-street-seven-20260808",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/HS7260808",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "heaven-street-seven-budapest-park-2026",
+            "title": "Heaven Street Seven — kb. 30 a Budapest Parkban",
+            "shortDescription": "A dunabeat visszatér — 2026. augusztus 8., kapunyitás 18:00.",
+            "longDescription": "A Heaven Street Seven újra együtt a Budapest Parkban 2026. augusztus 8-án a kb. 30 című esten. Kapunyitás 18:00. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/heaven-street-seven-20260808 https://www.budapestpark.hu/tickets/event/HS7260808"
+          },
+          "es": {
+            "slug": "heaven-street-seven-budapest-park-2026",
+            "title": "Heaven Street Seven — reencuentro ca. 30 en Budapest Park",
+            "shortDescription": "Iconos del rock alternativo húngaro — 8 agosto 2026, puertas 18:00.",
+            "longDescription": "Heaven Street Seven se reúnen en Budapest Park el 8 de agosto de 2026. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/heaven-street-seven-20260808 https://www.budapestpark.hu/tickets/event/HS7260808"
+          },
+          "it": {
+            "slug": "heaven-street-seven-budapest-park-2026",
+            "title": "Heaven Street Seven — reunion ca. 30 al Budapest Park",
+            "shortDescription": "Icone dell'alt-rock ungherese — 8 agosto 2026, porte 18:00.",
+            "longDescription": "Heaven Street Seven tornano al Budapest Park l'8 agosto 2026. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/heaven-street-seven-20260808 https://www.budapestpark.hu/tickets/event/HS7260808"
+          },
+          "he": {
+            "slug": "heaven-street-seven-budapest-park-2026",
+            "title": "Heaven Street Seven — ca. 30 בבודפשט פארק",
+            "shortDescription": "אייקוני האלטרנטיב ההונגרי — 8 באוגוסט 2026, שערים 18:00.",
+            "longDescription": "Heaven Street Seven מתאחדים בבודפשט פארק ב-8 באוגוסט 2026. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/heaven-street-seven-20260808 https://www.budapestpark.hu/tickets/event/HS7260808"
+          },
+          "ar": {
+            "slug": "heaven-street-seven-budapest-park-2026",
+            "title": "Heaven Street Seven — ca. 30 في بودابست بارك",
+            "shortDescription": "أيقونات الروك البديل المجري — 8 أغسطس 2026، الأبواب 18:00.",
+            "longDescription": "يجتمع Heaven Street Seven في بودابست بارك في 8 أغسطس 2026. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/heaven-street-seven-20260808 https://www.budapestpark.hu/tickets/event/HS7260808"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-ganxsta-60-budapest-park-2026",
+        "title": "Ganxsta 60 Fesztivál — Budapest Park",
+        "shortDescription": "Ganxsta Zolee’s 60th-birthday festival with Hungarian hip-hop legends — Saturday 15 August 2026, gates 18:00.",
+        "longDescription": "Ganxsta Zolee celebrates his 60th birthday with Ganxsta 60 Fesztivál at Budapest Park on Saturday 15 August 2026. The lineup spans his career: Zsolti és a Fosfejűek, Dos Diavolos, KGB, Sex Action, Action, Jack Jack and Ganxsta Zolee és a Kartel. Gates 18:00 at 1095 Budapest, Fábián Juli tér 1.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815",
+        "startsAt": "2026-08-15T20:00:00+02:00",
+        "endsAt": "2026-08-15T23:30:00+02:00",
+        "doorsOpenAt": "2026-08-15T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "advance-until-jul-15",
+            "label": "Advance — until 15 July 2026",
+            "amount": 8999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "9,999 HUF normal price phase on budapestpark.hu; + admin fee"
+          }
+        ],
+        "activityTypes": ["Live Music", "Festival"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Weekend", "Evening", "Late night"],
+        "badges": ["Popular"],
+        "image": "https://i.ibb.co/bgSPhKQm/7c037b1e841f.jpg",
+        "website": "https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/ganxsta_20260815",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60 Fesztivál — Budapest Park",
+            "shortDescription": "Ganxsta Zolee 60. születésnapja — 2026. augusztus 15., kapunyitás 18:00.",
+            "longDescription": "Ganxsta Zolee 60. születésnapját a Ganxsta 60 Fesztivállal ünnepli a Budapest Parkban 2026. augusztus 15-én. Vendégek: Zsolti és a Fosfejűek, KGB, Sex Action és mások. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815"
+          },
+          "es": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60 Fesztivál — Budapest Park",
+            "shortDescription": "60 cumpleaños de Ganxsta Zolee — 15 agosto 2026, puertas 18:00.",
+            "longDescription": "Festival de hip-hop húngaro por el 60 aniversario de Ganxsta Zolee el 15 de agosto de 2026. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815"
+          },
+          "it": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60 Fesztivál — Budapest Park",
+            "shortDescription": "60° compleanno di Ganxsta Zolee — 15 agosto 2026, porte 18:00.",
+            "longDescription": "Festival hip-hop ungherese per i 60 anni di Ganxsta Zolee il 15 agosto 2026. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815"
+          },
+          "he": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60 Fesztivál — בודפשט פארק",
+            "shortDescription": "יום הולדת 60 ל-Ganxsta Zolee — 15 באוגוסט 2026, שערים 18:00.",
+            "longDescription": "פסטיבל היפ-הופ הונגרי לכבוד יום הולדת 60 ב-15 באוגוסט 2026. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815"
+          },
+          "ar": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60 Fesztivál — بودابست بارك",
+            "shortDescription": "عيد ميلاد Ganxsta Zolee الـ60 — 15 أغسطس 2026، الأبواب 18:00.",
+            "longDescription": "مهرجان الهيب هوب المجري في 15 أغسطس 2026. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-wellhello-budapest-park-2026",
+        "title": "WELLHELLO — #Sohavégetnemérős10 at Budapest Park",
+        "shortDescription": "Ten years since the cult film — Friday 28 August 2026, gates 18:00, full soundtrack live.",
+        "longDescription": "WELLHELLO marks ten years of #Sohavégetnemérős with a Budapest Park show on Friday 28 August 2026 — every song from the film performed live. Gates 18:00 at 1095 Budapest, Fábián Juli tér 1 (Ferencváros).\n\nSources: https://www.budapestpark.hu/en/events/wellhello-20260828 https://www.budapestpark.hu/tickets/event/wellhello-20260828",
+        "startsAt": "2026-08-28T20:00:00+02:00",
+        "endsAt": "2026-08-28T23:00:00+02:00",
+        "doorsOpenAt": "2026-08-28T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "arena-standing",
+            "label": "Arena — standing",
+            "amount": 9999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ admin fee per budapestpark.hu"
+          }
+        ],
+        "activityTypes": ["Live Music"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekday", "Evening"],
+        "badges": ["Popular"],
+        "image": "https://i.ibb.co/VYMH5fFL/04dccfc06041.jpg",
+        "website": "https://www.budapestpark.hu/en/events/wellhello-20260828",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/wellhello-20260828",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "wellhello-budapest-park-2026",
+            "title": "WELLHELLO — #Sohavégetnemérős10 a Budapest Parkban",
+            "shortDescription": "10 éves a film — 2026. augusztus 28., kapunyitás 18:00, teljes filmzene élőben.",
+            "longDescription": "A WELLHELLO a #Sohavégetnemérős 10. évfordulóját ünnepli a Budapest Parkban 2026. augusztus 28-án — a filmből minden dal élőben. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/wellhello-20260828 https://www.budapestpark.hu/tickets/event/wellhello-20260828"
+          },
+          "es": {
+            "slug": "wellhello-budapest-park-2026",
+            "title": "WELLHELLO — #Sohavégetnemérős10 en Budapest Park",
+            "shortDescription": "10 años de la película — 28 agosto 2026, puertas 18:00.",
+            "longDescription": "WELLHELLO celebra 10 años con toda la banda sonora en vivo el 28 de agosto de 2026. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/wellhello-20260828 https://www.budapestpark.hu/tickets/event/wellhello-20260828"
+          },
+          "it": {
+            "slug": "wellhello-budapest-park-2026",
+            "title": "WELLHELLO — #Sohavégetnemérős10 al Budapest Park",
+            "shortDescription": "10 anni del film — 28 agosto 2026, porte 18:00.",
+            "longDescription": "WELLHELLO festeggia 10 anni con tutta la colonna sonora live il 28 agosto 2026. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/wellhello-20260828 https://www.budapestpark.hu/tickets/event/wellhello-20260828"
+          },
+          "he": {
+            "slug": "wellhello-budapest-park-2026",
+            "title": "WELLHELLO — #Sohavégetnemérős10 בבודפשט פארק",
+            "shortDescription": "10 שנים לסרט — 28 באוגוסט 2026, שערים 18:00.",
+            "longDescription": "WELLHELLO חוגגים 10 שנים עם כל פסקול הסרט חי ב-28 באוגוסט 2026. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/wellhello-20260828 https://www.budapestpark.hu/tickets/event/wellhello-20260828"
+          },
+          "ar": {
+            "slug": "wellhello-budapest-park-2026",
+            "title": "WELLHELLO — #Sohavégetnemérős10 في بودابست بارك",
+            "shortDescription": "10 سنوات على الفيلم — 28 أغسطس 2026، الأبواب 18:00.",
+            "longDescription": "يحيي WELLHELLO الذكرى العاشرة بكل موسيقى الفيلم حياً في 28 أغسطس 2026. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/wellhello-20260828 https://www.budapestpark.hu/tickets/event/wellhello-20260828"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-parov-stelar-budapest-park-2026",
+        "title": "Parov Stelar — live band at Budapest Park",
+        "shortDescription": "Electronic maestro with seven-piece band and new album Artifact — Saturday 26 September 2026, gates 18:00.",
+        "longDescription": "Parov Stelar returns to Budapest Park on Saturday 26 September 2026 with his live seven-piece band — classics plus material from Artifact. Gates 18:00 at 1095 Budapest, Fábián Juli tér 1 (Ferencváros). International concert on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/parov-stelar-20260926 https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926",
+        "startsAt": "2026-09-26T20:00:00+02:00",
+        "endsAt": "2026-09-26T23:30:00+02:00",
+        "doorsOpenAt": "2026-09-26T18:00:00+02:00",
+        "timezone": "Europe/Budapest",
+        "venueIds": ["prov-budapest-park-obuda"],
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "entryFees": [
+          {
+            "id": "arena-standing",
+            "label": "Arena — standing",
+            "amount": 14999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ admin fee; terrace 34,999 HUF"
+          }
+        ],
+        "activityTypes": ["Live Music", "Electronic", "Festival"],
+        "ageRanges": ["16+", "18+"],
+        "dayTimeTags": ["Weekend", "Evening", "Late night"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/27HYkNys/59bbc1af203a.jpg",
+        "website": "https://www.budapestpark.hu/en/events/parov-stelar-20260926",
+        "bookingUrl": "https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926",
+        "email": "info@budapestpark.hu",
+        "phone": "+36 1 434 7800",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "parov-stelar-budapest-park-2026",
+            "title": "Parov Stelar — élő zenekarral a Budapest Parkban",
+            "shortDescription": "Elektronikus zene hét tagú bandával — 2026. szeptember 26., kapunyitás 18:00.",
+            "longDescription": "Parov Stelar visszatér a Budapest Parkba 2026. szeptember 26-án élő hét fős zenekarral — klasszikusok és az Artifact album. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/parov-stelar-20260926 https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926"
+          },
+          "es": {
+            "slug": "parov-stelar-budapest-park-2026",
+            "title": "Parov Stelar — banda en vivo en Budapest Park",
+            "shortDescription": "Maestro electrónico con banda de siete — 26 septiembre 2026, puertas 18:00.",
+            "longDescription": "Parov Stelar vuelve a Budapest Park el 26 de septiembre de 2026 con banda en vivo. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/parov-stelar-20260926 https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926"
+          },
+          "it": {
+            "slug": "parov-stelar-budapest-park-2026",
+            "title": "Parov Stelar — live band al Budapest Park",
+            "shortDescription": "Maestro elettronico con band di sette — 26 settembre 2026, porte 18:00.",
+            "longDescription": "Parov Stelar torna al Budapest Park il 26 settembre 2026 con band live. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/parov-stelar-20260926 https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926"
+          },
+          "he": {
+            "slug": "parov-stelar-budapest-park-2026",
+            "title": "Parov Stelar — להקה חיה בבודפשט פארק",
+            "shortDescription": "אלקטרוניקה עם שבעה נגנים — 26 בספטמבר 2026, שערים 18:00.",
+            "longDescription": "Parov Stelar חוזר לבודפשט פארק ב-26 בספטמבר 2026 עם להקה חיה. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/parov-stelar-20260926 https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926"
+          },
+          "ar": {
+            "slug": "parov-stelar-budapest-park-2026",
+            "title": "Parov Stelar — فرقة حية في بودابست بارك",
+            "shortDescription": "سيد الإلكترونيك بفرقة من سبعة — 26 سبتمبر 2026، الأبواب 18:00.",
+            "longDescription": "يعود Parov Stelar إلى بودابست بارك في 26 سبتمبر 2026 بفرقة حية. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/parov-stelar-20260926 https://www.budapestpark.hu/tickets/event/PAROVSTELAR_20260926"
+          }
+        }
+      }
+    }
+  ]
+}
