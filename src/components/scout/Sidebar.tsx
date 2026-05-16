@@ -72,6 +72,7 @@ interface Props {
   mobileOpen: boolean;
   onCloseMobile: () => void;
   logoUrl?: string | null;
+  logoLightUrl?: string | null;
   sidebarPromo?: { title: string; body: string; cta: string };
 }
 
@@ -88,6 +89,7 @@ export function Sidebar({
   mobileOpen,
   onCloseMobile,
   logoUrl,
+  logoLightUrl,
   sidebarPromo,
 }: Props) {
   const t = useTranslations("nav");
@@ -146,7 +148,7 @@ export function Sidebar({
             className="rounded-lg transition-opacity hover:opacity-80"
             aria-label={t("goHome")}
           >
-            <Logo logoUrl={logoUrl} size={96} />
+            <Logo logoUrl={logoUrl} logoLightUrl={logoLightUrl} size={96} />
           </Link>
           <button
             className="rounded-md p-2 text-sidebar-foreground/70 hover:bg-sidebar-accent lg:hidden"

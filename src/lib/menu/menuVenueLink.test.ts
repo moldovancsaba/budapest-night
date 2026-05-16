@@ -69,7 +69,7 @@ describe("menuVenueLink", () => {
   it("buildMenuVenueLink uses canonical location overrides", () => {
     const park: Provider = {
       ...cafe,
-      id: "prov-budapest-park-obuda",
+      id: "prov-budapest-park-ferencvaros",
       name: "Budapest Park",
       category: "Venues",
       borough: "Óbuda",

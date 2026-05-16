@@ -84,9 +84,9 @@ Many open-air pages list **gate opening 18:00** but not stage time. Unless the s
 - `timezone`: `"Europe/Budapest"`
 
 ### 4. Host venue: catalog id vs real district (blocking)
-**Never infer district from `prov-*` id suffixes.** Legacy ids are misleading:
-- `prov-budapest-park-obuda` → venue is **Ferencváros**, Fábián Juli tér 1, **1095** (south Pest), **not** Óbuda / Hajógyári-sziget
-- `prov-mvm-dome-ujbuda` → venue is **Terézváros**, Stefánia út 2, **1143** (southern Pest), **not** Újbuda / Kelenföld / Infopark
+**Never infer district from `prov-*` id suffixes.** Retired ids (`prov-budapest-park-obuda`, `prov-mvm-dome-ujbuda`) still resolve in old URLs only — do not use in new payloads. Current catalog ids:
+- `prov-budapest-park-ferencvaros` → venue is **Ferencváros**, Fábián Juli tér 1, **1095** (south Pest), **not** Óbuda / Hajógyári-sziget
+- `prov-mvm-dome-terezvaros` → venue is **Terézváros**, Stefánia út 2, **1143** (southern Pest), **not** Újbuda / Kelenföld / Infopark
 
 **Before every event upsert:**
 1. `GET /api/public/providers` and find the host row by **name + address**, not by guessing `-obuda` / `-ujbuda`.
@@ -96,8 +96,8 @@ Many open-air pages list **gate opening 18:00** but not stage time. Unless the s
 
 | Venue (official) | Catalog `venueIds[0]` | Required `borough` | Official address |
 |-----------------|----------------------|-------------------|------------------|
-| Budapest Park | `prov-budapest-park-obuda` | **Ferencváros** | 1095 Budapest, Fábián Juli tér 1 |
-| MVM Dome | `prov-mvm-dome-ujbuda` | **Terézváros** | 1143 Budapest, Stefánia út 2 |
+| Budapest Park | `prov-budapest-park-ferencvaros` | **Ferencváros** | 1095 Budapest, Fábián Juli tér 1 |
+| MVM Dome | `prov-mvm-dome-terezvaros` | **Terézváros** | 1143 Budapest, Stefánia út 2 |
 | Müpa Bartók | `prov-cov-bartok-moricz` | Ferencváros | Komor Marcell utca 1 |
 | A38 Ship | `prov-a38-ferencvaros` | Ferencváros | Petőfi rakpart |
 | Barba Negra | `prov-barba-negra-ujbuda` | **Újbuda** (verify show page) | Szállító u. for Red Stage |

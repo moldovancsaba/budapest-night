@@ -977,7 +977,7 @@ module.exports = {
       "Budapest Park on Hajógyári-sziget (Óbuda Island) runs April–October with major concerts, DJ terraces, and food vendors. The island venue is Budapest's flagship summer festival ground. Tickets on budapestpark.hu.",
   },
   "Parties|Óbuda|Óbuda Island": {
-    id: "prov-cov-park-party-obuda",
+    id: "prov-cov-park-party-ferencvaros",
     name: "Budapest Park Club Nights",
     address: "1095 Budapest, Fábián Juli tér 1, Hungary",
     website: "https://www.budapestpark.hu/en/parties",
@@ -1009,7 +1009,7 @@ module.exports = {
       "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.",
   },
   "Cafés|Óbuda|Óbuda Island": {
-    id: "prov-cov-island-cafe-obuda",
+    id: "prov-cov-island-cafe-ferencvaros",
     name: "Budapest Park Café",
     address: "1095 Budapest, Fábián Juli tér 1, Hungary",
     website: "https://www.budapestpark.hu/en",
@@ -1361,7 +1361,7 @@ module.exports = {
       "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.",
   },
   "Parties|Újbuda|Gellért Baths area": {
-    id: "prov-cov-rudas-ujbuda-party",
+    id: "prov-cov-rudas-buda-party",
     name: "Rudas Party Nights",
     address: "1013 Budapest, Döbrentei tér 9, Hungary",
     website: "https://www.rudasfurdo.hu/en/party",

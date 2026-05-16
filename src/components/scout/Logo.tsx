@@ -1,29 +1,39 @@
+"use client";
+
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { APP_LOGO_PATH, resolveLogoUrl } from "@/config/brand";
+import { isBundledBrandLogo, resolveThemeLogoUrl, type ThemeLogoUrls } from "@/config/brand";
 import { useTranslations } from "next-intl";
 
 export function Logo({
   logoUrl,
+  logoLightUrl,
   size = 128,
   withWordmark = false,
   className = "",
-}: {
-  logoUrl?: string | null;
+}: ThemeLogoUrls & {
   size?: number;
   withWordmark?: boolean;
   className?: string;
 }) {
   const t = useTranslations("nav");
-  const src = resolveLogoUrl(logoUrl);
-  const isBundledLogo = src === APP_LOGO_PATH;
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const theme = mounted && resolvedTheme === "light" ? "light" : "dark";
+  const src = resolveThemeLogoUrl(theme, { logoUrl, logoLightUrl });
+  const isBundledLogo = isBundledBrandLogo(src);
 
   return (
     <div className={cn("flex items-center gap-3", className)}>
       <div
         className={cn(
-          "relative shrink-0 overflow-hidden bg-black",
-          isBundledLogo ? "rounded-lg" : "rounded-full ring-2 ring-border",
+          "relative shrink-0 overflow-hidden",
+          isBundledLogo ? "rounded-lg bg-black" : "rounded-full bg-black ring-2 ring-border",
         )}
         style={{ width: size, height: size }}
       >

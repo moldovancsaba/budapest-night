@@ -8,7 +8,7 @@ import type { NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";
 
 const host: Provider = {
-  id: "prov-budapest-park-obuda",
+  id: "prov-budapest-park-ferencvaros",
   name: "Budapest Park",
   category: "Venues",
   borough: "Ferencváros",

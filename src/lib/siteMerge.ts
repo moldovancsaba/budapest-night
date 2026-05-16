@@ -57,6 +57,7 @@ export function mergeSiteDocument(doc: Partial<SiteDoc> | null | undefined): Sit
   merged.calculator = mergeCalculator(DEFAULT_SITE.calculator, calculatorPatch);
   merged.currencyRates = normalizeRates(merged.currencyRates ?? DEFAULT_SITE.currencyRates);
   if (!merged.logoUrl?.trim()) merged.logoUrl = DEFAULT_SITE.logoUrl;
+  if (!merged.logoLightUrl?.trim()) merged.logoLightUrl = DEFAULT_SITE.logoLightUrl;
   if (!merged.homeHeroUrl?.trim()) merged.homeHeroUrl = DEFAULT_SITE.homeHeroUrl;
   if (!merged.discoverHeroUrl?.trim()) merged.discoverHeroUrl = DEFAULT_SITE.discoverHeroUrl;
   if (!merged.guides?.length) merged.guides = DEFAULT_SITE.guides;

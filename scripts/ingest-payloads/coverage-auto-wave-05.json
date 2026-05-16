@@ -707,7 +707,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-island-cafe-obuda",
+        "id": "prov-cov-island-cafe-ferencvaros",
         "name": "Budapest Park Café",
         "category": "Cafés",
         "borough": "Óbuda",

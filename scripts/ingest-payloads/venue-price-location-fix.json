@@ -12,7 +12,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-budapest-park-obuda",
+        "id": "prov-budapest-park-ferencvaros",
         "name": "Budapest Park",
         "category": "Venues",
         "borough": "Ferencváros",
@@ -380,7 +380,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-mvm-dome-ujbuda",
+        "id": "prov-mvm-dome-terezvaros",
         "name": "MVM Dome",
         "category": "Venues",
         "borough": "Újbuda",

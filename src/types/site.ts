@@ -1,7 +1,7 @@
 import type { Borough, Category } from "@/types/provider";
 import type { CurrencyRates } from "@/types/currency";
 import { DEFAULT_CURRENCY_RATES } from "@/types/currency";
-import { APP_LOGO_PATH } from "@/config/brand";
+import { APP_LOGO_LIGHT_PATH, APP_LOGO_PATH } from "@/config/brand";
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 
 /** Lucide icon keys used by home marketing blocks (stored in Mongo). */
@@ -160,7 +160,10 @@ export interface SiteCalculatorCopy {
 
 export interface SiteDoc {
   _id: "main";
+  /** Dark-mode logo (ImgBB https or `/images/logo.png`). */
   logoUrl: string;
+  /** Light-mode logo (ImgBB https or `/images/logo-light.png`). */
+  logoLightUrl: string;
   homeHeroUrl: string;
   discoverHeroUrl: string;
   /** Optional per-category Discover heroes (ImgBB https URLs). */
@@ -237,6 +240,7 @@ Tone: energetic, concise, neon-city cool. Use short paragraphs and bullet points
 
 export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
   logoUrl: APP_LOGO_PATH,
+  logoLightUrl: APP_LOGO_LIGHT_PATH,
   homeHeroUrl: CMS_MEDIA.homeHero,
   discoverHeroUrl: CMS_MEDIA.discoverHero,
   homeHeroTitle: "Discover Budapest after dark",

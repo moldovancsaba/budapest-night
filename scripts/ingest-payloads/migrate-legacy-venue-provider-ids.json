@@ -1,0 +1,238 @@
+{
+  "sourceUrls": [
+    "https://www.budapestpark.hu/en/park"
+  ],
+  "notes": "Auto-fix provider id district suffixes (3 venues).",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-island-cafe-ferencvaros",
+        "name": "Budapest Park Café",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Weekend",
+          "Evening"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+        "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Zzv0wh56/dec449bf851e.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "name": "Budapest Park Kávézó",
+            "shortDescription": "Napközbeni kávéállások a Budapest Parkon — kávé és harapnivalók a szigeti koncertek előtt.",
+            "longDescription": "A Budapest Park napközbeni ételudvara kávét, sört és gyors falatokat kínál az Óbudai-szigeten rendezvények között. A kapuk délután kinyitnak, hogy a látogatók bemelegíthessenek az esti koncertek előtt. Az árusok listája a budapestpark.hu oldalon található.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-hu"
+          },
+          "es": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Puestos de café diurno en el Budapest Park — café y aperitivos antes de los conciertos en la isla.",
+            "longDescription": "Los vendedores del patio de comidas de Budapest Park sirven café, cerveza y bocados rápidos en la isla de Óbuda entre eventos. Las puertas abren por la tarde para los calentamientos previos a los conciertos nocturnos. La lista de vendedores está en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-es"
+          },
+          "it": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Stand di caffè diurni al Budapest Park — caffè e spuntini prima dei concerti sull'isola.",
+            "longDescription": "I venditori del food court diurno di Budapest Park servono caffè, birra e spuntini veloci sull'Isola di Óbuda tra un evento e l'altro. I cancelli aprono nel pomeriggio per i warm-up prima dei concerti serali. L'elenco dei venditori è su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-it"
+          },
+          "he": {
+            "name": "בודפשט פארק קפה",
+            "shortDescription": "דוכני קפה בשעות היום בבודפשט פארק — קפה וחטיפים לפני הקונצרטים באי.",
+            "longDescription": "ספקי פוד קורט של בודפשט פארק מגישים קפה, בירה ומנות מהירות באי אובודה בין אירועים. השערים נפתחים אחר הצהריים לחימום לפני הקונצרטים הערביים. רשימת הספקים באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-he"
+          },
+          "ar": {
+            "name": "بودابيست بارك كافيه",
+            "shortDescription": "أكشاك قهوة نهارية في بودابيست بارك — قهوة ووجبات خفيفة قبل حفلات الجزيرة الموسيقية.",
+            "longDescription": "يقدّم موردو ساحة الطعام في بودابيست بارك القهوة والبيرة والوجبات السريعة في جزيرة أوبودا بين الفعاليات. تُفتح البوابات بعد الظهر للإحماء قبل الحفلات الموسيقية المسائية. قائمة الموردين على موقع budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-ar"
+          },
+          "en": {
+            "slug": "island-cafe"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-park-party-ferencvaros",
+        "name": "Budapest Park Club Nights",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Electronic",
+          "Festival"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+        "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/FLfLmSQ9/c24e1f6dc725.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en/parties",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "name": "Budapest Park Bulik",
+            "shortDescription": "Szigeti táncos éjszakák a Budapest Parkban — elektronikus headliner-ek és éjfélen túli teraszok.",
+            "longDescription": "A Budapest Park klub-éjszakái nemzetközi DJ-ket hoznak az Óbudai-szigetre, több bárral és szabadtéri táncparkettekkel. Az eseményeket nyári hétvégéken éjfélen túl tartják, villamossal megközelíthetően Pestről. Műsor a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-hu"
+          },
+          "es": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Noches de baile en la isla del Budapest Park — headliners electrónicos y terrazas de madrugada.",
+            "longDescription": "Las noches de club del Budapest Park traen DJs internacionales a la Isla de Óbuda con múltiples barras y pistas de baile al aire libre. Los eventos se prolongan pasada la medianoche los fines de semana de verano con acceso en tranvía desde Pest. Cartel en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-es"
+          },
+          "it": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Notti danzanti sull'isola del Budapest Park — headliner elettronici e terrazze dopo mezzanotte.",
+            "longDescription": "Le notti club del Budapest Park portano DJ internazionali sull'Isola di Óbuda con più bar e piste da ballo all'aperto. Gli eventi si svolgono oltre la mezzanotte nei fine settimana estivi con accesso in tram da Pest. Programma su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-it"
+          },
+          "he": {
+            "name": "לילות מועדון בודפשט פארק",
+            "shortDescription": "לילות ריקודים באי בודפשט פארק — כוכבי אלקטרוניקה ומרפסות לאחר חצות.",
+            "longDescription": "לילות המועדון של בודפשט פארק מביאים DJ-ים בינלאומיים לאי אובודה עם מספר ברים ורחבות ריקוד בחוץ. האירועים נמשכים מעבר לחצות בסופי שבוע קיצי עם גישה בטרמוואי מפשט. תוכנית באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-he"
+          },
+          "ar": {
+            "name": "ليالي نادي بودابست بارك",
+            "shortDescription": "ليالي رقص على جزيرة بودابست بارك — نجوم الإلكترونيك وشرفات ما بعد منتصف الليل.",
+            "longDescription": "تجلب ليالي النادي في بودابست بارك DJ-ين دوليين إلى جزيرة أوبودا مع عدة بارات وحلبات رقص في الهواء الطلق. تمتد الفعاليات إلى ما بعد منتصف الليل في عطلات نهاية الأسبوع الصيفية مع وصول بالترام من بشت. البرنامج على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-ar"
+          },
+          "en": {
+            "slug": "park-party"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-rudas-buda-party",
+        "name": "Rudas Party Nights",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+        "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/spPHz6jH/09de1b36ddad.webp",
+        "email": "info@rudasfurdo.hu",
+        "website": "https://www.rudasfurdo.hu/en/party",
+        "phone": "+36 1 356 1010",
+        "locales": {
+          "hu": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Éjszakai fürdőbulók a Rudasban — DJ-szetek és medencék a Gellért-hegy lábánál.",
+            "longDescription": "A Rudas Fürdő éjszakai alkalmain termálmedencézés keveredik DJ-kel és bárokkal, a Dunára nyíló kilátással a Gellért-hegy lábánál. A szombat esti spa-bulik a budapesti bakancslistán szerepelnek. Jegyek a rudasfürdő.hu oldalon.\n\nSources: https://www.rudasfürdő.hu/en/party",
+            "slug": "rudas-party-hu"
+          },
+          "es": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Fiestas nocturnas de spa en Rudas — sesiones de DJ y piscinas en las estribaciones del monte Gellért.",
+            "longDescription": "Las sesiones nocturnas en el Baño Rudas combinan el baño termal con DJs y bares con vistas al Danubio desde las estribaciones del monte Gellért. Las fiestas de spa del sábado por la noche son una experiencia imprescindible en Budapest. Entradas en rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-es"
+          },
+          "it": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Feste notturne alla spa Rudas — set DJ e piscine ai piedi del monte Gellért.",
+            "longDescription": "Le sessioni notturne alle Terme Rudas combinano il bagno termale con DJ e bar con vista sul Danubio ai piedi del monte Gellért. Le feste spa del sabato sera sono un'esperienza da non perdere a Budapest. Biglietti su rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-it"
+          },
+          "he": {
+            "name": "רוּדאש פארטי נייטס",
+            "shortDescription": "מסיבות ספא לילות בבית המרחץ רוּדאש — סטים של DJ ובריכות בשולי גבעת גֶּלֶּרט.",
+            "longDescription": "הפגישות הלילות במרחצאות רוּדאש משלבות אמבטיה תרמית עם DJ ובארים עם נוף לדנובה מרגלי גבעת גֶּלֶּרט. מסיבות ספא ליל שבת הן חוויה ברשימת הדברים שחייבים לעשות בבודפשט. כרטיסים ב-rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-he"
+          },
+          "ar": {
+            "name": "رودَش بارتي نايتس",
+            "shortDescription": "حفلات سبا ليلية في حمامات رودَش — حفلات DJ وأحواض سباحة عند سفح جبل غيلرت.",
+            "longDescription": "تجمع الجلسات الليلية في حمامات رودَش بين الاستحمام الحراري وحفلات DJ والبارات مع إطلالات على الدانوب من سفح جبل غيلرت. تُعدّ حفلات سبا ليالي السبت تجربة لا غنى عنها في بودابست. التذاكر على rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "rudas-party-ar"
+          },
+          "en": {
+            "slug": "rudas-party"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "delete",
+      "id": "prov-cov-island-cafe-obuda"
+    },
+    {
+      "resource": "provider",
+      "action": "delete",
+      "id": "prov-cov-park-party-obuda"
+    },
+    {
+      "resource": "provider",
+      "action": "delete",
+      "id": "prov-cov-rudas-ujbuda-party"
+    }
+  ]
+}

@@ -1410,7 +1410,7 @@ const COV_CATALOG_I18N = {
       "instant-kiraly-ar"
     ),
   },
-  'prov-cov-island-cafe-obuda': {
+  'prov-cov-island-cafe-ferencvaros': {
     hu: localeEntry(
       "Budapest Park Kávézó",
       "Napközbeni kávéállások a Budapest Parkon — kávé és harapnivalók a szigeti koncertek előtt.",
@@ -2306,7 +2306,7 @@ const COV_CATALOG_I18N = {
       "opera-cafe-ar"
     ),
   },
-  'prov-cov-park-party-obuda': {
+  'prov-cov-park-party-ferencvaros': {
     hu: localeEntry(
       "Budapest Park Bulik",
       "Szigeti táncos éjszakák a Budapest Parkban — elektronikus headliner-ek és éjfélen túli teraszok.",
@@ -2530,7 +2530,7 @@ const COV_CATALOG_I18N = {
       "rudas-party-ar"
     ),
   },
-  'prov-cov-rudas-ujbuda-party': {
+  'prov-cov-rudas-buda-party': {
     hu: localeEntry(
       "Rudas Party Nights",
       "Éjszakai fürdőbulók a Rudasban — DJ-szetek és medencék a Gellért-hegy lábánál.",

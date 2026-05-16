@@ -224,6 +224,7 @@ export default function BudapestNightShell() {
         mobileOpen={mobileNav}
         onCloseMobile={() => setMobileNav(false)}
         logoUrl={site?.logoUrl}
+        logoLightUrl={site?.logoLightUrl}
         sidebarPromo={undefined}
       />
 
@@ -242,7 +243,7 @@ export default function BudapestNightShell() {
               className="flex items-center gap-3 rounded-full transition-opacity hover:opacity-80"
               aria-label={t("goHome")}
             >
-              <Logo logoUrl={site?.logoUrl} withWordmark={false} size={48} />
+              <Logo logoUrl={site?.logoUrl} logoLightUrl={site?.logoLightUrl} withWordmark={false} size={48} />
               <span className="font-display text-base font-bold tracking-widest text-foreground sm:text-lg">
                 {t("brand")}
               </span>

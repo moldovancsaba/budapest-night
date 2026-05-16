@@ -289,7 +289,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-budapest-park-obuda",
+      "id": "prov-budapest-park-ferencvaros",
       "patch": {
         "locales": {
           "hu": {

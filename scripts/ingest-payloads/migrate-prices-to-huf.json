@@ -482,7 +482,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-budapest-park-obuda",
+        "id": "prov-budapest-park-ferencvaros",
         "name": "Budapest Park",
         "category": "Venues",
         "borough": "Ferencváros",
@@ -4220,7 +4220,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-island-cafe-obuda",
+        "id": "prov-cov-island-cafe-ferencvaros",
         "name": "Budapest Park Café",
         "category": "Cafés",
         "borough": "Ferencváros",
@@ -6321,7 +6321,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-park-party-obuda",
+        "id": "prov-cov-park-party-ferencvaros",
         "name": "Budapest Park Club Nights",
         "category": "Parties",
         "borough": "Ferencváros",
@@ -6742,7 +6742,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-rudas-ujbuda-party",
+        "id": "prov-cov-rudas-buda-party",
         "name": "Rudas Party Nights",
         "category": "Parties",
         "borough": "Buda",
@@ -10181,7 +10181,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-mvm-dome-ujbuda",
+        "id": "prov-mvm-dome-terezvaros",
         "name": "MVM Dome",
         "category": "Venues",
         "borough": "Terézváros",

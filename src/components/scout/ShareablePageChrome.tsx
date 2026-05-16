@@ -58,7 +58,7 @@ export function ShareablePageChrome({
               className="hidden items-center gap-2 rounded-full transition-opacity hover:opacity-80 sm:flex"
               aria-label={tn("goHome")}
             >
-              <Logo logoUrl={site?.logoUrl} withWordmark={false} size={40} />
+              <Logo logoUrl={site?.logoUrl} logoLightUrl={site?.logoLightUrl} withWordmark={false} size={40} />
               <span className="font-display text-sm font-bold tracking-widest text-foreground">
                 {tn("brand")}
               </span>

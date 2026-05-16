@@ -14,7 +14,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-budapest-park-obuda",
+        "id": "prov-budapest-park-ferencvaros",
         "name": "Budapest Park",
         "category": "Venues",
         "borough": "Ferencváros",
@@ -71,7 +71,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-mvm-dome-ujbuda",
+        "id": "prov-mvm-dome-terezvaros",
         "name": "MVM Dome",
         "category": "Venues",
         "borough": "Terézváros",
@@ -136,7 +136,7 @@
         "endsAt": "2026-08-01T23:30:00+02:00",
         "doorsOpenAt": "2026-08-01T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [
@@ -212,7 +212,7 @@
         "startsAt": "2026-06-18T20:00:00+02:00",
         "endsAt": "2026-06-18T22:30:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-mvm-dome-ujbuda"],
+        "venueIds": ["prov-mvm-dome-terezvaros"],
         "borough": "Terézváros",
         "neighborhood": "Stefánia út",
         "entryFees": [],

@@ -9,7 +9,7 @@
     "https://www.durerkert.com/en/event/oliver_tree_2026",
     "https://www.livenation.hu/artist-oliver-tree-1180211"
   ],
-  "notes": "Three July 2026 shows: LP + IDLES at Budapest Park (dense July week at prov-budapest-park-obuda); Oliver Tree first HU show at Dürer Kert fills Erzsébetváros (0 events). Catalog before: 3 upcoming across Belváros/Terézváros/Ferencváros only.",
+  "notes": "Three July 2026 shows: LP + IDLES at Budapest Park (dense July week at prov-budapest-park-ferencvaros); Oliver Tree first HU show at Dürer Kert fills Erzsébetváros (0 events). Catalog before: 3 upcoming across Belváros/Terézváros/Ferencváros only.",
   "missingOrUncertain": [
     "LP/IDLES/Moby-style exact show start not on budapestpark.hu — using 20:00 after 18:00 gates (funcode lists 19:00 as event time).",
     "IDLES tier breakdown not listed on official pages — single published floor from 16,500 HUF via funcode.",
@@ -28,7 +28,7 @@
         "endsAt": "2026-07-07T23:00:00+02:00",
         "doorsOpenAt": "2026-07-07T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [
@@ -105,7 +105,7 @@
         "endsAt": "2026-07-08T23:00:00+02:00",
         "doorsOpenAt": "2026-07-08T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [

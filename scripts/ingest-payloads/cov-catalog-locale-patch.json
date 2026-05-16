@@ -791,7 +791,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-island-cafe-obuda",
+        "id": "prov-cov-island-cafe-ferencvaros",
         "name": "Budapest Park Café",
         "category": "Cafés",
         "borough": "Óbuda",
@@ -2862,7 +2862,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-park-party-obuda",
+        "id": "prov-cov-park-party-ferencvaros",
         "name": "Budapest Park Club Nights",
         "category": "Parties",
         "borough": "Óbuda",
@@ -3277,7 +3277,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-rudas-ujbuda-party",
+        "id": "prov-cov-rudas-buda-party",
         "name": "Rudas Party Nights",
         "category": "Parties",
         "borough": "Újbuda",

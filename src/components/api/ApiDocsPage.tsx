@@ -573,7 +573,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
             <p>
               <strong>Canonical slugs</strong> must not embed the wrong Budapest district (e.g. use{" "}
               <code className="font-mono">budapest-park</code> for the Ferencváros open-air park, not{" "}
-              <code className="font-mono">prov-budapest-park-obuda</code>). Set{" "}
+              <code className="font-mono">prov-budapest-park-ferencvaros</code>). Set{" "}
               <code className="font-mono">locales.en.slug</code> on ingest; logic lives in{" "}
               <code className="font-mono">src/lib/venueSlug.ts</code>. Legacy <code className="font-mono">prov-*</code> URL segments still resolve but the app redirects to the canonical slug.
             </p>

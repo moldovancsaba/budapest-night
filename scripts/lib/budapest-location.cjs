@@ -41,19 +41,32 @@ const NEIGHBORHOODS = {
   ],
 };
 
+const LEGACY_PROVIDER_ID_ALIASES = {
+  "prov-budapest-park-obuda": "prov-budapest-park-ferencvaros",
+  "prov-mvm-dome-ujbuda": "prov-mvm-dome-terezvaros",
+  "prov-cov-island-cafe-obuda": "prov-cov-island-cafe-ferencvaros",
+  "prov-cov-park-party-obuda": "prov-cov-park-party-ferencvaros",
+  "prov-cov-rudas-ujbuda-party": "prov-cov-rudas-buda-party",
+};
+
 /** Verified overrides — official address + district (do not guess from postal alone). */
 const CANONICAL_BY_ID = {
-  "prov-mvm-dome-ujbuda": {
+  "prov-mvm-dome-terezvaros": {
     borough: "Terézváros",
     neighborhood: "Stefánia út",
     address: "1143 Budapest, Stefánia út 2, Hungary",
   },
-  "prov-budapest-park-obuda": {
+  "prov-budapest-park-ferencvaros": {
     borough: "Ferencváros",
     neighborhood: "Fábián Juli",
     address: "1095 Budapest, Fábián Juli tér 1, Hungary",
   },
-  "prov-cov-island-cafe-obuda": {
+  "prov-cov-island-cafe-ferencvaros": {
+    borough: "Ferencváros",
+    neighborhood: "Fábián Juli",
+    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
+  },
+  "prov-cov-park-party-ferencvaros": {
     borough: "Ferencváros",
     neighborhood: "Fábián Juli",
     address: "1095 Budapest, Fábián Juli tér 1, Hungary",
@@ -172,8 +185,11 @@ function syncEventFromHost(event, host) {
 
 /** Copy that must not appear on canonical venues (false district names). */
 const FORBIDDEN_DISTRICT_COPY = {
-  "prov-mvm-dome-ujbuda": [/\bÚjbuda\b/i, /\bUjbuda\b/i, /\bKelenföld\b/i, /\bInfopark\b/i],
-  "prov-budapest-park-obuda": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
+  "prov-mvm-dome-terezvaros": [/\bÚjbuda\b/i, /\bUjbuda\b/i, /\bKelenföld\b/i, /\bInfopark\b/i],
+  "prov-budapest-park-ferencvaros": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
+  "prov-cov-island-cafe-ferencvaros": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
+  "prov-cov-park-party-ferencvaros": [/\bHajógyári-sziget\b/i, /\bÓbuda-sziget\b/i, /\bObuda Island\b/i],
+  "prov-cov-rudas-buda-party": [/\bÚjbuda\b/i, /\bUjbuda\b/i, /\bKelenföld\b/i],
 };
 
 function collectProviderTextFields(doc) {
@@ -191,7 +207,14 @@ function collectProviderTextFields(doc) {
 
 function validateCanonicalProvider(doc, pathPrefix) {
   const errors = [];
-  const canonical = CANONICAL_BY_ID[doc.id];
+  if (LEGACY_PROVIDER_ID_ALIASES[doc.id]) {
+    errors.push(
+      `${pathPrefix}: id ${doc.id} is retired — use ${LEGACY_PROVIDER_ID_ALIASES[doc.id]} instead`,
+    );
+    return errors;
+  }
+  const canonicalId = doc.id;
+  const canonical = CANONICAL_BY_ID[canonicalId];
   if (!canonical) return errors;
 
   if (doc.borough && doc.borough !== canonical.borough) {
@@ -206,7 +229,7 @@ function validateCanonicalProvider(doc, pathPrefix) {
     errors.push(`${pathPrefix}: address must be ${canonical.address} for ${doc.id}`);
   }
 
-  const forbidden = FORBIDDEN_DISTRICT_COPY[doc.id];
+  const forbidden = FORBIDDEN_DISTRICT_COPY[canonicalId];
   if (forbidden) {
     for (const text of collectProviderTextFields(doc)) {
       for (const pattern of forbidden) {
@@ -220,10 +243,10 @@ function validateCanonicalProvider(doc, pathPrefix) {
     }
   }
 
-  if (doc.id === "prov-mvm-dome-ujbuda" && doc.website && !/^https:\/\/(www\.)?mvm-dome\.hu/i.test(doc.website)) {
+  if (canonicalId === "prov-mvm-dome-terezvaros" && doc.website && !/^https:\/\/(www\.)?mvm-dome\.hu/i.test(doc.website)) {
     errors.push(`${pathPrefix}: website should be https://mvm-dome.hu (promoter pages go on events, not the venue row)`);
   }
-  if (doc.id === "prov-budapest-park-obuda" && doc.website && !/^https:\/\/(www\.)?budapestpark\.hu/i.test(doc.website)) {
+  if (canonicalId === "prov-budapest-park-ferencvaros" && doc.website && !/^https:\/\/(www\.)?budapestpark\.hu/i.test(doc.website)) {
     errors.push(`${pathPrefix}: website should be https://www.budapestpark.hu/... for Budapest Park`);
   }
 
@@ -234,6 +257,13 @@ function validateCanonicalEvent(doc, pathPrefix, providersById) {
   const errors = [];
   const hostId = Array.isArray(doc.venueIds) ? doc.venueIds[0] : undefined;
   if (typeof hostId !== "string") return errors;
+
+  if (LEGACY_PROVIDER_ID_ALIASES[hostId]) {
+    errors.push(
+      `${pathPrefix}: venueIds must use ${LEGACY_PROVIDER_ID_ALIASES[hostId]} instead of retired ${hostId}`,
+    );
+    return errors;
+  }
 
   const canonical = CANONICAL_BY_ID[hostId];
   if (!canonical) return errors;
@@ -271,6 +301,7 @@ function validateCanonicalEvent(doc, pathPrefix, providersById) {
 module.exports = {
   BOROUGHS,
   NEIGHBORHOODS,
+  LEGACY_PROVIDER_ID_ALIASES,
   CANONICAL_BY_ID,
   suggestProviderLocation,
   locationNeedsFix,

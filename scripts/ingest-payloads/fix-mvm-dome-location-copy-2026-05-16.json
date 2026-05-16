@@ -11,7 +11,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-mvm-dome-ujbuda",
+        "id": "prov-mvm-dome-terezvaros",
         "name": "MVM Dome",
         "category": "Venues",
         "borough": "Terézváros",

@@ -51,10 +51,15 @@ export function validateMeetupCover(doc: Partial<{ coverImageUrl?: string }>): s
 }
 
 export function validateSiteRasterUrls(site: Partial<Record<string, unknown>>): string | null {
-  const logo = site.logoUrl;
-  if (typeof logo === "string" && logo.trim() && !logo.trim().startsWith("/")) {
-    const e = imgbbImageFieldError("site.logoUrl", logo);
-    if (e) return e;
+  for (const [field, label] of [
+    ["logoUrl", "site.logoUrl"],
+    ["logoLightUrl", "site.logoLightUrl"],
+  ] as const) {
+    const logo = site[field];
+    if (typeof logo === "string" && logo.trim() && !logo.trim().startsWith("/")) {
+      const e = imgbbImageFieldError(label, logo);
+      if (e) return e;
+    }
   }
   const hh = site.homeHeroUrl;
   if (typeof hh === "string" && hh.trim()) {

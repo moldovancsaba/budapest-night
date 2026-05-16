@@ -3,22 +3,40 @@ import type { Borough } from "@/types/provider";
 import type { NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";
 
+/** Old ingest ids → current provider id (venue URL / venueIds resolution). */
+export const LEGACY_PROVIDER_ID_ALIASES: Record<string, string> = {
+  "prov-budapest-park-obuda": "prov-budapest-park-ferencvaros",
+  "prov-mvm-dome-ujbuda": "prov-mvm-dome-terezvaros",
+  "prov-cov-island-cafe-obuda": "prov-cov-island-cafe-ferencvaros",
+  "prov-cov-park-party-obuda": "prov-cov-park-party-ferencvaros",
+  "prov-cov-rudas-ujbuda-party": "prov-cov-rudas-buda-party",
+};
+
+export function resolveLegacyProviderId(idOrPathKey: string): string | undefined {
+  return LEGACY_PROVIDER_ID_ALIASES[idOrPathKey];
+}
+
 /** Verified overrides for major venues (official address beats heuristics). */
 export const CANONICAL_VENUE_LOCATIONS: Record<
   string,
   { borough: Borough; neighborhood: string; address: string }
 > = {
-  "prov-mvm-dome-ujbuda": {
+  "prov-mvm-dome-terezvaros": {
     borough: "Terézváros",
     neighborhood: "Stefánia út",
     address: "1143 Budapest, Stefánia út 2, Hungary",
   },
-  "prov-budapest-park-obuda": {
+  "prov-budapest-park-ferencvaros": {
     borough: "Ferencváros",
     neighborhood: "Fábián Juli",
     address: "1095 Budapest, Fábián Juli tér 1, Hungary",
   },
-  "prov-cov-island-cafe-obuda": {
+  "prov-cov-island-cafe-ferencvaros": {
+    borough: "Ferencváros",
+    neighborhood: "Fábián Juli",
+    address: "1095 Budapest, Fábián Juli tér 1, Hungary",
+  },
+  "prov-cov-park-party-ferencvaros": {
     borough: "Ferencváros",
     neighborhood: "Fábián Juli",
     address: "1095 Budapest, Fábián Juli tér 1, Hungary",
@@ -56,7 +74,11 @@ const STREET_HINTS: { pattern: RegExp; borough: Borough; neighborhood: string }[
 export function resolveProviderLocation(
   provider: Pick<Provider, "id" | "borough" | "neighborhood" | "address">,
 ): Pick<Provider, "borough" | "neighborhood" | "address"> {
-  const canonical = CANONICAL_VENUE_LOCATIONS[provider.id];
+  const canonical =
+    CANONICAL_VENUE_LOCATIONS[provider.id] ??
+    (resolveLegacyProviderId(provider.id)
+      ? CANONICAL_VENUE_LOCATIONS[resolveLegacyProviderId(provider.id)!]
+      : undefined);
   if (canonical) return canonical;
 
   const address = provider.address?.trim() ?? "";

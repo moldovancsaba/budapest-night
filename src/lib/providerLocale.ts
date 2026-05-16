@@ -1,6 +1,7 @@
 import { defaultLocale, locales, type AppLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
 import type { ProviderLocaleContent, ProviderLocalesMap } from "@/types/providerLocale";
+import { resolveLegacyProviderId } from "@/lib/budapestLocation";
 import { legacyVenuePathKeys, venuePathKeyForLocale } from "@/lib/venueSlug";
 
 export function parseAppLocaleParam(raw: string | null | undefined): AppLocale {
@@ -42,7 +43,11 @@ export function getVenuePathKey(provider: Provider, locale: AppLocale = defaultL
 /** Match `/venue/{slug}` including legacy provider ids and old locale slugs. */
 export function findProviderByVenueKey(providers: Provider[], key: string): Provider | undefined {
   const decoded = decodeURIComponent(key);
-  return providers.find((p) => legacyVenuePathKeys(p).includes(decoded));
+  const direct = providers.find((p) => legacyVenuePathKeys(p).includes(decoded));
+  if (direct) return direct;
+  const aliased = resolveLegacyProviderId(decoded);
+  if (aliased) return providers.find((p) => p.id === aliased);
+  return undefined;
 }
 
 export function mergeProviderLocales(

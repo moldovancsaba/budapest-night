@@ -1793,7 +1793,7 @@
     },
     {
       "gapKey": "Parties|Óbuda|Óbuda Island",
-      "id": "prov-cov-park-party-obuda",
+      "id": "prov-cov-park-party-ferencvaros",
       "name": "Budapest Park Club Nights",
       "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
       "website": "https://www.budapestpark.hu/en/parties",
@@ -1972,7 +1972,7 @@
     },
     {
       "gapKey": "Parties|Újbuda|Gellért Baths area",
-      "id": "prov-cov-rudas-ujbuda-party",
+      "id": "prov-cov-rudas-buda-party",
       "name": "Rudas Party Nights",
       "address": "1013 Budapest, Döbrentei tér 9, Hungary",
       "website": "https://www.rudasfurdo.hu/en/party",
@@ -3874,7 +3874,7 @@
     },
     {
       "gapKey": "Cafés|Óbuda|Óbuda Island",
-      "id": "prov-cov-island-cafe-obuda",
+      "id": "prov-cov-island-cafe-ferencvaros",
       "name": "Budapest Park Café",
       "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
       "website": "https://www.budapestpark.hu/en",

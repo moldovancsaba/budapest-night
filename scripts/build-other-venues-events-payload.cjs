@@ -1,0 +1,701 @@
+#!/usr/bin/env node
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const IMAGES = {
+  "man-with-a-mission": "https://i.ibb.co/n8jcPTy4/0e13499acd6b.jpg",
+  "asaf-avidan": "https://i.ibb.co/VWbsMbgt/9cd6762cbe08.jpg",
+  "jamie-woon": "https://i.ibb.co/MxW1579b/c56a32ad4307.jpg",
+  "wagner-walkure": "https://i.ibb.co/tMhbjBc8/67770ca4b8c0.webp",
+  "protest-the-hero": "https://i.ibb.co/wNRXQL1p/ab89dbd15b4a.jpg",
+  "black-label-society": "https://i.ibb.co/Z1JXScvF/11d4d3da6c26.jpg",
+  "fear-factory": "https://i.ibb.co/svZ1HbVt/5502597fd5eb.jpg",
+  "kft-a38": "https://i.ibb.co/6RwNgnmk/dd44e282d06c.png",
+  "nebula-a38": "https://i.ibb.co/CstrpQMH/9fb8e3109eae.jpg",
+  "circus-princess": "https://i.ibb.co/23Qxxqb3/0c6f2e11225e.jpg",
+};
+
+function loc(slug, hu, es, it, he, ar) {
+  return {
+    hu: { slug, ...hu },
+    es: { slug, ...es },
+    it: { slug, ...it },
+    he: { slug, ...he },
+    ar: { slug, ...ar },
+  };
+}
+
+function ev(doc) {
+  return { resource: "event", action: "upsert", document: doc };
+}
+
+const events = [
+  {
+    id: "event-circus-princess-operetta-2026",
+    title: "The Circus Princess — matinee at Budapest Operetta Theatre",
+    shortDescription:
+      "Kalman operetta matinee — Sunday 17 May 2026, 11:00 at Nagymező utca (Terézváros).",
+    longDescription:
+      "The Budapest Operetta & Musical Theatre presents Emmerich Kálmán’s The Circus Princess (A cirkuszhercegnő) in a Sunday matinee on 17 May 2026 at 11:00. 1065 Budapest, Nagymező utca 17. Tickets via operett.jegy.hu and new.operett.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+    startsAt: "2026-05-17T11:00:00+02:00",
+    endsAt: "2026-05-17T13:30:00+02:00",
+    venueIds: ["prov-operetta-terezvaros"],
+    borough: "Terézváros",
+    neighborhood: "Opera",
+    entryFees: [],
+    activityTypes: ["Theatre", "Live Music"],
+    ageRanges: ["All ages", "Family"],
+    dayTimeTags: ["Weekend", "Afternoon"],
+    badges: ["Featured"],
+    image: IMAGES["circus-princess"],
+    website: "https://new.operett.hu/repertoar/a-cirkuszhercegno",
+    bookingUrl: "https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+    email: "jegy@operett.hu",
+    phone: "+36 1 312-4866",
+    locales: loc(
+      "circus-princess-operetta-2026",
+      {
+        title: "A cirkuszhercegnő — délelőtti előadás az Operettben",
+        shortDescription:
+          "Kálmán operett — 2026. május 17., vasárnap 11:00, Nagymező utca (Terézváros).",
+        longDescription:
+          "A Budapesti Operettszínház Kálmán Emmerich A cirkuszhercegnő című operettjét mutatja be 2026. május 17-én, vasárnap 11:00-kor. 1065 Budapest, Nagymező utca 17. Jegyek: operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+      },
+      {
+        title: "La princesa del circo — matinal en la Operetta",
+        shortDescription: "Opereta de Kálmán — 17 mayo 2026, 11:00, Nagymező.",
+        longDescription:
+          "La princesa del circo en el Teatro de Opereta de Budapest el 17 de mayo de 2026 a las 11:00. Entradas en operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno",
+      },
+      {
+        title: "La principessa del circo — matinée all'Operetta",
+        shortDescription: "Operetta di Kálmán — 17 maggio 2026, ore 11:00.",
+        longDescription:
+          "La principessa del circo al Teatro dell'Operetta di Budapest il 17 maggio 2026 alle 11:00. Biglietti su operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno",
+      },
+      {
+        title: "נסיכת הקרקס — מופע צהריים באופרטה",
+        shortDescription: "אופרטה של קלמן — 17 במאי 2026, 11:00.",
+        longDescription:
+          "נסיכת הקרקס בתיאטרון האופרטה בבודפשט ב-17 במאי 2026 בשעה 11:00. כרטיסים ב-operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno",
+      },
+      {
+        title: "أميرة السيرك — عرض ظهيرة في الأوبريتا",
+        shortDescription: "أوبريتا لكالمان — 17 مايو 2026، 11:00.",
+        longDescription:
+          "أميرة السيرك في مسرح الأوبريتا بودابست في 17 مايو 2026 الساعة 11:00. التذاكر على operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno",
+      }
+    ),
+  },
+  {
+    id: "event-nebula-a38-2026",
+    title: "Nebula (US) — stoner rock at A38 Ship",
+    shortDescription:
+      "California stoner rock trio on the Danube — Tuesday 19 May 2026, 19:30, A38 (Ferencváros).",
+    longDescription:
+      "Nebula (US) play A38 Ship on Tuesday 19 May 2026 at 19:30 — stoner rock on the Petőfi rakpart concert boat, 1117 Budapest. Advance tickets 5,900 HUF until show day; on-site tier 6,900 HUF on a38.hu.\n\nSources: https://www.a38.hu/en/program/nebula-us",
+    startsAt: "2026-05-19T19:30:00+02:00",
+    endsAt: "2026-05-19T22:00:00+02:00",
+    venueIds: ["prov-a38-ferencvaros"],
+    borough: "Ferencváros",
+    neighborhood: "Petőfi Bridge",
+    entryFees: [
+      {
+        id: "advance",
+        label: "Advance — until 19 May 2026",
+        amount: 5900,
+        currency: "HUF",
+        source: "published",
+        notes: "6,900 HUF on concert day per a38.hu",
+      },
+    ],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekday", "Evening"],
+    badges: ["Popular"],
+    image: IMAGES["nebula-a38"],
+    website: "https://www.a38.hu/en/program/nebula-us",
+    bookingUrl: "https://www.a38.hu/en/program/nebula-us",
+    email: "",
+    phone: "",
+    locales: loc(
+      "nebula-a38-2026",
+      {
+        title: "Nebula (US) — stoner rock az A38-on",
+        shortDescription:
+          "Kaliforniai stoner rock — 2026. május 19., 19:30, A38 Hajó (Ferencváros).",
+        longDescription:
+          "A Nebula (US) 2026. május 19-én 19:30-kor lép fel az A38 Hajón. Elővétel 5 900 Ft a koncert napjáig; helyszíni jegy 6 900 Ft az a38.hu szerint.\n\nSources: https://www.a38.hu/en/program/nebula-us",
+      },
+      {
+        title: "Nebula (US) — stoner rock en el A38",
+        shortDescription: "Trío de stoner rock — 19 mayo 2026, 19:30, barco A38.",
+        longDescription:
+          "Nebula (US) en el A38 el 19 de mayo de 2026 a las 19:30. Preventa 5.900 HUF. Entradas en a38.hu.\n\nSources: https://www.a38.hu/en/program/nebula-us",
+      },
+      {
+        title: "Nebula (US) — stoner rock all'A38",
+        shortDescription: "Trio stoner rock — 19 maggio 2026, ore 19:30, nave A38.",
+        longDescription:
+          "Nebula (US) all'A38 il 19 maggio 2026 alle 19:30. Prevendita 5.900 HUF. Biglietti su a38.hu.\n\nSources: https://www.a38.hu/en/program/nebula-us",
+      },
+      {
+        title: "נבולה (ארה\"ב) — סטונר רוק ב-A38",
+        shortDescription: "שלישיית סטונר רוק — 19 במאי 2026, 19:30, ספינת A38.",
+        longDescription:
+          "נבולה ב-A38 ב-19 במאי 2026 בשעה 19:30. מוקדם 5,900 פורינט. כרטיסים ב-a38.hu.\n\nSources: https://www.a38.hu/en/program/nebula-us",
+      },
+      {
+        title: "نيبولا (الولايات المتحدة) — روك ستونر في A38",
+        shortDescription: "ثلاثي روك ستونر — 19 مايو 2026، 19:30، سفينة A38.",
+        longDescription:
+          "نيبولا في A38 في 19 مايو 2026 الساعة 19:30. حجز مسبق 5,900 فورنت. التذاكر على a38.hu.\n\nSources: https://www.a38.hu/en/program/nebula-us",
+      }
+    ),
+  },
+  {
+    id: "event-kft-45th-a38-2026",
+    title: "KFT — 45th anniversary concert at A38 Ship",
+    shortDescription:
+      "Hungarian new-wave icons celebrate 45 years — Friday 22 May 2026, 20:00, A38 (Petőfi rakpart).",
+    longDescription:
+      "KFT mark 45 years with a concert aboard A38 Ship on Friday 22 May 2026 at 20:00. Advance tickets 7,900 HUF until 22 May on a38.hu. 1117 Budapest, Petőfi rakpart.\n\nSources: https://www.a38.hu/en/program/kft-hu-31091",
+    startsAt: "2026-05-22T20:00:00+02:00",
+    endsAt: "2026-05-22T22:30:00+02:00",
+    venueIds: ["prov-a38-ferencvaros"],
+    borough: "Ferencváros",
+    neighborhood: "Petőfi Bridge",
+    entryFees: [
+      {
+        id: "advance",
+        label: "Advance — until 22 May 2026",
+        amount: 7900,
+        currency: "HUF",
+        source: "published",
+      },
+    ],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekday", "Evening", "Late night"],
+    badges: ["Featured"],
+    image: IMAGES["kft-a38"],
+    website: "https://www.a38.hu/en/program/kft-hu-31091",
+    bookingUrl: "https://www.a38.hu/en/program/kft-hu-31091",
+    email: "",
+    phone: "",
+    locales: loc(
+      "kft-45th-a38-2026",
+      {
+        title: "KFT — 45 éves jubileumi koncert az A38-on",
+        shortDescription:
+          "Magyar újhullám ikonok — 2026. május 22., 20:00, A38 Hajó.",
+        longDescription:
+          "A KFT 45 éves jubileumi koncertet ad az A38 Hajón 2026. május 22-én 20:00-kor. Elővétel 7 900 Ft a koncert napjáig az a38.hu-n.\n\nSources: https://www.a38.hu/en/program/kft-hu-31091",
+      },
+      {
+        title: "KFT — concierto del 45.º aniversario en el A38",
+        shortDescription: "Iconos del new wave húngaro — 22 mayo 2026, 20:00.",
+        longDescription:
+          "KFT celebran 45 años en el A38 el 22 de mayo de 2026 a las 20:00. Preventa 7.900 HUF en a38.hu.\n\nSources: https://www.a38.hu/en/program/kft-hu-31091",
+      },
+      {
+        title: "KFT — concerto del 45° anniversario all'A38",
+        shortDescription: "Icone new wave ungheresi — 22 maggio 2026, ore 20:00.",
+        longDescription:
+          "KFT per i 45 anni all'A38 il 22 maggio 2026 alle 20:00. Prevendita 7.900 HUF su a38.hu.\n\nSources: https://www.a38.hu/en/program/kft-hu-31091",
+      },
+      {
+        title: "KFT — קונצרט 45 שנים ב-A38",
+        shortDescription: "אייקוני ניו-ווייב הונגרי — 22 במאי 2026, 20:00.",
+        longDescription:
+          "KFT חוגגים 45 שנה ב-A38 ב-22 במאי 2026 בשעה 20:00. מוקדם 7,900 פורינט ב-a38.hu.\n\nSources: https://www.a38.hu/en/program/kft-hu-31091",
+      },
+      {
+        title: "KFT — حفل الذكرى الـ45 في A38",
+        shortDescription: "أيقونات النيو ويف المجري — 22 مايو 2026، 20:00.",
+        longDescription:
+          "يحيي KFT حفل الذكرى الـ45 في A38 في 22 مايو 2026 الساعة 20:00. حجز مسبق 7,900 فورنت على a38.hu.\n\nSources: https://www.a38.hu/en/program/kft-hu-31091",
+      }
+    ),
+  },
+  {
+    id: "event-man-with-a-mission-akvarium-2026",
+    title: "MAN WITH A MISSION — first Hungary show at Akvárium Klub",
+    shortDescription:
+      "Japanese rock band debuts in Budapest — Wednesday 17 June 2026, Small Hall, doors 19:30 (Belváros).",
+    longDescription:
+      "MAN WITH A MISSION play their first Hungarian concert at Akvárium Klub’s Small Hall on Wednesday 17 June 2026. Doors 19:30 at 1051 Budapest, Erzsébet tér 12. Tickets via Live Nation Hungary and akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/man-with-a-mission/ https://www.livenation.hu/tickets/man-with-a-mission-budapest-events-edp1654486",
+    startsAt: "2026-06-17T20:00:00+02:00",
+    endsAt: "2026-06-17T22:30:00+02:00",
+    doorsOpenAt: "2026-06-17T19:30:00+02:00",
+    venueIds: ["prov-akvarium-belvaros"],
+    borough: "Belváros",
+    neighborhood: "Deák tér",
+    entryFees: [],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekday", "Evening"],
+    badges: ["Featured"],
+    image: IMAGES["man-with-a-mission"],
+    website: "https://akvariumklub.hu/en/events/man-with-a-mission/",
+    bookingUrl:
+      "https://www.livenation.hu/tickets/man-with-a-mission-budapest-events-edp1654486",
+    email: "info@akvariumklub.hu",
+    phone: "+36 30 860 3368",
+    locales: loc(
+      "man-with-a-mission-akvarium-2026",
+      {
+        title: "MAN WITH A MISSION — első magyarországi koncert az Akváriumban",
+        shortDescription:
+          "Japán rockzenekar debütál Budapesten — 2026. június 17., Kis Terem, kapunyitás 19:30.",
+        longDescription:
+          "A MAN WITH A MISSION először lép fel Magyarországon az Akvárium Klub Kis Termében 2026. június 17-én, kapunyitás 19:30. Jegyek: livenation.hu, akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/man-with-a-mission/",
+      },
+      {
+        title: "MAN WITH A MISSION — debut en Hungría en Akvárium",
+        shortDescription: "Banda japonesa — 17 junio 2026, sala pequeña, puertas 19:30.",
+        longDescription:
+          "MAN WITH A MISSION en su primer concierto en Hungría en Akvárium el 17 de junio de 2026. Entradas en livenation.hu.\n\nSources: https://akvariumklub.hu/en/events/man-with-a-mission/",
+      },
+      {
+        title: "MAN WITH A MISSION — debut in Ungheria all'Akvárium",
+        shortDescription: "Band giapponese — 17 giugno 2026, Small Hall, porte 19:30.",
+        longDescription:
+          "MAN WITH A MISSION al primo concerto in Ungheria all'Akvárium il 17 giugno 2026. Biglietti su livenation.hu.\n\nSources: https://akvariumklub.hu/en/events/man-with-a-mission/",
+      },
+      {
+        title: "MAN WITH A MISSION — הופעת בכורה בהונגריה באקווריום",
+        shortDescription: "להקת רוק יפנית — 17 ביוני 2026, אולם קטן, שערים 19:30.",
+        longDescription:
+          "MAN WITH A MISSION בהופעה הראשונה בהונגריה באקווריום ב-17 ביוני 2026. כרטיסים ב-livenation.hu.\n\nSources: https://akvariumklub.hu/en/events/man-with-a-mission/",
+      },
+      {
+        title: "MAN WITH A MISSION — أول حفل في المجر في أكفاريوم",
+        shortDescription: "فرقة روك يابانية — 17 يونيو 2026، قاعة صغيرة، الأبواب 19:30.",
+        longDescription:
+          "MAN WITH A MISSION في أول حفل لهم في المجر في أكفاريوم في 17 يونيو 2026. التذاكر على livenation.hu.\n\nSources: https://akvariumklub.hu/en/events/man-with-a-mission/",
+      }
+    ),
+  },
+  {
+    id: "event-black-label-society-barba-negra-2026",
+    title: "Black Label Society + Venom Inc. — Barba Negra Red Stage",
+    shortDescription:
+      "Zakk Wylde’s metal crew with Venom Inc. — Wednesday 10 June 2026, doors 18:30, Újbuda (21,900 HUF advance).",
+    longDescription:
+      "Black Label Society bring their UK/EU Tour 2026 to Barba Negra Red Stage on Wednesday 10 June 2026 with special guest Venom Inc. Doors 18:30 at 1211 Budapest, Szállító utca 3. Advance 21,900 HUF until 31 May; 25,900 HUF from 1 June and on the day.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610",
+    startsAt: "2026-06-10T19:00:00+02:00",
+    endsAt: "2026-06-10T23:30:00+02:00",
+    doorsOpenAt: "2026-06-10T18:30:00+02:00",
+    venueIds: ["prov-barba-negra-ujbuda"],
+    borough: "Újbuda",
+    neighborhood: "Infopark",
+    entryFees: [
+      {
+        id: "advance-until-may-31",
+        label: "Advance — until 31 May 2026",
+        amount: 21900,
+        currency: "HUF",
+        source: "published",
+        notes: "25,900 HUF from 1 June and on concert day",
+      },
+    ],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekday", "Evening", "Late night"],
+    badges: ["Featured"],
+    image: IMAGES["black-label-society"],
+    website: "https://www.barbanegra.hu/black-label-society_20260610",
+    bookingUrl: "https://www.barbanegra.hu/black-label-society_20260610",
+    email: "info@barbanegra.hu",
+    phone: "+36 20 563 2254",
+    locales: loc(
+      "black-label-society-barba-negra-2026",
+      {
+        title: "Black Label Society + Venom Inc. — Barba Negra Red Stage",
+        shortDescription:
+          "Zakk Wylde metal est — 2026. június 10., kapunyitás 18:30, elővétel 21 900 Ft.",
+        longDescription:
+          "Black Label Society és vendég Venom Inc. a Barba Negra Red Stage-en 2026. június 10-én, kapunyitás 18:30. Elővétel 21 900 Ft május 31-ig. Jegyek: barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610",
+      },
+      {
+        title: "Black Label Society + Venom Inc. — Barba Negra",
+        shortDescription: "Metal con Zakk Wylde — 10 junio 2026, puertas 18:30.",
+        longDescription:
+          "Black Label Society y Venom Inc. en Barba Negra el 10 de junio de 2026. Preventa 21.900 HUF. Entradas en barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610",
+      },
+      {
+        title: "Black Label Society + Venom Inc. — Barba Negra",
+        shortDescription: "Metal con Zakk Wylde — 10 giugno 2026, porte 18:30.",
+        longDescription:
+          "Black Label Society e Venom Inc. al Barba Negra il 10 giugno 2026. Prevendita 21.900 HUF su barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610",
+      },
+      {
+        title: "Black Label Society + Venom Inc. — ברבה נגרה",
+        shortDescription: "מטאל עם Zakk Wylde — 10 ביוני 2026, שערים 18:30.",
+        longDescription:
+          "Black Label Society ו-Venom Inc. בברבה נגרה ב-10 ביוני 2026. מוקדם 21,900 פורינט. כרטיסים ב-barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610",
+      },
+      {
+        title: "Black Label Society + Venom Inc. — باربا نيغرا",
+        shortDescription: "ميتال مع Zakk Wylde — 10 يونيو 2026، الأبواب 18:30.",
+        longDescription:
+          "Black Label Society وVenom Inc. في باربا نيغرا في 10 يونيو 2026. حجز مسبق 21,900 فورنت. التذاكر على barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610",
+      }
+    ),
+  },
+  {
+    id: "event-wagner-walkure-mupa-2026",
+    title: "Wagner: Die Walküre — Budapest Wagner Days at Müpa",
+    shortDescription:
+      "Semi-staged Walküre at Béla Bartók National Concert Hall — Friday 26 June 2026, 16:00–22:00 (from 17,900 HUF).",
+    longDescription:
+      "Müpa Budapest presents Wagner’s Die Walküre in a semi-staged concert performance on Friday 26 June 2026, 16:00–22:00 with intervals. German with Hungarian surtitles. Béla Bartók National Concert Hall, 1095 Budapest, Komor Marcell utca 1.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+    startsAt: "2026-06-26T16:00:00+02:00",
+    endsAt: "2026-06-26T22:00:00+02:00",
+    doorsOpenAt: "2026-06-26T15:00:00+02:00",
+    venueIds: ["prov-cov-bartok-moricz"],
+    borough: "Ferencváros",
+    neighborhood: "Műegyetem",
+    entryFees: [
+      {
+        id: "from-dynamic",
+        label: "Seated — from (dynamic pricing)",
+        amount: 17900,
+        currency: "HUF",
+        source: "published",
+        notes: "Dynamic pricing up to 39,900 HUF on mupa.hu",
+      },
+    ],
+    activityTypes: ["Live Music", "Theatre"],
+    ageRanges: ["All ages"],
+    dayTimeTags: ["Weekday", "Afternoon", "Evening"],
+    badges: ["Featured", "Staff Pick"],
+    image: IMAGES["wagner-walkure"],
+    website:
+      "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+    bookingUrl:
+      "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall/shopping",
+    email: "info@mupa.hu",
+    phone: "+36 1 555 3300",
+    locales: loc(
+      "wagner-walkure-mupa-2026",
+      {
+        title: "Wagner: A walkür — Budapesti Wagner-napok a Müpában",
+        shortDescription:
+          "Félig színpadi Walküre — 2026. június 26., 16:00–22:00, Bartók Béla Nemzeti Hangversenyterem.",
+        longDescription:
+          "A Müpa Budapest Wagner A walkürjét mutatja be 2026. június 26-án, 16:00–22:00 között, szünetekkel. Német nyelven, magyar felirattal. 1095 Budapest, Komor Marcell utca 1.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+      },
+      {
+        title: "Wagner: La valquiria — Días Wagner en Müpa",
+        shortDescription: "Walküre semi-escenificada — 26 junio 2026, 16:00–22:00.",
+        longDescription:
+          "La valquiria de Wagner en Müpa Budapest el 26 de junio de 2026. Entradas desde 17.900 HUF en mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+      },
+      {
+        title: "Wagner: La valchiria — Wagner Days alla Müpa",
+        shortDescription: "Walküre semi-scenica — 26 giugno 2026, 16:00–22:00.",
+        longDescription:
+          "La valchiria di Wagner alla Müpa il 26 giugno 2026. Biglietti da 17.900 HUF su mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+      },
+      {
+        title: "ואגנר: וולקירה — ימי ואגנר ב-Müpa",
+        shortDescription: "וולקירה — 26 ביוני 2026, 16:00–22:00, אולם בארטוק.",
+        longDescription:
+          "וולקירה של ואגנר ב-Müpa ב-26 ביוני 2026. כרטיסים מ-17,900 פורינט ב-mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+      },
+      {
+        title: "فاغنر: فالكيري — أيام فاغنر في Müpa",
+        shortDescription: "فالكيري — 26 يونيو 2026، 16:00–22:00، قاعة بارتوك.",
+        longDescription:
+          "فالكيري لفاغنر في Müpa بودابست في 26 يونيو 2026. التذاكر من 17,900 فورنت على mupa.hu.\n\nSources: https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+      }
+    ),
+  },
+  {
+    id: "event-asaf-avidan-akvarium-2026",
+    title: "Asaf Avidan — solo at Akvárium Klub Main Hall",
+    shortDescription:
+      "Israeli singer-songwriter in the Main Hall — Tuesday 7 July 2026, doors 19:00 (Belváros).",
+    longDescription:
+      "Asaf Avidan returns to Akvárium Klub’s Main Hall on Tuesday 7 July 2026. Doors 19:00 at 1051 Budapest, Erzsébet tér 12. Tickets on akvariumklub.hu and partner sellers.\n\nSources: https://akvariumklub.hu/en/events/asaf-avidan/",
+    startsAt: "2026-07-07T20:00:00+02:00",
+    endsAt: "2026-07-07T22:30:00+02:00",
+    doorsOpenAt: "2026-07-07T19:00:00+02:00",
+    venueIds: ["prov-akvarium-belvaros"],
+    borough: "Belváros",
+    neighborhood: "Deák tér",
+    entryFees: [],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekday", "Evening"],
+    badges: ["Featured"],
+    image: IMAGES["asaf-avidan"],
+    website: "https://akvariumklub.hu/en/events/asaf-avidan/",
+    bookingUrl: "https://akvariumklub.hu/en/events/asaf-avidan/",
+    email: "info@akvariumklub.hu",
+    phone: "+36 30 860 3368",
+    locales: loc(
+      "asaf-avidan-akvarium-2026",
+      {
+        title: "Asaf Avidan — szólóest az Akvárium Nagytermében",
+        shortDescription: "Izraeli énekes-dalszerző — 2026. július 7., kapunyitás 19:00.",
+        longDescription:
+          "Asaf Avidan az Akvárium Klub Nagytermében lép fel 2026. július 7-én, kapunyitás 19:00. Jegyek: akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/asaf-avidan/",
+      },
+      {
+        title: "Asaf Avidan — solo en Akvárium Main Hall",
+        shortDescription: "Cantautor israelí — 7 julio 2026, puertas 19:00.",
+        longDescription:
+          "Asaf Avidan en la sala principal del Akvárium el 7 de julio de 2026. Entradas en akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/asaf-avidan/",
+      },
+      {
+        title: "Asaf Avidan — solo all'Akvárium Main Hall",
+        shortDescription: "Cantautore israeliano — 7 luglio 2026, porte 19:00.",
+        longDescription:
+          "Asaf Avidan alla Main Hall dell'Akvárium il 7 luglio 2026. Biglietti su akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/asaf-avidan/",
+      },
+      {
+        title: "אסף אבידן — סולו באקווריום",
+        shortDescription: "זמר-יוצר ישראלי — 7 ביולי 2026, שערים 19:00.",
+        longDescription:
+          "אסף אבידן באולם הראשי של אקווריום ב-7 ביולי 2026. כרטיסים ב-akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/asaf-avidan/",
+      },
+      {
+        title: "آساف أفيدان — منفرد في أكفاريوم",
+        shortDescription: "مغني مؤلف إسرائيلي — 7 يوليو 2026، الأبواب 19:00.",
+        longDescription:
+          "آساف أفيدان في القاعة الرئيسية لأكفاريوم في 7 يوليو 2026. التذاكر على akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/asaf-avidan/",
+      }
+    ),
+  },
+  {
+    id: "event-protest-the-hero-durer-kert-2026",
+    title: "Protest The Hero — European tour at Dürer Kert",
+    shortDescription:
+      "Canadian progressive metal — Sunday 9 August 2026 at Dürer Kert, Erzsébetváros (tixa.hu).",
+    longDescription:
+      "Protest The Hero bring their European tour to Dürer Kert on Sunday 9 August 2026. 1075 Budapest, Wesselényi utca 52. Tickets via tixa.hu and durerkert.com.\n\nSources: https://www.durerkert.com/en/event/protest_the_hero_2026 https://www.tixa.hu/pth-durer-2026",
+    startsAt: "2026-08-09T20:00:00+02:00",
+    endsAt: "2026-08-09T22:30:00+02:00",
+    doorsOpenAt: "2026-08-09T19:00:00+02:00",
+    venueIds: ["prov-cov-durer-wessel"],
+    borough: "Erzsébetváros",
+    neighborhood: "Wesselényi utca",
+    entryFees: [],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekend", "Evening"],
+    badges: ["Popular"],
+    image: IMAGES["protest-the-hero"],
+    website: "https://www.durerkert.com/en/event/protest_the_hero_2026",
+    bookingUrl: "https://www.tixa.hu/pth-durer-2026",
+    email: "info@durerkert.com",
+    phone: "+36 1 787 0760",
+    locales: loc(
+      "protest-the-hero-durer-kert-2026",
+      {
+        title: "Protest The Hero — európai turné a Dürer Kertben",
+        shortDescription:
+          "Kanadai progresszív metal — 2026. augusztus 9., Dürer Kert (Erzsébetváros).",
+        longDescription:
+          "A Protest The Hero a Dürer Kertben lép fel 2026. augusztus 9-én. Jegyek: tixa.hu, durerkert.com.\n\nSources: https://www.durerkert.com/en/event/protest_the_hero_2026",
+      },
+      {
+        title: "Protest The Hero — gira europea en Dürer Kert",
+        shortDescription: "Metal progresivo canadiense — 9 agosto 2026.",
+        longDescription:
+          "Protest The Hero en Dürer Kert el 9 de agosto de 2026. Entradas en tixa.hu.\n\nSources: https://www.durerkert.com/en/event/protest_the_hero_2026",
+      },
+      {
+        title: "Protest The Hero — tour europeo al Dürer Kert",
+        shortDescription: "Metal progressivo canadese — 9 agosto 2026.",
+        longDescription:
+          "Protest The Hero al Dürer Kert il 9 agosto 2026. Biglietti su tixa.hu.\n\nSources: https://www.durerkert.com/en/event/protest_the_hero_2026",
+      },
+      {
+        title: "פרוטסט דה הירו — סיבוב אירופה בדירר קרט",
+        shortDescription: "מטאל פרוגרסיבי קנדי — 9 באוגוסט 2026.",
+        longDescription:
+          "פרוטסט דה הירו בדירר קרט ב-9 באוגוסט 2026. כרטיסים ב-tixa.hu.\n\nSources: https://www.durerkert.com/en/event/protest_the_hero_2026",
+      },
+      {
+        title: "بروتست ذا هيرو — جولة أوروبية في ديورر كيرت",
+        shortDescription: "ميتال بروغريسيف كندي — 9 أغسطس 2026.",
+        longDescription:
+          "بروتست ذا هيرو في ديورر كيرت في 9 أغسطس 2026. التذاكر على tixa.hu.\n\nSources: https://www.durerkert.com/en/event/protest_the_hero_2026",
+      }
+    ),
+  },
+  {
+    id: "event-jamie-woon-akvarium-2026",
+    title: "Jamie Woon — live at Akvárium Klub Main Hall",
+    shortDescription:
+      "British soul-electronic artist — Sunday 13 September 2026, doors 19:00, Main Hall (Belváros).",
+    longDescription:
+      "Jamie Woon plays Akvárium Klub’s Main Hall on Sunday 13 September 2026. Doors 19:00 at 1051 Budapest, Erzsébet tér 12. Tickets on akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/jamie-woon/",
+    startsAt: "2026-09-13T20:00:00+02:00",
+    endsAt: "2026-09-13T22:30:00+02:00",
+    doorsOpenAt: "2026-09-13T19:00:00+02:00",
+    venueIds: ["prov-akvarium-belvaros"],
+    borough: "Belváros",
+    neighborhood: "Deák tér",
+    entryFees: [],
+    activityTypes: ["Live Music", "Electronic"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekend", "Evening"],
+    badges: ["Featured"],
+    image: IMAGES["jamie-woon"],
+    website: "https://akvariumklub.hu/en/events/jamie-woon/",
+    bookingUrl: "https://akvariumklub.hu/en/events/jamie-woon/",
+    email: "info@akvariumklub.hu",
+    phone: "+36 30 860 3368",
+    locales: loc(
+      "jamie-woon-akvarium-2026",
+      {
+        title: "Jamie Woon — koncert az Akvárium Nagytermében",
+        shortDescription:
+          "Brit soul-elektronikus előadó — 2026. szeptember 13., kapunyitás 19:00.",
+        longDescription:
+          "Jamie Woon az Akvárium Klub Nagytermében lép fel 2026. szeptember 13-án, kapunyitás 19:00. Jegyek: akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/jamie-woon/",
+      },
+      {
+        title: "Jamie Woon — en vivo en Akvárium Main Hall",
+        shortDescription: "Artista soul-electrónico británico — 13 septiembre 2026.",
+        longDescription:
+          "Jamie Woon en la sala principal del Akvárium el 13 de septiembre de 2026. Entradas en akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/jamie-woon/",
+      },
+      {
+        title: "Jamie Woon — live all'Akvárium Main Hall",
+        shortDescription: "Artista soul-elettronico britannico — 13 settembre 2026.",
+        longDescription:
+          "Jamie Woon alla Main Hall dell'Akvárium il 13 settembre 2026. Biglietti su akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/jamie-woon/",
+      },
+      {
+        title: "ג'יימי וון — הופעה באקווריום",
+        shortDescription: "אמן סול-אלקטרוני בריטי — 13 בספטמבר 2026.",
+        longDescription:
+          "ג'יימי וון באולם הראשי של אקווריום ב-13 בספטמבר 2026. כרטיסים ב-akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/jamie-woon/",
+      },
+      {
+        title: "جيمي وون — حي في أكفاريوم",
+        shortDescription: "فنان سول-إلكتروني بريطاني — 13 سبتمبر 2026.",
+        longDescription:
+          "جيمي وون في القاعة الرئيسية لأكفاريوم في 13 سبتمبر 2026. التذاكر على akvariumklub.hu.\n\nSources: https://akvariumklub.hu/en/events/jamie-woon/",
+      }
+    ),
+  },
+  {
+    id: "event-fear-factory-barba-negra-2026",
+    title: "Fear Factory — Cybernetic Domination Tour at Barba Negra",
+    shortDescription:
+      "Industrial metal with Crystal Lake, Hate & TNA — Wednesday 23 September 2026, doors 17:30 (12,900 HUF advance).",
+    longDescription:
+      "Fear Factory headline Barba Negra Red Stage on Wednesday 23 September 2026 with Crystal Lake, Hate, and The Nocturnal Affair. Doors 17:30 at 1211 Budapest, Szállító utca 3. Advance 12,900 HUF until 31 August; 14,900 HUF from 1 September and on the day.\n\nSources: https://www.barbanegra.hu/fear-factory_20260923",
+    startsAt: "2026-09-23T18:00:00+02:00",
+    endsAt: "2026-09-23T23:30:00+02:00",
+    doorsOpenAt: "2026-09-23T17:30:00+02:00",
+    venueIds: ["prov-barba-negra-ujbuda"],
+    borough: "Újbuda",
+    neighborhood: "Infopark",
+    entryFees: [
+      {
+        id: "advance-until-aug-31",
+        label: "Advance — until 31 August 2026",
+        amount: 12900,
+        currency: "HUF",
+        source: "published",
+        notes: "14,900 HUF from 1 September and on concert day",
+      },
+    ],
+    activityTypes: ["Live Music"],
+    ageRanges: ["18+"],
+    dayTimeTags: ["Weekday", "Evening", "Late night"],
+    badges: ["Popular"],
+    image: IMAGES["fear-factory"],
+    website: "https://www.barbanegra.hu/fear-factory_20260923",
+    bookingUrl: "https://www.barbanegra.hu/fear-factory_20260923",
+    email: "info@barbanegra.hu",
+    phone: "+36 20 563 2254",
+    locales: loc(
+      "fear-factory-barba-negra-2026",
+      {
+        title: "Fear Factory — Cybernetic Domination Tour a Barba Negrán",
+        shortDescription:
+          "Industrial metal Crystal Lake-kal — 2026. szeptember 23., kapunyitás 17:30, elővétel 12 900 Ft.",
+        longDescription:
+          "A Fear Factory a Barba Negra Red Stage-en 2026. szeptember 23-án, vendégek: Crystal Lake, Hate, The Nocturnal Affair. Kapunyitás 17:30. Elővétel 12 900 Ft augusztus 31-ig. Jegyek: barbanegra.hu.\n\nSources: https://www.barbanegra.hu/fear-factory_20260923",
+      },
+      {
+        title: "Fear Factory — Cybernetic Domination Tour en Barba Negra",
+        shortDescription: "Metal industrial — 23 septiembre 2026, puertas 17:30.",
+        longDescription:
+          "Fear Factory en Barba Negra el 23 de septiembre de 2026. Preventa 12.900 HUF. Entradas en barbanegra.hu.\n\nSources: https://www.barbanegra.hu/fear-factory_20260923",
+      },
+      {
+        title: "Fear Factory — Cybernetic Domination Tour al Barba Negra",
+        shortDescription: "Metal industrial — 23 settembre 2026, porte 17:30.",
+        longDescription:
+          "Fear Factory al Barba Negra il 23 settembre 2026. Prevendita 12.900 HUF su barbanegra.hu.\n\nSources: https://www.barbanegra.hu/fear-factory_20260923",
+      },
+      {
+        title: "פיר פקטורי — סיבוב Cybernetic Domination בברבה נגרה",
+        shortDescription: "מטאל תעשייתי — 23 בספטמבר 2026, שערים 17:30.",
+        longDescription:
+          "פיר פקטורי בברבה נגרה ב-23 בספטמבר 2026. מוקדם 12,900 פורינט. כרטיסים ב-barbanegra.hu.\n\nSources: https://www.barbanegra.hu/fear-factory_20260923",
+      },
+      {
+        title: "فير فاكتوري — جولة Cybernetic Domination في باربا نيغرا",
+        shortDescription: "ميتال صناعي — 23 سبتمبر 2026، الأبواب 17:30.",
+        longDescription:
+          "فير فاكتوري في باربا نيغرا في 23 سبتمبر 2026. حجز مسبق 12,900 فورنت. التذاكر على barbanegra.hu.\n\nSources: https://www.barbanegra.hu/fear-factory_20260923",
+      }
+    ),
+  },
+];
+
+const payload = {
+  sourceUrls: [
+    "https://new.operett.hu/repertoar/a-cirkuszhercegno",
+    "https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+    "https://www.a38.hu/en/program/nebula-us",
+    "https://www.a38.hu/en/program/kft-hu-31091",
+    "https://akvariumklub.hu/en/events/man-with-a-mission/",
+    "https://www.livenation.hu/tickets/man-with-a-mission-budapest-events-edp1654486",
+    "https://www.barbanegra.hu/black-label-society_20260610",
+    "https://mupa.hu/en/program/classical-music-opera-theatre/wagner-die-walkure-2026-06-26_16-00-bela-bartok-national-concert-hall",
+    "https://akvariumklub.hu/en/events/asaf-avidan/",
+    "https://www.durerkert.com/en/event/protest_the_hero_2026",
+    "https://www.tixa.hu/pth-durer-2026",
+    "https://akvariumklub.hu/en/events/jamie-woon/",
+    "https://www.barbanegra.hu/fear-factory_20260923",
+  ],
+  notes:
+    "Ten timed events at non–Budapest Park / non–MVM Dome hosts: Operetta (Terézváros), A38 ×2 (Ferencváros), Akvárium ×3 (Belváros), Barba Negra ×2 (Újbuda), Müpa Bartók (Ferencváros), Dürer (Erzsébetváros). Catalog before ingest: 19 events; targets May–Sep scarcity outside Park/Dome.",
+  missingOrUncertain: [
+    "Akvárium MWAM / Asaf / Jamie: ticket tiers not in page HTML — entryFees empty; stage time 20:00 assumed after published doors.",
+    "Protest The Hero: doors 19:00 and show 20:00 assumed; tiers on tixa.hu checkout only.",
+    "Wagner Walküre end time 22:00 from Müpa program block; dynamic pricing 17,900–39,900 HUF — single floor tier only.",
+    "Black Label Society / Fear Factory: first band start estimated from doors (19:00 / 18:00).",
+    "Circus Princess matinee end ~13:30 estimated; operetta dynamic seat pricing not listed per performance.",
+  ],
+  operations: events.map((e) => {
+    const { locales, ...rest } = e;
+    return ev({
+      ...rest,
+      timezone: "Europe/Budapest",
+      status: "scheduled",
+      locales,
+    });
+  }),
+};
+
+const out = path.join(
+  __dirname,
+  "ingest-payloads/cursor-curated-events-other-venues-10-2026.json"
+);
+fs.writeFileSync(out, JSON.stringify(payload, null, 2) + "\n");
+console.log("Wrote", out, "—", payload.operations.length, "events");

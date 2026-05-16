@@ -435,7 +435,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-island-cafe-obuda",
+        "id": "prov-cov-island-cafe-ferencvaros",
         "name": "Budapest Park Café",
         "category": "Cafés",
         "borough": "Ferencváros",
@@ -641,7 +641,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-park-party-obuda",
+        "id": "prov-cov-park-party-ferencvaros",
         "name": "Budapest Park Club Nights",
         "category": "Parties",
         "borough": "Ferencváros",
@@ -708,7 +708,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-rudas-ujbuda-party",
+        "id": "prov-cov-rudas-buda-party",
         "name": "Rudas Party Nights",
         "category": "Parties",
         "borough": "Buda",
@@ -914,7 +914,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-mvm-dome-ujbuda",
+        "id": "prov-mvm-dome-terezvaros",
         "name": "MVM Dome",
         "category": "Venues",
         "borough": "Terézváros",
@@ -990,7 +990,7 @@
         "endsAt": "2026-06-18T22:30:00+02:00",
         "timezone": "Europe/Budapest",
         "venueIds": [
-          "prov-mvm-dome-ujbuda"
+          "prov-mvm-dome-terezvaros"
         ],
         "borough": "Terézváros",
         "neighborhood": "Stefánia út",

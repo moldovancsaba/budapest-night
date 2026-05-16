@@ -8,7 +8,7 @@ import {
 } from "./venueSlug";
 
 const budapestPark: Provider = {
-  id: "prov-budapest-park-obuda",
+  id: "prov-budapest-park-ferencvaros",
   name: "Budapest Park",
   category: "Venues",
   borough: "Ferencváros",
@@ -44,7 +44,7 @@ describe("venueSlug", () => {
 
   it("legacy keys include provider id and canonical slug", () => {
     const keys = legacyVenuePathKeys(budapestPark);
-    expect(keys).toContain("prov-budapest-park-obuda");
+    expect(keys).toContain("prov-budapest-park-ferencvaros");
     expect(keys).toContain("budapest-park");
   });
 });

@@ -1855,7 +1855,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-mvm-dome-ujbuda",
+      "id": "prov-mvm-dome-terezvaros",
       "patch": {
         "locales": {
           "hu": {

@@ -10,12 +10,12 @@ const OUT = path.join(__dirname, "ingest-payloads/venue-price-location-fix.json"
 
 /** id -> pricePerClass EUR (lower-bound planning figure from official ticket pages) */
 const PRICE_FIX = {
-  "prov-budapest-park-obuda": 25,
+  "prov-budapest-park-ferencvaros": 25,
   "prov-operetta-terezvaros": 20,
   "prov-cov-operetta-andrassy": 20,
   "prov-opera-terezvaros": 25,
   "prov-mupa-ferencvaros": 15,
-  "prov-mvm-dome-ujbuda": 35,
+  "prov-mvm-dome-terezvaros": 35,
   "prov-mng-castle-buda": 12,
   "prov-akvarium-belvaros": 15,
   "prov-trafo-ferencvaros": 12,

@@ -289,7 +289,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-budapest-park-obuda",
+      "id": "prov-budapest-park-ferencvaros",
       "patch": {
         "locales": {
           "hu": {
@@ -2515,7 +2515,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-cov-island-cafe-obuda",
+      "id": "prov-cov-island-cafe-ferencvaros",
       "patch": {
         "locales": {
           "hu": {
@@ -3775,7 +3775,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-cov-park-party-obuda",
+      "id": "prov-cov-park-party-ferencvaros",
       "patch": {
         "locales": {
           "hu": {
@@ -4027,7 +4027,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-cov-rudas-ujbuda-party",
+      "id": "prov-cov-rudas-buda-party",
       "patch": {
         "locales": {
           "hu": {
@@ -6085,7 +6085,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-mvm-dome-ujbuda",
+      "id": "prov-mvm-dome-terezvaros",
       "patch": {
         "locales": {
           "hu": {

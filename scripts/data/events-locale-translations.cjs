@@ -128,7 +128,7 @@ const LOCALES_BY_ID = {
     },
   },
 
-  "prov-budapest-park-obuda": {
+  "prov-budapest-park-ferencvaros": {
     hu: {
       name: "Budapest Park",
       shortDescription:

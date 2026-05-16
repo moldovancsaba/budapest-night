@@ -415,6 +415,51 @@ function validateEvent(doc, idx, { skipLocaleCheck = false, providersById } = {}
   return errors;
 }
 
+function validateEventPatch(op, idx, { skipLocaleCheck = false, providersById, providerIdsInPayload, knownProviderIds } = {}) {
+  const errors = [];
+  const p = `operations[${idx}] event.patch`;
+  if (typeof op.id !== "string" || !op.id.trim()) {
+    errors.push(`${p}: id required (event-...)`);
+  } else if (!/^event-[a-z0-9-]+$/.test(op.id)) {
+    errors.push(`${p}: id must match event-...`);
+  }
+  const patch = op.patch;
+  if (!patch || typeof patch !== "object") {
+    errors.push(`${p}: patch object required`);
+    return errors;
+  }
+  if (Object.keys(patch).length === 0) errors.push(`${p}: patch must not be empty`);
+  if (patch.id !== undefined) errors.push(`${p}: do not include id inside patch (use operation id)`);
+  if (patch.venueLinks !== undefined) errors.push(`${p}: do not send venueLinks (computed on ingest)`);
+  if (patch.venueIds !== undefined) {
+    if (!Array.isArray(patch.venueIds) || patch.venueIds.length === 0) {
+      errors.push(`${p}: venueIds must be a non-empty array`);
+    } else {
+      patch.venueIds.forEach((vid, vi) => {
+        if (typeof vid !== "string" || !/^prov-[a-z0-9-]+$/.test(vid)) {
+          errors.push(`${p}.venueIds[${vi}]: must match prov-... (primary host first)`);
+        }
+      });
+      errors.push(...validateCanonicalEvent({ venueIds: patch.venueIds, borough: patch.borough }, p, providersById));
+      for (const vid of patch.venueIds) {
+        if (
+          typeof vid === "string" &&
+          providerIdsInPayload &&
+          knownProviderIds &&
+          !providerIdsInPayload.has(vid) &&
+          !knownProviderIds.has(vid)
+        ) {
+          errors.push(`${p}: venueId ${vid} not in catalog — upsert provider before this patch in operations[]`);
+        }
+      }
+    }
+  }
+  if (patch.locales !== undefined && !skipLocaleCheck) {
+    errors.push(...validateEventLocalesForIngest(patch.locales, p));
+  }
+  return errors;
+}
+
 function validateProviderPatch(op, idx, { skipLocaleCheck = false } = {}) {
   const errors = [];
   const p = `operations[${idx}] provider.patch`;
@@ -457,6 +502,29 @@ function validateProviderPatch(op, idx, { skipLocaleCheck = false } = {}) {
   return errors;
 }
 
+function validateMeetupPatch(op, idx) {
+  const errors = [];
+  const p = `operations[${idx}] meetupGroup patch`;
+  if (typeof op.id !== "string" || !op.id) errors.push(`${p}: id string required`);
+  const patch = op.patch;
+  if (!patch || typeof patch !== "object") {
+    errors.push(`${p}: patch object required`);
+    return errors;
+  }
+  if (Object.keys(patch).length === 0) errors.push(`${p}: patch must not be empty`);
+  if (patch.id !== undefined) errors.push(`${p}: do not include id inside patch`);
+  if (patch.venueLinks !== undefined || patch.eventLinks !== undefined) {
+    errors.push(`${p}: do not send venueLinks/eventLinks (computed on ingest)`);
+  }
+  if (patch.coverImageUrl !== undefined) {
+    if (typeof patch.coverImageUrl !== "string") errors.push(`${p}: coverImageUrl must be string`);
+    else if (patch.coverImageUrl.trim() && !isImgBbHttpsImageUrl(patch.coverImageUrl)) {
+      errors.push(`${p}: coverImageUrl must be empty or https ImgBB URL`);
+    }
+  }
+  return errors;
+}
+
 function validateOperations(operations, opts = {}) {
   const all = [];
   const providerIdsInPayload = new Set();
@@ -475,6 +543,10 @@ function validateOperations(operations, opts = {}) {
       if (typeof op.id === "string" && op.id) providerIdsInPayload.add(op.id);
     } else if (op.resource === "meetupGroup" && op.action === "upsert") {
       all.push(...validateMeetup(op.document, i));
+    } else if (op.resource === "meetupGroup" && op.action === "patch") {
+      all.push(...validateMeetupPatch(op, i));
+    } else if (op.resource === "event" && op.action === "patch") {
+      all.push(...validateEventPatch(op, i, { ...opts, providerIdsInPayload }));
     } else if (op.resource === "event" && op.action === "upsert") {
       all.push(...validateEvent(op.document, i, opts));
       if (op.document?.id) eventIdsInPayload.add(op.document.id);
@@ -491,7 +563,9 @@ function validateOperations(operations, opts = {}) {
     } else if (op.action === "upsert") {
       all.push(`operations[${i}]: unsupported upsert resource ${String(op.resource)}`);
     } else if (op.action === "patch") {
-      all.push(`operations[${i}]: unsupported patch resource ${String(op.resource)} (supported: provider)`);
+      all.push(
+        `operations[${i}]: unsupported patch resource ${String(op.resource)} (supported: provider, event, meetupGroup)`,
+      );
     }
   }
   for (let i = 0; i < operations.length; i++) {

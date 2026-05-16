@@ -3,14 +3,14 @@
     "https://mvm-dome.hu/en",
     "https://mvm-dome.hu/en/contact"
   ],
-  "notes": "Image/data fix for prov-mvm-dome-ujbuda (Terézváros — not Újbuda)",
+  "notes": "Image/data fix for prov-mvm-dome-terezvaros (Terézváros — not Újbuda)",
   "missingOrUncertain": [],
   "operations": [
     {
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-mvm-dome-ujbuda",
+        "id": "prov-mvm-dome-terezvaros",
         "name": "MVM Dome",
         "category": "Venues",
         "borough": "Terézváros",

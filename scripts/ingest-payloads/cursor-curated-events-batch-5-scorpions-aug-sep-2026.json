@@ -30,7 +30,7 @@
         "startsAt": "2026-06-20T19:00:00+02:00",
         "endsAt": "2026-06-20T22:30:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-mvm-dome-ujbuda"],
+        "venueIds": ["prov-mvm-dome-terezvaros"],
         "borough": "Terézváros",
         "neighborhood": "Stefánia út",
         "entryFees": [],
@@ -90,7 +90,7 @@
         "endsAt": "2026-08-08T23:00:00+02:00",
         "doorsOpenAt": "2026-08-08T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [
@@ -159,7 +159,7 @@
         "endsAt": "2026-08-15T23:30:00+02:00",
         "doorsOpenAt": "2026-08-15T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [
@@ -228,7 +228,7 @@
         "endsAt": "2026-08-28T23:00:00+02:00",
         "doorsOpenAt": "2026-08-28T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [
@@ -297,7 +297,7 @@
         "endsAt": "2026-09-26T23:30:00+02:00",
         "doorsOpenAt": "2026-09-26T18:00:00+02:00",
         "timezone": "Europe/Budapest",
-        "venueIds": ["prov-budapest-park-obuda"],
+        "venueIds": ["prov-budapest-park-ferencvaros"],
         "borough": "Ferencváros",
         "neighborhood": "Fábián Juli",
         "entryFees": [

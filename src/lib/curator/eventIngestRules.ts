@@ -53,8 +53,8 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 
 ### Location pitfalls (Hungary) — blocking
 - **Never** infer district from legacy \`prov-*\` suffixes (\`-obuda\`, \`-ujbuda\`). Use \`GET /api/public/providers\` **borough + address**.
-- **Budapest Park** (\`prov-budapest-park-obuda\`): **Ferencváros**, Fábián Juli tér 1, 1095 — **not** Óbuda / Hajógyári-sziget. Event + host copy must not claim Óbuda Island.
-- **MVM Dome** (\`prov-mvm-dome-ujbuda\`): **Terézváros**, Stefánia út 2, 1143 — **not** Újbuda / Kelenföld. Venue \`website\` = \`https://mvm-dome.hu\`; promoter URLs belong on the **event** only.
+- **Budapest Park** (\`prov-budapest-park-ferencvaros\`): **Ferencváros**, Fábián Juli tér 1, 1095 — **not** Óbuda / Hajógyári-sziget. Event + host copy must not claim Óbuda Island.
+- **MVM Dome** (\`prov-mvm-dome-terezvaros\`): **Terézváros**, Stefánia út 2, 1143 — **not** Újbuda / Kelenföld. Venue \`website\` = \`https://mvm-dome.hu\`; promoter URLs belong on the **event** only.
 - \`neighborhood\` must be a **canonical** name from \`src/data/locations.ts\` for that \`borough\`.
 - Ingest dry-run rejects wrong \`borough\` for canonical hosts and wrong-district provider copy (\`scripts/lib/budapest-location.cjs\`).
 

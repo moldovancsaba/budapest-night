@@ -29,6 +29,7 @@ const MAP = [
   ["default-listing.jpg", "NEXT_PUBLIC_IMG_BB_FALLBACK_LISTING"],
   ["meetup-cover.jpg", "NEXT_PUBLIC_IMG_BB_FALLBACK_MEETUP"],
   ["guide-play.jpg", "NEXT_PUBLIC_IMG_BB_GUIDE_CARD"],
+  ["logo-light.png", "NEXT_PUBLIC_IMG_BB_LOGO_LIGHT"],
 ];
 
 async function uploadFile(filePath) {

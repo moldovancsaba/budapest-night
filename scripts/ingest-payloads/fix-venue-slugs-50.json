@@ -385,7 +385,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-cov-island-cafe-obuda",
+      "id": "prov-cov-island-cafe-ferencvaros",
       "patch": {
         "locales": {
           "hu": {
@@ -1645,7 +1645,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-cov-park-party-obuda",
+      "id": "prov-cov-park-party-ferencvaros",
       "patch": {
         "locales": {
           "hu": {
@@ -1897,7 +1897,7 @@
     {
       "resource": "provider",
       "action": "patch",
-      "id": "prov-cov-rudas-ujbuda-party",
+      "id": "prov-cov-rudas-buda-party",
       "patch": {
         "locales": {
           "hu": {

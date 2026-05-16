@@ -260,7 +260,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-budapest-park-obuda",
+        "id": "prov-budapest-park-ferencvaros",
         "name": "Budapest Park",
         "category": "Events",
         "borough": "Óbuda",

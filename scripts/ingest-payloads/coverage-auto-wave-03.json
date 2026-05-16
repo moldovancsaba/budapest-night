@@ -103,7 +103,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-rudas-ujbuda-party",
+        "id": "prov-cov-rudas-buda-party",
         "name": "Rudas Party Nights",
         "category": "Parties",
         "borough": "Újbuda",

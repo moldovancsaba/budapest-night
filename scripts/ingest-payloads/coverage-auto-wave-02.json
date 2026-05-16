@@ -1393,7 +1393,7 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-park-party-obuda",
+        "id": "prov-cov-park-party-ferencvaros",
         "name": "Budapest Park Club Nights",
         "category": "Parties",
         "borough": "Óbuda",

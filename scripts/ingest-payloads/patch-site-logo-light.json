@@ -1,0 +1,14 @@
+{
+  "sourceUrls": ["https://i.ibb.co/4nf3M8NW/916c52d2b3dd.jpg"],
+  "notes": "Set CMS light-mode logo (EST on black square) for theme toggle.",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "site",
+      "action": "patch",
+      "patch": {
+        "logoLightUrl": "https://i.ibb.co/4nf3M8NW/916c52d2b3dd.jpg"
+      }
+    }
+  ]
+}
