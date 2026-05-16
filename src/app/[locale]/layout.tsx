@@ -2,23 +2,25 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Orbitron, Rajdhani } from "next/font/google";
+import { Noto_Sans_Devanagari, Rubik } from "next/font/google";
 import { Providers } from "../providers";
 import { APP_FAVICON } from "@/config/brand";
 import { routing } from "@/i18n/routing";
 import { isRtlLocale, type AppLocale } from "@/i18n/config";
 import "../globals.css";
 
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  variable: "--font-orbitron",
+/** Display + UI sans: HU (latin-ext), AR, HE, RU (cyrillic), EN/ES/IT. */
+const rubik = Rubik({
+  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext", "arabic", "hebrew"],
+  variable: "--font-rubik",
   display: "swap",
 });
 
-const rajdhani = Rajdhani({
+/** Hindi (Devanagari) fallback when Rubik has no glyphs. */
+const notoDevanagari = Noto_Sans_Devanagari({
+  subsets: ["devanagari"],
   weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-rajdhani",
+  variable: "--font-noto-devanagari",
   display: "swap",
 });
 
@@ -70,7 +72,7 @@ export default async function LocaleLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={`${orbitron.variable} ${rajdhani.variable}`}
+      className={`${rubik.variable} ${notoDevanagari.variable}`}
     >
       <body>
         <NextIntlClientProvider messages={messages}>

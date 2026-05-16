@@ -130,7 +130,7 @@
     @apply border-border;
   }
   html {
-    font-family: var(--font-rajdhani), system-ui, sans-serif;
+    font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
   }
   body {
     @apply bg-background text-foreground antialiased;
@@ -141,7 +141,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-orbitron), system-ui, sans-serif;
+    font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
@@ -149,7 +149,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-orbitron), system-ui, sans-serif;
+    font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
     letter-spacing: 0.06em;
   }
   .scrollbar-hide::-webkit-scrollbar {

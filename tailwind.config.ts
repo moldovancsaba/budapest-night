@@ -8,8 +8,20 @@ export default {
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
     extend: {
       fontFamily: {
-        display: ["var(--font-orbitron)", "Orbitron", "system-ui", "sans-serif"],
-        sans: ["var(--font-rajdhani)", "Rajdhani", "system-ui", "sans-serif"],
+        display: [
+          "var(--font-rubik)",
+          "var(--font-noto-devanagari)",
+          "Rubik",
+          "system-ui",
+          "sans-serif",
+        ],
+        sans: [
+          "var(--font-rubik)",
+          "var(--font-noto-devanagari)",
+          "Rubik",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
