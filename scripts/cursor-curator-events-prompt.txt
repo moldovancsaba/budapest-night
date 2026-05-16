@@ -10,6 +10,7 @@ If the host venue is missing, upsert it first in the **same payload** (`category
 
 ## Read first (repo)
 - Rules (blocking): `src/lib/curator/eventIngestRules.ts` — entire checklist
+- Image catalog rules: `src/lib/curator/imageIngestRules.ts` (uniqueness across providers / meetups / events)
 - Locales: `src/lib/curator/eventLocaleIngestRules.ts`
 - Schema: `src/lib/eventSchema.ts`
 - Gold examples:
@@ -29,23 +30,24 @@ curl -s https://budapest-night.vercel.app/api/public/locations
 
 Dedupe by `id`, normalized `title`, and `startsAt`. Do not duplicate an existing show.
 
-After ingest, verify **every event has a different `image` URL** (no two events may share the same ImgBB link).
+After ingest, verify **every event has a different `image` URL** (no two events may share the same ImgBB link — and no provider or meetup row may use that URL either).
 
 ---
 
 ## Lessons from recent production fixes (must follow)
 
-### 1. Event images ≠ venue images
-Event cards must show **artist / show promo art**, not the host venue’s listing photo.
+### 1. Event images ≠ venue images ≠ culture circles
+Event cards must show **artist / show promo art**, not the host venue’s listing photo. **Never** put that poster on `provider.image` or `meetupGroup.coverImageUrl`.
 
 | Wrong | Why |
 |-------|-----|
 | Copying `provider.image` onto the event | Users see duplicate venue photos on every card |
+| Putting concert poster on venue or culture circle | Wrong cards (e.g. Johannes Oerding on Óbuda food walks) |
 | Budapest Park generic “leave reality outside” graphic for all Park shows | Same image on 6+ events — fixed by per-show art |
 | MVM Dome **building exterior** for Sting | Arena photo ≠ tour artwork; use promoter/tour image |
-| Reusing one ImgBB URL on multiple events | Catalog looks broken in Featured + list views |
+| Reusing one ImgBB URL on multiple events **or meetups** | Catalog looks broken in Featured + list views |
 
-**Correct:** scrape **per-show** art from the official event or ticket page, upload to ImgBB, assign **one unique URL per event**.
+**Correct:** scrape **per-show** art from the official event or ticket page, upload to ImgBB, assign **one unique URL per event** (audit all three public APIs).
 
 ### 2. How to find the right image URL
 1. Open the **event/ticket page** (not only the venue homepage).

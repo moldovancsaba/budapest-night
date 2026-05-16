@@ -1,0 +1,1362 @@
+{
+  "generatedAt": "2026-05-16T16:52:30.483Z",
+  "providerCount": 145,
+  "checked": 145,
+  "flaggedCount": 78,
+  "byCode": {
+    "sources_host_mismatch": 1,
+    "website_unreachable": 75,
+    "image_source_domain_mismatch": 39
+  },
+  "flagged": [
+    {
+      "id": "prov-okk-obuda",
+      "name": "Óbuda Cultural Centre",
+      "website": "https://kulturkozpont.hu/",
+      "issues": [
+        {
+          "code": "sources_host_mismatch",
+          "websiteHost": "kulturkozpont.hu",
+          "sourceHosts": [
+            "kulturkozpont.hu",
+            "kulturkozpont.jegy.hu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prov-otkert-belvaros",
+      "name": "Ötkert",
+      "website": "https://otkert.hu/en/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://otkert.hu/en/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-pesti-vigado-vaci",
+      "name": "Pesti Vigadó",
+      "website": "https://www.vigado.hu/",
+      "issues": [
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "vigado.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-parliament-visitor",
+      "name": "Hungarian Parliament Visitor Centre",
+      "website": "https://www.parlament.hu/en/web/house-of-parliament",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://www.parlament.hu/en/web/house-of-parliament"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-danube-palace-prom",
+      "name": "Danube Palace",
+      "website": "https://www.danubepalace.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-operetta-andrassy",
+      "name": "Budapest Operetta Theatre",
+      "website": "https://www.operettszinhaz.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-kuplung-kiraly",
+      "name": "Kuplung",
+      "website": "https://www.kuplung.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "kuplung.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-liszt-academy",
+      "name": "Liszt Ferenc Academy",
+      "website": "https://www.liszacademy.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-dohany-jewish-q",
+      "name": "Dohány Street Synagogue",
+      "website": "https://www.jewishmuseum.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-ellato-kazinczy",
+      "name": "Ellátó Kert",
+      "website": "https://ellatokert.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "ellatokert.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-apollo-rakoczi",
+      "name": "Apollo Cinema",
+      "website": "https://www.apollomozi.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 403,
+            "finalUrl": "https://www.apollomozi.hu/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-ferenc-nagy",
+      "name": "Ferenc Római Catholic Parish Cultural Events",
+      "website": "https://www.ferenciektere.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "ferenciektere.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-balna-events",
+      "name": "Bálna Budapest",
+      "website": "https://balnabudapest.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-citadella-gellert",
+      "name": "Citadella Events",
+      "website": "https://www.citadella.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://www.citadella.hu/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gellert-spa-events",
+      "name": "Gellért Spa Cultural Hall",
+      "website": "https://www.gellertspa.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "gellertspa.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-obuda-becsi-events",
+      "name": "Óbudai-sziget Cultural Hall",
+      "website": "https://www.obudaisziget.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "obudaisziget.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gellert-events-ujbuda",
+      "name": "Gellért Bath Palace Events",
+      "website": "https://www.gellertspa.hu/events",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "gellertspa.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-bikas-expo",
+      "name": "Budapest Expo Events",
+      "website": "https://www.budapestexpo.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-lucky-luciano",
+      "name": "Lucky Luciano Coffee",
+      "website": "https://luckyluciano.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-csendes-nagy",
+      "name": "Csendes",
+      "website": "https://www.csendes.com/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-ruszwurm-castle",
+      "name": "Ruszwurm Confectionery",
+      "website": "https://www.ruszwurm.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 403,
+            "finalUrl": "https://www.ruszwurm.hu/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gellert-cafe",
+      "name": "Gellért Café",
+      "website": "https://www.danubiusgellert.com/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-varfok-taban",
+      "name": "Varfok Kávézó",
+      "website": "https://www.varfokkavezo.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "varfokkavezo.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gloriett-cafe-rozsadomb",
+      "name": "Gloriett Café",
+      "website": "https://www.gloriett.hu/cafe",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://www.gloriett.hu/cafe"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "gloriett.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-ebner-gellert",
+      "name": "Ébner Confectionery",
+      "website": "https://www.ebnercukraszda.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "ebnercukraszda.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-manno-kolosy",
+      "name": "Manno Caffè",
+      "website": "https://www.mannocaffe.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-2b-becsi",
+      "name": "2B Coffee",
+      "website": "https://www.2bcoffee.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-chez-snacky-obuda",
+      "name": "Chez Snacky",
+      "website": "https://www.chezsnacky.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "chezsnacky.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-liliom-moricz",
+      "name": "Liliom Café",
+      "website": "https://www.liliomcafe.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "liliomcafe.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gelibi-gellert",
+      "name": "Gelibi Café",
+      "website": "https://www.gelibi.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "gelibi.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-hadik-kosztolanyi",
+      "name": "Hadik Kávéház",
+      "website": "https://www.hadikkavehaz.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-larm-deak",
+      "name": "LÄRM",
+      "website": "https://www.larm.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-legenda-parliament",
+      "name": "Legenda Boat Party",
+      "website": "https://www.legendaboatparty.com/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "legendaboatparty.com",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-spoon-party-prom",
+      "name": "Spoon Cafe & Lounge",
+      "website": "https://www.spoon.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "spoon.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-becketts-liszt",
+      "name": "Beckett's Irish Pub",
+      "website": "https://www.becketts.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 403,
+            "finalUrl": "https://www.becketts.hu/"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "becketts.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-bluebird-gozsdu",
+      "name": "Blue Bird Bar",
+      "website": "https://www.bluebirdbar.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "bluebirdbar.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-morrison-lit-wessel",
+      "name": "Morrison's Lit",
+      "website": "https://www.morrisons.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-here-rakoczi",
+      "name": "HERE Budapest",
+      "website": "https://herebudapest.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-legio-nagy",
+      "name": "Légió Hungarian Pub",
+      "website": "https://www.legio.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-spiler-balna",
+      "name": "Spíler Bálna",
+      "website": "https://spilerbalna.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "spilerbalna.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-nehru-party",
+      "name": "Nehru Part Beach Bar",
+      "website": "https://www.nehrupart.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "nehrupart.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-robertson-castle",
+      "name": "Robertson Bar",
+      "website": "https://www.robertsonbar.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-taban-terrace",
+      "name": "Tabán Terrace",
+      "website": "https://www.tabanterrace.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-nappali-rozsadomb",
+      "name": "Nappali Buda",
+      "website": "https://www.nappali.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gellert-bar-party",
+      "name": "Gellért Lobby Bar",
+      "website": "https://www.danubiusgellert.com/bars",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "danubiusgellert.com",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-kiscelli-aquincum",
+      "name": "Kiscelli Pub District",
+      "website": "https://www.kiscellimuzeum.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-galiba-kolosy",
+      "name": "Galiba Garden",
+      "website": "https://www.galibagarden.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "galibagarden.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-johnnys-becsi",
+      "name": "Johnny's American Bar",
+      "website": "https://www.johnnysbar.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-morzsak-moricz",
+      "name": "Morzsák Bar",
+      "website": "https://www.morzsakbar.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "morzsakbar.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-binx-infopark",
+      "name": "BinX Rooftop",
+      "website": "https://www.binxrooftop.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "binxrooftop.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-golya-kosztolanyi",
+      "name": "Golyó Kávé",
+      "website": "https://www.golyokave.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "golyokave.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-korona-bikas",
+      "name": "Korona Club",
+      "website": "https://www.koronaclub.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "koronaclub.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-bock-deak",
+      "name": "Bock Bistro",
+      "website": "https://www.bockbistro.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-kiosk-parliament",
+      "name": "Kiosk Budapest",
+      "website": "https://www.kiosk-budapest.hu/",
+      "issues": [
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "kiosk-budapest.hu",
+          "imageHost": "cdn.prod.website-files.com"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-spoon-rest-prom",
+      "name": "Spoon Restaurant",
+      "website": "https://www.spoon.hu/en/restaurant",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-aszu-andrassy",
+      "name": "Aszu Étterem",
+      "website": "https://www.aszuetterem.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-bocksay-wessel",
+      "name": "Bocksay Bistro",
+      "website": "https://www.bocksay.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "bocksay.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-stand25-rakoczi",
+      "name": "Stand25 Bisztró",
+      "website": "https://www.stand25bisztro.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "stand25bisztro.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-betes-corvin",
+      "name": "Bétés Restaurant",
+      "website": "https://www.betesetterem.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-iz-millennium",
+      "name": "Íz Étterem",
+      "website": "https://www.izetterem.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-citadella-rest",
+      "name": "Citadella Restaurant",
+      "website": "https://www.citadellarestaurant.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "citadellarestaurant.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-remiz-taban",
+      "name": "Remiz Restaurant",
+      "website": "https://www.remizrestaurant.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-gellert-brasserie",
+      "name": "Gellért Brasserie",
+      "website": "https://www.danubiusgellert.com/dining",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "danubiusgellert.com",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-3d-aquincum",
+      "name": "3D Café & Bistro",
+      "website": "https://www.3dcafe.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "3dcafe.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-kacsa-becsi",
+      "name": "Kacsa Étterem",
+      "website": "https://www.kacsaetterem.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "kacsaetterem.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-vasut-obuda",
+      "name": "Vasúrszálló Restaurant",
+      "website": "https://www.vasurszallo.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "vasurszallo.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-berenyi-moricz",
+      "name": "Berényi Étterem",
+      "website": "https://www.berenyi.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "berenyi.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-mika-gellert",
+      "name": "Mika Kert",
+      "website": "https://www.mikakert.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "mikakert.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-mom-eden-infopark",
+      "name": "MOM Eden Restaurant",
+      "website": "https://momkult.hu/en/restaurant",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://momkult.hu/en/restaurant"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-kekbello-kosztolanyi",
+      "name": "Kékbello Bistro",
+      "website": "https://www.kekbello.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "kekbello.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-madal-deak",
+      "name": "MADÁL - specialty coffee",
+      "website": "https://madalcoffee.com/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-callas-andrassy",
+      "name": "Callas Café",
+      "website": "https://www.callascafe.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-opera-cafe",
+      "name": "Opera Café Budapest",
+      "website": "https://www.operacafe.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-contessa-jewish-q",
+      "name": "Szpünik Café",
+      "website": "https://szimpla.hu/szpunik",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://szimpla.hu/szpunik"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "szimpla.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-melbourne-kazinczy",
+      "name": "My Little Melbourne",
+      "website": "https://mylittlemelbourne.hu/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "mylittlemelbourne.hu",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-fekete-wessel",
+      "name": "Fekete",
+      "website": "https://www.feketebudapest.com/",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 0,
+            "error": "fetch failed"
+          }
+        },
+        {
+          "code": "image_source_domain_mismatch",
+          "websiteHost": "feketebudapest.com",
+          "imageHost": "upload.wikimedia.org"
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-park-party-ferencvaros",
+      "name": "Budapest Park Club Nights",
+      "website": "https://www.budapestpark.hu/en/parties",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://www.budapestpark.hu/en/parties"
+          }
+        }
+      ]
+    },
+    {
+      "id": "prov-cov-rudas-buda-party",
+      "name": "Rudas Party Nights",
+      "website": "https://www.rudasfurdo.hu/en/party",
+      "issues": [
+        {
+          "code": "website_unreachable",
+          "detail": {
+            "ok": false,
+            "status": 404,
+            "finalUrl": "https://www.rudasfurdo.hu/en/party"
+          }
+        }
+      ]
+    }
+  ]
+}

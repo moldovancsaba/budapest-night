@@ -11,11 +11,13 @@ Add one Budapest nightlife/culture **venue** with production ingest `HTTP 200`, 
 For a **dated concert with tickets**, stop — use `scripts/cursor-curator-events-prompt.txt` instead.
 
 ## Read first (repo)
+- **Image rules (blocking):** `src/lib/curator/imageIngestRules.ts`
 - Enums: `src/lib/curator/constants.ts`, neighborhoods: `src/data/locations.ts`
 - Schema: `src/lib/curator/providerSchema.ts`
 - Locales: `src/lib/curator/localeIngestRules.ts`
 - Activity tags: `src/data/catalogFilters.ts`
 - Example: `scripts/ingest-payloads/budapest-a38.json` or any `cursor-curated-*.json`
+- Repair: `node scripts/fix-provider-one.cjs <prov-id>` or `npm run db:patch-venue-meetup-images`
 
 ## Live catalog
 - `GET https://budapest-night.vercel.app/api/public/providers`
@@ -36,8 +38,25 @@ Do not always pick famous ruin bars if a smaller venue fills a gap.
 - Canonical `neighborhood` only (no invented names).
 - Correct address → correct `borough` (e.g. Budapest Park = Ferencváros / Fábián Juli, not Óbuda Island).
 
+## Official website (blocking)
+1. **`website` must load** — run `curl -sI` or fetch the homepage; if DNS fails or returns 4xx/5xx, do not ingest until you have the **current** domain from the venue (Google Maps, Instagram bio, or printed contact).
+2. **`website`, `email`, and `Sources:` URLs must share the same live domain** (e.g. `kiosk-budapest.hu`, not an old `kioskbudapest.com` alias).
+3. **Never reuse a dead URL** from `coverage-venue-db.json`, old waves, or another venue’s card — verify on the live site first.
+4. **`imageSource` should come from that same official domain** (venue hero / Webflow CDN on their site). Reject stock photos of unrelated places (metro kiosks, newsstands, other cities).
+
 ## Image (blocking)
-Official image → upload → https ImgBB URL in `image`.
+
+Venue card = **this place**, not a concert poster.
+
+1. Scrape **venue** site (`og:image` on homepage / visit / about) — **not** a ticket or artist page.
+2. Download → `scripts/imgbb-asset-sources/providers/<slug>.jpg`
+3. Upload → **one new** `https://i.ibb.co/...` per provider
+4. Audit `GET /api/public/providers` — your URL must not match any **other** provider, meetup, or event image.
+5. **Never** reuse: `cde3b78d5c56`, `cb56a463140e`, `cf91ad578e08`, `5e673e7e0093`, `038fd3264859` (known bad bulk hashes).
+
+Examples fixed in production: Frici Papa, Vegazzi, MOM Kulturális Központ each needed their **own** restaurant/institution photo — not shared Johannes Oerding concert art.
+
+Full rules: `src/lib/curator/imageIngestRules.ts`.
 
 ## Output
 `scripts/ingest-payloads/cursor-curated-venue-<slug>.json`

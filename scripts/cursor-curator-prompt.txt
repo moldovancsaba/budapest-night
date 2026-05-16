@@ -55,6 +55,7 @@ Also read the repo’s canonical enums (do not guess):
 - Provider Zod shape: `src/lib/curator/providerSchema.ts`
 - Event Zod shape: `src/lib/eventSchema.ts`
 - **Provider locale rules (required):** `src/lib/curator/localeIngestRules.ts`
+- **Image rules (required — all types):** `src/lib/curator/imageIngestRules.ts` — unique ImgBB per row; no concert art on venues/meetups
 - **Timed event rules (required for events):** `src/lib/curator/eventIngestRules.ts` — read `getEventIngestRulesForPrompt()` and follow every bullet
 - **Event locale rules:** `src/lib/curator/eventLocaleIngestRules.ts`
 - App locales: `en`, `es`, `it`, `hu`, `he`, `ar` (`src/i18n/config.ts`)
@@ -138,10 +139,12 @@ Important:
 
 ## Candidate selection rules
 1. Verify the source looks current and official.
-2. Dedupe against the live public APIs by normalized **name**, proposed **`id`**, and **website** when present.
-3. If the listing already exists, find a different one.
-4. Prefer listings that improve coverage in the scarcest category/groupType + district + neighborhood + age + day-time + activity-type combination.
-5. If two candidates are similarly scarce, prefer:
+2. **Confirm `website` resolves** (HTTP 200 on homepage or canonical redirect). If the domain fails, find the venue’s current URL before ingest — do not copy stale domains from repo JSON or old ImgBB batches.
+3. **`website`, contact `email`, menu URLs, and `Sources:` lines must use the same live hostname** (watch for rebrands: hyphen vs no hyphen, `.hu` vs `.com`).
+4. Dedupe against the live public APIs by normalized **name**, proposed **`id`**, and **website** when present.
+5. If the listing already exists, find a different one.
+6. Prefer listings that improve coverage in the scarcest category/groupType + district + neighborhood + age + day-time + activity-type combination.
+7. If two candidates are similarly scarce, prefer:
    - more official source
    - clearer district/neighborhood fit (canonical neighborhood only)
    - stronger age/crowd fit
@@ -176,16 +179,38 @@ The public site serves **six locales**: `en`, `es`, `it`, `hu`, `he`, `ar`. Ever
 8. `npm run ingest:listing` **rejects** provider payloads missing any required locale or with invalid slugs.
 
 ## Image requirement (blocking)
-1. Source an **official** image from the venue/organizer site or organization-controlled asset URL.
-2. Download that image locally (e.g. under `scripts/imgbb-asset-sources/providers/<slug>.jpg`).
-3. Upload through a supported repo flow (pick one):
-   - `POST https://budapest-night.vercel.app/api/ingest/upload` with multipart field `file` and header `Authorization: Bearer <INGEST_API_KEY>` (or `X-Ingest-Key`)
-   - `POST /api/admin/upload` if an admin session is available
-   - Local: `npm run imgbb:upload-assets` only for bundled marketing assets; for new listings prefer `/api/ingest/upload` or direct ImgBB API with `IMGBB_API_KEY` from `.env.local`
-4. Put the returned ImgBB `url` in `image` (provider) or `coverImageUrl` (meetup).
-5. Record the original official image URL in `sourceUrls` or `notes`.
-6. If upload fails, retry or choose another official image.
-7. If you cannot produce a valid ImgBB URL for that listing, **do not ingest it**; choose another listing.
+
+Read **`src/lib/curator/imageIngestRules.ts`** in full. Summary:
+
+### All listing types
+- **One unique** `https://i.ibb.co/...` URL per provider, meetup, and event — audit all three public APIs before ingest.
+- **Never** reuse the same ImgBB URL on multiple rows in one batch (culture-circle grids will look broken).
+- **Never** use concert/artist poster art on **venues** or **culture circles** (only on `resource: "event"`).
+- Banned past mistakes: hashes `cde3b78d5c56`, `cb56a463140e`, `cf91ad578e08`, `5e673e7e0093`, `038fd3264859` — do not re-upload.
+
+### Providers (`image`)
+- Official **venue** photo from the venue site (`og:image` on visit/about), not a ticket page.
+- Each venue gets its **own** upload (Frici Papa, Vegazzi, MOM, etc. are not interchangeable).
+
+### Culture circles (`coverImageUrl`)
+- District/theme scene — **not** a shared concert photo across Kolosy / Bécsi út / Main Square cards.
+- Dedicated prompt: `scripts/cursor-curator-meetups-prompt.txt`
+
+### Timed events (`image`)
+- Per-show promo from the **event/ticket URL** — see `scripts/cursor-curator-events-prompt.txt`.
+
+### Upload workflow
+1. Download official asset → `scripts/imgbb-asset-sources/providers/` or `.../events/`
+2. Upload: `POST https://budapest-night.vercel.app/api/ingest/upload` (Bearer `INGEST_API_KEY`) or ImgBB API (`IMGBB_API_KEY`)
+3. Store returned URL in `image` or `coverImageUrl`; record source in `sourceUrls` / `notes`
+4. If no valid unique image, **do not ingest** that row
+
+### Repair (production)
+- `npm run db:patch-venue-meetup-images` — venues + culture circles
+- `npm run db:patch-event-images` — timed events
+- `node scripts/fix-provider-one.cjs <prov-id>` — single venue
+
+**Do not** bulk-ingest meetups with one shared `coverImageUrl` (e.g. via `generate-coverage-waves.cjs` fallback). Each `grp-*` needs its own upload — see `scripts/cursor-curator-meetups-prompt.txt`.
 
 ## Timed event workflow (when focus is a concert / ticketed show)
 
@@ -307,6 +332,8 @@ Use `entryFees: []` only when the ticket page gives no fixed tiers; never use `{
 
 ### Culture circle (`resource: "meetupGroup"`)
 
+**Cover image:** non-empty, **unique** `coverImageUrl` per group (see `imageIngestRules.ts`). Do **not** copy one concert poster to every Óbuda circle in a batch.
+
 ```json
 {
   "resource": "meetupGroup",
@@ -369,6 +396,7 @@ After successful ingest, reply with:
 - **Final ImgBB** URL stored in the payload
 - **`missingOrUncertain`** items
 - **Confirmation**: re-fetch the relevant public API row and confirm the image URL is present
+- **Image audit**: no other row in providers / meetups / events shares this ImgBB URL (unless patching same id)
 
 Optional focus for this run (delete or edit one line):
 - Listing type: **Timed event** / Venue (Venues) / Parties / Restaurants / Cafés / Meetup culture circle / no preference

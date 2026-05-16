@@ -87,6 +87,7 @@ async function downloadImage(url, dest) {
   fs.writeFileSync(dest, buf);
 }
 
+/** Shared fallback caused duplicate concert art on culture circles — do not reuse one URL for many meetups. */
 let fallbackImageUrl;
 
 async function getFallbackImageUrl() {

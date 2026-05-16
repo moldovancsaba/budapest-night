@@ -1,0 +1,841 @@
+{
+  "sourceUrls": [
+    "https://www.kiosk-budapest.hu/",
+    "https://www.kiosk-budapest.hu/eteleink",
+    "https://www.kiosk-budapest.hu/italaink",
+    "https://www.kiosk-budapest.hu/heti-menu"
+  ],
+  "notes": "Fix Kiosk Budapest: wrong domain, wrong hero (metro kiosk), add published menu from kiosk-budapest.hu.",
+  "missingOrUncertain": [
+    "Weekly specials on /heti-menu rotate — patch includes stable à la carte from /eteleink and /italaink only."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-kiosk-parliament",
+      "patch": {
+        "address": "1056 Budapest, Március 15. tér 4, Hungary",
+        "phone": "+36 70 585 5727",
+        "email": "info@kiosk-budapest.hu",
+        "website": "https://www.kiosk-budapest.hu/",
+        "imageSource": "https://cdn.prod.website-files.com/66be0d4de4926d5fa8d2c21d/67f74e0ae5c97e6e2d6d4284_66be0d4de4926d5fa8d2c21d_679ba373a97b79c67616fb25_Kiosk%20final-transcode%20%281%29-poster-00001.jpg",
+        "activityTypes": [
+          "Fine Dining",
+          "Cocktails",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "shortDescription": "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+        "longDescription": "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink https://www.kiosk-budapest.hu/heti-menu",
+        "locales": {
+          "hu": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+            "longDescription": "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink https://www.kiosk-budapest.hu/heti-menu",
+            "slug": "cov-kiosk-parliament-hu"
+          },
+          "es": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+            "longDescription": "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink https://www.kiosk-budapest.hu/heti-menu",
+            "slug": "cov-kiosk-parliament-es"
+          },
+          "it": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+            "longDescription": "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink https://www.kiosk-budapest.hu/heti-menu",
+            "slug": "cov-kiosk-parliament-it"
+          },
+          "he": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+            "longDescription": "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink https://www.kiosk-budapest.hu/heti-menu",
+            "slug": "cov-kiosk-parliament-he"
+          },
+          "ar": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+            "longDescription": "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink https://www.kiosk-budapest.hu/heti-menu",
+            "slug": "cov-kiosk-parliament-ar"
+          }
+        },
+        "menu": {
+          "menuUrl": "https://www.kiosk-budapest.hu/eteleink",
+          "sourceUrls": [
+            "https://www.kiosk-budapest.hu/",
+            "https://www.kiosk-budapest.hu/eteleink",
+            "https://www.kiosk-budapest.hu/italaink",
+            "https://www.kiosk-budapest.hu/heti-menu"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "small-plates",
+              "title": "Small plates",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Kis falatok"
+                },
+                "es": {
+                  "title": "Entrantes"
+                },
+                "it": {
+                  "title": "Piccoli piatti"
+                },
+                "he": {
+                  "title": "מנות קטנות"
+                },
+                "ar": {
+                  "title": "أطباق صغيرة"
+                }
+              },
+              "items": [
+                {
+                  "id": "duck-liver",
+                  "kind": "food",
+                  "name": "Duck liver pâté",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Kacsamájkrém"
+                    },
+                    "es": {
+                      "name": "Paté de hígado de pato"
+                    },
+                    "it": {
+                      "name": "Paté di fegatini d'anatra"
+                    },
+                    "he": {
+                      "name": "Duck liver pâté"
+                    },
+                    "ar": {
+                      "name": "Duck liver pâté"
+                    }
+                  },
+                  "price": {
+                    "amount": 6650,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "beef-tartare",
+                  "kind": "food",
+                  "name": "Beef tartare",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Marhatatár"
+                    },
+                    "es": {
+                      "name": "Beef tartare"
+                    },
+                    "it": {
+                      "name": "Beef tartare"
+                    },
+                    "he": {
+                      "name": "Beef tartare"
+                    },
+                    "ar": {
+                      "name": "Beef tartare"
+                    }
+                  },
+                  "price": {
+                    "amount": 5650,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "casino-egg",
+                  "kind": "food",
+                  "name": "Casino egg",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Kaszinótojás"
+                    },
+                    "es": {
+                      "name": "Casino egg"
+                    },
+                    "it": {
+                      "name": "Casino egg"
+                    },
+                    "he": {
+                      "name": "Casino egg"
+                    },
+                    "ar": {
+                      "name": "Casino egg"
+                    }
+                  },
+                  "price": {
+                    "amount": 4450,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Levesek"
+                },
+                "es": {
+                  "title": "Sopas"
+                },
+                "it": {
+                  "title": "Zuppe"
+                },
+                "he": {
+                  "title": "מרקים"
+                },
+                "ar": {
+                  "title": "حساء"
+                }
+              },
+              "items": [
+                {
+                  "id": "goulash-soup",
+                  "kind": "food",
+                  "name": "Goulash soup",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Gulyásleves"
+                    },
+                    "es": {
+                      "name": "Goulash soup"
+                    },
+                    "it": {
+                      "name": "Goulash soup"
+                    },
+                    "he": {
+                      "name": "Goulash soup"
+                    },
+                    "ar": {
+                      "name": "Goulash soup"
+                    }
+                  },
+                  "price": {
+                    "amount": 4950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "chicken-broth",
+                  "kind": "food",
+                  "name": "Chicken broth",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Kakas húsleves"
+                    },
+                    "es": {
+                      "name": "Chicken broth"
+                    },
+                    "it": {
+                      "name": "Chicken broth"
+                    },
+                    "he": {
+                      "name": "Chicken broth"
+                    },
+                    "ar": {
+                      "name": "Chicken broth"
+                    }
+                  },
+                  "price": {
+                    "amount": 3450,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "icons",
+              "title": "KIOSK icons",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "KIOSK ikonok"
+                },
+                "es": {
+                  "title": "Iconos KIOSK"
+                },
+                "it": {
+                  "title": "Icone KIOSK"
+                },
+                "he": {
+                  "title": "אייקוני KIOSK"
+                },
+                "ar": {
+                  "title": "أيقونات KIOSK"
+                }
+              },
+              "items": [
+                {
+                  "id": "paprikash",
+                  "kind": "food",
+                  "name": "Chicken paprikash",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Paprikás csirke"
+                    },
+                    "es": {
+                      "name": "Chicken paprikash"
+                    },
+                    "it": {
+                      "name": "Chicken paprikash"
+                    },
+                    "he": {
+                      "name": "Chicken paprikash"
+                    },
+                    "ar": {
+                      "name": "Chicken paprikash"
+                    }
+                  },
+                  "price": {
+                    "amount": 6650,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "wiener-schnitzel",
+                  "kind": "food",
+                  "name": "Traditional veal Wiener schnitzel",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Tradicionális borjú bécsi"
+                    },
+                    "es": {
+                      "name": "Traditional veal Wiener schnitzel"
+                    },
+                    "it": {
+                      "name": "Traditional veal Wiener schnitzel"
+                    },
+                    "he": {
+                      "name": "Traditional veal Wiener schnitzel"
+                    },
+                    "ar": {
+                      "name": "Traditional veal Wiener schnitzel"
+                    }
+                  },
+                  "price": {
+                    "amount": 7950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "budapest-burger",
+                  "kind": "food",
+                  "name": "Budapest burger",
+                  "tags": [
+                    "street-food"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Budapest burger"
+                    },
+                    "es": {
+                      "name": "Budapest burger"
+                    },
+                    "it": {
+                      "name": "Budapest burger"
+                    },
+                    "he": {
+                      "name": "Budapest burger"
+                    },
+                    "ar": {
+                      "name": "Budapest burger"
+                    }
+                  },
+                  "price": {
+                    "amount": 6950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "signature-cocktails",
+              "title": "Signatures of KIOSK",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "A KIOSK aláírásai"
+                },
+                "es": {
+                  "title": "Firmas de KIOSK"
+                },
+                "it": {
+                  "title": "Firme KIOSK"
+                },
+                "he": {
+                  "title": "חתימות KIOSK"
+                },
+                "ar": {
+                  "title": "توقيعات KIOSK"
+                }
+              },
+              "items": [
+                {
+                  "id": "eros-cocktail",
+                  "kind": "drink",
+                  "name": "EROS",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "EROS"
+                    },
+                    "es": {
+                      "name": "EROS"
+                    },
+                    "it": {
+                      "name": "EROS"
+                    },
+                    "he": {
+                      "name": "EROS"
+                    },
+                    "ar": {
+                      "name": "EROS"
+                    }
+                  },
+                  "price": {
+                    "amount": 5550,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "kiosk-cocktail",
+                  "kind": "drink",
+                  "name": "KIOSK",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "KIOSK"
+                    },
+                    "es": {
+                      "name": "KIOSK"
+                    },
+                    "it": {
+                      "name": "KIOSK"
+                    },
+                    "he": {
+                      "name": "KIOSK"
+                    },
+                    "ar": {
+                      "name": "KIOSK"
+                    }
+                  },
+                  "price": {
+                    "amount": 5550,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "negroni",
+                  "kind": "drink",
+                  "name": "Negroni",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Negroni"
+                    },
+                    "es": {
+                      "name": "Negroni"
+                    },
+                    "it": {
+                      "name": "Negroni"
+                    },
+                    "he": {
+                      "name": "Negroni"
+                    },
+                    "ar": {
+                      "name": "Negroni"
+                    }
+                  },
+                  "price": {
+                    "amount": 5050,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "espresso-martini",
+                  "kind": "drink",
+                  "name": "Espresso Martini",
+                  "tags": [
+                    "cocktail",
+                    "coffee"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Espresso Martini"
+                    },
+                    "es": {
+                      "name": "Espresso Martini"
+                    },
+                    "it": {
+                      "name": "Espresso Martini"
+                    },
+                    "he": {
+                      "name": "Espresso Martini"
+                    },
+                    "ar": {
+                      "name": "Espresso Martini"
+                    }
+                  },
+                  "price": {
+                    "amount": 5050,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "spirits",
+              "title": "Pálinka & spirits",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Pálinka és röviditalok"
+                },
+                "es": {
+                  "title": "Pálinka y destilados"
+                },
+                "it": {
+                  "title": "Pálinka e distillati"
+                },
+                "he": {
+                  "title": "פלינקה ומשקאות"
+                },
+                "ar": {
+                  "title": "بالينكا ومشروبات"
+                }
+              },
+              "items": [
+                {
+                  "id": "arpad-apricot",
+                  "kind": "drink",
+                  "name": "Árpád aged apricot pálinka (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Árpád dupla ágyas kajszibarack pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Árpád aged apricot pálinka (4 cl)"
+                    },
+                    "it": {
+                      "name": "Árpád aged apricot pálinka (4 cl)"
+                    },
+                    "he": {
+                      "name": "Árpád aged apricot pálinka (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Árpád aged apricot pálinka (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 4550,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "unicum",
+                  "kind": "drink",
+                  "name": "Unicum (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Unicum (4 cl)"
+                    },
+                    "es": {
+                      "name": "Unicum (4 cl)"
+                    },
+                    "it": {
+                      "name": "Unicum (4 cl)"
+                    },
+                    "he": {
+                      "name": "Unicum (4 cl)"
+                    },
+                    "ar": {
+                      "name": "Unicum (4 cl)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2650,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávé"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Espresso"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "Espresso"
+                    },
+                    "ar": {
+                      "name": "Espresso"
+                    }
+                  },
+                  "price": {
+                    "amount": 1150,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "Cappuccino"
+                    },
+                    "ar": {
+                      "name": "Cappuccino"
+                    }
+                  },
+                  "price": {
+                    "amount": 1450,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "flat-white",
+                  "kind": "drink",
+                  "name": "Flat white",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Flat White"
+                    },
+                    "es": {
+                      "name": "Flat white"
+                    },
+                    "it": {
+                      "name": "Flat white"
+                    },
+                    "he": {
+                      "name": "Flat white"
+                    },
+                    "ar": {
+                      "name": "Flat white"
+                    }
+                  },
+                  "price": {
+                    "amount": 1750,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "wine",
+              "title": "Wines",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Borok"
+                },
+                "es": {
+                  "title": "Vinos"
+                },
+                "it": {
+                  "title": "Vini"
+                },
+                "he": {
+                  "title": "יינות"
+                },
+                "ar": {
+                  "title": "نبيذ"
+                }
+              },
+              "items": [
+                {
+                  "id": "sauska-rose-brut",
+                  "kind": "drink",
+                  "name": "Sauska Rosé Brut (0.1 l)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Sauska Rosé Brut (0,1 l)"
+                    },
+                    "es": {
+                      "name": "Sauska Rosé Brut (0.1 l)"
+                    },
+                    "it": {
+                      "name": "Sauska Rosé Brut (0.1 l)"
+                    },
+                    "he": {
+                      "name": "Sauska Rosé Brut (0.1 l)"
+                    },
+                    "ar": {
+                      "name": "Sauska Rosé Brut (0.1 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 1950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                },
+                {
+                  "id": "furmint-glass",
+                  "kind": "drink",
+                  "name": "Szepsy Furmint (0.1 l)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "locales": {
+                    "hu": {
+                      "name": "Szepsy Furmint (0,1 l)"
+                    },
+                    "es": {
+                      "name": "Szepsy Furmint (0.1 l)"
+                    },
+                    "it": {
+                      "name": "Szepsy Furmint (0.1 l)"
+                    },
+                    "he": {
+                      "name": "Szepsy Furmint (0.1 l)"
+                    },
+                    "ar": {
+                      "name": "Szepsy Furmint (0.1 l)"
+                    }
+                  },
+                  "price": {
+                    "amount": 2950,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "image": "https://i.ibb.co/zTb9yszP/47dce29ff443.jpg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "sourceUrls": [
+    "https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+    "https://www.budapestpark.hu/tickets/event/deva-20260627",
+    "https://funcode.hu/en/event/3726-man-with-a-mission",
+    "https://funcode.hu/en/event/2682-sting-30-tour",
+    "https://www.eventim.hu/eventseries/asaf-avidan-4123119/",
+    "https://funcode.hu/en/event/4247-oliver-tree",
+    "https://www.tixa.hu/pth-durer-2026",
+    "https://funcode.hu/en/event/4388-jamie-woon"
+  ],
+  "notes": "Audit fixes: HU card titles (4), published entryFees (8), funcode/eventim booking URLs. Scorpions left entryFees [] — funcode.hu shows sold out (priceHufFrom null); no official face-value tier on livenation/eventim at patch time.",
+  "missingOrUncertain": [
+    "Scorpions: general on-sale sold out on funcode.hu; no published HUF floor tier captured — entryFees unchanged.",
+    "Circus Princess: single matinee tier 2,900 HUF on operett.jegy.hu; dynamic seat map may vary.",
+    "Deva: early-bird arena 7,499 HUF on budapestpark.hu ticket shop; higher phases on site.",
+    "Akvárium LN shows: admin fee 6% (min. 300 HUF) + 600 HUF cloakroom per akvariumklub.hu FAQ."
+  ],
+  "operations": [
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-circus-princess-operetta-2026",
+      "patch": {
+        "entryFees": [
+          {
+            "id": "matinee-from",
+            "label": "Matinee — from",
+            "amount": 2900,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Dynamic seating on operett.jegy.hu; service fees at checkout"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-deva-budapest-park-2026",
+      "patch": {
+        "entryFees": [
+          {
+            "id": "arena-early-bird",
+            "label": "Arena — early bird",
+            "amount": 7499,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ admin fee at checkout; terrace from 14,999 HUF on budapestpark.hu"
+          },
+          {
+            "id": "terrace",
+            "label": "Terrace",
+            "amount": 14999,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ admin fee per budapestpark.hu FAQ"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-man-with-a-mission-akvarium-2026",
+      "patch": {
+        "bookingUrl": "https://funcode.hu/en/event/3726-man-with-a-mission",
+        "entryFees": [
+          {
+            "id": "from-general",
+            "label": "From — general on-sale",
+            "amount": 12900,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 6% admin fee (min. 300 HUF) at checkout; 600 HUF cloakroom on site"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-black-label-society-barba-negra-2026",
+      "patch": {
+        "locales": {
+          "hu": {
+            "slug": "black-label-society-barba-negra-2026",
+            "title": "Black Label Society és Venom Inc. — Barba Negra Red Stage",
+            "shortDescription": "Zakk Wylde metal est — 2026. június 10., kapunyitás 18:30, elővétel 21 900 Ft.",
+            "longDescription": "Black Label Society és vendég Venom Inc. a Barba Negra Red Stage-en 2026. június 10-én, kapunyitás 18:30. Elővétel 21 900 Ft május 31-ig. Jegyek: barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610"
+          },
+          "es": {
+            "slug": "black-label-society-barba-negra-2026",
+            "title": "Black Label Society + Venom Inc. — Barba Negra",
+            "shortDescription": "Metal con Zakk Wylde — 10 junio 2026, puertas 18:30.",
+            "longDescription": "Black Label Society y Venom Inc. en Barba Negra el 10 de junio de 2026. Preventa 21.900 HUF. Entradas en barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610"
+          },
+          "it": {
+            "slug": "black-label-society-barba-negra-2026",
+            "title": "Black Label Society + Venom Inc. — Barba Negra",
+            "shortDescription": "Metal con Zakk Wylde — 10 giugno 2026, porte 18:30.",
+            "longDescription": "Black Label Society e Venom Inc. al Barba Negra il 10 giugno 2026. Prevendita 21.900 HUF su barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610"
+          },
+          "he": {
+            "slug": "black-label-society-barba-negra-2026",
+            "title": "Black Label Society + Venom Inc. — ברבה נגרה",
+            "shortDescription": "מטאל עם Zakk Wylde — 10 ביוני 2026, שערים 18:30.",
+            "longDescription": "Black Label Society ו-Venom Inc. בברבה נגרה ב-10 ביוני 2026. מוקדם 21,900 פורינט. כרטיסים ב-barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610"
+          },
+          "ar": {
+            "slug": "black-label-society-barba-negra-2026",
+            "title": "Black Label Society + Venom Inc. — باربا نيغرا",
+            "shortDescription": "ميتال مع Zakk Wylde — 10 يونيو 2026، الأبواب 18:30.",
+            "longDescription": "Black Label Society وVenom Inc. في باربا نيغرا في 10 يونيو 2026. حجز مسبق 21,900 فورنت. التذاكر على barbanegra.hu.\n\nSources: https://www.barbanegra.hu/black-label-society_20260610"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-sting-mvm-dome-2026",
+      "patch": {
+        "bookingUrl": "https://funcode.hu/en/event/2682-sting-30-tour",
+        "entryFees": [
+          {
+            "id": "standing-from",
+            "label": "From — general on-sale",
+            "amount": 26100,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Higher tiers at checkout; payment/delivery fees per funcode.hu"
+          }
+        ],
+        "locales": {
+          "hu": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "Sting 3.0 — az MVM Dome-ban",
+            "shortDescription": "Sting a STING 3.0 turnén 2026. június 18-án az MVM Dome-ban (Terézváros).",
+            "longDescription": "A STING 3.0 európai turné budapesti állomása 2026. június 18-án az MVM Dome-ban. Vendég: Dea Matrona. Jegyek 26 100 Ft-tól a funcode.hu és livenation.hu oldalakon.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026 https://funcode.hu/en/event/2682-sting-30-tour"
+          },
+          "es": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "Sting 3.0 — MVM Dome",
+            "shortDescription": "Gira STING 3.0 — 18 junio 2026, MVM Dome.",
+            "longDescription": "Parada en Budapest del tour europeo STING 3.0. Invitada: Dea Matrona. Entradas desde 26.100 HUF en funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026 https://funcode.hu/en/event/2682-sting-30-tour"
+          },
+          "it": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "Sting 3.0 — MVM Dome",
+            "shortDescription": "Tour STING 3.0 — 18 giugno 2026, MVM Dome.",
+            "longDescription": "Tappa di Budapest del tour europeo STING 3.0. Ospite: Dea Matrona. Biglietti da 26.100 HUF su funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026 https://funcode.hu/en/event/2682-sting-30-tour"
+          },
+          "he": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "סטינג 3.0 — MVM Dome",
+            "shortDescription": "סיבוב STING 3.0 — 18 ביוני 2026, MVM Dome.",
+            "longDescription": "סטינג ב-MVM Dome ב-18 ביוני 2026. כרטיסים מ-26,100 HUF ב-funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026 https://funcode.hu/en/event/2682-sting-30-tour"
+          },
+          "ar": {
+            "slug": "sting-mvm-dome-2026",
+            "title": "ستينغ 3.0 — MVM Dome",
+            "shortDescription": "جولة STING 3.0 — 18 يونيو 2026، MVM Dome.",
+            "longDescription": "ستينغ في MVM Dome في 18 يونيو 2026. التذاكر من 26,100 HUF على funcode.hu.\n\nSources: https://www.livenation.hu/en/tickets/sting-3-0-budapest-events-edp1623026 https://funcode.hu/en/event/2682-sting-30-tour"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-asaf-avidan-akvarium-2026",
+      "patch": {
+        "bookingUrl": "https://www.eventim.hu/eventseries/asaf-avidan-4123119/",
+        "entryFees": [
+          {
+            "id": "standing-from",
+            "label": "Standing — from (Main Hall)",
+            "amount": 18200,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Service fee up to 1,700 HUF + shipping per eventim.hu"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-protest-the-hero-durer-kert-2026",
+      "patch": {
+        "entryFees": [
+          {
+            "id": "early-bird",
+            "label": "Early bird",
+            "amount": 9990,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Pre-sale 1: 10,990 HUF; pre-sale 2: 11,990 HUF on tixa.hu"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-jamie-woon-akvarium-2026",
+      "patch": {
+        "bookingUrl": "https://funcode.hu/en/event/4388-jamie-woon",
+        "entryFees": [
+          {
+            "id": "from-general",
+            "label": "From — general on-sale",
+            "amount": 10900,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "+ 6% admin fee (min. 300 HUF) at checkout; 600 HUF cloakroom on site"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-in-flames-barba-negra-2026",
+      "patch": {
+        "locales": {
+          "hu": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES a Barba Negra Red Stage-en",
+            "shortDescription": "Melodeath főszereplők, vendégek: Napalm Death és mások — 2026. július 25., kapunyitás 15:00, Újbuda.",
+            "longDescription": "Az IN FLAMES főszereplős metal estet ad a Barba Negra Red Stage-en 2026. július 25-én, vendégek: Napalm Death, Bleed From Within, Unearth, Employed To Serve. Kapunyitás 15:00, 1211 Budapest, Szállító utca 3. Jegyek: barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "es": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "Melodeath con Napalm Death y más — 25 julio 2026, puertas 15:00, Újbuda.",
+            "longDescription": "IN FLAMES encabezan Barba Negra el 25 de julio de 2026 con Napalm Death y más bandas. Entradas en barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "it": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — Barba Negra Red Stage",
+            "shortDescription": "Melodeath con Napalm Death e altri — 25 luglio 2026, porte 15:00, Újbuda.",
+            "longDescription": "IN FLAMES headliner al Barba Negra il 25 luglio 2026. Biglietti su barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "he": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — ברבה נגרה Red Stage",
+            "shortDescription": "מלודית מטאל עם Napalm Death ואחרים — 25 ביולי 2026, שערים 15:00.",
+            "longDescription": "IN FLAMES בברבה נגרה ב-25 ביולי 2026. כרטיסים ב-barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          },
+          "ar": {
+            "slug": "in-flames-barba-negra-2026",
+            "title": "IN FLAMES — باربا نيغرا Red Stage",
+            "shortDescription": "ميلوديث ميتال مع Napalm Death وغيرهم — 25 يوليو 2026، الأبواب 15:00.",
+            "longDescription": "IN FLAMES في باربا نيغرا في 25 يوليو 2026. التذاكر على barbanegra.hu.\n\nSources: https://www.barbanegra.hu/in-flames_20260725"
+          }
+        }
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-oliver-tree-durer-kert-2026",
+      "patch": {
+        "bookingUrl": "https://funcode.hu/en/event/4247-oliver-tree",
+        "entryFees": [
+          {
+            "id": "from-general",
+            "label": "From — general on-sale",
+            "amount": 13900,
+            "currency": "HUF",
+            "source": "published",
+            "notes": "Higher tiers at checkout; fees per funcode.hu"
+          }
+        ]
+      }
+    },
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-ganxsta-60-budapest-park-2026",
+      "patch": {
+        "locales": {
+          "hu": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60. születésnap — Budapest Park",
+            "shortDescription": "Ganxsta Zolee 60. születésnapja — 2026. augusztus 15., kapunyitás 18:00.",
+            "longDescription": "Ganxsta Zolee 60. születésnapja a Budapest Parkban 2026. augusztus 15-én, kapunyitás 18:00. Jegyek: budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815 https://www.budapestpark.hu/tickets/event/ganxsta_20260815"
+          },
+          "es": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Festival Ganxsta 60 — Budapest Park",
+            "shortDescription": "60 cumpleaños de Ganxsta Zolee — 15 agosto 2026, puertas 18:00.",
+            "longDescription": "Ganxsta 60 en Budapest Park el 15 de agosto de 2026. Entradas en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815"
+          },
+          "it": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "Ganxsta 60 Festival — Budapest Park",
+            "shortDescription": "60° compleanno di Ganxsta Zolee — 15 agosto 2026, porte 18:00.",
+            "longDescription": "Ganxsta 60 al Budapest Park il 15 agosto 2026. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815"
+          },
+          "he": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "פסטיבל Ganxsta 60 — בודפשט פארק",
+            "shortDescription": "יום הולדת 60 ל-Ganxsta Zolee — 15 באוגוסט 2026, שערים 18:00.",
+            "longDescription": "Ganxsta 60 בבודפשט פארק ב-15 באוגוסט 2026. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815"
+          },
+          "ar": {
+            "slug": "ganxsta-60-budapest-park-2026",
+            "title": "مهرجان Ganxsta 60 — بودابست بارك",
+            "shortDescription": "عيد ميلاد Ganxsta Zolee الـ60 — 15 أغسطس 2026، الأبواب 18:00.",
+            "longDescription": "Ganxsta 60 في بودابست بارك في 15 أغسطس 2026. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/events/ganxsta-60-fesztival-20260815"
+          }
+        }
+      }
+    }
+  ]
+}

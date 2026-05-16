@@ -5,6 +5,7 @@ import {
   CURATOR_DAY_TAGS,
 } from "@/lib/curator/constants";
 import { getEventLocaleIngestRulesForPrompt } from "@/lib/curator/eventLocaleIngestRules";
+import { getCatalogImageUniquenessRulesForPrompt } from "@/lib/curator/imageIngestRules";
 
 /**
  * Prompt block for Cursor curator + any LLM authoring `resource: "event"` ingest payloads.
@@ -83,7 +84,8 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 
 ### Image (event-specific — never duplicate)
 - \`image\`: https ImgBB URL (\`i.ibb.co\` / \`*.ibb.co\`) for **this show’s** official poster/hero — scraped from the **event/ticket page**, not the venue homepage.
-- **Blocking mistakes (fixed in production):** copying \`provider.image\`; reusing Budapest Park’s generic park graphic (\`cb56a463140e.jpg\`) for multiple artists; using MVM Dome **building exterior** instead of Sting/tour artwork; assigning the same ImgBB URL to two events.
+- **Do not** put this poster on \`provider.image\` or \`meetupGroup.coverImageUrl\` — see \`src/lib/curator/imageIngestRules.ts\`.
+- **Blocking mistakes (fixed in production):** copying \`provider.image\`; reusing Budapest Park’s generic park graphic (\`cb56a463140e.jpg\`) for multiple artists; using MVM Dome **building exterior** instead of Sting/tour artwork; assigning the same ImgBB URL to two events or culture circles.
 - **Where to scrape:** \`og:image\` / \`twitter:image\` on the ticket URL. Site hints: budapestpark \`cdn-netpositive.com/event_images/...\` or \`/uploads/<hash>.png\` (ignore site-wide \`budapestpark-og-2021.jpg\`); mupa program hero; livenation \`dynamicmedia.livenationinternational.com/...\`; barbanegra \`/uploads/<show>.jpg\`; akvarium/durer event \`og:image\`.
 - **Workflow:** download → \`scripts/imgbb-asset-sources/events/\` → upload (\`POST /api/ingest/upload\` or \`IMGBB_API_KEY\`) → unique URL in payload → before POST, confirm no other row in \`GET /api/public/events\` shares that \`image\`.
 - **Last resort only:** if no show art exists, use a venue photo **not** used by any other event or that venue’s default card image; still must be a **unique** ImgBB URL in the catalog.
@@ -99,9 +101,11 @@ ${getEventLocaleIngestRulesForPrompt()}
 ### Deduping events
 Before ingest, \`GET /api/public/events\` and check \`id\`, normalized \`title\`, and \`startsAt\`. Do not duplicate the same show.
 
+${getCatalogImageUniquenessRulesForPrompt()}
+
 ### Pre-ingest checklist
 1. Every \`venueIds\` entry exists or is upserted earlier in \`operations[]\`.
-2. Every \`image\` is ImgBB https and **unique** vs all other events (and ≠ host \`provider.image\` unless last-resort fallback).
+2. Every \`image\` is ImgBB https and **unique** vs all other events **and** all providers/meetups (and ≠ host \`provider.image\` unless last-resort fallback).
 3. Paid shows have HUF/EUR \`entryFees\` or \`[]\` with explanation — no fake FREE tiers.
 4. All five locales present; each \`longDescription\` ends with \`Sources: https://...\`.`;
 }

@@ -8,6 +8,8 @@ Use tools (web search, fetch, terminal, **image read/vision**). Prefer **batch p
 ## Menu only as PNG/JPG on the site (required workflow)
 Many Budapest venues publish the drink/food list as **menu board images** (WordPress uploads), not HTML tables. **Do not skip** these venues.
 
+**Menu images ≠ listing hero:** OCR menu boards for `menu` sections only. The venue’s public card `image` must still be a proper venue photo (interior/exterior), not a cropped menu PNG — see `src/lib/curator/imageIngestRules.ts`.
+
 1. Open the venue’s menu page and collect every official menu image URL (e.g. `…/wp-content/uploads/…/MENU_….png`).
 2. **Download** each image under `scripts/menu-sources/<venue-slug>/` (keep filenames; note URLs in the payload `sourceUrls`).
 3. **Read** each downloaded image (agent vision or `tesseract` in terminal) and transcribe names, sizes, and **HUF/EUR** prices as printed.
@@ -16,6 +18,8 @@ Many Budapest venues publish the drink/food list as **menu board images** (WordP
 
 ## Goal
 Increase `providersWithMenu` and menu item count on production. Each patched venue must have real `menu.sections[].items[]` with `kind`, `tags`, prices when printed, and **translated menu copy** for every locale.
+
+**Menu URLs must be on the venue’s live `website` domain** (e.g. `/eteleink`, `/italaink` on `kiosk-budapest.hu`). If `website` is dead or a different hostname, fix the provider contact fields first — do not transcribe menus from a stale domain.
 
 Verify after ingest:
 - `GET https://budapest-night.vercel.app/api/public/menu-items?locale=it&tag=palinka&limit=20` — item **names** and section context in Italian

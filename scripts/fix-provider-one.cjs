@@ -187,6 +187,18 @@ const CORRECTIONS = {
     longDescription:
       "Espresso Embassy at Arany János utca 15 is one of Budapest's early third-wave cafés, a short walk from Király utca nightlife. Mon–Fri 7:30–17:00, Sat–Sun 8:30–17:00; no reservations. Weekend laptops only on communal tables.\n\nSources: https://espressoembassy.hu/",
   },
+  "prov-cov-kiosk-parliament": {
+    website: "https://www.kiosk-budapest.hu/",
+    imageSource:
+      "https://cdn.prod.website-files.com/66be0d4de4926d5fa8d2c21d/67f74e0ae5c97e6e2d6d4284_66be0d4de4926d5fa8d2c21d_679ba373a97b79c67616fb25_Kiosk%20final-transcode%20%281%29-poster-00001.jpg",
+    email: "info@kiosk-budapest.hu",
+    phone: "+36 70 585 5727",
+    address: "1056 Budapest, Március 15. tér 4, Hungary",
+    shortDescription:
+      "Modern Hungarian bistro on Március 15. tér — Danube terrace, farm-driven kitchen, and signature cocktails from lunch until late.",
+    longDescription:
+      "KIOSK Budapest has been a downtown meeting place since 2013, pairing contemporary Hungarian cooking with a bold cocktail program and terrace views toward the Danube and Parliament. Kitchen pause daily 16:30–17:30; bills include a 15% service charge. Book via kiosk-budapest.hu.\n\nSources: https://www.kiosk-budapest.hu/ https://www.kiosk-budapest.hu/eteleink https://www.kiosk-budapest.hu/italaink",
+  },
   "prov-cov-daubner-oktogon": {
     address: "1025 Budapest, Szépvölgyi út 50, Hungary",
     borough: "Buda",
