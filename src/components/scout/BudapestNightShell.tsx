@@ -21,7 +21,7 @@ import { MeetupShareDialog } from "@/components/scout/panels/MeetupShareDialog";
 import { TrustStrip } from "@/components/scout/TrustStrip";
 import { Logo } from "@/components/scout/Logo";
 import type { Provider, Category } from "@/types/provider";
-import type { NightEvent } from "@/types/event";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { MeetupGroup } from "@/types/meetup";
 import { Menu, Heart, Bell, UserCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -69,7 +69,7 @@ export default function BudapestNightShell() {
   } = useAppNavigation();
 
   const [openProvider, setOpenProvider] = useState<Provider | null>(null);
-  const [selectedEvent, setSelectedEvent] = useState<NightEvent | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<PublicNightEvent | null>(null);
   const [shareProvider, setShareProvider] = useState<Provider | null>(null);
   const [openGroupState, setOpenGroupState] = useState<MeetupGroup | null>(
     null,
@@ -269,6 +269,7 @@ export default function BudapestNightShell() {
         onClose={closeVenue}
         onShare={setShareProvider}
         onOpenAnother={openVenue}
+        onOpenEvent={openEvent}
       />
       <EventProfile
         event={selectedEvent}

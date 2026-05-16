@@ -100,6 +100,8 @@
     "reviews": "({count} تقييم)",
     "reviewsShort": "({count})",
     "moreNearby": "المزيد قريباً",
+    "upcomingEvents": "فعاليات قادمة",
+    "upcomingEventsHint": "فعاليات مجدولة في هذا المكان.",
     "contactVenue": "تواصل مع المكان",
     "similarNearby": "أماكن مشابهة قريبة",
     "bookingSoon": "رابط الحجز قريباً. زر موقع المكان أو تواصل معهم.",

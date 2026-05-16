@@ -30,7 +30,7 @@ export function getEventPathKey(event: NightEvent, locale: AppLocale = defaultLo
   return slug || event.id;
 }
 
-export function findEventByKey(events: NightEvent[], key: string): NightEvent | undefined {
+export function findEventByKey<T extends NightEvent>(events: T[], key: string): T | undefined {
   const decoded = decodeURIComponent(key);
   const byId = events.find((e) => e.id === decoded);
   if (byId) return byId;

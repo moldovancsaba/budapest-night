@@ -100,6 +100,8 @@
     "reviews": "({count} ביקורות)",
     "reviewsShort": "({count})",
     "moreNearby": "עוד בקרבת מקום",
+    "upcomingEvents": "אירועים קרובים",
+    "upcomingEventsHint": "מופעים מתוזמנים במקום הזה.",
     "contactVenue": "צור קשר עם המקום",
     "similarNearby": "מקומות דומים בקרבת מקום",
     "bookingSoon": "קישור הזמנה בקרוב. בקרו באתר המקום או צרו קשר.",

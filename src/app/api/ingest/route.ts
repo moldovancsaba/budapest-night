@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/mongodb";
 import { requireIngestKey } from "@/lib/requireIngestKey";
-import { applyIngestOperation } from "@/lib/ingestOperations";
+import { applyIngestOperation, type IngestBatchContext } from "@/lib/ingestOperations";
 
 const MAX_OPS = 100;
 
@@ -60,9 +60,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `At most ${MAX_OPS} operations per request` }, { status: 400 });
   }
 
+  const batch: IngestBatchContext = { providerIdsInBatch: new Set() };
   const results: { index: number; ok: boolean; error?: string; data?: unknown }[] = [];
   for (let i = 0; i < ops.length; i++) {
-    const res = await applyIngestOperation(db, ops[i]);
+    const res = await applyIngestOperation(db, ops[i], batch);
     if (res.ok === false) {
       results.push({ index: i, ok: false, error: res.error });
       continue;

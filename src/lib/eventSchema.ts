@@ -20,6 +20,19 @@ export const nightEventSchema = z.object({
   endsAt: isoDateTime,
   timezone: z.string().max(64).optional(),
   venueIds: z.array(z.string().min(1)).min(1).max(12),
+  venueLinks: z
+    .array(
+      z.object({
+        id: z.string().min(1),
+        name: z.string().min(1),
+        category: z.string().min(1),
+        borough: z.string().min(1),
+        neighborhood: z.string().min(1),
+        address: z.string().min(1),
+      }),
+    )
+    .max(12)
+    .optional(),
   borough: z.string().min(1),
   neighborhood: z.string().min(1),
   entryFees: z.array(entryFeeSchema).max(24),

@@ -8,7 +8,7 @@ import type { AppLocale } from "@/i18n/config";
 import type { ViewKey } from "@/components/scout/Sidebar";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
-import type { NightEvent } from "@/types/event";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import {
   type AppRoute,
   type AppSection,
@@ -89,7 +89,7 @@ export function useAppNavigation() {
   }, [router, route.fromSection, route.location]);
 
   const openEvent = useCallback(
-    (event: NightEvent) => {
+    (event: PublicNightEvent) => {
       router.push(
         buildEventPath(event, {
           from: "events",

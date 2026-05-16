@@ -7,7 +7,7 @@ import { NeighborhoodChips } from "../NeighborhoodChips";
 import { EventCard } from "../EventCard";
 import { EmptyState } from "../EmptyState";
 import { NEIGHBORHOODS as FALLBACK_HOODS } from "@/data/locations";
-import type { NightEvent } from "@/types/event";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Borough, BoroughChoice } from "@/types/provider";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { useEventsCatalog, useNeighborhoodsCatalog } from "@/hooks/useCatalog";
@@ -21,7 +21,7 @@ import {
 } from "@/hooks/useVenueDisplay";
 
 interface Props {
-  onOpen: (e: NightEvent) => void;
+  onOpen: (e: PublicNightEvent) => void;
   initialBorough?: BoroughChoice | null;
   initialNeighborhood?: string | null;
 }

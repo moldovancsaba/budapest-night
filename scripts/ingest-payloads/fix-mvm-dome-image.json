@@ -1,0 +1,16 @@
+{
+  "sourceUrls": [
+    "https://commons.wikimedia.org/wiki/File:MVM_Dome,_Budapest_IX._ker%C3%BClete.jpg"
+  ],
+  "notes": "Sting event image — same MVM Dome exterior as host venue.",
+  "operations": [
+    {
+      "resource": "event",
+      "action": "patch",
+      "id": "event-sting-mvm-dome-2026",
+      "patch": {
+        "image": "https://i.ibb.co/FLdH3FZ7/f6f9df3f32bc.jpg"
+      }
+    }
+  ]
+}

@@ -1,4 +1,7 @@
 {
+  "prov-mvm-dome-ujbuda": {
+    "localImagePath": "scripts/imgbb-asset-sources/providers/mvm-dome.jpg"
+  },
   "prov-cov-kuplung-kiraly": {
     "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG/1280px-Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG"
   },

@@ -1,4 +1,4 @@
-import type { AgeRange, Borough, DayTimeTag, FeaturedBadge } from "@/types/provider";
+import type { AgeRange, Borough, Category, DayTimeTag, FeaturedBadge } from "@/types/provider";
 import type { EventLocalesMap } from "@/types/eventLocale";
 
 export type EventStatus = "scheduled" | "cancelled" | "sold_out" | "postponed";
@@ -6,6 +6,16 @@ export type EventStatus = "scheduled" | "cancelled" | "sold_out" | "postponed";
 export type EventCurrency = "HUF" | "EUR" | "FREE";
 
 export type EntryFeeSource = "published" | "estimated";
+
+/** Denormalized host venue snapshot (set on ingest from linked providers). */
+export type EventVenueLink = {
+  id: string;
+  name: string;
+  category: Category;
+  borough: Borough;
+  neighborhood: string;
+  address: string;
+};
 
 /** Ticket tier or admission type for a timed event. */
 export type EntryFee = {
@@ -30,6 +40,8 @@ export interface NightEvent {
   timezone?: string;
   /** One or more provider ids (venues hosting this event). */
   venueIds: string[];
+  /** Host venue snapshots — always set on ingest; used when catalog lookup fails. */
+  venueLinks?: EventVenueLink[];
   /** Denormalized for district filters (primary host borough). */
   borough: Borough;
   neighborhood: string;

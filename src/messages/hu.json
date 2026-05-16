@@ -100,6 +100,8 @@
     "reviews": "({count} értékelés)",
     "reviewsShort": "({count})",
     "moreNearby": "Több a közelben",
+    "upcomingEvents": "Közelgő események",
+    "upcomingEventsHint": "Időzített programok ezen a helyszínen.",
     "contactVenue": "Kapcsolat a hellyel",
     "similarNearby": "Hasonló helyek a közelben",
     "bookingSoon": "Foglalási link hamarosan. Látogasd a hely weboldalát vagy vedd fel a kapcsolatot.",

@@ -2,7 +2,7 @@
 
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import type { NightEvent } from "@/types/event";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Provider } from "@/types/provider";
 import { CalendarDays, ExternalLink, MapPin, Ticket, X } from "lucide-react";
 import { CdnImage } from "@/components/ui/CdnImage";
@@ -24,7 +24,7 @@ export function EventProfile({
   onClose,
   onOpenVenue,
 }: {
-  event: NightEvent | null;
+  event: PublicNightEvent | null;
   onClose: () => void;
   onOpenVenue: (p: Provider) => void;
 }) {
@@ -40,10 +40,12 @@ export function EventProfile({
   if (!event) return null;
 
   const { dateLine, timeLine } = schedule(event);
-  const hostVenues = event.venueIds
-    .map((id) => providers.find((p) => p.id === id))
-    .filter((p): p is Provider => !!p);
-  const primaryHost = hostVenues[0] ?? null;
+  const hostVenueRows = event.venues.map((link) => ({
+    link,
+    provider: providers.find((p) => p.id === link.id) ?? null,
+  }));
+  const primaryHost = hostVenueRows[0]?.provider ?? hostVenueRows[0]?.link ?? null;
+  const missingVenueCount = event.venueIds.length - event.venues.length;
 
   return (
     <Sheet open={!!event} onOpenChange={(o) => !o && onClose()}>
@@ -161,7 +163,13 @@ export function EventProfile({
             ) : null}
           </div>
 
-          {hostVenues.length > 0 && (
+          {missingVenueCount > 0 ? (
+            <p className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
+              {t("venueLinkMissing", { count: missingVenueCount })}
+            </p>
+          ) : null}
+
+          {hostVenueRows.length > 0 && (
             <div>
               <h3 className="font-display text-base font-semibold text-foreground">
                 {t("venues")}
@@ -170,14 +178,24 @@ export function EventProfile({
                 {t("venuesHint")}
               </p>
               <div className="mt-4 grid gap-4">
-                {hostVenues.map((p) => (
-                  <ProviderCard
-                    key={p.id}
-                    provider={p}
-                    onOpen={onOpenVenue}
-                    onShare={() => {}}
-                  />
-                ))}
+                {hostVenueRows.map(({ link, provider }) =>
+                  provider ? (
+                    <ProviderCard
+                      key={link.id}
+                      provider={provider}
+                      onOpen={onOpenVenue}
+                      onShare={() => {}}
+                    />
+                  ) : (
+                    <div
+                      key={link.id}
+                      className="rounded-2xl border border-border/70 bg-card/50 p-4"
+                    >
+                      <p className="font-display font-semibold text-foreground">{link.name}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{link.address}</p>
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           )}

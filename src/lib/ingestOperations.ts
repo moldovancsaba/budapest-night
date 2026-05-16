@@ -13,11 +13,39 @@ import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } f
 import { validateProviderLocalesForIngest } from "@/lib/curator/localeIngestRules";
 import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
-import { resolveProviderLocation, syncEventLocationFromHost } from "@/lib/budapestLocation";
+import { resolveProviderLocation } from "@/lib/budapestLocation";
+import { isValidProviderId, prepareNightEventWithVenues } from "@/lib/eventVenueLink";
 
 export type IngestOpResult =
   | { ok: true; data?: unknown }
   | { ok: false; error: string };
+
+export type IngestBatchContext = {
+  /** Provider ids upserted earlier in the same POST /api/ingest request. */
+  providerIdsInBatch: Set<string>;
+};
+
+const defaultBatchContext = (): IngestBatchContext => ({ providerIdsInBatch: new Set() });
+
+async function loadEventHosts(
+  db: Db,
+  venueIds: string[],
+): Promise<{ hosts: Provider[] } | { error: string }> {
+  const hosts: Provider[] = [];
+  for (const id of venueIds) {
+    if (!isValidProviderId(id)) {
+      return { error: `event: invalid venueId ${JSON.stringify(id)} (expected prov-...)` };
+    }
+    const raw = (await db.collection(COL.providers).findOne({ id })) as unknown as Provider | null;
+    if (!raw) {
+      return {
+        error: `event: unknown venueId ${id} — upsert the host venue first (same payload, before the event)`,
+      };
+    }
+    hosts.push(withResolvedLocation(raw));
+  }
+  return { hosts };
+}
 
 type LocRow = { borough: Borough; neighborhoods: string[] };
 
@@ -38,7 +66,11 @@ function withResolvedLocation(provider: Provider): Provider {
   return { ...provider, ...resolveProviderLocation(provider) };
 }
 
-export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestOpResult> {
+export async function applyIngestOperation(
+  db: Db,
+  op: unknown,
+  batch: IngestBatchContext = defaultBatchContext(),
+): Promise<IngestOpResult> {
   if (!isPlainObject(op)) return { ok: false, error: "each operation must be a JSON object" };
   const resource = op.resource;
   const action = op.action;
@@ -207,6 +239,7 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
     const withMenu = withResolvedLocation(applyMenuToProvider(rest) as Provider);
     await db.collection(COL.providers).replaceOne({ id: withMenu.id }, withMenu, { upsert: true });
+    batch.providerIdsInBatch.add(withMenu.id);
     return { ok: true };
   }
 
@@ -360,14 +393,14 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (imgErr) return { ok: false, error: imgErr };
     const localeErrs = validateEventLocalesForIngest(rest.locales, "event.document");
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
-    const hostId = parsed.data.venueIds[0];
-    const hostRaw = hostId
-      ? ((await db.collection(COL.providers).findOne({ id: hostId })) as unknown as Provider | null)
-      : null;
-    const host = hostRaw ? withResolvedLocation(hostRaw) : null;
+    const hostsResult = await loadEventHosts(db, parsed.data.venueIds);
+    if ("error" in hostsResult) return { ok: false, error: hostsResult.error };
     const eventDoc = parsed.data as NightEvent;
-    const located = { ...eventDoc, ...syncEventLocationFromHost(eventDoc, host) };
-    await db.collection(COL.events).replaceOne({ id: rest.id }, located as unknown as Document, { upsert: true });
+    const { venueLinks: _dropLinks, ...withoutLinks } = eventDoc;
+    const stored = prepareNightEventWithVenues(withoutLinks as NightEvent, hostsResult.hosts);
+    await db.collection(COL.events).replaceOne({ id: rest.id }, stored as unknown as Document, {
+      upsert: true,
+    });
     return { ok: true };
   }
 
@@ -376,17 +409,27 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (typeof id !== "string" || !id) return { ok: false, error: "event.patch requires id string" };
     const patchIn = op.patch;
     if (!isPlainObject(patchIn)) return { ok: false, error: "event.patch requires patch object" };
-    const { id: _drop, ...patch } = patchIn as Partial<NightEvent> & { id?: string };
+    const { id: _drop, venueLinks: _dropLinks, ...patch } = patchIn as Partial<NightEvent> & {
+      id?: string;
+    };
     if (Object.keys(patch).length === 0) return { ok: false, error: "event.patch patch must not be empty" };
     const cur = (await db.collection(COL.events).findOne({ id })) as unknown as NightEvent | null;
-    const merged: Partial<NightEvent> = { ...(cur ?? {}), ...patch };
-    if (patch.locales) merged.locales = mergeEventLocales(cur?.locales, patch.locales);
+    if (!cur) return { ok: false, error: `event.patch: unknown id ${id}` };
+    const merged: NightEvent = { ...cur, ...patch };
+    if (patch.locales) merged.locales = mergeEventLocales(cur.locales, patch.locales);
+    const parsed = nightEventSchema.safeParse(merged);
+    if (!parsed.success) return { ok: false, error: parsed.error.message };
     const imgErr = validateProviderImages({
       image: merged.image,
       galleryImages: merged.galleryImages,
     });
     if (imgErr) return { ok: false, error: imgErr };
-    await db.collection(COL.events).updateOne({ id }, { $set: patch });
+    const localeErrs = validateEventLocalesForIngest(merged.locales, "event.patch");
+    if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
+    const hostsResult = await loadEventHosts(db, parsed.data.venueIds);
+    if ("error" in hostsResult) return { ok: false, error: hostsResult.error };
+    const stored = prepareNightEventWithVenues(parsed.data as NightEvent, hostsResult.hosts);
+    await db.collection(COL.events).replaceOne({ id }, stored as unknown as Document);
     return { ok: true };
   }
 

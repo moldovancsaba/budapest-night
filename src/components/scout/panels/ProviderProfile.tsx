@@ -20,7 +20,9 @@ import { useMemo, useState } from "react";
 import { useSaved, useCalculator } from "@/store/useScout";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { useProvidersCatalog } from "@/hooks/useCatalog";
+import { useEventsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
+import type { PublicNightEvent } from "@/lib/publicEvent";
+import { EventCard } from "@/components/scout/EventCard";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { ProviderCard } from "../ProviderCard";
 import { ProviderMap } from "./ProviderMap";
@@ -45,11 +47,13 @@ export function ProviderProfile({
   onClose,
   onShare,
   onOpenAnother,
+  onOpenEvent,
 }: {
   provider: Provider | null;
   onClose: () => void;
   onShare: (p: Provider) => void;
   onOpenAnother: (p: Provider) => void;
+  onOpenEvent: (e: PublicNightEvent) => void;
 }) {
   const locale = useLocale() as AppLocale;
   const t = useTranslations("venue");
@@ -62,6 +66,7 @@ export function ProviderProfile({
   const formatPrice = useFormatVenuePrice();
   const shareSummary = useVenueShareSummary();
   const { data: allProviders = [] } = useProvidersCatalog();
+  const { data: allEvents = [] } = useEventsCatalog();
   const { isSaved, toggle } = useSaved();
   const { add } = useCalculator();
   const [photoIdx, setPhotoIdx] = useState(0);
@@ -81,6 +86,13 @@ export function ProviderProfile({
     if (urls.length === 0) urls.push(CMS_MEDIA.fallbackListing);
     return urls;
   }, [provider]);
+
+  const venueEvents = useMemo(() => {
+    if (!provider) return [];
+    return allEvents
+      .filter((e) => e.venueIds.includes(provider.id))
+      .sort((a, b) => a.startsAt.localeCompare(b.startsAt));
+  }, [allEvents, provider]);
 
   if (!provider) return null;
 
@@ -295,6 +307,20 @@ export function ProviderProfile({
               </h3>
               <div className="mt-3">
                 <VenueMenuPanel provider={provider} />
+              </div>
+            </div>
+          )}
+
+          {venueEvents.length > 0 && (
+            <div>
+              <h3 className="font-display text-base font-semibold text-foreground">
+                {t("upcomingEvents")}
+              </h3>
+              <p className="mt-1 text-xs text-muted-foreground">{t("upcomingEventsHint")}</p>
+              <div className="mt-4 grid gap-4">
+                {venueEvents.map((event) => (
+                  <EventCard key={event.id} event={event} onOpen={onOpenEvent} />
+                ))}
               </div>
             </div>
           )}

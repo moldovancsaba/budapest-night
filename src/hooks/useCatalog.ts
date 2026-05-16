@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocale } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
-import type { NightEvent } from "@/types/event";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { MeetupGroup } from "@/types/meetup";
 import type { Borough } from "@/types/provider";
 import type { SiteDoc } from "@/types/site";
@@ -35,7 +35,7 @@ export function useEventsCatalog() {
         const j = await r.json().catch(() => ({}));
         throw new Error((j as { error?: string }).error || "Failed to load events");
       }
-      return r.json() as Promise<NightEvent[]>;
+      return r.json() as Promise<PublicNightEvent[]>;
     },
     staleTime: 60_000,
   });
