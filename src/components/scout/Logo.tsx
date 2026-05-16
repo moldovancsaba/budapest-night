@@ -44,7 +44,7 @@ export function Logo({
           <div className="font-display text-lg font-bold tracking-widest text-sidebar-foreground">
             Budapest
           </div>
-          <motion.div className="font-display text-[11px] font-semibold tracking-[0.35em] text-brand">
+          <div className="font-display text-[11px] font-semibold tracking-[0.35em] text-brand">
             NIGHT
           </div>
         </div>
