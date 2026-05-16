@@ -21,6 +21,7 @@
     "restaurants": "Ristoranti",
     "cafes": "Caffè",
     "culture": "Cultura",
+    "eatDrink": "Mangiare e bere",
     "nightGuide": "Guida notturna",
     "saved": "Salvati",
     "budget": "Budget",
@@ -474,5 +475,65 @@
     "staffPick": "Scelta del team",
     "hiddenGem": "Perla nascosta",
     "weekendVibes": "Vibes weekend"
+  },
+  "menu": {
+    "title": "Menu e drink",
+    "empty": "Nessun menu pubblicato per questo locale.",
+    "verified": "Menu verificato",
+    "estimated": "(stim.)"
+  },
+  "menuTag": {
+    "palinka": "Pálinka",
+    "wine": "Vino",
+    "beer": "Birra",
+    "craft-beer": "Birra artigianale",
+    "cocktail": "Cocktail",
+    "coffee": "Caffè",
+    "specialty-coffee": "Caffè specialty",
+    "goulash": "Goulash",
+    "hungarian": "Ungherese",
+    "street-food": "Street food",
+    "dessert": "Dolce",
+    "vegan": "Vegano",
+    "vegetarian": "Vegetariano",
+    "ruin-bar": "Ruin bar",
+    "rooftop": "Rooftop",
+    "danube-view": "Vista Danubio"
+  },
+  "eatDrink": {
+    "eyebrow": "Menu e prezzi",
+    "title": "Mangiare e bere",
+    "subtitle": "Sfoglia piatti e drink con prezzi pubblicati a Budapest — poi prova un tour tematico in tre tappe.",
+    "toursTitle": "Tour tematici",
+    "toursSubtitle": "Tre tappe scelte tra locali con menu compatibili. Mescola quando vuoi.",
+    "startTour": "Inizia il tour",
+    "browseTitle": "Sfoglia il menu",
+    "loading": "Caricamento…",
+    "resultsCount": "{shown} di {total} voci",
+    "searchPlaceholder": "Cerca piatti, drink, locali…",
+    "filterAll": "Tutto",
+    "filterFood": "Cibo",
+    "filterDrink": "Drink",
+    "allTags": "Tutti i tag",
+    "empty": "Nessuna voce corrisponde ancora.",
+    "tours": {
+      "palinka": { "title": "Percorso pálinka", "description": "Tre locali noti per il brandy di frutta ungherese." },
+      "foodie": { "title": "Giro foodie", "description": "Classici ungheresi e street food in tre quartieri." },
+      "coffee": { "title": "Coffee crawl specialty", "description": "Caffetterie third-wave per un pomeriggio lento." }
+    }
+  },
+  "tours": {
+    "backToEatDrink": "Torna a Mangiare e bere",
+    "reshuffle": "Nuovo percorso casuale",
+    "openVenue": "Apri locale",
+    "shareHint": "Mescola e condividi l'URL.",
+    "palinka": { "title": "Percorso pálinka", "description": "Tre locali con pálinka in menu, distribuiti tra i quartieri quando possibile." },
+    "foodie": { "title": "Giro foodie", "description": "Sapori ungheresi in tre tappe." },
+    "coffee": { "title": "Coffee crawl specialty", "description": "Tre caffè per filtro, espresso e pasticceria." },
+    "errors": {
+      "unknown_tour": "Questo tour non è disponibile.",
+      "not_enough_venues": "Non ci sono ancora abbastanza locali con menu compatibili.",
+      "error": "Impossibile caricare il tour. Riprova."
+    }
   }
 }

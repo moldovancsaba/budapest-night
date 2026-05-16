@@ -35,6 +35,9 @@ Rules:
 - galleryImages: only include if every URL is https on imgbb.com (i.ibb.co); otherwise omit.
 - longDescription MUST end with a line: Sources: <source url>
 - ${getProviderLocaleIngestRulesForPrompt()}
+- If the official page lists food or drinks with prices, include optional "menu" (sections + items + tags from: palinka, wine, beer, craft-beer, cocktail, coffee, specialty-coffee, goulash, hungarian, street-food, dessert, vegan, vegetarian, ruin-bar, rooftop, danube-view). Use price only when printed; set price.source to "published". Omit menu entirely if no menu is on the page — do not invent dishes.
+- For Events with ticket or drink packages, optional "eventOfferings" array with dated offers and line items.
+- Do not include menuTags in output (computed server-side).
 - If you cannot satisfy the schema truthfully, return {"skip":true,"reason":"..."} instead of guessing.`;
 }
 

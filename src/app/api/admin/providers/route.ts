@@ -3,6 +3,7 @@ import { getDb, COL } from "@/lib/mongodb";
 import { requireAdmin } from "@/lib/requireAdmin";
 import type { Provider } from "@/types/provider";
 import { validateProviderImages } from "@/lib/imgbbUrl";
+import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 
 export async function GET() {
   const denied = await requireAdmin();
@@ -39,7 +40,12 @@ export async function PATCH(req: Request) {
   const merged: Partial<Provider> = { ...(cur ?? {}), ...patch };
   const imgErr = validateProviderImages(merged);
   if (imgErr) return NextResponse.json({ error: imgErr }, { status: 400 });
-  await db.collection(COL.providers).updateOne({ id }, { $set: patch });
+  const withMenu =
+    "menu" in patch || "eventOfferings" in patch
+      ? applyMenuToProvider(merged as Provider)
+      : patch;
+  const setDoc = "menu" in patch || "eventOfferings" in patch ? { ...patch, menuTags: withMenu.menuTags } : patch;
+  await db.collection(COL.providers).updateOne({ id }, { $set: setDoc });
   return NextResponse.json({ ok: true });
 }
 

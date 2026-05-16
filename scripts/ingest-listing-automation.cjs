@@ -36,6 +36,26 @@ const BOROUGHS = ["Belváros", "Terézváros", "Erzsébetváros", "Ferencváros"
 const AGE_RANGES = ["All ages", "Family", "18+", "21+", "Late night"];
 const DAY_TAGS = ["Weekday", "Weekend", "Morning", "Afternoon", "Evening", "Late night"];
 const BADGES = ["Featured", "Popular", "New", "Staff Pick", "Hidden Gem", "Weekend Vibes"];
+const MENU_TAGS = [
+  "palinka",
+  "wine",
+  "beer",
+  "craft-beer",
+  "cocktail",
+  "coffee",
+  "specialty-coffee",
+  "goulash",
+  "hungarian",
+  "street-food",
+  "dessert",
+  "vegan",
+  "vegetarian",
+  "ruin-bar",
+  "rooftop",
+  "danube-view",
+];
+const MENU_ITEM_KINDS = ["food", "drink", "other"];
+const MENU_CURRENCIES = ["HUF", "EUR"];
 
 const MEETUP_TYPES = ["Art & Gallery", "Live Culture", "Food & Wine Circle", "Nightlife Crew", "Local Creators"];
 const MEETUP_AGES = ["All ages", "18+", "21+", "Family", "Late night"];
@@ -196,6 +216,71 @@ function validateProvider(doc, idx, { skipLocaleCheck = false } = {}) {
   if (doc.bookingEnabled !== undefined && typeof doc.bookingEnabled !== "boolean") errors.push(`${p}: bookingEnabled must be boolean`);
   if (!skipLocaleCheck) {
     errors.push(...validateProviderLocalesForIngest(doc.locales, p));
+  }
+  if (doc.menu !== undefined) errors.push(...validateVenueMenu(doc.menu, `${p}.menu`));
+  if (doc.eventOfferings !== undefined) errors.push(...validateEventOfferings(doc.eventOfferings, p));
+  if (doc.menuTags !== undefined) errors.push(`${p}: do not send menuTags (computed on ingest)`);
+  return errors;
+}
+
+function validateVenueMenu(menu, prefix) {
+  const errors = [];
+  if (!menu || typeof menu !== "object") {
+    errors.push(`${prefix}: must be object`);
+    return errors;
+  }
+  if (!Array.isArray(menu.sections)) errors.push(`${prefix}: sections must be array`);
+  else {
+    menu.sections.forEach((sec, si) => {
+      if (!sec || typeof sec !== "object") errors.push(`${prefix}.sections[${si}]: invalid`);
+      else {
+        if (!sec.id || !sec.title) errors.push(`${prefix}.sections[${si}]: id and title required`);
+        if (!Array.isArray(sec.items)) errors.push(`${prefix}.sections[${si}].items must be array`);
+        else
+          sec.items.forEach((item, ii) => {
+            errors.push(...validateMenuItem(item, `${prefix}.sections[${si}].items[${ii}]`));
+          });
+      }
+    });
+  }
+  if (!menu.lastVerifiedAt) errors.push(`${prefix}: lastVerifiedAt required (YYYY-MM-DD)`);
+  if (!Array.isArray(menu.sourceUrls)) errors.push(`${prefix}: sourceUrls must be array`);
+  return errors;
+}
+
+function validateEventOfferings(offerings, p) {
+  const errors = [];
+  if (!Array.isArray(offerings)) {
+    errors.push(`${p}: eventOfferings must be array`);
+    return errors;
+  }
+  offerings.forEach((ev, ei) => {
+    if (!ev || typeof ev !== "object") errors.push(`${p}.eventOfferings[${ei}]: invalid`);
+    else {
+      if (!ev.id || !ev.title) errors.push(`${p}.eventOfferings[${ei}]: id and title required`);
+      if (!Array.isArray(ev.items)) errors.push(`${p}.eventOfferings[${ei}].items must be array`);
+      else ev.items.forEach((item, ii) => errors.push(...validateMenuItem(item, `${p}.eventOfferings[${ei}].items[${ii}]`)));
+    }
+  });
+  return errors;
+}
+
+function validateMenuItem(item, prefix) {
+  const errors = [];
+  if (!item || typeof item !== "object") {
+    errors.push(`${prefix}: invalid`);
+    return errors;
+  }
+  if (!item.name) errors.push(`${prefix}: name required`);
+  if (item.kind && !MENU_ITEM_KINDS.includes(item.kind)) errors.push(`${prefix}: invalid kind`);
+  if (item.tags) {
+    if (!Array.isArray(item.tags)) errors.push(`${prefix}: tags must be array`);
+    else for (const t of item.tags) if (!MENU_TAGS.includes(t)) errors.push(`${prefix}: invalid tag "${t}"`);
+  }
+  if (item.price) {
+    if (typeof item.price.amount !== "number") errors.push(`${prefix}.price.amount must be number`);
+    if (item.price.currency && !MENU_CURRENCIES.includes(item.price.currency)) errors.push(`${prefix}: invalid currency`);
+    if (item.price.source && !["published", "estimated"].includes(item.price.source)) errors.push(`${prefix}: invalid price.source`);
   }
   return errors;
 }

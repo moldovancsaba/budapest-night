@@ -21,6 +21,7 @@ export type DayTimeTag =
 export type FeaturedBadge =
   | "Featured" | "Popular" | "New" | "Staff Pick" | "Hidden Gem" | "Weekend Vibes";
 
+import type { EventOffering, VenueMenu } from "@/types/menu";
 import type { ProviderLocalesMap } from "@/types/providerLocale";
 
 export type { ProviderLocaleContent, ProviderLocalesMap } from "@/types/providerLocale";
@@ -52,4 +53,10 @@ export interface Provider {
   bookingEnabled?: boolean;
   /** Language-specific copy and slugs; base fields are the default (English) fallback. */
   locales?: ProviderLocalesMap;
+  /** Food & drink menu when published by the venue. */
+  menu?: VenueMenu;
+  /** Ticket / package lines for Events listings. */
+  eventOfferings?: EventOffering[];
+  /** Denormalized union of menu item tags (computed on ingest). */
+  menuTags?: string[];
 }

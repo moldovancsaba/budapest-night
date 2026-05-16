@@ -21,6 +21,7 @@
     "restaurants": "מסעדות",
     "cafes": "בתי קפה",
     "culture": "תרבות",
+    "eatDrink": "אוכל ושתייה",
     "nightGuide": "מדריך לילה",
     "saved": "שמורים",
     "budget": "תקציב",
@@ -474,5 +475,65 @@
     "staffPick": "בחירת הצוות",
     "hiddenGem": "פנינה נסתרת",
     "weekendVibes": "אווירת סוף שבוע"
+  },
+  "menu": {
+    "title": "תפריט ומשקאות",
+    "empty": "אין עדיין תפריט מפורסם למקום הזה.",
+    "verified": "תפריט מאומת",
+    "estimated": "(הערכה)"
+  },
+  "menuTag": {
+    "palinka": "פאלינקה",
+    "wine": "יין",
+    "beer": "בירה",
+    "craft-beer": "בירה מלאכותית",
+    "cocktail": "קוקטייל",
+    "coffee": "קפה",
+    "specialty-coffee": "קפה מיוחד",
+    "goulash": "גולאש",
+    "hungarian": "הונגרי",
+    "street-food": "אוכל רחוב",
+    "dessert": "קינוח",
+    "vegan": "טבעוני",
+    "vegetarian": "צמחוני",
+    "ruin-bar": "בר חורבות",
+    "rooftop": "גג",
+    "danube-view": "נוף לדנובה"
+  },
+  "eatDrink": {
+    "eyebrow": "תפריטים ומחירים",
+    "title": "אוכל ושתייה",
+    "subtitle": "עיינו במנות ומשקאות עם מחירים מפורסמים בבודפשט — ונסו סיור תמטי בשלוש תחנות.",
+    "toursTitle": "סיורים תמטיים",
+    "toursSubtitle": "שלוש תחנות ממקומות עם תפריט תואם. ערבבו מחדש בכל עת.",
+    "startTour": "התחל סיור",
+    "browseTitle": "עיון בתפריט",
+    "loading": "טוען…",
+    "resultsCount": "{shown} מתוך {total} פריטים",
+    "searchPlaceholder": "חיפוש מנות, משקאות, מקומות…",
+    "filterAll": "הכל",
+    "filterFood": "אוכל",
+    "filterDrink": "שתייה",
+    "allTags": "כל התגיות",
+    "empty": "אין פריטים תואמים עדיין.",
+    "tours": {
+      "palinka": { "title": "מסלול פאלינקה", "description": "שלושה מקומות עם פאלינקה בתפריט." },
+      "foodie": { "title": "מסלול פודי", "description": "מנות הונגריות קלאסיות ואוכל רחוב." },
+      "coffee": { "title": "מסלול קפה מיוחד", "description": "בתי קפה third-wave לצהריים רגוע." }
+    }
+  },
+  "tours": {
+    "backToEatDrink": "חזרה לאוכל ושתייה",
+    "reshuffle": "מסלול אקראי חדש",
+    "openVenue": "פתח מקום",
+    "shareHint": "ערבבו מחדש והעתיקו את ה-URL לשיתוף.",
+    "palinka": { "title": "מסלול פאלינקה", "description": "שלושה מקומות עם פאלינקה, מפוזרים בין רובעים כשאפשר." },
+    "foodie": { "title": "מסלול פודי", "description": "טעמים הונגריים בשלוש תחנות." },
+    "coffee": { "title": "מסלול קפה מיוחד", "description": "שלושה בתי קפה לפילטר ואספרסו." },
+    "errors": {
+      "unknown_tour": "הסיור הזה לא זמין.",
+      "not_enough_venues": "אין עדיין מספיק מקומות עם תפריט תואם.",
+      "error": "לא ניתן לטעון את הסיור. נסו שוב."
+    }
   }
 }

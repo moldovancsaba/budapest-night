@@ -21,6 +21,7 @@
     "restaurants": "Restaurantes",
     "cafes": "Cafés",
     "culture": "Cultura",
+    "eatDrink": "Comer y beber",
     "nightGuide": "Guía nocturna",
     "saved": "Guardados",
     "budget": "Presupuesto",
@@ -474,5 +475,83 @@
     "staffPick": "Selección del equipo",
     "hiddenGem": "Joyita oculta",
     "weekendVibes": "Vibes de finde"
+  },
+  "menu": {
+    "title": "Carta y bebidas",
+    "empty": "Aún no hay carta publicada para este local.",
+    "verified": "Carta verificada",
+    "estimated": "(aprox.)"
+  },
+  "menuTag": {
+    "palinka": "Pálinka",
+    "wine": "Vino",
+    "beer": "Cerveza",
+    "craft-beer": "Cerveza artesanal",
+    "cocktail": "Cóctel",
+    "coffee": "Café",
+    "specialty-coffee": "Café de especialidad",
+    "goulash": "Goulash",
+    "hungarian": "Húngaro",
+    "street-food": "Comida callejera",
+    "dessert": "Postre",
+    "vegan": "Vegano",
+    "vegetarian": "Vegetariano",
+    "ruin-bar": "Ruin bar",
+    "rooftop": "Azotea",
+    "danube-view": "Vista al Danubio"
+  },
+  "eatDrink": {
+    "eyebrow": "Cartas y precios",
+    "title": "Comer y beber",
+    "subtitle": "Explora platos y bebidas con precios publicados en Budapest — y prueba un tour temático de tres paradas.",
+    "toursTitle": "Tours temáticos",
+    "toursSubtitle": "Tres paradas elegidas entre locales con cartas coincidentes. Cambia la ruta cuando quieras.",
+    "startTour": "Empezar tour",
+    "browseTitle": "Explorar la carta",
+    "loading": "Cargando…",
+    "resultsCount": "{shown} de {total} platos",
+    "searchPlaceholder": "Buscar platos, bebidas, locales…",
+    "filterAll": "Todo",
+    "filterFood": "Comida",
+    "filterDrink": "Bebida",
+    "allTags": "Todas las etiquetas",
+    "empty": "Ningún plato coincide aún. Se añaden más cartas al verificarse.",
+    "tours": {
+      "palinka": {
+        "title": "Ruta del pálinka",
+        "description": "Tres locales conocidos por el brandy de frutas húngaro."
+      },
+      "foodie": {
+        "title": "Ruta foodie",
+        "description": "Platos húngaros clásicos y street food en tres barrios."
+      },
+      "coffee": {
+        "title": "Ruta del café de especialidad",
+        "description": "Cafeterías third-wave para una tarde tranquila."
+      }
+    }
+  },
+  "tours": {
+    "backToEatDrink": "Volver a Comer y beber",
+    "reshuffle": "Nueva ruta aleatoria",
+    "openVenue": "Abrir local",
+    "shareHint": "Cambia la ruta y comparte la URL.",
+    "palinka": {
+      "title": "Ruta del pálinka",
+      "description": "Tres locales con pálinka en carta, repartidos por distritos cuando es posible."
+    },
+    "foodie": {
+      "title": "Ruta foodie",
+      "description": "Clásicos húngaros y street food en tres paradas."
+    },
+    "coffee": {
+      "title": "Ruta del café de especialidad",
+      "description": "Tres cafés para filtro, espresso y bollería."
+    },
+    "errors": {
+      "unknown_tour": "Este tour no está disponible.",
+      "not_enough_venues": "Aún no hay suficientes locales con cartas coincidentes.",
+      "error": "No se pudo cargar el tour. Inténtalo de nuevo."
+    }
   }
 }

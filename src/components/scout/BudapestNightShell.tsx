@@ -10,6 +10,8 @@ import { ScoutAssistantView } from "@/components/scout/views/ScoutAssistantView"
 import { MeetupGroupsView } from "@/components/scout/views/MeetupGroupsView";
 import { HomeView } from "@/components/scout/views/HomeView";
 import { MyAccountView } from "@/components/scout/views/MyAccountView";
+import { EatDrinkView } from "@/components/scout/views/EatDrinkView";
+import { TourView } from "@/components/scout/views/TourView";
 import { ProviderProfile } from "@/components/scout/panels/ProviderProfile";
 import { ShareDialog } from "@/components/scout/panels/ShareDialog";
 import { MeetupGroupProfile } from "@/components/scout/panels/MeetupGroupProfile";
@@ -38,6 +40,8 @@ export default function BudapestNightShell() {
     location,
     venueId,
     groupId,
+    tourId,
+    tourSeed,
     navigateToView,
     openVenue,
     closeVenue,
@@ -178,6 +182,10 @@ export default function BudapestNightShell() {
             {view === "Scout AI Assistant" && <ScoutAssistantView />}
             {view === "Meet-Up Groups" && (
               <MeetupGroupsView onOpen={openGroup} onShare={setShareGroup} />
+            )}
+            {view === "Eat & Drink" && !tourId && <EatDrinkView onOpen={openVenue} />}
+            {view === "Eat & Drink" && tourId && (
+              <TourView tourId={tourId} seed={tourSeed} onOpen={openVenue} />
             )}
             {view === "My Account" && (
               <MyAccountView

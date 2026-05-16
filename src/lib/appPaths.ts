@@ -11,6 +11,7 @@ export type AppSection =
   | "restaurants"
   | "cafes"
   | "culture"
+  | "eat-drink"
   | "saved"
   | "budget"
   | "split"
@@ -25,6 +26,7 @@ const VIEW_TO_SECTION: Record<ViewKey, AppSection> = {
   Restaurants: "restaurants",
   Cafés: "cafes",
   "Meet-Up Groups": "culture",
+  "Eat & Drink": "eat-drink",
   Saved: "saved",
   Calculator: "budget",
   "Split Check": "split",
@@ -39,6 +41,7 @@ const SECTION_TO_VIEW: Record<AppSection, ViewKey> = {
   restaurants: "Restaurants",
   cafes: "Cafés",
   culture: "Meet-Up Groups",
+  "eat-drink": "Eat & Drink",
   saved: "Saved",
   budget: "Calculator",
   split: "Split Check",
@@ -72,6 +75,7 @@ const KNOWN_SECTIONS = new Set<string>([
   "restaurants",
   "cafes",
   "culture",
+  "eat-drink",
   "saved",
   "budget",
   "split",
@@ -89,6 +93,7 @@ export interface AppRoute {
   location: LocationFilter | null;
   venueId: string | null;
   groupId: string | null;
+  tourId: string | null;
   /** Section to return to when closing a venue sheet (from `?from=`). */
   fromSection: AppSection;
   invalid: boolean;
@@ -146,7 +151,22 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       location,
       venueId: decodeURIComponent(segments[1]),
       groupId: null,
+      tourId: null,
       fromSection,
+      invalid: false,
+    };
+  }
+
+  if (segments[0] === "tours" && segments[1]) {
+    const location = parseLocation(search);
+    return {
+      view: "Eat & Drink",
+      section: "eat-drink",
+      location,
+      venueId: null,
+      groupId: null,
+      tourId: decodeURIComponent(segments[1]),
+      fromSection: "eat-drink",
       invalid: false,
     };
   }
@@ -158,6 +178,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       location,
       venueId: null,
       groupId: decodeURIComponent(segments[1]),
+      tourId: null,
       fromSection: "culture",
       invalid: false,
     };
@@ -170,6 +191,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       location,
       venueId: null,
       groupId: null,
+      tourId: null,
       fromSection: "home",
       invalid: false,
     };
@@ -183,6 +205,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       location: null,
       venueId: null,
       groupId: null,
+      tourId: null,
       fromSection: "home",
       invalid: true,
     };
@@ -195,9 +218,16 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     location,
     venueId: null,
     groupId: null,
+    tourId: null,
     fromSection: appSection,
     invalid: false,
   };
+}
+
+export function buildTourPath(tourId: string, seed?: string): string {
+  const base = `/tours/${encodeURIComponent(tourId)}`;
+  if (!seed) return base;
+  return `${base}?seed=${encodeURIComponent(seed)}`;
 }
 
 export function buildSectionPath(
@@ -242,6 +272,11 @@ export function buildVenuePath(
 
 export function buildGroupPath(groupId: string): string {
   return `/group/${encodeURIComponent(groupId)}`;
+}
+
+export function tourSeedFromSearch(search: URLSearchParams): string | null {
+  const seed = search.get("seed");
+  return seed?.trim() ? seed : null;
 }
 
 export function getSiteOrigin(): string {

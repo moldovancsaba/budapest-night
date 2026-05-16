@@ -21,6 +21,7 @@
     "restaurants": "Restaurants",
     "cafes": "Cafés",
     "culture": "Culture",
+    "eatDrink": "Eat & Drink",
     "nightGuide": "Night Guide",
     "saved": "Saved",
     "budget": "Budget",
@@ -487,5 +488,83 @@
     "staffPick": "Staff Pick",
     "hiddenGem": "Hidden Gem",
     "weekendVibes": "Weekend Vibes"
+  },
+  "menu": {
+    "title": "Menu & drinks",
+    "empty": "No published menu yet for this venue.",
+    "verified": "Menu verified",
+    "estimated": "(est.)"
+  },
+  "menuTag": {
+    "palinka": "Pálinka",
+    "wine": "Wine",
+    "beer": "Beer",
+    "craft-beer": "Craft beer",
+    "cocktail": "Cocktail",
+    "coffee": "Coffee",
+    "specialty-coffee": "Specialty coffee",
+    "goulash": "Goulash",
+    "hungarian": "Hungarian",
+    "street-food": "Street food",
+    "dessert": "Dessert",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "ruin-bar": "Ruin bar",
+    "rooftop": "Rooftop",
+    "danube-view": "Danube view"
+  },
+  "eatDrink": {
+    "eyebrow": "Menus & prices",
+    "title": "Eat & drink",
+    "subtitle": "Browse dishes and drinks with published prices across Budapest venues — then try a themed three-stop tour.",
+    "toursTitle": "Themed tours",
+    "toursSubtitle": "Three stops picked from venues with matching menus. Reshuffle anytime.",
+    "startTour": "Start tour",
+    "browseTitle": "Browse the menu board",
+    "loading": "Loading items…",
+    "resultsCount": "{shown} of {total} items",
+    "searchPlaceholder": "Search dishes, drinks, venues…",
+    "filterAll": "All",
+    "filterFood": "Food",
+    "filterDrink": "Drink",
+    "allTags": "All tags",
+    "empty": "No menu items match yet. More venues are added as menus are verified.",
+    "tours": {
+      "palinka": {
+        "title": "Pálinka trail",
+        "description": "Three spots known for Hungarian fruit brandy — bars, cellars, and ruin pubs."
+      },
+      "foodie": {
+        "title": "Budapest foodie loop",
+        "description": "Classic Hungarian plates and street bites across three neighborhoods."
+      },
+      "coffee": {
+        "title": "Specialty coffee crawl",
+        "description": "Third-wave cafés and espresso bars for a slow afternoon."
+      }
+    }
+  },
+  "tours": {
+    "backToEatDrink": "Back to Eat & drink",
+    "reshuffle": "New random route",
+    "openVenue": "Open venue",
+    "shareHint": "Reshuffle to get a shareable route — copy the URL after.",
+    "palinka": {
+      "title": "Pálinka trail",
+      "description": "Three venues with pálinka on the menu, spread across districts when possible."
+    },
+    "foodie": {
+      "title": "Budapest foodie loop",
+      "description": "Hungarian classics and street food across three stops."
+    },
+    "coffee": {
+      "title": "Specialty coffee crawl",
+      "description": "Three café stops for filter, espresso, and pastry."
+    },
+    "errors": {
+      "unknown_tour": "This tour is not available.",
+      "not_enough_venues": "Not enough venues with matching menus yet — check back after more listings are ingested.",
+      "error": "Could not load this tour. Try again."
+    }
   }
 }

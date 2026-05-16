@@ -18,6 +18,7 @@ import {
   buildVenuePath,
   parseAppRoute,
   sectionFromCategory,
+  tourSeedFromSearch,
   viewToSection,
 } from "@/lib/appPaths";
 
@@ -97,6 +98,8 @@ export function useAppNavigation() {
     location: route.location,
     venueId: route.venueId,
     groupId: route.groupId,
+    tourId: route.tourId,
+    tourSeed: tourSeedFromSearch(searchParams),
     navigateToView,
     navigateToSection,
     openVenue,

@@ -10,6 +10,7 @@ import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { ProviderCard } from "../ProviderCard";
 import { ProviderMap } from "./ProviderMap";
+import { VenueMenuPanel } from "@/components/scout/VenueMenuPanel";
 import { resolveImageUrl } from "@/lib/resolveImageUrl";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
@@ -38,6 +39,7 @@ export function ProviderProfile({
 }) {
   const locale = useLocale() as AppLocale;
   const t = useTranslations("venue");
+  const tMenu = useTranslations("menu");
   const categoryLabel = useCategoryLabel();
   const activityLabel = useActivityTypeLabel();
   const ageLabel = useAgeRangeLabel();
@@ -215,6 +217,15 @@ export function ProviderProfile({
           </div>
 
           <p className="text-sm leading-relaxed text-foreground/85">{provider.longDescription}</p>
+
+          {(provider.menu?.sections?.length || (provider.eventOfferings?.length ?? 0) > 0) && (
+            <div>
+              <h3 className="font-display text-base font-semibold text-foreground">{tMenu("title")}</h3>
+              <div className="mt-3">
+                <VenueMenuPanel provider={provider} />
+              </div>
+            </div>
+          )}
 
           <div className="grid grid-cols-2 gap-2">
             {provider.bookingEnabled && (

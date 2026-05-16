@@ -8,6 +8,7 @@ import {
 } from "@/lib/curator/constants";
 import { PROVIDER_INGEST_LOCALES } from "@/lib/curator/localeIngestRules";
 import { isImgBbHttpsImageUrl } from "@/lib/imgbbUrl";
+import { eventOfferingSchema, venueMenuSchema } from "@/lib/menu/menuSchema";
 
 const sourcesLine = (s: string) => /Sources:\s*https?:\/\//i.test(s);
 
@@ -91,6 +92,8 @@ export const curatedProviderSchema = z
     announcementBadge: z.string().max(60).optional(),
     bookingEnabled: z.boolean().optional(),
     locales: providerLocalesIngestSchema,
+    menu: venueMenuSchema.optional(),
+    eventOfferings: z.array(eventOfferingSchema).max(12).optional(),
   })
   .strict();
 

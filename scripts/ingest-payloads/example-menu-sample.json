@@ -1,0 +1,85 @@
+{
+  "sourceUrls": ["https://example.com/menu"],
+  "notes": "Example provider upsert with a minimal published drink menu. Dry-run: npm run ingest:listing -- --dry-run scripts/ingest-payloads/example-menu-sample.json",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "example-palinka-cellar",
+        "name": "Example Pálinka Cellar",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "Example utca 1, Budapest",
+        "activityTypes": ["wineBar"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Evening", "Late night"],
+        "pricePerClass": 18,
+        "shortDescription": "Sample cellar bar for menu ingest validation.",
+        "longDescription": "Demonstration payload only — replace with a real venue before production ingest.",
+        "rating": 4.6,
+        "reviewCount": 120,
+        "badges": [],
+        "image": "",
+        "email": "",
+        "website": "https://example.com",
+        "phone": "",
+        "locales": {
+          "hu": {
+            "slug": "minta-palinka-pince",
+            "name": "Minta pálinka pince",
+            "shortDescription": "Minta hely menü validációhoz.",
+            "longDescription": "Minta leírás.\n\nSources: https://example.com/menu"
+          },
+          "es": {
+            "slug": "bodega-ejemplo-palinka",
+            "name": "Bodega ejemplo pálinka",
+            "shortDescription": "Lugar de ejemplo.",
+            "longDescription": "Descripción de ejemplo.\n\nSources: https://example.com/menu"
+          },
+          "it": {
+            "slug": "cantina-esempio-palinka",
+            "name": "Cantina esempio pálinka",
+            "shortDescription": "Locale esempio.",
+            "longDescription": "Descrizione esempio.\n\nSources: https://example.com/menu"
+          },
+          "he": {
+            "slug": "palinka-cellar-demo",
+            "name": "דוגמת מרתף פאלינקה",
+            "shortDescription": "מקום לדוגמה.",
+            "longDescription": "תיאור לדוגמה.\n\nSources: https://example.com/menu"
+          },
+          "ar": {
+            "slug": "palinka-cellar-demo-ar",
+            "name": "قبو بالينكا مثال",
+            "shortDescription": "مكان مثال.",
+            "longDescription": "وصف مثال.\n\nSources: https://example.com/menu"
+          }
+        },
+        "menu": {
+          "menuUrl": "https://example.com/menu",
+          "sourceUrls": ["https://example.com/menu"],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "spirits",
+              "title": "Spirits",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "palinka-plum",
+                  "kind": "drink",
+                  "name": "House plum pálinka (4 cl)",
+                  "tags": ["palinka"],
+                  "price": { "amount": 1490, "currency": "HUF", "unit": "glass", "source": "published" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import {
   X,
   Home,
   UserCircle,
+  Wine,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
@@ -30,6 +31,7 @@ export type ViewKey =
   | "Scout AI Assistant"
   | "Meet-Up Groups"
   | "Home"
+  | "Eat & Drink"
   | "My Account";
 
 type NavItem = {
@@ -46,6 +48,7 @@ const EXPLORE_ITEMS: NavItem[] = [
   { key: "Restaurants", labelKey: "restaurants", icon: UtensilsCrossed },
   { key: "Cafés", labelKey: "cafes", icon: Coffee },
   { key: "Meet-Up Groups", labelKey: "culture", icon: Palette },
+  { key: "Eat & Drink", labelKey: "eatDrink", icon: Wine },
   { key: "Scout AI Assistant", labelKey: "nightGuide", icon: Bot, disabled: true },
 ];
 

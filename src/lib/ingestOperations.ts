@@ -7,6 +7,7 @@ import { DEFAULT_BRAIN } from "@/types/site";
 import { mergeSiteDocument } from "@/lib/siteMerge";
 import { validateMeetupCover, validateProviderImages, validateSiteRasterUrls } from "@/lib/imgbbUrl";
 import { validateProviderLocalesForIngest } from "@/lib/curator/localeIngestRules";
+import { applyMenuToProvider } from "@/lib/menu/applyMenuToProvider";
 import { mergeProviderLocales } from "@/lib/providerLocale";
 
 export type IngestOpResult =
@@ -180,7 +181,8 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     if (imgErr) return { ok: false, error: imgErr };
     const localeErrs = validateProviderLocalesForIngest(rest.locales, "provider.document");
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
-    await db.collection(COL.providers).replaceOne({ id: rest.id }, rest as Provider, { upsert: true });
+    const withMenu = applyMenuToProvider(rest) as Provider;
+    await db.collection(COL.providers).replaceOne({ id: withMenu.id }, withMenu, { upsert: true });
     return { ok: true };
   }
 
@@ -199,7 +201,7 @@ export async function applyIngestOperation(db: Db, op: unknown): Promise<IngestO
     }
     const imgErr = validateProviderImages(merged);
     if (imgErr) return { ok: false, error: imgErr };
-    const setDoc: Partial<Provider> = { ...patch };
+    const setDoc: Partial<Provider> = applyMenuToProvider({ ...patch });
     if (patch.locales) setDoc.locales = merged.locales;
     await db.collection(COL.providers).updateOne({ id }, { $set: setDoc });
     return { ok: true };

@@ -21,6 +21,7 @@
     "restaurants": "Éttermek",
     "cafes": "Kávézók",
     "culture": "Kultúra",
+    "eatDrink": "Enni és inni",
     "nightGuide": "Éjszakai útmutató",
     "saved": "Mentve",
     "budget": "Költségvetés",
@@ -487,5 +488,65 @@
     "staffPick": "Csapat választása",
     "hiddenGem": "Rejtett gyöngyszem",
     "weekendVibes": "Hétvégi hangulat"
+  },
+  "menu": {
+    "title": "Étlap és italok",
+    "empty": "Ehhez a helyhez még nincs közzétett étlap.",
+    "verified": "Étlap ellenőrizve",
+    "estimated": "(becs.)"
+  },
+  "menuTag": {
+    "palinka": "Pálinka",
+    "wine": "Bor",
+    "beer": "Sör",
+    "craft-beer": "Kézműves sör",
+    "cocktail": "Koktél",
+    "coffee": "Kávé",
+    "specialty-coffee": "Specialty kávé",
+    "goulash": "Gulyás",
+    "hungarian": "Magyar",
+    "street-food": "Street food",
+    "dessert": "Desszert",
+    "vegan": "Vegán",
+    "vegetarian": "Vegetáriánus",
+    "ruin-bar": "Romkocsma",
+    "rooftop": "Tetőterasz",
+    "danube-view": "Duna panoráma"
+  },
+  "eatDrink": {
+    "eyebrow": "Étlapok és árak",
+    "title": "Enni és inni",
+    "subtitle": "Böngéssz ételek és italok között közzétett árakkal — majd próbálj egy háromállomásos tematikus túrát.",
+    "toursTitle": "Tematikus túrák",
+    "toursSubtitle": "Három megálló, ahol az étlapok illeszkednek. Bármikor újrasorsolható.",
+    "startTour": "Túra indítása",
+    "browseTitle": "Étlap böngészése",
+    "loading": "Betöltés…",
+    "resultsCount": "{shown} / {total} tétel",
+    "searchPlaceholder": "Keresés ételek, italok, helyek…",
+    "filterAll": "Mind",
+    "filterFood": "Étel",
+    "filterDrink": "Ital",
+    "allTags": "Minden címke",
+    "empty": "Még nincs egyező tétel. További helyek kerülnek fel, ahogy az étlapok ellenőrzésre kerülnek.",
+    "tours": {
+      "palinka": { "title": "Pálinka út", "description": "Három hely, ahol pálinka szerepel az étlapon." },
+      "foodie": { "title": "Foodie kör", "description": "Magyar klasszikusok és street food három kerületben." },
+      "coffee": { "title": "Specialty kávé túra", "description": "Harmadgenerációs kávézók egy lassú délutánra." }
+    }
+  },
+  "tours": {
+    "backToEatDrink": "Vissza: Enni és inni",
+    "reshuffle": "Új véletlen útvonal",
+    "openVenue": "Hely megnyitása",
+    "shareHint": "Újrasorsolás után másold az URL-t a megosztáshoz.",
+    "palinka": { "title": "Pálinka út", "description": "Három pálinkás hely, lehetőleg különböző kerületekben." },
+    "foodie": { "title": "Foodie kör", "description": "Magyar ízek és street food három megállón." },
+    "coffee": { "title": "Specialty kávé túra", "description": "Három kávézó filterre, eszpresszóra és süteményre." },
+    "errors": {
+      "unknown_tour": "Ez a túra nem elérhető.",
+      "not_enough_venues": "Még nincs elég egyező hely — nézz vissza később.",
+      "error": "Nem sikerült betölteni a túrát. Próbáld újra."
+    }
   }
 }

@@ -3,6 +3,7 @@ import {
   buildGroupPath,
   buildPathForView,
   buildSectionPath,
+  buildTourPath,
   buildVenuePath,
   parseAppRoute,
 } from "./appPaths";
@@ -15,6 +16,14 @@ describe("appPaths", () => {
     expect(parseAppRoute("/culture", new URLSearchParams()).view).toBe("Meet-Up Groups");
     expect(parseAppRoute("/budget", new URLSearchParams()).view).toBe("Calculator");
     expect(parseAppRoute("/split", new URLSearchParams()).view).toBe("Split Check");
+    expect(parseAppRoute("/eat-drink", new URLSearchParams()).view).toBe("Eat & Drink");
+  });
+
+  it("parses tour routes", () => {
+    const route = parseAppRoute("/tours/palinka", new URLSearchParams("seed=abc"));
+    expect(route.tourId).toBe("palinka");
+    expect(route.view).toBe("Eat & Drink");
+    expect(buildTourPath("palinka", "abc")).toBe("/tours/palinka?seed=abc");
   });
 
   it("parses district filters", () => {

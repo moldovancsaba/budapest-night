@@ -83,6 +83,31 @@ export default function AdminDashboard() {
     router.refresh();
   };
 
+  const saveProviderMenu = async (id: string, menuJson: string) => {
+    setBusy(true);
+    try {
+      let menu: unknown;
+      try {
+        menu = JSON.parse(menuJson);
+      } catch {
+        toast.error("Invalid menu JSON");
+        return;
+      }
+      const r = await adminFetch("/api/admin/providers", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, menu }),
+      });
+      if (!r.ok) throw new Error();
+      toast.success("Provider menu updated");
+      await load();
+    } catch {
+      toast.error("Save failed");
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const saveProviderImage = async (id: string, image: string) => {
     setBusy(true);
     try {
@@ -287,7 +312,7 @@ export default function AdminDashboard() {
             </p>
             <div className="max-h-[480px] space-y-2 overflow-y-auto">
               {providers.slice(0, 80).map((p) => (
-                <ProviderRow key={p.id} p={p} disabled={busy} onSave={saveProviderImage} />
+                <ProviderRow key={p.id} p={p} disabled={busy} onSave={saveProviderImage} onSaveMenu={saveProviderMenu} />
               ))}
             </div>
             {providers.length > 80 && (
@@ -512,23 +537,37 @@ function ProviderRow({
   p,
   disabled,
   onSave,
+  onSaveMenu,
 }: {
   p: Provider;
   disabled: boolean;
   onSave: (id: string, image: string) => void;
+  onSaveMenu: (id: string, menuJson: string) => void;
 }) {
   const [img, setImg] = useState(p.image);
+  const [menuJson, setMenuJson] = useState(() => JSON.stringify(p.menu ?? null, null, 2));
   return (
-    <div className="flex flex-wrap items-end gap-2 rounded-lg border border-border p-2">
-      <div className="min-w-[140px] flex-1">
-        <p className="text-xs font-semibold text-foreground">{p.name}</p>
-        <p className="text-[10px] text-muted-foreground">
-          {p.category} · {p.borough} · {p.id}
-        </p>
+    <div className="space-y-2 rounded-lg border border-border p-2">
+      <div className="flex flex-wrap items-end gap-2">
+        <div className="min-w-[140px] flex-1">
+          <p className="text-xs font-semibold text-foreground">{p.name}</p>
+          <p className="text-[10px] text-muted-foreground">
+            {p.category} · {p.borough} · {p.id}
+          </p>
+        </div>
+        <Input className="min-w-[200px] flex-[2] font-mono text-xs" value={img} onChange={(e) => setImg(e.target.value)} placeholder="https://i.ibb.co/..." />
+        <Button size="sm" variant="secondary" disabled={disabled} onClick={() => onSave(p.id, img)}>
+          Save image
+        </Button>
       </div>
-      <Input className="min-w-[200px] flex-[2] font-mono text-xs" value={img} onChange={(e) => setImg(e.target.value)} placeholder="https://i.ibb.co/..." />
-      <Button size="sm" variant="secondary" disabled={disabled} onClick={() => onSave(p.id, img)}>
-        Save
+      <textarea
+        className="min-h-[80px] w-full rounded-md border border-input bg-background px-2 py-1 font-mono text-[10px]"
+        value={menuJson}
+        onChange={(e) => setMenuJson(e.target.value)}
+        placeholder='{"sections":[],"sourceUrls":[],"lastVerifiedAt":"2026-05-16"}'
+      />
+      <Button size="sm" variant="outline" disabled={disabled} onClick={() => onSaveMenu(p.id, menuJson)}>
+        Save menu JSON
       </Button>
     </div>
   );
