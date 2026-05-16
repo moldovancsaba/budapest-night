@@ -1,14 +1,16 @@
 import { NextResponse } from "next/server";
+import { brainChatCompletionsUrl, resolveBrainOpenAIKey } from "@/lib/brain/openaiChat";
 import { getDb, COL } from "@/lib/mongodb";
 import { DEFAULT_BRAIN } from "@/types/site";
 
-const LOVABLE_URL = "https://ai.gateway.lovable.dev/v1/chat/completions";
-
 export async function POST(req: Request) {
-  const key = process.env.LOVABLE_API_KEY;
+  const key = resolveBrainOpenAIKey();
   if (!key) {
     return NextResponse.json(
-      { error: "LOVABLE_API_KEY is not set on the server. Add it in .env (never expose in NEXT_PUBLIC_)." },
+      {
+        error:
+          "BRAIN_OPENAI_API_KEY (or CURATOR_OPENAI_API_KEY) is not set on the server. Add it in .env (never expose in NEXT_PUBLIC_).",
+      },
       { status: 500 },
     );
   }
@@ -32,7 +34,7 @@ export async function POST(req: Request) {
     }
   }
 
-  const response = await fetch(LOVABLE_URL, {
+  const response = await fetch(brainChatCompletionsUrl(), {
     method: "POST",
     headers: {
       Authorization: `Bearer ${key}`,
@@ -53,8 +55,8 @@ export async function POST(req: Request) {
   }
   if (!response.ok || !response.body) {
     const t = await response.text();
-    console.error("brain gateway", response.status, t);
-    return NextResponse.json({ error: "AI gateway error" }, { status: 502 });
+    console.error("brain chat", response.status, t);
+    return NextResponse.json({ error: "AI chat error" }, { status: 502 });
   }
 
   return new Response(response.body, {

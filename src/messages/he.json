@@ -123,7 +123,12 @@
     "title": "גלו {category} בבודפשט",
     "tagline": "אוצר. מקומי. ליציאות לילה.",
     "findByArea": "מצאו {blurb} לפי רובע ושכונה.",
-    "heroAlt": "אורות בודפשט בלילה",
+    "heroAlt": {
+      "Events": "קונצרט ופסטיבל בבודפשט",
+      "Parties": "די ג'יי ומועדון לילה בבודפשט",
+      "Restaurants": "מסעדה בבודפשט",
+      "Cafés": "טרסת בית קפה בבודפשט"
+    },
     "featured": "מומלצים",
     "results": "{count, plural, one {מקום #} two {שני מקומות #} other {# מקומות}}",
     "resultsIn": "{count, plural, one {מקום #} two {שני מקומות #} other {# מקומות}} ב-{district}",

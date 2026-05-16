@@ -1,0 +1,1732 @@
+{
+  "sourceUrls": [
+    "https://cafe.hardrock.com/budapest/",
+    "https://www.larm.hu/",
+    "https://www.legendaboatparty.com/",
+    "https://www.spoon.hu/",
+    "https://www.360bar.hu/",
+    "https://www.highnoteskybar.hu/",
+    "https://instant.co.hu/",
+    "https://www.becketts.hu/",
+    "https://www.bluebirdbar.hu/",
+    "https://www.morrisons.hu/",
+    "https://herebudapest.hu/",
+    "https://www.a38.hu/en",
+    "https://www.legio.hu/",
+    "https://spilerbalna.hu/",
+    "https://www.nehrupart.hu/",
+    "https://www.robertsonbar.hu/",
+    "https://www.rudasfurdo.hu/",
+    "https://www.tabanterrace.hu/",
+    "https://www.nappali.hu/",
+    "https://www.danubiusgellert.com/bars",
+    "https://www.budapestpark.hu/en/parties",
+    "https://www.kiscellimuzeum.hu/",
+    "https://www.galibagarden.hu/",
+    "https://www.johnnysbar.hu/",
+    "https://www.zsindelyes.hu/"
+  ],
+  "notes": "Auto coverage wave 2",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-hard-rock-vaci",
+        "name": "Hard Rock Cafe Budapest",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "1051 Budapest, Erzsébet tér 12-14, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Cocktails",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+        "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.\n\nSources: https://cafe.hardrock.com/budapest/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/jk62tfMr/ae03ff3a7163.png",
+        "email": "budapest@hardrock.com",
+        "website": "https://cafe.hardrock.com/budapest/",
+        "phone": "+36 1 429 6050",
+        "locales": {
+          "hu": {
+            "name": "Hard Rock Cafe Budapest",
+            "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+            "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.\n\nSources: https://cafe.hardrock.com/budapest/",
+            "slug": "cov-hard-rock-vaci-hu"
+          },
+          "es": {
+            "name": "Hard Rock Cafe Budapest",
+            "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+            "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.\n\nSources: https://cafe.hardrock.com/budapest/",
+            "slug": "cov-hard-rock-vaci-es"
+          },
+          "it": {
+            "name": "Hard Rock Cafe Budapest",
+            "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+            "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.\n\nSources: https://cafe.hardrock.com/budapest/",
+            "slug": "cov-hard-rock-vaci-it"
+          },
+          "he": {
+            "name": "Hard Rock Cafe Budapest",
+            "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+            "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.\n\nSources: https://cafe.hardrock.com/budapest/",
+            "slug": "cov-hard-rock-vaci-he"
+          },
+          "ar": {
+            "name": "Hard Rock Cafe Budapest",
+            "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+            "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.\n\nSources: https://cafe.hardrock.com/budapest/",
+            "slug": "cov-hard-rock-vaci-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-larm-deak",
+        "name": "LÄRM",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1053 Budapest, Kossuth Lajos utca 17, Hungary",
+        "activityTypes": [
+          "Electronic",
+          "DJ Sets",
+          "Late night"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+        "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "",
+        "website": "https://www.larm.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-hu"
+          },
+          "es": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-es"
+          },
+          "it": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-it"
+          },
+          "he": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-he"
+          },
+          "ar": {
+            "name": "LÄRM",
+            "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+            "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.\n\nSources: https://www.larm.hu/",
+            "slug": "cov-larm-deak-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-legenda-parliament",
+        "name": "Legenda Boat Party",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "address": "1051 Budapest, Vigadó tér, Danube pier, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+        "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@legendaboatparty.com",
+        "website": "https://www.legendaboatparty.com/",
+        "phone": "+36 30 999 1234",
+        "locales": {
+          "hu": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-hu"
+          },
+          "es": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-es"
+          },
+          "it": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-it"
+          },
+          "he": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-he"
+          },
+          "ar": {
+            "name": "Legenda Boat Party",
+            "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+            "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.\n\nSources: https://www.legendaboatparty.com/",
+            "slug": "cov-legenda-parliament-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spoon-party-prom",
+        "name": "Spoon Cafe & Lounge",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "address": "1056 Budapest, Vigadó utca 3, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+        "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@spoon.hu",
+        "website": "https://www.spoon.hu/",
+        "phone": "+36 1 269 0250",
+        "locales": {
+          "hu": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-hu"
+          },
+          "es": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-es"
+          },
+          "it": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-it"
+          },
+          "he": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-he"
+          },
+          "ar": {
+            "name": "Spoon Cafe & Lounge",
+            "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+            "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.\n\nSources: https://www.spoon.hu/",
+            "slug": "cov-spoon-party-prom-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-360bar-andrassy",
+        "name": "360 Bar",
+        "category": "Parties",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 39, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+        "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.\n\nSources: https://www.360bar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/xq3VDTGg/ebb1bef332c6.jpg",
+        "email": "info@360bar.hu",
+        "website": "https://www.360bar.hu/",
+        "phone": "+36 30 360 3600",
+        "locales": {
+          "hu": {
+            "name": "360 Bar",
+            "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+            "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.\n\nSources: https://www.360bar.hu/",
+            "slug": "cov-360bar-andrassy-hu"
+          },
+          "es": {
+            "name": "360 Bar",
+            "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+            "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.\n\nSources: https://www.360bar.hu/",
+            "slug": "cov-360bar-andrassy-es"
+          },
+          "it": {
+            "name": "360 Bar",
+            "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+            "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.\n\nSources: https://www.360bar.hu/",
+            "slug": "cov-360bar-andrassy-it"
+          },
+          "he": {
+            "name": "360 Bar",
+            "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+            "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.\n\nSources: https://www.360bar.hu/",
+            "slug": "cov-360bar-andrassy-he"
+          },
+          "ar": {
+            "name": "360 Bar",
+            "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+            "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.\n\nSources: https://www.360bar.hu/",
+            "slug": "cov-360bar-andrassy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-highnote-opera",
+        "name": "High Note SkyBar",
+        "category": "Parties",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Hercegprímás utca 5, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+        "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.\n\nSources: https://www.highnoteskybar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/r2dzXwML/97ba7f09e0ba.jpg",
+        "email": "info@highnoteskybar.hu",
+        "website": "https://www.highnoteskybar.hu/",
+        "phone": "+36 30 867 1515",
+        "locales": {
+          "hu": {
+            "name": "High Note SkyBar",
+            "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+            "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.\n\nSources: https://www.highnoteskybar.hu/",
+            "slug": "cov-highnote-opera-hu"
+          },
+          "es": {
+            "name": "High Note SkyBar",
+            "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+            "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.\n\nSources: https://www.highnoteskybar.hu/",
+            "slug": "cov-highnote-opera-es"
+          },
+          "it": {
+            "name": "High Note SkyBar",
+            "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+            "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.\n\nSources: https://www.highnoteskybar.hu/",
+            "slug": "cov-highnote-opera-it"
+          },
+          "he": {
+            "name": "High Note SkyBar",
+            "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+            "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.\n\nSources: https://www.highnoteskybar.hu/",
+            "slug": "cov-highnote-opera-he"
+          },
+          "ar": {
+            "name": "High Note SkyBar",
+            "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+            "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.\n\nSources: https://www.highnoteskybar.hu/",
+            "slug": "cov-highnote-opera-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-instant-kiraly",
+        "name": "Instant-Fogas",
+        "category": "Parties",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Akácfa utca 49-51, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Electronic"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+        "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/LXMYttCd/3d09b7b23a79.png",
+        "email": "info@instant.co.hu",
+        "website": "https://instant.co.hu/",
+        "phone": "+36 1 311 9338",
+        "locales": {
+          "hu": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+            "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+            "slug": "cov-instant-kiraly-hu"
+          },
+          "es": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+            "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+            "slug": "cov-instant-kiraly-es"
+          },
+          "it": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+            "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+            "slug": "cov-instant-kiraly-it"
+          },
+          "he": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+            "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+            "slug": "cov-instant-kiraly-he"
+          },
+          "ar": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+            "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+            "slug": "cov-instant-kiraly-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-becketts-liszt",
+        "name": "Beckett's Irish Pub",
+        "category": "Parties",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "address": "1065 Budapest, Liszt Ferenc tér 13, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+        "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@becketts.hu",
+        "website": "https://www.becketts.hu/",
+        "phone": "+36 1 311 1033",
+        "locales": {
+          "hu": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-hu"
+          },
+          "es": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-es"
+          },
+          "it": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-it"
+          },
+          "he": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-he"
+          },
+          "ar": {
+            "name": "Beckett's Irish Pub",
+            "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+            "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.\n\nSources: https://www.becketts.hu/",
+            "slug": "cov-becketts-liszt-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bluebird-gozsdu",
+        "name": "Blue Bird Bar",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "DJ Sets",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+        "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@bluebirdbar.hu",
+        "website": "https://www.bluebirdbar.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-hu"
+          },
+          "es": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-es"
+          },
+          "it": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-it"
+          },
+          "he": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-he"
+          },
+          "ar": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+            "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "cov-bluebird-gozsdu-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-morrison-lit-wessel",
+        "name": "Morrison's Lit",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1077 Budapest, Wesselényi utca 25, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Ruin Bar",
+          "Electronic"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+        "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "",
+        "website": "https://www.morrisons.hu/",
+        "phone": "+36 1 311 9522",
+        "locales": {
+          "hu": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-hu"
+          },
+          "es": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-es"
+          },
+          "it": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-it"
+          },
+          "he": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-he"
+          },
+          "ar": {
+            "name": "Morrison's Lit",
+            "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+            "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.\n\nSources: https://www.morrisons.hu/",
+            "slug": "cov-morrison-lit-wessel-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-here-rakoczi",
+        "name": "HERE Budapest",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Erzsébet körút 13, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+        "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@herebudapest.hu",
+        "website": "https://herebudapest.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-hu"
+          },
+          "es": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-es"
+          },
+          "it": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-it"
+          },
+          "he": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-he"
+          },
+          "ar": {
+            "name": "HERE Budapest",
+            "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+            "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.\n\nSources: https://herebudapest.hu/",
+            "slug": "cov-here-rakoczi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-a38-muegyetem",
+        "name": "A38 Ship",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1111 Budapest, Petőfi híd, budai hídfő, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+        "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hRbYVFhd/04d6bb521b0a.jpg",
+        "email": "info@a38.hu",
+        "website": "https://www.a38.hu/en",
+        "phone": "+36 1 464 4600",
+        "locales": {
+          "hu": {
+            "name": "A38 Ship",
+            "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+            "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "cov-a38-muegyetem-hu"
+          },
+          "es": {
+            "name": "A38 Ship",
+            "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+            "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "cov-a38-muegyetem-es"
+          },
+          "it": {
+            "name": "A38 Ship",
+            "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+            "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "cov-a38-muegyetem-it"
+          },
+          "he": {
+            "name": "A38 Ship",
+            "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+            "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "cov-a38-muegyetem-he"
+          },
+          "ar": {
+            "name": "A38 Ship",
+            "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+            "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "cov-a38-muegyetem-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-legio-nagy",
+        "name": "Légió Hungarian Pub",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Pipa utca 4, Hungary",
+        "activityTypes": [
+          "Craft Beer",
+          "Live Music",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+        "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "",
+        "website": "https://www.legio.hu/",
+        "phone": "+36 1 318 9999",
+        "locales": {
+          "hu": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-hu"
+          },
+          "es": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-es"
+          },
+          "it": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-it"
+          },
+          "he": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-he"
+          },
+          "ar": {
+            "name": "Légió Hungarian Pub",
+            "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+            "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.\n\nSources: https://www.legio.hu/",
+            "slug": "cov-legio-nagy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spiler-balna",
+        "name": "Spíler Bálna",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Cocktails",
+          "Boat Party"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+        "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@spilerbalna.hu",
+        "website": "https://spilerbalna.hu/",
+        "phone": "+36 1 269 0251",
+        "locales": {
+          "hu": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-hu"
+          },
+          "es": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-es"
+          },
+          "it": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-it"
+          },
+          "he": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-he"
+          },
+          "ar": {
+            "name": "Spíler Bálna",
+            "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+            "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.\n\nSources: https://spilerbalna.hu/",
+            "slug": "cov-spiler-balna-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-nehru-party",
+        "name": "Nehru Part Beach Bar",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1095 Budapest, Könyves Kálmán körút 12-14, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+        "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@nehrupart.hu",
+        "website": "https://www.nehrupart.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-hu"
+          },
+          "es": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-es"
+          },
+          "it": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-it"
+          },
+          "he": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-he"
+          },
+          "ar": {
+            "name": "Nehru Part Beach Bar",
+            "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+            "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.\n\nSources: https://www.nehrupart.hu/",
+            "slug": "cov-nehru-party-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-robertson-castle",
+        "name": "Robertson Bar",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1011 Budapest, Robertson utca 1, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "DJ Sets",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+        "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@robertsonbar.hu",
+        "website": "https://www.robertsonbar.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-hu"
+          },
+          "es": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-es"
+          },
+          "it": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-it"
+          },
+          "he": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-he"
+          },
+          "ar": {
+            "name": "Robertson Bar",
+            "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+            "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.\n\nSources: https://www.robertsonbar.hu/",
+            "slug": "cov-robertson-castle-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-rudas-party",
+        "name": "Rudas Rooftop Bar",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "Thermal Bath",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+        "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/zHWT6qJ1/84d7ee8a3655.jpg",
+        "email": "info@rudasfurdo.hu",
+        "website": "https://www.rudasfurdo.hu/",
+        "phone": "+36 1 356 1010",
+        "locales": {
+          "hu": {
+            "name": "Rudas Rooftop Bar",
+            "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+            "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+            "slug": "cov-rudas-party-hu"
+          },
+          "es": {
+            "name": "Rudas Rooftop Bar",
+            "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+            "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+            "slug": "cov-rudas-party-es"
+          },
+          "it": {
+            "name": "Rudas Rooftop Bar",
+            "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+            "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+            "slug": "cov-rudas-party-it"
+          },
+          "he": {
+            "name": "Rudas Rooftop Bar",
+            "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+            "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+            "slug": "cov-rudas-party-he"
+          },
+          "ar": {
+            "name": "Rudas Rooftop Bar",
+            "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+            "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/",
+            "slug": "cov-rudas-party-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-taban-terrace",
+        "name": "Tabán Terrace",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Apáczai Csere János utca 1, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "Cocktails",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+        "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@tabanterrace.hu",
+        "website": "https://www.tabanterrace.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-hu"
+          },
+          "es": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-es"
+          },
+          "it": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-it"
+          },
+          "he": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-he"
+          },
+          "ar": {
+            "name": "Tabán Terrace",
+            "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+            "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.\n\nSources: https://www.tabanterrace.hu/",
+            "slug": "cov-taban-terrace-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-nappali-rozsadomb",
+        "name": "Nappali Buda",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1024 Budapest, Széher út 1, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+        "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@nappali.hu",
+        "website": "https://www.nappali.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-hu"
+          },
+          "es": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-es"
+          },
+          "it": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-it"
+          },
+          "he": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-he"
+          },
+          "ar": {
+            "name": "Nappali Buda",
+            "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+            "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.\n\nSources: https://www.nappali.hu/",
+            "slug": "cov-nappali-rozsadomb-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-bar-party",
+        "name": "Gellért Lobby Bar",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "Jazz",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+        "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/bars",
+        "phone": "+36 1 889 5500",
+        "locales": {
+          "hu": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-hu"
+          },
+          "es": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-es"
+          },
+          "it": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-it"
+          },
+          "he": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-he"
+          },
+          "ar": {
+            "name": "Gellért Lobby Bar",
+            "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+            "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/bars",
+            "slug": "cov-gellert-bar-party-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-park-party-obuda",
+        "name": "Budapest Park Club Nights",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Electronic",
+          "Festival"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+        "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/FLfLmSQ9/c24e1f6dc725.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en/parties",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+            "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "cov-park-party-obuda-hu"
+          },
+          "es": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+            "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "cov-park-party-obuda-es"
+          },
+          "it": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+            "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "cov-park-party-obuda-it"
+          },
+          "he": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+            "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "cov-park-party-obuda-he"
+          },
+          "ar": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+            "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "cov-park-party-obuda-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kiscelli-aquincum",
+        "name": "Kiscelli Pub District",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "address": "1037 Budapest, Kiscelli út 16, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Craft Beer",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+        "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@kiscellimuzeum.hu",
+        "website": "https://www.kiscellimuzeum.hu/",
+        "phone": "+36 1 388 8551",
+        "locales": {
+          "hu": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-hu"
+          },
+          "es": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-es"
+          },
+          "it": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-it"
+          },
+          "he": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-he"
+          },
+          "ar": {
+            "name": "Kiscelli Pub District",
+            "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+            "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.\n\nSources: https://www.kiscellimuzeum.hu/",
+            "slug": "cov-kiscelli-aquincum-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-galiba-kolosy",
+        "name": "Galiba Garden",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1031 Budapest, Frankel Leó út 48, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+        "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@galibagarden.hu",
+        "website": "https://www.galibagarden.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-hu"
+          },
+          "es": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-es"
+          },
+          "it": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-it"
+          },
+          "he": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-he"
+          },
+          "ar": {
+            "name": "Galiba Garden",
+            "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+            "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.\n\nSources: https://www.galibagarden.hu/",
+            "slug": "cov-galiba-kolosy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-johnnys-becsi",
+        "name": "Johnny's American Bar",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Bécsi út 44-46, Hungary",
+        "activityTypes": [
+          "Craft Beer",
+          "Live Music",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+        "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@johnnysbar.hu",
+        "website": "https://www.johnnysbar.hu/",
+        "phone": "+36 1 388 5555",
+        "locales": {
+          "hu": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-hu"
+          },
+          "es": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-es"
+          },
+          "it": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-it"
+          },
+          "he": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-he"
+          },
+          "ar": {
+            "name": "Johnny's American Bar",
+            "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+            "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.\n\nSources: https://www.johnnysbar.hu/",
+            "slug": "cov-johnnys-becsi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-zsindelyes-obuda",
+        "name": "Zsindelyes Music Pub",
+        "category": "Parties",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1036 Budapest, Lajos utca 64, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+        "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4ZLWnVjt/25d938bb9a40.png",
+        "email": "",
+        "website": "https://www.zsindelyes.hu/",
+        "phone": "+36 1 388 4444",
+        "locales": {
+          "hu": {
+            "name": "Zsindelyes Music Pub",
+            "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+            "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+            "slug": "cov-zsindelyes-obuda-hu"
+          },
+          "es": {
+            "name": "Zsindelyes Music Pub",
+            "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+            "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+            "slug": "cov-zsindelyes-obuda-es"
+          },
+          "it": {
+            "name": "Zsindelyes Music Pub",
+            "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+            "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+            "slug": "cov-zsindelyes-obuda-it"
+          },
+          "he": {
+            "name": "Zsindelyes Music Pub",
+            "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+            "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+            "slug": "cov-zsindelyes-obuda-he"
+          },
+          "ar": {
+            "name": "Zsindelyes Music Pub",
+            "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+            "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.\n\nSources: https://www.zsindelyes.hu/",
+            "slug": "cov-zsindelyes-obuda-ar"
+          }
+        }
+      }
+    }
+  ]
+}

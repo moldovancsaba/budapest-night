@@ -1,0 +1,94 @@
+{
+  "sourceUrls": [
+    "https://www.hadikkavehaz.hu/",
+    "https://www.obester.hu/",
+    "https://akvariumklub.hu/",
+    "https://www.mupa.hu/en"
+  ],
+  "notes": "Auto coverage wave 7",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-kosztolanyi",
+        "name": "Hadik Literary & Jazz Circle",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "groupType": "Art & Gallery",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.hadikkavehaz.hu/",
+        "description": "Revived café culture meetups — poetry readings and jazz nights near Kosztolányi tér.",
+        "initials": "KD",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-bikas",
+        "name": "Bikás Park Expo & Coffee",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "groupType": "Local Creators",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.obester.hu/",
+        "description": "Expo fair visits paired with specialty coffee at Bikás park metro — south Buda explorers.",
+        "initials": "BP",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/qLpDps2g/1d1257d4e4a8.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-nightlife-crew",
+        "name": "Budapest Nightlife Crew",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://akvariumklub.hu/",
+        "description": "Open meetup for locals and visitors exploring ruin bars, river parties, and late DJ nights across Pest and Buda. Weekend walks start at major club venues with rotating hosts.",
+        "initials": "NC",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/ZZrvgRk/80b83a5d9d86.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-local-creators",
+        "name": "Budapest Local Creators",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "groupType": "Local Creators",
+        "ageRange": "18+",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.mupa.hu/en",
+        "description": "Network for photographers, DJs, and designers sharing gigs, studio openings, and collaboration nights around Müpa and district culture hubs.",
+        "initials": "LC",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/MFs2Dpc/14e25cfd08c4.webp"
+      }
+    }
+  ]
+}

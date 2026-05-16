@@ -19,17 +19,17 @@ if (!uri) {
   process.exit(1);
 }
 
-const dbName = process.env.MONGODB_DB ?? "classscout";
+const dbName = process.env.MONGODB_DB ?? "budapest-night";
 
-/** Shared ClassScout production DB — never wipe from Budapest Night (or other forks). */
+/** Production database names that must not be wiped by accident. */
 const PROTECTED_DBS = new Set(["classscoutcluster", "classscout"]);
 
 async function main() {
   if (PROTECTED_DBS.has(dbName) && process.env.ALLOW_SEED_PROTECTED_DB !== "true") {
     console.error(
       `Refusing to seed protected database "${dbName}".\n` +
-        `ClassScout data must stay intact. Set MONGODB_DB to a dedicated name (e.g. budapest-night) in .env.local,\n` +
-        `or pass ALLOW_SEED_PROTECTED_DB=true only when you intentionally reset ClassScout.`,
+        `Set MONGODB_DB to a dedicated name (e.g. budapest-night) in .env.local,\n` +
+        `or pass ALLOW_SEED_PROTECTED_DB=true only when you intentionally reset a shared database.`,
     );
     process.exit(1);
   }

@@ -1,0 +1,1733 @@
+{
+  "sourceUrls": [
+    "https://www.morzsakbar.hu/",
+    "https://www.rudasfurdo.hu/en/party",
+    "https://www.binxrooftop.hu/",
+    "https://www.golyokave.hu/",
+    "https://www.koronaclub.hu/",
+    "https://www.gerbeaud.hu/en",
+    "https://www.bockbistro.hu/",
+    "https://www.kioskbudapest.com/",
+    "https://www.spoon.hu/en/restaurant",
+    "https://www.aszuetterem.hu/",
+    "https://www.aranykaviar.hu/",
+    "https://www.ketszerecsen.hu/",
+    "https://mazeltov.hu/",
+    "https://www.menzaetterem.hu/",
+    "https://www.fricipapa.hu/",
+    "https://www.vegazzi.hu/",
+    "https://www.bocksay.hu/",
+    "https://www.stand25bisztro.hu/",
+    "https://www.betesetterem.hu/",
+    "https://www.bambamarha.hu/",
+    "https://www.borsso.hu/",
+    "https://www.izetterem.hu/",
+    "https://www.pestbuda.hu/",
+    "https://www.citadellarestaurant.hu/",
+    "https://www.remizrestaurant.hu/"
+  ],
+  "notes": "Auto coverage wave 3",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-morzsak-moricz",
+        "name": "Morzsák Bar",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1114 Budapest, Bartók Béla út 27, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+        "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@morzsakbar.hu",
+        "website": "https://www.morzsakbar.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-hu"
+          },
+          "es": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-es"
+          },
+          "it": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-it"
+          },
+          "he": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-he"
+          },
+          "ar": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+            "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "cov-morzsak-moricz-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-rudas-ujbuda-party",
+        "name": "Rudas Party Nights",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+        "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/spPHz6jH/09de1b36ddad.webp",
+        "email": "info@rudasfurdo.hu",
+        "website": "https://www.rudasfurdo.hu/en/party",
+        "phone": "+36 1 356 1010",
+        "locales": {
+          "hu": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+            "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "cov-rudas-ujbuda-party-hu"
+          },
+          "es": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+            "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "cov-rudas-ujbuda-party-es"
+          },
+          "it": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+            "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "cov-rudas-ujbuda-party-it"
+          },
+          "he": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+            "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "cov-rudas-ujbuda-party-he"
+          },
+          "ar": {
+            "name": "Rudas Party Nights",
+            "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+            "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en/party",
+            "slug": "cov-rudas-ujbuda-party-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-binx-infopark",
+        "name": "BinX Rooftop",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1117 Budapest, Infopark sétány 1, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+        "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@binxrooftop.hu",
+        "website": "https://www.binxrooftop.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-hu"
+          },
+          "es": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-es"
+          },
+          "it": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-it"
+          },
+          "he": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-he"
+          },
+          "ar": {
+            "name": "BinX Rooftop",
+            "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+            "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.\n\nSources: https://www.binxrooftop.hu/",
+            "slug": "cov-binx-infopark-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-golya-kosztolanyi",
+        "name": "Golyó Kávé",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1114 Budapest, Bartók Béla út 34, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Craft Beer",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+        "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@golyokave.hu",
+        "website": "https://www.golyokave.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-it"
+          },
+          "he": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+            "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "cov-golya-kosztolanyi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-korona-bikas",
+        "name": "Korona Club",
+        "category": "Parties",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "address": "1119 Budapest, Fehérvári út 127, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Electronic",
+          "Late night"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+        "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "",
+        "website": "https://www.koronaclub.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-hu"
+          },
+          "es": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-es"
+          },
+          "it": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-it"
+          },
+          "he": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-he"
+          },
+          "ar": {
+            "name": "Korona Club",
+            "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+            "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.\n\nSources: https://www.koronaclub.hu/",
+            "slug": "cov-korona-bikas-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gerbeaud-vaci",
+        "name": "Gerbeaud",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "1051 Budapest, Vörösmarty tér 7-8, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Coffee & Brunch",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+        "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@gerbeaud.hu",
+        "website": "https://www.gerbeaud.hu/en",
+        "phone": "+36 1 429 9000",
+        "locales": {
+          "hu": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-hu"
+          },
+          "es": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-es"
+          },
+          "it": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-it"
+          },
+          "he": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-he"
+          },
+          "ar": {
+            "name": "Gerbeaud",
+            "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+            "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.\n\nSources: https://www.gerbeaud.hu/en",
+            "slug": "cov-gerbeaud-vaci-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bock-deak",
+        "name": "Bock Bistro",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1056 Budapest, Kért utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+        "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@bockbistro.hu",
+        "website": "https://www.bockbistro.hu/",
+        "phone": "+36 1 266 1434",
+        "locales": {
+          "hu": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-hu"
+          },
+          "es": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-es"
+          },
+          "it": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-it"
+          },
+          "he": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-he"
+          },
+          "ar": {
+            "name": "Bock Bistro",
+            "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+            "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.\n\nSources: https://www.bockbistro.hu/",
+            "slug": "cov-bock-deak-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kiosk-parliament",
+        "name": "Kiosk Budapest",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "address": "1052 Budapest, Március 15. tér 4, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Cocktails",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "All ages"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+        "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "budapest@kioskbudapest.com",
+        "website": "https://www.kioskbudapest.com/",
+        "phone": "+36 1 235 0010",
+        "locales": {
+          "hu": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-hu"
+          },
+          "es": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-es"
+          },
+          "it": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-it"
+          },
+          "he": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-he"
+          },
+          "ar": {
+            "name": "Kiosk Budapest",
+            "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+            "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.\n\nSources: https://www.kioskbudapest.com/",
+            "slug": "cov-kiosk-parliament-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spoon-rest-prom",
+        "name": "Spoon Restaurant",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "address": "1056 Budapest, Vigadó utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+        "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@spoon.hu",
+        "website": "https://www.spoon.hu/en/restaurant",
+        "phone": "+36 1 269 0250",
+        "locales": {
+          "hu": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-hu"
+          },
+          "es": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-es"
+          },
+          "it": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-it"
+          },
+          "he": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-he"
+          },
+          "ar": {
+            "name": "Spoon Restaurant",
+            "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+            "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.\n\nSources: https://www.spoon.hu/en/restaurant",
+            "slug": "cov-spoon-rest-prom-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-aszu-andrassy",
+        "name": "Aszu Étterem",
+        "category": "Restaurants",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 2, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+        "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@aszuetterem.hu",
+        "website": "https://www.aszuetterem.hu/",
+        "phone": "+36 1 342 9342",
+        "locales": {
+          "hu": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-hu"
+          },
+          "es": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-es"
+          },
+          "it": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-it"
+          },
+          "he": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-he"
+          },
+          "ar": {
+            "name": "Aszu Étterem",
+            "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+            "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.\n\nSources: https://www.aszuetterem.hu/",
+            "slug": "cov-aszu-andrassy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-alabard-opera",
+        "name": "Arany Kaviár",
+        "category": "Restaurants",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Október 6. utca 7-9, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "All ages"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+        "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/FLb33dXw/6b959f65d06e.jpg",
+        "email": "info@aranykaviar.hu",
+        "website": "https://www.aranykaviar.hu/",
+        "phone": "+36 1 312 8646",
+        "locales": {
+          "hu": {
+            "name": "Arany Kaviár",
+            "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+            "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+            "slug": "cov-alabard-opera-hu"
+          },
+          "es": {
+            "name": "Arany Kaviár",
+            "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+            "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+            "slug": "cov-alabard-opera-es"
+          },
+          "it": {
+            "name": "Arany Kaviár",
+            "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+            "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+            "slug": "cov-alabard-opera-it"
+          },
+          "he": {
+            "name": "Arany Kaviár",
+            "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+            "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+            "slug": "cov-alabard-opera-he"
+          },
+          "ar": {
+            "name": "Arany Kaviár",
+            "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+            "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.\n\nSources: https://www.aranykaviar.hu/",
+            "slug": "cov-alabard-opera-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ket-szerecsen-oktogon",
+        "name": "Két Szerecsen",
+        "category": "Restaurants",
+        "borough": "Terézváros",
+        "neighborhood": "Oktogon",
+        "address": "1065 Budapest, Nagymező utca 14, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+        "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Q7dS9q2G/e2b3f7240741.png",
+        "email": "info@ketszerecsen.hu",
+        "website": "https://www.ketszerecsen.hu/",
+        "phone": "+36 1 342 2442",
+        "locales": {
+          "hu": {
+            "name": "Két Szerecsen",
+            "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+            "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+            "slug": "cov-ket-szerecsen-oktogon-hu"
+          },
+          "es": {
+            "name": "Két Szerecsen",
+            "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+            "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+            "slug": "cov-ket-szerecsen-oktogon-es"
+          },
+          "it": {
+            "name": "Két Szerecsen",
+            "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+            "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+            "slug": "cov-ket-szerecsen-oktogon-it"
+          },
+          "he": {
+            "name": "Két Szerecsen",
+            "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+            "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+            "slug": "cov-ket-szerecsen-oktogon-he"
+          },
+          "ar": {
+            "name": "Két Szerecsen",
+            "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+            "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.\n\nSources: https://www.ketszerecsen.hu/",
+            "slug": "cov-ket-szerecsen-oktogon-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-mazel-tov-kiraly",
+        "name": "Mazel Tov",
+        "category": "Restaurants",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Akácfa utca 47, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+        "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/20PwKphd/789f2a59e162.jpg",
+        "email": "hello@mazeltov.hu",
+        "website": "https://mazeltov.hu/",
+        "phone": "+36 30 813 3131",
+        "locales": {
+          "hu": {
+            "name": "Mazel Tov",
+            "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+            "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+            "slug": "cov-mazel-tov-kiraly-hu"
+          },
+          "es": {
+            "name": "Mazel Tov",
+            "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+            "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+            "slug": "cov-mazel-tov-kiraly-es"
+          },
+          "it": {
+            "name": "Mazel Tov",
+            "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+            "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+            "slug": "cov-mazel-tov-kiraly-it"
+          },
+          "he": {
+            "name": "Mazel Tov",
+            "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+            "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+            "slug": "cov-mazel-tov-kiraly-he"
+          },
+          "ar": {
+            "name": "Mazel Tov",
+            "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+            "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+            "slug": "cov-mazel-tov-kiraly-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-menza-liszt",
+        "name": "Menza",
+        "category": "Restaurants",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "address": "1065 Budapest, Liszt Ferenc tér 2, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Street Food",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+        "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.\n\nSources: https://www.menzaetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/nG5gnyw/74a301095cc7.png",
+        "email": "info@menzaetterem.hu",
+        "website": "https://www.menzaetterem.hu/",
+        "phone": "+36 1 413 1482",
+        "locales": {
+          "hu": {
+            "name": "Menza",
+            "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+            "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.\n\nSources: https://www.menzaetterem.hu/",
+            "slug": "cov-menza-liszt-hu"
+          },
+          "es": {
+            "name": "Menza",
+            "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+            "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.\n\nSources: https://www.menzaetterem.hu/",
+            "slug": "cov-menza-liszt-es"
+          },
+          "it": {
+            "name": "Menza",
+            "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+            "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.\n\nSources: https://www.menzaetterem.hu/",
+            "slug": "cov-menza-liszt-it"
+          },
+          "he": {
+            "name": "Menza",
+            "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+            "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.\n\nSources: https://www.menzaetterem.hu/",
+            "slug": "cov-menza-liszt-he"
+          },
+          "ar": {
+            "name": "Menza",
+            "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+            "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.\n\nSources: https://www.menzaetterem.hu/",
+            "slug": "cov-menza-liszt-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-frici-jewish-q",
+        "name": "Frici Papa",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "1075 Budapest, Kertész utca 20, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Late Kitchen",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+        "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/dwsX1gXY/5e673e7e0093.png",
+        "email": "",
+        "website": "https://www.fricipapa.hu/",
+        "phone": "+36 1 322 0617",
+        "locales": {
+          "hu": {
+            "name": "Frici Papa",
+            "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+            "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "cov-frici-jewish-q-hu"
+          },
+          "es": {
+            "name": "Frici Papa",
+            "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+            "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "cov-frici-jewish-q-es"
+          },
+          "it": {
+            "name": "Frici Papa",
+            "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+            "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "cov-frici-jewish-q-it"
+          },
+          "he": {
+            "name": "Frici Papa",
+            "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+            "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "cov-frici-jewish-q-he"
+          },
+          "ar": {
+            "name": "Frici Papa",
+            "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+            "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "cov-frici-jewish-q-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-vegazzi-kazinczy",
+        "name": "Vegazzi",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "address": "1075 Budapest, Kazinczy utca 34, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+        "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/n8tn7d1q/038fd3264859.png",
+        "email": "hello@vegazzi.hu",
+        "website": "https://www.vegazzi.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Vegazzi",
+            "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+            "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+            "slug": "cov-vegazzi-kazinczy-hu"
+          },
+          "es": {
+            "name": "Vegazzi",
+            "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+            "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+            "slug": "cov-vegazzi-kazinczy-es"
+          },
+          "it": {
+            "name": "Vegazzi",
+            "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+            "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+            "slug": "cov-vegazzi-kazinczy-it"
+          },
+          "he": {
+            "name": "Vegazzi",
+            "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+            "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+            "slug": "cov-vegazzi-kazinczy-he"
+          },
+          "ar": {
+            "name": "Vegazzi",
+            "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+            "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.\n\nSources: https://www.vegazzi.hu/",
+            "slug": "cov-vegazzi-kazinczy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bocksay-wessel",
+        "name": "Bocksay Bistro",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1075 Budapest, Wesselényi utca 18, Hungary",
+        "activityTypes": [
+          "Wine Bar",
+          "Fine Dining",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+        "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@bocksay.hu",
+        "website": "https://www.bocksay.hu/",
+        "phone": "+36 1 342 2342",
+        "locales": {
+          "hu": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-hu"
+          },
+          "es": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-es"
+          },
+          "it": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-it"
+          },
+          "he": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-he"
+          },
+          "ar": {
+            "name": "Bocksay Bistro",
+            "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+            "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.\n\nSources: https://www.bocksay.hu/",
+            "slug": "cov-bocksay-wessel-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-stand25-rakoczi",
+        "name": "Stand25 Bisztró",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Hold utca 13, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Street Food",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+        "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@stand25bisztro.hu",
+        "website": "https://www.stand25bisztro.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-hu"
+          },
+          "es": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-es"
+          },
+          "it": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-it"
+          },
+          "he": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-he"
+          },
+          "ar": {
+            "name": "Stand25 Bisztró",
+            "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+            "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.\n\nSources: https://www.stand25bisztro.hu/",
+            "slug": "cov-stand25-rakoczi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-betes-corvin",
+        "name": "Bétés Restaurant",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Corvin-negyed",
+        "address": "1082 Budapest, Futó utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+        "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@betesetterem.hu",
+        "website": "https://www.betesetterem.hu/",
+        "phone": "+36 1 456 7890",
+        "locales": {
+          "hu": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-hu"
+          },
+          "es": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-es"
+          },
+          "it": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-it"
+          },
+          "he": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-he"
+          },
+          "ar": {
+            "name": "Bétés Restaurant",
+            "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+            "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.\n\nSources: https://www.betesetterem.hu/",
+            "slug": "cov-betes-corvin-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bamba-marha",
+        "name": "Bamba Marha",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1111 Budapest, Október 23. utca 8, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+        "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@bambamarha.hu",
+        "website": "https://www.bambamarha.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-hu"
+          },
+          "es": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-es"
+          },
+          "it": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-it"
+          },
+          "he": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-he"
+          },
+          "ar": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+            "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "cov-bamba-marha-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-borsso-nagy",
+        "name": "Borssó Bistro",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Boráros tér 6, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+        "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.\n\nSources: https://www.borsso.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/JjDrs6bd/7c0179d1ff97.jpg",
+        "email": "info@borsso.hu",
+        "website": "https://www.borsso.hu/",
+        "phone": "+36 1 456 7891",
+        "locales": {
+          "hu": {
+            "name": "Borssó Bistro",
+            "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+            "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.\n\nSources: https://www.borsso.hu/",
+            "slug": "cov-borsso-nagy-hu"
+          },
+          "es": {
+            "name": "Borssó Bistro",
+            "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+            "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.\n\nSources: https://www.borsso.hu/",
+            "slug": "cov-borsso-nagy-es"
+          },
+          "it": {
+            "name": "Borssó Bistro",
+            "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+            "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.\n\nSources: https://www.borsso.hu/",
+            "slug": "cov-borsso-nagy-it"
+          },
+          "he": {
+            "name": "Borssó Bistro",
+            "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+            "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.\n\nSources: https://www.borsso.hu/",
+            "slug": "cov-borsso-nagy-he"
+          },
+          "ar": {
+            "name": "Borssó Bistro",
+            "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+            "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.\n\nSources: https://www.borsso.hu/",
+            "slug": "cov-borsso-nagy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-iz-millennium",
+        "name": "Íz Étterem",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1093 Budapest, Bálint György utca 6, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+        "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@izetterem.hu",
+        "website": "https://www.izetterem.hu/",
+        "phone": "+36 1 456 7893",
+        "locales": {
+          "hu": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-hu"
+          },
+          "es": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-es"
+          },
+          "it": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-it"
+          },
+          "he": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-he"
+          },
+          "ar": {
+            "name": "Íz Étterem",
+            "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+            "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.\n\nSources: https://www.izetterem.hu/",
+            "slug": "cov-iz-millennium-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-pestbuda-castle",
+        "name": "Pest-Buda Bistro",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1011 Budapest, Fortuna utca 3, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+        "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/5W0CqB37/0fc7d55860e5.jpg",
+        "email": "info@pestbuda.hu",
+        "website": "https://www.pestbuda.hu/",
+        "phone": "+36 1 375 6981",
+        "locales": {
+          "hu": {
+            "name": "Pest-Buda Bistro",
+            "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+            "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+            "slug": "cov-pestbuda-castle-hu"
+          },
+          "es": {
+            "name": "Pest-Buda Bistro",
+            "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+            "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+            "slug": "cov-pestbuda-castle-es"
+          },
+          "it": {
+            "name": "Pest-Buda Bistro",
+            "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+            "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+            "slug": "cov-pestbuda-castle-it"
+          },
+          "he": {
+            "name": "Pest-Buda Bistro",
+            "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+            "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+            "slug": "cov-pestbuda-castle-he"
+          },
+          "ar": {
+            "name": "Pest-Buda Bistro",
+            "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+            "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.\n\nSources: https://www.pestbuda.hu/",
+            "slug": "cov-pestbuda-castle-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-citadella-rest",
+        "name": "Citadella Restaurant",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "address": "1118 Budapest, Citadella sétány 1, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Rooftop",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+        "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@citadellarestaurant.hu",
+        "website": "https://www.citadellarestaurant.hu/",
+        "phone": "+36 1 466 4666",
+        "locales": {
+          "hu": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-hu"
+          },
+          "es": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-es"
+          },
+          "it": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-it"
+          },
+          "he": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-he"
+          },
+          "ar": {
+            "name": "Citadella Restaurant",
+            "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+            "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.\n\nSources: https://www.citadellarestaurant.hu/",
+            "slug": "cov-citadella-rest-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-remiz-taban",
+        "name": "Remiz Restaurant",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Apáczai Csere János utca 1, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+        "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@remizrestaurant.hu",
+        "website": "https://www.remizrestaurant.hu/",
+        "phone": "+36 1 412 2560",
+        "locales": {
+          "hu": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-hu"
+          },
+          "es": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-es"
+          },
+          "it": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-it"
+          },
+          "he": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-he"
+          },
+          "ar": {
+            "name": "Remiz Restaurant",
+            "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+            "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.\n\nSources: https://www.remizrestaurant.hu/",
+            "slug": "cov-remiz-taban-ar"
+          }
+        }
+      }
+    }
+  ]
+}

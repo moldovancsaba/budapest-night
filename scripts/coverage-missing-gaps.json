@@ -1,0 +1,21 @@
+[
+  "provider:Events|Erzsébetváros",
+  "provider:Parties|Buda",
+  "provider:Parties|Óbuda",
+  "provider:Parties|Újbuda",
+  "provider:Restaurants|Terézváros",
+  "provider:Restaurants|Buda",
+  "provider:Restaurants|Óbuda",
+  "provider:Restaurants|Újbuda",
+  "provider:Cafés|Terézváros",
+  "provider:Cafés|Erzsébetváros",
+  "provider:Cafés|Ferencváros",
+  "provider:Cafés|Buda",
+  "provider:Cafés|Óbuda",
+  "provider:Cafés|Újbuda",
+  "meetup:Erzsébetváros",
+  "meetup:Ferencváros",
+  "meetup:Buda",
+  "meetup:Óbuda",
+  "meetup:Újbuda"
+]

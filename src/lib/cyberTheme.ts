@@ -18,7 +18,7 @@ export const CYBER_TONE_LINK: Record<string, string> = {
 export const CYBER_PANEL =
   "rounded-[2rem] border border-border/60 bg-gradient-to-br from-card via-[hsl(280_45%_9%)] to-[hsl(260_50%_6%)]";
 
-/** Account / saved sections — replaces legacy ClassScout beige panels. */
+/** Account / saved sections — dark panel styling. */
 export const ACCOUNT_PANEL = CYBER_PANEL;
 
 /** Category pills on saved cards and filters. */

@@ -123,7 +123,12 @@
     "title": "Descubre {category} en Budapest",
     "tagline": "Curado. Local. Hecho para salir de noche.",
     "findByArea": "Encuentra {blurb} por distrito y barrio.",
-    "heroAlt": "Luces de Budapest de noche",
+    "heroAlt": {
+      "Events": "Concierto y festival en Budapest",
+      "Parties": "DJ y discoteca en Budapest",
+      "Restaurants": "Restaurante en Budapest",
+      "Cafés": "Terraza de café en Budapest"
+    },
     "featured": "Destacados",
     "results": "{count, plural, one {# lugar} other {# lugares}}",
     "resultsIn": "{count, plural, one {# lugar} other {# lugares}} en {district}",

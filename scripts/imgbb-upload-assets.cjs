@@ -21,6 +21,11 @@ const ROOT = path.join(__dirname, "imgbb-asset-sources");
 const MAP = [
   ["home-hero.jpg", "NEXT_PUBLIC_IMG_BB_HOME_HERO"],
   ["discover-hero.jpg", "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO"],
+  ["discover-hero-events.jpg", "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_EVENTS"],
+  ["discover-hero-parties.jpg", "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_PARTIES"],
+  ["discover-hero-restaurants.jpg", "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_RESTAURANTS"],
+  ["discover-hero-cafes.jpg", "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CAFES"],
+  ["discover-hero-culture.jpg", "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CULTURE"],
   ["default-listing.jpg", "NEXT_PUBLIC_IMG_BB_FALLBACK_LISTING"],
   ["meetup-cover.jpg", "NEXT_PUBLIC_IMG_BB_FALLBACK_MEETUP"],
   ["guide-play.jpg", "NEXT_PUBLIC_IMG_BB_GUIDE_CARD"],

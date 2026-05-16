@@ -2,6 +2,8 @@
  * Raster images for marketing + UI fallbacks must be **https://i.ibb.co/...** (ImgBB).
  * `NEXT_PUBLIC_IMG_BB_*` overrides these defaults (set after `npm run imgbb:upload-assets`).
  */
+import type { Category } from "@/types/provider";
+
 export type CmsMediaUrls = {
   homeHero: string;
   discoverHero: string;
@@ -19,6 +21,18 @@ const BAKED_IMG_BB: CmsMediaUrls = {
   guideCard: "https://i.ibb.co/xK672jw6/6a4e4e8ea50c.jpg",
 };
 
+/** Discover category hero — one scene per Events / Parties / Restaurants / Cafés. */
+const BAKED_DISCOVER_HERO_BY_CATEGORY: Record<Category, string> = {
+  Events: "https://i.ibb.co/Z17xzwSm/7a7a1fab59a0.jpg",
+  Parties: "https://i.ibb.co/4g3Bf6n6/53e86654299f.jpg",
+  Restaurants: "https://i.ibb.co/fdZ1jDct/90043b184c36.jpg",
+  "Cafés": "https://i.ibb.co/KjHkYtQs/53f3688c0a7b.png",
+};
+
+/** Culture circles listing hero (Meet-Up Groups). */
+const BAKED_CULTURE_DISCOVER_HERO =
+  "https://i.ibb.co/Mx9DQ6X7/44603dce365f.jpg";
+
 /** Featured district guide cards — one distinct scene per guide id. */
 export const GUIDE_IMAGE_BY_ID: Record<string, string> = {
   "guide-belvaros": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg",
@@ -27,10 +41,12 @@ export const GUIDE_IMAGE_BY_ID: Record<string, string> = {
   "guide-buda": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg",
 };
 
-export function guideImageForId(id: string | undefined): string {
-  if (id && GUIDE_IMAGE_BY_ID[id]) return GUIDE_IMAGE_BY_ID[id];
-  return BAKED_IMG_BB.guideCard;
-}
+const DISCOVER_HERO_ENV: Record<Category, string> = {
+  Events: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_EVENTS",
+  Parties: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_PARTIES",
+  Restaurants: "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_RESTAURANTS",
+  "Cafés": "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CAFES",
+};
 
 const ENV_KEYS: Record<keyof CmsMediaUrls, string> = {
   homeHero: "NEXT_PUBLIC_IMG_BB_HOME_HERO",
@@ -45,6 +61,45 @@ function pick(key: keyof CmsMediaUrls): string {
   const raw = e?.[ENV_KEYS[key] as keyof NodeJS.ProcessEnv];
   const fromEnv = typeof raw === "string" ? raw.trim() : "";
   return fromEnv || BAKED_IMG_BB[key];
+}
+
+function pickDiscoverHero(category: Category): string {
+  const e = typeof process !== "undefined" ? process.env : undefined;
+  const envKey = DISCOVER_HERO_ENV[category];
+  const fromEnv = typeof e?.[envKey as keyof NodeJS.ProcessEnv] === "string"
+    ? (e[envKey as keyof NodeJS.ProcessEnv] as string).trim()
+    : "";
+  if (fromEnv) return fromEnv;
+  return BAKED_DISCOVER_HERO_BY_CATEGORY[category];
+}
+
+function pickCultureDiscoverHero(): string {
+  const e = typeof process !== "undefined" ? process.env : undefined;
+  const raw = e?.NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CULTURE;
+  const fromEnv = typeof raw === "string" ? raw.trim() : "";
+  return fromEnv || BAKED_CULTURE_DISCOVER_HERO;
+}
+
+export function guideImageForId(id: string | undefined): string {
+  if (id && GUIDE_IMAGE_BY_ID[id]) return GUIDE_IMAGE_BY_ID[id];
+  return BAKED_IMG_BB.guideCard;
+}
+
+/** Hero image for Discover category pages (Events, Parties, etc.). */
+export function discoverHeroForCategory(
+  category: Category,
+  siteOverride?: string | null,
+): string {
+  const trimmed = siteOverride?.trim();
+  if (trimmed) return trimmed;
+  return pickDiscoverHero(category);
+}
+
+/** Hero image for Culture / meet-up groups listing. */
+export function cultureDiscoverHero(siteOverride?: string | null): string {
+  const trimmed = siteOverride?.trim();
+  if (trimmed) return trimmed;
+  return pickCultureDiscoverHero();
 }
 
 function readEnv(): CmsMediaUrls {

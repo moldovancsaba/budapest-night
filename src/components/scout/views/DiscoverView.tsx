@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useCategoryLabel, useDistrictLabel, useNeighborhoodLabel } from "@/hooks/useVenueDisplay";
 import { useDiscoverChrome } from "@/hooks/useLocalizedSiteCopy";
+import { discoverHeroForCategory } from "@/config/defaultMedia";
 
 interface Props {
   category: Category;
@@ -45,6 +46,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
   const { data: neighborhoodsMap } = useNeighborhoodsCatalog();
   const { data: site } = useSiteCatalog();
   const discoverChrome = useDiscoverChrome();
+  const heroSrc = discoverHeroForCategory(category, site?.discoverHeroByCategory?.[category]);
 
   const hoodOptions = useMemo(() => {
     if (borough === "All") return [];
@@ -113,7 +115,7 @@ export function DiscoverView({ category, onOpen, onShare, initialBorough, initia
             </p>
           </div>
           <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-accent/20 ring-1 ring-primary/20 md:block">
-            <CdnImage fill src={site?.discoverHeroUrl} alt={t("heroAlt")} />
+            <CdnImage fill src={heroSrc} alt={t(`heroAlt.${category}`)} />
           </div>
         </div>
       </section>

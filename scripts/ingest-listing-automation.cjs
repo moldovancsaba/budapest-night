@@ -14,7 +14,7 @@
  * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`). Use `--skip-locale-check` only for legacy payloads.
  *
  * Env: `INGEST_API_KEY` (required unless `--dry-run`), optional `INGEST_BASE_URL`
- * (default https://classscout.vercel.app). Loads `.env` then `.env.local`.
+ * (default https://budapest-night.vercel.app). Loads `.env` then `.env.local`.
  *
  * Payload shape:
  *   { "sourceUrls": [], "notes": "", "missingOrUncertain": [],

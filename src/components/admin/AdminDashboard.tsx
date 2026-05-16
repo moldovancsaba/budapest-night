@@ -464,7 +464,7 @@ export default function AdminDashboard() {
           <TabsContent value="brain" className="space-y-3 rounded-xl border border-border bg-card p-4">
             {brain && (
               <>
-                <Field label="Model id (Lovable gateway)">
+                <Field label="Model id (OpenAI-compatible)">
                   <Input value={brain.model ?? ""} onChange={(e) => setBrain({ ...brain, model: e.target.value })} />
                 </Field>
                 <Field label="System prompt">
@@ -474,8 +474,10 @@ export default function AdminDashboard() {
                   <Textarea value={startersDraft} onChange={(e) => setStartersDraft(e.target.value)} rows={6} className="font-mono text-xs" />
                 </Field>
                 <p className="text-xs text-muted-foreground">
-                  Chat at <code className="rounded bg-muted px-1">/api/brain/chat</code> needs an optional{" "}
-                  <code className="rounded bg-muted px-1">LOVABLE_API_KEY</code> in server <code className="rounded bg-muted px-1">.env</code> (never NEXT_PUBLIC). Starters are read from{" "}
+                  Chat at <code className="rounded bg-muted px-1">/api/brain/chat</code> needs{" "}
+                  <code className="rounded bg-muted px-1">BRAIN_OPENAI_API_KEY</code> or{" "}
+                  <code className="rounded bg-muted px-1">CURATOR_OPENAI_API_KEY</code> in server{" "}
+                  <code className="rounded bg-muted px-1">.env</code> (never NEXT_PUBLIC). Starters are read from{" "}
                   <code className="rounded bg-muted px-1">/api/public/brain</code>.
                 </p>
                 <Button onClick={saveBrain} disabled={busy}>

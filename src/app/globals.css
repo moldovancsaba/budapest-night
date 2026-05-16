@@ -92,7 +92,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-  /* Legacy ClassScout light panels — force dark surfaces in marketing views */
+  /* Legacy light panels — force dark surfaces in marketing views */
   .bg-ivory,
   .bg-\[hsl\(24_45\%_94\%\)\],
   .bg-\[hsl\(36_35\%_94\%\)\],

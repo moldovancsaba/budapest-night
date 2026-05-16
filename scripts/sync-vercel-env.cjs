@@ -97,8 +97,8 @@ function addPlain(name) {
 
 /**
  * Only variables this deployment uses. Omitted on purpose (set locally if you
- * need them, but not pushed here): LOVABLE_API_KEY,
- * NEXT_PUBLIC_SUPABASE_*, INGEST_BASE_URL — see .env.example.
+ * need them, but not pushed here): BRAIN_OPENAI_API_KEY, BRAIN_OPENAI_BASE_URL,
+ * INGEST_BASE_URL — see .env.example.
  * Optional curator keys (pushed when non-empty): CRON_SECRET, SERPER_API_KEY,
  * CURATOR_OPENAI_API_KEY, CURATOR_ENABLED, CURATOR_OPENAI_MODEL, CURATOR_OPENAI_BASE_URL.
  * Optional ImgBB CDN URLs for marketing/fallbacks (plain): NEXT_PUBLIC_IMG_BB_* — run `npm run imgbb:upload-assets`.
@@ -111,6 +111,7 @@ const secrets = [
   "INGEST_API_KEY",
   "CRON_SECRET",
   "SERPER_API_KEY",
+  "BRAIN_OPENAI_API_KEY",
   "CURATOR_OPENAI_API_KEY",
 ];
 const plain = [
@@ -118,8 +119,14 @@ const plain = [
   "CURATOR_ENABLED",
   "CURATOR_OPENAI_MODEL",
   "CURATOR_OPENAI_BASE_URL",
+  "BRAIN_OPENAI_BASE_URL",
   "NEXT_PUBLIC_IMG_BB_HOME_HERO",
   "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO",
+  "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_EVENTS",
+  "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_PARTIES",
+  "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_RESTAURANTS",
+  "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CAFES",
+  "NEXT_PUBLIC_IMG_BB_DISCOVER_HERO_CULTURE",
   "NEXT_PUBLIC_IMG_BB_FALLBACK_LISTING",
   "NEXT_PUBLIC_IMG_BB_FALLBACK_MEETUP",
   "NEXT_PUBLIC_IMG_BB_GUIDE_CARD",

@@ -1,0 +1,1016 @@
+{
+  "sourceUrls": [
+    "https://budapest-night.vercel.app"
+  ],
+  "notes": "Tag expansion for filter coverage",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-a38-ferencvaros",
+        "name": "A38 Ship",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Petőfi Bridge",
+        "address": "Petőfi rakpart, Buda bridge foot, 1117 Budapest, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Electronic",
+          "Boat Party",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 25,
+        "shortDescription": "Converted Ukrainian stone-carrier on the Danube — one of Europe's coolest concert venues.",
+        "longDescription": "A38 is a nightclub and concert hall on a ship moored on the Buda side of Petőfi Bridge. Check a38.hu for the calendar of live bands, DJ nights, and terrace sessions. Arrive early for riverside drinks before doors.",
+        "rating": 4.7,
+        "reviewCount": 5400,
+        "badges": [
+          "Featured",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/Wv8BgB2k/e0c2e2090035.jpg",
+        "email": "",
+        "website": "https://a38.hu/en/",
+        "phone": "",
+        "locales": {
+          "hu": {
+            "name": "A38 Hajó",
+            "shortDescription": "Ukrajnai kőhordó hajóból koncerthelyszín a Dunán — Európa egyik legmenőbb szórakozóhelye.",
+            "longDescription": "Az A38 koncertterem és klub a Petőfi híd budai hídfőjénél horgonyzó hajón. Nézd meg az a38.hu naptárát élő zenés estekhez, DJ programokhoz és teraszból. Érkezz korán dunai italokra az ajtók nyitása előtt.",
+            "slug": "a38-hajo",
+            "activityTypes": [
+              "Élő zene",
+              "Elektronikus",
+              "Hajóbulik",
+              "Sör"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-gerbeaud-belvaros",
+        "name": "Gerbeaud",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "Vörösmarty tér 7-8, 1051 Budapest, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Street Food",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "18+",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend",
+          "Evening",
+          "Late night"
+        ],
+        "pricePerClass": 18,
+        "shortDescription": "Historic patisserie on Vörösmarty tér — cakes, coffee, and terrace views at the heart of Pest.",
+        "longDescription": "Gerbeaud has been a Budapest institution since the 19th century. Stop for espresso, classic Hungarian pastries, and people-watching on Vörösmarty tér before exploring Váci utca and the Danube promenade.",
+        "rating": 4.4,
+        "reviewCount": 6200,
+        "badges": [
+          "Hidden Gem",
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/9kGJCCY6/a2b2d4f8b2f6.jpg",
+        "email": "",
+        "website": "https://www.gerbeaud.hu",
+        "phone": "+36 1 429 9000"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-new-york-cafe-belvaros",
+        "name": "New York Café",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "Erzsébet körút 9-11, 1073 Budapest, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Coffee & Brunch",
+          "Live Music",
+          "Wine Bar",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 45,
+        "shortDescription": "Opulent café-restaurant in the Boscolo Hotel — gilded interiors and classic Hungarian café culture.",
+        "longDescription": "The New York Café inside the Anantara New York Palace Budapest is famous for its grand belle-époque dining room, coffee, pastries, and evening programs. Reserve ahead for dinner or afternoon tea; dress smart-casual for peak service times.",
+        "rating": 4.5,
+        "reviewCount": 8500,
+        "badges": [
+          "Staff Pick",
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/RkXXc577/59f18593ebea.jpg",
+        "email": "",
+        "website": "https://www.newyorkcafe.hu",
+        "phone": "+36 1 886 6111"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-szimpla-kert-erzsebetvaros",
+        "name": "Szimpla Kert",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "Kazinczy utca 14, 1075 Budapest, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Live Music",
+          "Craft Beer",
+          "Late Kitchen",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+",
+          "All ages",
+          "Family",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Weekend",
+          "Evening",
+          "Late night",
+          "Weekday",
+          "Morning",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, and Budapest nightlife energy.",
+        "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars in the Jewish Quarter (Kazinczy utca). Expect eclectic rooms, street-food vendors, concerts, and a packed weekend crowd. Check szimpla.hu for current events and hours before you go.",
+        "rating": 4.6,
+        "reviewCount": 12000,
+        "badges": [
+          "Featured",
+          "Weekend Vibes",
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/Txz1FJQD/2b6ef53ffe23.jpg",
+        "email": "",
+        "website": "https://szimpla.hu",
+        "phone": ""
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-operetta-terezvaros",
+        "name": "Budapest Operetta & Musical Theatre",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Nagymező u. 17, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic operetta and musical theatre on Nagymező — grand auditorium, year-round Hungarian and international shows.",
+        "longDescription": "The Budapest Operetta & Musical Theatre (Budapesti Operettszínház) has been at Nagymező utca 17 since 1923 in a Fellner & Helmer building from 1894. The restored hall seats 901 and hosts operettas, musicals, and family productions across multiple stages. Buy tickets via operett.hu or the on-site box office (Mon–Fri 10:00–19:00, Sat–Sun 13:00–19:00). Some performances use dynamic pricing — check the online box office before you plan your evening.\n\nSources: https://operett.hu/en https://operett.hu/en/the-budapest-operetta--musical-theatre https://operett.hu/en/contact https://operett.hu/en/program",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/nNmMm6Cf/0e45661c9f87.png",
+        "email": "jegy@operett.hu",
+        "website": "https://operett.hu/en",
+        "phone": "+36 1 312-4866",
+        "announcementTitle": "Check tonight's program",
+        "announcementDescription": "Operettas, musicals, and family shows — book on the official site.",
+        "announcementBadge": "Live culture"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-rudas-buda",
+        "name": "Rudas Thermal Bath",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "Rooftop",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Weekday",
+          "Weekend",
+          "Evening",
+          "Late night"
+        ],
+        "pricePerClass": 30,
+        "shortDescription": "16th-century Turkish dome baths under Gellért Hill — wellness pools, sauna world, and Danube-view night bathing.",
+        "longDescription": "Rudas Gyógyfürdő (Rudas Thermal Bath) at Döbrentei tér 9 is a historic Ottoman-era bath at the foot of Gellért Hill. The complex includes Turkish and wellness zones, a sauna world, drinking hall, and Friday–Saturday night bathing (22:00–03:00) on the rooftop. Weekday Turkish-bath access is gender-segregated until late morning—check the official opening-hours table before you visit. Adult tickets to all zones start at 12,000 HUF Mon–Thu and 15,000 HUF Fri–Sun (2026 prices on rudasfurdo.hu/arak); buy online at tickets.rudasfurdo.hu.\n\nSources: https://www.rudasfurdo.hu/en https://www.rudasfurdo.hu/en/opening-hours https://www.rudasfurdo.hu/arak",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/yBMjWmDH/5e7dddeb2089.jpg",
+        "email": "",
+        "website": "https://www.rudasfurdo.hu/en",
+        "phone": "+36 20 321 4568",
+        "announcementTitle": "Night bathing on weekends",
+        "announcementDescription": "Rooftop pools open Fri–Sat 22:00–03:00 — see opening hours on the official site.",
+        "announcementBadge": "Late night"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-budapest-park-obuda",
+        "name": "Budapest Park",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Live Music",
+          "DJ Sets",
+          "Street Food",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Open-air concert and party park on Hajógyári-sziget — main stage, terraces, and summer festival season.",
+        "longDescription": "Budapest Park is Budapest's seasonal open-air venue on Hajógyári-sziget (Shipyard Island), open roughly April through early October with concerts, DJ nights, and food vendors. The site lists gate times per show, cloakroom fees (499 HUF), and transport by tram, suburban rail H6/H7, and bus. Buy tickets on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/N6Rhy4DY/cb56a463140e.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mng-castle-buda",
+        "name": "Hungarian National Gallery",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1014 Budapest, Szent György tér 2, Hungary",
+        "activityTypes": [
+          "Gallery",
+          "Theatre",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hungary's national art museum in Buda Castle — permanent collections, dome views, and rotating exhibitions.",
+        "longDescription": "The Hungarian National Gallery (Magyar Nemzeti Galéria) occupies the Buda Castle complex at Szent György tér 2. General opening hours are Tuesday–Sunday 10:00–18:00 (ticket office until 17:00; last entry 17:00). The dome may open depending on weather. Check en.mng.hu for current exhibitions and ticket options.\n\nSources: https://en.mng.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/RkT7WgPH/c003da54c918.jpg",
+        "email": "",
+        "website": "https://en.mng.hu/",
+        "phone": "+36 1 201 9082"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-akvarium-belvaros",
+        "name": "Akvárium Klub",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1051 Budapest, Erzsébet tér 12, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "DJ Sets",
+          "Cocktails",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Central Pest club under Erzsébet tér — indoor hall and garden gigs steps from Deák Ferenc tér.",
+        "longDescription": "Akvárium Klub is a long-running concert and club venue at Erzsébet tér 12 near Deák Ferenc tér. The program mixes Hungarian and international live acts and club nights in the main hall and garden areas. Check akvariumklub.hu for the calendar and tickets.\n\nSources: https://akvariumklub.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/s9WG1S2w/6113897a4e42.png",
+        "email": "info@akvariumklub.hu",
+        "website": "https://akvariumklub.hu/",
+        "phone": "+36 30 860 3368"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-fono-ujbuda",
+        "name": "Fonó Budai Zene Ház",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1116 Budapest, Sztregova utca 3, Hungary",
+        "activityTypes": [
+          "Jazz",
+          "Live Music",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Roots, folk, and jazz club in Újbuda — nightly concerts and the annual Budapest Folk Festival hub.",
+        "longDescription": "Fonó Budai Zene Ház at Sztregova utca 3 is one of Budapest's key venues for folk, world, and jazz, including the Budapest Folk Festival program. See fono.hu for concert dates, ticket prices, and table reservations.\n\nSources: https://fono.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/tjbWRYL/6862ec15396a.jpg",
+        "email": "fono@fono.hu",
+        "website": "https://fono.hu/",
+        "phone": "+36 1 206 5300"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-trafo-ferencvaros",
+        "name": "Trafó House of Contemporary Arts",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1094 Budapest, Liliom utca 41, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Contemporary theatre, dance, and music in a former transformer station near Rákóczi tér.",
+        "longDescription": "Trafó Kortárs Művészeti Központ (Trafó House of Contemporary Arts) at Liliom utca 41 presents experimental theatre, dance, concerts, and DJ programs. Browse trafo.hu for the season program and tickets.\n\nSources: https://trafo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/JFRSdt1N/7c5003c380da.jpg",
+        "email": "",
+        "website": "https://trafo.hu/",
+        "phone": "+36 1 456 2040"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-opera-terezvaros",
+        "name": "Hungarian State Opera",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1061 Budapest, Andrássy út 22, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neo-Renaissance opera house on Andrássy út — opera, ballet, and guided building tours.",
+        "longDescription": "The Hungarian State Opera (Magyar Állami Operaház) at Andrássy út 22 is the historic home of opera and ballet in Budapest. Book performances and building tours through opera.hu.\n\nSources: https://www.opera.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/RpjYNY1P/1f34d4d25ba1.jpg",
+        "email": "",
+        "website": "https://www.opera.hu/",
+        "phone": "+36 1 814 7100"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-momkult-ujbuda",
+        "name": "MOM Cultural Centre",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Jazz",
+          "Coffee & Brunch"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Bauhaus cultural centre on the Buda hills — theatre, concerts, and courtyard events.",
+        "longDescription": "MOM Kulturális Központ (MOM Cultural Centre) at Csörsz utca 18 is a protected Bauhaus building with a 650-seat theatre, dome room, and outdoor stage. Ticket office hours and programs are listed on momkult.hu; email jegy@momkult.hu for tickets.\n\nSources: https://momkult.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/B57LN2rb/cf91ad578e08.jpg",
+        "email": "jegy@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 319 9854"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-barba-negra-ujbuda",
+        "name": "Barba Negra Live Club",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1117 Budapest, Neumann János utca 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 10,
+        "shortDescription": "Large-capacity concert hall by the Danube — rock, metal, and pop tours with listed tickets from 3,990 HUF.",
+        "longDescription": "Barba Negra Live Club at Neumann János utca 4 hosts major Hungarian and international concert tours. The public program lists ticket prices per show (many from 3,990 HUF upward on barbanegra.hu). pricePerClass uses the lowest listed entry price as a planning figure.\n\nSources: https://www.barbanegra.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Popular",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/wh8k0JDs/be4a97140121.jpg",
+        "email": "info@barbanegra.hu",
+        "website": "https://www.barbanegra.hu/",
+        "phone": "+36 20 563 2254"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-okk-obuda",
+        "name": "Óbuda Cultural Centre",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1032 Budapest, San Marco utca 81, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "District cultural centre in Óbuda — theatre, concerts, and community programs across local venues.",
+        "longDescription": "Óbudai Kulturális Központ (Óbuda Cultural Centre) at San Marco utca 81 programmes theatre, music, and family events across Óbuda and partner houses. Tickets via kulturkozpont.hu and kulturkozpont.jegy.hu; office phone (06-1) 388-7370 on weekdays 9:00–17:00.\n\nSources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem"
+        ],
+        "image": "https://i.ibb.co/pjMy0r3r/91c1158de41b.jpg",
+        "email": "",
+        "website": "https://kulturkozpont.hu/",
+        "phone": "+36 1 388 7370"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mupa-ferencvaros",
+        "name": "MÜPA Budapest",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Palace of Arts on the Danube — Béla Bartók National Concert Hall, Ludwig Museum, and festival programs.",
+        "longDescription": "MÜPA Budapest (Palace of Arts) at Komor Marcell utca 1 hosts classical, jazz, world music, dance, and contemporary programs in the Bartók National Concert Hall and other halls, plus the Ludwig Museum. Browse mupa.hu for tickets and schedules.\n\nSources: https://www.mupa.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/qLV6b22h/ca46b91b7cab.jpg",
+        "email": "",
+        "website": "https://www.mupa.hu/en",
+        "phone": "+36 1 555 3355"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-mazel-tov-erzsebetvaros",
+        "name": "Mazel Tov",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1073 Budapest, Akácfa utca 47, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Street Food",
+          "Cocktails",
+          "Live Music",
+          "Wine Bar",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend",
+          "Weekday",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Mediterranean garden restaurant in the Jewish Quarter — daytime brunch, evening DJs and live music.",
+        "longDescription": "Mazel Tov is a garden restaurant and bar in the old Jewish Quarter (Akácfa utca 47) serving Mediterranean plates, cocktails, and wines. Kitchen hours end at 22:00–22:30 depending on the day; evenings add DJs and community events. Reserve via mazeltov.hu or +36 70 626 4280.\n\nSources: https://mazeltov.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Popular",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/6JP21gFn/78233fbe110a.jpg",
+        "email": "reservation@mazeltov.hu",
+        "website": "https://mazeltov.hu/en",
+        "phone": "+36 70 626 4280"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-otkert-belvaros",
+        "name": "Ötkert",
+        "category": "Parties",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "1051 Budapest, Zrínyi utca 4/A, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Cocktails",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+",
+          "All ages",
+          "Family",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend",
+          "Weekday",
+          "Morning",
+          "Afternoon"
+        ],
+        "pricePerClass": 10,
+        "shortDescription": "Basilica-area nightclub — two dance floors, rooftop terrace, Wed–Sat from 23:00.",
+        "longDescription": "Ötkert is a central nightclub near St. Stephen's Basilica at Zrínyi utca 4/A, open Wednesday through Saturday 23:00–05:00 with multiple rooms and a retractable roof terrace. Standard admission is listed at 4,000 HUF on the official site (planning figure in pricePerClass). VIP tables: reservation@otkert.hu or +36 70 330 8652.\n\nSources: https://otkert.hu/en/ https://otkert.hu/en/contact/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/HfVDcDWT/3fc4d2081ef9.jpg",
+        "email": "reservation@otkert.hu",
+        "website": "https://otkert.hu/en/",
+        "phone": "+36 70 330 8652"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-doboz-erzsebetvaros",
+        "name": "Doboz",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "1072 Budapest, Klauzál utca 10, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Electronic",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Ruin pub with a 320-year-old tree, garden dance floor, and two indoor rooms — Wed–Sat nights.",
+        "longDescription": "Doboz is a ruin-bar nightclub at Klauzál utca 10 with indoor rooms and a large garden dance floor open Wednesday–Saturday 18:00–06:00. Minimum age 18. Contact info@doboz.pm or +36 20 449 4801. See doboz.co.hu for programs and VIP reservations.\n\nSources: https://doboz.co.hu/en/ https://doboz.co.hu/en/contact/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/S7fDPnvZ/e3860db1911a.jpg",
+        "email": "info@doboz.pm",
+        "website": "https://doboz.co.hu/en/",
+        "phone": "+36 20 449 4801"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-instant-fogas-erzsebetvaros",
+        "name": "Instant-Fogas",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "address": "1073 Budapest, Akácfa utca 49-51, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Electronic",
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend",
+          "Weekday",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Seven-club ruin complex on Akácfa utca — Europe's largest party labyrinth, daily 18:00–06:00.",
+        "longDescription": "Instant-Fogas merges the Instant and Fogasház ruin pubs into one complex at Akácfa utca 49-51 with seven clubs, multiple dance floors, and a garden. Most nights are free entry; some concerts ticketed on instant-fogas.com. Table reservations: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/Z1TnNng3/10bbb947ccc2.png",
+        "email": "info@instant-fogas.com",
+        "website": "https://instant-fogas.com/",
+        "phone": "+36 70 638 5040"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-corvin-club-ferencvaros",
+        "name": "Corvin Club",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Corvin-negyed",
+        "address": "1085 Budapest, Blaha Lujza tér 1-2, Hungary",
+        "activityTypes": [
+          "Electronic",
+          "DJ Sets",
+          "Rooftop",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Techno institution above Corvin Plaza — indoor rooms plus a rooftop terrace overlooking Pest.",
+        "longDescription": "Corvin Club is an electronic music venue on the 4th floor of the Corvin department store at Blaha Lujza tér 1-2, with multiple rooms and a rooftop terrace. Check corvinclub.hu for line-ups and tickets.\n\nSources: https://corvinclub.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hidden Gem",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/Ngdk1b2B/0659ebd32a7c.png",
+        "email": "",
+        "website": "https://corvinclub.hu/",
+        "phone": "+36 20 378 2988"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-central-market-ferencvaros",
+        "name": "Great Market Hall",
+        "category": "Restaurants",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Vámház körút 1-3, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "1897 Zsolnay-tiled market hall — lángos, paprika, produce, and food stalls by the Danube.",
+        "longDescription": "The Great Market Hall (Nagy Vásárcsarnok) at Vámház körút 1-3 is Budapest's largest covered market, opened in 1897 with three floors of produce, Hungarian specialties, and prepared food. Hours and vendor info are published on piaconline.hu (market operator).\n\nSources: https://piaconline.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/htjJ78D/ff4674d43955.jpg",
+        "email": "",
+        "website": "https://piaconline.hu/",
+        "phone": "+36 1 273 3100"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-espresso-embassy-belvaros",
+        "name": "Espresso Embassy",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "1051 Budapest, Arany János utca 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family",
+          "18+",
+          "21+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend",
+          "Evening",
+          "Late night"
+        ],
+        "pricePerClass": 5,
+        "shortDescription": "Pioneer specialty coffee bar near the Basilica — espresso, filter brews, and pastries since 2012.",
+        "longDescription": "Espresso Embassy at Arany János utca 15 is one of Budapest's early third-wave cafés, serving espresso drinks and hand-brewed coffees with rotating roasters. Typical drink prices are planning figures only; check in-store menus. Listed hours on specialty.hu: Mon–Fri from 07:30, Sat–Sun from 09:00. Phone +36 20 445 0063.\n\nSources: https://specialty.hu/en/venue/budapest/espresso-embassy",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "image": "https://i.ibb.co/fGQzzpqv/ef952adf607a.jpg",
+        "email": "",
+        "website": "https://specialty.hu/en/venue/budapest/espresso-embassy",
+        "phone": "+36 20 445 0063"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-360-bar-terezvaros",
+        "name": "360 Bar",
+        "category": "Parties",
+        "borough": "Terézváros",
+        "neighborhood": "Oktogon",
+        "address": "1061 Budapest, Andrássy út 39, Hungary",
+        "activityTypes": [
+          "Rooftop",
+          "Cocktails",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend",
+          "Weekday",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Rooftop cocktails on Andrássy út — heated igloo garden in winter, skyline views year-round.",
+        "longDescription": "360 Bar at Andrássy út 39 is a rooftop cocktail bar above Oktogon with seasonal Igloo Garden domes in colder months. Published hours: Mon–Wed 14:00–00:00, Thu–Sat 14:00–02:00, Sun 14:00–00:00. Reservations and events: info@360bar.hu, +36 30 360 3600.\n\nSources: https://www.360bar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/qFNJ4T1Q/9fdf236417b8.jpg",
+        "email": "info@360bar.hu",
+        "website": "https://www.360bar.hu/",
+        "phone": "+36 30 360 3600"
+      }
+    }
+  ]
+}

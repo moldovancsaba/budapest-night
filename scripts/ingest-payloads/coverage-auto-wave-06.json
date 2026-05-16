@@ -1,0 +1,535 @@
+{
+  "sourceUrls": [
+    "https://instant.co.hu/",
+    "https://www.menzaetterem.hu/",
+    "https://www.jewishmuseum.hu/",
+    "https://gozsduudvar.hu/",
+    "https://szimpla.hu/",
+    "https://durerkert.com/",
+    "https://www.apollomozi.hu/",
+    "https://www.corvinmozi.hu/",
+    "https://www.a38.hu/en",
+    "https://www.ferenciektere.hu/",
+    "https://balnabudapest.hu/",
+    "https://www.nehrupart.hu/",
+    "https://en.mng.hu/",
+    "https://www.gellertspa.hu/",
+    "https://www.pintergallery.hu/",
+    "https://www.gloriett.hu/",
+    "https://www.danubiusgellert.com/",
+    "https://www.budapestpark.hu/en",
+    "https://www.aquincum.hu/",
+    "https://www.obuda.hu/",
+    "https://www.kacsaetterem.hu/",
+    "https://www.magyarkaszinhaz.hu/",
+    "https://www.berenyi.hu/",
+    "https://www.gellertspa.hu/",
+    "https://momkult.hu/"
+  ],
+  "notes": "Auto coverage wave 6",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-kiraly",
+        "name": "Király utca Nightlife Crew",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://instant.co.hu/",
+        "description": "Ruin-bar crawls from Kuplung through Instant-Fogas with host introductions and queue-skip tips.",
+        "initials": "KY",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/rRKTw15Q/f7b592ec57d4.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-liszt",
+        "name": "Liszt tér Dining Society",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.menzaetterem.hu/",
+        "description": "Restaurant-row tastings on Liszt Ferenc tér — terrace tables and seasonal menu previews.",
+        "initials": "LF",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/XGLT5Wc/f8598e972e37.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-jewish-q",
+        "name": "Jewish Quarter Heritage Nights",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.jewishmuseum.hu/",
+        "description": "Synagogue district tours ending at ruin-bar courtyards — culture by day, social meetups by night.",
+        "initials": "JQ",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/vCdCbYsR/1da5a8d6b880.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-gozsdu",
+        "name": "Gozsdu Passage Social",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://gozsduudvar.hu/",
+        "description": "Courtyard bar hops through Gozsdu Udvar with wine tastings at DiVino and passage festivals.",
+        "initials": "GZ",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/wFGsrkZJ/d4230ee73bbf.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-kazinczy",
+        "name": "Kazinczy utca Creators",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "groupType": "Local Creators",
+        "ageRange": "18+",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://szimpla.hu/",
+        "description": "Photo walks and zine swaps around Kazinczy ruin bars for local artists and visitors.",
+        "initials": "KZ",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-wessel",
+        "name": "Wesselényi Live Music Meet",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "groupType": "Live Culture",
+        "ageRange": "18+",
+        "cadence": "Weekend",
+        "instagram": "",
+        "website": "https://durerkert.com/",
+        "description": "Concert buddies for Dürer Kert gigs — group tickets and post-show drinks on Wesselényi utca.",
+        "initials": "WS",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/bfWYNmY/1c04fb210652.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-rakoczi",
+        "name": "Grand Boulevard Cinema Club",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "groupType": "Art & Gallery",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.apollomozi.hu/",
+        "description": "Art-house screenings at Apollo with boulevard tram rides and post-film discussions.",
+        "initials": "RK",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/xSrcgq76/12d4e3f25b2d.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-corvin",
+        "name": "Corvin Quarter Food Circle",
+        "borough": "Ferencváros",
+        "neighborhood": "Corvin-negyed",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.corvinmozi.hu/",
+        "description": "Cinema-and-dinner nights in Corvin-negyed — plaza restaurants then late screenings.",
+        "initials": "CV",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/bgzBvJtj/21af315d811f.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-muegyetem",
+        "name": "Danube Ship Music Crew",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://www.a38.hu/en",
+        "description": "A38 concert meetups for students and expats — group boarding at Petőfi bridge pier.",
+        "initials": "MU",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/MkHFB57v/6fd097cca29f.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-nagytemplom",
+        "name": "Ferenciek tere Culture Walk",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.ferenciektere.hu/",
+        "description": "Baroque quarter walks from Ferenciek tere through inner Ferencváros cafés and cellar pubs.",
+        "initials": "NT",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-boraros",
+        "name": "Bálna Riverside Creators",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "groupType": "Local Creators",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://balnabudapest.hu/",
+        "description": "Design market visits and photo sessions at the Bálna whale building and Boráros promenade.",
+        "initials": "BR",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-millennium",
+        "name": "Millennium Park Sunset Crew",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://www.nehrupart.hu/",
+        "description": "Summer beach-bar meetups on the Danube with sand volleyball and DJ warm-ups.",
+        "initials": "ML",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-castle",
+        "name": "Castle District Gallery Walk",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "groupType": "Art & Gallery",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://en.mng.hu/",
+        "description": "National Gallery visits and castle wall walks with coffee at Ruszwurm afterward.",
+        "initials": "CD",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/qYmj3Ldz/f5357deed19d.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-gellert-hill",
+        "name": "Gellért Hill Wellness Circle",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.gellertspa.hu/",
+        "description": "Spa-day groups combining thermal baths, hill hikes to the Citadella, and rooftop sunsets.",
+        "initials": "GH",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-taban",
+        "name": "Tabán Riverside Artists",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "groupType": "Local Creators",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.pintergallery.hu/",
+        "description": "Gallery openings on Hadnagy utca and Tabán terrace drinks with Danube photo sessions.",
+        "initials": "TB",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-rozsadomb",
+        "name": "Rózsadomb Wine Terrace",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "18+",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.gloriett.hu/",
+        "description": "Hillside wine tastings and acoustic jazz on villa terraces above the city.",
+        "initials": "RD",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-szent-gellert",
+        "name": "Gellért Spa & Jazz Meet",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Weekend",
+        "instagram": "",
+        "website": "https://www.danubiusgellert.com/",
+        "description": "Hotel jazz nights and spa-day socials at Szent Gellért tér art-nouveau landmark.",
+        "initials": "SG",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-obuda-island",
+        "name": "Budapest Park Festival Crew",
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://www.budapestpark.hu/en",
+        "description": "Group tickets and picnic meetups for Budapest Park concerts on Hajógyári-sziget.",
+        "initials": "OI",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/G3nw931v/1d7c62ec2163.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-aquincum",
+        "name": "Aquincum History & Beer Walk",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.aquincum.hu/",
+        "description": "Roman ruin tours followed by Kiscelli pub stops — culture and craft beer in northern Buda.",
+        "initials": "AQ",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/gZK1R8GP/cb79543740f0.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-kolosy",
+        "name": "Kolosy tér Neighborhood Social",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "groupType": "Local Creators",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.obuda.hu/",
+        "description": "Community events and tram-hop café tours around Kolosy tér shopping streets.",
+        "initials": "KL",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-becsi",
+        "name": "Bécsi út Food Explorers",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.kacsaetterem.hu/",
+        "description": "Óbuda high-street tastings from duck bistro classics to specialty coffee on Bécsi út.",
+        "initials": "BU",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-main-square-obuda",
+        "name": "Main Square Óbuda Theatre Club",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "groupType": "Art & Gallery",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.magyarkaszinhaz.hu/",
+        "description": "Tradesmen's Home performances plus pub nights on Lajos utca after shows.",
+        "initials": "MS",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-moricz",
+        "name": "Móricz körtér Buda Brunch Club",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "All ages",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://www.berenyi.hu/",
+        "description": "Weekend brunch walks from Móricz tram hub through Bartók Béla út cafés and gardens.",
+        "initials": "MZ",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-gellert-baths",
+        "name": "Gellért Baths Wellness Meet",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.gellertspa.hu/",
+        "description": "Thermal bath day groups with spa etiquette tips and optional Rudas night extensions.",
+        "initials": "GB",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/FqwVgd7n/cde3b78d5c56.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-infopark",
+        "name": "Infopark Creative Professionals",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "groupType": "Local Creators",
+        "ageRange": "18+",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://momkult.hu/",
+        "description": "After-work culture at MOM — gallery openings, rooftop networking, and Müpa concert groups.",
+        "initials": "IP",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/xKTwMqdw/c3daf66c1a4c.jpg"
+      }
+    }
+  ]
+}

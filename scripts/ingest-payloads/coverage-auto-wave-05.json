@@ -1,0 +1,1479 @@
+{
+  "sourceUrls": [
+    "https://www.cafefrei.hu/",
+    "https://luckyluciano.hu/",
+    "https://www.csendes.com/",
+    "https://espressoembassy.hu/",
+    "https://momkult.hu/",
+    "https://www.ruszwurm.hu/",
+    "https://www.danubiusgellert.com/",
+    "https://www.varfokkavezo.hu/",
+    "https://www.gloriett.hu/cafe",
+    "https://www.ebnercukraszda.hu/",
+    "https://www.budapestpark.hu/en",
+    "https://www.aquincum.hu/",
+    "https://www.mannocaffe.hu/",
+    "https://www.2bcoffee.hu/",
+    "https://www.chezsnacky.hu/",
+    "https://www.liliomcafe.hu/",
+    "https://www.gelibi.hu/",
+    "https://momkult.hu/",
+    "https://www.hadikkavehaz.hu/",
+    "https://www.obester.hu/",
+    "https://www.gerbeaud.hu/en",
+    "https://akvariumklub.hu/",
+    "https://www.parlament.hu/en/web/house-of-parliament",
+    "https://www.danubepalace.hu/",
+    "https://www.opera.hu/"
+  ],
+  "notes": "Auto coverage wave 5",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-cafe-corvin",
+        "name": "Café Frei Corvin",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Corvin-negyed",
+        "address": "1082 Budapest, Corvin sétány 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+        "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/fVdzDQ33/de212105abbb.png",
+        "email": "",
+        "website": "https://www.cafefrei.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Café Frei Corvin",
+            "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+            "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+            "slug": "cov-cafe-corvin-hu"
+          },
+          "es": {
+            "name": "Café Frei Corvin",
+            "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+            "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+            "slug": "cov-cafe-corvin-es"
+          },
+          "it": {
+            "name": "Café Frei Corvin",
+            "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+            "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+            "slug": "cov-cafe-corvin-it"
+          },
+          "he": {
+            "name": "Café Frei Corvin",
+            "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+            "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+            "slug": "cov-cafe-corvin-he"
+          },
+          "ar": {
+            "name": "Café Frei Corvin",
+            "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+            "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.\n\nSources: https://www.cafefrei.hu/",
+            "slug": "cov-cafe-corvin-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-lucky-luciano",
+        "name": "Lucky Luciano Coffee",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "address": "1111 Budapest, Baross utca 55, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+        "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@luckyluciano.hu",
+        "website": "https://luckyluciano.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-hu"
+          },
+          "es": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-es"
+          },
+          "it": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-it"
+          },
+          "he": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-he"
+          },
+          "ar": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+            "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "cov-lucky-luciano-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-csendes-nagy",
+        "name": "Csendes",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Magyar utca 12, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+        "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@csendes.com",
+        "website": "https://www.csendes.com/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-hu"
+          },
+          "es": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-es"
+          },
+          "it": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-it"
+          },
+          "he": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-he"
+          },
+          "ar": {
+            "name": "Csendes",
+            "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+            "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.\n\nSources: https://www.csendes.com/",
+            "slug": "cov-csendes-nagy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-embassy-balna",
+        "name": "Espresso Embassy Bálna",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+        "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 30 180 0277",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-es"
+          },
+          "it": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-it"
+          },
+          "he": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy Bálna",
+            "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+            "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-balna-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-mom-cafe-mill",
+        "name": "MOM Eden Café",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Millenniumi Városközpont",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+        "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/1JKVYNrj/b3957fdc6711.jpg",
+        "email": "info@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 555 3300",
+        "locales": {
+          "hu": {
+            "name": "MOM Eden Café",
+            "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+            "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-mom-cafe-mill-hu"
+          },
+          "es": {
+            "name": "MOM Eden Café",
+            "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+            "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-mom-cafe-mill-es"
+          },
+          "it": {
+            "name": "MOM Eden Café",
+            "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+            "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-mom-cafe-mill-it"
+          },
+          "he": {
+            "name": "MOM Eden Café",
+            "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+            "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-mom-cafe-mill-he"
+          },
+          "ar": {
+            "name": "MOM Eden Café",
+            "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+            "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-mom-cafe-mill-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ruszwurm-castle",
+        "name": "Ruszwurm Confectionery",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Castle District",
+        "address": "1014 Budapest, Szentháromság utca 7, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+        "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@ruszwurm.hu",
+        "website": "https://www.ruszwurm.hu/",
+        "phone": "+36 1 375 5282",
+        "locales": {
+          "hu": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-hu"
+          },
+          "es": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-es"
+          },
+          "it": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-it"
+          },
+          "he": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-he"
+          },
+          "ar": {
+            "name": "Ruszwurm Confectionery",
+            "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+            "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.\n\nSources: https://www.ruszwurm.hu/",
+            "slug": "cov-ruszwurm-castle-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-cafe",
+        "name": "Gellért Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Thermal Bath"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+        "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/",
+        "phone": "+36 1 889 5500",
+        "locales": {
+          "hu": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-hu"
+          },
+          "es": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-es"
+          },
+          "it": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-it"
+          },
+          "he": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-he"
+          },
+          "ar": {
+            "name": "Gellért Café",
+            "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+            "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/",
+            "slug": "cov-gellert-cafe-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-varfok-taban",
+        "name": "Varfok Kávézó",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Tabán",
+        "address": "1013 Budapest, Varfok utca 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+        "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@varfokkavezo.hu",
+        "website": "https://www.varfokkavezo.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-hu"
+          },
+          "es": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-es"
+          },
+          "it": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-it"
+          },
+          "he": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-he"
+          },
+          "ar": {
+            "name": "Varfok Kávézó",
+            "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+            "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.\n\nSources: https://www.varfokkavezo.hu/",
+            "slug": "cov-varfok-taban-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gloriett-cafe-rozsadomb",
+        "name": "Gloriett Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1027 Budapest, Török utca 3, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+        "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@gloriett.hu",
+        "website": "https://www.gloriett.hu/cafe",
+        "phone": "+36 1 356 7890",
+        "locales": {
+          "hu": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-hu"
+          },
+          "es": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-es"
+          },
+          "it": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-it"
+          },
+          "he": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-he"
+          },
+          "ar": {
+            "name": "Gloriett Café",
+            "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+            "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.\n\nSources: https://www.gloriett.hu/cafe",
+            "slug": "cov-gloriett-cafe-rozsadomb-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ebner-gellert",
+        "name": "Ébner Confectionery",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+        "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@ebnercukraszda.hu",
+        "website": "https://www.ebnercukraszda.hu/",
+        "phone": "+36 1 385 2411",
+        "locales": {
+          "hu": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-hu"
+          },
+          "es": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-es"
+          },
+          "it": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-it"
+          },
+          "he": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-he"
+          },
+          "ar": {
+            "name": "Ébner Confectionery",
+            "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+            "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.\n\nSources: https://www.ebnercukraszda.hu/",
+            "slug": "cov-ebner-gellert-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-island-cafe-obuda",
+        "name": "Budapest Park Café",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Weekend",
+          "Evening"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+        "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Zzv0wh56/dec449bf851e.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+            "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "cov-island-cafe-obuda-hu"
+          },
+          "es": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+            "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "cov-island-cafe-obuda-es"
+          },
+          "it": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+            "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "cov-island-cafe-obuda-it"
+          },
+          "he": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+            "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "cov-island-cafe-obuda-he"
+          },
+          "ar": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+            "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "cov-island-cafe-obuda-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-roman-cafe-aquincum",
+        "name": "Aquincum Museum Café",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "address": "1031 Budapest, Szentendrei út 135, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+        "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/fd7gjHHM/63a13ec99b85.jpg",
+        "email": "info@aquincum.hu",
+        "website": "https://www.aquincum.hu/",
+        "phone": "+36 1 250 1650",
+        "locales": {
+          "hu": {
+            "name": "Aquincum Museum Café",
+            "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+            "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-roman-cafe-aquincum-hu"
+          },
+          "es": {
+            "name": "Aquincum Museum Café",
+            "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+            "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-roman-cafe-aquincum-es"
+          },
+          "it": {
+            "name": "Aquincum Museum Café",
+            "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+            "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-roman-cafe-aquincum-it"
+          },
+          "he": {
+            "name": "Aquincum Museum Café",
+            "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+            "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-roman-cafe-aquincum-he"
+          },
+          "ar": {
+            "name": "Aquincum Museum Café",
+            "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+            "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-roman-cafe-aquincum-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-manno-kolosy",
+        "name": "Manno Caffè",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1036 Budapest, Bécsi út 52, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+        "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@mannocaffe.hu",
+        "website": "https://www.mannocaffe.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-hu"
+          },
+          "es": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-es"
+          },
+          "it": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-it"
+          },
+          "he": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-he"
+          },
+          "ar": {
+            "name": "Manno Caffè",
+            "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+            "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.\n\nSources: https://www.mannocaffe.hu/",
+            "slug": "cov-manno-kolosy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-2b-becsi",
+        "name": "2B Coffee",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Bécsi út 19, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+        "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@2bcoffee.hu",
+        "website": "https://www.2bcoffee.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-hu"
+          },
+          "es": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-es"
+          },
+          "it": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-it"
+          },
+          "he": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-he"
+          },
+          "ar": {
+            "name": "2B Coffee",
+            "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+            "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.\n\nSources: https://www.2bcoffee.hu/",
+            "slug": "cov-2b-becsi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-chez-snacky-obuda",
+        "name": "Chez Snacky",
+        "category": "Cafés",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1031 Budapest, Flórián tér 3, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+        "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@chezsnacky.hu",
+        "website": "https://www.chezsnacky.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-hu"
+          },
+          "es": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-es"
+          },
+          "it": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-it"
+          },
+          "he": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-he"
+          },
+          "ar": {
+            "name": "Chez Snacky",
+            "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+            "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.\n\nSources: https://www.chezsnacky.hu/",
+            "slug": "cov-chez-snacky-obuda-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-liliom-moricz",
+        "name": "Liliom Café",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+        "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@liliomcafe.hu",
+        "website": "https://www.liliomcafe.hu/",
+        "phone": "+36 1 385 1234",
+        "locales": {
+          "hu": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-hu"
+          },
+          "es": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-es"
+          },
+          "it": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-it"
+          },
+          "he": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-he"
+          },
+          "ar": {
+            "name": "Liliom Café",
+            "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+            "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cov-liliom-moricz-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gelibi-gellert",
+        "name": "Gelibi Café",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1114 Budapest, Bartók Béla út 9, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+        "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "hello@gelibi.hu",
+        "website": "https://www.gelibi.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-hu"
+          },
+          "es": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-es"
+          },
+          "it": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-it"
+          },
+          "he": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-he"
+          },
+          "ar": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+            "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "cov-gelibi-gellert-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-cafe-mom-infopark",
+        "name": "MOM Café",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+        "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/1JKVYNrj/b3957fdc6711.jpg",
+        "email": "info@momkult.hu",
+        "website": "https://momkult.hu/",
+        "phone": "+36 1 555 3300",
+        "locales": {
+          "hu": {
+            "name": "MOM Café",
+            "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+            "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-cafe-mom-infopark-hu"
+          },
+          "es": {
+            "name": "MOM Café",
+            "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+            "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-cafe-mom-infopark-es"
+          },
+          "it": {
+            "name": "MOM Café",
+            "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+            "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-cafe-mom-infopark-it"
+          },
+          "he": {
+            "name": "MOM Café",
+            "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+            "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-cafe-mom-infopark-he"
+          },
+          "ar": {
+            "name": "MOM Café",
+            "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+            "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.\n\nSources: https://momkult.hu/",
+            "slug": "cov-cafe-mom-infopark-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-hadik-kosztolanyi",
+        "name": "Hadik Kávéház",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1114 Budapest, Bartók Béla út 36, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+        "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@hadikkavehaz.hu",
+        "website": "https://www.hadikkavehaz.hu/",
+        "phone": "+36 1 385 9010",
+        "locales": {
+          "hu": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-it"
+          },
+          "he": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "cov-hadik-kosztolanyi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-obester-bikas",
+        "name": "Obester Specialty Coffee",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "address": "1119 Budapest, Bikás park sétány 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+        "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.\n\nSources: https://www.obester.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/fT7Lvfq/281d2bda896c.jpg",
+        "email": "hello@obester.hu",
+        "website": "https://www.obester.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Obester Specialty Coffee",
+            "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+            "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.\n\nSources: https://www.obester.hu/",
+            "slug": "cov-obester-bikas-hu"
+          },
+          "es": {
+            "name": "Obester Specialty Coffee",
+            "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+            "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.\n\nSources: https://www.obester.hu/",
+            "slug": "cov-obester-bikas-es"
+          },
+          "it": {
+            "name": "Obester Specialty Coffee",
+            "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+            "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.\n\nSources: https://www.obester.hu/",
+            "slug": "cov-obester-bikas-it"
+          },
+          "he": {
+            "name": "Obester Specialty Coffee",
+            "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+            "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.\n\nSources: https://www.obester.hu/",
+            "slug": "cov-obester-bikas-he"
+          },
+          "ar": {
+            "name": "Obester Specialty Coffee",
+            "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+            "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.\n\nSources: https://www.obester.hu/",
+            "slug": "cov-obester-bikas-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-vaci",
+        "name": "Váci utca After-Work Circle",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "groupType": "Food & Wine Circle",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.gerbeaud.hu/en",
+        "description": "Monthly stroll from Vörösmarty tér through Váci utca cafés ending with dessert at landmark patisseries.",
+        "initials": "VC",
+        "icon": "coffee",
+        "palette": "orange",
+        "coverImageUrl": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-deak",
+        "name": "Deák tér Nightlife Crew",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "groupType": "Nightlife Crew",
+        "ageRange": "18+",
+        "cadence": "Weekly",
+        "instagram": "",
+        "website": "https://akvariumklub.hu/",
+        "description": "Meet at Erzsébet tér before Akvárium gigs — group tickets and safe late transport from Deák hub.",
+        "initials": "DK",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/LzHXzk24/5372ced3c026.png"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-parliament",
+        "name": "Parliament Riverside Walk",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.parlament.hu/en/web/house-of-parliament",
+        "description": "Guided photo walks along the Danube embankment with Parliament backdrop — culture-first evenings for visitors.",
+        "initials": "PR",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-promenade",
+        "name": "Promenade Boat & Jazz Circle",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.danubepalace.hu/",
+        "description": "Combine Danube Palace matinees with promenade walks and optional evening river cruises.",
+        "initials": "DP",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg"
+      }
+    },
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-cov-meet-opera",
+        "name": "Opera Quarter Culture Club",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "groupType": "Live Culture",
+        "ageRange": "All ages",
+        "cadence": "Weekend",
+        "instagram": "",
+        "website": "https://www.opera.hu/",
+        "description": "Pre-show meetups for opera and ballet with discounted student rush tips and café intermissions.",
+        "initials": "OP",
+        "icon": "community",
+        "palette": "charcoal",
+        "coverImageUrl": "https://i.ibb.co/35F9T5dB/c3aecae14380.jpg"
+      }
+    }
+  ]
+}

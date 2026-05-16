@@ -406,9 +406,9 @@ export function ApiDocsPage({ origin }: { origin: string }) {
           </Section>
 
           <Section id="brain" title="Night Guide chat (streaming)">
-            <EndpointCard method="POST" path="/api/brain/chat" auth="None (uses server LOVABLE_API_KEY)">
+            <EndpointCard method="POST" path="/api/brain/chat" auth="None (uses server OpenAI API key)">
               <p>
-                Proxies to the Lovable AI gateway with the configured model and system prompt from MongoDB{" "}
+                Proxies to an OpenAI-compatible chat API with the configured model and system prompt from MongoDB{" "}
                 <code className="font-mono">brainSettings</code> (<code className="font-mono">_id: &quot;main&quot;</code>), falling back to app defaults when unset.
               </p>
               <p>
@@ -425,7 +425,8 @@ export function ApiDocsPage({ origin }: { origin: string }) {
               </p>
               <ul className="list-inside list-disc text-muted-foreground">
                 <li>
-                  <strong className="text-foreground">500</strong> if <code className="font-mono">LOVABLE_API_KEY</code> is missing on the server.
+                  <strong className="text-foreground">500</strong> if <code className="font-mono">BRAIN_OPENAI_API_KEY</code> /{" "}
+                  <code className="font-mono">CURATOR_OPENAI_API_KEY</code> is missing on the server.
                 </li>
                 <li>
                   <strong className="text-foreground">429</strong> rate limit, <strong className="text-foreground">402</strong> credits exhausted, <strong className="text-foreground">502</strong> gateway error.
@@ -687,7 +688,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 </tr>
                 <tr className="border-b border-border/70">
                   <td className="py-2 pr-4 font-mono">500 / 502</td>
-                  <td>Missing server env (Lovable, ImgBB, admin password), or upstream gateway/upload errors.</td>
+                  <td>Missing server env (OpenAI key, ImgBB, admin password), or upstream API/upload errors.</td>
                 </tr>
                 <tr className="border-b border-border/70">
                   <td className="py-2 pr-4 font-mono">503</td>
@@ -714,7 +715,8 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 <code className="font-mono">IMGBB_API_KEY</code> — admin image upload
               </li>
               <li>
-                Optional <code className="font-mono">LOVABLE_API_KEY</code> — Night Guide chat at <code className="font-mono">/api/brain/chat</code> only; omit if unused.
+                Optional <code className="font-mono">BRAIN_OPENAI_API_KEY</code> (or reuse <code className="font-mono">CURATOR_OPENAI_API_KEY</code>) — Night Guide chat at{" "}
+                <code className="font-mono">/api/brain/chat</code>; omit if unused.
               </li>
             </ul>
             <p className="text-sm text-muted-foreground">

@@ -123,7 +123,12 @@
     "title": "اكتشف {category} في بودابست",
     "tagline": "مختار. محلي. لسهرات الليل.",
     "findByArea": "اعثر على {blurb} حسب الحي والمنطقة.",
-    "heroAlt": "أضواء بودابست ليلاً",
+    "heroAlt": {
+      "Events": "حفلة ومهرجان في بودابست",
+      "Parties": "دي جي ونادي ليلي في بودابست",
+      "Restaurants": "مطعم في بودابست",
+      "Cafés": "مقهى وتراس في بودابست"
+    },
     "featured": "مميز",
     "results": "{count, plural, zero {لا أماكن} one {مكان #} two {مكانان #} few {# أماكن} many {# مكاناً} other {# مكان}}",
     "resultsIn": "{count, plural, one {مكان #} other {# أماكن}} في {district}",

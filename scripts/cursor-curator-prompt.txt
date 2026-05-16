@@ -20,7 +20,7 @@ Prefer official sources (venue `.hu` site, ticket office, cultural institution, 
 3. Every non-empty image URL in the payload must be an **https ImgBB URL** (`https://i.ibb.co/...` or another host accepted by the repo: `ibb.co`, `image.ibb.co`, or `*.ibb.co`).
 4. Do **not** complete the task with `image: ""`, `coverImageUrl: ""`, or omitted cover when ingesting a meetup. If no usable official image exists, find a different listing.
 5. Do **not** invent prices, hours, addresses, phone numbers, emails, image URLs, ratings, review counts, or activity tags not supported by the source.
-6. Work in the **budapest-night** repo only. Default ingest target is **https://budapest-night.vercel.app** (not ClassScout).
+6. Work in the **budapest-night** repo only. Default ingest target is **https://budapest-night.vercel.app**.
 
 ## First: inspect the live catalog and compute scarcity
 Before choosing a candidate, fetch:

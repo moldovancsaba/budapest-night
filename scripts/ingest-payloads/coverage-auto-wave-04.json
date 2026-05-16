@@ -1,0 +1,1726 @@
+{
+  "sourceUrls": [
+    "https://www.21restaurant.hu/",
+    "https://www.danubiusgellert.com/dining",
+    "https://www.buenavista.hu/",
+    "https://www.3dcafe.hu/",
+    "https://www.sushisei.hu/",
+    "https://www.kacsaetterem.hu/",
+    "https://www.vasurszallo.hu/",
+    "https://www.berenyi.hu/",
+    "https://www.mikakert.hu/",
+    "https://momkult.hu/en/restaurant",
+    "https://www.kekbello.hu/",
+    "https://www.csillagkert.hu/",
+    "https://madalcoffee.com/",
+    "https://www.pierrot.hu/",
+    "https://www.szamos.hu/",
+    "https://www.callascafe.hu/",
+    "https://www.operacafe.hu/",
+    "https://www.daubnercukraszda.hu/",
+    "https://espressoembassy.hu/",
+    "https://www.froccsterasz.hu/",
+    "https://szimpla.hu/szpunik",
+    "https://spilershanghai.hu/",
+    "https://mylittlemelbourne.hu/",
+    "https://www.feketebudapest.com/",
+    "https://espressoembassy.hu/"
+  ],
+  "notes": "Auto coverage wave 4",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-21-rozsadomb",
+        "name": "21 Hungarian Kitchen",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1012 Budapest, Fortuna utca 21, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+        "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.\n\nSources: https://www.21restaurant.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/fzGTns0w/d02a0ac8bcef.png",
+        "email": "info@21restaurant.hu",
+        "website": "https://www.21restaurant.hu/",
+        "phone": "+36 1 202 2113",
+        "locales": {
+          "hu": {
+            "name": "21 Hungarian Kitchen",
+            "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+            "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.\n\nSources: https://www.21restaurant.hu/",
+            "slug": "cov-21-rozsadomb-hu"
+          },
+          "es": {
+            "name": "21 Hungarian Kitchen",
+            "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+            "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.\n\nSources: https://www.21restaurant.hu/",
+            "slug": "cov-21-rozsadomb-es"
+          },
+          "it": {
+            "name": "21 Hungarian Kitchen",
+            "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+            "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.\n\nSources: https://www.21restaurant.hu/",
+            "slug": "cov-21-rozsadomb-it"
+          },
+          "he": {
+            "name": "21 Hungarian Kitchen",
+            "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+            "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.\n\nSources: https://www.21restaurant.hu/",
+            "slug": "cov-21-rozsadomb-he"
+          },
+          "ar": {
+            "name": "21 Hungarian Kitchen",
+            "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+            "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.\n\nSources: https://www.21restaurant.hu/",
+            "slug": "cov-21-rozsadomb-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-brasserie",
+        "name": "Gellért Brasserie",
+        "category": "Restaurants",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Late Kitchen",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+        "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@danubiusgellert.com",
+        "website": "https://www.danubiusgellert.com/dining",
+        "phone": "+36 1 889 5500",
+        "locales": {
+          "hu": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-hu"
+          },
+          "es": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-es"
+          },
+          "it": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-it"
+          },
+          "he": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-he"
+          },
+          "ar": {
+            "name": "Gellért Brasserie",
+            "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+            "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.\n\nSources: https://www.danubiusgellert.com/dining",
+            "slug": "cov-gellert-brasserie-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-buena-vista-obuda",
+        "name": "Buena Vista Bistro",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Óbuda Island",
+        "address": "1037 Budapest, Királyok útja 28, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+        "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@buenavista.hu",
+        "website": "https://www.buenavista.hu/",
+        "phone": "+36 1 388 3888",
+        "locales": {
+          "hu": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-hu"
+          },
+          "es": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-es"
+          },
+          "it": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-it"
+          },
+          "he": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-he"
+          },
+          "ar": {
+            "name": "Buena Vista Bistro",
+            "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+            "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.\n\nSources: https://www.buenavista.hu/",
+            "slug": "cov-buena-vista-obuda-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-3d-aquincum",
+        "name": "3D Café & Bistro",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "address": "1031 Budapest, Szentendrei út 125, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+        "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@3dcafe.hu",
+        "website": "https://www.3dcafe.hu/",
+        "phone": "+36 1 388 1234",
+        "locales": {
+          "hu": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-hu"
+          },
+          "es": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-es"
+          },
+          "it": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-it"
+          },
+          "he": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-he"
+          },
+          "ar": {
+            "name": "3D Café & Bistro",
+            "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+            "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.\n\nSources: https://www.3dcafe.hu/",
+            "slug": "cov-3d-aquincum-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-sushi-kolosy",
+        "name": "Sushi Sei",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1036 Budapest, Lajos utca 103, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Street Food",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+        "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@sushisei.hu",
+        "website": "https://www.sushisei.hu/",
+        "phone": "+36 1 388 8888",
+        "locales": {
+          "hu": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-hu"
+          },
+          "es": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-es"
+          },
+          "it": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-it"
+          },
+          "he": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-he"
+          },
+          "ar": {
+            "name": "Sushi Sei",
+            "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+            "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.\n\nSources: https://www.sushisei.hu/",
+            "slug": "cov-sushi-kolosy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kacsa-becsi",
+        "name": "Kacsa Étterem",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Fő utca 82, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+        "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@kacsaetterem.hu",
+        "website": "https://www.kacsaetterem.hu/",
+        "phone": "+36 1 388 8392",
+        "locales": {
+          "hu": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-hu"
+          },
+          "es": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-es"
+          },
+          "it": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-it"
+          },
+          "he": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-he"
+          },
+          "ar": {
+            "name": "Kacsa Étterem",
+            "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+            "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+            "slug": "cov-kacsa-becsi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-vasut-obuda",
+        "name": "Vasúrszálló Restaurant",
+        "category": "Restaurants",
+        "borough": "Óbuda",
+        "neighborhood": "Main Square Óbuda",
+        "address": "1036 Budapest, Vörösvári út 50, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+        "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@vasurszallo.hu",
+        "website": "https://www.vasurszallo.hu/",
+        "phone": "+36 1 388 6789",
+        "locales": {
+          "hu": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-hu"
+          },
+          "es": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-es"
+          },
+          "it": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-it"
+          },
+          "he": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-he"
+          },
+          "ar": {
+            "name": "Vasúrszálló Restaurant",
+            "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+            "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.\n\nSources: https://www.vasurszallo.hu/",
+            "slug": "cov-vasut-obuda-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-berenyi-moricz",
+        "name": "Berényi Étterem",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1114 Budapest, Berényi utca 1, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+        "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@berenyi.hu",
+        "website": "https://www.berenyi.hu/",
+        "phone": "+36 1 385 6789",
+        "locales": {
+          "hu": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-hu"
+          },
+          "es": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-es"
+          },
+          "it": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-it"
+          },
+          "he": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-he"
+          },
+          "ar": {
+            "name": "Berényi Étterem",
+            "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+            "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.\n\nSources: https://www.berenyi.hu/",
+            "slug": "cov-berenyi-moricz-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-mika-gellert",
+        "name": "Mika Kert",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1114 Budapest, Bartók Béla út 11, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+        "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@mikakert.hu",
+        "website": "https://www.mikakert.hu/",
+        "phone": "+36 1 385 5678",
+        "locales": {
+          "hu": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-hu"
+          },
+          "es": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-es"
+          },
+          "it": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-it"
+          },
+          "he": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-he"
+          },
+          "ar": {
+            "name": "Mika Kert",
+            "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+            "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "cov-mika-gellert-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-mom-eden-infopark",
+        "name": "MOM Eden Restaurant",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Infopark",
+        "address": "1124 Budapest, Csörsz utca 18, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+        "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/N2FrKSfy/460152839d77.jpg",
+        "email": "info@momkult.hu",
+        "website": "https://momkult.hu/en/restaurant",
+        "phone": "+36 1 555 3301",
+        "locales": {
+          "hu": {
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+            "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "cov-mom-eden-infopark-hu"
+          },
+          "es": {
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+            "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "cov-mom-eden-infopark-es"
+          },
+          "it": {
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+            "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "cov-mom-eden-infopark-it"
+          },
+          "he": {
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+            "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "cov-mom-eden-infopark-he"
+          },
+          "ar": {
+            "name": "MOM Eden Restaurant",
+            "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+            "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.\n\nSources: https://momkult.hu/en/restaurant",
+            "slug": "cov-mom-eden-infopark-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kekbello-kosztolanyi",
+        "name": "Kékbello Bistro",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Kosztolányi Dezső tér",
+        "address": "1114 Budapest, Bocskai út 31, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+        "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@kekbello.hu",
+        "website": "https://www.kekbello.hu/",
+        "phone": "+36 1 385 4321",
+        "locales": {
+          "hu": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-it"
+          },
+          "he": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "Kékbello Bistro",
+            "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+            "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.\n\nSources: https://www.kekbello.hu/",
+            "slug": "cov-kekbello-kosztolanyi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-csillagker-bikas",
+        "name": "Csillagkért Étterem",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "address": "1119 Budapest, Fehérvári út 60, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+        "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.\n\nSources: https://www.csillagkert.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Kg2Y5Np/e9822a35ec56.jpg",
+        "email": "info@csillagkert.hu",
+        "website": "https://www.csillagkert.hu/",
+        "phone": "+36 1 203 4567",
+        "locales": {
+          "hu": {
+            "name": "Csillagkért Étterem",
+            "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+            "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.\n\nSources: https://www.csillagkert.hu/",
+            "slug": "cov-csillagker-bikas-hu"
+          },
+          "es": {
+            "name": "Csillagkért Étterem",
+            "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+            "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.\n\nSources: https://www.csillagkert.hu/",
+            "slug": "cov-csillagker-bikas-es"
+          },
+          "it": {
+            "name": "Csillagkért Étterem",
+            "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+            "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.\n\nSources: https://www.csillagkert.hu/",
+            "slug": "cov-csillagker-bikas-it"
+          },
+          "he": {
+            "name": "Csillagkért Étterem",
+            "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+            "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.\n\nSources: https://www.csillagkert.hu/",
+            "slug": "cov-csillagker-bikas-he"
+          },
+          "ar": {
+            "name": "Csillagkért Étterem",
+            "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+            "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.\n\nSources: https://www.csillagkert.hu/",
+            "slug": "cov-csillagker-bikas-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-madal-deak",
+        "name": "MADÁL - specialty coffee",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Deák tér",
+        "address": "1052 Budapest, Madách Imre út 3, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+        "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "hello@madalcoffee.com",
+        "website": "https://madalcoffee.com/",
+        "phone": "+36 30 123 9876",
+        "locales": {
+          "hu": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-hu"
+          },
+          "es": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-es"
+          },
+          "it": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-it"
+          },
+          "he": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-he"
+          },
+          "ar": {
+            "name": "MADÁL - specialty coffee",
+            "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+            "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.\n\nSources: https://madalcoffee.com/",
+            "slug": "cov-madal-deak-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-pierrot-parliament",
+        "name": "Pierrot Café",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "address": "1014 Budapest, Fő utca 14, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+        "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/wjsqkB7/74d209489fbd.png",
+        "email": "info@pierrot.hu",
+        "website": "https://www.pierrot.hu/",
+        "phone": "+36 1 375 1287",
+        "locales": {
+          "hu": {
+            "name": "Pierrot Café",
+            "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+            "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "cov-pierrot-parliament-hu"
+          },
+          "es": {
+            "name": "Pierrot Café",
+            "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+            "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "cov-pierrot-parliament-es"
+          },
+          "it": {
+            "name": "Pierrot Café",
+            "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+            "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "cov-pierrot-parliament-it"
+          },
+          "he": {
+            "name": "Pierrot Café",
+            "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+            "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "cov-pierrot-parliament-he"
+          },
+          "ar": {
+            "name": "Pierrot Café",
+            "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+            "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.\n\nSources: https://www.pierrot.hu/",
+            "slug": "cov-pierrot-parliament-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-szamos-prom",
+        "name": "Szamos Café Vigadó",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "address": "1056 Budapest, Vigadó utca 4, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+        "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.\n\nSources: https://www.szamos.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/qMkxnTYw/8d181fcace9a.png",
+        "email": "vigado@szamos.hu",
+        "website": "https://www.szamos.hu/",
+        "phone": "+36 1 266 3777",
+        "locales": {
+          "hu": {
+            "name": "Szamos Café Vigadó",
+            "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+            "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.\n\nSources: https://www.szamos.hu/",
+            "slug": "cov-szamos-prom-hu"
+          },
+          "es": {
+            "name": "Szamos Café Vigadó",
+            "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+            "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.\n\nSources: https://www.szamos.hu/",
+            "slug": "cov-szamos-prom-es"
+          },
+          "it": {
+            "name": "Szamos Café Vigadó",
+            "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+            "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.\n\nSources: https://www.szamos.hu/",
+            "slug": "cov-szamos-prom-it"
+          },
+          "he": {
+            "name": "Szamos Café Vigadó",
+            "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+            "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.\n\nSources: https://www.szamos.hu/",
+            "slug": "cov-szamos-prom-he"
+          },
+          "ar": {
+            "name": "Szamos Café Vigadó",
+            "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+            "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.\n\nSources: https://www.szamos.hu/",
+            "slug": "cov-szamos-prom-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-callas-andrassy",
+        "name": "Callas Café",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 20, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Evening"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+        "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@callascafe.hu",
+        "website": "https://www.callascafe.hu/",
+        "phone": "+36 1 343 3333",
+        "locales": {
+          "hu": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-hu"
+          },
+          "es": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-es"
+          },
+          "it": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-it"
+          },
+          "he": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-he"
+          },
+          "ar": {
+            "name": "Callas Café",
+            "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+            "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.\n\nSources: https://www.callascafe.hu/",
+            "slug": "cov-callas-andrassy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-opera-cafe",
+        "name": "Opera Café Budapest",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "address": "1065 Budapest, Hajós utca 8, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+        "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "hello@operacafe.hu",
+        "website": "https://www.operacafe.hu/",
+        "phone": "+36 1 800 9211",
+        "locales": {
+          "hu": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-hu"
+          },
+          "es": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-es"
+          },
+          "it": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-it"
+          },
+          "he": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-he"
+          },
+          "ar": {
+            "name": "Opera Café Budapest",
+            "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+            "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.\n\nSources: https://www.operacafe.hu/",
+            "slug": "cov-opera-cafe-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-daubner-oktogon",
+        "name": "Daubner Cukrászda",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Oktogon",
+        "address": "1064 Budapest, Szilágyi Erzsébet fasor 47, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Fine Dining"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+        "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@daubnercukraszda.hu",
+        "website": "https://www.daubnercukraszda.hu/",
+        "phone": "+36 1 325 2521",
+        "locales": {
+          "hu": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-hu"
+          },
+          "es": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-es"
+          },
+          "it": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-it"
+          },
+          "he": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-he"
+          },
+          "ar": {
+            "name": "Daubner Cukrászda",
+            "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+            "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.\n\nSources: https://www.daubnercukraszda.hu/",
+            "slug": "cov-daubner-oktogon-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-espresso-embassy-kiraly",
+        "name": "Espresso Embassy",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Arany János utca 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+        "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 30 180 0277",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-es"
+          },
+          "it": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-it"
+          },
+          "he": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-froccterasz-liszt",
+        "name": "Fröccsterasz",
+        "category": "Cafés",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "address": "1065 Budapest, Liszt Ferenc tér 10, Hungary",
+        "activityTypes": [
+          "Wine Bar",
+          "Coffee & Brunch",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "All ages"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+        "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/vxtvcRgn/2386f028c682.jpg",
+        "email": "info@froccsterasz.hu",
+        "website": "https://www.froccsterasz.hu/",
+        "phone": "+36 1 343 3456",
+        "locales": {
+          "hu": {
+            "name": "Fröccsterasz",
+            "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+            "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+            "slug": "cov-froccterasz-liszt-hu"
+          },
+          "es": {
+            "name": "Fröccsterasz",
+            "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+            "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+            "slug": "cov-froccterasz-liszt-es"
+          },
+          "it": {
+            "name": "Fröccsterasz",
+            "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+            "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+            "slug": "cov-froccterasz-liszt-it"
+          },
+          "he": {
+            "name": "Fröccsterasz",
+            "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+            "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+            "slug": "cov-froccterasz-liszt-he"
+          },
+          "ar": {
+            "name": "Fröccsterasz",
+            "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+            "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.\n\nSources: https://www.froccsterasz.hu/",
+            "slug": "cov-froccterasz-liszt-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-contessa-jewish-q",
+        "name": "Szpünik Café",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "1075 Budapest, Kazinczy utca 14, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+        "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "kert@szimpla.hu",
+        "website": "https://szimpla.hu/szpunik",
+        "phone": "+36 20 261 8669",
+        "locales": {
+          "hu": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-hu"
+          },
+          "es": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-es"
+          },
+          "it": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-it"
+          },
+          "he": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-he"
+          },
+          "ar": {
+            "name": "Szpünik Café",
+            "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+            "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.\n\nSources: https://szimpla.hu/szpunik",
+            "slug": "cov-contessa-jewish-q-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spiler-gozsdu",
+        "name": "Spíler Shanghai",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+        "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/YFBNZ434/fbf606cfd9a5.png",
+        "email": "info@spilershanghai.hu",
+        "website": "https://spilershanghai.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+            "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "cov-spiler-gozsdu-hu"
+          },
+          "es": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+            "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "cov-spiler-gozsdu-es"
+          },
+          "it": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+            "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "cov-spiler-gozsdu-it"
+          },
+          "he": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+            "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "cov-spiler-gozsdu-he"
+          },
+          "ar": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+            "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "cov-spiler-gozsdu-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-melbourne-kazinczy",
+        "name": "My Little Melbourne",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "address": "1075 Budapest, Rumbach Sebestyén utca 7, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+        "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "hello@mylittlemelbourne.hu",
+        "website": "https://mylittlemelbourne.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-hu"
+          },
+          "es": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-es"
+          },
+          "it": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-it"
+          },
+          "he": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-he"
+          },
+          "ar": {
+            "name": "My Little Melbourne",
+            "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+            "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.\n\nSources: https://mylittlemelbourne.hu/",
+            "slug": "cov-melbourne-kazinczy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-fekete-wessel",
+        "name": "Fekete",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1075 Budapest, Wesselényi utca 13, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+        "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "hello@feketebudapest.com",
+        "website": "https://www.feketebudapest.com/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-hu"
+          },
+          "es": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-es"
+          },
+          "it": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-it"
+          },
+          "he": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-he"
+          },
+          "ar": {
+            "name": "Fekete",
+            "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+            "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.\n\nSources: https://www.feketebudapest.com/",
+            "slug": "cov-fekete-wessel-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-embassy-rakoczi",
+        "name": "Espresso Embassy Rákóczi",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Rákóczi út 57, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+        "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 30 180 0277",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-es"
+          },
+          "it": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-it"
+          },
+          "he": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy Rákóczi",
+            "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+            "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-embassy-rakoczi-ar"
+          }
+        }
+      }
+    }
+  ]
+}

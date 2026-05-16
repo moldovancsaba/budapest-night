@@ -11,7 +11,7 @@ import { MapPin, Users, Loader2 } from "lucide-react";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { useMeetupGroupsCatalog, useNeighborhoodsCatalog, useSiteCatalog } from "@/hooks/useCatalog";
 import { useDistrictLabel, useNeighborhoodLabel } from "@/hooks/useVenueDisplay";
-import { CMS_MEDIA } from "@/config/defaultMedia";
+import { cultureDiscoverHero } from "@/config/defaultMedia";
 import { CYBER_PANEL } from "@/lib/cyberTheme";
 import { cn } from "@/lib/utils";
 
@@ -87,7 +87,7 @@ export function MeetupGroupsView({ onOpen, onShare }: Props) {
           <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-accent/20 ring-1 ring-primary/20 md:block">
             <CdnImage
               fill
-              src={site?.discoverHeroUrl || CMS_MEDIA.fallbackMeetup}
+              src={cultureDiscoverHero(site?.cultureHeroUrl)}
               alt={t("heroImageAlt")}
             />
           </div>

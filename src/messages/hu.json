@@ -123,7 +123,12 @@
     "title": "Fedezd fel: {category} Budapesten",
     "tagline": "Válogatott. Helyi. Éjszakára készült.",
     "findByArea": "Találj {blurb} kerület és városrész szerint.",
-    "heroAlt": "Budapest éjszakai fényei",
+    "heroAlt": {
+      "Events": "Koncert és fesztivál Budapesten",
+      "Parties": "DJ és klub Budapesten",
+      "Restaurants": "Étterem Budapesten",
+      "Cafés": "Kávézó terasz Budapesten"
+    },
     "featured": "Kiemelt",
     "results": "{count, plural, one {# hely} other {# hely}}",
     "resultsIn": "{count, plural, one {# hely} other {# hely}} itt: {district}",

@@ -1,5 +1,5 @@
 /**
- * Generate high-entropy secrets for local ClassScout development and merge
+ * Generate high-entropy secrets for local Budapest Night development and merge
  * them into `.env.local` (gitignored via `*.local`).
  *
  * Only auto-fills keys the app can mint itself:
@@ -55,9 +55,11 @@ const KEY_ORDER = [
   "INGEST_BASE_URL",
   "ADMIN_PASSWORD",
   "ADMIN_SESSION_SECRET",
-  "LOVABLE_API_KEY",
-  "NEXT_PUBLIC_SUPABASE_URL",
-  "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+  "BRAIN_OPENAI_API_KEY",
+  "BRAIN_OPENAI_BASE_URL",
+  "CURATOR_OPENAI_API_KEY",
+  "CURATOR_OPENAI_MODEL",
+  "CURATOR_OPENAI_BASE_URL",
 ];
 
 function loadExisting() {
@@ -120,7 +122,7 @@ function main() {
     merged[key] = next;
   }
 
-  console.log("ClassScout env secret generator\n");
+  console.log("Budapest Night env secret generator\n");
   console.log("Target file:", envLocalPath);
   if (changes.length === 0) {
     console.log(

@@ -1,0 +1,1733 @@
+{
+  "sourceUrls": [
+    "https://www.vigado.hu/",
+    "https://www.parlament.hu/en/web/house-of-parliament",
+    "https://www.danubepalace.hu/",
+    "https://www.bazilika.biz/",
+    "https://www.operettszinhaz.hu/",
+    "https://orkeny.hu/",
+    "https://www.kuplung.hu/",
+    "https://www.liszacademy.hu/",
+    "https://www.jewishmuseum.hu/",
+    "https://gozsduudvar.hu/",
+    "https://ellatokert.hu/",
+    "https://durerkert.com/",
+    "https://www.apollomozi.hu/",
+    "https://www.corvinmozi.hu/",
+    "https://www.ferenciektere.hu/",
+    "https://balnabudapest.hu/",
+    "https://www.citadella.hu/",
+    "https://www.gloriett.hu/",
+    "https://www.gellertspa.hu/",
+    "https://www.aquincum.hu/",
+    "https://www.obuda.hu/",
+    "https://www.obudaisziget.hu/",
+    "https://www.mupa.hu/en",
+    "https://www.gellertspa.hu/events",
+    "https://www.budapestexpo.hu/"
+  ],
+  "notes": "Auto coverage wave 1",
+  "missingOrUncertain": [
+    "See coverage-venue-db.json for source notes."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-pesti-vigado-vaci",
+        "name": "Pesti Vigadó",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "1051 Budapest, Vigadó tér 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+        "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@vigado.hu",
+        "website": "https://www.vigado.hu/",
+        "phone": "+36 1 411 6677",
+        "locales": {
+          "hu": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-hu"
+          },
+          "es": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-es"
+          },
+          "it": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-it"
+          },
+          "he": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-he"
+          },
+          "ar": {
+            "name": "Pesti Vigadó",
+            "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+            "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.\n\nSources: https://www.vigado.hu/",
+            "slug": "cov-pesti-vigado-vaci-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-parliament-visitor",
+        "name": "Hungarian Parliament Visitor Centre",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Parliament",
+        "address": "1055 Budapest, Kossuth Lajos tér 1-3, Hungary",
+        "activityTypes": [
+          "Gallery",
+          "Theatre",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+        "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.\n\nSources: https://www.parlament.hu/en/web/house-of-parliament",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/7dMyLtm6/16d38617e503.jpg",
+        "email": "info@parlament.hu",
+        "website": "https://www.parlament.hu/en/web/house-of-parliament",
+        "phone": "+36 1 441 4904",
+        "locales": {
+          "hu": {
+            "name": "Hungarian Parliament Visitor Centre",
+            "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+            "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.\n\nSources: https://www.parlament.hu/en/web/house-of-parliament",
+            "slug": "cov-parliament-visitor-hu"
+          },
+          "es": {
+            "name": "Hungarian Parliament Visitor Centre",
+            "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+            "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.\n\nSources: https://www.parlament.hu/en/web/house-of-parliament",
+            "slug": "cov-parliament-visitor-es"
+          },
+          "it": {
+            "name": "Hungarian Parliament Visitor Centre",
+            "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+            "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.\n\nSources: https://www.parlament.hu/en/web/house-of-parliament",
+            "slug": "cov-parliament-visitor-it"
+          },
+          "he": {
+            "name": "Hungarian Parliament Visitor Centre",
+            "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+            "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.\n\nSources: https://www.parlament.hu/en/web/house-of-parliament",
+            "slug": "cov-parliament-visitor-he"
+          },
+          "ar": {
+            "name": "Hungarian Parliament Visitor Centre",
+            "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+            "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.\n\nSources: https://www.parlament.hu/en/web/house-of-parliament",
+            "slug": "cov-parliament-visitor-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-danube-palace-prom",
+        "name": "Danube Palace",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Danube Promenade",
+        "address": "1051 Budapest, Zrínyi utca 5, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+        "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.\n\nSources: https://www.danubepalace.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/7dMyLtm6/16d38617e503.jpg",
+        "email": "info@danubepalace.hu",
+        "website": "https://www.danubepalace.hu/",
+        "phone": "+36 1 317 1377",
+        "locales": {
+          "hu": {
+            "name": "Danube Palace",
+            "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+            "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.\n\nSources: https://www.danubepalace.hu/",
+            "slug": "cov-danube-palace-prom-hu"
+          },
+          "es": {
+            "name": "Danube Palace",
+            "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+            "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.\n\nSources: https://www.danubepalace.hu/",
+            "slug": "cov-danube-palace-prom-es"
+          },
+          "it": {
+            "name": "Danube Palace",
+            "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+            "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.\n\nSources: https://www.danubepalace.hu/",
+            "slug": "cov-danube-palace-prom-it"
+          },
+          "he": {
+            "name": "Danube Palace",
+            "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+            "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.\n\nSources: https://www.danubepalace.hu/",
+            "slug": "cov-danube-palace-prom-he"
+          },
+          "ar": {
+            "name": "Danube Palace",
+            "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+            "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.\n\nSources: https://www.danubepalace.hu/",
+            "slug": "cov-danube-palace-prom-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-basilica-inner",
+        "name": "St. Stephen's Basilica Concerts",
+        "category": "Events",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "1051 Budapest, Szent István tér 1, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+        "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@bazilika.biz",
+        "website": "https://www.bazilika.biz/",
+        "phone": "+36 1 311 0839",
+        "locales": {
+          "hu": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-hu"
+          },
+          "es": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-es"
+          },
+          "it": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-it"
+          },
+          "he": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-he"
+          },
+          "ar": {
+            "name": "St. Stephen's Basilica Concerts",
+            "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+            "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.\n\nSources: https://www.bazilika.biz/",
+            "slug": "cov-basilica-inner-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-operetta-andrassy",
+        "name": "Budapest Operetta Theatre",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "address": "1061 Budapest, Andrássy út 17, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+        "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@operettszinhaz.hu",
+        "website": "https://www.operettszinhaz.hu/",
+        "phone": "+36 1 332 5000",
+        "locales": {
+          "hu": {
+            "name": "Budapest Operetta Theatre",
+            "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+            "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "cov-operetta-andrassy-hu"
+          },
+          "es": {
+            "name": "Budapest Operetta Theatre",
+            "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+            "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "cov-operetta-andrassy-es"
+          },
+          "it": {
+            "name": "Budapest Operetta Theatre",
+            "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+            "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "cov-operetta-andrassy-it"
+          },
+          "he": {
+            "name": "Budapest Operetta Theatre",
+            "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+            "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "cov-operetta-andrassy-he"
+          },
+          "ar": {
+            "name": "Budapest Operetta Theatre",
+            "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+            "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.\n\nSources: https://www.operettszinhaz.hu/",
+            "slug": "cov-operetta-andrassy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-orkeny-oktogon",
+        "name": "Örkény Theatre",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Oktogon",
+        "address": "1064 Budapest, Madách Imre tér 6, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+        "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@orkeny.hu",
+        "website": "https://orkeny.hu/",
+        "phone": "+36 1 472 2030",
+        "locales": {
+          "hu": {
+            "name": "Örkény Theatre",
+            "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+            "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "cov-orkeny-oktogon-hu"
+          },
+          "es": {
+            "name": "Örkény Theatre",
+            "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+            "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "cov-orkeny-oktogon-es"
+          },
+          "it": {
+            "name": "Örkény Theatre",
+            "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+            "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "cov-orkeny-oktogon-it"
+          },
+          "he": {
+            "name": "Örkény Theatre",
+            "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+            "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "cov-orkeny-oktogon-he"
+          },
+          "ar": {
+            "name": "Örkény Theatre",
+            "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+            "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.\n\nSources: https://orkeny.hu/",
+            "slug": "cov-orkeny-oktogon-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kuplung-kiraly",
+        "name": "Kuplung",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Király utca 46, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "DJ Sets",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+        "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@kuplung.hu",
+        "website": "https://www.kuplung.hu/",
+        "phone": "+36 1 352 6153",
+        "locales": {
+          "hu": {
+            "name": "Kuplung",
+            "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+            "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+            "slug": "cov-kuplung-kiraly-hu"
+          },
+          "es": {
+            "name": "Kuplung",
+            "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+            "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+            "slug": "cov-kuplung-kiraly-es"
+          },
+          "it": {
+            "name": "Kuplung",
+            "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+            "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+            "slug": "cov-kuplung-kiraly-it"
+          },
+          "he": {
+            "name": "Kuplung",
+            "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+            "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+            "slug": "cov-kuplung-kiraly-he"
+          },
+          "ar": {
+            "name": "Kuplung",
+            "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+            "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+            "slug": "cov-kuplung-kiraly-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-liszt-academy",
+        "name": "Liszt Ferenc Academy",
+        "category": "Events",
+        "borough": "Terézváros",
+        "neighborhood": "Liszt Ferenc tér",
+        "address": "1064 Budapest, Liszt Ferenc tér 8, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Jazz",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+        "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@liszacademy.hu",
+        "website": "https://www.liszacademy.hu/",
+        "phone": "+36 1 462 4600",
+        "locales": {
+          "hu": {
+            "name": "Liszt Ferenc Academy",
+            "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+            "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "cov-liszt-academy-hu"
+          },
+          "es": {
+            "name": "Liszt Ferenc Academy",
+            "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+            "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "cov-liszt-academy-es"
+          },
+          "it": {
+            "name": "Liszt Ferenc Academy",
+            "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+            "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "cov-liszt-academy-it"
+          },
+          "he": {
+            "name": "Liszt Ferenc Academy",
+            "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+            "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "cov-liszt-academy-he"
+          },
+          "ar": {
+            "name": "Liszt Ferenc Academy",
+            "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+            "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.\n\nSources: https://www.liszacademy.hu/",
+            "slug": "cov-liszt-academy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-dohany-jewish-q",
+        "name": "Dohány Street Synagogue",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "1074 Budapest, Dohány utca 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+        "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@jewishmuseum.hu",
+        "website": "https://www.jewishmuseum.hu/",
+        "phone": "+36 1 343 0420",
+        "locales": {
+          "hu": {
+            "name": "Dohány Street Synagogue",
+            "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+            "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "cov-dohany-jewish-q-hu"
+          },
+          "es": {
+            "name": "Dohány Street Synagogue",
+            "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+            "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "cov-dohany-jewish-q-es"
+          },
+          "it": {
+            "name": "Dohány Street Synagogue",
+            "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+            "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "cov-dohany-jewish-q-it"
+          },
+          "he": {
+            "name": "Dohány Street Synagogue",
+            "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+            "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "cov-dohany-jewish-q-he"
+          },
+          "ar": {
+            "name": "Dohány Street Synagogue",
+            "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+            "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.\n\nSources: https://www.jewishmuseum.hu/",
+            "slug": "cov-dohany-jewish-q-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gozsdu-events",
+        "name": "Gozsdu Udvar",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Live Music",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+        "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Q7gyszHL/0f9645155663.png",
+        "email": "info@gozsduudvar.hu",
+        "website": "https://gozsduudvar.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+            "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "cov-gozsdu-events-hu"
+          },
+          "es": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+            "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "cov-gozsdu-events-es"
+          },
+          "it": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+            "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "cov-gozsdu-events-it"
+          },
+          "he": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+            "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "cov-gozsdu-events-he"
+          },
+          "ar": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+            "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "cov-gozsdu-events-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ellato-kazinczy",
+        "name": "Ellátó Kert",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Kazinczy utca",
+        "address": "1075 Budapest, Kazinczy utca 48, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Festival",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+        "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@ellatokert.hu",
+        "website": "https://ellatokert.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Ellátó Kert",
+            "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+            "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "cov-ellato-kazinczy-hu"
+          },
+          "es": {
+            "name": "Ellátó Kert",
+            "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+            "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "cov-ellato-kazinczy-es"
+          },
+          "it": {
+            "name": "Ellátó Kert",
+            "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+            "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "cov-ellato-kazinczy-it"
+          },
+          "he": {
+            "name": "Ellátó Kert",
+            "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+            "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "cov-ellato-kazinczy-he"
+          },
+          "ar": {
+            "name": "Ellátó Kert",
+            "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+            "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.\n\nSources: https://ellatokert.hu/",
+            "slug": "cov-ellato-kazinczy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-durer-wessel",
+        "name": "Dürer Kert",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Wesselényi utca",
+        "address": "1075 Budapest, Wesselényi utca 52, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Festival",
+          "Electronic"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+        "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.\n\nSources: https://durerkert.com/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/CpRyD5Tt/e9e5588c046b.png",
+        "email": "info@durerkert.com",
+        "website": "https://durerkert.com/",
+        "phone": "+36 1 787 0760",
+        "locales": {
+          "hu": {
+            "name": "Dürer Kert",
+            "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+            "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.\n\nSources: https://durerkert.com/",
+            "slug": "cov-durer-wessel-hu"
+          },
+          "es": {
+            "name": "Dürer Kert",
+            "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+            "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.\n\nSources: https://durerkert.com/",
+            "slug": "cov-durer-wessel-es"
+          },
+          "it": {
+            "name": "Dürer Kert",
+            "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+            "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.\n\nSources: https://durerkert.com/",
+            "slug": "cov-durer-wessel-it"
+          },
+          "he": {
+            "name": "Dürer Kert",
+            "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+            "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.\n\nSources: https://durerkert.com/",
+            "slug": "cov-durer-wessel-he"
+          },
+          "ar": {
+            "name": "Dürer Kert",
+            "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+            "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.\n\nSources: https://durerkert.com/",
+            "slug": "cov-durer-wessel-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-apollo-rakoczi",
+        "name": "Apollo Cinema",
+        "category": "Events",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1074 Budapest, Erzsébet körút 39, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Festival",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+        "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.\n\nSources: https://www.apollomozi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/ZzpXTGCB/114d9f0d8a04.jpg",
+        "email": "info@apollomozi.hu",
+        "website": "https://www.apollomozi.hu/",
+        "phone": "+36 1 321 0570",
+        "locales": {
+          "hu": {
+            "name": "Apollo Cinema",
+            "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+            "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.\n\nSources: https://www.apollomozi.hu/",
+            "slug": "cov-apollo-rakoczi-hu"
+          },
+          "es": {
+            "name": "Apollo Cinema",
+            "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+            "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.\n\nSources: https://www.apollomozi.hu/",
+            "slug": "cov-apollo-rakoczi-es"
+          },
+          "it": {
+            "name": "Apollo Cinema",
+            "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+            "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.\n\nSources: https://www.apollomozi.hu/",
+            "slug": "cov-apollo-rakoczi-it"
+          },
+          "he": {
+            "name": "Apollo Cinema",
+            "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+            "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.\n\nSources: https://www.apollomozi.hu/",
+            "slug": "cov-apollo-rakoczi-he"
+          },
+          "ar": {
+            "name": "Apollo Cinema",
+            "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+            "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.\n\nSources: https://www.apollomozi.hu/",
+            "slug": "cov-apollo-rakoczi-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-corvin-cinema",
+        "name": "Corvin Cinema",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Corvin-negyed",
+        "address": "1082 Budapest, Corvin köz 1, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Festival",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+        "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.\n\nSources: https://www.corvinmozi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/7d6kw82J/24a72a26efc0.jpg",
+        "email": "info@corvinmozi.hu",
+        "website": "https://www.corvinmozi.hu/",
+        "phone": "+36 1 459 7000",
+        "locales": {
+          "hu": {
+            "name": "Corvin Cinema",
+            "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+            "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.\n\nSources: https://www.corvinmozi.hu/",
+            "slug": "cov-corvin-cinema-hu"
+          },
+          "es": {
+            "name": "Corvin Cinema",
+            "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+            "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.\n\nSources: https://www.corvinmozi.hu/",
+            "slug": "cov-corvin-cinema-es"
+          },
+          "it": {
+            "name": "Corvin Cinema",
+            "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+            "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.\n\nSources: https://www.corvinmozi.hu/",
+            "slug": "cov-corvin-cinema-it"
+          },
+          "he": {
+            "name": "Corvin Cinema",
+            "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+            "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.\n\nSources: https://www.corvinmozi.hu/",
+            "slug": "cov-corvin-cinema-he"
+          },
+          "ar": {
+            "name": "Corvin Cinema",
+            "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+            "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.\n\nSources: https://www.corvinmozi.hu/",
+            "slug": "cov-corvin-cinema-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-ferenc-nagy",
+        "name": "Ferenc Római Catholic Parish Cultural Events",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Nagytemplom utca",
+        "address": "1093 Budapest, Ferenciek tere 2, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+        "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "",
+        "website": "https://www.ferenciektere.hu/",
+        "phone": "+36 1 317 2347",
+        "locales": {
+          "hu": {
+            "name": "Ferenc Római Catholic Parish Cultural Events",
+            "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+            "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "cov-ferenc-nagy-hu"
+          },
+          "es": {
+            "name": "Ferenc Római Catholic Parish Cultural Events",
+            "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+            "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "cov-ferenc-nagy-es"
+          },
+          "it": {
+            "name": "Ferenc Római Catholic Parish Cultural Events",
+            "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+            "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "cov-ferenc-nagy-it"
+          },
+          "he": {
+            "name": "Ferenc Római Catholic Parish Cultural Events",
+            "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+            "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "cov-ferenc-nagy-he"
+          },
+          "ar": {
+            "name": "Ferenc Római Catholic Parish Cultural Events",
+            "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+            "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.\n\nSources: https://www.ferenciektere.hu/",
+            "slug": "cov-ferenc-nagy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-balna-events",
+        "name": "Bálna Budapest",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Boráros tér",
+        "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Gallery",
+          "Boat Party"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+        "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hFKZjWry/4b08db7d8c99.jpg",
+        "email": "info@balnabudapest.hu",
+        "website": "https://balnabudapest.hu/",
+        "phone": "+36 1 456 7892",
+        "locales": {
+          "hu": {
+            "name": "Bálna Budapest",
+            "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+            "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "cov-balna-events-hu"
+          },
+          "es": {
+            "name": "Bálna Budapest",
+            "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+            "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "cov-balna-events-es"
+          },
+          "it": {
+            "name": "Bálna Budapest",
+            "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+            "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "cov-balna-events-it"
+          },
+          "he": {
+            "name": "Bálna Budapest",
+            "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+            "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "cov-balna-events-he"
+          },
+          "ar": {
+            "name": "Bálna Budapest",
+            "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+            "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.\n\nSources: https://balnabudapest.hu/",
+            "slug": "cov-balna-events-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-citadella-gellert",
+        "name": "Citadella Events",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Gellért Hill",
+        "address": "1118 Budapest, Citadella sétány, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Live Music",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+        "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.\n\nSources: https://www.citadella.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/WNyq62Fh/4c1d0343d05a.jpg",
+        "email": "info@citadella.hu",
+        "website": "https://www.citadella.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Citadella Events",
+            "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+            "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.\n\nSources: https://www.citadella.hu/",
+            "slug": "cov-citadella-gellert-hu"
+          },
+          "es": {
+            "name": "Citadella Events",
+            "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+            "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.\n\nSources: https://www.citadella.hu/",
+            "slug": "cov-citadella-gellert-es"
+          },
+          "it": {
+            "name": "Citadella Events",
+            "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+            "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.\n\nSources: https://www.citadella.hu/",
+            "slug": "cov-citadella-gellert-it"
+          },
+          "he": {
+            "name": "Citadella Events",
+            "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+            "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.\n\nSources: https://www.citadella.hu/",
+            "slug": "cov-citadella-gellert-he"
+          },
+          "ar": {
+            "name": "Citadella Events",
+            "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+            "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.\n\nSources: https://www.citadella.hu/",
+            "slug": "cov-citadella-gellert-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gloriett-rozsadomb",
+        "name": "Gloriett Events",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Rózsadomb",
+        "address": "1027 Budapest, Török utca 3, Hungary",
+        "activityTypes": [
+          "Wine Bar",
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Afternoon"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+        "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@gloriett.hu",
+        "website": "https://www.gloriett.hu/",
+        "phone": "+36 1 356 7890",
+        "locales": {
+          "hu": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-hu"
+          },
+          "es": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-es"
+          },
+          "it": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-it"
+          },
+          "he": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-he"
+          },
+          "ar": {
+            "name": "Gloriett Events",
+            "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+            "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.\n\nSources: https://www.gloriett.hu/",
+            "slug": "cov-gloriett-rozsadomb-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-spa-events",
+        "name": "Gellért Spa Cultural Hall",
+        "category": "Events",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+        "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mrB4fXkd/65096eb5bdbf.jpg",
+        "email": "info@gellertspa.hu",
+        "website": "https://www.gellertspa.hu/",
+        "phone": "+36 1 466 6166",
+        "locales": {
+          "hu": {
+            "name": "Gellért Spa Cultural Hall",
+            "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+            "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "cov-gellert-spa-events-hu"
+          },
+          "es": {
+            "name": "Gellért Spa Cultural Hall",
+            "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+            "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "cov-gellert-spa-events-es"
+          },
+          "it": {
+            "name": "Gellért Spa Cultural Hall",
+            "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+            "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "cov-gellert-spa-events-it"
+          },
+          "he": {
+            "name": "Gellért Spa Cultural Hall",
+            "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+            "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "cov-gellert-spa-events-he"
+          },
+          "ar": {
+            "name": "Gellért Spa Cultural Hall",
+            "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+            "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/",
+            "slug": "cov-gellert-spa-events-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-aquincum-museum",
+        "name": "Aquincum Museum",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Aquincum",
+        "address": "1031 Budapest, Szentendrei út 135, Hungary",
+        "activityTypes": [
+          "Gallery",
+          "Festival",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+        "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/fd7gjHHM/63a13ec99b85.jpg",
+        "email": "info@aquincum.hu",
+        "website": "https://www.aquincum.hu/",
+        "phone": "+36 1 250 1650",
+        "locales": {
+          "hu": {
+            "name": "Aquincum Museum",
+            "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+            "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-aquincum-museum-hu"
+          },
+          "es": {
+            "name": "Aquincum Museum",
+            "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+            "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-aquincum-museum-es"
+          },
+          "it": {
+            "name": "Aquincum Museum",
+            "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+            "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-aquincum-museum-it"
+          },
+          "he": {
+            "name": "Aquincum Museum",
+            "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+            "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-aquincum-museum-he"
+          },
+          "ar": {
+            "name": "Aquincum Museum",
+            "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+            "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.\n\nSources: https://www.aquincum.hu/",
+            "slug": "cov-aquincum-museum-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-obudai-kolosy",
+        "name": "Óbudai Cultural Centre",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Kolosy tér",
+        "address": "1036 Budapest, Kiscelli utca 11, Hungary",
+        "activityTypes": [
+          "Theatre",
+          "Live Music",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+        "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@obuda.hu",
+        "website": "https://www.obuda.hu/",
+        "phone": "+36 1 437 8600",
+        "locales": {
+          "hu": {
+            "name": "Óbudai Cultural Centre",
+            "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+            "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "cov-obudai-kolosy-hu"
+          },
+          "es": {
+            "name": "Óbudai Cultural Centre",
+            "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+            "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "cov-obudai-kolosy-es"
+          },
+          "it": {
+            "name": "Óbudai Cultural Centre",
+            "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+            "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "cov-obudai-kolosy-it"
+          },
+          "he": {
+            "name": "Óbudai Cultural Centre",
+            "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+            "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "cov-obudai-kolosy-he"
+          },
+          "ar": {
+            "name": "Óbudai Cultural Centre",
+            "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+            "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.\n\nSources: https://www.obuda.hu/",
+            "slug": "cov-obudai-kolosy-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-obuda-becsi-events",
+        "name": "Óbudai-sziget Cultural Hall",
+        "category": "Events",
+        "borough": "Óbuda",
+        "neighborhood": "Bécsi út",
+        "address": "1036 Budapest, Bécsi út 38, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Festival"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+        "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@obudaisziget.hu",
+        "website": "https://www.obudaisziget.hu/",
+        "phone": "+36 1 437 8601",
+        "locales": {
+          "hu": {
+            "name": "Óbudai-sziget Cultural Hall",
+            "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+            "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "cov-obuda-becsi-events-hu"
+          },
+          "es": {
+            "name": "Óbudai-sziget Cultural Hall",
+            "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+            "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "cov-obuda-becsi-events-es"
+          },
+          "it": {
+            "name": "Óbudai-sziget Cultural Hall",
+            "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+            "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "cov-obuda-becsi-events-it"
+          },
+          "he": {
+            "name": "Óbudai-sziget Cultural Hall",
+            "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+            "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "cov-obuda-becsi-events-he"
+          },
+          "ar": {
+            "name": "Óbudai-sziget Cultural Hall",
+            "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+            "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.\n\nSources: https://www.obudaisziget.hu/",
+            "slug": "cov-obuda-becsi-events-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bartok-moricz",
+        "name": "Béla Bartók National Concert Hall",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Móricz Zsigmond körtér",
+        "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "Theatre",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+        "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/DP8kRzt1/3216d19ee1d1.webp",
+        "email": "info@mupa.hu",
+        "website": "https://www.mupa.hu/en",
+        "phone": "+36 1 555 3055",
+        "locales": {
+          "hu": {
+            "name": "Béla Bartók National Concert Hall",
+            "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+            "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "cov-bartok-moricz-hu"
+          },
+          "es": {
+            "name": "Béla Bartók National Concert Hall",
+            "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+            "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "cov-bartok-moricz-es"
+          },
+          "it": {
+            "name": "Béla Bartók National Concert Hall",
+            "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+            "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "cov-bartok-moricz-it"
+          },
+          "he": {
+            "name": "Béla Bartók National Concert Hall",
+            "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+            "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "cov-bartok-moricz-he"
+          },
+          "ar": {
+            "name": "Béla Bartók National Concert Hall",
+            "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+            "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.\n\nSources: https://www.mupa.hu/en",
+            "slug": "cov-bartok-moricz-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gellert-events-ujbuda",
+        "name": "Gellért Bath Palace Events",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Gellért Baths area",
+        "address": "1114 Budapest, Kelenhegyi út 4, Hungary",
+        "activityTypes": [
+          "Thermal Bath",
+          "Jazz",
+          "Live Music"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+        "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@gellertspa.hu",
+        "website": "https://www.gellertspa.hu/events",
+        "phone": "+36 1 466 6166",
+        "locales": {
+          "hu": {
+            "name": "Gellért Bath Palace Events",
+            "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+            "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "cov-gellert-events-ujbuda-hu"
+          },
+          "es": {
+            "name": "Gellért Bath Palace Events",
+            "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+            "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "cov-gellert-events-ujbuda-es"
+          },
+          "it": {
+            "name": "Gellért Bath Palace Events",
+            "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+            "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "cov-gellert-events-ujbuda-it"
+          },
+          "he": {
+            "name": "Gellért Bath Palace Events",
+            "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+            "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "cov-gellert-events-ujbuda-he"
+          },
+          "ar": {
+            "name": "Gellért Bath Palace Events",
+            "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+            "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.\n\nSources: https://www.gellertspa.hu/events",
+            "slug": "cov-gellert-events-ujbuda-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bikas-expo",
+        "name": "Budapest Expo Events",
+        "category": "Events",
+        "borough": "Újbuda",
+        "neighborhood": "Bikás park",
+        "address": "1117 Budapest, Albertirsai út 10, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Gallery",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+        "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/mCjYgtvh/47e4d928732e.jpg",
+        "email": "info@budapestexpo.hu",
+        "website": "https://www.budapestexpo.hu/",
+        "phone": "+36 1 555 3400",
+        "locales": {
+          "hu": {
+            "name": "Budapest Expo Events",
+            "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+            "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "cov-bikas-expo-hu"
+          },
+          "es": {
+            "name": "Budapest Expo Events",
+            "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+            "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "cov-bikas-expo-es"
+          },
+          "it": {
+            "name": "Budapest Expo Events",
+            "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+            "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "cov-bikas-expo-it"
+          },
+          "he": {
+            "name": "Budapest Expo Events",
+            "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+            "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "cov-bikas-expo-he"
+          },
+          "ar": {
+            "name": "Budapest Expo Events",
+            "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+            "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.\n\nSources: https://www.budapestexpo.hu/",
+            "slug": "cov-bikas-expo-ar"
+          }
+        }
+      }
+    }
+  ]
+}

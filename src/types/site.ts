@@ -1,4 +1,4 @@
-import type { Borough } from "@/types/provider";
+import type { Borough, Category } from "@/types/provider";
 import { APP_LOGO_PATH } from "@/config/brand";
 import { CMS_MEDIA, guideImageForId } from "@/config/defaultMedia";
 
@@ -156,6 +156,10 @@ export interface SiteDoc {
   logoUrl: string;
   homeHeroUrl: string;
   discoverHeroUrl: string;
+  /** Optional per-category Discover heroes (ImgBB https URLs). */
+  discoverHeroByCategory?: Partial<Record<Category, string>>;
+  /** Optional Culture / meet-up groups listing hero. */
+  cultureHeroUrl?: string;
   homeHeroTitle: string;
   homeHeroSubtitle: string;
   homeHeroPrimaryCta: string;
@@ -213,7 +217,7 @@ Help visitors and locals:
 - Estimate spend across multiple venues.
 
 Tone: energetic, concise, neon-city cool. Use short paragraphs and bullet points. Ask clarifying questions when helpful (district, budget, music vs food vs art). Avoid inventing specific venue names unless the user names one.`,
-  model: "google/gemini-3-flash-preview",
+  model: "gpt-4o-mini",
   starters: [
     "Ruin bars in the Jewish Quarter tonight",
     "Rooftop restaurants with Danube views",

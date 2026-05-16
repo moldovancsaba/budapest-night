@@ -66,6 +66,20 @@ export function validateSiteRasterUrls(site: Partial<Record<string, unknown>>): 
     const e = imgbbImageFieldError("site.discoverHeroUrl", dh);
     if (e) return e;
   }
+  const byCat = site.discoverHeroByCategory;
+  if (byCat && typeof byCat === "object") {
+    for (const [cat, url] of Object.entries(byCat)) {
+      if (typeof url === "string" && url.trim()) {
+        const e = imgbbImageFieldError(`site.discoverHeroByCategory.${cat}`, url);
+        if (e) return e;
+      }
+    }
+  }
+  const culture = site.cultureHeroUrl;
+  if (typeof culture === "string" && culture.trim()) {
+    const e = imgbbImageFieldError("site.cultureHeroUrl", culture);
+    if (e) return e;
+  }
   const guides = site.guides;
   if (Array.isArray(guides)) {
     for (let i = 0; i < guides.length; i++) {

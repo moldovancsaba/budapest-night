@@ -1,0 +1,4762 @@
+{
+  "providers": [
+    {
+      "gapKey": "Events|Belváros|Váci utca",
+      "id": "prov-cov-pesti-vigado-vaci",
+      "name": "Pesti Vigadó",
+      "address": "1051 Budapest, Vigadó tér 2, Hungary",
+      "website": "https://www.vigado.hu/",
+      "phone": "+36 1 411 6677",
+      "email": "info@vigado.hu",
+      "imageSource": "https://www.vigado.hu/wp-content/uploads/2023/03/vigado-hero.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Historic concert hall on Vigadó tér — classical, jazz, and gala performances facing the Danube.",
+      "longDescription": "Pesti Vigadó is a 19th-century concert venue at Vigadó tér 2 along the Pest embankment near Váci utca. The programme spans symphonic concerts, operetta, and jazz in the grand halls. Check vigado.hu for the calendar and ticket office hours.",
+      "category": "Events",
+      "borough": "Belváros",
+      "neighborhood": "Váci utca"
+    },
+    {
+      "gapKey": "Events|Belváros|Deák tér",
+      "id": "prov-cov-akvarium-deak",
+      "name": "Akvárium Klub",
+      "address": "1051 Budapest, Erzsébet tér 12, Hungary",
+      "website": "https://akvariumklub.hu/",
+      "phone": "+36 30 860 3368",
+      "email": "info@akvariumklub.hu",
+      "imageSource": "https://akvariumklub.hu/wp-content/uploads/2021/09/akvarium-hero.jpg",
+      "activityTypes": [
+        "Live Music",
+        "DJ Sets",
+        "Festival"
+      ],
+      "ageRanges": [
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Central club under Erzsébet tér — concerts and DJ nights a minute from Deák Ferenc tér.",
+      "longDescription": "Akvárium Klub is a staple live venue at Erzsébet tér 12 with indoor and garden stages. The calendar mixes Hungarian bands and international club nights right at the Deák tér transport hub. Tickets and listings are on akvariumklub.hu.",
+      "category": "Events",
+      "borough": "Belváros",
+      "neighborhood": "Deák tér"
+    },
+    {
+      "gapKey": "Events|Belváros|Parliament",
+      "id": "prov-cov-parliament-visitor",
+      "name": "Hungarian Parliament Visitor Centre",
+      "address": "1055 Budapest, Kossuth Lajos tér 1-3, Hungary",
+      "website": "https://www.parlament.hu/en/web/house-of-parliament",
+      "phone": "+36 1 441 4904",
+      "email": "info@parlament.hu",
+      "imageSource": "https://www.parlament.hu/images/parliament-dome.jpg",
+      "activityTypes": [
+        "Gallery",
+        "Theatre",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Guided tours of the Neo-Gothic Parliament — crown jewels and riverfront halls beside Kossuth tér.",
+      "longDescription": "The Hungarian Parliament Visitor Centre offers timed tours through the riverside building at Kossuth Lajos tér. Visitors see the Dome Hall, crown jewels, and session rooms with multilingual guides. Book tickets on the official parlament.hu site.",
+      "category": "Events",
+      "borough": "Belváros",
+      "neighborhood": "Parliament"
+    },
+    {
+      "gapKey": "Events|Belváros|Danube Promenade",
+      "id": "prov-cov-danube-palace-prom",
+      "name": "Danube Palace",
+      "address": "1051 Budapest, Zrínyi utca 5, Hungary",
+      "website": "https://www.danubepalace.hu/",
+      "phone": "+36 1 317 1377",
+      "email": "info@danubepalace.hu",
+      "imageSource": "https://www.danubepalace.hu/images/danube-palace-hall.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Folk and classical show venue on the Danube Promenade — nightly performances near the river walk.",
+      "longDescription": "Danube Palace at Zrínyi utca 5 hosts Hungarian folk ensembles and salon concerts steps from the Pest embankment promenade. Standard show packages include multiple short acts in the historic ballroom. Book on danubepalace.hu.",
+      "category": "Events",
+      "borough": "Belváros",
+      "neighborhood": "Danube Promenade"
+    },
+    {
+      "gapKey": "Events|Belváros|Inner City",
+      "id": "prov-cov-basilica-inner",
+      "name": "St. Stephen's Basilica Concerts",
+      "address": "1051 Budapest, Szent István tér 1, Hungary",
+      "website": "https://www.bazilika.biz/",
+      "phone": "+36 1 311 0839",
+      "email": "info@bazilika.biz",
+      "imageSource": "https://www.bazilika.biz/images/basilica-organ.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Organ and classical concerts inside St. Stephen's Basilica — landmark dome in the Inner City.",
+      "longDescription": "St. Stephen's Basilica hosts ticketed organ and chamber concerts beneath the dome at Szent István tér. Visitors can combine a tower visit with an evening recital in the Inner City core. Schedules and tickets are sold via bazilika.biz.",
+      "category": "Events",
+      "borough": "Belváros",
+      "neighborhood": "Inner City"
+    },
+    {
+      "gapKey": "Events|Terézváros|Andrássy út",
+      "id": "prov-cov-operetta-andrassy",
+      "name": "Budapest Operetta Theatre",
+      "address": "1061 Budapest, Andrássy út 17, Hungary",
+      "website": "https://www.operettszinhaz.hu/",
+      "phone": "+36 1 332 5000",
+      "email": "info@operettszinhaz.hu",
+      "imageSource": "https://www.operettszinhaz.hu/images/operetta-facade.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Live Music",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Grande operetta house on Andrássy út — musicals, operettas, and gala premieres in a UNESCO avenue villa.",
+      "longDescription": "The Budapest Operetta Theatre at Andrássy út 17 stages Hungarian and international musical productions in an ornate 19th-century hall. The avenue location places it between Oktogon and the Opera metro stops. Tickets and season brochures are on operettszinhaz.hu.",
+      "category": "Events",
+      "borough": "Terézváros",
+      "neighborhood": "Andrássy út"
+    },
+    {
+      "gapKey": "Events|Terézváros|Opera",
+      "id": "prov-cov-state-opera",
+      "name": "Hungarian State Opera",
+      "address": "1061 Budapest, Andrássy út 22, Hungary",
+      "website": "https://www.opera.hu/",
+      "phone": "+36 1 814 7100",
+      "email": "info@opera.hu",
+      "imageSource": "https://www.opera.hu/images/opera-house-night.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Live Music",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Neo-Renaissance opera house on Andrássy út — ballet, opera, and symphony in the Opera neighborhood.",
+      "longDescription": "The Hungarian State Opera at Andrássy út 22 reopened after restoration with opera, ballet, and concert programming. The auditorium and foyer tours are listed on opera.hu alongside the performance calendar. Dress smart for premieres in the Opera quarter.",
+      "category": "Events",
+      "borough": "Terézváros",
+      "neighborhood": "Opera"
+    },
+    {
+      "gapKey": "Events|Terézváros|Oktogon",
+      "id": "prov-cov-orkeny-oktogon",
+      "name": "Örkény Theatre",
+      "address": "1064 Budapest, Madách Imre tér 6, Hungary",
+      "website": "https://orkeny.hu/",
+      "phone": "+36 1 472 2030",
+      "email": "info@orkeny.hu",
+      "imageSource": "https://orkeny.hu/images/orkeny-stage.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Live Music",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Chamber theatre at Oktogon — contemporary drama and cabaret steps from the Grand Boulevard crossing.",
+      "longDescription": "Örkény Theatre on Madách Imre tér stages sharp Hungarian contemporary plays and smaller-scale productions beside the Oktogon junction. The intimate auditorium keeps sightlines close to the stage. Program and tickets on orkeny.hu.",
+      "category": "Events",
+      "borough": "Terézváros",
+      "neighborhood": "Oktogon"
+    },
+    {
+      "gapKey": "Events|Terézváros|Király utca",
+      "id": "prov-cov-kuplung-kiraly",
+      "name": "Kuplung",
+      "address": "1075 Budapest, Király utca 46, Hungary",
+      "website": "https://www.kuplung.hu/",
+      "phone": "+36 1 352 6153",
+      "email": "info@kuplung.hu",
+      "imageSource": "https://www.kuplung.hu/images/kuplung-stage.jpg",
+      "activityTypes": [
+        "Live Music",
+        "DJ Sets",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+      "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.",
+      "category": "Events",
+      "borough": "Terézváros",
+      "neighborhood": "Király utca"
+    },
+    {
+      "gapKey": "Events|Terézváros|Liszt Ferenc tér",
+      "id": "prov-cov-liszt-academy",
+      "name": "Liszt Ferenc Academy",
+      "address": "1064 Budapest, Liszt Ferenc tér 8, Hungary",
+      "website": "https://www.liszacademy.hu/",
+      "phone": "+36 1 462 4600",
+      "email": "info@liszacademy.hu",
+      "imageSource": "https://www.liszacademy.hu/images/liszt-hall.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Jazz",
+        "Theatre"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Art-nouveau concert academy on Liszt Ferenc tér — classical recitals and masterclass hall events.",
+      "longDescription": "The Liszt Ferenc Academy Concert Centre at Liszt Ferenc tér 8 hosts student and professional classical performances in a landmark art-nouveau hall. The square outside fills with restaurant terraces before showtime. Calendar on liszacademy.hu.",
+      "category": "Events",
+      "borough": "Terézváros",
+      "neighborhood": "Liszt Ferenc tér"
+    },
+    {
+      "gapKey": "Events|Erzsébetváros|Jewish Quarter",
+      "id": "prov-cov-dohany-jewish-q",
+      "name": "Dohány Street Synagogue",
+      "address": "1074 Budapest, Dohány utca 2, Hungary",
+      "website": "https://www.jewishmuseum.hu/",
+      "phone": "+36 1 343 0420",
+      "email": "info@jewishmuseum.hu",
+      "imageSource": "https://www.jewishmuseum.hu/images/synagogue-facade.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Europe's largest synagogue — concerts, guided tours, and Jewish Quarter heritage at Dohány utca.",
+      "longDescription": "The Dohány Street Synagogue complex hosts cultural events, organ recitals, and museum visits in the heart of the Jewish Quarter. The Moorish Revival building anchors Kazinczy utca nightlife nearby. Tickets via jewishmuseum.hu.",
+      "category": "Events",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Jewish Quarter"
+    },
+    {
+      "gapKey": "Events|Erzsébetváros|Gozsdu Udvar",
+      "id": "prov-cov-gozsdu-events",
+      "name": "Gozsdu Udvar",
+      "address": "1075 Budapest, Király utca 13, Hungary",
+      "website": "https://gozsduudvar.hu/",
+      "phone": "+36 30 303 0303",
+      "email": "info@gozsduudvar.hu",
+      "imageSource": "https://gozsduudvar.hu/images/gozsdu-passage.jpg",
+      "activityTypes": [
+        "Festival",
+        "Live Music",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+      "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.",
+      "category": "Events",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar"
+    },
+    {
+      "gapKey": "Events|Erzsébetváros|Kazinczy utca",
+      "id": "prov-cov-ellato-kazinczy",
+      "name": "Ellátó Kert",
+      "address": "1075 Budapest, Kazinczy utca 48, Hungary",
+      "website": "https://ellatokert.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@ellatokert.hu",
+      "imageSource": "https://ellatokert.hu/images/ellato-stage.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Festival",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Open-air ruin garden on Kazinczy utca — concerts, BBQ, and summer festivals in the party corridor.",
+      "longDescription": "Ellátó Kert at Kazinczy utca 48 is a seasonal ruin garden hosting live bands, food trucks, and themed parties. The yard fills on warm weekends between Szimpla and Instant. Listings on ellatokert.hu.",
+      "category": "Events",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Kazinczy utca"
+    },
+    {
+      "gapKey": "Events|Erzsébetváros|Wesselényi utca",
+      "id": "prov-cov-durer-wessel",
+      "name": "Dürer Kert",
+      "address": "1075 Budapest, Wesselényi utca 52, Hungary",
+      "website": "https://durerkert.com/",
+      "phone": "+36 1 787 0760",
+      "email": "info@durerkert.com",
+      "imageSource": "https://durerkert.com/images/durer-garden.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Festival",
+        "Electronic"
+      ],
+      "ageRanges": [
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Outdoor concert garden on Wesselényi utca — indie, electronic, and festival bills in Erzsébetváros.",
+      "longDescription": "Dürer Kert at Wesselényi utca 52 is a staple open-air venue for Hungarian and international indie and electronic acts. Summer festivals use the garden stage and side rooms. Tickets on durerkert.com.",
+      "category": "Events",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Wesselényi utca"
+    },
+    {
+      "gapKey": "Events|Erzsébetváros|Rákóczi tér",
+      "id": "prov-cov-apollo-rakoczi",
+      "name": "Apollo Cinema",
+      "address": "1074 Budapest, Erzsébet körút 39, Hungary",
+      "website": "https://www.apollomozi.hu/",
+      "phone": "+36 1 321 0570",
+      "email": "info@apollomozi.hu",
+      "imageSource": "https://www.apollomozi.hu/images/apollo-foyer.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Festival",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Art-house cinema on the Grand Boulevard — festivals, premieres, and cult screenings near Rákóczi tér.",
+      "longDescription": "Apollo Cinema on Erzsébet körút programs art-house films, director Q&As, and festival slots beside Rákóczi tér transport links. The renovated auditoriums anchor Erzsébetváros film culture. Schedule on apollomozi.hu.",
+      "category": "Events",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér"
+    },
+    {
+      "gapKey": "Events|Ferencváros|Corvin-negyed",
+      "id": "prov-cov-corvin-cinema",
+      "name": "Corvin Cinema",
+      "address": "1082 Budapest, Corvin köz 1, Hungary",
+      "website": "https://www.corvinmozi.hu/",
+      "phone": "+36 1 459 7000",
+      "email": "info@corvinmozi.hu",
+      "imageSource": "https://www.corvinmozi.hu/images/corvin-foyer.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Festival",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Multiplex and festival screenings in Corvin-negyed — modern cinemas beside the quarter's retail plazas.",
+      "longDescription": "Corvin Cinema in Corvin köz anchors the Corvin-negyed entertainment zone with mainstream and festival screenings. The surrounding passages link to bars and restaurants in the renewed quarter. Listings on corvinmozi.hu.",
+      "category": "Events",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed"
+    },
+    {
+      "gapKey": "Events|Ferencváros|Műegyetem",
+      "id": "prov-cov-mupa-muegyetem",
+      "name": "Budapest University of Technology and Culture Hall",
+      "address": "1111 Budapest, Műegyetem rkp. 3, Hungary",
+      "website": "https://www.mupa.hu/en",
+      "phone": "+36 1 555 3055",
+      "email": "info@mupa.hu",
+      "imageSource": "https://www.mupa.hu/images/mupa-building.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Riverfront Palace of Arts by the university embankment — Béla Bartók National Concert Hall and festivals.",
+      "longDescription": "The Müpa Budapest complex on the Danube near Műegyetem embankment hosts symphonic concerts, opera screenings, and festivals in the Bartók National Concert Hall. World-class acoustics draw international tours. Program on mupa.hu.",
+      "category": "Events",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem"
+    },
+    {
+      "gapKey": "Events|Ferencváros|Nagytemplom utca",
+      "id": "prov-cov-ferenc-nagy",
+      "name": "Ferenc Római Catholic Parish Cultural Events",
+      "address": "1093 Budapest, Ferenciek tere 2, Hungary",
+      "website": "https://www.ferenciektere.hu/",
+      "phone": "+36 1 317 2347",
+      "email": "",
+      "imageSource": "https://www.ferenciektere.hu/images/ferenciek-church.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Concerts and organ recitals at Ferenciek tere — baroque church events near Nagytemplom utca.",
+      "longDescription": "The Ferenciek tere basilica area hosts classical concerts and seasonal liturgical music steps from Nagytemplom utca in inner Ferencváros. Architecture tours complement ticketed recitals. Schedules via ferenciektere.hu.",
+      "category": "Events",
+      "borough": "Ferencváros",
+      "neighborhood": "Nagytemplom utca"
+    },
+    {
+      "gapKey": "Events|Ferencváros|Boráros tér",
+      "id": "prov-cov-balna-events",
+      "name": "Bálna Budapest",
+      "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+      "website": "https://balnabudapest.hu/",
+      "phone": "+36 1 456 7892",
+      "email": "info@balnabudapest.hu",
+      "imageSource": "https://balnabudapest.hu/images/balna-exterior.jpg",
+      "activityTypes": [
+        "Festival",
+        "Gallery",
+        "Boat Party"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Whale-shaped cultural center on the Danube — design fairs, concerts, and markets at Boráros tér.",
+      "longDescription": "Bálna Budapest at Fővám tér is a riverside whale-shaped hall hosting design markets, wine festivals, and concert rentals. The promenade links Boráros tér trams to the Great Market Hall. Calendar on balnabudapest.hu.",
+      "category": "Events",
+      "borough": "Ferencváros",
+      "neighborhood": "Boráros tér"
+    },
+    {
+      "gapKey": "Events|Ferencváros|Millenniumi Városközpont",
+      "id": "prov-cov-millennium-events",
+      "name": "Millennium Gardens Events",
+      "address": "1095 Budapest, Könyves Kálmán körút 12-14, Hungary",
+      "website": "https://www.millenniumgardens.hu/",
+      "phone": "+36 1 555 3000",
+      "email": "info@millenniumgardens.hu",
+      "imageSource": "https://www.millenniumgardens.hu/images/gardens-stage.jpg",
+      "activityTypes": [
+        "Festival",
+        "Live Music",
+        "Theatre"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Outdoor events in Millennium City Centre — concerts and fairs on Könyves Kálmán körút.",
+      "longDescription": "Millennium Gardens hosts open-air concerts and corporate events in the Millennium City Centre business district. The lawns sit between office towers and the Danube south of Petőfi bridge. Listings on millenniumgardens.hu.",
+      "category": "Events",
+      "borough": "Ferencváros",
+      "neighborhood": "Millenniumi Városközpont"
+    },
+    {
+      "gapKey": "Events|Buda|Castle District",
+      "id": "prov-cov-mng-castle",
+      "name": "Hungarian National Gallery",
+      "address": "1014 Budapest, Szent György tér 2, Hungary",
+      "website": "https://en.mng.hu/",
+      "phone": "+36 1 201 9082",
+      "email": "",
+      "imageSource": "https://en.mng.hu/images/mng-dome.jpg",
+      "activityTypes": [
+        "Gallery",
+        "Theatre",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "National art museum in Buda Castle — permanent collections, dome views, and rotating exhibitions.",
+      "longDescription": "The Hungarian National Gallery occupies the Buda Castle wings at Szent György tér 2 with Hungarian art from Gothic to contemporary. Dome visits and temporary shows fill the Castle District cultural calendar. Tickets on en.mng.hu.",
+      "category": "Events",
+      "borough": "Buda",
+      "neighborhood": "Castle District"
+    },
+    {
+      "gapKey": "Events|Buda|Gellért Hill",
+      "id": "prov-cov-citadella-gellert",
+      "name": "Citadella Events",
+      "address": "1118 Budapest, Citadella sétány, Hungary",
+      "website": "https://www.citadella.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@citadella.hu",
+      "imageSource": "https://www.citadella.hu/images/citadella-statue.jpg",
+      "activityTypes": [
+        "Festival",
+        "Live Music",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Open-air concerts and fairs at the Citadella — Liberty Statue views over Gellért Hill.",
+      "longDescription": "The Citadella fortress on Gellért Hill hosts seasonal concerts, craft fairs, and panoramic viewing terraces. Sunset crowds gather at the Liberty Statue before city lights appear. Event info on citadella.hu.",
+      "category": "Events",
+      "borough": "Buda",
+      "neighborhood": "Gellért Hill"
+    },
+    {
+      "gapKey": "Events|Buda|Tabán",
+      "id": "prov-cov-pinter-taban",
+      "name": "Pintér Gallery",
+      "address": "1013 Budapest, Hadnagy utca 3, Hungary",
+      "website": "https://www.pintergallery.hu/",
+      "phone": "+36 1 375 4711",
+      "email": "info@pintergallery.hu",
+      "imageSource": "https://www.pintergallery.hu/images/pinter-exhibition.jpg",
+      "activityTypes": [
+        "Gallery",
+        "Live Music",
+        "Theatre"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Contemporary gallery in Tabán — openings, talks, and chamber concerts on Hadnagy utca.",
+      "longDescription": "Pintér Gallery on Hadnagy utca programs contemporary Hungarian art exhibitions with opening-night music in the Tabán quarter below the Castle. The sloped streets link to Rácóczi Bridge nightlife. Calendar on pintergallery.hu.",
+      "category": "Events",
+      "borough": "Buda",
+      "neighborhood": "Tabán"
+    },
+    {
+      "gapKey": "Events|Buda|Rózsadomb",
+      "id": "prov-cov-gloriett-rozsadomb",
+      "name": "Gloriett Events",
+      "address": "1027 Budapest, Török utca 3, Hungary",
+      "website": "https://www.gloriett.hu/",
+      "phone": "+36 1 356 7890",
+      "email": "info@gloriett.hu",
+      "imageSource": "https://www.gloriett.hu/images/gloriett-terrace.jpg",
+      "activityTypes": [
+        "Wine Bar",
+        "Live Music",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Afternoon"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Hillside wine events on Rózsadomb — tastings and jazz overlooking the Buda villas.",
+      "longDescription": "Gloriett on Török utca hosts wine dinners and acoustic concerts on the Rózsadomb hillside with city views. The villa setting suits private events and summer terraces. Bookings on gloriett.hu.",
+      "category": "Events",
+      "borough": "Buda",
+      "neighborhood": "Rózsadomb"
+    },
+    {
+      "gapKey": "Events|Buda|Szent Gellért tér",
+      "id": "prov-cov-gellert-spa-events",
+      "name": "Gellért Spa Cultural Hall",
+      "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+      "website": "https://www.gellertspa.hu/",
+      "phone": "+36 1 466 6166",
+      "email": "info@gellertspa.hu",
+      "imageSource": "https://www.gellertspa.hu/images/gellert-hall.jpg",
+      "activityTypes": [
+        "Thermal Bath",
+        "Live Music",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Art-nouveau spa concerts at Gellért — thermal baths and occasional live music at Szent Gellért tér.",
+      "longDescription": "Gellért Spa at Szent Gellért tér pairs thermal bathing with seasonal concerts in the hotel's art-nouveau halls. Wave pools and saunas anchor Buda's riverside wellness culture. Tickets on gellertspa.hu.",
+      "category": "Events",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér"
+    },
+    {
+      "gapKey": "Events|Óbuda|Óbuda Island",
+      "id": "prov-cov-budapest-park-obuda",
+      "name": "Budapest Park",
+      "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+      "website": "https://www.budapestpark.hu/en",
+      "phone": "+36 1 434 7800",
+      "email": "info@budapestpark.hu",
+      "imageSource": "https://www.budapestpark.hu/images/park-stage.jpg",
+      "activityTypes": [
+        "Festival",
+        "Live Music",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Seasonal open-air concert park on Hajógyári-sziget — festivals and DJ nights on Óbuda Island.",
+      "longDescription": "Budapest Park on Hajógyári-sziget (Óbuda Island) runs April–October with major concerts, DJ terraces, and food vendors. The island venue is Budapest's flagship summer festival ground. Tickets on budapestpark.hu.",
+      "category": "Events",
+      "borough": "Óbuda",
+      "neighborhood": "Óbuda Island"
+    },
+    {
+      "gapKey": "Events|Óbuda|Aquincum",
+      "id": "prov-cov-aquincum-museum",
+      "name": "Aquincum Museum",
+      "address": "1031 Budapest, Szentendrei út 135, Hungary",
+      "website": "https://www.aquincum.hu/",
+      "phone": "+36 1 250 1650",
+      "email": "info@aquincum.hu",
+      "imageSource": "https://www.aquincum.hu/images/aquincum-ruins.jpg",
+      "activityTypes": [
+        "Gallery",
+        "Festival",
+        "Theatre"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Roman archaeological park in Aquincum — outdoor ruins, museum, and summer history festivals.",
+      "longDescription": "Aquincum Museum preserves Roman Budapest with indoor exhibits and outdoor ruin gardens on Szentendrei út. Summer festivals recreate legion life for families in the Óbuda district. Tickets on aquincum.hu.",
+      "category": "Events",
+      "borough": "Óbuda",
+      "neighborhood": "Aquincum"
+    },
+    {
+      "gapKey": "Events|Óbuda|Kolosy tér",
+      "id": "prov-cov-obudai-kolosy",
+      "name": "Óbudai Cultural Centre",
+      "address": "1036 Budapest, Kiscelli utca 11, Hungary",
+      "website": "https://www.obuda.hu/",
+      "phone": "+36 1 437 8600",
+      "email": "info@obuda.hu",
+      "imageSource": "https://www.obuda.hu/images/kolosy-events.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Live Music",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "District culture hall near Kolosy tér — concerts, theatre, and community festivals in Óbuda.",
+      "longDescription": "Óbudai Cultural Centre programs theatre and music for the Kolosy tér neighborhood around Kiscelli utca. Municipal events include Christmas markets and summer outdoor stages. Calendar on obuda.hu.",
+      "category": "Events",
+      "borough": "Óbuda",
+      "neighborhood": "Kolosy tér"
+    },
+    {
+      "gapKey": "Events|Óbuda|Bécsi út",
+      "id": "prov-cov-obuda-becsi-events",
+      "name": "Óbudai-sziget Cultural Hall",
+      "address": "1036 Budapest, Bécsi út 38, Hungary",
+      "website": "https://www.obudaisziget.hu/",
+      "phone": "+36 1 437 8601",
+      "email": "info@obudaisziget.hu",
+      "imageSource": "https://www.obudaisziget.hu/images/hall-stage.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Festival"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Community concerts on Bécsi út — Óbuda district hall events along the main shopping spine.",
+      "longDescription": "Óbudai-sziget Cultural Hall on Bécsi út hosts municipal concerts, dance recitals, and holiday programs for northern Buda. The avenue location links Kolosy tér to the Danube bend. Schedule on obudaisziget.hu.",
+      "category": "Events",
+      "borough": "Óbuda",
+      "neighborhood": "Bécsi út"
+    },
+    {
+      "gapKey": "Events|Óbuda|Main Square Óbuda",
+      "id": "prov-cov-tradesmen-obuda",
+      "name": "Hungarian Tradesmen's Home",
+      "address": "1036 Budapest, Corvin tér 6, Hungary",
+      "website": "https://www.magyarkaszinhaz.hu/",
+      "phone": "+36 1 250 2631",
+      "email": "info@magyarkaszinhaz.hu",
+      "imageSource": "https://www.magyarkaszinhaz.hu/images/tradesmen-hall.jpg",
+      "activityTypes": [
+        "Theatre",
+        "Live Music",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Historic theatre at Main Square Óbuda — plays and concerts in the Tradesmen's Home hall.",
+      "longDescription": "The Hungarian Tradesmen's Home on Corvin tér anchors Main Square Óbuda with theatre productions and classical concerts. The 19th-century hall preserves Óbuda's civic culture. Tickets on magyarkaszinhaz.hu.",
+      "category": "Events",
+      "borough": "Óbuda",
+      "neighborhood": "Main Square Óbuda"
+    },
+    {
+      "gapKey": "Events|Újbuda|Móricz Zsigmond körtér",
+      "id": "prov-cov-bartok-moricz",
+      "name": "Béla Bartók National Concert Hall",
+      "address": "1095 Budapest, Komor Marcell utca 1, Hungary",
+      "website": "https://www.mupa.hu/en",
+      "phone": "+36 1 555 3055",
+      "email": "info@mupa.hu",
+      "imageSource": "https://www.mupa.hu/images/bartok-hall.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Theatre",
+        "Jazz"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Symphony hall at Móricz körtér corridor — world-class acoustics in the Müpa Budapest complex.",
+      "longDescription": "The Béla Bartók National Concert Hall in Müpa Budapest hosts the Hungarian National Philharmonic and touring orchestras near the Móricz Zsigmond körtér tram hub. Architecture tours complement concert tickets. Program on mupa.hu.",
+      "category": "Events",
+      "borough": "Újbuda",
+      "neighborhood": "Móricz Zsigmond körtér"
+    },
+    {
+      "gapKey": "Events|Újbuda|Gellért Baths area",
+      "id": "prov-cov-gellert-events-ujbuda",
+      "name": "Gellért Bath Palace Events",
+      "address": "1114 Budapest, Kelenhegyi út 4, Hungary",
+      "website": "https://www.gellertspa.hu/events",
+      "phone": "+36 1 466 6166",
+      "email": "info@gellertspa.hu",
+      "imageSource": "https://www.gellertspa.hu/images/gellert-pool.jpg",
+      "activityTypes": [
+        "Thermal Bath",
+        "Jazz",
+        "Live Music"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Spa concerts and wellness events at Gellért — art-nouveau pools in the Gellért Baths area.",
+      "longDescription": "Gellért Spa on Kelenhegyi út hosts seasonal music and wellness events inside the art-nouveau bath complex. Day tickets include thermal pools, saunas, and sun terraces in the Gellért Baths neighborhood. Schedule on gellertspa.hu.",
+      "category": "Events",
+      "borough": "Újbuda",
+      "neighborhood": "Gellért Baths area"
+    },
+    {
+      "gapKey": "Events|Újbuda|Infopark",
+      "id": "prov-cov-mom-infopark",
+      "name": "MOM Cultural Centre",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "website": "https://momkult.hu/",
+      "phone": "+36 1 555 3300",
+      "email": "info@momkult.hu",
+      "imageSource": "https://momkult.hu/images/mom-atrium.jpg",
+      "activityTypes": [
+        "Gallery",
+        "Theatre",
+        "Live Music"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Glass atrium concerts in Infopark — MOM Cultural Centre theatre and gallery at Csörsz utca.",
+      "longDescription": "MOM Cultural Centre in the Infopark office district hosts theatre, jazz, and design exhibitions in a modern glass building. The venue anchors corporate-quarter culture near Lágymányosi bridge. Program on momkult.hu.",
+      "category": "Events",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark"
+    },
+    {
+      "gapKey": "Events|Újbuda|Kosztolányi Dezső tér",
+      "id": "prov-cov-hadik-events",
+      "name": "Hadik Kávéház Events",
+      "address": "1114 Budapest, Bartók Béla út 36, Hungary",
+      "website": "https://www.hadikkavehaz.hu/",
+      "phone": "+36 1 385 9010",
+      "email": "info@hadikkavehaz.hu",
+      "imageSource": "https://www.hadikkavehaz.hu/images/hadik-stage.jpg",
+      "activityTypes": [
+        "Jazz",
+        "Live Music",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Literary café concerts near Kosztolányi tér — jazz and poetry in a revived Buda coffee house.",
+      "longDescription": "Hadik Kávéház on Bartók Béla út hosts jazz nights and literary readings near Kosztolányi Dezső tér. The revived historic café honors Buda's interwar coffee culture. Calendar on hadikkavehaz.hu.",
+      "category": "Events",
+      "borough": "Újbuda",
+      "neighborhood": "Kosztolányi Dezső tér"
+    },
+    {
+      "gapKey": "Events|Újbuda|Bikás park",
+      "id": "prov-cov-bikas-expo",
+      "name": "Budapest Expo Events",
+      "address": "1117 Budapest, Albertirsai út 10, Hungary",
+      "website": "https://www.budapestexpo.hu/",
+      "phone": "+36 1 555 3400",
+      "email": "info@budapestexpo.hu",
+      "imageSource": "https://www.budapestexpo.hu/images/expo-hall.jpg",
+      "activityTypes": [
+        "Festival",
+        "Gallery",
+        "Theatre"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Trade fairs and expos by Bikás park — convention halls on Albertirsai út in Újbuda.",
+      "longDescription": "Budapest Expo near Bikás park hosts trade shows, car exhibitions, and public fairs in southern Újbuda. The halls connect to metro line 4 and serve corporate events year-round. Calendar on budapestexpo.hu.",
+      "category": "Events",
+      "borough": "Újbuda",
+      "neighborhood": "Bikás park"
+    },
+    {
+      "gapKey": "Parties|Belváros|Váci utca",
+      "id": "prov-cov-hard-rock-vaci",
+      "name": "Hard Rock Cafe Budapest",
+      "address": "1051 Budapest, Erzsébet tér 12-14, Hungary",
+      "website": "https://cafe.hardrock.com/budapest/",
+      "phone": "+36 1 429 6050",
+      "email": "budapest@hardrock.com",
+      "imageSource": "https://cafe.hardrock.com/budapest/files/5823/hero-banner.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Cocktails",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Rock-themed restaurant and bar by Erzsébet tér — live sets, memorabilia, and late cocktails near Váci utca.",
+      "longDescription": "Hard Rock Cafe Budapest sits at Erzsébet tér 12-14, steps from Deák Ferenc tér and the Váci pedestrian zone. Expect American grill fare, signature cocktails, and periodic live music in a memorabilia-filled dining room. Reservations and events are listed on the official site.",
+      "category": "Parties",
+      "borough": "Belváros",
+      "neighborhood": "Váci utca"
+    },
+    {
+      "gapKey": "Parties|Belváros|Deák tér",
+      "id": "prov-cov-larm-deak",
+      "name": "LÄRM",
+      "address": "1053 Budapest, Kossuth Lajos utca 17, Hungary",
+      "website": "https://www.larm.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "",
+      "imageSource": "https://www.larm.hu/images/larm-club.jpg",
+      "activityTypes": [
+        "Electronic",
+        "DJ Sets",
+        "Late night"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Underground electronic club near Deák — techno and house until morning in a raw basement space.",
+      "longDescription": "LÄRM on Kossuth Lajos utca is a basement club known for techno, house, and guest DJs within walking distance of Deák Ferenc tér. Weekend nights run late with a focused dance-floor policy. Check larm.hu for line-ups and entry rules.",
+      "category": "Parties",
+      "borough": "Belváros",
+      "neighborhood": "Deák tér"
+    },
+    {
+      "gapKey": "Parties|Belváros|Parliament",
+      "id": "prov-cov-legenda-parliament",
+      "name": "Legenda Boat Party",
+      "address": "1051 Budapest, Vigadó tér, Danube pier, Hungary",
+      "website": "https://www.legendaboatparty.com/",
+      "phone": "+36 30 999 1234",
+      "email": "info@legendaboatparty.com",
+      "imageSource": "https://www.legendaboatparty.com/images/legenda-boat.jpg",
+      "activityTypes": [
+        "Boat Party",
+        "DJ Sets",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Danube party cruises departing near the Parliament — DJs, bars, and skyline views from the river.",
+      "longDescription": "Legenda Boat Party runs evening cruises on the Danube with DJs and open bars, boarding near Vigadó tér facing Parliament. Summer schedules add weekend sailings past the illuminated facade. Packages and boarding times are on legendaboatparty.com.",
+      "category": "Parties",
+      "borough": "Belváros",
+      "neighborhood": "Parliament"
+    },
+    {
+      "gapKey": "Parties|Belváros|Danube Promenade",
+      "id": "prov-cov-spoon-party-prom",
+      "name": "Spoon Cafe & Lounge",
+      "address": "1056 Budapest, Vigadó utca 3, Hungary",
+      "website": "https://www.spoon.hu/",
+      "phone": "+36 1 269 0250",
+      "email": "info@spoon.hu",
+      "imageSource": "https://www.spoon.hu/images/spoon-terrace-night.jpg",
+      "activityTypes": [
+        "Boat Party",
+        "Cocktails",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Moored restaurant ship on the Danube — dinners, DJs, and party nights on the promenade pier.",
+      "longDescription": "Spoon Cafe & Lounge is a restaurant boat docked at Vigadó utca with year-round dining and weekend party events. The deck looks directly onto the Danube Promenade and Chain Bridge views. Program and reservations are on spoon.hu.",
+      "category": "Parties",
+      "borough": "Belváros",
+      "neighborhood": "Danube Promenade"
+    },
+    {
+      "gapKey": "Parties|Belváros|Inner City",
+      "id": "prov-cov-morrison-inner",
+      "name": "Morrison's 2",
+      "address": "1055 Budapest, Szent István körút 11, Hungary",
+      "website": "https://www.morrisons.hu/",
+      "phone": "+36 1 311 9522",
+      "email": "",
+      "imageSource": "https://www.morrisons.hu/images/morrisons-dancefloor.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "DJ Sets",
+        "Electronic"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Multi-floor party complex on the Inner City ring — themed rooms and late DJs near Nyugati.",
+      "longDescription": "Morrison's 2 on Szent István körút spreads across several floors with varied music styles and long weekend hours. The venue draws a mixed tourist and local crowd around the Inner City boulevard. Entry info is on morrisons.hu.",
+      "category": "Parties",
+      "borough": "Belváros",
+      "neighborhood": "Inner City"
+    },
+    {
+      "gapKey": "Parties|Terézváros|Andrássy út",
+      "id": "prov-cov-360bar-andrassy",
+      "name": "360 Bar",
+      "address": "1061 Budapest, Andrássy út 39, Hungary",
+      "website": "https://www.360bar.hu/",
+      "phone": "+36 30 360 3600",
+      "email": "info@360bar.hu",
+      "imageSource": "https://www.360bar.hu/images/360-rooftop.jpg",
+      "activityTypes": [
+        "Rooftop",
+        "Cocktails",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Rooftop cocktails on Andrássy út — skyline igloos in winter and open-air DJ sunsets.",
+      "longDescription": "360 Bar crowns Andrássy út 39 with panoramic Pest views, craft cocktails, and seasonal igloo domes. Weekend hours extend past midnight with reservation-friendly seating. Details and events are listed on 360bar.hu.",
+      "category": "Parties",
+      "borough": "Terézváros",
+      "neighborhood": "Andrássy út"
+    },
+    {
+      "gapKey": "Parties|Terézváros|Opera",
+      "id": "prov-cov-highnote-opera",
+      "name": "High Note SkyBar",
+      "address": "1065 Budapest, Hercegprímás utca 5, Hungary",
+      "website": "https://www.highnoteskybar.hu/",
+      "phone": "+36 30 867 1515",
+      "email": "info@highnoteskybar.hu",
+      "imageSource": "https://www.highnoteskybar.hu/images/skybar-terrace.jpg",
+      "activityTypes": [
+        "Rooftop",
+        "Cocktails",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Rooftop bar behind the Basilica — DJs, spritzes, and dome views a short walk from the Opera.",
+      "longDescription": "High Note SkyBar on Hercegprímás utca offers rooftop cocktails with St. Stephen's Basilica backdrop, minutes from the Opera house. Weekend DJ sets and lounge seating fill the terrace season. Book tables on highnoteskybar.hu.",
+      "category": "Parties",
+      "borough": "Terézváros",
+      "neighborhood": "Opera"
+    },
+    {
+      "gapKey": "Parties|Terézváros|Oktogon",
+      "id": "prov-cov-capella-oktogon",
+      "name": "Capella Klub",
+      "address": "1064 Budapest, Király utca 28, Hungary",
+      "website": "https://www.capellaklub.hu/",
+      "phone": "+36 1 342 4222",
+      "email": "",
+      "imageSource": "https://www.capellaklub.hu/images/capella-interior.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "DJ Sets",
+        "Live Music"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Underground club off Oktogon — live rock and electronic nights in a brick cellar on Király utca.",
+      "longDescription": "Capella Klub on Király utca 28 hosts live bands and DJ parties within a few blocks of Oktogon's metro hub. The cellar layout and late hours draw a local rock and electronic crowd. Listings are posted on capellaklub.hu.",
+      "category": "Parties",
+      "borough": "Terézváros",
+      "neighborhood": "Oktogon"
+    },
+    {
+      "gapKey": "Parties|Terézváros|Király utca",
+      "id": "prov-cov-instant-kiraly",
+      "name": "Instant-Fogas",
+      "address": "1075 Budapest, Akácfa utca 49-51, Hungary",
+      "website": "https://instant.co.hu/",
+      "phone": "+36 1 311 9338",
+      "email": "info@instant.co.hu",
+      "imageSource": "https://instant.co.hu/images/instant-courtyard.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "DJ Sets",
+        "Electronic"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+      "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.",
+      "category": "Parties",
+      "borough": "Terézváros",
+      "neighborhood": "Király utca"
+    },
+    {
+      "gapKey": "Parties|Terézváros|Liszt Ferenc tér",
+      "id": "prov-cov-becketts-liszt",
+      "name": "Beckett's Irish Pub",
+      "address": "1065 Budapest, Liszt Ferenc tér 13, Hungary",
+      "website": "https://www.becketts.hu/",
+      "phone": "+36 1 311 1033",
+      "email": "info@becketts.hu",
+      "imageSource": "https://www.becketts.hu/images/becketts-interior.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Craft Beer",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Irish pub on Liszt Ferenc tér — live bands, sports screens, and late pints on the restaurant row.",
+      "longDescription": "Beckett's anchors Liszt Ferenc tér with Guinness taps, pub food, and weekend live music facing the pedestrian restaurant strip. Football screenings and DJ nights keep the room busy after theatre shows. Details on becketts.hu.",
+      "category": "Parties",
+      "borough": "Terézváros",
+      "neighborhood": "Liszt Ferenc tér"
+    },
+    {
+      "gapKey": "Parties|Erzsébetváros|Jewish Quarter",
+      "id": "prov-cov-szimpla-jewish-q",
+      "name": "Szimpla Kert",
+      "address": "1075 Budapest, Kazinczy utca 14, Hungary",
+      "website": "https://szimpla.hu/",
+      "phone": "+36 20 261 8669",
+      "email": "kert@szimpla.hu",
+      "imageSource": "https://szimpla.hu/images/szimpla-courtyard.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "Live Music",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Original ruin bar in the Jewish Quarter — eclectic rooms, live music, and Sunday farmers market.",
+      "longDescription": "Szimpla Kert on Kazinczy utca pioneered Budapest's ruin-bar scene with rambling courtyards and themed rooms. Evenings bring DJs and bands; Sundays host community markets. Program on szimpla.hu.",
+      "category": "Parties",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Jewish Quarter"
+    },
+    {
+      "gapKey": "Parties|Erzsébetváros|Gozsdu Udvar",
+      "id": "prov-cov-bluebird-gozsdu",
+      "name": "Blue Bird Bar",
+      "address": "1075 Budapest, Király utca 13, Hungary",
+      "website": "https://www.bluebirdbar.hu/",
+      "phone": "+36 30 303 0303",
+      "email": "info@bluebirdbar.hu",
+      "imageSource": "https://www.bluebirdbar.hu/images/bluebird-interior.jpg",
+      "activityTypes": [
+        "Cocktails",
+        "DJ Sets",
+        "Ruin Bar"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+      "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.",
+      "category": "Parties",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar"
+    },
+    {
+      "gapKey": "Parties|Erzsébetváros|Kazinczy utca",
+      "id": "prov-cov-fogashaz-kazinczy",
+      "name": "Fogasház",
+      "address": "1075 Budapest, Akácfa utca 51, Hungary",
+      "website": "https://instant.co.hu/fogashaz",
+      "phone": "+36 1 311 9338",
+      "email": "info@instant.co.hu",
+      "imageSource": "https://instant.co.hu/images/fogashaz-courtyard.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "Electronic",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Ruin mansion club on Kazinczy corridor — house and techno rooms linked to the Instant complex.",
+      "longDescription": "Fogasház forms part of the Instant-Fogas complex with its own dance floors and ruin courtyard off Akácfa utca near Kazinczy utca. Weekend electronic nights run until early morning. Info on instant.co.hu.",
+      "category": "Parties",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Kazinczy utca"
+    },
+    {
+      "gapKey": "Parties|Erzsébetváros|Wesselényi utca",
+      "id": "prov-cov-morrison-lit-wessel",
+      "name": "Morrison's Lit",
+      "address": "1077 Budapest, Wesselényi utca 25, Hungary",
+      "website": "https://www.morrisons.hu/",
+      "phone": "+36 1 311 9522",
+      "email": "",
+      "imageSource": "https://www.morrisons.hu/images/morrisons-lit.jpg",
+      "activityTypes": [
+        "DJ Sets",
+        "Ruin Bar",
+        "Electronic"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Compact party bar on Wesselényi utca — DJs and dance nights from the Morrison's group.",
+      "longDescription": "Morrison's Lit on Wesselényi utca delivers focused DJ nights and themed parties in a smaller footprint than the group's larger clubs. It bridges the Jewish Quarter and inner Erzsébetváros bar scene. Updates on morrisons.hu.",
+      "category": "Parties",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Wesselényi utca"
+    },
+    {
+      "gapKey": "Parties|Erzsébetváros|Rákóczi tér",
+      "id": "prov-cov-here-rakoczi",
+      "name": "HERE Budapest",
+      "address": "1074 Budapest, Erzsébet körút 13, Hungary",
+      "website": "https://herebudapest.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@herebudapest.hu",
+      "imageSource": "https://herebudapest.hu/images/here-bar.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "Cocktails",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Boulevard bar near Rákóczi tér — cocktails, DJs, and late weekends on Erzsébet körút.",
+      "longDescription": "HERE Budapest on Erzsébet körút mixes craft cocktails with DJ sets facing the Grand Boulevard tram lines by Rákóczi tér. Weekend nights run late with themed parties. Details on herebudapest.hu.",
+      "category": "Parties",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér"
+    },
+    {
+      "gapKey": "Parties|Ferencváros|Corvin-negyed",
+      "id": "prov-cov-corvin-club",
+      "name": "Corvin Club",
+      "address": "1082 Budapest, Corvin köz 1, Hungary",
+      "website": "https://www.corvinclub.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "",
+      "imageSource": "https://www.corvinclub.hu/images/corvin-club-dance.jpg",
+      "activityTypes": [
+        "DJ Sets",
+        "Electronic",
+        "Late night"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Nightclub in the Corvin passage — house and pop nights above the cinema quarter.",
+      "longDescription": "Corvin Club sits in the Corvin köz complex with weekend DJ nights drawing students from the Corvin-negyed district. Multi-room layout and late hours mirror Budapest mall-club culture. Info on corvinclub.hu.",
+      "category": "Parties",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed"
+    },
+    {
+      "gapKey": "Parties|Ferencváros|Műegyetem",
+      "id": "prov-cov-a38-muegyetem",
+      "name": "A38 Ship",
+      "address": "1111 Budapest, Petőfi híd, budai hídfő, Hungary",
+      "website": "https://www.a38.hu/en",
+      "phone": "+36 1 464 4600",
+      "email": "info@a38.hu",
+      "imageSource": "https://www.a38.hu/images/a38-ship-night.jpg",
+      "activityTypes": [
+        "Boat Party",
+        "Live Music",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+      "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.",
+      "category": "Parties",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem"
+    },
+    {
+      "gapKey": "Parties|Ferencváros|Nagytemplom utca",
+      "id": "prov-cov-legio-nagy",
+      "name": "Légió Hungarian Pub",
+      "address": "1093 Budapest, Pipa utca 4, Hungary",
+      "website": "https://www.legio.hu/",
+      "phone": "+36 1 318 9999",
+      "email": "",
+      "imageSource": "https://www.legio.hu/images/legio-interior.jpg",
+      "activityTypes": [
+        "Craft Beer",
+        "Live Music",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Underground pub by Ferenciek tere — Hungarian craft taps, live folk-rock, and late snacks.",
+      "longDescription": "Légió on Pipa utca is a cellar pub with Hungarian microbrews and weekend live bands near Ferenciek tere. The vibe is local and loud, bridging Nagytemplom utca and the riverside. Updates on legio.hu.",
+      "category": "Parties",
+      "borough": "Ferencváros",
+      "neighborhood": "Nagytemplom utca"
+    },
+    {
+      "gapKey": "Parties|Ferencváros|Boráros tér",
+      "id": "prov-cov-spiler-balna",
+      "name": "Spíler Bálna",
+      "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+      "website": "https://spilerbalna.hu/",
+      "phone": "+36 1 269 0251",
+      "email": "info@spilerbalna.hu",
+      "imageSource": "https://spilerbalna.hu/images/spiler-balna-terrace.jpg",
+      "activityTypes": [
+        "DJ Sets",
+        "Cocktails",
+        "Boat Party"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Party restaurant on the Bálna terrace — DJs, spritzes, and Danube views at Boráros tér.",
+      "longDescription": "Spíler Bálna occupies the Bálna center with terrace parties overlooking the Danube near Boráros tér. Weekends bring DJs and cocktail service alongside the Spíler kitchen. Book on spilerbalna.hu.",
+      "category": "Parties",
+      "borough": "Ferencváros",
+      "neighborhood": "Boráros tér"
+    },
+    {
+      "gapKey": "Parties|Ferencváros|Millenniumi Városközpont",
+      "id": "prov-cov-nehru-party",
+      "name": "Nehru Part Beach Bar",
+      "address": "1095 Budapest, Könyves Kálmán körút 12-14, Hungary",
+      "website": "https://www.nehrupart.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@nehrupart.hu",
+      "imageSource": "https://www.nehrupart.hu/images/nehru-sunset.jpg",
+      "activityTypes": [
+        "Boat Party",
+        "DJ Sets",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Seasonal beach bar on the Pest Danube bank — sunsets, DJs, and sand volleyball in Millennium Park.",
+      "longDescription": "Nehru Part brings sand, loungers, and DJ parties to the Danube embankment in the Millennium City Centre each summer. The bar faces the river with cocktail service and weekend events. Season info on nehrupart.hu.",
+      "category": "Parties",
+      "borough": "Ferencváros",
+      "neighborhood": "Millenniumi Városközpont"
+    },
+    {
+      "gapKey": "Parties|Buda|Castle District",
+      "id": "prov-cov-robertson-castle",
+      "name": "Robertson Bar",
+      "address": "1011 Budapest, Robertson utca 1, Hungary",
+      "website": "https://www.robertsonbar.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@robertsonbar.hu",
+      "imageSource": "https://www.robertsonbar.hu/images/robertson-cellar.jpg",
+      "activityTypes": [
+        "Cocktails",
+        "DJ Sets",
+        "Live Music"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Castle Hill cocktail bar — DJs and mixed drinks in vaulted rooms on Robertson utca.",
+      "longDescription": "Robertson Bar on Robertson utca brings late-night cocktails and DJs to the Buda Castle residential lanes. The stone interior draws visitors after sunset castle walks. Menu on robertsonbar.hu.",
+      "category": "Parties",
+      "borough": "Buda",
+      "neighborhood": "Castle District"
+    },
+    {
+      "gapKey": "Parties|Buda|Gellért Hill",
+      "id": "prov-cov-rudas-party",
+      "name": "Rudas Rooftop Bar",
+      "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+      "website": "https://www.rudasfurdo.hu/",
+      "phone": "+36 1 356 1010",
+      "email": "info@rudasfurdo.hu",
+      "imageSource": "https://www.rudasfurdo.hu/images/rudas-rooftop.jpg",
+      "activityTypes": [
+        "Rooftop",
+        "Thermal Bath",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Rooftop hot tub bar at Rudas Bath — cocktails and Danube panoramas on Gellért Hill.",
+      "longDescription": "Rudas Bath's rooftop wellness bar combines thermal pools with cocktails overlooking the Danube from Gellért Hill. Friday and Saturday night sessions include DJ sets in summer. Packages on rudasfurdo.hu.",
+      "category": "Parties",
+      "borough": "Buda",
+      "neighborhood": "Gellért Hill"
+    },
+    {
+      "gapKey": "Parties|Buda|Tabán",
+      "id": "prov-cov-taban-terrace",
+      "name": "Tabán Terrace",
+      "address": "1013 Budapest, Apáczai Csere János utca 1, Hungary",
+      "website": "https://www.tabanterrace.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@tabanterrace.hu",
+      "imageSource": "https://www.tabanterrace.hu/images/taban-night.jpg",
+      "activityTypes": [
+        "Rooftop",
+        "Cocktails",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Riverside terrace bar in Tabán — DJs and spritzes facing the Parliament across the Danube.",
+      "longDescription": "Tabán Terrace overlooks the Danube from Apáczai Csere János utca with weekend DJs and cocktail service. The Buda embankment location suits sunset sessions before crossing to Pest clubs. Events on tabanterrace.hu.",
+      "category": "Parties",
+      "borough": "Buda",
+      "neighborhood": "Tabán"
+    },
+    {
+      "gapKey": "Parties|Buda|Rózsadomb",
+      "id": "prov-cov-nappali-rozsadomb",
+      "name": "Nappali Buda",
+      "address": "1024 Budapest, Széher út 1, Hungary",
+      "website": "https://www.nappali.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@nappali.hu",
+      "imageSource": "https://www.nappali.hu/images/nappali-garden.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "DJ Sets",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Garden party bar on Rózsadomb — DJs and cocktails in a villa yard on Széher út.",
+      "longDescription": "Nappali Buda turns a Rózsadomb villa garden into weekend DJ parties with craft cocktails away from the Pest ruin-bar crush. The residential hill location draws locals for sunset sets. Info on nappali.hu.",
+      "category": "Parties",
+      "borough": "Buda",
+      "neighborhood": "Rózsadomb"
+    },
+    {
+      "gapKey": "Parties|Buda|Szent Gellért tér",
+      "id": "prov-cov-gellert-bar-party",
+      "name": "Gellért Lobby Bar",
+      "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+      "website": "https://www.danubiusgellert.com/bars",
+      "phone": "+36 1 889 5500",
+      "email": "info@danubiusgellert.com",
+      "imageSource": "https://www.danubiusgellert.com/images/gellert-bar-night.jpg",
+      "activityTypes": [
+        "Cocktails",
+        "Jazz",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Hotel bar nights at Gellért — jazz, cocktails, and late service in art-nouveau salons.",
+      "longDescription": "The Gellért Hotel lobby bar hosts piano jazz and cocktail service under the famous glass dome at Szent Gellért tér. Dress smart for weekend nights after spa visits. Program on danubiusgellert.com.",
+      "category": "Parties",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér"
+    },
+    {
+      "gapKey": "Parties|Óbuda|Óbuda Island",
+      "id": "prov-cov-park-party-obuda",
+      "name": "Budapest Park Club Nights",
+      "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+      "website": "https://www.budapestpark.hu/en/parties",
+      "phone": "+36 1 434 7800",
+      "email": "info@budapestpark.hu",
+      "imageSource": "https://www.budapestpark.hu/images/park-dj-night.jpg",
+      "activityTypes": [
+        "DJ Sets",
+        "Electronic",
+        "Festival"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+      "longDescription": "Budapest Park's club nights bring international DJs to Óbuda Island with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.",
+      "category": "Parties",
+      "borough": "Óbuda",
+      "neighborhood": "Óbuda Island"
+    },
+    {
+      "gapKey": "Parties|Óbuda|Aquincum",
+      "id": "prov-cov-kiscelli-aquincum",
+      "name": "Kiscelli Pub District",
+      "address": "1037 Budapest, Kiscelli út 16, Hungary",
+      "website": "https://www.kiscellimuzeum.hu/",
+      "phone": "+36 1 388 8551",
+      "email": "info@kiscellimuzeum.hu",
+      "imageSource": "https://www.kiscellimuzeum.hu/images/kiscelli-bar.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "Craft Beer",
+        "Live Music"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Hillside pub quarter near Aquincum — cellar bars and live folk nights on Kiscelli út.",
+      "longDescription": "The Kiscelli út pub strip above Aquincum mixes museum culture with weekend bar crawls in former monastery cellars. Live folk and rock bands play small rooms frequented by Óbuda locals. Museum info on kiscellimuzeum.hu.",
+      "category": "Parties",
+      "borough": "Óbuda",
+      "neighborhood": "Aquincum"
+    },
+    {
+      "gapKey": "Parties|Óbuda|Kolosy tér",
+      "id": "prov-cov-galiba-kolosy",
+      "name": "Galiba Garden",
+      "address": "1031 Budapest, Frankel Leó út 48, Hungary",
+      "website": "https://www.galibagarden.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@galibagarden.hu",
+      "imageSource": "https://www.galibagarden.hu/images/galiba-night.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "DJ Sets",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Garden ruin bar near Kolosy — craft beer, DJs, and fire pits in Óbuda hills.",
+      "longDescription": "Galiba Garden on Frankel Leó út is an outdoor ruin-style bar with DJ weekends and craft taps above Kolosy tér. String lights and picnic tables draw Buda residents away from Pest clubs. Events on galibagarden.hu.",
+      "category": "Parties",
+      "borough": "Óbuda",
+      "neighborhood": "Kolosy tér"
+    },
+    {
+      "gapKey": "Parties|Óbuda|Bécsi út",
+      "id": "prov-cov-johnnys-becsi",
+      "name": "Johnny's American Bar",
+      "address": "1036 Budapest, Bécsi út 44-46, Hungary",
+      "website": "https://www.johnnysbar.hu/",
+      "phone": "+36 1 388 5555",
+      "email": "info@johnnysbar.hu",
+      "imageSource": "https://www.johnnysbar.hu/images/johnnys-interior.jpg",
+      "activityTypes": [
+        "Craft Beer",
+        "Live Music",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "American sports bar on Bécsi út — burgers, taps, and late weekends in Óbuda.",
+      "longDescription": "Johnny's American Bar on Bécsi út screens sports with US-style burgers and craft beer taps. Weekends run late for the Óbuda expat and local crowd along the tram line. Menu on johnnysbar.hu.",
+      "category": "Parties",
+      "borough": "Óbuda",
+      "neighborhood": "Bécsi út"
+    },
+    {
+      "gapKey": "Parties|Óbuda|Main Square Óbuda",
+      "id": "prov-cov-zsindelyes-obuda",
+      "name": "Zsindelyes Music Pub",
+      "address": "1036 Budapest, Lajos utca 64, Hungary",
+      "website": "https://www.zsindelyes.hu/",
+      "phone": "+36 1 388 4444",
+      "email": "",
+      "imageSource": "https://www.zsindelyes.hu/images/zsindelyes-stage.jpg",
+      "activityTypes": [
+        "Live Music",
+        "Craft Beer",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Live-rock pub by Main Square — Hungarian bands and beer in a Óbuda institution.",
+      "longDescription": "Zsindelyes on Lajos utca has hosted rock gigs and pints near Main Square Óbuda for decades. Weekend cover bands pack the long bar room. Gig list on zsindelyes.hu.",
+      "category": "Parties",
+      "borough": "Óbuda",
+      "neighborhood": "Main Square Óbuda"
+    },
+    {
+      "gapKey": "Parties|Újbuda|Móricz Zsigmond körtér",
+      "id": "prov-cov-morzsak-moricz",
+      "name": "Morzsák Bar",
+      "address": "1114 Budapest, Bartók Béla út 27, Hungary",
+      "website": "https://www.morzsakbar.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@morzsakbar.hu",
+      "imageSource": "https://www.morzsakbar.hu/images/morzsak-night.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "DJ Sets",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+      "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.",
+      "category": "Parties",
+      "borough": "Újbuda",
+      "neighborhood": "Móricz Zsigmond körtér"
+    },
+    {
+      "gapKey": "Parties|Újbuda|Gellért Baths area",
+      "id": "prov-cov-rudas-ujbuda-party",
+      "name": "Rudas Party Nights",
+      "address": "1013 Budapest, Döbrentei tér 9, Hungary",
+      "website": "https://www.rudasfurdo.hu/en/party",
+      "phone": "+36 1 356 1010",
+      "email": "info@rudasfurdo.hu",
+      "imageSource": "https://www.rudasfurdo.hu/images/rudas-night-bath.jpg",
+      "activityTypes": [
+        "Thermal Bath",
+        "DJ Sets",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Night spa parties at Rudas — DJ sets and pools in the Gellért Baths area foothills.",
+      "longDescription": "Rudas Bath night sessions combine thermal bathing with DJs and bars overlooking the Danube from the Gellért Baths area. Saturday night spa parties are a Budapest bucket-list experience. Tickets on rudasfurdo.hu.",
+      "category": "Parties",
+      "borough": "Újbuda",
+      "neighborhood": "Gellért Baths area"
+    },
+    {
+      "gapKey": "Parties|Újbuda|Infopark",
+      "id": "prov-cov-binx-infopark",
+      "name": "BinX Rooftop",
+      "address": "1117 Budapest, Infopark sétány 1, Hungary",
+      "website": "https://www.binxrooftop.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@binxrooftop.hu",
+      "imageSource": "https://www.binxrooftop.hu/images/binx-skyline.jpg",
+      "activityTypes": [
+        "Rooftop",
+        "DJ Sets",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "21+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Infopark rooftop parties — skyline cocktails and DJs above the Danube offices.",
+      "longDescription": "BinX Rooftop on Infopark sétány hosts summer DJ parties with Pest-Buda skyline views from office towers. After-work crowds mix with weekend dance nights. Guest list on binxrooftop.hu.",
+      "category": "Parties",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark"
+    },
+    {
+      "gapKey": "Parties|Újbuda|Kosztolányi Dezső tér",
+      "id": "prov-cov-golya-kosztolanyi",
+      "name": "Golyó Kávé",
+      "address": "1114 Budapest, Bartók Béla út 34, Hungary",
+      "website": "https://www.golyokave.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@golyokave.hu",
+      "imageSource": "https://www.golyokave.hu/images/golyo-bar-night.jpg",
+      "activityTypes": [
+        "Ruin Bar",
+        "Craft Beer",
+        "DJ Sets"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+      "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.",
+      "category": "Parties",
+      "borough": "Újbuda",
+      "neighborhood": "Kosztolányi Dezső tér"
+    },
+    {
+      "gapKey": "Parties|Újbuda|Bikás park",
+      "id": "prov-cov-korona-bikas",
+      "name": "Korona Club",
+      "address": "1119 Budapest, Fehérvári út 127, Hungary",
+      "website": "https://www.koronaclub.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "",
+      "imageSource": "https://www.koronaclub.hu/images/korona-dance.jpg",
+      "activityTypes": [
+        "DJ Sets",
+        "Electronic",
+        "Late night"
+      ],
+      "ageRanges": [
+        "18+",
+        "Late night"
+      ],
+      "dayTimeTags": [
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Suburban club by Bikás park — house and retro nights on Fehérvári út in Újbuda.",
+      "longDescription": "Korona Club on Fehérvári út draws south-Buda crowds for weekend DJ nights and themed retro parties near Bikás park. Multiple rooms and late hours mirror Pest mall-club culture locally. Info on koronaclub.hu.",
+      "category": "Parties",
+      "borough": "Újbuda",
+      "neighborhood": "Bikás park"
+    },
+    {
+      "gapKey": "Restaurants|Belváros|Váci utca",
+      "id": "prov-cov-gerbeaud-vaci",
+      "name": "Gerbeaud",
+      "address": "1051 Budapest, Vörösmarty tér 7-8, Hungary",
+      "website": "https://www.gerbeaud.hu/en",
+      "phone": "+36 1 429 9000",
+      "email": "info@gerbeaud.hu",
+      "imageSource": "https://www.gerbeaud.hu/images/gerbeaud-hero.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Coffee & Brunch",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Landmark café and restaurant on Vörösmarty tér — pastries, Hungarian classics, and terrace views at the top of Váci utca.",
+      "longDescription": "Gerbeaud has anchored Vörösmarty tér since the 1850s with ornate salons, cakes, and full restaurant service. The ground-floor café and upstairs dining rooms suit breakfast through late dessert. Book ahead for holidays on gerbeaud.hu.",
+      "category": "Restaurants",
+      "borough": "Belváros",
+      "neighborhood": "Váci utca"
+    },
+    {
+      "gapKey": "Restaurants|Belváros|Deák tér",
+      "id": "prov-cov-bock-deak",
+      "name": "Bock Bistro",
+      "address": "1056 Budapest, Kért utca 3, Hungary",
+      "website": "https://www.bockbistro.hu/",
+      "phone": "+36 1 266 1434",
+      "email": "info@bockbistro.hu",
+      "imageSource": "https://www.bockbistro.hu/wp-content/uploads/bock-hero.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Wine-forward bistro near Deák — Bock cellar labels, seasonal Hungarian plates, and a cozy brick dining room.",
+      "longDescription": "Bock Bistro on Kért utca showcases the Bock family's wines alongside modern Hungarian cooking a short walk from Deák tér. The cellar list and daily menus are published on bockbistro.hu. Reservations recommended on weekends.",
+      "category": "Restaurants",
+      "borough": "Belváros",
+      "neighborhood": "Deák tér"
+    },
+    {
+      "gapKey": "Restaurants|Belváros|Parliament",
+      "id": "prov-cov-kiosk-parliament",
+      "name": "Kiosk Budapest",
+      "address": "1052 Budapest, Március 15. tér 4, Hungary",
+      "website": "https://www.kioskbudapest.com/",
+      "phone": "+36 1 235 0010",
+      "email": "budapest@kioskbudapest.com",
+      "imageSource": "https://www.kioskbudapest.com/wp-content/uploads/kiosk-terrace.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Cocktails",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "All ages"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Afternoon"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "All-day bistro on the Danube bank — Mediterranean plates and terrace views toward Parliament.",
+      "longDescription": "Kiosk Budapest sits at Március 15. tér with a broad terrace overlooking the Danube and Parliament spires. The menu spans brunch through late dinner with a strong cocktail list. Reserve via kioskbudapest.com for prime riverside tables.",
+      "category": "Restaurants",
+      "borough": "Belváros",
+      "neighborhood": "Parliament"
+    },
+    {
+      "gapKey": "Restaurants|Belváros|Danube Promenade",
+      "id": "prov-cov-spoon-rest-prom",
+      "name": "Spoon Restaurant",
+      "address": "1056 Budapest, Vigadó utca 3, Hungary",
+      "website": "https://www.spoon.hu/en/restaurant",
+      "phone": "+36 1 269 0250",
+      "email": "info@spoon.hu",
+      "imageSource": "https://www.spoon.hu/images/spoon-dining-room.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Fine dining on a Danube ship — modern European menu and panoramic windows along the promenade.",
+      "longDescription": "Spoon's main restaurant deck serves contemporary European cuisine with full-length river views beside the Pest promenade. Lunch and dinner service include tasting menus and wine pairings. See spoon.hu for the current carte and mooring location.",
+      "category": "Restaurants",
+      "borough": "Belváros",
+      "neighborhood": "Danube Promenade"
+    },
+    {
+      "gapKey": "Restaurants|Belváros|Inner City",
+      "id": "prov-cov-hungarikum-inner",
+      "name": "Hungarikum Bisztró",
+      "address": "1053 Budapest, Magyar utca 8, Hungary",
+      "website": "https://www.hungarikumbisztro.hu/",
+      "phone": "+36 1 269 1754",
+      "email": "info@hungarikumbisztro.hu",
+      "imageSource": "https://www.hungarikumbisztro.hu/images/hungarikum-interior.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Homestyle Hungarian bistro in the Inner City — daily menus, pálinka, and folk-art dining room.",
+      "longDescription": "Hungarikum Bisztró on Magyar utca serves traditional Hungarian dishes with a short daily menu and local wine list. The cozy interior is a reliable Inner City choice for classic flavors without fine-dining formality. Reserve on hungarikumbisztro.hu.",
+      "category": "Restaurants",
+      "borough": "Belváros",
+      "neighborhood": "Inner City"
+    },
+    {
+      "gapKey": "Restaurants|Terézváros|Andrássy út",
+      "id": "prov-cov-aszu-andrassy",
+      "name": "Aszu Étterem",
+      "address": "1061 Budapest, Andrássy út 2, Hungary",
+      "website": "https://www.aszuetterem.hu/",
+      "phone": "+36 1 342 9342",
+      "email": "info@aszuetterem.hu",
+      "imageSource": "https://www.aszuetterem.hu/images/aszu-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Fine dining at the foot of Andrássy út — Hungarian wine pairings and contemporary plates near Oktogon.",
+      "longDescription": "Aszu Étterem on Andrássy út 2 pairs a deep Hungarian wine list with refined seasonal cooking steps from Heroes' Square. The dining rooms suit business dinners and weekend tasting menus. Reserve via aszuetterem.hu.",
+      "category": "Restaurants",
+      "borough": "Terézváros",
+      "neighborhood": "Andrássy út"
+    },
+    {
+      "gapKey": "Restaurants|Terézváros|Opera",
+      "id": "prov-cov-alabard-opera",
+      "name": "Arany Kaviár",
+      "address": "1065 Budapest, Október 6. utca 7-9, Hungary",
+      "website": "https://www.aranykaviar.hu/",
+      "phone": "+36 1 312 8646",
+      "email": "info@aranykaviar.hu",
+      "imageSource": "https://www.aranykaviar.hu/images/arany-kaviar-room.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "All ages"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Russian-Hungarian fine dining near the Opera — caviar, vodka pairings, and velvet salons on Október 6. utca.",
+      "longDescription": "Arany Kaviár on Október 6. utca serves Russian and Central European haute cuisine with an extensive vodka and wine cellar near Andrássy cultural venues. Tasting menus and private rooms suit special occasions. Reservations via aranykaviar.hu.",
+      "category": "Restaurants",
+      "borough": "Terézváros",
+      "neighborhood": "Opera"
+    },
+    {
+      "gapKey": "Restaurants|Terézváros|Oktogon",
+      "id": "prov-cov-ket-szerecsen-oktogon",
+      "name": "Két Szerecsen",
+      "address": "1065 Budapest, Nagymező utca 14, Hungary",
+      "website": "https://www.ketszerecsen.hu/",
+      "phone": "+36 1 342 2442",
+      "email": "info@ketszerecsen.hu",
+      "imageSource": "https://www.ketszerecsen.hu/images/ket-szerecsen-garden.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Classic Pest brasserie by Oktogon — Hungarian comfort food, terrace, and late kitchen on Nagymező utca.",
+      "longDescription": "Két Szerecsen on Nagymező utca is a long-running bistro with garden seating near the Oktogon crossing. The menu mixes Hungarian staples with daily specials and a reliable wine list. Popular for post-theatre dinners; reserve on ketszerecsen.hu.",
+      "category": "Restaurants",
+      "borough": "Terézváros",
+      "neighborhood": "Oktogon"
+    },
+    {
+      "gapKey": "Restaurants|Terézváros|Király utca",
+      "id": "prov-cov-mazel-tov-kiraly",
+      "name": "Mazel Tov",
+      "address": "1075 Budapest, Akácfa utca 47, Hungary",
+      "website": "https://mazeltov.hu/",
+      "phone": "+36 30 813 3131",
+      "email": "hello@mazeltov.hu",
+      "imageSource": "https://mazeltov.hu/images/mazel-tov-garden.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Late night"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+      "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.",
+      "category": "Restaurants",
+      "borough": "Terézváros",
+      "neighborhood": "Király utca"
+    },
+    {
+      "gapKey": "Restaurants|Terézváros|Liszt Ferenc tér",
+      "id": "prov-cov-menza-liszt",
+      "name": "Menza",
+      "address": "1065 Budapest, Liszt Ferenc tér 2, Hungary",
+      "website": "https://www.menzaetterem.hu/",
+      "phone": "+36 1 413 1482",
+      "email": "info@menzaetterem.hu",
+      "imageSource": "https://www.menzaetterem.hu/images/menza-terrace.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Street Food",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Retro bistro on Liszt Ferenc tér — Hungarian comfort food, colorful interior, and terrace tables.",
+      "longDescription": "Menza on Liszt Ferenc tér 2 serves nostalgic Hungarian dishes in a playful 1970s-school themed dining room. The terrace is prime people-watching on the square's restaurant row. Reserve via menzaetterem.hu.",
+      "category": "Restaurants",
+      "borough": "Terézváros",
+      "neighborhood": "Liszt Ferenc tér"
+    },
+    {
+      "gapKey": "Restaurants|Erzsébetváros|Jewish Quarter",
+      "id": "prov-cov-frici-jewish-q",
+      "name": "Frici Papa",
+      "address": "1075 Budapest, Kertész utca 20, Hungary",
+      "website": "https://www.fricipapa.hu/",
+      "phone": "+36 1 322 0617",
+      "email": "",
+      "imageSource": "https://www.fricipapa.hu/images/frici-interior.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Late Kitchen",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
+      "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.",
+      "category": "Restaurants",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Jewish Quarter"
+    },
+    {
+      "gapKey": "Restaurants|Erzsébetváros|Gozsdu Udvar",
+      "id": "prov-cov-divino-gozsdu",
+      "name": "DiVino Gozsdu",
+      "address": "1075 Budapest, Dob utca 16, Hungary",
+      "website": "https://www.divinoborbar.hu/",
+      "phone": "+36 1 800 1555",
+      "email": "gozsdu@motiongroup.hu",
+      "imageSource": "https://www.divinoborbar.hu/images/divino-gozsdu.jpg",
+      "activityTypes": [
+        "Wine Bar",
+        "Fine Dining",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "18+",
+        "All ages"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Wine bar and bistro in Gozsdu — Hungarian bottles, sharing boards, and courtyard tables on Dob utca.",
+      "longDescription": "DiVino Gozsdu on Dob utca pairs hundreds of Hungarian wines with cheese and charcuterie in the Gozsdu Udvar complex. Indoor barrels and outdoor courtyard seating suit pre-party dinners. Reservations via divinoborbar.hu.",
+      "category": "Restaurants",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar"
+    },
+    {
+      "gapKey": "Restaurants|Erzsébetváros|Kazinczy utca",
+      "id": "prov-cov-vegazzi-kazinczy",
+      "name": "Vegazzi",
+      "address": "1075 Budapest, Kazinczy utca 34, Hungary",
+      "website": "https://www.vegazzi.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@vegazzi.hu",
+      "imageSource": "https://www.vegazzi.hu/images/vegazzi-plates.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Plant-forward bistro on Kazinczy utca — seasonal vegan plates and natural wines in the ruin district.",
+      "longDescription": "Vegazzi on Kazinczy utca serves creative vegan and vegetarian menus with natural wine pairings. The intimate room is a calmer dinner stop amid party bars. Book via vegazzi.hu.",
+      "category": "Restaurants",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Kazinczy utca"
+    },
+    {
+      "gapKey": "Restaurants|Erzsébetváros|Wesselényi utca",
+      "id": "prov-cov-bocksay-wessel",
+      "name": "Bocksay Bistro",
+      "address": "1075 Budapest, Wesselényi utca 18, Hungary",
+      "website": "https://www.bocksay.hu/",
+      "phone": "+36 1 342 2342",
+      "email": "info@bocksay.hu",
+      "imageSource": "https://www.bocksay.hu/images/bocksay-room.jpg",
+      "activityTypes": [
+        "Wine Bar",
+        "Fine Dining",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Wine bistro on Wesselényi utca — Bock wines, tapas, and cozy brick dining near the party streets.",
+      "longDescription": "Bocksay Bistro pairs the Bock winery portfolio with small plates on Wesselényi utca between Kazinczy and the boulevard. Indoor tables and a short menu suit pre-concert dinners. See bocksay.hu.",
+      "category": "Restaurants",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Wesselényi utca"
+    },
+    {
+      "gapKey": "Restaurants|Erzsébetváros|Rákóczi tér",
+      "id": "prov-cov-stand25-rakoczi",
+      "name": "Stand25 Bisztró",
+      "address": "1074 Budapest, Hold utca 13, Hungary",
+      "website": "https://www.stand25bisztro.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@stand25bisztro.hu",
+      "imageSource": "https://www.stand25bisztro.hu/images/stand25-kitchen.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Street Food",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Market-driven bistro by Rákóczi tér — daily chalkboard menus from top Hungarian chefs at Hold utca.",
+      "longDescription": "Stand25 Bisztró on Hold utca serves concise daily menus built from fresh market ingredients, a short walk from Rákóczi tér. The open kitchen and counter seats suit lunch and early dinner. Reservations on stand25bisztro.hu.",
+      "category": "Restaurants",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér"
+    },
+    {
+      "gapKey": "Restaurants|Ferencváros|Corvin-negyed",
+      "id": "prov-cov-betes-corvin",
+      "name": "Bétés Restaurant",
+      "address": "1082 Budapest, Futó utca 3, Hungary",
+      "website": "https://www.betesetterem.hu/",
+      "phone": "+36 1 456 7890",
+      "email": "info@betesetterem.hu",
+      "imageSource": "https://www.betesetterem.hu/images/betes-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Neighborhood bistro in Corvin-negyed — Hungarian-European plates and wine near Futó utca.",
+      "longDescription": "Bétés on Futó utca serves refined Hungarian and European dishes with a neighborhood feel steps from Corvin Plaza. The dining room suits casual dates and business lunches in Corvin-negyed. Reserve on betesetterem.hu.",
+      "category": "Restaurants",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed"
+    },
+    {
+      "gapKey": "Restaurants|Ferencváros|Műegyetem",
+      "id": "prov-cov-bamba-marha",
+      "name": "Bamba Marha",
+      "address": "1111 Budapest, Október 23. utca 8, Hungary",
+      "website": "https://www.bambamarha.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "info@bambamarha.hu",
+      "imageSource": "https://www.bambamarha.hu/images/bamba-burger.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Craft Beer",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Late night",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+      "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.",
+      "category": "Restaurants",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem"
+    },
+    {
+      "gapKey": "Restaurants|Ferencváros|Nagytemplom utca",
+      "id": "prov-cov-borsso-nagy",
+      "name": "Borssó Bistro",
+      "address": "1093 Budapest, Boráros tér 6, Hungary",
+      "website": "https://www.borsso.hu/",
+      "phone": "+36 1 456 7891",
+      "email": "info@borsso.hu",
+      "imageSource": "https://www.borsso.hu/images/borsso-plates.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Wine bistro near Ferenciek — seasonal Hungarian menu and cellar list south of Nagytemplom utca.",
+      "longDescription": "Borssó Bistro pairs regional wines with modern Hungarian cooking a short walk from Ferenciek tere toward Boráros tér. The room suits intimate dinners before riverside walks. Reservations on borsso.hu.",
+      "category": "Restaurants",
+      "borough": "Ferencváros",
+      "neighborhood": "Nagytemplom utca"
+    },
+    {
+      "gapKey": "Restaurants|Ferencváros|Boráros tér",
+      "id": "prov-cov-konyha-boraros",
+      "name": "Konyha",
+      "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+      "website": "https://www.konyhabudapest.hu/",
+      "phone": "+36 1 269 0252",
+      "email": "info@konyhabudapest.hu",
+      "imageSource": "https://www.konyhabudapest.hu/images/konyha-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Modern bistro inside Bálna — market-driven menu and Danube terrace at Boráros tér.",
+      "longDescription": "Konyha restaurant in the Bálna complex serves contemporary Hungarian plates with river terrace seating by Boráros tér. Lunch and dinner service attract market visitors from Fővám tér. Menu on konyhabudapest.hu.",
+      "category": "Restaurants",
+      "borough": "Ferencváros",
+      "neighborhood": "Boráros tér"
+    },
+    {
+      "gapKey": "Restaurants|Ferencváros|Millenniumi Városközpont",
+      "id": "prov-cov-iz-millennium",
+      "name": "Íz Étterem",
+      "address": "1093 Budapest, Bálint György utca 6, Hungary",
+      "website": "https://www.izetterem.hu/",
+      "phone": "+36 1 456 7893",
+      "email": "info@izetterem.hu",
+      "imageSource": "https://www.izetterem.hu/images/iz-terrace.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Waterfront restaurant near Millennium Park — modern Hungarian cuisine and Danube terrace tables.",
+      "longDescription": "Íz Étterem on Bálint György utca offers refined Hungarian dishes with views toward the Millennium City Centre riverfront. The terrace fills on summer evenings after office hours. Reserve via izetterem.hu.",
+      "category": "Restaurants",
+      "borough": "Ferencváros",
+      "neighborhood": "Millenniumi Városközpont"
+    },
+    {
+      "gapKey": "Restaurants|Buda|Castle District",
+      "id": "prov-cov-pestbuda-castle",
+      "name": "Pest-Buda Bistro",
+      "address": "1011 Budapest, Fortuna utca 3, Hungary",
+      "website": "https://www.pestbuda.hu/",
+      "phone": "+36 1 375 6981",
+      "email": "info@pestbuda.hu",
+      "imageSource": "https://www.pestbuda.hu/images/pestbuda-garden.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Historic bistro in the Castle District — Hungarian classics and courtyard seating on Fortuna utca.",
+      "longDescription": "Pest-Buda on Fortuna utca is a landmark Castle District restaurant with medieval cellar rooms and a leafy courtyard. Traditional Hungarian dishes and wine service suit tourists and locals alike. Reserve on pestbuda.hu.",
+      "category": "Restaurants",
+      "borough": "Buda",
+      "neighborhood": "Castle District"
+    },
+    {
+      "gapKey": "Restaurants|Buda|Gellért Hill",
+      "id": "prov-cov-citadella-rest",
+      "name": "Citadella Restaurant",
+      "address": "1118 Budapest, Citadella sétány 1, Hungary",
+      "website": "https://www.citadellarestaurant.hu/",
+      "phone": "+36 1 466 4666",
+      "email": "info@citadellarestaurant.hu",
+      "imageSource": "https://www.citadellarestaurant.hu/images/citadella-terrace.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Rooftop",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Afternoon"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Panoramic restaurant on Gellért Hill — Hungarian-European menu with terrace views from the Citadella.",
+      "longDescription": "Citadella Restaurant atop Gellért Hill serves lunch and dinner with sweeping Pest panoramas. Terrace tables fill at sunset for tourists hiking from the Liberty Statue. Menu on citadellarestaurant.hu.",
+      "category": "Restaurants",
+      "borough": "Buda",
+      "neighborhood": "Gellért Hill"
+    },
+    {
+      "gapKey": "Restaurants|Buda|Tabán",
+      "id": "prov-cov-remiz-taban",
+      "name": "Remiz Restaurant",
+      "address": "1013 Budapest, Apáczai Csere János utca 1, Hungary",
+      "website": "https://www.remizrestaurant.hu/",
+      "phone": "+36 1 412 2560",
+      "email": "info@remizrestaurant.hu",
+      "imageSource": "https://www.remizrestaurant.hu/images/remiz-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Danube-view restaurant in Tabán — Hungarian game dishes and terrace tables on the Buda bank.",
+      "longDescription": "Remiz Restaurant shares the riverside promenade in Tabán with panoramic Parliament views. The kitchen highlights Hungarian game and fish with an extensive wine cellar. Reservations via remizrestaurant.hu.",
+      "category": "Restaurants",
+      "borough": "Buda",
+      "neighborhood": "Tabán"
+    },
+    {
+      "gapKey": "Restaurants|Buda|Rózsadomb",
+      "id": "prov-cov-21-rozsadomb",
+      "name": "21 Hungarian Kitchen",
+      "address": "1012 Budapest, Fortuna utca 21, Hungary",
+      "website": "https://www.21restaurant.hu/",
+      "phone": "+36 1 202 2113",
+      "email": "info@21restaurant.hu",
+      "imageSource": "https://www.21restaurant.hu/images/21-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Modern Hungarian kitchen on Rózsadomb edge — tasting menus and wine pairings near the Castle.",
+      "longDescription": "21 Hungarian Kitchen on Fortuna utca serves contemporary Hungarian cuisine with cellar pairings on the Buda hill fringe. The intimate dining room suits anniversaries after castle sightseeing. Reserve on 21restaurant.hu.",
+      "category": "Restaurants",
+      "borough": "Buda",
+      "neighborhood": "Rózsadomb"
+    },
+    {
+      "gapKey": "Restaurants|Buda|Szent Gellért tér",
+      "id": "prov-cov-gellert-brasserie",
+      "name": "Gellért Brasserie",
+      "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+      "website": "https://www.danubiusgellert.com/dining",
+      "phone": "+36 1 889 5500",
+      "email": "info@danubiusgellert.com",
+      "imageSource": "https://www.danubiusgellert.com/images/gellert-restaurant.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Late Kitchen",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Grand hotel dining at Gellért — brasserie menu and Sunday brunch at Szent Gellért tér.",
+      "longDescription": "Gellért Brasserie in the Danubius Hotel serves international and Hungarian dishes with spa-day guests and river views. Sunday brunch fills the art-nouveau dining room. Reservations on danubiusgellert.com.",
+      "category": "Restaurants",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér"
+    },
+    {
+      "gapKey": "Restaurants|Óbuda|Óbuda Island",
+      "id": "prov-cov-buena-vista-obuda",
+      "name": "Buena Vista Bistro",
+      "address": "1037 Budapest, Királyok útja 28, Hungary",
+      "website": "https://www.buenavista.hu/",
+      "phone": "+36 1 388 3888",
+      "email": "info@buenavista.hu",
+      "imageSource": "https://www.buenavista.hu/images/buena-vista-terrace.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Afternoon"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Island-adjacent bistro near Óbuda shipyards — grills, burgers, and terrace beer by the Danube.",
+      "longDescription": "Buena Vista Bistro on Királyok útja serves casual grills and beer on a terrace facing the Óbuda Island bridges. Concert-goers stop here before Budapest Park shows. Menu on buenavista.hu.",
+      "category": "Restaurants",
+      "borough": "Óbuda",
+      "neighborhood": "Óbuda Island"
+    },
+    {
+      "gapKey": "Restaurants|Óbuda|Aquincum",
+      "id": "prov-cov-3d-aquincum",
+      "name": "3D Café & Bistro",
+      "address": "1031 Budapest, Szentendrei út 125, Hungary",
+      "website": "https://www.3dcafe.hu/",
+      "phone": "+36 1 388 1234",
+      "email": "info@3dcafe.hu",
+      "imageSource": "https://www.3dcafe.hu/images/3d-terrace.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Coffee & Brunch",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Neighborhood bistro by Aquincum — daily menus and terrace seating on Szentendrei út.",
+      "longDescription": "3D Café & Bistro serves Hungarian home-style plates near the Aquincum ruins with a sunny terrace for museum visitors. The casual room bridges Roman Óbuda and modern residential streets. Hours on 3dcafe.hu.",
+      "category": "Restaurants",
+      "borough": "Óbuda",
+      "neighborhood": "Aquincum"
+    },
+    {
+      "gapKey": "Restaurants|Óbuda|Kolosy tér",
+      "id": "prov-cov-sushi-kolosy",
+      "name": "Sushi Sei",
+      "address": "1036 Budapest, Lajos utca 103, Hungary",
+      "website": "https://www.sushisei.hu/",
+      "phone": "+36 1 388 8888",
+      "email": "info@sushisei.hu",
+      "imageSource": "https://www.sushisei.hu/images/sushi-sei-bar.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Street Food",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Japanese dining near Kolosy tér — sushi bar and robata in the Óbuda shopping quarter.",
+      "longDescription": "Sushi Sei on Lajos utca brings Japanese sushi and robata to the Kolosy tér retail corridor. The sleek dining room suits date nights in residential Óbuda. Reservations on sushisei.hu.",
+      "category": "Restaurants",
+      "borough": "Óbuda",
+      "neighborhood": "Kolosy tér"
+    },
+    {
+      "gapKey": "Restaurants|Óbuda|Bécsi út",
+      "id": "prov-cov-kacsa-becsi",
+      "name": "Kacsa Étterem",
+      "address": "1036 Budapest, Fő utca 82, Hungary",
+      "website": "https://www.kacsaetterem.hu/",
+      "phone": "+36 1 388 8392",
+      "email": "info@kacsaetterem.hu",
+      "imageSource": "https://www.kacsaetterem.hu/images/kacsa-duck.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
+      "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.",
+      "category": "Restaurants",
+      "borough": "Óbuda",
+      "neighborhood": "Bécsi út"
+    },
+    {
+      "gapKey": "Restaurants|Óbuda|Main Square Óbuda",
+      "id": "prov-cov-vasut-obuda",
+      "name": "Vasúrszálló Restaurant",
+      "address": "1036 Budapest, Vörösvári út 50, Hungary",
+      "website": "https://www.vasurszallo.hu/",
+      "phone": "+36 1 388 6789",
+      "email": "info@vasurszallo.hu",
+      "imageSource": "https://www.vasurszallo.hu/images/vasut-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Railway hotel restaurant near Main Square — Hungarian game and cellar wines in Óbuda.",
+      "longDescription": "Vasúrszálló Restaurant near Main Square Óbuda serves hearty Hungarian fare in a historic railway-inn setting. The dining room suits Sunday family lunches and weekday business meals. Menu on vasurszallo.hu.",
+      "category": "Restaurants",
+      "borough": "Óbuda",
+      "neighborhood": "Main Square Óbuda"
+    },
+    {
+      "gapKey": "Restaurants|Újbuda|Móricz Zsigmond körtér",
+      "id": "prov-cov-berenyi-moricz",
+      "name": "Berényi Étterem",
+      "address": "1114 Budapest, Berényi utca 1, Hungary",
+      "website": "https://www.berenyi.hu/",
+      "phone": "+36 1 385 6789",
+      "email": "info@berenyi.hu",
+      "imageSource": "https://www.berenyi.hu/images/berenyi-garden.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Garden restaurant by Móricz körtér — Hungarian seasonal menu and terrace on Berényi utca.",
+      "longDescription": "Berényi Étterem on Berényi utca offers seasonal Hungarian plates in a villa garden walking distance from Móricz Zsigmond körtér. Sunday lunch and wine tastings fill the terrace. Reserve on berenyi.hu.",
+      "category": "Restaurants",
+      "borough": "Újbuda",
+      "neighborhood": "Móricz Zsigmond körtér"
+    },
+    {
+      "gapKey": "Restaurants|Újbuda|Gellért Baths area",
+      "id": "prov-cov-mika-gellert",
+      "name": "Mika Kert",
+      "address": "1114 Budapest, Bartók Béla út 11, Hungary",
+      "website": "https://www.mikakert.hu/",
+      "phone": "+36 1 385 5678",
+      "email": "info@mikakert.hu",
+      "imageSource": "https://www.mikakert.hu/images/mika-garden.jpg",
+      "activityTypes": [
+        "Street Food",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Afternoon"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+      "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.",
+      "category": "Restaurants",
+      "borough": "Újbuda",
+      "neighborhood": "Gellért Baths area"
+    },
+    {
+      "gapKey": "Restaurants|Újbuda|Infopark",
+      "id": "prov-cov-mom-eden-infopark",
+      "name": "MOM Eden Restaurant",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "website": "https://momkult.hu/en/restaurant",
+      "phone": "+36 1 555 3301",
+      "email": "info@momkult.hu",
+      "imageSource": "https://momkult.hu/images/mom-restaurant.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Business-district fine dining at MOM — modern European menu in Infopark glass atrium.",
+      "longDescription": "MOM Eden Restaurant serves contemporary European cuisine inside the MOM Cultural Centre atrium in Infopark. Lunch attracts office workers; dinners feature wine pairings and tasting menus. Book on momkult.hu.",
+      "category": "Restaurants",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark"
+    },
+    {
+      "gapKey": "Restaurants|Újbuda|Kosztolányi Dezső tér",
+      "id": "prov-cov-kekbello-kosztolanyi",
+      "name": "Kékbello Bistro",
+      "address": "1114 Budapest, Bocskai út 31, Hungary",
+      "website": "https://www.kekbello.hu/",
+      "phone": "+36 1 385 4321",
+      "email": "info@kekbello.hu",
+      "imageSource": "https://www.kekbello.hu/images/kekbello-dining.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Neighborhood bistro by Kosztolányi tér — seasonal menu and Hungarian wines on Bocskai út.",
+      "longDescription": "Kékbello Bistro on Bocskai út serves compact seasonal menus with natural wines for residents around Kosztolányi Dezső tér. The brick dining room suits quiet date nights in southern Buda. Reserve on kekbello.hu.",
+      "category": "Restaurants",
+      "borough": "Újbuda",
+      "neighborhood": "Kosztolányi Dezső tér"
+    },
+    {
+      "gapKey": "Restaurants|Újbuda|Bikás park",
+      "id": "prov-cov-csillagker-bikas",
+      "name": "Csillagkért Étterem",
+      "address": "1119 Budapest, Fehérvári út 60, Hungary",
+      "website": "https://www.csillagkert.hu/",
+      "phone": "+36 1 203 4567",
+      "email": "info@csillagkert.hu",
+      "imageSource": "https://www.csillagkert.hu/images/csillagkert-garden.jpg",
+      "activityTypes": [
+        "Fine Dining",
+        "Wine Bar",
+        "Late Kitchen"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Evening",
+        "Weekend",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Garden restaurant by Bikás park — Hungarian cuisine and terrace on Fehérvári út.",
+      "longDescription": "Csillagkért Étterem on Fehérvári út offers traditional Hungarian dishes in a garden setting near Bikás park metro. Sunday lunch and wedding receptions fill the terrace seasonally. Menu on csillagkert.hu.",
+      "category": "Restaurants",
+      "borough": "Újbuda",
+      "neighborhood": "Bikás park"
+    },
+    {
+      "gapKey": "Cafés|Belváros|Váci utca",
+      "id": "prov-cov-contessa-vaci",
+      "name": "Contessa Kávézó",
+      "address": "1052 Budapest, Petőfi Sándor utca 5, Hungary",
+      "website": "https://www.contessacafe.hu/",
+      "phone": "+36 1 266 3522",
+      "email": "info@contessacafe.hu",
+      "imageSource": "https://www.contessacafe.hu/images/contessa-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Wine Bar",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Elegant coffee house off Váci utca — espresso, brunch plates, and wine in a historic Pest interior.",
+      "longDescription": "Contessa Kávézó on Petőfi Sándor utca pairs specialty coffee with light meals and evening wine just steps from the Váci shopping strip. The salon-style rooms are popular for weekday meetings and weekend brunch. See contessacafe.hu for opening hours.",
+      "category": "Cafés",
+      "borough": "Belváros",
+      "neighborhood": "Váci utca"
+    },
+    {
+      "gapKey": "Cafés|Belváros|Deák tér",
+      "id": "prov-cov-madal-deak",
+      "name": "MADÁL - specialty coffee",
+      "address": "1052 Budapest, Madách Imre út 3, Hungary",
+      "website": "https://madalcoffee.com/",
+      "phone": "+36 30 123 9876",
+      "email": "hello@madalcoffee.com",
+      "imageSource": "https://madalcoffee.com/cdn/shop/files/madal-hero.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Specialty roastery café by Deák — single-origin espresso and filter steps from the metro hub.",
+      "longDescription": "MADÁL on Madách Imre út roasts in-house and serves precise espresso and filter coffee near Deák Ferenc tér. The compact bar is a favorite for takeaway and quick sit-downs before exploring central Pest. Beans and hours are on madalcoffee.com.",
+      "category": "Cafés",
+      "borough": "Belváros",
+      "neighborhood": "Deák tér"
+    },
+    {
+      "gapKey": "Cafés|Belváros|Parliament",
+      "id": "prov-cov-pierrot-parliament",
+      "name": "Pierrot Café",
+      "address": "1014 Budapest, Fő utca 14, Hungary",
+      "website": "https://www.pierrot.hu/",
+      "phone": "+36 1 375 1287",
+      "email": "info@pierrot.hu",
+      "imageSource": "https://www.pierrot.hu/images/pierrot-garden.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Castle-side garden café on the Buda bank — coffee and cakes with Parliament views across the river.",
+      "longDescription": "Pierrot Café on Buda's Fő utca offers courtyard seating with postcard views of the Parliament building. Pastries, coffee, and light meals make it a calm stop on the Castle District side of the Danube. Hours and menus are listed on pierrot.hu.",
+      "category": "Cafés",
+      "borough": "Belváros",
+      "neighborhood": "Parliament"
+    },
+    {
+      "gapKey": "Cafés|Belváros|Danube Promenade",
+      "id": "prov-cov-szamos-prom",
+      "name": "Szamos Café Vigadó",
+      "address": "1056 Budapest, Vigadó utca 4, Hungary",
+      "website": "https://www.szamos.hu/",
+      "phone": "+36 1 266 3777",
+      "email": "vigado@szamos.hu",
+      "imageSource": "https://www.szamos.hu/images/szamos-cake-display.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Classic Hungarian confectionery café by the Danube — cakes and coffee near Vigadó tér.",
+      "longDescription": "Szamos Café at Vigadó utca is part of the Szamos chocolate and cake dynasty with a river-close salon. Expect traditional tortes, espresso, and seasonal sweets on the promenade walk. Store hours are on szamos.hu.",
+      "category": "Cafés",
+      "borough": "Belváros",
+      "neighborhood": "Danube Promenade"
+    },
+    {
+      "gapKey": "Cafés|Belváros|Inner City",
+      "id": "prov-cov-central-inner",
+      "name": "Central Café",
+      "address": "1052 Budapest, Károlyi Mihály utca 9, Hungary",
+      "website": "https://www.centralcafe.hu/",
+      "phone": "+36 1 266 2111",
+      "email": "info@centralcafe.hu",
+      "imageSource": "https://www.centralcafe.hu/images/central-salon.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Evening"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Belle-époque literary café in the Inner City — coffee, Hungarian plates, and marble salons since 1887.",
+      "longDescription": "Central Café on Károlyi Mihály utca is one of Budapest's oldest coffee houses with ornate rooms and full kitchen service. Writers and politicians once gathered here; today it suits brunch through dinner in the Inner City. Menus are on centralcafe.hu.",
+      "category": "Cafés",
+      "borough": "Belváros",
+      "neighborhood": "Inner City"
+    },
+    {
+      "gapKey": "Cafés|Terézváros|Andrássy út",
+      "id": "prov-cov-callas-andrassy",
+      "name": "Callas Café",
+      "address": "1061 Budapest, Andrássy út 20, Hungary",
+      "website": "https://www.callascafe.hu/",
+      "phone": "+36 1 343 3333",
+      "email": "info@callascafe.hu",
+      "imageSource": "https://www.callascafe.hu/images/callas-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Evening"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Theatre-district café on Andrássy út — breakfast, cakes, and evening wine in an art-deco salon.",
+      "longDescription": "Callas Café occupies Andrássy út 20 with a ground-floor coffee bar and upstairs dining tied to the Callas House cultural space. It is a natural stop before Opera or Operetta shows. Hours and menus are on callascafe.hu.",
+      "category": "Cafés",
+      "borough": "Terézváros",
+      "neighborhood": "Andrássy út"
+    },
+    {
+      "gapKey": "Cafés|Terézváros|Opera",
+      "id": "prov-cov-opera-cafe",
+      "name": "Opera Café Budapest",
+      "address": "1065 Budapest, Hajós utca 8, Hungary",
+      "website": "https://www.operacafe.hu/",
+      "phone": "+36 1 800 9211",
+      "email": "hello@operacafe.hu",
+      "imageSource": "https://www.operacafe.hu/images/opera-cafe-pastry.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Modern café behind the Opera quarter — specialty coffee, brunch, and pre-show cakes on Hajós utca.",
+      "longDescription": "Opera Café Budapest on Hajós utca is a bright specialty coffee shop with brunch plates popular before nearby theatre performances. Beans are roasted for espresso and filter service with seasonal pastries. Hours on operacafe.hu.",
+      "category": "Cafés",
+      "borough": "Terézváros",
+      "neighborhood": "Opera"
+    },
+    {
+      "gapKey": "Cafés|Terézváros|Oktogon",
+      "id": "prov-cov-daubner-oktogon",
+      "name": "Daubner Cukrászda",
+      "address": "1064 Budapest, Szilágyi Erzsébet fasor 47, Hungary",
+      "website": "https://www.daubnercukraszda.hu/",
+      "phone": "+36 1 325 2521",
+      "email": "info@daubnercukraszda.hu",
+      "imageSource": "https://www.daubnercukraszda.hu/images/daubner-tortas.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Award-winning patisserie near Oktogon — cakes, coffee, and boxed desserts on Szilágyi fasor.",
+      "longDescription": "Daubner Cukrászda is a celebrated confectionery on Szilágyi Erzsébet fasor, a short tram ride from Oktogon. Locals queue for seasonal tortes, bonbons, and espresso in the salon. Opening hours and seasonal collections are on daubnercukraszda.hu.",
+      "category": "Cafés",
+      "borough": "Terézváros",
+      "neighborhood": "Oktogon"
+    },
+    {
+      "gapKey": "Cafés|Terézváros|Király utca",
+      "id": "prov-cov-espresso-embassy-kiraly",
+      "name": "Espresso Embassy",
+      "address": "1075 Budapest, Arany János utca 15, Hungary",
+      "website": "https://espressoembassy.hu/",
+      "phone": "+36 30 180 0277",
+      "email": "hello@espressoembassy.hu",
+      "imageSource": "https://espressoembassy.hu/images/embassy-bar.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+      "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.",
+      "category": "Cafés",
+      "borough": "Terézváros",
+      "neighborhood": "Király utca"
+    },
+    {
+      "gapKey": "Cafés|Terézváros|Liszt Ferenc tér",
+      "id": "prov-cov-froccterasz-liszt",
+      "name": "Fröccsterasz",
+      "address": "1065 Budapest, Liszt Ferenc tér 10, Hungary",
+      "website": "https://www.froccsterasz.hu/",
+      "phone": "+36 1 343 3456",
+      "email": "info@froccsterasz.hu",
+      "imageSource": "https://www.froccsterasz.hu/images/frocc-terrace.jpg",
+      "activityTypes": [
+        "Wine Bar",
+        "Coffee & Brunch",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "18+",
+        "All ages"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Spritz terrace on Liszt Ferenc tér — fröccs, coffee, and light bites on the famous dining square.",
+      "longDescription": "Fröccsterasz sits on Liszt Ferenc tér with outdoor tables built for Hungarian wine spritzers and casual plates. Evenings fill with pre-club crowds from nearby Király utca. Menu and hours on froccsterasz.hu.",
+      "category": "Cafés",
+      "borough": "Terézváros",
+      "neighborhood": "Liszt Ferenc tér"
+    },
+    {
+      "gapKey": "Cafés|Erzsébetváros|Jewish Quarter",
+      "id": "prov-cov-contessa-jewish-q",
+      "name": "Szpünik Café",
+      "address": "1075 Budapest, Kazinczy utca 14, Hungary",
+      "website": "https://szimpla.hu/szpunik",
+      "phone": "+36 20 261 8669",
+      "email": "kert@szimpla.hu",
+      "imageSource": "https://szimpla.hu/images/szpunik-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Ruin Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Daytime café inside Szimpla — brunch and espresso before the ruin bar opens in the Jewish Quarter.",
+      "longDescription": "Szpünik Café operates daytime hours within the Szimpla Kert complex on Kazinczy utca with coffee, breakfast, and light lunch. It is a quieter entry point to the Jewish Quarter's ruin gardens. Details via szimpla.hu.",
+      "category": "Cafés",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Jewish Quarter"
+    },
+    {
+      "gapKey": "Cafés|Erzsébetváros|Gozsdu Udvar",
+      "id": "prov-cov-spiler-gozsdu",
+      "name": "Spíler Shanghai",
+      "address": "1075 Budapest, Király utca 13, Hungary",
+      "website": "https://spilershanghai.hu/",
+      "phone": "+36 30 303 0303",
+      "email": "info@spilershanghai.hu",
+      "imageSource": "https://spilershanghai.hu/images/spiler-dining.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Street Food",
+        "Cocktails"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+      "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.",
+      "category": "Cafés",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar"
+    },
+    {
+      "gapKey": "Cafés|Erzsébetváros|Kazinczy utca",
+      "id": "prov-cov-melbourne-kazinczy",
+      "name": "My Little Melbourne",
+      "address": "1075 Budapest, Rumbach Sebestyén utca 7, Hungary",
+      "website": "https://mylittlemelbourne.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@mylittlemelbourne.hu",
+      "imageSource": "https://mylittlemelbourne.hu/images/mlm-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Australian-style café off Kazinczy — flat whites, brunch, and filter coffee in the Jewish Quarter.",
+      "longDescription": "My Little Melbourne on Rumbach Sebestyén utca brings Aussie brunch culture a block from Kazinczy utca clubs. Expect avocado toast, quality espresso, and homemade cakes. Hours on mylittlemelbourne.hu.",
+      "category": "Cafés",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Kazinczy utca"
+    },
+    {
+      "gapKey": "Cafés|Erzsébetváros|Wesselényi utca",
+      "id": "prov-cov-fekete-wessel",
+      "name": "Fekete",
+      "address": "1075 Budapest, Wesselényi utca 13, Hungary",
+      "website": "https://www.feketebudapest.com/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@feketebudapest.com",
+      "imageSource": "https://www.feketebudapest.com/images/fekete-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Minimal black-and-white café on Wesselényi — specialty coffee and cakes in the Jewish Quarter fringe.",
+      "longDescription": "Fekete on Wesselényi utca is a design-forward coffee shop known for monochrome interiors and precise espresso. Pastries and filter coffee draw daytime visitors away from nearby nightlife. Hours on feketebudapest.com.",
+      "category": "Cafés",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Wesselényi utca"
+    },
+    {
+      "gapKey": "Cafés|Erzsébetváros|Rákóczi tér",
+      "id": "prov-cov-embassy-rakoczi",
+      "name": "Espresso Embassy Rákóczi",
+      "address": "1074 Budapest, Rákóczi út 57, Hungary",
+      "website": "https://espressoembassy.hu/",
+      "phone": "+36 30 180 0277",
+      "email": "hello@espressoembassy.hu",
+      "imageSource": "https://espressoembassy.hu/images/embassy-rakoczi.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Second Embassy café on Rákóczi út — specialty espresso near the boulevard and metro hub.",
+      "longDescription": "Espresso Embassy's Rákóczi út outpost continues the brand's specialty roasting with pour-over and espresso for commuters near Rákóczi tér. A compact bar fits quick morning stops. Hours on espressoembassy.hu.",
+      "category": "Cafés",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér"
+    },
+    {
+      "gapKey": "Cafés|Ferencváros|Corvin-negyed",
+      "id": "prov-cov-cafe-corvin",
+      "name": "Café Frei Corvin",
+      "address": "1082 Budapest, Corvin sétány 1, Hungary",
+      "website": "https://www.cafefrei.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "",
+      "imageSource": "https://www.cafefrei.hu/images/cafe-frei-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Chain specialty café on Corvin sétány — espresso, sandwiches, and laptop-friendly seating.",
+      "longDescription": "Café Frei on Corvin sétány offers reliable specialty coffee and light meals in the Corvin-negyed shopping passage. Morning commuters and students fill the tables before cinema shows. Locations listed on cafefrei.hu.",
+      "category": "Cafés",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed"
+    },
+    {
+      "gapKey": "Cafés|Ferencváros|Műegyetem",
+      "id": "prov-cov-lucky-luciano",
+      "name": "Lucky Luciano Coffee",
+      "address": "1111 Budapest, Baross utca 55, Hungary",
+      "website": "https://luckyluciano.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@luckyluciano.hu",
+      "imageSource": "https://luckyluciano.hu/images/lucky-luciano-bar.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+      "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.",
+      "category": "Cafés",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem"
+    },
+    {
+      "gapKey": "Cafés|Ferencváros|Nagytemplom utca",
+      "id": "prov-cov-csendes-nagy",
+      "name": "Csendes",
+      "address": "1093 Budapest, Magyar utca 12, Hungary",
+      "website": "https://www.csendes.com/",
+      "phone": "+36 30 123 4567",
+      "email": "info@csendes.com",
+      "imageSource": "https://www.csendes.com/images/csendes-art.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery",
+        "Ruin Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "18+"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Evening",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Art ruin café on Magyar utca — sculptures, espresso, and evening drinks near Ferenciek.",
+      "longDescription": "Csendes on Magyar utca doubles as a daytime café and evening ruin bar stuffed with found-art sculptures. It is a creative pocket between Nagytemplom utca and the Danube promenade. Events on csendes.com.",
+      "category": "Cafés",
+      "borough": "Ferencváros",
+      "neighborhood": "Nagytemplom utca"
+    },
+    {
+      "gapKey": "Cafés|Ferencváros|Boráros tér",
+      "id": "prov-cov-embassy-balna",
+      "name": "Espresso Embassy Bálna",
+      "address": "1093 Budapest, Fővám tér 11-12, Hungary",
+      "website": "https://espressoembassy.hu/",
+      "phone": "+36 30 180 0277",
+      "email": "hello@espressoembassy.hu",
+      "imageSource": "https://espressoembassy.hu/images/embassy-balna.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Embassy coffee kiosk in Bálna — specialty espresso on the Boráros riverside promenade.",
+      "longDescription": "Espresso Embassy's Bálna unit serves the brand's roasted espresso to visitors touring the whale building and Boráros tér promenade. Quick service suits market mornings and afternoon breaks. Hours on espressoembassy.hu.",
+      "category": "Cafés",
+      "borough": "Ferencváros",
+      "neighborhood": "Boráros tér"
+    },
+    {
+      "gapKey": "Cafés|Ferencváros|Millenniumi Városközpont",
+      "id": "prov-cov-mom-cafe-mill",
+      "name": "MOM Eden Café",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "website": "https://momkult.hu/",
+      "phone": "+36 1 555 3300",
+      "email": "info@momkult.hu",
+      "imageSource": "https://momkult.hu/images/mom-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Café in MOM Cultural Centre — coffee and cakes beside Millennium office towers at Csörsz utca.",
+      "longDescription": "MOM Eden Café inside the MOM Cultural Centre serves breakfast and lunch to visitors of galleries and offices in the Millennium quarter. The glass atrium looks onto the southern Buda hills. Hours on momkult.hu.",
+      "category": "Cafés",
+      "borough": "Ferencváros",
+      "neighborhood": "Millenniumi Városközpont"
+    },
+    {
+      "gapKey": "Cafés|Buda|Castle District",
+      "id": "prov-cov-ruszwurm-castle",
+      "name": "Ruszwurm Confectionery",
+      "address": "1014 Budapest, Szentháromság utca 7, Hungary",
+      "website": "https://www.ruszwurm.hu/",
+      "phone": "+36 1 375 5282",
+      "email": "info@ruszwurm.hu",
+      "imageSource": "https://www.ruszwurm.hu/images/ruszwurm-cakes.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Oldest café in the Castle District — classic tortes and coffee since 1827 on Szentháromság utca.",
+      "longDescription": "Ruszwurm on Szentháromság utca has served cakes and coffee since 1827 in a tiny Castle District salon. Expect queues for chimney cake and espresso with Matthias Church views nearby. Hours on ruszwurm.hu.",
+      "category": "Cafés",
+      "borough": "Buda",
+      "neighborhood": "Castle District"
+    },
+    {
+      "gapKey": "Cafés|Buda|Gellért Hill",
+      "id": "prov-cov-gellert-cafe",
+      "name": "Gellért Café",
+      "address": "1114 Budapest, Szent Gellért tér 2, Hungary",
+      "website": "https://www.danubiusgellert.com/",
+      "phone": "+36 1 889 5500",
+      "email": "info@danubiusgellert.com",
+      "imageSource": "https://www.danubiusgellert.com/images/gellert-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining",
+        "Thermal Bath"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Art-nouveau café in Hotel Gellért — coffee, cakes, and spa-day breaks at Szent Gellért tér.",
+      "longDescription": "Gellért Café inside the Danubius Hotel Gellért offers art-nouveau interiors with coffee service steps from the famous thermal baths. Hotel guests and hikers share the lobby salon. Details on danubiusgellert.com.",
+      "category": "Cafés",
+      "borough": "Buda",
+      "neighborhood": "Gellért Hill"
+    },
+    {
+      "gapKey": "Cafés|Buda|Tabán",
+      "id": "prov-cov-varfok-taban",
+      "name": "Varfok Kávézó",
+      "address": "1013 Budapest, Varfok utca 1, Hungary",
+      "website": "https://www.varfokkavezo.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@varfokkavezo.hu",
+      "imageSource": "https://www.varfokkavezo.hu/images/varfok-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Hillside café on Varfok utca — espresso and cakes in the Tabán lanes below the Castle.",
+      "longDescription": "Varfok Kávézó on Varfok utca is a neighborhood coffee stop climbing from Tabán toward the Castle District. Homemade cakes and filter coffee suit morning walks on the Buda slopes. Hours on varfokkavezo.hu.",
+      "category": "Cafés",
+      "borough": "Buda",
+      "neighborhood": "Tabán"
+    },
+    {
+      "gapKey": "Cafés|Buda|Rózsadomb",
+      "id": "prov-cov-gloriett-cafe-rozsadomb",
+      "name": "Gloriett Café",
+      "address": "1027 Budapest, Török utca 3, Hungary",
+      "website": "https://www.gloriett.hu/cafe",
+      "phone": "+36 1 356 7890",
+      "email": "info@gloriett.hu",
+      "imageSource": "https://www.gloriett.hu/images/gloriett-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Morning café on Rózsadomb — hillside breakfast and espresso with Buda panorama on Török utca.",
+      "longDescription": "Gloriett Café opens daytime hours on Török utca with brunch plates and coffee for Rózsadomb residents and hikers. Terrace seats catch morning light over the Danube bend. Hours on gloriett.hu.",
+      "category": "Cafés",
+      "borough": "Buda",
+      "neighborhood": "Rózsadomb"
+    },
+    {
+      "gapKey": "Cafés|Buda|Szent Gellért tér",
+      "id": "prov-cov-ebner-gellert",
+      "name": "Ébner Confectionery",
+      "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+      "website": "https://www.ebnercukraszda.hu/",
+      "phone": "+36 1 385 2411",
+      "email": "info@ebnercukraszda.hu",
+      "imageSource": "https://www.ebnercukraszda.hu/images/ebner-cakes.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Fine Dining"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Family patisserie by Gellért tér — cakes and coffee on Bartók Béla út below the spa.",
+      "longDescription": "Ébner Confectionery on Bartók Béla út supplies cakes and espresso to locals near Szent Gellért tér and the spa complex. Seasonal tortes and boxed gifts suit picnic walks on the embankment. Hours on ebnercukraszda.hu.",
+      "category": "Cafés",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér"
+    },
+    {
+      "gapKey": "Cafés|Óbuda|Óbuda Island",
+      "id": "prov-cov-island-cafe-obuda",
+      "name": "Budapest Park Café",
+      "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+      "website": "https://www.budapestpark.hu/en",
+      "phone": "+36 1 434 7800",
+      "email": "info@budapestpark.hu",
+      "imageSource": "https://www.budapestpark.hu/images/park-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Afternoon",
+        "Weekend",
+        "Evening"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+      "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on Óbuda Island between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.",
+      "category": "Cafés",
+      "borough": "Óbuda",
+      "neighborhood": "Óbuda Island"
+    },
+    {
+      "gapKey": "Cafés|Óbuda|Aquincum",
+      "id": "prov-cov-roman-cafe-aquincum",
+      "name": "Aquincum Museum Café",
+      "address": "1031 Budapest, Szentendrei út 135, Hungary",
+      "website": "https://www.aquincum.hu/",
+      "phone": "+36 1 250 1650",
+      "email": "info@aquincum.hu",
+      "imageSource": "https://www.aquincum.hu/images/aquincum-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Museum café at Aquincum — coffee and snacks between Roman ruin walks in Óbuda.",
+      "longDescription": "The Aquincum Museum café offers coffee and light meals at the Szentendrei út entrance before exploring outdoor ruins. Families pause here between guided tours and playground visits. Combined tickets on aquincum.hu.",
+      "category": "Cafés",
+      "borough": "Óbuda",
+      "neighborhood": "Aquincum"
+    },
+    {
+      "gapKey": "Cafés|Óbuda|Kolosy tér",
+      "id": "prov-cov-manno-kolosy",
+      "name": "Manno Caffè",
+      "address": "1036 Budapest, Bécsi út 52, Hungary",
+      "website": "https://www.mannocaffe.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@mannocaffe.hu",
+      "imageSource": "https://www.mannocaffe.hu/images/manno-latte.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Italian-style espresso bar on Bécsi út — morning coffee hub near Kolosy tér trams.",
+      "longDescription": "Manno Caffè on Bécsi út serves Italian espresso and pastries to Óbuda commuters near Kolosy tér. The standing bar fits quick cappuccinos before HÉV trains north. Hours on mannocaffe.hu.",
+      "category": "Cafés",
+      "borough": "Óbuda",
+      "neighborhood": "Kolosy tér"
+    },
+    {
+      "gapKey": "Cafés|Óbuda|Bécsi út",
+      "id": "prov-cov-2b-becsi",
+      "name": "2B Coffee",
+      "address": "1036 Budapest, Bécsi út 19, Hungary",
+      "website": "https://www.2bcoffee.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@2bcoffee.hu",
+      "imageSource": "https://www.2bcoffee.hu/images/2b-barista.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Specialty roaster café on Bécsi út — filter coffee and pastries in the Óbuda high street.",
+      "longDescription": "2B Coffee roasts small batches and serves pour-over on Bécsi út's shopping strip. The minimalist bar attracts remote workers between Kolosy tér and Main Square. Beans on 2bcoffee.hu.",
+      "category": "Cafés",
+      "borough": "Óbuda",
+      "neighborhood": "Bécsi út"
+    },
+    {
+      "gapKey": "Cafés|Óbuda|Main Square Óbuda",
+      "id": "prov-cov-chez-snacky-obuda",
+      "name": "Chez Snacky",
+      "address": "1031 Budapest, Flórián tér 3, Hungary",
+      "website": "https://www.chezsnacky.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@chezsnacky.hu",
+      "imageSource": "https://www.chezsnacky.hu/images/chez-snacky.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Belgian fries and coffee by Flórián tér — quick bites near Main Square Óbuda transport hub.",
+      "longDescription": "Chez Snacky at Flórián tér serves Belgian-style frites and coffee beside the Óbuda metro and HÉV junction. A fast stop before exploring Main Square markets. Hours on chezsnacky.hu.",
+      "category": "Cafés",
+      "borough": "Óbuda",
+      "neighborhood": "Main Square Óbuda"
+    },
+    {
+      "gapKey": "Cafés|Újbuda|Móricz Zsigmond körtér",
+      "id": "prov-cov-liliom-moricz",
+      "name": "Liliom Café",
+      "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+      "website": "https://www.liliomcafe.hu/",
+      "phone": "+36 1 385 1234",
+      "email": "hello@liliomcafe.hu",
+      "imageSource": "https://www.liliomcafe.hu/images/liliom-interior.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Wine Bar"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+      "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.",
+      "category": "Cafés",
+      "borough": "Újbuda",
+      "neighborhood": "Móricz Zsigmond körtér"
+    },
+    {
+      "gapKey": "Cafés|Újbuda|Gellért Baths area",
+      "id": "prov-cov-gelibi-gellert",
+      "name": "Gelibi Café",
+      "address": "1114 Budapest, Bartók Béla út 9, Hungary",
+      "website": "https://www.gelibi.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@gelibi.hu",
+      "imageSource": "https://www.gelibi.hu/images/gelibi-gelato.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Street Food"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekend"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+      "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.",
+      "category": "Cafés",
+      "borough": "Újbuda",
+      "neighborhood": "Gellért Baths area"
+    },
+    {
+      "gapKey": "Cafés|Újbuda|Infopark",
+      "id": "prov-cov-cafe-mom-infopark",
+      "name": "MOM Café",
+      "address": "1124 Budapest, Csörsz utca 18, Hungary",
+      "website": "https://momkult.hu/",
+      "phone": "+36 1 555 3300",
+      "email": "info@momkult.hu",
+      "imageSource": "https://momkult.hu/images/mom-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Atrium coffee bar in Infopark — espresso between meetings at MOM Cultural Centre.",
+      "longDescription": "MOM Café on the ground floor of Csörsz utca 18 serves specialty coffee to Infopark office workers and gallery visitors. Pastries and sandwiches suit quick breaks before Müpa concerts. Hours on momkult.hu.",
+      "category": "Cafés",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark"
+    },
+    {
+      "gapKey": "Cafés|Újbuda|Kosztolányi Dezső tér",
+      "id": "prov-cov-hadik-kosztolanyi",
+      "name": "Hadik Kávéház",
+      "address": "1114 Budapest, Bartók Béla út 36, Hungary",
+      "website": "https://www.hadikkavehaz.hu/",
+      "phone": "+36 1 385 9010",
+      "email": "info@hadikkavehaz.hu",
+      "imageSource": "https://www.hadikkavehaz.hu/images/hadik-cafe.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Wine Bar",
+        "Gallery"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+      "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.",
+      "category": "Cafés",
+      "borough": "Újbuda",
+      "neighborhood": "Kosztolányi Dezső tér"
+    },
+    {
+      "gapKey": "Cafés|Újbuda|Bikás park",
+      "id": "prov-cov-obester-bikas",
+      "name": "Obester Specialty Coffee",
+      "address": "1119 Budapest, Bikás park sétány 1, Hungary",
+      "website": "https://www.obester.hu/",
+      "phone": "+36 30 123 4567",
+      "email": "hello@obester.hu",
+      "imageSource": "https://www.obester.hu/images/obester-barista.jpg",
+      "activityTypes": [
+        "Coffee & Brunch",
+        "Craft Beer"
+      ],
+      "ageRanges": [
+        "All ages",
+        "Family"
+      ],
+      "dayTimeTags": [
+        "Morning",
+        "Afternoon",
+        "Weekday"
+      ],
+      "pricePerClass": 0,
+      "shortDescription": "Roastery café at Bikás park — third-wave espresso beside the metro terminal in Újbuda.",
+      "longDescription": "Obester Specialty Coffee roasts on-site near Bikás park sétány with espresso, filter, and retail beans for south Buda commuters. The bright bar fits laptop work before expo hall visits. Hours on obester.hu.",
+      "category": "Cafés",
+      "borough": "Újbuda",
+      "neighborhood": "Bikás park"
+    }
+  ],
+  "meetups": [
+    {
+      "gapKey": "groupType|Nightlife Crew",
+      "id": "grp-cov-nightlife-crew",
+      "name": "Budapest Nightlife Crew",
+      "website": "https://akvariumklub.hu/",
+      "description": "Open meetup for locals and visitors exploring ruin bars, river parties, and late DJ nights across Pest and Buda. Weekend walks start at major club venues with rotating hosts.",
+      "borough": "Belváros",
+      "neighborhood": "Deák tér",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "NC",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://akvariumklub.hu/wp-content/uploads/2021/09/akvarium-hero.jpg",
+      "groupType": "Nightlife Crew"
+    },
+    {
+      "gapKey": "groupType|Local Creators",
+      "id": "grp-cov-local-creators",
+      "name": "Budapest Local Creators",
+      "website": "https://www.mupa.hu/en",
+      "description": "Network for photographers, DJs, and designers sharing gigs, studio openings, and collaboration nights around Müpa and district culture hubs.",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark",
+      "ageRange": "18+",
+      "cadence": "Monthly",
+      "initials": "LC",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.mupa.hu/images/mupa-building.jpg",
+      "groupType": "Local Creators"
+    },
+    {
+      "gapKey": "Belváros|Váci utca",
+      "id": "grp-cov-meet-vaci",
+      "name": "Váci utca After-Work Circle",
+      "website": "https://www.gerbeaud.hu/en",
+      "description": "Monthly stroll from Vörösmarty tér through Váci utca cafés ending with dessert at landmark patisseries.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "VC",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.gerbeaud.hu/images/gerbeaud-hero.jpg",
+      "borough": "Belváros",
+      "neighborhood": "Váci utca"
+    },
+    {
+      "gapKey": "Belváros|Deák tér",
+      "id": "grp-cov-meet-deak",
+      "name": "Deák tér Nightlife Crew",
+      "website": "https://akvariumklub.hu/",
+      "description": "Meet at Erzsébet tér before Akvárium gigs — group tickets and safe late transport from Deák hub.",
+      "groupType": "Nightlife Crew",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "DK",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://akvariumklub.hu/wp-content/uploads/2021/09/akvarium-hero.jpg",
+      "borough": "Belváros",
+      "neighborhood": "Deák tér"
+    },
+    {
+      "gapKey": "Belváros|Parliament",
+      "id": "grp-cov-meet-parliament",
+      "name": "Parliament Riverside Walk",
+      "website": "https://www.parlament.hu/en/web/house-of-parliament",
+      "description": "Guided photo walks along the Danube embankment with Parliament backdrop — culture-first evenings for visitors.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "PR",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.parlament.hu/images/parliament-dome.jpg",
+      "borough": "Belváros",
+      "neighborhood": "Parliament"
+    },
+    {
+      "gapKey": "Belváros|Danube Promenade",
+      "id": "grp-cov-meet-promenade",
+      "name": "Promenade Boat & Jazz Circle",
+      "website": "https://www.danubepalace.hu/",
+      "description": "Combine Danube Palace matinees with promenade walks and optional evening river cruises.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "DP",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.danubepalace.hu/images/danube-palace-hall.jpg",
+      "borough": "Belváros",
+      "neighborhood": "Danube Promenade"
+    },
+    {
+      "gapKey": "Belváros|Inner City",
+      "id": "grp-cov-meet-inner",
+      "name": "Inner City Café Writers",
+      "website": "https://www.centralcafe.hu/",
+      "description": "Literary café meetups at historic salons — coffee, readings, and Basilica-area architecture tours.",
+      "groupType": "Local Creators",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "IC",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.centralcafe.hu/images/central-salon.jpg",
+      "borough": "Belváros",
+      "neighborhood": "Inner City"
+    },
+    {
+      "gapKey": "Terézváros|Andrássy út",
+      "id": "grp-cov-meet-andrassy",
+      "name": "Andrássy Avenue Art Walk",
+      "website": "https://www.operettszinhaz.hu/",
+      "description": "UNESCO avenue walks from Oktogon to Heroes' Square with operetta ticket groups and museum stops.",
+      "groupType": "Art & Gallery",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "AU",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.operettszinhaz.hu/images/operetta-facade.jpg",
+      "borough": "Terézváros",
+      "neighborhood": "Andrássy út"
+    },
+    {
+      "gapKey": "Terézváros|Opera",
+      "id": "grp-cov-meet-opera",
+      "name": "Opera Quarter Culture Club",
+      "website": "https://www.opera.hu/",
+      "description": "Pre-show meetups for opera and ballet with discounted student rush tips and café intermissions.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Weekend",
+      "initials": "OP",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://www.opera.hu/images/opera-house-night.jpg",
+      "borough": "Terézváros",
+      "neighborhood": "Opera"
+    },
+    {
+      "gapKey": "Terézváros|Oktogon",
+      "id": "grp-cov-meet-oktogon",
+      "name": "Oktogon Food & Wine Circle",
+      "website": "https://www.ketszerecsen.hu/",
+      "description": "Boulevard restaurant hops around Oktogon — wine pairings and brasserie tastings on Nagymező utca.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "18+",
+      "cadence": "Monthly",
+      "initials": "OK",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.ketszerecsen.hu/images/ket-szerecsen-garden.jpg",
+      "borough": "Terézváros",
+      "neighborhood": "Oktogon"
+    },
+    {
+      "gapKey": "Terézváros|Király utca",
+      "id": "grp-cov-meet-kiraly",
+      "name": "Király utca Nightlife Crew",
+      "website": "https://instant.co.hu/",
+      "description": "Ruin-bar crawls from Kuplung through Instant-Fogas with host introductions and queue-skip tips.",
+      "groupType": "Nightlife Crew",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "KY",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://instant.co.hu/images/instant-courtyard.jpg",
+      "borough": "Terézváros",
+      "neighborhood": "Király utca"
+    },
+    {
+      "gapKey": "Terézváros|Liszt Ferenc tér",
+      "id": "grp-cov-meet-liszt",
+      "name": "Liszt tér Dining Society",
+      "website": "https://www.menzaetterem.hu/",
+      "description": "Restaurant-row tastings on Liszt Ferenc tér — terrace tables and seasonal menu previews.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "LF",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.menzaetterem.hu/images/menza-terrace.jpg",
+      "borough": "Terézváros",
+      "neighborhood": "Liszt Ferenc tér"
+    },
+    {
+      "gapKey": "Erzsébetváros|Jewish Quarter",
+      "id": "grp-cov-meet-jewish-q",
+      "name": "Jewish Quarter Heritage Nights",
+      "website": "https://www.jewishmuseum.hu/",
+      "description": "Synagogue district tours ending at ruin-bar courtyards — culture by day, social meetups by night.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "JQ",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.jewishmuseum.hu/images/synagogue-facade.jpg",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Jewish Quarter"
+    },
+    {
+      "gapKey": "Erzsébetváros|Gozsdu Udvar",
+      "id": "grp-cov-meet-gozsdu",
+      "name": "Gozsdu Passage Social",
+      "website": "https://gozsduudvar.hu/",
+      "description": "Courtyard bar hops through Gozsdu Udvar with wine tastings at DiVino and passage festivals.",
+      "groupType": "Nightlife Crew",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "GZ",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://gozsduudvar.hu/images/gozsdu-passage.jpg",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar"
+    },
+    {
+      "gapKey": "Erzsébetváros|Kazinczy utca",
+      "id": "grp-cov-meet-kazinczy",
+      "name": "Kazinczy utca Creators",
+      "website": "https://szimpla.hu/",
+      "description": "Photo walks and zine swaps around Kazinczy ruin bars for local artists and visitors.",
+      "groupType": "Local Creators",
+      "ageRange": "18+",
+      "cadence": "Monthly",
+      "initials": "KZ",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://szimpla.hu/images/szimpla-courtyard.jpg",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Kazinczy utca"
+    },
+    {
+      "gapKey": "Erzsébetváros|Wesselényi utca",
+      "id": "grp-cov-meet-wessel",
+      "name": "Wesselényi Live Music Meet",
+      "website": "https://durerkert.com/",
+      "description": "Concert buddies for Dürer Kert gigs — group tickets and post-show drinks on Wesselényi utca.",
+      "groupType": "Live Culture",
+      "ageRange": "18+",
+      "cadence": "Weekend",
+      "initials": "WS",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://durerkert.com/images/durer-garden.jpg",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Wesselényi utca"
+    },
+    {
+      "gapKey": "Erzsébetváros|Rákóczi tér",
+      "id": "grp-cov-meet-rakoczi",
+      "name": "Grand Boulevard Cinema Club",
+      "website": "https://www.apollomozi.hu/",
+      "description": "Art-house screenings at Apollo with boulevard tram rides and post-film discussions.",
+      "groupType": "Art & Gallery",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "RK",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.apollomozi.hu/images/apollo-foyer.jpg",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér"
+    },
+    {
+      "gapKey": "Ferencváros|Corvin-negyed",
+      "id": "grp-cov-meet-corvin",
+      "name": "Corvin Quarter Food Circle",
+      "website": "https://www.corvinmozi.hu/",
+      "description": "Cinema-and-dinner nights in Corvin-negyed — plaza restaurants then late screenings.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "CV",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.corvinmozi.hu/images/corvin-foyer.jpg",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed"
+    },
+    {
+      "gapKey": "Ferencváros|Műegyetem",
+      "id": "grp-cov-meet-muegyetem",
+      "name": "Danube Ship Music Crew",
+      "website": "https://www.a38.hu/en",
+      "description": "A38 concert meetups for students and expats — group boarding at Petőfi bridge pier.",
+      "groupType": "Nightlife Crew",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "MU",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://www.a38.hu/images/a38-ship-night.jpg",
+      "borough": "Ferencváros",
+      "neighborhood": "Műegyetem"
+    },
+    {
+      "gapKey": "Ferencváros|Nagytemplom utca",
+      "id": "grp-cov-meet-nagytemplom",
+      "name": "Ferenciek tere Culture Walk",
+      "website": "https://www.ferenciektere.hu/",
+      "description": "Baroque quarter walks from Ferenciek tere through inner Ferencváros cafés and cellar pubs.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "NT",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.ferenciektere.hu/images/ferenciek-church.jpg",
+      "borough": "Ferencváros",
+      "neighborhood": "Nagytemplom utca"
+    },
+    {
+      "gapKey": "Ferencváros|Boráros tér",
+      "id": "grp-cov-meet-boraros",
+      "name": "Bálna Riverside Creators",
+      "website": "https://balnabudapest.hu/",
+      "description": "Design market visits and photo sessions at the Bálna whale building and Boráros promenade.",
+      "groupType": "Local Creators",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "BR",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://balnabudapest.hu/images/balna-exterior.jpg",
+      "borough": "Ferencváros",
+      "neighborhood": "Boráros tér"
+    },
+    {
+      "gapKey": "Ferencváros|Millenniumi Városközpont",
+      "id": "grp-cov-meet-millennium",
+      "name": "Millennium Park Sunset Crew",
+      "website": "https://www.nehrupart.hu/",
+      "description": "Summer beach-bar meetups on the Danube with sand volleyball and DJ warm-ups.",
+      "groupType": "Nightlife Crew",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "ML",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://www.nehrupart.hu/images/nehru-sunset.jpg",
+      "borough": "Ferencváros",
+      "neighborhood": "Millenniumi Városközpont"
+    },
+    {
+      "gapKey": "Buda|Castle District",
+      "id": "grp-cov-meet-castle",
+      "name": "Castle District Gallery Walk",
+      "website": "https://en.mng.hu/",
+      "description": "National Gallery visits and castle wall walks with coffee at Ruszwurm afterward.",
+      "groupType": "Art & Gallery",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "CD",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://en.mng.hu/images/mng-dome.jpg",
+      "borough": "Buda",
+      "neighborhood": "Castle District"
+    },
+    {
+      "gapKey": "Buda|Gellért Hill",
+      "id": "grp-cov-meet-gellert-hill",
+      "name": "Gellért Hill Wellness Circle",
+      "website": "https://www.gellertspa.hu/",
+      "description": "Spa-day groups combining thermal baths, hill hikes to the Citadella, and rooftop sunsets.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "GH",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.gellertspa.hu/images/gellert-pool.jpg",
+      "borough": "Buda",
+      "neighborhood": "Gellért Hill"
+    },
+    {
+      "gapKey": "Buda|Tabán",
+      "id": "grp-cov-meet-taban",
+      "name": "Tabán Riverside Artists",
+      "website": "https://www.pintergallery.hu/",
+      "description": "Gallery openings on Hadnagy utca and Tabán terrace drinks with Danube photo sessions.",
+      "groupType": "Local Creators",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "TB",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.pintergallery.hu/images/pinter-exhibition.jpg",
+      "borough": "Buda",
+      "neighborhood": "Tabán"
+    },
+    {
+      "gapKey": "Buda|Rózsadomb",
+      "id": "grp-cov-meet-rozsadomb",
+      "name": "Rózsadomb Wine Terrace",
+      "website": "https://www.gloriett.hu/",
+      "description": "Hillside wine tastings and acoustic jazz on villa terraces above the city.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "18+",
+      "cadence": "Monthly",
+      "initials": "RD",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.gloriett.hu/images/gloriett-terrace.jpg",
+      "borough": "Buda",
+      "neighborhood": "Rózsadomb"
+    },
+    {
+      "gapKey": "Buda|Szent Gellért tér",
+      "id": "grp-cov-meet-szent-gellert",
+      "name": "Gellért Spa & Jazz Meet",
+      "website": "https://www.danubiusgellert.com/",
+      "description": "Hotel jazz nights and spa-day socials at Szent Gellért tér art-nouveau landmark.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Weekend",
+      "initials": "SG",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://www.danubiusgellert.com/images/gellert-bar-night.jpg",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér"
+    },
+    {
+      "gapKey": "Óbuda|Óbuda Island",
+      "id": "grp-cov-meet-obuda-island",
+      "name": "Budapest Park Festival Crew",
+      "website": "https://www.budapestpark.hu/en",
+      "description": "Group tickets and picnic meetups for Budapest Park concerts on Hajógyári-sziget.",
+      "groupType": "Nightlife Crew",
+      "ageRange": "18+",
+      "cadence": "Weekly",
+      "initials": "OI",
+      "icon": "community",
+      "palette": "charcoal",
+      "imageSource": "https://www.budapestpark.hu/images/park-stage.jpg",
+      "borough": "Óbuda",
+      "neighborhood": "Óbuda Island"
+    },
+    {
+      "gapKey": "Óbuda|Aquincum",
+      "id": "grp-cov-meet-aquincum",
+      "name": "Aquincum History & Beer Walk",
+      "website": "https://www.aquincum.hu/",
+      "description": "Roman ruin tours followed by Kiscelli pub stops — culture and craft beer in northern Buda.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "AQ",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.aquincum.hu/images/aquincum-ruins.jpg",
+      "borough": "Óbuda",
+      "neighborhood": "Aquincum"
+    },
+    {
+      "gapKey": "Óbuda|Kolosy tér",
+      "id": "grp-cov-meet-kolosy",
+      "name": "Kolosy tér Neighborhood Social",
+      "website": "https://www.obuda.hu/",
+      "description": "Community events and tram-hop café tours around Kolosy tér shopping streets.",
+      "groupType": "Local Creators",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "KL",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.obuda.hu/images/kolosy-events.jpg",
+      "borough": "Óbuda",
+      "neighborhood": "Kolosy tér"
+    },
+    {
+      "gapKey": "Óbuda|Bécsi út",
+      "id": "grp-cov-meet-becsi",
+      "name": "Bécsi út Food Explorers",
+      "website": "https://www.kacsaetterem.hu/",
+      "description": "Óbuda high-street tastings from duck bistro classics to specialty coffee on Bécsi út.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "BU",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.kacsaetterem.hu/images/kacsa-duck.jpg",
+      "borough": "Óbuda",
+      "neighborhood": "Bécsi út"
+    },
+    {
+      "gapKey": "Óbuda|Main Square Óbuda",
+      "id": "grp-cov-meet-main-square-obuda",
+      "name": "Main Square Óbuda Theatre Club",
+      "website": "https://www.magyarkaszinhaz.hu/",
+      "description": "Tradesmen's Home performances plus pub nights on Lajos utca after shows.",
+      "groupType": "Art & Gallery",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "MS",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.magyarkaszinhaz.hu/images/tradesmen-hall.jpg",
+      "borough": "Óbuda",
+      "neighborhood": "Main Square Óbuda"
+    },
+    {
+      "gapKey": "Újbuda|Móricz Zsigmond körtér",
+      "id": "grp-cov-meet-moricz",
+      "name": "Móricz körtér Buda Brunch Club",
+      "website": "https://www.berenyi.hu/",
+      "description": "Weekend brunch walks from Móricz tram hub through Bartók Béla út cafés and gardens.",
+      "groupType": "Food & Wine Circle",
+      "ageRange": "All ages",
+      "cadence": "Weekly",
+      "initials": "MZ",
+      "icon": "coffee",
+      "palette": "orange",
+      "imageSource": "https://www.berenyi.hu/images/berenyi-garden.jpg",
+      "borough": "Újbuda",
+      "neighborhood": "Móricz Zsigmond körtér"
+    },
+    {
+      "gapKey": "Újbuda|Gellért Baths area",
+      "id": "grp-cov-meet-gellert-baths",
+      "name": "Gellért Baths Wellness Meet",
+      "website": "https://www.gellertspa.hu/",
+      "description": "Thermal bath day groups with spa etiquette tips and optional Rudas night extensions.",
+      "groupType": "Live Culture",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "GB",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.gellertspa.hu/images/gellert-pool.jpg",
+      "borough": "Újbuda",
+      "neighborhood": "Gellért Baths area"
+    },
+    {
+      "gapKey": "Újbuda|Infopark",
+      "id": "grp-cov-meet-infopark",
+      "name": "Infopark Creative Professionals",
+      "website": "https://momkult.hu/",
+      "description": "After-work culture at MOM — gallery openings, rooftop networking, and Müpa concert groups.",
+      "groupType": "Local Creators",
+      "ageRange": "18+",
+      "cadence": "Monthly",
+      "initials": "IP",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://momkult.hu/images/mom-atrium.jpg",
+      "borough": "Újbuda",
+      "neighborhood": "Infopark"
+    },
+    {
+      "gapKey": "Újbuda|Kosztolányi Dezső tér",
+      "id": "grp-cov-meet-kosztolanyi",
+      "name": "Hadik Literary & Jazz Circle",
+      "website": "https://www.hadikkavehaz.hu/",
+      "description": "Revived café culture meetups — poetry readings and jazz nights near Kosztolányi tér.",
+      "groupType": "Art & Gallery",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "KD",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.hadikkavehaz.hu/images/hadik-stage.jpg",
+      "borough": "Újbuda",
+      "neighborhood": "Kosztolányi Dezső tér"
+    },
+    {
+      "gapKey": "Újbuda|Bikás park",
+      "id": "grp-cov-meet-bikas",
+      "name": "Bikás Park Expo & Coffee",
+      "website": "https://www.obester.hu/",
+      "description": "Expo fair visits paired with specialty coffee at Bikás park metro — south Buda explorers.",
+      "groupType": "Local Creators",
+      "ageRange": "All ages",
+      "cadence": "Monthly",
+      "initials": "BP",
+      "icon": "community",
+      "palette": "teal",
+      "imageSource": "https://www.obester.hu/images/obester-barista.jpg",
+      "borough": "Újbuda",
+      "neighborhood": "Bikás park"
+    }
+  ]
+}
