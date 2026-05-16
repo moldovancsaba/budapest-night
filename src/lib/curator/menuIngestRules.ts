@@ -1,4 +1,5 @@
 import { MENU_TAGS } from "@/data/menuTags";
+import { getMenuLocaleIngestRulesForPrompt } from "@/lib/curator/menuLocaleIngestRules";
 
 /**
  * Prompt block for menu enrichment ingest (provider patch/upsert with `menu`).
@@ -17,9 +18,18 @@ Goal: publish **real food and drink items** on an **existing** \`prov-*\` venue 
 - \`category\` must match the host: **Restaurants**, **Cafés**, **Parties**, or **Venues** (bar, ruin pub, etc.).
 
 ### Source of truth
-- Official venue menu page, PDF, or on-site board — not guesses from vibes alone.
-- Record \`menu.menuUrl\` and \`menu.sourceUrls[]\` (https).
+- Official venue menu page, PDF, on-site board, or **official menu images** on the venue site — not guesses from vibes alone.
+- Record \`menu.menuUrl\` and \`menu.sourceUrls[]\` (https). Include direct PNG/JPG URLs when the menu is image-only.
 - Set \`menu.lastVerifiedAt\` to ISO date (YYYY-MM-DD) when you verified prices.
+
+### Menu published only as PNG/JPG on the website
+When the official menu is **not** HTML or PDF but one or more **menu images** (common on bar/restaurant WordPress sites):
+1. **Find** image URLs on the venue menu page (\`curl\` / fetch HTML; look for \`wp-content/uploads/...menu....png\`).
+2. **Download** each image to the repo (e.g. \`scripts/menu-sources/<venue-slug>/menu-1.png\`) so prices can be re-checked later.
+3. **Read** every page: open the image in the agent (vision) or OCR (\`tesseract\` if installed). Transcribe item **names**, **sizes**, and **Ft/EUR** prices exactly as printed.
+4. **Ingest** from that transcription with \`price.source: "published"\`. Set \`menu.sourceUrls\` to the **image URL(s)** you used (and the menu landing page).
+5. Do **not** skip the venue as “no menu” and do **not** substitute third-party price sites when official images are available.
+6. If text is illegible on one panel, note it in \`missingOrUncertain\` and omit only those lines — do not guess prices.
 
 ### Structure
 \`\`\`json
@@ -46,9 +56,11 @@ Goal: publish **real food and drink items** on an **existing** \`prov-*\` venue 
 }
 \`\`\`
 
+${getMenuLocaleIngestRulesForPrompt()}
+
 ### Item rules
 - \`kind\`: \`food\` | \`drink\` | \`other\` — required per item.
-- \`name\`: as printed (include size when listed, e.g. "House plum pálinka (4 cl)").
+- \`name\`: English, as printed (include size when listed, e.g. "House plum pálinka (4 cl)"); mirror in every \`locales.*.name\`.
 - \`price\`: include when printed. **HUF** for forint menus, **EUR** for euro menus — never swap (1490 HUF ≠ €1490).
 - \`price.unit\`: \`each\` | \`glass\` | \`bottle\` | \`portion\` | \`ticket\` when known.
 - \`price.source\`: \`published\` if on menu; \`estimated\` only with note in provider \`missingOrUncertain\`.

@@ -1,4 +1,6 @@
 import { getTourTemplate, type TourTemplate } from "@/data/tourTemplates";
+import type { AppLocale } from "@/i18n/config";
+import { defaultLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
 import { getEffectiveMenuTags, providerHasPublishedMenuItems } from "@/lib/menu/effectiveMenuTags";
 import { formatMenuPrice } from "@/lib/menu/formatMenuPrice";
@@ -38,7 +40,7 @@ export function providerMatchesTemplate(provider: Provider, template: TourTempla
   if (!providerHasPublishedMenuItems(provider)) return false;
   const tags = new Set(getEffectiveMenuTags(provider));
   if (tags.size === 0) return false;
-  const flat = flattenProviderMenu(provider);
+  const flat = flattenProviderMenu(provider, defaultLocale);
   const itemTags = new Set(flat.flatMap((row) => row.item.tags));
   const tagOk =
     template.matchMode === "all"
@@ -47,8 +49,8 @@ export function providerMatchesTemplate(provider: Provider, template: TourTempla
   return tagOk;
 }
 
-function highlightForProvider(provider: Provider, template: TourTemplate) {
-  const flat = flattenProviderMenu(provider);
+function highlightForProvider(provider: Provider, template: TourTemplate, locale: AppLocale) {
+  const flat = flattenProviderMenu(provider, locale);
   const tagSet = new Set(template.requiredTags);
   const matched = flat.filter((row) => row.item.tags.some((t) => tagSet.has(t as (typeof template.requiredTags)[number])));
   const pick = (matched.length ? matched : flat).slice(0, 3);
@@ -77,6 +79,7 @@ export function generateTour(
   providers: Provider[],
   tourId: string,
   seed: string,
+  locale: AppLocale = defaultLocale,
 ): GeneratedTour | { error: string } {
   const template = getTourTemplate(tourId);
   if (!template) return { error: "unknown_tour" };
@@ -105,7 +108,7 @@ export function generateTour(
         usedBoroughs.add(alt.borough);
         stops.push({
           provider: alt,
-          highlightItems: highlightForProvider(alt, template),
+          highlightItems: highlightForProvider(alt, template, locale),
         });
         continue;
       }
@@ -113,7 +116,7 @@ export function generateTour(
     usedBoroughs.add(provider.borough);
     stops.push({
       provider,
-      highlightItems: highlightForProvider(provider, template),
+      highlightItems: highlightForProvider(provider, template, locale),
     });
   }
 

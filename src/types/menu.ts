@@ -1,4 +1,5 @@
 import type { VenueLink } from "@/types/venueLink";
+import type { MenuItemLocalesMap, MenuSectionLocalesMap } from "@/types/menuLocale";
 
 /** Eat & drink menu model — attached to providers in Mongo. */
 
@@ -18,19 +19,25 @@ export type MenuPrice = {
 export type MenuItem = {
   id: string;
   kind: MenuItemKind;
+  /** English (canonical); shown when locale overlay is missing. */
   name: string;
   description?: string;
   price?: MenuPrice;
   tags: string[];
   dietary?: ("vegan" | "vegetarian" | "gluten-free")[];
   available?: boolean;
+  /** Translated dish/drink copy: hu, es, it, he, ar (required on ingest). */
+  locales?: MenuItemLocalesMap;
 };
 
 export type MenuSection = {
   id: string;
+  /** English (canonical). */
   title: string;
   kind: MenuSectionKind;
   items: MenuItem[];
+  /** Translated section headings: hu, es, it, he, ar (required on ingest). */
+  locales?: MenuSectionLocalesMap;
 };
 
 export type VenueMenu = {

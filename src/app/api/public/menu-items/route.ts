@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { parseAppLocaleParam, resolveProvidersForLocale } from "@/lib/providerLocale";
 import { getDb, COL } from "@/lib/mongodb";
 import { TOUR_TEMPLATES } from "@/data/tourTemplates";
 import { countEligibleForTour, isTourReady } from "@/lib/menu/generateTour";
@@ -21,15 +22,20 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "invalid tag" }, { status: 400 });
   }
 
+  const locale = parseAppLocaleParam(url.searchParams.get("locale"));
+
   const db = await getDb();
   if (!db) return NextResponse.json({ items: [], providersWithMenu: 0 });
 
   const providers = (await db.collection(COL.providers).find({}).toArray()) as unknown as Provider[];
-  const located = providers.map((p) => ({ ...p, ...resolveProviderLocation(p) }));
+  const located = resolveProvidersForLocale(
+    providers.map((p) => ({ ...p, ...resolveProviderLocation(p) })),
+    locale,
+  );
   const withMenu = located.filter(
     (p) => (p.menu?.sections?.length ?? 0) > 0 || (p.eventOfferings?.length ?? 0) > 0,
   );
-  let flat = withMenu.flatMap((p) => flattenProviderMenu(p));
+  let flat = withMenu.flatMap((p) => flattenProviderMenu(p, locale));
 
   flat = filterFlatMenuItems(flat, {
     tag,

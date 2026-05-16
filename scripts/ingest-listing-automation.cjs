@@ -12,7 +12,8 @@
  * - Fetches public catalogs for id/name overlap checks.
  * - Validates provider / event / meetupGroup upsert documents; **raster image URLs must be https on imgbb.com** (or empty).
  * - Provider upserts require `locales` for hu, es, it, he, ar (see `src/lib/curator/localeIngestRules.ts`).
- * - Event upserts require locales + HUF/EUR entryFees rules (see `src/lib/curator/eventIngestRules.ts`). Gold example: `seed-timed-events-moby-sting.json`.
+ * - Event upserts require locales + HUF/EUR entryFees rules + **unique per-show ImgBB image** (not host `provider.image`); see `src/lib/curator/eventIngestRules.ts` and `scripts/cursor-curator-events-prompt.txt`. Gold examples: `seed-timed-events-moby-sting.json`, `cursor-curated-events-lp-idles-oliver-tree-2026.json`.
+ * - Menu items/sections require `locales` for hu, es, it, he, ar on every patch (see `src/lib/curator/menuLocaleIngestRules.ts`).
  * - Use `--skip-locale-check` only for legacy payloads.
  *
  * Env: `INGEST_API_KEY` (required unless `--dry-run`), optional `INGEST_BASE_URL`
@@ -30,6 +31,10 @@ const fs = require("fs");
 const path = require("path");
 const { validateProviderLocalesForIngest } = require("./lib/provider-locale-ingest.cjs");
 const { validateEventLocalesForIngest } = require("./lib/event-locale-ingest.cjs");
+const {
+  validateMenuItemLocalesForIngest,
+  validateMenuSectionLocalesForIngest,
+} = require("./lib/menu-locale-ingest.cjs");
 
 const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
@@ -238,6 +243,7 @@ function validateVenueMenu(menu, prefix) {
       if (!sec || typeof sec !== "object") errors.push(`${prefix}.sections[${si}]: invalid`);
       else {
         if (!sec.id || !sec.title) errors.push(`${prefix}.sections[${si}]: id and title required`);
+        errors.push(...validateMenuSectionLocalesForIngest(sec.locales, `${prefix}.sections[${si}]`));
         if (!Array.isArray(sec.items)) errors.push(`${prefix}.sections[${si}].items must be array`);
         else
           sec.items.forEach((item, ii) => {
@@ -278,6 +284,7 @@ function validateMenuItem(item, prefix) {
     return errors;
   }
   if (!item.name) errors.push(`${prefix}: name required`);
+  errors.push(...validateMenuItemLocalesForIngest(item.locales, prefix));
   if (item.kind && !MENU_ITEM_KINDS.includes(item.kind)) errors.push(`${prefix}: invalid kind`);
   if (item.tags) {
     if (!Array.isArray(item.tags)) errors.push(`${prefix}: tags must be array`);

@@ -67,12 +67,26 @@
               "id": "spirits",
               "title": "Spirits",
               "kind": "drink",
+              "locales": {
+                "hu": { "title": "Szesszek" },
+                "es": { "title": "Licores" },
+                "it": { "title": "Distillati" },
+                "he": { "title": "משקאות חריפים" },
+                "ar": { "title": "مشروبات روحية" }
+              },
               "items": [
                 {
                   "id": "palinka-plum",
                   "kind": "drink",
                   "name": "House plum pálinka (4 cl)",
                   "tags": ["palinka"],
+                  "locales": {
+                    "hu": { "name": "Házi szilvapálinka (4 cl)" },
+                    "es": { "name": "Pálinka casera de ciruela (4 cl)" },
+                    "it": { "name": "Pálinka di prugna della casa (4 cl)" },
+                    "he": { "name": "פלינקה שזיפה ביתית (4 מ״ל)" },
+                    "ar": { "name": "بالينكا برقوق منزلية (4 سم)" }
+                  },
                   "price": { "amount": 1490, "currency": "HUF", "unit": "glass", "source": "published" }
                 }
               ]

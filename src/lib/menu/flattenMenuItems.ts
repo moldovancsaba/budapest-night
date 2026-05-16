@@ -1,4 +1,7 @@
+import { resolveMenuItemForLocale, resolveMenuSectionForLocale } from "@/lib/menu/resolveMenuLocale";
 import { resolveMenuVenueLink } from "@/lib/menu/menuVenueLink";
+import type { AppLocale } from "@/i18n/config";
+import { defaultLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
 import type { MenuItem, MenuItemKind } from "@/types/menu";
 import type { VenueLink } from "@/types/venueLink";
@@ -26,18 +29,23 @@ function slugId(prefix: string, name: string): string {
   return `${prefix}-${base || "item"}`;
 }
 
-export function flattenProviderMenu(provider: Provider): FlatMenuItem[] {
+export function flattenProviderMenu(
+  provider: Provider,
+  locale: AppLocale = defaultLocale,
+): FlatMenuItem[] {
   const out: FlatMenuItem[] = [];
   const venue = resolveMenuVenueLink(provider);
   const menu = provider.menu;
   if (menu?.sections) {
     for (const sec of menu.sections) {
+      const resolvedSec = resolveMenuSectionForLocale(sec, locale);
       for (const raw of sec.items ?? []) {
-        const item: MenuItem = {
+        const base: MenuItem = {
           ...raw,
           id: raw.id || slugId("item", raw.name),
           tags: raw.tags ?? [],
         };
+        const item = resolveMenuItemForLocale(base, locale);
         out.push({
           item,
           providerId: provider.id,
@@ -47,7 +55,7 @@ export function flattenProviderMenu(provider: Provider): FlatMenuItem[] {
           neighborhood: venue.neighborhood,
           address: venue.address,
           venue,
-          sectionTitle: sec.title,
+          sectionTitle: resolvedSec.title,
           source: "venue",
         });
       }
@@ -55,11 +63,12 @@ export function flattenProviderMenu(provider: Provider): FlatMenuItem[] {
   }
   for (const ev of provider.eventOfferings ?? []) {
     for (const raw of ev.items ?? []) {
-      const item: MenuItem = {
+      const base: MenuItem = {
         ...raw,
         id: raw.id || slugId(ev.id, raw.name),
         tags: raw.tags ?? [],
       };
+      const item = resolveMenuItemForLocale(base, locale);
       out.push({
         item,
         providerId: provider.id,

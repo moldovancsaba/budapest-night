@@ -1,20 +1,27 @@
 import { NextResponse } from "next/server";
 import { getDb, COL } from "@/lib/mongodb";
 import { generateTour } from "@/lib/menu/generateTour";
+import { parseAppLocaleParam, resolveProvidersForLocale } from "@/lib/providerLocale";
+import { resolveProviderLocation } from "@/lib/budapestLocation";
 import type { Provider } from "@/types/provider";
 
 export async function GET(req: Request, ctx: { params: Promise<{ tourId: string }> }) {
   const { tourId } = await ctx.params;
   const url = new URL(req.url);
   const seed = url.searchParams.get("seed") ?? `${tourId}-${Date.now()}`;
+  const locale = parseAppLocaleParam(url.searchParams.get("locale"));
 
   const db = await getDb();
   if (!db) {
     return NextResponse.json({ error: "database_unavailable" }, { status: 503 });
   }
 
-  const providers = (await db.collection(COL.providers).find({}).toArray()) as unknown as Provider[];
-  const result = generateTour(providers, tourId, seed);
+  const rows = (await db.collection(COL.providers).find({}).toArray()) as unknown as Provider[];
+  const providers = resolveProvidersForLocale(
+    rows.map((p) => ({ ...p, ...resolveProviderLocation(p) })),
+    locale,
+  );
+  const result = generateTour(providers, tourId, seed, locale);
 
   if ("error" in result) {
     const status = result.error === "unknown_tour" ? 404 : 422;

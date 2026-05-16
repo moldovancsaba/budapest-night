@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Loader2, MapPin, Search, Sparkles, Wine } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
 import { Link } from "@/i18n/routing";
 import { MENU_TAGS, menuTagMessageKey, type MenuTag } from "@/data/menuTags";
 import { TOUR_TEMPLATES } from "@/data/tourTemplates";
@@ -21,6 +22,7 @@ interface Props {
 }
 
 export function EatDrinkView({ onOpen }: Props) {
+  const locale = useLocale() as AppLocale;
   const t = useTranslations("eatDrink");
   const tTag = useTranslations("menuTag");
   const formatPrice = useFormatMenuPrice();
@@ -51,6 +53,7 @@ export function EatDrinkView({ onOpen }: Props) {
       if (kind) params.set("kind", kind);
       if (debouncedQ) params.set("q", debouncedQ);
       params.set("limit", "80");
+      params.set("locale", locale);
       const res = await fetch(`/api/public/menu-items?${params.toString()}`);
       const data = await res.json();
       setItems(data.items ?? []);
@@ -65,7 +68,7 @@ export function EatDrinkView({ onOpen }: Props) {
     } finally {
       setLoading(false);
     }
-  }, [tag, kind, debouncedQ]);
+  }, [tag, kind, debouncedQ, locale]);
 
   useEffect(() => {
     void loadItems();

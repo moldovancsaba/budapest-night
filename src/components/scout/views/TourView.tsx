@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, Loader2, MapPin, RefreshCw } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
 import { Link, useRouter } from "@/i18n/routing";
 import { buildSectionPath, buildTourPath } from "@/lib/appPaths";
 import type { Provider } from "@/types/provider";
@@ -30,6 +31,7 @@ interface Props {
 }
 
 export function TourView({ tourId, seed, onOpen }: Props) {
+  const locale = useLocale() as AppLocale;
   const t = useTranslations("tours");
   const router = useRouter();
   const { data: providers = [] } = useProvidersCatalog();
@@ -43,9 +45,10 @@ export function TourView({ tourId, seed, onOpen }: Props) {
       setLoading(true);
       setError(null);
       try {
-        const params = useSeed ? `?seed=${encodeURIComponent(useSeed)}` : "";
+        const qs = new URLSearchParams({ locale });
+        if (useSeed) qs.set("seed", useSeed);
         const res = await fetch(
-          `/api/public/tours/${encodeURIComponent(tourId)}${params}`,
+          `/api/public/tours/${encodeURIComponent(tourId)}?${qs.toString()}`,
         );
         const data = await res.json();
         if (!res.ok) {
@@ -62,7 +65,7 @@ export function TourView({ tourId, seed, onOpen }: Props) {
         setLoading(false);
       }
     },
-    [tourId],
+    [tourId, locale],
   );
 
   useEffect(() => {

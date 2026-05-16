@@ -3,24 +3,33 @@
 ---
 You enrich **existing venues** with published food & drink menus so `/eat-drink` and themed tours (pálinka, foodie, coffee) work.
 
-Use tools (web search, fetch, terminal). Prefer **batch patches** (5–15 venues per run) when safe.
+Use tools (web search, fetch, terminal, **image read/vision**). Prefer **batch patches** (5–15 venues per run) when safe.
+
+## Menu only as PNG/JPG on the site (required workflow)
+Many Budapest venues publish the drink/food list as **menu board images** (WordPress uploads), not HTML tables. **Do not skip** these venues.
+
+1. Open the venue’s menu page and collect every official menu image URL (e.g. `…/wp-content/uploads/…/MENU_….png`).
+2. **Download** each image under `scripts/menu-sources/<venue-slug>/` (keep filenames; note URLs in the payload `sourceUrls`).
+3. **Read** each downloaded image (agent vision or `tesseract` in terminal) and transcribe names, sizes, and **HUF/EUR** prices as printed.
+4. Build the ingest patch from that transcription; use `price.source: "published"` when taken from the image.
+5. List the **image URL(s)** in `menu.sourceUrls` plus the menu landing page. Only use `estimated` + `missingOrUncertain` for lines you could not read on the image.
 
 ## Goal
-Increase `providersWithMenu` and menu item count on production. Each patched venue must have real `menu.sections[].items[]` with `kind`, `tags`, and prices when printed.
+Increase `providersWithMenu` and menu item count on production. Each patched venue must have real `menu.sections[].items[]` with `kind`, `tags`, prices when printed, and **translated menu copy** for every locale.
 
 Verify after ingest:
-- `GET https://budapest-night.vercel.app/api/public/menu-items?tag=palinka&limit=20`
-- `GET https://budapest-night.vercel.app/api/public/tours/palinka` → not `not_enough_venues`
+- `GET https://budapest-night.vercel.app/api/public/menu-items?locale=it&tag=palinka&limit=20` — item **names** and section context in Italian
+- `GET https://budapest-night.vercel.app/api/public/tours/palinka?locale=it` → not `not_enough_venues`
 
 ## Read first (repo)
-- Rules: `src/lib/curator/menuIngestRules.ts`
+- Rules: `src/lib/curator/menuIngestRules.ts` + `src/lib/curator/menuLocaleIngestRules.ts`
 - Tags: `src/data/menuTags.ts`
 - Tours need items: `src/data/tourTemplates.ts` (palinka / foodie / coffee)
 - Gold example: `scripts/ingest-payloads/example-menu-sample.json`
 
 ## Live catalog
-- `GET https://budapest-night.vercel.app/api/public/menu-items` → note `providersWithMenu`, `tourReadiness`
-- `GET https://budapest-night.vercel.app/api/public/providers` → pick venues **without** `menu.sections` (or thin menus)
+- `GET https://budapest-night.vercel.app/api/public/menu-items?locale=hu` → note `providersWithMenu`, `tourReadiness`
+- `GET https://budapest-night.vercel.app/api/public/providers?locale=hu` → pick venues **without** `menu.sections` (or thin menus)
 
 ## Scarcity (menus)
 Prioritize venues that unlock tours and tag coverage:
@@ -30,13 +39,25 @@ Prioritize venues that unlock tours and tag coverage:
 3. **Category** — Restaurants & Cafés first for foodie/coffee; Parties/Venues for palinka.
 4. **District** — spread patches across boroughs.
 
+## Menu translations (required)
+**Menu content must be translated** — the Eat & Drink UI is localized (`/it/eat-drink`, `/hu/eat-drink`, etc.). English-only dish names will show in every language.
+
+- Root **English** on each item: `name`, optional `description`; on each section: `title`.
+- **`locales`** on **every** item and section with keys **`hu`, `es`, `it`, `he`, `ar`** (no `en` inside `locales`).
+- Each locale block:
+  - Item: `{ "name": "…", "description": "…" }` — `name` required; translate as guests read on a menu in that language.
+  - Section: `{ "title": "…" }` — e.g. `"Drinks"` → `"Bevande"` (it), `"Italok"` (hu).
+- Keep brand names, pálinka, sizes (4 cl), and dish names that are conventionally untranslated when the source menu does so.
+- **Never** put `tags`, `price`, `kind`, or `id` inside `locales` — root only.
+- Prices stay in `price` on the root item (HUF/EUR as printed).
+
 ## Patch shape (preferred)
-Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` id (menus are always tied to that provider row):
+Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` id:
 
 ```json
 {
   "sourceUrls": ["https://venue.hu/menu"],
-  "notes": "Menu batch: 8 restaurants in Erzsébetváros",
+  "notes": "Menu batch: 8 restaurants in Erzsébetváros (localized)",
   "missingOrUncertain": [],
   "operations": [
     {
@@ -53,12 +74,26 @@ Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` i
               "id": "drinks",
               "title": "Drinks",
               "kind": "drink",
+              "locales": {
+                "hu": { "title": "Italok" },
+                "es": { "title": "Bebidas" },
+                "it": { "title": "Bevande" },
+                "he": { "title": "משקאות" },
+                "ar": { "title": "مشروبات" }
+              },
               "items": [
                 {
                   "id": "house-palinka-plum",
                   "kind": "drink",
                   "name": "House plum pálinka (4 cl)",
                   "tags": ["palinka"],
+                  "locales": {
+                    "hu": { "name": "Házi szilvapálinka (4 cl)" },
+                    "es": { "name": "Pálinka casera de ciruela (4 cl)" },
+                    "it": { "name": "Pálinka di prugna della casa (4 cl)" },
+                    "he": { "name": "פלינקה שזיפה ביתית (4 מ״ל)" },
+                    "ar": { "name": "بالينكا برقوق منزلية (4 سم)" }
+                  },
                   "price": {
                     "amount": 1490,
                     "currency": "HUF",
@@ -79,6 +114,7 @@ Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` i
 ## Rules (blocking)
 - **Do not** send `menu.venueLink` or `menuTags` — computed on ingest from the provider row.
 - Every menu patch must target a real `prov-*` id that exists (or is upserted earlier in the same payload).
+- **Every** section and item must include full `locales` (hu, es, it, he, ar) — ingest rejects otherwise.
 - Tags only from: `palinka`, `wine`, `beer`, `craft-beer`, `cocktail`, `coffee`, `specialty-coffee`, `goulash`, `hungarian`, `street-food`, `dessert`, `vegan`, `vegetarian`, `ruin-bar`, `rooftop`, `danube-view`
 - **HUF** vs **EUR** must match the menu (1490 Ft ≠ €1490).
 - 3–12 representative items per venue; include food **and** drink sections when the source has both.
@@ -98,9 +134,10 @@ After deploy, optional local repair:
 
 ## Final reply
 - Count of venues patched
-- Sample items added (names + tags + currency)
-- `menu-items` API: `total`, `providersWithMenu`
+- Sample items added (English + Italian names + tags + currency)
+- `menu-items` API: `total`, `providersWithMenu` for `?locale=it` and `?locale=hu`
 - `tourReadiness` for palinka / foodie / coffee
+- Confirm one item name appears in Italian on `GET .../menu-items?locale=it`
 - Any venues skipped and why
 
 Optional focus:

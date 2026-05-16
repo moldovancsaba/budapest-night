@@ -145,8 +145,9 @@ interface MenuSection {
 interface MenuItem {
   id: string;
   kind: "food" | "drink" | "other";
-  name: string;
+  name: string;             // English canonical
   description?: string;
+  locales?: { hu, es, it, he, ar: { name: string; description?: string } };  // required on ingest
   price?: { amount: number; currency: "HUF" | "EUR"; unit?: "each" | "glass" | "bottle" | "portion" | "ticket"; source: "published" | "estimated" };
   tags: string[];         // canonical tags — see GET /api/public/menu-items
   dietary?: ("vegan" | "vegetarian" | "gluten-free")[];
@@ -629,6 +630,8 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 </p>
                 <p>
                   <strong>Query:</strong>{" "}
+                  <code className="font-mono">locale</code> (optional, e.g. <code className="font-mono">it</code> — resolves item{" "}
+                  <code className="font-mono">name</code> and section titles from <code className="font-mono">locales</code>),{" "}
                   <code className="font-mono">tag</code> (canonical menu tag),{" "}
                   <code className="font-mono">q</code> (search name, venue, section, address, category),{" "}
                   <code className="font-mono">kind</code> (<code className="font-mono">food</code> | <code className="font-mono">drink</code> |{" "}

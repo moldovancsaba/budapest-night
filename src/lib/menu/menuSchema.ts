@@ -12,6 +12,35 @@ const menuPriceSchema = z
   })
   .strict();
 
+const menuItemLocaleSchema = z
+  .object({
+    name: z.string().min(1).max(120),
+    description: z.string().max(400).optional(),
+  })
+  .strict();
+
+const menuItemLocalesSchema = z
+  .object({
+    hu: menuItemLocaleSchema,
+    es: menuItemLocaleSchema,
+    it: menuItemLocaleSchema,
+    he: menuItemLocaleSchema,
+    ar: menuItemLocaleSchema,
+  })
+  .strict();
+
+const menuSectionLocaleSchema = z.object({ title: z.string().min(1).max(80) }).strict();
+
+const menuSectionLocalesSchema = z
+  .object({
+    hu: menuSectionLocaleSchema,
+    es: menuSectionLocaleSchema,
+    it: menuSectionLocaleSchema,
+    he: menuSectionLocaleSchema,
+    ar: menuSectionLocaleSchema,
+  })
+  .strict();
+
 const menuItemSchema = z
   .object({
     id: z.string().min(2).max(80).regex(/^[a-z0-9-]+$/),
@@ -22,6 +51,7 @@ const menuItemSchema = z
     tags: z.array(menuTag).max(12),
     dietary: z.array(z.enum(["vegan", "vegetarian", "gluten-free"])).max(4).optional(),
     available: z.boolean().optional(),
+    locales: menuItemLocalesSchema.optional(),
   })
   .strict();
 
@@ -31,6 +61,7 @@ const menuSectionSchema = z
     title: z.string().min(1).max(80),
     kind: z.enum(["food", "drink", "mixed"]),
     items: z.array(menuItemSchema).max(120),
+    locales: menuSectionLocalesSchema.optional(),
   })
   .strict();
 
