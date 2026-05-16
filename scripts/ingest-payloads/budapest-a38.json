@@ -1,0 +1,31 @@
+{
+  "sourceUrls": ["https://a38.hu/en/"],
+  "notes": "Seed listing for Budapest Night demo — A38 concert ship.",
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-a38-ferencvaros",
+        "name": "A38 Ship",
+        "category": "Events",
+        "borough": "Ferencváros",
+        "neighborhood": "Petőfi Bridge",
+        "address": "Petőfi rakpart, Buda bridge foot, 1117 Budapest, Hungary",
+        "activityTypes": ["Live Music", "Electronic", "Boat Party", "Craft Beer"],
+        "ageRanges": ["18+"],
+        "dayTimeTags": ["Evening", "Late night", "Weekend"],
+        "pricePerClass": 25,
+        "shortDescription": "Converted Ukrainian stone-carrier on the Danube — one of Europe's coolest concert venues.",
+        "longDescription": "A38 is a nightclub and concert hall on a ship moored on the Buda side of Petőfi Bridge. Check a38.hu for the calendar of live bands, DJ nights, and terrace sessions. Arrive early for riverside drinks before doors.",
+        "rating": 4.7,
+        "reviewCount": 5400,
+        "badges": ["Featured", "Weekend Vibes"],
+        "image": "",
+        "email": "",
+        "website": "https://a38.hu/en/",
+        "phone": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "sourceUrls": ["https://szimpla.hu/"],
+  "notes": "Seed listing for Budapest Night demo — Szimpla Kert ruin bar.",
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-szimpla-kert-erzsebetvaros",
+        "name": "Szimpla Kert",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Jewish Quarter",
+        "address": "Kazinczy utca 14, 1075 Budapest, Hungary",
+        "activityTypes": ["Ruin Bar", "Live Music", "Craft Beer", "Late Kitchen"],
+        "ageRanges": ["18+", "21+"],
+        "dayTimeTags": ["Weekend", "Evening", "Late night"],
+        "pricePerClass": 0,
+        "shortDescription": "Iconic ruin bar in the Jewish Quarter — courtyards, live music, and Budapest nightlife energy.",
+        "longDescription": "Szimpla Kert is one of Budapest's best-known ruin bars in the Jewish Quarter (Kazinczy utca). Expect eclectic rooms, street-food vendors, concerts, and a packed weekend crowd. Check szimpla.hu for current events and hours before you go.",
+        "rating": 4.6,
+        "reviewCount": 12000,
+        "badges": ["Featured", "Weekend Vibes", "Popular"],
+        "image": "",
+        "email": "",
+        "website": "https://szimpla.hu",
+        "phone": ""
+      }
+    }
+  ]
+}

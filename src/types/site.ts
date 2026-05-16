@@ -337,8 +337,8 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
   sidebarTitle: "List your venue",
   sidebarBody: "Reach night owls and culture seekers with a featured listing.",
   sidebarCtaLabel: "Get in touch",
-  homePopularPickProviderNames: [],
-  homePopularMeetupGroupId: "",
+  homePopularPickProviderNames: ["Szimpla Kert", "New York Café", "A38 Ship"],
+  homePopularMeetupGroupId: "grp-budapest-art-walk-terezvaros",
   calculator: {
     title: "Night out budget",
     subtitle: "Estimate your total spend across venues and events.",

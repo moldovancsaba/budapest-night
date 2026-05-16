@@ -1,0 +1,26 @@
+{
+  "sourceUrls": ["https://www.budapest.com/"],
+  "notes": "Seed culture circle for Budapest Night demo.",
+  "operations": [
+    {
+      "resource": "meetupGroup",
+      "action": "upsert",
+      "document": {
+        "id": "grp-budapest-art-walk-terezvaros",
+        "name": "Andrássy Art & Café Walk",
+        "borough": "Terézváros",
+        "neighborhood": "Andrássy út",
+        "groupType": "Art & Gallery",
+        "ageRange": "All ages",
+        "cadence": "Monthly",
+        "instagram": "",
+        "website": "https://www.budapest.com/",
+        "description": "Monthly informal walk along Andrássy út — galleries, House of Terror courtyard, and coffee stops. Open to locals and visitors who want a culture-first evening in Pest.",
+        "initials": "AW",
+        "icon": "community",
+        "palette": "teal",
+        "coverImageUrl": ""
+      }
+    }
+  ]
+}

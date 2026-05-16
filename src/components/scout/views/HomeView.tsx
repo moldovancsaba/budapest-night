@@ -106,17 +106,19 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
   return (
     <div className="space-y-16">
       {/* HERO */}
-      <section className="relative overflow-hidden rounded-[2rem] bg-[hsl(24_45%_94%)]">
-        <div className="grid items-center gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_1fr] md:p-16">
+      <section className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-card via-background to-[hsl(280_50%_12%)] neon-border">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,hsl(310_100%_50%_/_0.12),transparent_50%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(180_100%_50%_/_0.08),transparent_55%)]" />
+        <div className="relative grid items-center gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_1fr] md:p-16">
           <div className="relative z-10">
-            <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              {s.homeHeroTitle}
+            <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
+              <span className="neon-text">{s.homeHeroTitle}</span>
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">{s.homeHeroSubtitle}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button
                 size="lg"
-                className="rounded-full bg-foreground px-6 text-background hover:bg-foreground/90"
+                className="rounded-full bg-primary px-6 text-primary-foreground shadow-[0_0_24px_hsl(310_100%_62%_/_0.35)] hover:bg-primary/90"
                 onClick={() => onNavigate("Events")}
               >
                 {s.homeHeroPrimaryCta} <ArrowRight className="h-4 w-4" />
@@ -124,24 +126,24 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-foreground/20 bg-card px-6 text-foreground hover:bg-secondary"
+                className="rounded-full border-accent/40 bg-card/50 px-6 text-accent hover:bg-accent/10"
                 onClick={scrollToNeighborhoods}
               >
                 {s.homeHeroSecondaryCta}
               </Button>
             </div>
             <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-orange/15 text-orange">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-primary/20 text-primary">
                 <Sparkles className="h-3.5 w-3.5" />
               </span>
               {s.homeHeroTagline}
             </p>
           </div>
           <div className="relative">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] shadow-elevated">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] border border-accent/20 shadow-elevated ring-1 ring-primary/20">
               <CdnImage
                 src={s.homeHeroUrl}
-                alt="Parent and child looking out at the New York City skyline"
+                alt="Budapest city lights at night along the Danube"
                 width={1280}
                 height={1024}
                 className="h-full w-full object-cover"

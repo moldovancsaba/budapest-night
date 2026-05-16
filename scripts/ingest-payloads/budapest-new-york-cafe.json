@@ -1,0 +1,31 @@
+{
+  "sourceUrls": ["https://www.newyorkcafe.hu/"],
+  "notes": "Seed listing for Budapest Night demo — New York Café.",
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-new-york-cafe-belvaros",
+        "name": "New York Café",
+        "category": "Restaurants",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "Erzsébet körút 9-11, 1073 Budapest, Hungary",
+        "activityTypes": ["Fine Dining", "Coffee & Brunch", "Live Music"],
+        "ageRanges": ["All ages", "Family"],
+        "dayTimeTags": ["Morning", "Afternoon", "Evening", "Weekend"],
+        "pricePerClass": 45,
+        "shortDescription": "Opulent café-restaurant in the Boscolo Hotel — gilded interiors and classic Hungarian café culture.",
+        "longDescription": "The New York Café inside the Anantara New York Palace Budapest is famous for its grand belle-époque dining room, coffee, pastries, and evening programs. Reserve ahead for dinner or afternoon tea; dress smart-casual for peak service times.",
+        "rating": 4.5,
+        "reviewCount": 8500,
+        "badges": ["Staff Pick", "Featured"],
+        "image": "",
+        "email": "",
+        "website": "https://www.newyorkcafe.hu",
+        "phone": "+36 1 886 6111"
+      }
+    }
+  ]
+}

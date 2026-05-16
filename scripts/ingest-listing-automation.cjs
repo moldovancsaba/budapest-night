@@ -26,7 +26,7 @@ require("./load-env.cjs");
 const fs = require("fs");
 const path = require("path");
 
-const BASE = (process.env.INGEST_BASE_URL || "https://classscout.vercel.app").replace(/\/$/, "");
+const BASE = (process.env.INGEST_BASE_URL || "https://budapest-night.vercel.app").replace(/\/$/, "");
 const KEY = (process.env.INGEST_API_KEY || "").trim();
 
 const CATEGORIES = ["Classes", "Camps", "Birthday Parties", "Drop-In Activities"];

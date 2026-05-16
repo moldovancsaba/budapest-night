@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "db:seed": "npx tsx scripts/seed.ts",
+    "db:restore-payloads": "npx tsx scripts/restore-from-payloads.ts",
     "imgbb:upload-assets": "node -r ./scripts/load-env.cjs scripts/imgbb-upload-assets.cjs",
     "vercel:env:push": "node -r ./scripts/load-env.cjs scripts/sync-vercel-env.cjs",
     "ingest:listing": "node -r ./scripts/load-env.cjs scripts/ingest-listing-automation.cjs",

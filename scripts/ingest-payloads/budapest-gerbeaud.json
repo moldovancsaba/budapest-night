@@ -1,0 +1,31 @@
+{
+  "sourceUrls": ["https://www.gerbeaud.hu/"],
+  "notes": "Seed listing for Budapest Night demo — Gerbeaud Café.",
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-gerbeaud-belvaros",
+        "name": "Gerbeaud",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Váci utca",
+        "address": "Vörösmarty tér 7-8, 1051 Budapest, Hungary",
+        "activityTypes": ["Coffee & Brunch", "Fine Dining", "Street Food"],
+        "ageRanges": ["All ages", "Family"],
+        "dayTimeTags": ["Morning", "Afternoon", "Weekday", "Weekend"],
+        "pricePerClass": 18,
+        "shortDescription": "Historic patisserie on Vörösmarty tér — cakes, coffee, and terrace views at the heart of Pest.",
+        "longDescription": "Gerbeaud has been a Budapest institution since the 19th century. Stop for espresso, classic Hungarian pastries, and people-watching on Vörösmarty tér before exploring Váci utca and the Danube promenade.",
+        "rating": 4.4,
+        "reviewCount": 6200,
+        "badges": ["Hidden Gem", "Popular"],
+        "image": "",
+        "email": "",
+        "website": "https://www.gerbeaud.hu",
+        "phone": "+36 1 429 9000"
+      }
+    }
+  ]
+}

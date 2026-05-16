@@ -19,7 +19,7 @@ export function TrustStrip() {
   const s = site ?? ({ _id: "main", ...DEFAULT_SITE } as SiteDoc);
 
   return (
-    <section className="mt-12 rounded-3xl bg-secondary p-8">
+    <section className="mt-12 rounded-3xl border border-accent/15 bg-secondary/80 p-8 neon-border">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {s.trustPillars.map((pillar) => (
           <div key={pillar.title} className="flex items-start gap-3">
