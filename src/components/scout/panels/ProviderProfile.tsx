@@ -22,6 +22,7 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { useEventsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
 import type { PublicNightEvent } from "@/lib/publicEvent";
+import { eventsForVenue } from "@/lib/eventsAtVenue";
 import { EventCard } from "@/components/scout/EventCard";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { ProviderCard } from "../ProviderCard";
@@ -48,12 +49,14 @@ export function ProviderProfile({
   onShare,
   onOpenAnother,
   onOpenEvent,
+  variant = "sheet",
 }: {
   provider: Provider | null;
   onClose: () => void;
   onShare: (p: Provider) => void;
   onOpenAnother: (p: Provider) => void;
   onOpenEvent: (e: PublicNightEvent) => void;
+  variant?: "sheet" | "page";
 }) {
   const locale = useLocale() as AppLocale;
   const t = useTranslations("venue");
@@ -89,13 +92,12 @@ export function ProviderProfile({
 
   const venueEvents = useMemo(() => {
     if (!provider) return [];
-    return allEvents
-      .filter((e) => e.venueIds.includes(provider.id))
-      .sort((a, b) => a.startsAt.localeCompare(b.startsAt));
+    return eventsForVenue(allEvents, provider.id);
   }, [allEvents, provider]);
 
   if (!provider) return null;
 
+  const isPage = variant === "page";
   const saved = isSaved(provider.id);
   const price = formatPrice(provider);
   const current =
@@ -125,13 +127,9 @@ export function ProviderProfile({
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
-  return (
-    <Sheet open={!!provider} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent
-        side="right"
-        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
-      >
-        <div className="relative h-64 w-full overflow-hidden">
+  const content = (
+    <>
+        <div className={isPage ? "relative h-80 w-full overflow-hidden" : "relative h-64 w-full overflow-hidden"}>
           <CdnImage
             fill
             resolveBase={provider.website}
@@ -415,6 +413,20 @@ export function ProviderProfile({
             </div>
           )}
         </div>
+    </>
+  );
+
+  if (isPage) {
+    return <div className="overflow-y-auto bg-background">{content}</div>;
+  }
+
+  return (
+    <Sheet open={!!provider} onOpenChange={(o) => !o && onClose()}>
+      <SheetContent
+        side="right"
+        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
+      >
+        {content}
       </SheetContent>
     </Sheet>
   );

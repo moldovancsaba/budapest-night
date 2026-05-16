@@ -53,7 +53,7 @@ describe("resolveProviderForLocale", () => {
 describe("venue routing keys", () => {
   it("prefers locale slug in path key", () => {
     expect(getVenuePathKey(base, "hu")).toBe("a38-hajo");
-    expect(getVenuePathKey(base, "en")).toBe(base.id);
+    expect(getVenuePathKey(base, "en")).toBe("a38-hajo");
   });
 
   it("finds provider by id or slug", () => {

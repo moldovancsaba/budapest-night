@@ -24,8 +24,9 @@ import type { Provider, Category } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { MeetupGroup } from "@/types/meetup";
 import { Menu, Heart, Bell, UserCircle } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { findProviderByVenueKey } from "@/lib/providerLocale";
+import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
+import { findProviderByVenueKey, getVenuePathKey } from "@/lib/providerLocale";
 import { findEventByKey } from "@/lib/eventLocale";
 import { useSaved, useCalculator } from "@/store/useScout";
 import {
@@ -38,8 +39,20 @@ import { useAppNavigation } from "@/hooks/useAppNavigation";
 import { CurrencySwitcher } from "@/components/i18n/CurrencySwitcher";
 import { LocaleSwitcher } from "@/components/i18n/LocaleSwitcher";
 import { ThemeToggle } from "@/components/i18n/ThemeToggle";
-import { Link } from "@/i18n/routing";
-import { buildPathForView } from "@/lib/appPaths";
+import { Link, useRouter } from "@/i18n/routing";
+import {
+  buildPathForView,
+  buildSectionPath,
+  buildVenueFullPath,
+  buildVenuePath,
+} from "@/lib/appPaths";
+import {
+  buildAbsoluteEventFullUrl,
+  buildAbsoluteGroupFullUrl,
+  buildAbsoluteVenueFullUrl,
+} from "@/lib/appShareUrls";
+import { ShareablePageChrome } from "@/components/scout/ShareablePageChrome";
+import { ShareableMissing } from "@/components/scout/ShareableMissing";
 
 const DISCOVER_VIEWS: Category[] = [
   "Venues",
@@ -49,6 +62,8 @@ const DISCOVER_VIEWS: Category[] = [
 ];
 
 export default function BudapestNightShell() {
+  const locale = useLocale() as AppLocale;
+  const router = useRouter();
   const t = useTranslations("nav");
   const tf = useTranslations("footer");
   const {
@@ -59,6 +74,8 @@ export default function BudapestNightShell() {
     tourId,
     tourSeed,
     eventId,
+    fullPage,
+    route,
     navigateToView,
     openVenue,
     closeVenue,
@@ -88,11 +105,23 @@ export default function BudapestNightShell() {
       setOpenProvider(null);
       return;
     }
-    const match = venueId
-      ? findProviderByVenueKey(providers, venueId)
-      : undefined;
+    const match = findProviderByVenueKey(providers, venueId);
     setOpenProvider(match ?? null);
   }, [venueId, providers]);
+
+  useEffect(() => {
+    if (!venueId || !openProvider) return;
+    const canonical = getVenuePathKey(openProvider, locale);
+    if (decodeURIComponent(venueId) === canonical) return;
+    const opts = {
+      from: route.fromSection,
+      location: route.location ?? undefined,
+      locale,
+    };
+    router.replace(
+      route.fullPage ? buildVenueFullPath(openProvider, opts) : buildVenuePath(openProvider, opts),
+    );
+  }, [venueId, openProvider, locale, router, route.fromSection, route.location, route.fullPage]);
 
   useEffect(() => {
     if (!groupId) {
@@ -121,6 +150,70 @@ export default function BudapestNightShell() {
     location?.borough && location.borough !== "All"
       ? (location.neighborhood ?? null)
       : null;
+
+  const backHref = buildSectionPath(route.fromSection, {
+    location: route.location ?? undefined,
+  });
+
+  if (fullPage) {
+    let shareUrl: string | null = null;
+    let title: string | undefined;
+
+    if (selectedEvent) {
+      shareUrl = buildAbsoluteEventFullUrl(selectedEvent, locale);
+      title = selectedEvent.title;
+    } else if (openProvider) {
+      shareUrl = buildAbsoluteVenueFullUrl(openProvider, locale);
+      title = openProvider.name;
+    } else if (openGroupState) {
+      shareUrl = buildAbsoluteGroupFullUrl(openGroupState.id, locale);
+      title = openGroupState.name;
+    }
+
+    return (
+      <ShareablePageChrome backHref={backHref} shareUrl={shareUrl} title={title}>
+        {eventId &&
+          (selectedEvent ? (
+            <EventProfile
+              variant="page"
+              event={selectedEvent}
+              onClose={closeEvent}
+              onOpenVenue={openVenue}
+            />
+          ) : (
+            <ShareableMissing backHref={backHref} />
+          ))}
+        {venueId &&
+          !eventId &&
+          (openProvider ? (
+            <ProviderProfile
+              variant="page"
+              provider={openProvider}
+              onClose={closeVenue}
+              onShare={setShareProvider}
+              onOpenAnother={openVenue}
+              onOpenEvent={openEvent}
+            />
+          ) : (
+            <ShareableMissing backHref={backHref} />
+          ))}
+        {groupId &&
+          !eventId &&
+          !venueId &&
+          (openGroupState ? (
+            <MeetupGroupProfile
+              variant="page"
+              group={openGroupState}
+              onClose={closeGroup}
+              onShare={setShareGroup}
+              onOpenAnother={openGroup}
+            />
+          ) : (
+            <ShareableMissing backHref={backHref} />
+          ))}
+      </ShareablePageChrome>
+    );
+  }
 
   return (
     <div className="flex min-h-screen w-full bg-background">

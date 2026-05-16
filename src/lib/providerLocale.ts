@@ -1,6 +1,7 @@
 import { defaultLocale, locales, type AppLocale } from "@/i18n/config";
 import type { Provider } from "@/types/provider";
 import type { ProviderLocaleContent, ProviderLocalesMap } from "@/types/providerLocale";
+import { legacyVenuePathKeys, venuePathKeyForLocale } from "@/lib/venueSlug";
 
 export function parseAppLocaleParam(raw: string | null | undefined): AppLocale {
   if (raw && locales.includes(raw as AppLocale)) return raw as AppLocale;
@@ -35,20 +36,13 @@ export function resolveProvidersForLocale(rows: Provider[], locale: AppLocale): 
 }
 
 export function getVenuePathKey(provider: Provider, locale: AppLocale = defaultLocale): string {
-  const slug = provider.locales?.[locale]?.slug?.trim();
-  return slug || provider.id;
+  return venuePathKeyForLocale(provider, locale);
 }
 
-/** Match `/venue/{id}` or `/venue/{locale-slug}` for the active locale. */
+/** Match `/venue/{slug}` including legacy provider ids and old locale slugs. */
 export function findProviderByVenueKey(providers: Provider[], key: string): Provider | undefined {
   const decoded = decodeURIComponent(key);
-  const byId = providers.find((p) => p.id === decoded);
-  if (byId) return byId;
-
-  return providers.find((p) => {
-    if (!p.locales) return false;
-    return Object.values(p.locales).some((v) => v?.slug?.trim() === decoded);
-  });
+  return providers.find((p) => legacyVenuePathKeys(p).includes(decoded));
 }
 
 export function mergeProviderLocales(
