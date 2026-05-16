@@ -20,7 +20,7 @@ export const TOUR_TEMPLATES: TourTemplate[] = [
     descriptionKey: "palinka.description",
     requiredTags: ["palinka"],
     matchMode: "any",
-    categories: ["Restaurants", "Cafés", "Parties"],
+    categories: ["Restaurants", "Cafés", "Parties", "Venues"],
     stopCount: 3,
   },
   {
@@ -29,7 +29,7 @@ export const TOUR_TEMPLATES: TourTemplate[] = [
     descriptionKey: "foodie.description",
     requiredTags: ["hungarian", "goulash", "street-food"],
     matchMode: "any",
-    categories: ["Restaurants", "Cafés"],
+    categories: ["Restaurants", "Cafés", "Venues"],
     stopCount: 3,
   },
   {

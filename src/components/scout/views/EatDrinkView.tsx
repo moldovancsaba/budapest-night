@@ -48,6 +48,10 @@ export function EatDrinkView({ onOpen }: Props) {
 
   const [items, setItems] = useState<MenuItemRow[]>([]);
   const [total, setTotal] = useState(0);
+  const [providersWithMenu, setProvidersWithMenu] = useState(0);
+  const [tourReadiness, setTourReadiness] = useState<
+    Record<string, { eligible: number; ready: boolean; stopCount: number }>
+  >({});
   const [loading, setLoading] = useState(true);
   const [tag, setTag] = useState<MenuTag | null>(null);
   const [kind, setKind] = useState<"food" | "drink" | null>(null);
@@ -71,9 +75,13 @@ export function EatDrinkView({ onOpen }: Props) {
       const data = await res.json();
       setItems(data.items ?? []);
       setTotal(data.total ?? 0);
+      setProvidersWithMenu(data.providersWithMenu ?? 0);
+      setTourReadiness(data.tourReadiness ?? {});
     } catch {
       setItems([]);
       setTotal(0);
+      setProvidersWithMenu(0);
+      setTourReadiness({});
     } finally {
       setLoading(false);
     }
@@ -122,25 +130,54 @@ export function EatDrinkView({ onOpen }: Props) {
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
           {t("toursSubtitle")}
+          {!loading && providersWithMenu > 0 ? (
+            <span className="mt-1 block">{t("venuesWithMenus", { count: providersWithMenu })}</span>
+          ) : null}
         </p>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          {TOUR_TEMPLATES.map((tpl) => (
-            <Link
-              key={tpl.id}
-              href={buildTourPath(tpl.id)}
-              className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-foreground/40 hover:bg-muted"
-            >
-              <p className="font-display text-base font-semibold text-foreground group-hover:text-foreground">
-                {t(`tours.${tpl.id}.title`)}
-              </p>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                {t(`tours.${tpl.id}.description`)}
-              </p>
-              <span className="mt-3 inline-block text-xs font-medium text-foreground">
-                {t("startTour")} →
-              </span>
-            </Link>
-          ))}
+          {TOUR_TEMPLATES.map((tpl) => {
+            const readiness = tourReadiness[tpl.id];
+            const ready = readiness?.ready ?? false;
+            const inner = (
+              <>
+                <p className="font-display text-base font-semibold text-foreground group-hover:text-foreground">
+                  {t(`tours.${tpl.id}.title`)}
+                </p>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {t(`tours.${tpl.id}.description`)}
+                </p>
+                <p className="mt-2 text-xs text-muted-foreground">
+                  {ready
+                    ? t("tourReady", { count: readiness?.eligible ?? 0 })
+                    : t("tourNeedsMenus", {
+                        eligible: readiness?.eligible ?? 0,
+                        required: readiness?.stopCount ?? tpl.stopCount,
+                      })}
+                </p>
+                {ready ? (
+                  <span className="mt-3 inline-block text-xs font-medium text-foreground">
+                    {t("startTour")} →
+                  </span>
+                ) : null}
+              </>
+            );
+            return ready ? (
+              <Link
+                key={tpl.id}
+                href={buildTourPath(tpl.id)}
+                className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-foreground/40 hover:bg-muted"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <div
+                key={tpl.id}
+                className="rounded-2xl border border-dashed border-border/70 bg-card/40 p-5 opacity-80"
+              >
+                {inner}
+              </div>
+            );
+          })}
         </div>
       </section>
 

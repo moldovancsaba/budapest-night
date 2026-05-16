@@ -1,6 +1,32 @@
 import { describe, expect, it } from "vitest";
+import type { MenuTag } from "@/data/menuTags";
 import { generateTour } from "./generateTour";
 import type { Provider } from "@/types/provider";
+import type { VenueMenu } from "@/types/menu";
+
+function menuWithTag(tag: MenuTag): VenueMenu {
+  return {
+    menuUrl: "https://example.com/menu",
+    sourceUrls: ["https://example.com/menu"],
+    lastVerifiedAt: "2026-05-16",
+    sections: [
+      {
+        id: "main",
+        title: "Drinks",
+        kind: "drink",
+        items: [
+          {
+            id: `item-${tag}`,
+            kind: "drink",
+            name: `House ${tag}`,
+            tags: [tag],
+            price: { amount: 1200, currency: "HUF", unit: "glass", source: "published" },
+          },
+        ],
+      },
+    ],
+  };
+}
 
 function mockProvider(overrides: Partial<Provider> & Pick<Provider, "id" | "name" | "category" | "borough">): Provider {
   return {
@@ -30,10 +56,10 @@ function mockProvider(overrides: Partial<Provider> & Pick<Provider, "id" | "name
 
 describe("generateTour", () => {
   const providers = [
-    mockProvider({ id: "a", name: "A", category: "Restaurants", borough: "Belváros", menuTags: ["palinka"] }),
-    mockProvider({ id: "b", name: "B", category: "Cafés", borough: "Terézváros", menuTags: ["palinka"] }),
-    mockProvider({ id: "c", name: "C", category: "Parties", borough: "Buda", menuTags: ["palinka"] }),
-    mockProvider({ id: "d", name: "D", category: "Restaurants", borough: "Újbuda", menuTags: ["palinka"] }),
+    mockProvider({ id: "a", name: "A", category: "Restaurants", borough: "Belváros", menu: menuWithTag("palinka") }),
+    mockProvider({ id: "b", name: "B", category: "Cafés", borough: "Terézváros", menu: menuWithTag("palinka") }),
+    mockProvider({ id: "c", name: "C", category: "Parties", borough: "Buda", menu: menuWithTag("palinka") }),
+    mockProvider({ id: "d", name: "D", category: "Restaurants", borough: "Újbuda", menu: menuWithTag("palinka") }),
   ];
 
   it("returns three stops for palinka tour with fixed seed", () => {
@@ -42,7 +68,8 @@ describe("generateTour", () => {
     if ("error" in result) return;
     expect(result.stops).toHaveLength(3);
     for (const stop of result.stops) {
-      expect(stop.provider.menuTags).toContain("palinka");
+      expect(stop.highlightItems.length).toBeGreaterThan(0);
+      expect(stop.highlightItems[0]?.name).toContain("palinka");
     }
   });
 

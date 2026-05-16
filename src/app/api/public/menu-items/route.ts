@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { getDb, COL } from "@/lib/mongodb";
+import { TOUR_TEMPLATES } from "@/data/tourTemplates";
+import { countEligibleForTour, isTourReady } from "@/lib/menu/generateTour";
 import { filterFlatMenuItems, flattenProviderMenu } from "@/lib/menu/flattenMenuItems";
 import type { Provider } from "@/types/provider";
 import type { Borough, BoroughChoice } from "@/types/provider";
@@ -49,9 +51,19 @@ export async function GET(req: Request) {
     eventTitle: row.eventTitle ?? null,
   }));
 
+  const tourReadiness: Record<string, { eligible: number; ready: boolean; stopCount: number }> = {};
+  for (const tpl of TOUR_TEMPLATES) {
+    tourReadiness[tpl.id] = {
+      eligible: countEligibleForTour(providers, tpl.id),
+      ready: isTourReady(providers, tpl.id),
+      stopCount: tpl.stopCount,
+    };
+  }
+
   return NextResponse.json({
     items,
     total: flat.length,
     providersWithMenu: withMenu.length,
+    tourReadiness,
   });
 }

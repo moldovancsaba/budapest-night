@@ -57,10 +57,20 @@ async function main() {
 
   if (process.argv.includes("--ingest")) {
     const { execSync } = require("child_process");
-    execSync(`npm run ingest:listing -- --force "${OUT}"`, {
-      stdio: "inherit",
-      cwd: path.join(__dirname, ".."),
-    });
+    const BATCH = 50;
+    for (let i = 0; i < operations.length; i += BATCH) {
+      const chunk = operations.slice(i, i + BATCH);
+      const chunkPath = path.join(__dirname, `ingest-payloads/migrate-prices-to-huf-${i}.json`);
+      fs.writeFileSync(
+        chunkPath,
+        `${JSON.stringify({ ...payload, operations: chunk, notes: `${payload.notes} (batch ${i / BATCH + 1})` }, null, 2)}\n`,
+      );
+      console.log(`Ingesting batch ${i / BATCH + 1} (${chunk.length} ops)...`);
+      execSync(`npm run ingest:listing -- --force "${chunkPath}"`, {
+        stdio: "inherit",
+        cwd: path.join(__dirname, ".."),
+      });
+    }
   }
 }
 

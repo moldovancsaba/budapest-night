@@ -1,5 +1,6 @@
 import { getTourTemplate, type TourTemplate } from "@/data/tourTemplates";
 import type { Provider } from "@/types/provider";
+import { getEffectiveMenuTags, providerHasPublishedMenuItems } from "@/lib/menu/effectiveMenuTags";
 import { flattenProviderMenu } from "@/lib/menu/flattenMenuItems";
 
 export type TourStop = {
@@ -31,14 +32,18 @@ function mulberry32(a: number) {
   };
 }
 
-function providerMatchesTemplate(provider: Provider, template: TourTemplate): boolean {
+export function providerMatchesTemplate(provider: Provider, template: TourTemplate): boolean {
   if (!template.categories.includes(provider.category)) return false;
-  const tags = new Set(provider.menuTags ?? []);
+  if (!providerHasPublishedMenuItems(provider)) return false;
+  const tags = new Set(getEffectiveMenuTags(provider));
   if (tags.size === 0) return false;
-  if (template.matchMode === "all") {
-    return template.requiredTags.every((t) => tags.has(t));
-  }
-  return template.requiredTags.some((t) => tags.has(t));
+  const flat = flattenProviderMenu(provider);
+  const itemTags = new Set(flat.flatMap((row) => row.item.tags));
+  const tagOk =
+    template.matchMode === "all"
+      ? template.requiredTags.every((t) => tags.has(t) && itemTags.has(t))
+      : template.requiredTags.some((t) => tags.has(t) && itemTags.has(t));
+  return tagOk;
 }
 
 function highlightForProvider(provider: Provider, template: TourTemplate) {
@@ -52,6 +57,18 @@ function highlightForProvider(provider: Provider, template: TourTemplate) {
       ? `${row.item.price.amount} ${row.item.price.currency}${row.item.price.unit ? ` / ${row.item.price.unit}` : ""}`
       : undefined,
   }));
+}
+
+export function countEligibleForTour(providers: Provider[], tourId: string): number {
+  const template = getTourTemplate(tourId);
+  if (!template) return 0;
+  return providers.filter((p) => providerMatchesTemplate(p, template)).length;
+}
+
+export function isTourReady(providers: Provider[], tourId: string): boolean {
+  const template = getTourTemplate(tourId);
+  if (!template) return false;
+  return countEligibleForTour(providers, tourId) >= template.stopCount;
 }
 
 export function generateTour(
