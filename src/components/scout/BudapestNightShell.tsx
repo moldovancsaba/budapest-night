@@ -312,6 +312,7 @@ export default function BudapestNightShell() {
                 onNavigate={navigateToView}
                 onOpenProvider={openVenue}
                 onOpenGroup={openGroup}
+                onOpenEvent={openEvent}
               />
             )}
             {view === "Program" && !route.programVertical && (

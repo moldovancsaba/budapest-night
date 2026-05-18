@@ -51,7 +51,11 @@ import {
   useMeetupGroupsCatalog,
   useSiteCatalog,
   useNeighborhoodsCatalog,
+  useEventsCatalog,
 } from "@/hooks/useCatalog";
+import { EventCard } from "@/components/scout/EventCard";
+import { isUpcoming } from "@/lib/eventDisplay";
+import type { PublicNightEvent } from "@/lib/publicEvent";
 import { BOROUGHS, NEIGHBORHOODS } from "@/data/locations";
 import { CYBER_PANEL, CYBER_TONE_BG, CYBER_TONE_LINK } from "@/lib/cyberTheme";
 
@@ -125,9 +129,10 @@ interface Props {
   ) => void;
   onOpenProvider: (p: Provider) => void;
   onOpenGroup: (g: MeetupGroup) => void;
+  onOpenEvent: (e: PublicNightEvent) => void;
 }
 
-export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
+export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent }: Props) {
   const locale = useLocale() as AppLocale;
   const tProgram = useTranslations("program");
   const districtLabel = useDistrictLabel();
@@ -140,6 +145,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
   const [borough, setBorough] = useState<BoroughChoice>("All");
   const [email, setEmail] = useState("");
   const { data: providers = [] } = useProvidersCatalog();
+  const { data: events = [] } = useEventsCatalog();
   const { data: meetups = [] } = useMeetupGroupsCatalog();
   const { data: siteData } = useSiteCatalog();
   const { data: locationsByBorough } = useNeighborhoodsCatalog();
@@ -154,6 +160,9 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
     .filter((p): p is Provider => !!p);
 
   const promotedPartners = providers.filter((p) => p.isPromoted).slice(0, 6);
+  const featuredHomeEvents = events
+    .filter((e) => e.isFeatured && isUpcoming(e))
+    .slice(0, 6);
 
   const popularGroup = s.homePopularMeetupGroupId.trim()
     ? meetups.find((g) => g.id === s.homePopularMeetupGroupId.trim())
@@ -246,6 +255,19 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
           ))}
         </div>
       </section>
+
+      {featuredHomeEvents.length > 0 && (
+        <section>
+          <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+            {tProgram("featuredEvents")}
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredHomeEvents.map((ev) => (
+              <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {promotedPartners.length > 0 && (
         <section>

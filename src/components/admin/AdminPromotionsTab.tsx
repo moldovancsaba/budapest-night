@@ -1,13 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { findPromotionConflicts } from "@/lib/promotionConflicts";
 import type { PromotionDoc, PromotionType } from "@/types/promotion";
 
 async function adminFetch(input: RequestInfo, init?: RequestInit) {
   return fetch(input, { ...init, credentials: "include" });
+}
+
+function toIsoFromLocalInput(value: string, fallback: Date): string {
+  if (!value.trim()) return fallback.toISOString();
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? fallback.toISOString() : d.toISOString();
 }
 
 export function AdminPromotionsTab() {
@@ -17,6 +24,7 @@ export function AdminPromotionsTab() {
   const [label, setLabel] = useState("Kiemelt partner");
   const [startsAt, setStartsAt] = useState("");
   const [endsAt, setEndsAt] = useState("");
+  const [verticalSlug, setVerticalSlug] = useState("");
 
   const load = () =>
     adminFetch("/api/admin/promotions").then(async (r) => {
@@ -27,24 +35,49 @@ export function AdminPromotionsTab() {
     load();
   }, []);
 
+  const draftCandidate = useMemo(() => {
+    const now = new Date();
+    return {
+      type,
+      targetId: targetId.trim(),
+      startsAt: toIsoFromLocalInput(startsAt, now),
+      endsAt: toIsoFromLocalInput(endsAt, new Date(now.getTime() + 14 * 86400000)),
+      verticalSlug: verticalSlug.trim() || undefined,
+    };
+  }, [type, targetId, startsAt, endsAt, verticalSlug]);
+
+  const draftWarnings = useMemo(
+    () =>
+      targetId.trim()
+        ? findPromotionConflicts(rows, draftCandidate)
+        : [],
+    [rows, draftCandidate, targetId],
+  );
+
   const create = async () => {
+    if (!targetId.trim()) {
+      toast.error("targetId required");
+      return;
+    }
     const r = await adminFetch("/api/admin/promotions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        type,
-        targetId,
+        ...draftCandidate,
         label,
-        startsAt: startsAt || new Date().toISOString(),
-        endsAt: endsAt || new Date(Date.now() + 14 * 86400000).toISOString(),
         priority: 10,
       }),
     });
+    const data = (await r.json()) as { conflicts?: string[] };
     if (!r.ok) {
       toast.error("Create failed");
       return;
     }
-    toast.success("Promotion created");
+    if (data.conflicts?.length) {
+      toast.warning(`Created with warnings: ${data.conflicts.join(" ")}`);
+    } else {
+      toast.success("Promotion created");
+    }
     setTargetId("");
     load();
   };
@@ -67,28 +100,62 @@ export function AdminPromotionsTab() {
           <option value="week_sponsor">week_sponsor</option>
           <option value="vertical_sponsor">vertical_sponsor</option>
         </select>
-        <Button variant="outline" asChild>
-          <a href="/api/admin/promotions/export" download>
-            Export CSV
-          </a>
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" asChild>
+            <a href="/api/admin/promotions/export" download>
+              Export CSV
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a href="/api/admin/qr-pack?partner=1" target="_blank" rel="noopener noreferrer">
+              A5 QR pack (partners)
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a href="/api/admin/qr-pack?partner=1&print=1" target="_blank" rel="noopener noreferrer">
+              A5 QR pack + print
+            </a>
+          </Button>
+        </div>
         <Input placeholder="targetId (prov-* or event-*)" value={targetId} onChange={(e) => setTargetId(e.target.value)} />
+        {type === "vertical_sponsor" ? (
+          <Input
+            placeholder="verticalSlug (mozi, szinhaz, …)"
+            value={verticalSlug}
+            onChange={(e) => setVerticalSlug(e.target.value)}
+          />
+        ) : null}
         <Input placeholder="Label" value={label} onChange={(e) => setLabel(e.target.value)} />
         <Input type="datetime-local" value={startsAt} onChange={(e) => setStartsAt(e.target.value)} />
         <Input type="datetime-local" value={endsAt} onChange={(e) => setEndsAt(e.target.value)} />
+        {draftWarnings.length > 0 && (
+          <ul className="rounded border border-amber-500/50 bg-amber-500/10 p-2 text-xs text-amber-900 dark:text-amber-100">
+            {draftWarnings.map((w) => (
+              <li key={w}>{w}</li>
+            ))}
+          </ul>
+        )}
         <Button onClick={create}>Add promotion</Button>
       </div>
       <ul className="space-y-2 text-sm">
-        {rows.map((r) => (
-          <li key={r._id} className="flex justify-between gap-2 border rounded p-2">
-            <span>
-              {r.type} · {r.targetId} · {r.label}
-            </span>
-            <Button size="sm" variant="outline" onClick={() => remove(r._id)}>
-              Delete
-            </Button>
-          </li>
-        ))}
+        {rows.map((r) => {
+          const rowWarnings = findPromotionConflicts(rows, r, { excludeId: r._id });
+          return (
+            <li key={r._id} className="flex flex-col gap-1 border rounded p-2">
+              <div className="flex justify-between gap-2">
+                <span>
+                  {r.type} · {r.targetId} · {r.label}
+                </span>
+                <Button size="sm" variant="outline" onClick={() => remove(r._id)}>
+                  Delete
+                </Button>
+              </div>
+              {rowWarnings.length > 0 && (
+                <p className="text-xs text-amber-700 dark:text-amber-300">{rowWarnings.join(" · ")}</p>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

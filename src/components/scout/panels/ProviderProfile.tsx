@@ -491,6 +491,7 @@ export function ProviderProfile({
             address: provider.address,
             url,
             telephone: provider.phone,
+            activityTypes: provider.activityTypes,
           })}
         />
         <div className="overflow-y-auto bg-background">{content}</div>

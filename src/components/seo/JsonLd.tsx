@@ -70,16 +70,35 @@ export function collectionPageJsonLd(page: {
   };
 }
 
+/** Map venue activity tags to schema.org venue subtype. */
+export function venueSchemaOrgType(activityTypes: string[]): string {
+  const lower = activityTypes.map((t) => t.toLowerCase());
+  if (lower.some((t) => t === "cinema")) return "MovieTheater";
+  if (lower.some((t) => t.includes("theatre") || t === "theater")) {
+    return "PerformingArtsTheater";
+  }
+  if (lower.some((t) => t.includes("gallery") || t === "exhibition")) {
+    return "ArtGallery";
+  }
+  if (lower.some((t) => t.includes("concert") || t.includes("live music"))) {
+    return "MusicVenue";
+  }
+  return "LocalBusiness";
+}
+
 export function localBusinessJsonLd(venue: {
   name: string;
   description?: string;
   address?: string;
   url?: string;
   telephone?: string;
+  activityTypes?: string[];
 }) {
+  const schemaType =
+    venue.activityTypes?.length ? venueSchemaOrgType(venue.activityTypes) : "LocalBusiness";
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": schemaType,
     name: venue.name,
     description: venue.description,
     address: venue.address,

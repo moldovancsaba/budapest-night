@@ -3,6 +3,7 @@ import { randomUUID } from "crypto";
 import { getDb, COL } from "@/lib/mongodb";
 import { requireAdmin } from "@/lib/requireAdmin";
 import type { PromotionDoc } from "@/types/promotion";
+import { findPromotionConflicts } from "@/lib/promotionConflicts";
 
 export async function GET() {
   const denied = await requireAdmin();
@@ -24,6 +25,12 @@ export async function POST(req: Request) {
   if (!db) return NextResponse.json({ error: "No database" }, { status: 503 });
 
   const body = (await req.json()) as Omit<PromotionDoc, "_id">;
+  const existing = (await db
+    .collection(COL.promotions)
+    .find({})
+    .toArray()) as unknown as PromotionDoc[];
+  const conflicts = findPromotionConflicts(existing, body);
+
   const doc: PromotionDoc = {
     _id: randomUUID(),
     type: body.type,
@@ -39,7 +46,7 @@ export async function POST(req: Request) {
   };
 
   await db.collection(COL.promotions).insertOne(doc as Record<string, unknown>);
-  return NextResponse.json({ ok: true, id: doc._id });
+  return NextResponse.json({ ok: true, id: doc._id, conflicts });
 }
 
 export async function DELETE(req: Request) {
