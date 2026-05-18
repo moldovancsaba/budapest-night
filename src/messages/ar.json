@@ -678,6 +678,8 @@
     "newsletterConfirm": "أكّد عبر البريد.",
     "subscribeError": "فشل الاشتراك.",
     "featuredEvents": "فعاليات مميزة",
+    "spotlightEvents": "قريباً — اختيارات التحرير",
+    "spotlightEventsHint": "فعاليات كبرى بعد هذا الأسبوع.",
     "featuredVenues": "أماكن مميزة",
     "eventsThisWeek": "{count} فعالية هذا الأسبوع",
     "browseAllEvents": "كل الفعاليات",

@@ -678,6 +678,8 @@
     "newsletterConfirm": "Conferma via email.",
     "subscribeError": "Iscrizione non riuscita.",
     "featuredEvents": "Eventi in evidenza",
+    "spotlightEvents": "In arrivo — scelti dalla redazione",
+    "spotlightEventsHint": "Grandi eventi dopo questa settimana.",
     "featuredVenues": "Locali in evidenza",
     "eventsThisWeek": "{count} eventi questa settimana",
     "browseAllEvents": "Tutti gli eventi",

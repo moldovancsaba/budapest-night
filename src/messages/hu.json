@@ -678,6 +678,8 @@
     "newsletterConfirm": "Erősítsd meg a feliratkozást az e-mailben.",
     "subscribeError": "A feliratkozás nem sikerült.",
     "featuredEvents": "Kiemelt események",
+    "spotlightEvents": "Közelgő kiemelt programok",
+    "spotlightEventsHint": "A hét után induló nagy események — jegyek és részletek egy kattintással.",
     "featuredVenues": "Kiemelt helyszínek",
     "eventsThisWeek": "{count} esemény ezen a héten",
     "browseAllEvents": "Összes esemény",

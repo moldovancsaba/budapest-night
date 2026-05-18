@@ -36,7 +36,8 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
     return <p className="text-muted-foreground">{t("weekSubtitle")}</p>;
   }
 
-  const { week, featuredEvents, featuredProviders, fallbackEventCount } = data;
+  const { week, featuredEvents, spotlightEvents = [], featuredProviders, fallbackEventCount } =
+    data;
   const weekRange = t("weekRange", {
     start: format.dateTime(new Date(week.weekStartsAt), { dateStyle: "medium" }),
     end: format.dateTime(new Date(week.weekEndsAt), { dateStyle: "medium" }),
@@ -44,7 +45,7 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
 
   return (
     <>
-      <ProgramWeekJsonLd week={week} events={featuredEvents} />
+      <ProgramWeekJsonLd week={week} events={[...featuredEvents, ...spotlightEvents]} />
       <div className="space-y-10">
         <header className="rounded-[2rem] border border-border bg-card px-6 py-10 sm:px-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary">{t("thuNote")}</p>
@@ -107,6 +108,20 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featuredEvents.map((ev) => (
+                <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {spotlightEvents.length > 0 && (
+          <section>
+            <div className="mb-4 space-y-1">
+              <h2 className="font-display text-xl font-bold">{t("spotlightEvents")}</h2>
+              <p className="text-sm text-muted-foreground">{t("spotlightEventsHint")}</p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {spotlightEvents.map((ev) => (
                 <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
               ))}
             </div>

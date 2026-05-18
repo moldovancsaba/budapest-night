@@ -9,10 +9,10 @@ const { randomUUID } = require("crypto");
 
 const DB = process.env.MONGODB_DB || "budapest-night";
 
-const FEATURED_EVENTS = [
-  "event-nebula-a38-2026",
+const SPOTLIGHT_PREFER = [
   "event-sting-mvm-dome-2026",
   "event-wagner-walkure-mupa-2026",
+  "event-scorpions-mvm-dome-2026",
 ];
 
 const FEATURED_PROVIDERS = [
@@ -91,6 +91,37 @@ function getWeekBounds(weekId) {
   return { startsAt: start.toISOString(), endsAt: end.toISOString() };
 }
 
+function eventsInWeek(startsAt, weekId) {
+  const { startsAt: wStart, endsAt: wEnd } = getWeekBounds(weekId);
+  const t = new Date(startsAt).getTime();
+  return t >= new Date(wStart).getTime() && t <= new Date(wEnd).getTime();
+}
+
+async function pickFeaturedEventIds(db, weekId) {
+  const now = new Date().toISOString();
+  const events = await db
+    .collection("events")
+    .find({ status: "scheduled", endsAt: { $gte: now } })
+    .sort({ startsAt: 1 })
+    .toArray();
+
+  const inWeek = events.filter((e) => eventsInWeek(e.startsAt, weekId));
+  const later = events.filter((e) => !eventsInWeek(e.startsAt, weekId));
+
+  const ids = [];
+  for (const e of inWeek.slice(0, 2)) ids.push(e.id);
+
+  for (const prefer of SPOTLIGHT_PREFER) {
+    if (ids.length >= 5) break;
+    if (later.some((e) => e.id === prefer)) ids.push(prefer);
+  }
+  for (const e of later) {
+    if (ids.length >= 5) break;
+    if (!ids.includes(e.id)) ids.push(e.id);
+  }
+  return [...new Set(ids)].slice(0, 5);
+}
+
 async function main() {
   const uri = process.env.MONGODB_URI;
   if (!uri) {
@@ -104,6 +135,8 @@ async function main() {
   const weekId = getCurrentWeekId();
   const bounds = getWeekBounds(weekId);
   const now = new Date().toISOString();
+  const featuredEventIds = await pickFeaturedEventIds(db, weekId);
+  console.log(`Featured events: ${featuredEventIds.join(", ")}`);
 
   const weekDoc = {
     _id: weekId,
@@ -112,7 +145,7 @@ async function main() {
     weekEndsAt: bounds.endsAt,
     published: true,
     locales: PROGRAM_WEEK_LOCALES,
-    featuredEventIds: FEATURED_EVENTS,
+    featuredEventIds,
     featuredProviderIds: FEATURED_PROVIDERS,
     sponsorName: "Pesti Est",
     sponsorUrl: "https://budapest-night.vercel.app",
@@ -136,25 +169,16 @@ async function main() {
   const promoEnd = new Date();
   promoEnd.setDate(promoEnd.getDate() + 21);
 
+  const promoEventLabels = ["Kiemelt koncert", "Nagy koncert", "MÜPA kiemelt"];
+  const eventPromos = featuredEventIds.slice(0, 3).map((targetId, i) => ({
+    type: "featured_event",
+    targetId,
+    label: promoEventLabels[i] ?? "Kiemelt",
+    contractRef: `PE-2026-EVT-${String(i + 1).padStart(3, "0")}`,
+  }));
+
   const promos = [
-    {
-      type: "featured_event",
-      targetId: "event-nebula-a38-2026",
-      label: "Kiemelt koncert",
-      contractRef: "PE-2026-EVT-001",
-    },
-    {
-      type: "featured_event",
-      targetId: "event-sting-mvm-dome-2026",
-      label: "Nagy koncert",
-      contractRef: "PE-2026-EVT-002",
-    },
-    {
-      type: "featured_event",
-      targetId: "event-wagner-walkure-mupa-2026",
-      label: "MÜPA kiemelt",
-      contractRef: "PE-2026-EVT-003",
-    },
+    ...eventPromos,
     {
       type: "featured_venue",
       targetId: "prov-urania-film",

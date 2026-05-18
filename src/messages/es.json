@@ -678,6 +678,8 @@
     "newsletterConfirm": "Confirma tu email.",
     "subscribeError": "Error al suscribirse.",
     "featuredEvents": "Eventos destacados",
+    "spotlightEvents": "Próximamente — selección editorial",
+    "spotlightEventsHint": "Grandes eventos después de esta semana.",
     "featuredVenues": "Lugares destacados",
     "eventsThisWeek": "{count} eventos esta semana",
     "browseAllEvents": "Ver todos los eventos",

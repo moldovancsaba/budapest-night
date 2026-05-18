@@ -46,7 +46,7 @@ Rebrand the product from working title **Budapest Night** to **Pesti Est** on al
 2. No user-visible “Budapest Night” on HU/EN home, discover, venue, or event pages (grep audit passes)
 3. Share preview for a venue URL shows Pesti Est branding
 4. Production build succeeds; Vitest/i18n tests updated for new keys
-5. Written **domain cutover checklist** in `docs/` (DNS, SSL, redirect table, rollback)
+5. Written **domain cutover checklist** in `docs/pestiest-domain-cutover.md` (DNS, SSL, redirect table, rollback)
 
 ## Dependencies
 

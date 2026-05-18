@@ -34,10 +34,12 @@ async function main() {
     const evIds = j.week?.featuredEventIds?.length ?? 0;
     const provIds = j.week?.featuredProviderIds?.length ?? 0;
     weekFeatured = evIds + provIds;
+    const spotlight = j.spotlightEvents?.length ?? 0;
+    const listed = (j.featuredEvents?.length ?? 0) + spotlight;
     add(
       "program-week API",
-      programApi.ok && j.week?.headline && weekFeatured >= 3,
-      `${evIds} events + ${provIds} venues; listed: ${j.featuredEvents?.length ?? 0} events`,
+      programApi.ok && j.week?.headline && weekFeatured >= 3 && listed >= 3,
+      `${evIds} events + ${provIds} venues; cards: ${j.featuredEvents?.length ?? 0} this week + ${spotlight} spotlight`,
     );
   } catch {
     add("program-week API", false, "invalid JSON");

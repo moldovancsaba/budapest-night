@@ -678,6 +678,8 @@
     "newsletterConfirm": "Check your email to confirm subscription.",
     "subscribeError": "Subscription failed. Try again.",
     "featuredEvents": "Featured events",
+    "spotlightEvents": "Coming up — editor's picks",
+    "spotlightEventsHint": "Headline shows after this week — tickets and details on Pesti Est.",
     "featuredVenues": "Featured venues",
     "eventsThisWeek": "{count} events this week",
     "browseAllEvents": "Browse all events",

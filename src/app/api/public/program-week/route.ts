@@ -22,6 +22,7 @@ import {
 } from "@/lib/promotionsDb";
 import { archiveFinishedEvents } from "@/lib/eventsArchive";
 import { isUpcoming } from "@/lib/eventDisplay";
+import { splitFeaturedProgramEvents } from "@/lib/programWeekFeatured";
 
 export const dynamic = "force-dynamic";
 
@@ -111,9 +112,12 @@ export async function GET(req: Request) {
       { ...p, ...resolveProviderLocation(p) },
     ]),
   );
-  const events = resolveEventsForLocale(rawEvents as unknown as NightEvent[], locale)
-    .filter((e) => eventsInWeek(e.startsAt, weekId) && isUpcoming(e))
-    .map((e) => toPublicNightEvent(e, providersById))
+  const upcomingPublic = resolveEventsForLocale(rawEvents as unknown as NightEvent[], locale)
+    .filter((e) => isUpcoming(e))
+    .map((e) => toPublicNightEvent(e, providersById));
+
+  const events = upcomingPublic
+    .filter((e) => eventsInWeek(e.startsAt, weekId))
     .sort((a, b) => a.startsAt.localeCompare(b.startsAt));
 
   const applyEventPromo = (e: PublicNightEvent): PublicNightEvent => {
@@ -132,28 +136,34 @@ export async function GET(req: Request) {
     return { ...p, promotionLabel: label, isPromoted: true };
   };
 
-  let featuredEvents =
-    week.featuredEventIds.length > 0
-      ? events.filter((e) => week.featuredEventIds.includes(e.id) && isUpcoming(e))
-      : events.slice(0, 8);
+  const sortFeatured = (list: PublicNightEvent[]) =>
+    list.map(applyEventPromo).sort((a, b) => {
+      const af = a.isFeatured ? 0 : 1;
+      const bf = b.isFeatured ? 0 : 1;
+      if (af !== bf) return af - bf;
+      return a.startsAt.localeCompare(b.startsAt);
+    });
+
+  const { thisWeek, spotlight } = splitFeaturedProgramEvents(
+    week.featuredEventIds,
+    upcomingPublic,
+    weekId,
+  );
+  const featuredEvents = sortFeatured(thisWeek);
+  const spotlightEvents = sortFeatured(spotlight);
 
   let featuredProviders =
     week.featuredProviderIds.length > 0
       ? providers.filter((p) => week.featuredProviderIds.includes(p.id))
       : providers.slice(0, 6);
 
-  featuredEvents = featuredEvents.map(applyEventPromo).sort((a, b) => {
-    const af = a.isFeatured ? 0 : 1;
-    const bf = b.isFeatured ? 0 : 1;
-    if (af !== bf) return af - bf;
-    return a.startsAt.localeCompare(b.startsAt);
-  });
   featuredProviders = featuredProviders.map(applyProviderPromo);
 
   return NextResponse.json(
     {
       week,
       featuredEvents,
+      spotlightEvents,
       featuredProviders,
       fallbackEventCount: events.length,
     },

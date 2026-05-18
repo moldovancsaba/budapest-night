@@ -10,6 +10,8 @@ import type { PublicNightEvent } from "@/lib/publicEvent";
 export type ProgramWeekPayload = {
   week: PublicProgramWeek;
   featuredEvents: PublicNightEvent[];
+  /** Editorial picks outside the Thu–Wed window (e.g. headline concerts). */
+  spotlightEvents?: PublicNightEvent[];
   featuredProviders: Provider[];
   fallbackEventCount: number;
 };

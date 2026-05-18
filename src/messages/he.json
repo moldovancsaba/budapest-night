@@ -678,6 +678,8 @@
     "newsletterConfirm": "אשרו במייל.",
     "subscribeError": "ההרשמה נכשלה.",
     "featuredEvents": "אירועים נבחרים",
+    "spotlightEvents": "בקרוב — בחירת המערכת",
+    "spotlightEventsHint": "אירועים גדולים לאחר השבוע הנוכחי.",
     "featuredVenues": "מקומות נבחרים",
     "eventsThisWeek": "{count} אירועים השבוע",
     "browseAllEvents": "כל האירועים",

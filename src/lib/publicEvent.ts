@@ -10,6 +10,8 @@ export type PublicNightEvent = NightEvent & {
   /** Active featured_event promotion (public API only). */
   isFeatured?: boolean;
   promotionLabel?: string;
+  /** Editorial pick scheduled outside the current Thu–Wed program week. */
+  outsideProgramWeek?: boolean;
 };
 
 export function toPublicNightEvent(
