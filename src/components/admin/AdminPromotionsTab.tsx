@@ -112,8 +112,13 @@ export function AdminPromotionsTab() {
             </a>
           </Button>
           <Button variant="outline" asChild>
+            <a href="/api/admin/qr-pack?partner=1&format=pdf" download>
+              A5 QR pack (PDF)
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
             <a href="/api/admin/qr-pack?partner=1&print=1" target="_blank" rel="noopener noreferrer">
-              A5 QR pack + print
+              A5 QR pack (HTML print)
             </a>
           </Button>
         </div>

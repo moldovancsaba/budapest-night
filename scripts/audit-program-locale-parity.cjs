@@ -40,10 +40,11 @@ async function main() {
   const jsonOut = process.argv.includes("--json");
   const client = new MongoClient(uri);
   await client.connect();
-  const db = client.db();
+  const db = client.db(process.env.MONGODB_DB || "budapest-night");
 
-  const programWeek = await db.collection("programWeeks").findOne({ status: "published" })
-    ?? (await db.collection("programWeeks").find({}).sort({ weekStart: -1 }).limit(1).toArray())[0];
+  const programWeek =
+    (await db.collection("programWeeks").findOne({ published: true }, { sort: { weekId: -1 } })) ??
+    (await db.collection("programWeeks").find({}).sort({ weekId: -1 }).limit(1).toArray())[0];
 
   const now = new Date().toISOString();
   const promos = await db

@@ -48,34 +48,34 @@
         ],
         "locales": {
           "hu": {
-            "name": "Uránia National Film Theatre",
-            "shortDescription": "Art-deco cinema palace on Rákóczi út — festivals, classics, and premieres in the heart of Pest.",
-            "longDescription": "Uránia National Film Theatre (Uránia Nemzeti Filmszínház) is a landmark 1890s cinema hall on Rákóczi út, hosting festivals, restored classics, and new releases. Check urania.hu for the weekly program and box office hours.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
-            "slug": "urania-film-hu"
+            "name": "Uránia Nemzeti Filmszínház",
+            "shortDescription": "Művész mozi palota a Rákóczi úton — fesztiválok, klasszikusok és premierék.",
+            "longDescription": "Az Uránia Nemzeti Filmszínház (1890-es évek) a Rákóczi út 21. szám alatt működik: fesztiválok, felújított klasszikusok és új filmek. Heti műsor és jegyek: urania.hu.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
+            "slug": "urania-nemzeti-film"
           },
           "es": {
-            "name": "Uránia National Film Theatre",
-            "shortDescription": "Art-deco cinema palace on Rákóczi út — festivals, classics, and premieres in the heart of Pest.",
-            "longDescription": "Uránia National Film Theatre (Uránia Nemzeti Filmszínház) is a landmark 1890s cinema hall on Rákóczi út, hosting festivals, restored classics, and new releases. Check urania.hu for the weekly program and box office hours.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
-            "slug": "urania-film-es"
+            "name": "Uránia — Cine Nacional",
+            "shortDescription": "Palacio art déco en Rákóczi út — festivales, clásicos y estrenos.",
+            "longDescription": "El Uránia National Film Theatre es una sala histórica de 1890 en el centro de Pest. Programación semanal y taquilla en urania.hu.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
+            "slug": "urania-cine-nacional"
           },
           "it": {
-            "name": "Uránia National Film Theatre",
-            "shortDescription": "Art-deco cinema palace on Rákóczi út — festivals, classics, and premieres in the heart of Pest.",
-            "longDescription": "Uránia National Film Theatre (Uránia Nemzeti Filmszínház) is a landmark 1890s cinema hall on Rákóczi út, hosting festivals, restored classics, and new releases. Check urania.hu for the weekly program and box office hours.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
-            "slug": "urania-film-it"
+            "name": "Uránia — Cinema Nazionale",
+            "shortDescription": "Palazzo art déco su Rákóczi út — festival, classici e anteprime.",
+            "longDescription": "L'Uránia National Film Theatre è una sala storica degli anni 1890 nel cuore di Pest. Programma e biglietti su urania.hu.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
+            "slug": "urania-cinema-nazionale"
           },
           "he": {
-            "name": "Uránia National Film Theatre",
-            "shortDescription": "Art-deco cinema palace on Rákóczi út — festivals, classics, and premieres in the heart of Pest.",
-            "longDescription": "Uránia National Film Theatre (Uránia Nemzeti Filmszínház) is a landmark 1890s cinema hall on Rákóczi út, hosting festivals, restored classics, and new releases. Check urania.hu for the weekly program and box office hours.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
-            "slug": "urania-film-he"
+            "name": "אורניה — בית הקולנוע הלאומי",
+            "shortDescription": "ארמון קולנוע ארט דקו ברákóczi — פסטיבלים, קלאסיקות והקרנות בכורה.",
+            "longDescription": "אורניה הוא אולם קולנוע היסטורי משנות ה-90 של המאה ה-19 במרכז פשט. לוח הקרנות וכרטיסים ב-urania.hu.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
+            "slug": "urania-cinema-he"
           },
           "ar": {
-            "name": "Uránia National Film Theatre",
-            "shortDescription": "Art-deco cinema palace on Rákóczi út — festivals, classics, and premieres in the heart of Pest.",
-            "longDescription": "Uránia National Film Theatre (Uránia Nemzeti Filmszínház) is a landmark 1890s cinema hall on Rákóczi út, hosting festivals, restored classics, and new releases. Check urania.hu for the weekly program and box office hours.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
-            "slug": "urania-film-ar"
+            "name": "أورانيا — دار السينما الوطنية",
+            "shortDescription": "قصر سينما آرت ديكو في شارع راكوتسي — مهرجانات وكلاسيكيات وعروض أولى.",
+            "longDescription": "أورانيا قاعة سينما تاريخية من تسعينيات القرن التاسع عشر في قلب بودابست. البرنامج والتذاكر على urania.hu.\n\nSources: https://www.urania.hu/en https://www.urania.hu/en/program",
+            "slug": "urania-cinema-ar"
           }
         }
       }
@@ -115,34 +115,34 @@
         ],
         "locales": {
           "hu": {
-            "name": "art+ Cinema Budapest",
-            "shortDescription": "Independent art-house screens on Király utca — world cinema and festival picks near Oktogon.",
-            "longDescription": "art+ Cinema runs multiple screens on Király utca with arthouse, festival, and retrospective programming. Tickets and schedules are published on artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
-            "slug": "art-plus-cinema-hu"
+            "name": "art+ Mozi Budapest",
+            "shortDescription": "Art mozi a Király utcán — világfilm és fesztiválválogatás az Oktogonnál.",
+            "longDescription": "Az art+ Cinema több termben futtat világ- és fesztiválfilmeket a Király utcában. Jegyek és műsor: artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
+            "slug": "art-plus-mozi"
           },
           "es": {
             "name": "art+ Cinema Budapest",
-            "shortDescription": "Independent art-house screens on Király utca — world cinema and festival picks near Oktogon.",
-            "longDescription": "art+ Cinema runs multiple screens on Király utca with arthouse, festival, and retrospective programming. Tickets and schedules are published on artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
-            "slug": "art-plus-cinema-es"
+            "shortDescription": "Cine de autor en Király utca — cine mundial cerca de Oktogon.",
+            "longDescription": "art+ Cinema proyecta cine de autor y de festival en varias salas. Entradas en artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
+            "slug": "art-plus-cine"
           },
           "it": {
             "name": "art+ Cinema Budapest",
-            "shortDescription": "Independent art-house screens on Király utca — world cinema and festival picks near Oktogon.",
-            "longDescription": "art+ Cinema runs multiple screens on Király utca with arthouse, festival, and retrospective programming. Tickets and schedules are published on artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
+            "shortDescription": "Cinema d'essai in Király utca — cinema mondiale vicino a Oktogon.",
+            "longDescription": "art+ Cinema propone film d'autore e da festival in più sale. Biglietti su artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
             "slug": "art-plus-cinema-it"
           },
           "he": {
-            "name": "art+ Cinema Budapest",
-            "shortDescription": "Independent art-house screens on Király utca — world cinema and festival picks near Oktogon.",
-            "longDescription": "art+ Cinema runs multiple screens on Király utca with arthouse, festival, and retrospective programming. Tickets and schedules are published on artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
-            "slug": "art-plus-cinema-he"
+            "name": "art+ קולנוע בודפשט",
+            "shortDescription": "בית קולנוע ארט ברחוב קיראי — קולנוע עולמי ליד אוקטogon.",
+            "longDescription": "art+ Cinema מקרין סרטי ארט ופסטיבלים במספר אולמות. כרטיסים ב-artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
+            "slug": "art-plus-he"
           },
           "ar": {
-            "name": "art+ Cinema Budapest",
-            "shortDescription": "Independent art-house screens on Király utca — world cinema and festival picks near Oktogon.",
-            "longDescription": "art+ Cinema runs multiple screens on Király utca with arthouse, festival, and retrospective programming. Tickets and schedules are published on artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
-            "slug": "art-plus-cinema-ar"
+            "name": "art+ سينما بودابست",
+            "shortDescription": "سينما فنية في شارع كيرالي — أفلام عالمية قرب أوكتogon.",
+            "longDescription": "سينما art+ تعرض أفلاماً فنية ومهرجانات في عدة قاعات. التذاكر على artpluscinema.hu.\n\nSources: https://www.artpluscinema.hu https://www.artpluscinema.hu/en/program",
+            "slug": "art-plus-ar"
           }
         }
       }
@@ -183,33 +183,33 @@
         "locales": {
           "hu": {
             "name": "Cirko-Gege",
-            "shortDescription": "Belváros art cinema on Párizsi utca — indie releases and late-night screenings.",
-            "longDescription": "Cirko-Gege is a long-running Budapest arthouse cinema near Ferenciek tere with international and Hungarian titles. Program and tickets: cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
-            "slug": "cirko-gegeveny-hu"
+            "shortDescription": "Belvárosi art mozi a Párizsi utcában — artfilmek és késő esti vetítések.",
+            "longDescription": "A Cirko-Gege a Ferenciek tere közelében futtat nemzetközi és magyar artfilmeket. Műsor: cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
+            "slug": "cirko-gege"
           },
           "es": {
             "name": "Cirko-Gege",
-            "shortDescription": "Belváros art cinema on Párizsi utca — indie releases and late-night screenings.",
-            "longDescription": "Cirko-Gege is a long-running Budapest arthouse cinema near Ferenciek tere with international and Hungarian titles. Program and tickets: cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
-            "slug": "cirko-gegeveny-es"
+            "shortDescription": "Cine de arte en Párizsi utca — estrenos indie y sesiones nocturnas.",
+            "longDescription": "Cirko-Gege es un cine de autor cerca de Ferenciek tere con títulos internacionales y húngaros. Programa en cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
+            "slug": "cirko-gege-es"
           },
           "it": {
             "name": "Cirko-Gege",
-            "shortDescription": "Belváros art cinema on Párizsi utca — indie releases and late-night screenings.",
-            "longDescription": "Cirko-Gege is a long-running Budapest arthouse cinema near Ferenciek tere with international and Hungarian titles. Program and tickets: cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
-            "slug": "cirko-gegeveny-it"
+            "shortDescription": "Cinema d'essai in Párizsi utca — indie e proiezioni serali.",
+            "longDescription": "Cirko-Gege è un cinema d'autore vicino a Ferenciek tere. Programma su cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
+            "slug": "cirko-gege-it"
           },
           "he": {
-            "name": "Cirko-Gege",
-            "shortDescription": "Belváros art cinema on Párizsi utca — indie releases and late-night screenings.",
-            "longDescription": "Cirko-Gege is a long-running Budapest arthouse cinema near Ferenciek tere with international and Hungarian titles. Program and tickets: cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
-            "slug": "cirko-gegeveny-he"
+            "name": "סירקו-ג'גה",
+            "shortDescription": "קולנוע ארט ברחוב פריזי — סרטי אינדי והקרנות לילה.",
+            "longDescription": "סירקו-ג'גה ליד Ferenciek tere מציג קולנוע בינלאומי והונגרי. לוח הקרנות ב-cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
+            "slug": "cirko-gege-he"
           },
           "ar": {
-            "name": "Cirko-Gege",
-            "shortDescription": "Belváros art cinema on Párizsi utca — indie releases and late-night screenings.",
-            "longDescription": "Cirko-Gege is a long-running Budapest arthouse cinema near Ferenciek tere with international and Hungarian titles. Program and tickets: cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
-            "slug": "cirko-gegeveny-ar"
+            "name": "سيركو-جيجي",
+            "shortDescription": "سينما فنية في شارع باريسي — أفلام مستقلة وعروض مسائية.",
+            "longDescription": "سيركو-جيجي قرب Ferenciek tere يعرض أفلاماً دولية ومجرية. البرنامج على cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
+            "slug": "cirko-gege-ar"
           }
         }
       }
@@ -249,34 +249,34 @@
         ],
         "locales": {
           "hu": {
-            "name": "Puskin Cinema",
-            "shortDescription": "Central Pest repertory cinema on Kossuth Lajos utca — art and festival screenings.",
-            "longDescription": "Puskin Cinema (Puskin Mozi) programmes arthouse and festival cinema in a central Pest location. See puskinmozi.hu for showtimes.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
-            "slug": "puskin-mozi-hu"
+            "name": "Puskin Mozi",
+            "shortDescription": "Repertuár mozi a Kossuth Lajos utcában — artfilm és fesztiválok.",
+            "longDescription": "A Puskin Mozi art- és fesztiválfilmeket vetít a belvárosban. Műsor: puskinmozi.hu.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
+            "slug": "puskin-mozi"
           },
           "es": {
-            "name": "Puskin Cinema",
-            "shortDescription": "Central Pest repertory cinema on Kossuth Lajos utca — art and festival screenings.",
-            "longDescription": "Puskin Cinema (Puskin Mozi) programmes arthouse and festival cinema in a central Pest location. See puskinmozi.hu for showtimes.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
-            "slug": "puskin-mozi-es"
+            "name": "Cine Puskin",
+            "shortDescription": "Cine de repertorio en Kossuth Lajos utca — arte y festivales.",
+            "longDescription": "Puskin Cinema programa cine de arte en el centro. Horarios en puskinmozi.hu.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
+            "slug": "puskin-cine"
           },
           "it": {
-            "name": "Puskin Cinema",
-            "shortDescription": "Central Pest repertory cinema on Kossuth Lajos utca — art and festival screenings.",
-            "longDescription": "Puskin Cinema (Puskin Mozi) programmes arthouse and festival cinema in a central Pest location. See puskinmozi.hu for showtimes.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
-            "slug": "puskin-mozi-it"
+            "name": "Cinema Puskin",
+            "shortDescription": "Cinema di repertorio in Kossuth Lajos utca — arte e festival.",
+            "longDescription": "Il Puskin Cinema propone cinema d'essai nel centro. Programma su puskinmozi.hu.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
+            "slug": "puskin-cinema"
           },
           "he": {
-            "name": "Puskin Cinema",
-            "shortDescription": "Central Pest repertory cinema on Kossuth Lajos utca — art and festival screenings.",
-            "longDescription": "Puskin Cinema (Puskin Mozi) programmes arthouse and festival cinema in a central Pest location. See puskinmozi.hu for showtimes.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
-            "slug": "puskin-mozi-he"
+            "name": "קולנוע פושקין",
+            "shortDescription": "קולנוע רפרטואר ברחוב קושוט לאיוש — ארט ופסטיבלים.",
+            "longDescription": "פושקין מקרין קולנוע ארט במרכז העיר. לוח הקרנות ב-puskinmozi.hu.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
+            "slug": "puskin-he"
           },
           "ar": {
-            "name": "Puskin Cinema",
-            "shortDescription": "Central Pest repertory cinema on Kossuth Lajos utca — art and festival screenings.",
-            "longDescription": "Puskin Cinema (Puskin Mozi) programmes arthouse and festival cinema in a central Pest location. See puskinmozi.hu for showtimes.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
-            "slug": "puskin-mozi-ar"
+            "name": "سينما بوشكين",
+            "shortDescription": "سينما ريبيرتوار في شارع كوشوت — فن ومهرجانات.",
+            "longDescription": "بوشكين يعرض أفلاماً فنية في وسط المدينة. البرنامج على puskinmozi.hu.\n\nSources: https://puskinmozi.hu https://puskinmozi.hu/musor",
+            "slug": "puskin-ar"
           }
         }
       }
@@ -316,34 +316,34 @@
         ],
         "locales": {
           "hu": {
-            "name": "Hungarian National Theatre",
-            "shortDescription": "National Theatre on the Danube bank — drama, dance, and new Hungarian productions.",
-            "longDescription": "The Hungarian National Theatre (Nemzeti Színház) is the flagship drama company in the Millennium Quarter with a year-round repertoire on the Bajor Gizi park campus. Tickets: nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
-            "slug": "nemzeti-szinhaz-hu"
+            "name": "Nemzeti Színház",
+            "shortDescription": "A Duna-parti nemzeti színház — dráma, tánc és új magyar előadások.",
+            "longDescription": "A Nemzeti Színház a Millenniumi negyedben, a Bajor Gizi parkban működik. Évad és jegyek: nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
+            "slug": "nemzeti-szinhaz"
           },
           "es": {
-            "name": "Hungarian National Theatre",
-            "shortDescription": "National Theatre on the Danube bank — drama, dance, and new Hungarian productions.",
-            "longDescription": "The Hungarian National Theatre (Nemzeti Színház) is the flagship drama company in the Millennium Quarter with a year-round repertoire on the Bajor Gizi park campus. Tickets: nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
-            "slug": "nemzeti-szinhaz-es"
+            "name": "Teatro Nacional de Hungría",
+            "shortDescription": "Teatro nacional a orillas del Danubio — drama y danza.",
+            "longDescription": "El Teatro Nacional Húngaro está en el barrio del Milenio. Programa en nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
+            "slug": "teatro-nacional-hu"
           },
           "it": {
-            "name": "Hungarian National Theatre",
-            "shortDescription": "National Theatre on the Danube bank — drama, dance, and new Hungarian productions.",
-            "longDescription": "The Hungarian National Theatre (Nemzeti Színház) is the flagship drama company in the Millennium Quarter with a year-round repertoire on the Bajor Gizi park campus. Tickets: nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
-            "slug": "nemzeti-szinhaz-it"
+            "name": "Teatro Nazionale Ungherese",
+            "shortDescription": "Teatro nazionale sul Danubio — dramma e danza.",
+            "longDescription": "Il Teatro Nazionale Ungherese si trova nel quartiere del Millennio. Biglietti su nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
+            "slug": "teatro-nazionale-ungherese"
           },
           "he": {
-            "name": "Hungarian National Theatre",
-            "shortDescription": "National Theatre on the Danube bank — drama, dance, and new Hungarian productions.",
-            "longDescription": "The Hungarian National Theatre (Nemzeti Színház) is the flagship drama company in the Millennium Quarter with a year-round repertoire on the Bajor Gizi park campus. Tickets: nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
-            "slug": "nemzeti-szinhaz-he"
+            "name": "התיאטרון הלאומי ההונגרי",
+            "shortDescription": "תיאטרון לאומי על הדנובה — דרמה ומחול.",
+            "longDescription": "התיאטרון הלאומי בשכונת האלף. תוכנית וכרטיסים ב-nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
+            "slug": "teatron-leumi-hu"
           },
           "ar": {
-            "name": "Hungarian National Theatre",
-            "shortDescription": "National Theatre on the Danube bank — drama, dance, and new Hungarian productions.",
-            "longDescription": "The Hungarian National Theatre (Nemzeti Színház) is the flagship drama company in the Millennium Quarter with a year-round repertoire on the Bajor Gizi park campus. Tickets: nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
-            "slug": "nemzeti-szinhaz-ar"
+            "name": "المسرح الوطني المجري",
+            "shortDescription": "مسرح وطني على ضفاف الدانوب — دراما ورقص.",
+            "longDescription": "المسرح الوطني في حي الألفية. البرنامج على nemzetiszinhaz.hu.\n\nSources: https://nemzetiszinhaz.hu https://nemzetiszinhaz.hu/en/program",
+            "slug": "masrah-watani-hu"
           }
         }
       }
@@ -383,34 +383,34 @@
         ],
         "locales": {
           "hu": {
-            "name": "Katona József Theatre",
-            "shortDescription": "Award-winning drama company near Vörösmarty tér — contemporary Hungarian and world premieres.",
-            "longDescription": "Katona József Theatre is one of Budapest's leading drama companies with productions at Petőfi Sándor utca and Kamra. Repertoire and tickets on katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
-            "slug": "katona-szinhaz-hu"
+            "name": "Katona József Színház",
+            "shortDescription": "Díjnyertes dráma a Vörösmarty tér közelében — kortárs magyar és világpremierék.",
+            "longDescription": "A Katona József Színház a Petőfi Sándor utcában és a Kamrában játszik. Repertoár: katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
+            "slug": "katona-jozsef-szinhaz"
           },
           "es": {
-            "name": "Katona József Theatre",
-            "shortDescription": "Award-winning drama company near Vörösmarty tér — contemporary Hungarian and world premieres.",
-            "longDescription": "Katona József Theatre is one of Budapest's leading drama companies with productions at Petőfi Sándor utca and Kamra. Repertoire and tickets on katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
-            "slug": "katona-szinhaz-es"
+            "name": "Teatro Katona József",
+            "shortDescription": "Compañía de drama premiada cerca de Vörösmarty tér.",
+            "longDescription": "El Katona József Theatre presenta drama contemporáneo en Petőfi Sándor utca. Entradas en katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
+            "slug": "teatro-katona"
           },
           "it": {
-            "name": "Katona József Theatre",
-            "shortDescription": "Award-winning drama company near Vörösmarty tér — contemporary Hungarian and world premieres.",
-            "longDescription": "Katona József Theatre is one of Budapest's leading drama companies with productions at Petőfi Sándor utca and Kamra. Repertoire and tickets on katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
-            "slug": "katona-szinhaz-it"
+            "name": "Teatro Katona József",
+            "shortDescription": "Compagnia drammatica premiata vicino a Vörösmarty tér.",
+            "longDescription": "Il Katona József Theatre è tra le compagnie drammatiche leader di Budapest. Programma su katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
+            "slug": "teatro-katona-it"
           },
           "he": {
-            "name": "Katona József Theatre",
-            "shortDescription": "Award-winning drama company near Vörösmarty tér — contemporary Hungarian and world premieres.",
-            "longDescription": "Katona József Theatre is one of Budapest's leading drama companies with productions at Petőfi Sándor utca and Kamra. Repertoire and tickets on katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
-            "slug": "katona-szinhaz-he"
+            "name": "תיאטרון קטונה יוזף",
+            "shortDescription": "תיאטרון דרמה מוערך ליד כיכר וורושמרטי.",
+            "longDescription": "תיאטרון קטונה מציג דרמה עכשווית הונגרית ובינלאומית. כרטיסים ב-katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
+            "slug": "teatron-katona"
           },
           "ar": {
-            "name": "Katona József Theatre",
-            "shortDescription": "Award-winning drama company near Vörösmarty tér — contemporary Hungarian and world premieres.",
-            "longDescription": "Katona József Theatre is one of Budapest's leading drama companies with productions at Petőfi Sándor utca and Kamra. Repertoire and tickets on katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
-            "slug": "katona-szinhaz-ar"
+            "name": "مسرح كاتونا يوزيف",
+            "shortDescription": "فرقة دراما حائزة على جوائز قرب ساحة فوروشمارتي.",
+            "longDescription": "مسرح كاتونا من أبرز فرق الدراما في بودابست. البرنامج على katonajozsef.hu.\n\nSources: https://katonajozsef.hu https://katonajozsef.hu/en/program",
+            "slug": "masrah-katona"
           }
         }
       }
@@ -451,32 +451,32 @@
         "locales": {
           "hu": {
             "name": "Vígszínház",
-            "shortDescription": "Historic comedy and musical theatre on Paulay Ede utca — classics and new Hungarian shows.",
-            "longDescription": "Vígszínház is a major musical and comedy theatre on Paulay Ede utca near Oktogon. Program and box office: vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
-            "slug": "vigszinhaz-hu"
+            "shortDescription": "Vígjáték és musical a Paulay Ede utcában — klasszikusok és új magyar előadások.",
+            "longDescription": "A Vígszínház nagy musical- és vígjáték-ház az Oktogon közelében. Jegyek: vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
+            "slug": "vigszinhaz"
           },
           "es": {
             "name": "Vígszínház",
-            "shortDescription": "Historic comedy and musical theatre on Paulay Ede utca — classics and new Hungarian shows.",
-            "longDescription": "Vígszínház is a major musical and comedy theatre on Paulay Ede utca near Oktogon. Program and box office: vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
+            "shortDescription": "Teatro de comedia y musical en Paulay Ede utca.",
+            "longDescription": "El Vígszínház es un gran teatro de comedia y musical cerca de Oktogon. Entradas en vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
             "slug": "vigszinhaz-es"
           },
           "it": {
             "name": "Vígszínház",
-            "shortDescription": "Historic comedy and musical theatre on Paulay Ede utca — classics and new Hungarian shows.",
-            "longDescription": "Vígszínház is a major musical and comedy theatre on Paulay Ede utca near Oktogon. Program and box office: vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
+            "shortDescription": "Teatro di commedia e musical in Paulay Ede utca.",
+            "longDescription": "Il Vígszínház è un grande teatro di prosa e musical vicino a Oktogon. Biglietti su vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
             "slug": "vigszinhaz-it"
           },
           "he": {
-            "name": "Vígszínház",
-            "shortDescription": "Historic comedy and musical theatre on Paulay Ede utca — classics and new Hungarian shows.",
-            "longDescription": "Vígszínház is a major musical and comedy theatre on Paulay Ede utca near Oktogon. Program and box office: vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
+            "name": "ויגסזינהאז",
+            "shortDescription": "תיאטרון קומדיה ומחזות זמר ברחוב פאולאי אדה.",
+            "longDescription": "ויגסזינהאז הוא תיאטרון מחזות זמר וקומדיה ליד אוקטogon. כרטיסים ב-vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
             "slug": "vigszinhaz-he"
           },
           "ar": {
-            "name": "Vígszínház",
-            "shortDescription": "Historic comedy and musical theatre on Paulay Ede utca — classics and new Hungarian shows.",
-            "longDescription": "Vígszínház is a major musical and comedy theatre on Paulay Ede utca near Oktogon. Program and box office: vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
+            "name": "فيغسزينهاز",
+            "shortDescription": "مسرح كوميديا وميوزيكال في شارع بولاي إيده.",
+            "longDescription": "فيغسزينهاز مسرح كوميديا وميوزيكال كبير قرب أوكتogon. التذاكر على vigszinhaz.hu.\n\nSources: https://vigszinhaz.hu https://vigszinhaz.hu/en/program",
             "slug": "vigszinhaz-ar"
           }
         }
@@ -517,34 +517,34 @@
         ],
         "locales": {
           "hu": {
-            "name": "Radnóti Miklós Theatre",
-            "shortDescription": "Chamber stages on Nagymező — contemporary drama and Radnóti company premieres.",
-            "longDescription": "Radnóti Miklós Theatre operates multiple stages on Nagymező utca with contemporary Hungarian and international drama. See radnoti.hu for the season program.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
-            "slug": "radnoti-szinhaz-hu"
+            "name": "Radnóti Miklós Színház",
+            "shortDescription": "Kamaraszínpadok a Nagymezőn — kortárs dráma és Radnóti-bemutatók.",
+            "longDescription": "A Radnóti Színház több termben játszik a Nagymező utcában. Évad: radnoti.hu.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
+            "slug": "radnoti-szinhaz"
           },
           "es": {
-            "name": "Radnóti Miklós Theatre",
-            "shortDescription": "Chamber stages on Nagymező — contemporary drama and Radnóti company premieres.",
-            "longDescription": "Radnóti Miklós Theatre operates multiple stages on Nagymező utca with contemporary Hungarian and international drama. See radnoti.hu for the season program.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
-            "slug": "radnoti-szinhaz-es"
+            "name": "Teatro Radnóti Miklós",
+            "shortDescription": "Escenarios de cámara en Nagymező — drama contemporáneo.",
+            "longDescription": "El Teatro Radnóti presenta drama húngaro e internacional en Nagymező utca. Programa en radnoti.hu.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
+            "slug": "teatro-radnoti"
           },
           "it": {
-            "name": "Radnóti Miklós Theatre",
-            "shortDescription": "Chamber stages on Nagymező — contemporary drama and Radnóti company premieres.",
-            "longDescription": "Radnóti Miklós Theatre operates multiple stages on Nagymező utca with contemporary Hungarian and international drama. See radnoti.hu for the season program.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
-            "slug": "radnoti-szinhaz-it"
+            "name": "Teatro Radnóti Miklós",
+            "shortDescription": "Sale cameristiche in Nagymező — dramma contemporaneo.",
+            "longDescription": "Il Teatro Radnóti è in Nagymező utca con produzioni contemporanee. Programma su radnoti.hu.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
+            "slug": "teatro-radnoti-it"
           },
           "he": {
-            "name": "Radnóti Miklós Theatre",
-            "shortDescription": "Chamber stages on Nagymező — contemporary drama and Radnóti company premieres.",
-            "longDescription": "Radnóti Miklós Theatre operates multiple stages on Nagymező utca with contemporary Hungarian and international drama. See radnoti.hu for the season program.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
-            "slug": "radnoti-szinhaz-he"
+            "name": "תיאטרון רדנוטי מיקלוש",
+            "shortDescription": "במות קאמרה ברחוב נגימזו — דרמה עכשווית.",
+            "longDescription": "תיאטרון רדנוטי מציג דרמה הונגרית ובינלאומית. תוכנית ב-radnoti.hu.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
+            "slug": "teatron-radnoti"
           },
           "ar": {
-            "name": "Radnóti Miklós Theatre",
-            "shortDescription": "Chamber stages on Nagymező — contemporary drama and Radnóti company premieres.",
-            "longDescription": "Radnóti Miklós Theatre operates multiple stages on Nagymező utca with contemporary Hungarian and international drama. See radnoti.hu for the season program.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
-            "slug": "radnoti-szinhaz-ar"
+            "name": "مسرح رادنوتي ميكلوش",
+            "shortDescription": "مسارح صغيرة في ناغيميزو — دراما معاصرة.",
+            "longDescription": "مسرح رادنوتي يعرض دراما مجارية ودولية. البرنامج على radnoti.hu.\n\nSources: https://radnoti.hu https://radnoti.hu/en/program",
+            "slug": "masrah-radnoti"
           }
         }
       }
@@ -587,32 +587,32 @@
         "locales": {
           "hu": {
             "name": "MÜPA Budapest",
-            "shortDescription": "Palace of Arts on the Danube — classical, jazz, dance, and Ludwig Museum exhibitions.",
-            "longDescription": "MÜPA Budapest (Palace of Arts) hosts concerts, opera, dance, and exhibitions in the Bartók National Concert Hall and Ludwig Museum. Full program: mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
-            "slug": "mupa-budapest-hu"
+            "shortDescription": "Művészetek Palotája a Dunán — klasszikus, jazz, tánc és Ludwig Múzeum.",
+            "longDescription": "A MÜPA a Bartók Nemzeti Koncertteremben és a Ludwig Múzeumban ad otthont koncerteknek, operának, táncnak és kiállításoknak. Program: mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
+            "slug": "mupa-budapest"
           },
           "es": {
             "name": "MÜPA Budapest",
-            "shortDescription": "Palace of Arts on the Danube — classical, jazz, dance, and Ludwig Museum exhibitions.",
-            "longDescription": "MÜPA Budapest (Palace of Arts) hosts concerts, opera, dance, and exhibitions in the Bartók National Concert Hall and Ludwig Museum. Full program: mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
+            "shortDescription": "Palacio de las Artes en el Danubio — clásica, jazz, danza y museo Ludwig.",
+            "longDescription": "MÜPA Budapest acoge conciertos, ópera, danza y exposiciones. Calendario en mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
             "slug": "mupa-budapest-es"
           },
           "it": {
             "name": "MÜPA Budapest",
-            "shortDescription": "Palace of Arts on the Danube — classical, jazz, dance, and Ludwig Museum exhibitions.",
-            "longDescription": "MÜPA Budapest (Palace of Arts) hosts concerts, opera, dance, and exhibitions in the Bartók National Concert Hall and Ludwig Museum. Full program: mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
+            "shortDescription": "Palazzo delle Arti sul Danubio — classica, jazz, danza e Ludwig Museum.",
+            "longDescription": "MÜPA Budapest ospita concerti, opera, danza e mostre. Programma su mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
             "slug": "mupa-budapest-it"
           },
           "he": {
-            "name": "MÜPA Budapest",
-            "shortDescription": "Palace of Arts on the Danube — classical, jazz, dance, and Ludwig Museum exhibitions.",
-            "longDescription": "MÜPA Budapest (Palace of Arts) hosts concerts, opera, dance, and exhibitions in the Bartók National Concert Hall and Ludwig Museum. Full program: mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
+            "name": "מופה בודפשט",
+            "shortDescription": "ארמון האמנויות על הדנובה — קלאסי, ג'אז, מחול ומוזיאון לודוויג.",
+            "longDescription": "מופה מארחת קונצרטים, אופרה, מחול ותערוכות. לוח אירועים ב-mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
             "slug": "mupa-budapest-he"
           },
           "ar": {
-            "name": "MÜPA Budapest",
-            "shortDescription": "Palace of Arts on the Danube — classical, jazz, dance, and Ludwig Museum exhibitions.",
-            "longDescription": "MÜPA Budapest (Palace of Arts) hosts concerts, opera, dance, and exhibitions in the Bartók National Concert Hall and Ludwig Museum. Full program: mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
+            "name": "موبا بودابست",
+            "shortDescription": "قصر الفنون على الدانوب — كلاسيكي وجاز ورقص ومتحف لودفيج.",
+            "longDescription": "موبا تستضيف حفلات وأوبرا ورقصاً ومعارض. البرنامج على mupa.hu.\n\nSources: https://www.mupa.hu/en https://www.mupa.hu/en/events",
             "slug": "mupa-budapest-ar"
           }
         }

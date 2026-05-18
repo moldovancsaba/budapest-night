@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { getDb, COL } from "@/lib/mongodb";
 import { requireAdmin } from "@/lib/requireAdmin";
 import { getSiteOrigin } from "@/lib/appPaths";
+import { buildPartnerQrPackPdf } from "@/lib/partnerQrPdf";
 import type { Provider } from "@/types/provider";
+import type { AppLocale } from "@/i18n/config";
 
 function escapeHtml(s: string): string {
   return s
@@ -12,22 +14,12 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
-/**
- * Printable A5 HTML pack — open in browser and Print → Save as PDF.
- * ?partner=1 — all partnerTier=partner
- * ?ids=prov-a,prov-b — explicit list
- */
-export async function GET(req: NextRequest) {
-  const denied = await requireAdmin();
-  if (denied) return denied;
-
-  const db = await getDb();
-  if (!db) return NextResponse.json({ error: "No database" }, { status: 503 });
-
-  const { searchParams } = req.nextUrl;
+async function loadProviders(
+  db: NonNullable<Awaited<ReturnType<typeof getDb>>>,
+  searchParams: URLSearchParams,
+): Promise<Provider[]> {
   const partnerOnly = searchParams.get("partner") === "1";
   const idsParam = searchParams.get("ids");
-  const locale = searchParams.get("locale") ?? "hu";
 
   let providers = (await db.collection(COL.providers).find({}).toArray()) as unknown as Provider[];
 
@@ -41,8 +33,40 @@ export async function GET(req: NextRequest) {
   }
 
   providers.sort((a, b) => a.name.localeCompare(b.name));
+  return providers;
+}
+
+/**
+ * Partner QR pack — A5 HTML (print) or PDF download.
+ * ?format=pdf — application/pdf
+ * ?partner=1 — partnerTier=partner only
+ * ?ids=prov-a,prov-b — explicit list
+ */
+export async function GET(req: NextRequest) {
+  const denied = await requireAdmin();
+  if (denied) return denied;
+
+  const db = await getDb();
+  if (!db) return NextResponse.json({ error: "No database" }, { status: 503 });
+
+  const { searchParams } = req.nextUrl;
+  const locale = (searchParams.get("locale") ?? "hu") as AppLocale;
+  const format = searchParams.get("format") ?? "html";
+
+  const providers = await loadProviders(db, searchParams);
   if (!providers.length) {
     return NextResponse.json({ error: "No matching providers" }, { status: 404 });
+  }
+
+  if (format === "pdf") {
+    const bytes = await buildPartnerQrPackPdf(providers, locale);
+    return new NextResponse(Buffer.from(bytes), {
+      headers: {
+        "Content-Type": "application/pdf",
+        "Content-Disposition": 'attachment; filename="pestiest-partner-qr-pack.pdf"',
+        "Cache-Control": "no-store",
+      },
+    });
   }
 
   const origin = getSiteOrigin();

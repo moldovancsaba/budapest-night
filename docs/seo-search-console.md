@@ -38,6 +38,15 @@ Inferred from `activityTypes` on the provider document:
 
 `https://budapest-night.vercel.app/robots.txt` — allows crawlers; references sitemap.
 
+## Automated smoke (CI / local)
+
+```bash
+npm run ops:seo-smoke
+npm run audit:program-locales
+```
+
+`ops:seo-smoke` checks robots, sitemap, `/ez-a-het`, program-week API, and featured events on production (default base: `https://budapest-night.vercel.app`).
+
 ## Post-cutover
 
 When `pestiest.hu` is live, add a Search Console property for the apex domain, set 301s from the Vercel URL, and resubmit the sitemap on the new host.

@@ -8,6 +8,10 @@ const fs = require("fs");
 const path = require("path");
 const { localeBlocks } = require("./lib/locale-blocks.cjs");
 
+const TRANSLATED_LOCALES = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "data/program-vertical-locales.json"), "utf8"),
+);
+
 const VENUES = [
   {
     id: "prov-urania-film",
@@ -167,6 +171,9 @@ const VENUES = [
 
 const operations = VENUES.map((v) => {
   const { slugBase, shortDescription, longDescription, ...rest } = v;
+  const locales =
+    TRANSLATED_LOCALES[v.id] ??
+    localeBlocks(slugBase, v.name, shortDescription, longDescription);
   return {
     resource: "provider",
     action: "upsert",
@@ -179,7 +186,7 @@ const operations = VENUES.map((v) => {
       rating: 0,
       reviewCount: 0,
       badges: ["Staff Pick"],
-      locales: localeBlocks(slugBase, v.name, shortDescription, longDescription),
+      locales,
     },
   };
 });
