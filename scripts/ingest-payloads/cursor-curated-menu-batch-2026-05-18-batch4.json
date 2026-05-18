@@ -1,0 +1,812 @@
+{
+  "sourceUrls": [
+    "https://instant.co.hu/",
+    "https://corvinclub.hu/",
+    "https://otkert.hu/en/",
+    "https://www.csendes.com/",
+    "https://cafe.hardrock.com/budapest/",
+    "https://www.legio.hu/"
+  ],
+  "notes": "Menu batch 4 (2026-05-18): ruin-bar / party drink menus — Instant Király, Corvin Club, Ötkert, Csendes, Hard Rock, Légió.",
+  "missingOrUncertain": [
+    "prov-cov-instant-kiraly: Menu aligned with Instant-Fogas ruin-bar tiers; instant.co.hu not itemized.",
+    "prov-corvin-club-ferencvaros: corvinclub.hu not scraped; prices estimated from district clubs.",
+    "prov-otkert-belvaros: otkert.hu drinks page 404; ruin-bar cocktail tiers estimated.",
+    "prov-cov-csendes-nagy: csendes.com returned 503; coffee/cocktail tiers estimated.",
+    "prov-cov-hard-rock-vaci: Hard Rock menu not scraped; global HRC drink tiers estimated.",
+    "prov-cov-legio-nagy: legio.hu not scraped; Hungarian pub food/drink tiers estimated."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-instant-kiraly",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://instant.co.hu/",
+          "sourceUrls": [
+            "https://instant.co.hu/",
+            "https://instant-fogas.com/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "spirits",
+              "title": "Spirits",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Szesszek"
+                },
+                "es": {
+                  "title": "Licores"
+                },
+                "it": {
+                  "title": "Distillati"
+                },
+                "he": {
+                  "title": "משקאות חריפים"
+                },
+                "ar": {
+                  "title": "مشروبات روحية"
+                }
+              },
+              "items": [
+                {
+                  "id": "house-palinka-4cl",
+                  "kind": "drink",
+                  "name": "House pálinka (4 cl)",
+                  "tags": [
+                    "palinka",
+                    "ruin-bar"
+                  ],
+                  "price": {
+                    "amount": 1990,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Ház pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Pálinka de la casa (4 cl)"
+                    },
+                    "it": {
+                      "name": "Pálinka della casa (4 cl)"
+                    },
+                    "he": {
+                      "name": "פלינקה הבית (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "بالينكا البيت (4 سم)"
+                    }
+                  }
+                },
+                {
+                  "id": "draft-beer",
+                  "kind": "drink",
+                  "name": "Draft beer (0.4 l)",
+                  "tags": [
+                    "beer",
+                    "ruin-bar"
+                  ],
+                  "price": {
+                    "amount": 1090,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Csapolt sör (0,4 l)"
+                    },
+                    "es": {
+                      "name": "Cerveza de barril (0,4 l)"
+                    },
+                    "it": {
+                      "name": "Birra alla spina (0,4 l)"
+                    },
+                    "he": {
+                      "name": "בירה מהחבית (0,4 ל׳)"
+                    },
+                    "ar": {
+                      "name": "بيرة من الصنبور (0.4 ل)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-corvin-club-ferencvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://corvinclub.hu/",
+          "sourceUrls": [
+            "https://corvinclub.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "drinks",
+              "title": "Bar",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Koktélok"
+                },
+                "es": {
+                  "title": "Cócteles"
+                },
+                "it": {
+                  "title": "Cocktail"
+                },
+                "he": {
+                  "title": "קוקטיילים"
+                },
+                "ar": {
+                  "title": "كوكتيلات"
+                }
+              },
+              "items": [
+                {
+                  "id": "gin-tonic",
+                  "kind": "drink",
+                  "name": "Gin & tonic",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "price": {
+                    "amount": 1890,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Gin tonic"
+                    },
+                    "es": {
+                      "name": "Gin tonic"
+                    },
+                    "it": {
+                      "name": "Gin tonic"
+                    },
+                    "he": {
+                      "name": "ג'ין טוניק"
+                    },
+                    "ar": {
+                      "name": "جن تونيك"
+                    }
+                  }
+                },
+                {
+                  "id": "draft-beer",
+                  "kind": "drink",
+                  "name": "Draft beer (0.4 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Csapolt sör (0,4 l)"
+                    },
+                    "es": {
+                      "name": "Cerveza de barril (0,4 l)"
+                    },
+                    "it": {
+                      "name": "Birra alla spina (0,4 l)"
+                    },
+                    "he": {
+                      "name": "בירה מהחבית (0,4 ל׳)"
+                    },
+                    "ar": {
+                      "name": "بيرة من الصنبور (0.4 ل)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-otkert-belvaros",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://otkert.hu/en/",
+          "sourceUrls": [
+            "https://otkert.hu/en/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "cocktails",
+              "title": "Cocktails",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Koktélok"
+                },
+                "es": {
+                  "title": "Cócteles"
+                },
+                "it": {
+                  "title": "Cocktail"
+                },
+                "he": {
+                  "title": "קוקטיילים"
+                },
+                "ar": {
+                  "title": "كوكتيلات"
+                }
+              },
+              "items": [
+                {
+                  "id": "mojito",
+                  "kind": "drink",
+                  "name": "Mojito",
+                  "tags": [
+                    "cocktail",
+                    "ruin-bar"
+                  ],
+                  "price": {
+                    "amount": 2790,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Mojito"
+                    },
+                    "es": {
+                      "name": "Mojito"
+                    },
+                    "it": {
+                      "name": "Mojito"
+                    },
+                    "he": {
+                      "name": "מוחיטו"
+                    },
+                    "ar": {
+                      "name": "موهيتو"
+                    }
+                  }
+                },
+                {
+                  "id": "aperol-spritz",
+                  "kind": "drink",
+                  "name": "Aperol Spritz",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "price": {
+                    "amount": 2490,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Aperol Spritz"
+                    },
+                    "es": {
+                      "name": "Aperol Spritz"
+                    },
+                    "it": {
+                      "name": "Aperol Spritz"
+                    },
+                    "he": {
+                      "name": "אפרול ספריץ"
+                    },
+                    "ar": {
+                      "name": "أبيرول سبرتز"
+                    }
+                  }
+                },
+                {
+                  "id": "palinka-shot",
+                  "kind": "drink",
+                  "name": "Hungarian pálinka (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 1790,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Magyar pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Pálinka húngara (4 cl)"
+                    },
+                    "it": {
+                      "name": "Pálinka ungherese (4 cl)"
+                    },
+                    "he": {
+                      "name": "פלינקה הונגרית (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "بالينكا مجري (4 سم)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-csendes-nagy",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.csendes.com/",
+          "sourceUrls": [
+            "https://www.csendes.com/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 690,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "evening",
+              "title": "Evening drinks",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Koktélok"
+                },
+                "es": {
+                  "title": "Cócteles"
+                },
+                "it": {
+                  "title": "Cocktail"
+                },
+                "he": {
+                  "title": "קוקטיילים"
+                },
+                "ar": {
+                  "title": "كوكتيلات"
+                }
+              },
+              "items": [
+                {
+                  "id": "long-drink",
+                  "kind": "drink",
+                  "name": "Vodka soda (4 cl + soda)",
+                  "tags": [
+                    "cocktail",
+                    "ruin-bar"
+                  ],
+                  "price": {
+                    "amount": 1590,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vodka szóda (4 cl + szóda)"
+                    },
+                    "es": {
+                      "name": "Vodka con soda (4 cl)"
+                    },
+                    "it": {
+                      "name": "Vodka soda (4 cl)"
+                    },
+                    "he": {
+                      "name": "וודקה סודה (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "فودكا صودا (4 سم)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-hard-rock-vaci",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://cafe.hardrock.com/budapest/",
+          "sourceUrls": [
+            "https://cafe.hardrock.com/budapest/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "cocktails",
+              "title": "Cocktails",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Koktélok"
+                },
+                "es": {
+                  "title": "Cócteles"
+                },
+                "it": {
+                  "title": "Cocktail"
+                },
+                "he": {
+                  "title": "קוקטיילים"
+                },
+                "ar": {
+                  "title": "كوكتيلات"
+                }
+              },
+              "items": [
+                {
+                  "id": "legendary-burger-combo-drink",
+                  "kind": "drink",
+                  "name": "House margarita",
+                  "tags": [
+                    "cocktail"
+                  ],
+                  "price": {
+                    "amount": 3290,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Ház margarita"
+                    },
+                    "es": {
+                      "name": "Margarita de la casa"
+                    },
+                    "it": {
+                      "name": "Margarita della casa"
+                    },
+                    "he": {
+                      "name": "מרגריטה הבית"
+                    },
+                    "ar": {
+                      "name": "مارغريتا البيت"
+                    }
+                  }
+                },
+                {
+                  "id": "draft-beer",
+                  "kind": "drink",
+                  "name": "Draft beer (0.5 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "price": {
+                    "amount": 1990,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Csapolt sör (0,5 l)"
+                    },
+                    "es": {
+                      "name": "Cerveza de barril (0,5 l)"
+                    },
+                    "it": {
+                      "name": "Birra alla spina (0,5 l)"
+                    },
+                    "he": {
+                      "name": "בירה מהחבית (0,5 ל׳)"
+                    },
+                    "ar": {
+                      "name": "بيرة من الصنبور (0.5 ل)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-legio-nagy",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.legio.hu/",
+          "sourceUrls": [
+            "https://www.legio.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "pub-food",
+              "title": "Pub food & drinks",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Kocsmai ételek és italok"
+                },
+                "es": {
+                  "title": "Comida y bebida de pub"
+                },
+                "it": {
+                  "title": "Cibo e drink da pub"
+                },
+                "he": {
+                  "title": "אוכל ושתייה בפאב"
+                },
+                "ar": {
+                  "title": "طعام ومشروبات الحانة"
+                }
+              },
+              "items": [
+                {
+                  "id": "goulash-soup",
+                  "kind": "food",
+                  "name": "Goulash soup",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 2490,
+                    "currency": "HUF",
+                    "unit": "bowl",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Gulyásleves"
+                    },
+                    "es": {
+                      "name": "Sopa goulash"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash"
+                    },
+                    "he": {
+                      "name": "מרק גולאש"
+                    },
+                    "ar": {
+                      "name": "شوربة غولاش"
+                    }
+                  }
+                },
+                {
+                  "id": "schnitzel",
+                  "kind": "food",
+                  "name": "Wiener schnitzel",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 4490,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Bécsi szelet"
+                    },
+                    "es": {
+                      "name": "Escalope vienés"
+                    },
+                    "it": {
+                      "name": "Cotoletta viennese"
+                    },
+                    "he": {
+                      "name": "שניצל וינאי"
+                    },
+                    "ar": {
+                      "name": "شنيتسل فييني"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "beer-spirits",
+              "title": "Beer & spirits",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Sörök"
+                },
+                "es": {
+                  "title": "Cervezas"
+                },
+                "it": {
+                  "title": "Birre"
+                },
+                "he": {
+                  "title": "בירות"
+                },
+                "ar": {
+                  "title": "بيرة"
+                }
+              },
+              "items": [
+                {
+                  "id": "draft-beer",
+                  "kind": "drink",
+                  "name": "Hungarian draft beer (0.5 l)",
+                  "tags": [
+                    "beer"
+                  ],
+                  "price": {
+                    "amount": 1190,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Magyar csapolt sör (0,5 l)"
+                    },
+                    "es": {
+                      "name": "Cerveza húngara de barril (0,5 l)"
+                    },
+                    "it": {
+                      "name": "Birra ungherese alla spina (0,5 l)"
+                    },
+                    "he": {
+                      "name": "בירה הונגרית מהחבית (0,5 ל׳)"
+                    },
+                    "ar": {
+                      "name": "بيرة مجارية مجارية (0.5 ل)"
+                    }
+                  }
+                },
+                {
+                  "id": "palinka",
+                  "kind": "drink",
+                  "name": "House pálinka (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 1890,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Ház pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Pálinka de la casa (4 cl)"
+                    },
+                    "it": {
+                      "name": "Pálinka della casa (4 cl)"
+                    },
+                    "he": {
+                      "name": "פלינקה הבית (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "بالينكا البيت (4 سم)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

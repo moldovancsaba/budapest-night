@@ -593,7 +593,7 @@ function renderMarkdown(report) {
     "",
     "- **`website_unreachable`** — Many `prov-cov-*` bulk rows fail automated HEAD/GET (404, bot blocks). **Manually verify** on Maps before deleting; prioritize rows with wrong copy or images.",
     "- **`image_source_off_venue_site`** — Often **OK** when the venue uses Webflow (`cdn.prod.website-files.com`) or Wikimedia fixes.",
-    "- **`missing_menu`** — Expected for most coverage-wave restaurants until menu curator batches land.",
+    "- **`missing_menu`** — Restaurants / Cafés / Parties without `menu.sections`. Run `npm run menu:status`; curate in batches via `docs/catalog-curation.md` + `npm run ingest:db`.",
     "- **Location** (`postal_borough_mismatch`, `landmark_neighborhood_mismatch`, `duplicate_address_inconsistent`) — run `node scripts/fix-venue-locations.cjs` then ingest `scripts/ingest-payloads/venue-location-fix.json`.",
     "- **Critical image/identity issues** (`banned_imgbb_hash`, `duplicate_*`, `legacy_provider_id`, `stale_domain_in_copy`) — fix first; none flagged means production is clean on those checks.",
     "",
@@ -643,7 +643,36 @@ function renderMarkdown(report) {
   section("Timed events (flagged)", report.events.flagged);
   section("Culture circles (flagged)", report.meetups.flagged);
 
-  lines.push("## Repair commands", "", "```bash", "# Re-run audit", "npm run audit:catalog", "", "# Single venue (image + contact)", "node scripts/fix-provider-one.cjs <prov-id>", "", "# Batch images", "npm run db:patch-venue-meetup-images", "npm run db:patch-event-images", "", "# Kiosk-style full patch", "node scripts/patch-kiosk-budapest.cjs", "```", "");
+  lines.push(
+    "## Repair commands",
+    "",
+    "```bash",
+    "# Re-run audit (fast)",
+    "npm run audit:catalog -- --skip-urls",
+    "",
+    "# Menu coverage",
+    "npm run menu:status",
+    "node scripts/generate-menu-batch-5.cjs   # example generator",
+    "npm run ingest:db -- scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json",
+    "npm run db:backfill-menu-venue-links",
+    "",
+    "# Single venue (image + contact)",
+    "node scripts/fix-provider-one.cjs <prov-id>",
+    "",
+    "# Batch images (then ingest:db on patch JSON)",
+    "node scripts/patch-venue-meetup-images.cjs",
+    "npm run ingest:db -- scripts/ingest-payloads/patch-unique-venue-meetup-images.json",
+    "npm run db:patch-venue-meetup-images",
+    "npm run db:patch-event-images",
+    "",
+    "# Locations",
+    "npm run audit:locations",
+    "npm run ingest:db -- scripts/ingest-payloads/venue-location-fix.json",
+    "```",
+    "",
+    "See **docs/catalog-curation.md** for batch history and tour-tag priorities.",
+    "",
+  );
 
   return lines.join("\n");
 }
@@ -653,7 +682,7 @@ async function main() {
   const asJson = process.argv.includes("--json");
 
   const [provRes, eventRes, meetRes] = await Promise.all([
-    fetch(`${BASE}/api/public/providers`),
+    fetch(`${BASE}/api/public/providers?_=${Date.now()}`),
     fetch(`${BASE}/api/public/events`),
     fetch(`${BASE}/api/public/meetup-groups`),
   ]);

@@ -3,7 +3,7 @@
     "https://budapest-night.vercel.app/api/public/providers",
     "https://budapest-night.vercel.app/api/public/meetup-groups"
   ],
-  "notes": "Replace 19 listings that reused wrong concert/generic ImgBB art with unique per-listing images.",
+  "notes": "Replace 5 listings that reused wrong concert/generic ImgBB art with unique per-listing images.",
   "missingOrUncertain": [],
   "operations": [
     {
@@ -11,15 +11,7 @@
       "action": "patch",
       "id": "prov-cov-frici-jewish-q",
       "patch": {
-        "image": "https://i.ibb.co/v6HKyMRB/1138336c42d7.png"
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "patch",
-      "id": "prov-cov-vegazzi-kazinczy",
-      "patch": {
-        "image": "https://i.ibb.co/MkdVGvFL/5803e43fbadb.png"
+        "image": "https://i.ibb.co/yFkx4BJd/73f3be6a4154.png"
       }
     },
     {
@@ -27,135 +19,31 @@
       "action": "patch",
       "id": "prov-momkult-ujbuda",
       "patch": {
-        "image": "https://i.ibb.co/JF0x34L7/a14e016f8c08.jpg"
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "patch",
-      "id": "prov-budapest-park-ferencvaros",
-      "patch": {
-        "image": "https://i.ibb.co/gLx7w7K7/9da2c640fbfb.jpg"
-      }
-    },
-    {
-      "resource": "provider",
-      "action": "patch",
-      "id": "prov-mvm-dome-terezvaros",
-      "patch": {
-        "image": "https://i.ibb.co/n81pyh3N/5a737b8d775f.jpg"
+        "image": "https://i.ibb.co/4ZpjtvtQ/03b76c196261.jpg"
       }
     },
     {
       "resource": "meetupGroup",
       "action": "patch",
-      "id": "grp-cov-meet-kazinczy",
+      "id": "grp-cov-meet-vaci",
       "patch": {
-        "coverImageUrl": "https://i.ibb.co/rRF1vwB2/6cb47d378bec.png"
+        "coverImageUrl": "https://i.ibb.co/21K3m8r1/a2ce4d3c2f95.jpg"
       }
     },
     {
       "resource": "meetupGroup",
       "action": "patch",
-      "id": "grp-cov-meet-nagytemplom",
+      "id": "grp-cov-meet-parliament",
       "patch": {
-        "coverImageUrl": "https://i.ibb.co/cKgHSxMC/1e4fbdbcf638.png"
+        "coverImageUrl": "https://i.ibb.co/3mwbk44b/c5ceadc16ab8.jpg"
       }
     },
     {
       "resource": "meetupGroup",
       "action": "patch",
-      "id": "grp-cov-meet-boraros",
+      "id": "grp-cov-meet-promenade",
       "patch": {
-        "coverImageUrl": "https://i.ibb.co/DPbV9PGR/41971618a57e.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-millennium",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/gQ6Qsvs/d28de9a74366.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-gellert-hill",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/tnFCCcK/e6c44c41d3f5.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-taban",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/VWVwPQPQ/3bab69724087.png"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-rozsadomb",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/nqXxcGQS/1274cc5a4469.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-szent-gellert",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/KjHkYtQs/53f3688c0a7b.png"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-kolosy",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/HTyFGNXP/752ec3ce0b45.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-becsi",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/q3J9qKFB/8dc0a158c871.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-main-square-obuda",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/Z17xzwSm/7a7a1fab59a0.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-moricz",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/WvGqG7Gs/eb58482b4cac.png"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-gellert-baths",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/wrg3fQHt/1e7982cf6eb5.jpg"
-      }
-    },
-    {
-      "resource": "meetupGroup",
-      "action": "patch",
-      "id": "grp-cov-meet-kosztolanyi",
-      "patch": {
-        "coverImageUrl": "https://i.ibb.co/NnrTvN84/788a9232bdcb.png"
+        "coverImageUrl": "https://i.ibb.co/Y4tdQyFq/daed97ec41ed.png"
       }
     }
   ]

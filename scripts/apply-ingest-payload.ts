@@ -1,8 +1,16 @@
 /**
  * Apply one ingest JSON payload directly to MongoDB (no HTTP).
- * Use when POST /api/ingest fails or for large batch writes.
  *
- *   npm run ingest:db -- scripts/ingest-payloads/venue-location-fix.json
+ * Prefer for:
+ * - Menu-only `provider` `patch` (no full address on patch)
+ * - Image-only patches (`patch-unique-venue-meetup-images.json`)
+ * - Large batches when POST /api/ingest fails
+ *
+ * Full upserts with location still work; use `ingest:listing` when you want HTTP dry-run + dedupe.
+ *
+ *   npm run ingest:db -- scripts/ingest-payloads/cursor-curated-menu-batch-2026-05-18-batch5.json
+ *
+ * See docs/catalog-curation.md
  */
 import { config as loadEnv } from "dotenv";
 import fs from "node:fs";

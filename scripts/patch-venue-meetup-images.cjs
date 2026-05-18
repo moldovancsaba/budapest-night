@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 /**
- * Replace wrongly shared Johannes Oerding / generic concert art on venues and culture circles.
+ * Replace wrongly shared concert art / duplicate provider images on venues and culture circles.
+ * Writes scripts/ingest-payloads/patch-unique-venue-meetup-images.json then applies via ingest:db.
  *
  *   node scripts/patch-venue-meetup-images.cjs [--dry-run] [--write-only]
+ *   npm run ingest:db -- scripts/ingest-payloads/patch-unique-venue-meetup-images.json
+ *
+ * See docs/catalog-curation.md
  */
 require("./load-env.cjs");
 const fs = require("fs");
@@ -53,13 +57,47 @@ const MEETUP_LOCAL_FILE = {
   "grp-cov-meet-main-square-obuda": "cov-cov-meet-muegyetem.jpg",
   "grp-cov-meet-moricz": "cov-cov-meet-corvin.jpg",
   "grp-cov-meet-kosztolanyi": "cov-cov-meet-kiraly.jpg",
+  "grp-cov-meet-vaci": "cov-cov-meet-opera.jpg",
+  "grp-cov-meet-parliament": "cov-cov-meet-castle.jpg",
+  "grp-cov-meet-promenade": "cov-cov-meet-liszt.jpg",
 };
 
 const MEETUP_WIKI_URL = {
   "grp-cov-meet-gellert-baths": "https://upload.wikimedia.org/wikipedia/commons/9/99/Citadella_-_Budapest.jpg",
   "grp-cov-meet-millennium":
     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Conferentiecentrum_B%C3%A1lna.jpg/1280px-Conferentiecentrum_B%C3%A1lna.jpg",
+  "grp-cov-meet-vaci":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/V%C3%A1ci_utca%2C_Budapest.jpg/1280px-V%C3%A1ci_utca%2C_Budapest.jpg",
+  "grp-cov-meet-parliament":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Hungarian_Parliament_Build_from_across_the_Danube.jpg/1280px-Hungarian_Parliament_Build_from_across_the_Danube.jpg",
+  "grp-cov-meet-promenade":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Little_Princess_Statue%2C_Danube_Promenade%2C_Budapest%2C_Hungary_%28Ank_Kumar%29_02.jpg/1280px-Little_Princess_Statue%2C_Danube_Promenade%2C_Budapest%2C_Hungary_%28Ank_Kumar%29_02.jpg",
 };
+
+/** Providers that must get a fresh upload when sharing an ImgBB URL with another row. */
+const PROVIDER_DEDUP_IDS = new Set(["prov-momkult-ujbuda", "prov-cov-frici-jewish-q"]);
+
+/** Meetups that must get distinct covers when sharing coverImageUrl. */
+const MEETUP_DEDUP_IDS = new Set([
+  "grp-cov-meet-vaci",
+  "grp-cov-meet-parliament",
+  "grp-cov-meet-promenade",
+]);
+
+function duplicateIdsByUrl(rows, urlKey, idKey) {
+  const byUrl = new Map();
+  for (const row of rows) {
+    const url = (row[urlKey] || "").trim();
+    if (!url) continue;
+    if (!byUrl.has(url)) byUrl.set(url, []);
+    byUrl.get(url).push(row[idKey]);
+  }
+  const dupes = new Set();
+  for (const ids of byUrl.values()) {
+    if (ids.length > 1) ids.forEach((id) => dupes.add(id));
+  }
+  return dupes;
+}
 
 function isBadImageUrl(url) {
   const u = (url || "").trim();
@@ -238,6 +276,8 @@ async function main() {
 
   const { providers, meetups } = await fetchCatalog();
   const uploaded = {};
+  const providerDupes = duplicateIdsByUrl(providers, "image", "id");
+  const meetupDupes = duplicateIdsByUrl(meetups, "coverImageUrl", "id");
   const usedImgbb = new Set(
     [...providers, ...meetups]
       .flatMap((r) => [r.image, r.coverImageUrl])
@@ -252,7 +292,8 @@ async function main() {
       missing.push(`provider missing: ${fix.id}`);
       continue;
     }
-    if (!isBadImageUrl(current.image)) {
+    const needsDedup = PROVIDER_DEDUP_IDS.has(fix.id) && providerDupes.has(fix.id);
+    if (!isBadImageUrl(current.image) && !needsDedup) {
       process.stderr.write(`Skip provider ${fix.id} (image already unique)\n`);
       continue;
     }
@@ -276,7 +317,8 @@ async function main() {
   }
 
   for (const group of meetups) {
-    if (!isBadImageUrl(group.coverImageUrl)) continue;
+    const needsDedup = MEETUP_DEDUP_IDS.has(group.id) && meetupDupes.has(group.id);
+    if (!isBadImageUrl(group.coverImageUrl) && !needsDedup) continue;
     process.stderr.write(`Meetup ${group.id} (${group.name})...\n`);
     if (dryRun) {
       operations.push({
@@ -344,7 +386,7 @@ async function main() {
     process.exit(0);
   }
 
-  const r = spawnSync("npm", ["run", "ingest:listing", "--", OUT_PAYLOAD], {
+  const r = spawnSync("npm", ["run", "ingest:db", "--", OUT_PAYLOAD], {
     cwd: path.join(__dirname, ".."),
     stdio: "inherit",
     shell: true,

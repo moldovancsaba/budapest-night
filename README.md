@@ -39,10 +39,17 @@ Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query.
 | `npm run db:seed-timed-events` | Seed sample venues/events (Moby, Sting, etc.) |
 | `npm run db:backfill-event-venue-links` | Backfill `venueLinks` on timed events |
 | `npm run db:backfill-menu-venue-links` | Backfill `menu.venueLink` on providers |
-| `npm run ingest:listing -- path.json` | POST ingest payload (`--force` to skip dry-run) |
+| `npm run db:recompute-menu-tags` | Recompute `menuTags` from published menu items |
+| `npm run ingest:listing -- path.json` | POST ingest payload (`--dry-run`, `--force`) |
+| `npm run ingest:db -- path.json` | Apply payload directly to Mongo (menu/image patches) |
+| `npm run audit:catalog` | Content audit → `scripts/catalog-audit-findings.md` |
+| `npm run audit:locations` | Location fixes → `venue-location-fix.json` |
+| `npm run menu:status` | Count providers missing `menu.sections` |
 | `node scripts/fix-venue-slugs.cjs --ingest` | Set canonical `locales.en.slug` for all providers |
 | `npm run imgbb:upload-assets` | Upload bundled hero images to ImgBB |
 | `npm run vercel:env:push` | Sync env vars to linked Vercel project |
+
+**Catalog curation** (menus, images, audit batches): [docs/catalog-curation.md](./docs/catalog-curation.md) · prompts in `scripts/cursor-curator-*.txt`
 
 ## Deploy
 

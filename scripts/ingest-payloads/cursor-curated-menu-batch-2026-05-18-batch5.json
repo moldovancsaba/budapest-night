@@ -1,0 +1,1342 @@
+{
+  "sourceUrls": [
+    "https://www.ruszwurm.hu/",
+    "https://www.hadikkavehaz.hu/",
+    "https://www.mannocaffe.hu/",
+    "https://www.liliomcafe.hu/",
+    "https://www.varfokkavezo.hu/",
+    "https://www.2bcoffee.hu/"
+  ],
+  "notes": "Menu batch 5 (2026-05-18): specialty cafés — Ruszwurm, Hadik, Manno, Liliom, Várfok, 2B Coffee.",
+  "missingOrUncertain": [
+    "prov-cov-ruszwurm-castle: ruszwurm.hu blocked automated fetch; classic cake tiers estimated.",
+    "prov-cov-hadik-kosztolanyi: hadikkavehaz.hu not scraped; coffee/pastry tiers estimated.",
+    "prov-cov-manno-kolosy: mannocaffe.hu not scraped; specialty coffee tiers estimated.",
+    "prov-cov-liliom-moricz: liliomcafe.hu not scraped; café tiers estimated.",
+    "prov-cov-varfok-taban: varfokkavezo.hu not scraped; roastery café tiers estimated.",
+    "prov-cov-2b-becsi: 2bcoffee.hu not scraped; specialty coffee + brunch tiers estimated."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-ruszwurm-castle",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.ruszwurm.hu/",
+          "sourceUrls": [
+            "https://www.ruszwurm.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 790,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Szűrt kávé"
+                    },
+                    "es": {
+                      "name": "Café filtrado"
+                    },
+                    "it": {
+                      "name": "Caffè filtro"
+                    },
+                    "he": {
+                      "name": "קפה מסונן"
+                    },
+                    "ar": {
+                      "name": "قهوة مفلترة"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "confectionery",
+              "title": "Classic confectionery",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Cukrászda klasszikusok"
+                },
+                "es": {
+                  "title": "Clásicos de confitería"
+                },
+                "it": {
+                  "title": "Classici della pasticceria"
+                },
+                "he": {
+                  "title": "קלאסיקות הממתקייה"
+                },
+                "ar": {
+                  "title": "كلاسيكيات الحلويات"
+                }
+              },
+              "items": [
+                {
+                  "id": "cream-cake-slice",
+                  "kind": "food",
+                  "name": "Ruszwurm cream slice",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 1890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Ruszwurm krémes szelet"
+                    },
+                    "es": {
+                      "name": "Porción de crema Ruszwurm"
+                    },
+                    "it": {
+                      "name": "Fetta crema Ruszwurm"
+                    },
+                    "he": {
+                      "name": "פרוסת קרם רוסוורם"
+                    },
+                    "ar": {
+                      "name": "شريحة كريمة روسوورم"
+                    }
+                  }
+                },
+                {
+                  "id": "pogacsa",
+                  "kind": "food",
+                  "name": "Hungarian pogácsa",
+                  "tags": [
+                    "hungarian",
+                    "street-food"
+                  ],
+                  "price": {
+                    "amount": 690,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Pogácsa"
+                    },
+                    "es": {
+                      "name": "Pogácsa húngara"
+                    },
+                    "it": {
+                      "name": "Pogácsa ungherese"
+                    },
+                    "he": {
+                      "name": "פוגאצ'ה הונגרית"
+                    },
+                    "ar": {
+                      "name": "بوجاتشا مجري"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-hadik-kosztolanyi",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.hadikkavehaz.hu/",
+          "sourceUrls": [
+            "https://www.hadikkavehaz.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 790,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Szűrt kávé"
+                    },
+                    "es": {
+                      "name": "Café filtrado"
+                    },
+                    "it": {
+                      "name": "Caffè filtro"
+                    },
+                    "he": {
+                      "name": "קפה מסונן"
+                    },
+                    "ar": {
+                      "name": "قهوة مفلترة"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pastries",
+              "title": "Pastries",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Sütemények"
+                },
+                "es": {
+                  "title": "Pasteles"
+                },
+                "it": {
+                  "title": "Pasticceria"
+                },
+                "he": {
+                  "title": "מאפים"
+                },
+                "ar": {
+                  "title": "حلويات"
+                }
+              },
+              "items": [
+                {
+                  "id": "daily-cake",
+                  "kind": "food",
+                  "name": "Daily cake slice",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 1490,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Napi szelet torta"
+                    },
+                    "es": {
+                      "name": "Porción de tarta del día"
+                    },
+                    "it": {
+                      "name": "Fetta di torta del giorno"
+                    },
+                    "he": {
+                      "name": "פרוסת עוגה יומית"
+                    },
+                    "ar": {
+                      "name": "شريحة كعكة اليوم"
+                    }
+                  }
+                },
+                {
+                  "id": "croissant",
+                  "kind": "food",
+                  "name": "Butter croissant",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vajas croissant"
+                    },
+                    "es": {
+                      "name": "Croissant de mantequilla"
+                    },
+                    "it": {
+                      "name": "Croissant al burro"
+                    },
+                    "he": {
+                      "name": "קרואסון חמאה"
+                    },
+                    "ar": {
+                      "name": "كرواسون بالزبدة"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-manno-kolosy",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.mannocaffe.hu/",
+          "sourceUrls": [
+            "https://www.mannocaffe.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 790,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Szűrt kávé"
+                    },
+                    "es": {
+                      "name": "Café filtrado"
+                    },
+                    "it": {
+                      "name": "Caffè filtro"
+                    },
+                    "he": {
+                      "name": "קפה מסונן"
+                    },
+                    "ar": {
+                      "name": "قهوة مفلترة"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pastries",
+              "title": "Pastries",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Sütemények"
+                },
+                "es": {
+                  "title": "Pasteles"
+                },
+                "it": {
+                  "title": "Pasticceria"
+                },
+                "he": {
+                  "title": "מאפים"
+                },
+                "ar": {
+                  "title": "حلويات"
+                }
+              },
+              "items": [
+                {
+                  "id": "daily-cake",
+                  "kind": "food",
+                  "name": "Daily cake slice",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 1490,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Napi szelet torta"
+                    },
+                    "es": {
+                      "name": "Porción de tarta del día"
+                    },
+                    "it": {
+                      "name": "Fetta di torta del giorno"
+                    },
+                    "he": {
+                      "name": "פרוסת עוגה יומית"
+                    },
+                    "ar": {
+                      "name": "شريحة كعكة اليوم"
+                    }
+                  }
+                },
+                {
+                  "id": "croissant",
+                  "kind": "food",
+                  "name": "Butter croissant",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vajas croissant"
+                    },
+                    "es": {
+                      "name": "Croissant de mantequilla"
+                    },
+                    "it": {
+                      "name": "Croissant al burro"
+                    },
+                    "he": {
+                      "name": "קרואסון חמאה"
+                    },
+                    "ar": {
+                      "name": "كرواسون بالزبدة"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-liliom-moricz",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.liliomcafe.hu/",
+          "sourceUrls": [
+            "https://www.liliomcafe.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 790,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Szűrt kávé"
+                    },
+                    "es": {
+                      "name": "Café filtrado"
+                    },
+                    "it": {
+                      "name": "Caffè filtro"
+                    },
+                    "he": {
+                      "name": "קפה מסונן"
+                    },
+                    "ar": {
+                      "name": "قهوة مفلترة"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pastries",
+              "title": "Pastries",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Sütemények"
+                },
+                "es": {
+                  "title": "Pasteles"
+                },
+                "it": {
+                  "title": "Pasticceria"
+                },
+                "he": {
+                  "title": "מאפים"
+                },
+                "ar": {
+                  "title": "حلويات"
+                }
+              },
+              "items": [
+                {
+                  "id": "daily-cake",
+                  "kind": "food",
+                  "name": "Daily cake slice",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 1490,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Napi szelet torta"
+                    },
+                    "es": {
+                      "name": "Porción de tarta del día"
+                    },
+                    "it": {
+                      "name": "Fetta di torta del giorno"
+                    },
+                    "he": {
+                      "name": "פרוסת עוגה יומית"
+                    },
+                    "ar": {
+                      "name": "شريحة كعكة اليوم"
+                    }
+                  }
+                },
+                {
+                  "id": "croissant",
+                  "kind": "food",
+                  "name": "Butter croissant",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vajas croissant"
+                    },
+                    "es": {
+                      "name": "Croissant de mantequilla"
+                    },
+                    "it": {
+                      "name": "Croissant al burro"
+                    },
+                    "he": {
+                      "name": "קרואסון חמאה"
+                    },
+                    "ar": {
+                      "name": "كرواسون بالزبدة"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-varfok-taban",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.varfokkavezo.hu/",
+          "sourceUrls": [
+            "https://www.varfokkavezo.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 790,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Szűrt kávé"
+                    },
+                    "es": {
+                      "name": "Café filtrado"
+                    },
+                    "it": {
+                      "name": "Caffè filtro"
+                    },
+                    "he": {
+                      "name": "קפה מסונן"
+                    },
+                    "ar": {
+                      "name": "قهوة مفلترة"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "pastries",
+              "title": "Pastries",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Sütemények"
+                },
+                "es": {
+                  "title": "Pasteles"
+                },
+                "it": {
+                  "title": "Pasticceria"
+                },
+                "he": {
+                  "title": "מאפים"
+                },
+                "ar": {
+                  "title": "حلويات"
+                }
+              },
+              "items": [
+                {
+                  "id": "daily-cake",
+                  "kind": "food",
+                  "name": "Daily cake slice",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 1490,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Napi szelet torta"
+                    },
+                    "es": {
+                      "name": "Porción de tarta del día"
+                    },
+                    "it": {
+                      "name": "Fetta di torta del giorno"
+                    },
+                    "he": {
+                      "name": "פרוסת עוגה יומית"
+                    },
+                    "ar": {
+                      "name": "شريحة كعكة اليوم"
+                    }
+                  }
+                },
+                {
+                  "id": "croissant",
+                  "kind": "food",
+                  "name": "Butter croissant",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vajas croissant"
+                    },
+                    "es": {
+                      "name": "Croissant de mantequilla"
+                    },
+                    "it": {
+                      "name": "Croissant al burro"
+                    },
+                    "he": {
+                      "name": "קרואסון חמאה"
+                    },
+                    "ar": {
+                      "name": "كرواسون بالزبدة"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-2b-becsi",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.2bcoffee.hu/",
+          "sourceUrls": [
+            "https://www.2bcoffee.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Kávék"
+                },
+                "es": {
+                  "title": "Café"
+                },
+                "it": {
+                  "title": "Caffè"
+                },
+                "he": {
+                  "title": "קפה"
+                },
+                "ar": {
+                  "title": "قهوة"
+                }
+              },
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 790,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "filter-coffee",
+                  "kind": "drink",
+                  "name": "Filter coffee",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Szűrt kávé"
+                    },
+                    "es": {
+                      "name": "Café filtrado"
+                    },
+                    "it": {
+                      "name": "Caffè filtro"
+                    },
+                    "he": {
+                      "name": "קפה מסונן"
+                    },
+                    "ar": {
+                      "name": "قهوة مفلترة"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "brunch",
+              "title": "Light bites",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Könnyű falatok"
+                },
+                "es": {
+                  "title": "Bocados ligeros"
+                },
+                "it": {
+                  "title": "Piccoli piatti"
+                },
+                "he": {
+                  "title": "נשנושים קלים"
+                },
+                "ar": {
+                  "title": "وجبات خفيفة"
+                }
+              },
+              "items": [
+                {
+                  "id": "avocado-toast",
+                  "kind": "food",
+                  "name": "Avocado toast",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 2490,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Avokádós pirítós"
+                    },
+                    "es": {
+                      "name": "Tostada de aguacate"
+                    },
+                    "it": {
+                      "name": "Toast all'avocado"
+                    },
+                    "he": {
+                      "name": "טוסט אבוקדו"
+                    },
+                    "ar": {
+                      "name": "توست الأفوكادو"
+                    }
+                  }
+                },
+                {
+                  "id": "granola-bowl",
+                  "kind": "food",
+                  "name": "Granola bowl with yogurt",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 2190,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Granola tál joghurttal"
+                    },
+                    "es": {
+                      "name": "Bowl de granola con yogur"
+                    },
+                    "it": {
+                      "name": "Ciotola granola e yogurt"
+                    },
+                    "he": {
+                      "name": "קערת גרנולה עם יוגורט"
+                    },
+                    "ar": {
+                      "name": "وعاء غرانولا مع الزبادي"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

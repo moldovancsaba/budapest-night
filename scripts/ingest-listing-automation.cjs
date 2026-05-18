@@ -7,6 +7,7 @@
  * 2. Author `scripts/ingest-payloads/<name>.json` with `operations`, `sourceUrls`,
  *    optional `notes`, optional `missingOrUncertain` (string array).
  * 3. Run: `npm run ingest:listing -- [--dry-run] [--force] <payload.json>`
+ *    Menu-only or image-only `provider` `patch` batches: prefer `npm run ingest:db -- <payload.json>` (see docs/catalog-curation.md).
  *
  * Before POST (unless `--force` when duplicates were detected):
  * - Fetches public catalogs for id/name overlap checks.

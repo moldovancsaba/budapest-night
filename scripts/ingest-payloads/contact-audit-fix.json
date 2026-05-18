@@ -1,0 +1,38 @@
+{
+  "sourceUrls": [
+    "https://kulturkozpont.hu/",
+    "https://cafe.hardrock.com/budapest/",
+    "https://doboz.co.hu/en/contact/"
+  ],
+  "notes": "Align contact fields with catalog audit: Sources host on ÓKK, email domains for Hard Rock and Doboz.",
+  "missingOrUncertain": [
+    "prov-cov-hard-rock-vaci: Public site uses web reservations; budapest@hardrock.com is corporate — email cleared.",
+    "prov-doboz-erzsebetvaros: Official inbox is info@doboz.pm (PM domain); kept in longDescription only."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-okk-obuda",
+      "patch": {
+        "longDescription": "Óbudai Kulturális Központ (Óbuda Cultural Centre) at San Marco utca 81 programmes theatre, music, and family events across Óbuda and partner houses. Tickets via kulturkozpont.hu; office phone (06-1) 388-7370 on weekdays 9:00–17:00.\n\nSources: https://kulturkozpont.hu/"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-hard-rock-vaci",
+      "patch": {
+        "email": ""
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-doboz-erzsebetvaros",
+      "patch": {
+        "email": ""
+      }
+    }
+  ]
+}

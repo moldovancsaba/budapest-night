@@ -1,0 +1,31 @@
+{
+  "sourceUrls": ["https://kulturkozpont.hu/"],
+  "notes": "Remove kulturkozpont.jegy.hu from translated Sources lines (ticket portal cited in prose only).",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-okk-obuda",
+      "patch": {
+        "locales": {
+          "hu": {
+            "longDescription": "Az Óbudai Kulturális Központ a San Marco utca 81. szám alatt színházi, zenei és családi programokat szervez Óbudán és partnerhelyszíneken. Jegyek: kulturkozpont.hu; iroda (06-1) 388-7370 hétköznap 9:00–17:00.\n\nSources: https://kulturkozpont.hu/"
+          },
+          "es": {
+            "longDescription": "Óbudai Kulturális Központ (Centro Cultural de Óbuda) en San Marco utca 81 programa teatro, música y eventos familiares en Óbuda y sedes asociadas. Entradas en kulturkozpont.hu; oficina (06-1) 388-7370 lun–vie 9:00–17:00.\n\nSources: https://kulturkozpont.hu/"
+          },
+          "it": {
+            "longDescription": "Óbudai Kulturális Központ in San Marco utca 81 organizza teatro, musica ed eventi per famiglie a Óbuda e in sedi partner. Biglietti su kulturkozpont.hu; ufficio (06-1) 388-7370 lun–ven 9:00–17:00.\n\nSources: https://kulturkozpont.hu/"
+          },
+          "he": {
+            "longDescription": "מרכז אובודה (Óbudai Kulturális Központ) ברחוב סן מרקו 81 מתכנן תיאטרון, מוזיקה ואירועי משפחה באובודה ובבתי שותף. כרטיסים ב-kulturkozpont.hu; משרד (06-1) 388-7370 ב׳–ה׳ 9:00–17:00.\n\nSources: https://kulturkozpont.hu/"
+          },
+          "ar": {
+            "longDescription": "المركز الثقافي في أوبودا (Óbudai Kulturális Központ) في سان ماركو 81 يبرمج مسرحاً وموسيقى وفعاليات عائلية في أوبودا وشركاء. التذاكر على kulturkozpont.hu؛ المكتب (06-1) 388-7370 الإثنين–الجمعة 9:00–17:00.\n\nSources: https://kulturkozpont.hu/"
+          }
+        }
+      }
+    }
+  ]
+}

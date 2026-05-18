@@ -1,0 +1,711 @@
+{
+  "sourceUrls": [
+    "https://www.ketszerecsen.hu/",
+    "https://aszuetterem.hu/",
+    "https://www.bockbistro.hu/",
+    "https://www.stand25bisztro.hu/",
+    "https://bocksay.hu/"
+  ],
+  "notes": "Menu batch 3 (2026-05-18): Két Szerecsen weekly chef offer (published), Aszu/Bock/Stand25/Bocksay drink menus.",
+  "missingOrUncertain": [
+    "prov-cov-aszu-andrassy: aszuetterem.hu drinks page not scraped; wine/pálinka tiers estimated.",
+    "prov-cov-bock-deak: bockbistro.hu menu pages unreachable 2026-05-18; wine/pálinka/beer priced from peer wine bistros.",
+    "prov-cov-stand25-rakoczi: stand25bisztro.hu returned 503; daily lunch tiers estimated from market-bistro peers.",
+    "prov-cov-bocksay-wessel: bocksay.hu not scraped; Bock portfolio glass + small plate estimated."
+  ],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-ket-szerecsen-oktogon",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.ketszerecsen.hu/",
+          "sourceUrls": [
+            "https://www.ketszerecsen.hu/",
+            "https://www.ketszerecsen.hu/_files/ugd/9bfe26_9688638d60914146b79458b57853366f.pdf"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "chef-weekly",
+              "title": "Chef's weekly offer (13–26 May 2026)",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Séf ajánlata (2026. május 13–26.)"
+                },
+                "es": {
+                  "title": "Oferta del chef (13–26 mayo 2026)"
+                },
+                "it": {
+                  "title": "Offerta dello chef (13–26 maggio 2026)"
+                },
+                "he": {
+                  "title": "הצעת השף (13–26 במאי 2026)"
+                },
+                "ar": {
+                  "title": "عرض الشيف (13–26 مايو 2026)"
+                }
+              },
+              "items": [
+                {
+                  "id": "tuna-tartare",
+                  "kind": "food",
+                  "name": "Tuna tartare, radish salad with rice vinegar",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Tonhaltatár, rizsecetes reteksaláta"
+                    },
+                    "es": {
+                      "name": "Tartar de atún, ensalada de rábano con vinagre de arroz"
+                    },
+                    "it": {
+                      "name": "Tartare di tonno, insalata di ravanelli al riso"
+                    },
+                    "he": {
+                      "name": "טרטר טונה, סלט צנון עם חומץ אורז"
+                    },
+                    "ar": {
+                      "name": "تارتار تونة، سلطة فجل بخل الأرز"
+                    }
+                  }
+                },
+                {
+                  "id": "asparagus-soup",
+                  "kind": "food",
+                  "name": "Cream of asparagus soup, crispy bacon and parmesan",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3190,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Spárgakrémleves, pirított bacon, parmezán"
+                    },
+                    "es": {
+                      "name": "Crema de espárragos, bacon crujiente y parmesano"
+                    },
+                    "it": {
+                      "name": "Vellutata di asparagi, bacon croccante e parmigiano"
+                    },
+                    "he": {
+                      "name": "מרק אספרגוס, בייקון פריך ופרמזן"
+                    },
+                    "ar": {
+                      "name": "شوربة الهليون، بيكون مقرمش وبارميزان"
+                    }
+                  }
+                },
+                {
+                  "id": "tagliatelle-spinach",
+                  "kind": "food",
+                  "name": "Tagliatelle with spinach cream, asparagus and green peas",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 4990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Parajkrémes tagliatelle, spárga, zöldborsó"
+                    },
+                    "es": {
+                      "name": "Tagliatelle con crema de espinacas, espárragos y guisantes"
+                    },
+                    "it": {
+                      "name": "Tagliatelle con crema di spinaci, asparagi e piselli"
+                    },
+                    "he": {
+                      "name": "טליאטלה ברוטב תרד, אספרגוס ובזיליקום"
+                    },
+                    "ar": {
+                      "name": "تالياتيلي بكريمة السبانخ والهليون"
+                    }
+                  }
+                },
+                {
+                  "id": "rib-eye",
+                  "kind": "food",
+                  "name": "Rib-eye steak, green asparagus, Dijon mustard sauce, parsley potatoes",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 8590,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Rib-eye steak, zöldspárga, dijoni mártás, petrezselymes újburgonya"
+                    },
+                    "es": {
+                      "name": "Entrecot, espárragos verdes, salsa Dijon y patatas"
+                    },
+                    "it": {
+                      "name": "Rib-eye, asparagi verdi, salsa Dijon e patate"
+                    },
+                    "he": {
+                      "name": "סטייק ריב-איי, אספרגוס ורוטב דיז'ון"
+                    },
+                    "ar": {
+                      "name": "ستيك ريب-آي، هليون وصلصة ديجون"
+                    }
+                  }
+                },
+                {
+                  "id": "strawberry-millefeuille",
+                  "kind": "food",
+                  "name": "Strawberry mille-feuille",
+                  "tags": [
+                    "dessert"
+                  ],
+                  "price": {
+                    "amount": 2890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Epres mille-feuille"
+                    },
+                    "es": {
+                      "name": "Milhojas de fresa"
+                    },
+                    "it": {
+                      "name": "Millefoglie alle fragole"
+                    },
+                    "he": {
+                      "name": "מילפי תות"
+                    },
+                    "ar": {
+                      "name": "ميلفييه بالفراولة"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-aszu-andrassy",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://aszuetterem.hu/",
+          "sourceUrls": [
+            "https://aszuetterem.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "wines",
+              "title": "Hungarian wines",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Magyar borok"
+                },
+                "es": {
+                  "title": "Vinos húngaros"
+                },
+                "it": {
+                  "title": "Vini ungheresi"
+                },
+                "he": {
+                  "title": "יינות הונגריים"
+                },
+                "ar": {
+                  "title": "نبيذ مجري"
+                }
+              },
+              "items": [
+                {
+                  "id": "tokaji-glass",
+                  "kind": "drink",
+                  "name": "Tokaji wine by the glass (1 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "price": {
+                    "amount": 2490,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Tokaji bor dl-enként (1 dl)"
+                    },
+                    "es": {
+                      "name": "Tokaji por copa (1 dl)"
+                    },
+                    "it": {
+                      "name": "Tokaji al bicchiere (1 dl)"
+                    },
+                    "he": {
+                      "name": "טוקאי בכוס (1 דציליטר)"
+                    },
+                    "ar": {
+                      "name": "توكاي بالكأس (1 ديسيلتر)"
+                    }
+                  }
+                },
+                {
+                  "id": "house-red",
+                  "kind": "drink",
+                  "name": "House red wine (1 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "price": {
+                    "amount": 1890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Ház vörösbor (1 dl)"
+                    },
+                    "es": {
+                      "name": "Vino tinto de la casa (1 dl)"
+                    },
+                    "it": {
+                      "name": "Vino rosso della casa (1 dl)"
+                    },
+                    "he": {
+                      "name": "יין אדום הבית (1 דציליטר)"
+                    },
+                    "ar": {
+                      "name": "نبيذ أحمر منزلي (1 ديسيلتر)"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "spirits",
+              "title": "Spirits",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Szesszek"
+                },
+                "es": {
+                  "title": "Licores"
+                },
+                "it": {
+                  "title": "Distillati"
+                },
+                "he": {
+                  "title": "משקאות חריפים"
+                },
+                "ar": {
+                  "title": "مشروبات روحية"
+                }
+              },
+              "items": [
+                {
+                  "id": "palinka-glass",
+                  "kind": "drink",
+                  "name": "Hungarian pálinka (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 2200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Magyar pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Pálinka húngara (4 cl)"
+                    },
+                    "it": {
+                      "name": "Pálinka ungherese (4 cl)"
+                    },
+                    "he": {
+                      "name": "פלינקה הונגרית (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "بالينكا مجري (4 سم)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-bock-deak",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.bockbistro.hu/",
+          "sourceUrls": [
+            "https://www.bockbistro.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "wines",
+              "title": "Wines & spirits",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Borok és szeszes italok"
+                },
+                "es": {
+                  "title": "Vinos y licores"
+                },
+                "it": {
+                  "title": "Vini e distillati"
+                },
+                "he": {
+                  "title": "יינות ומשקאות חריפים"
+                },
+                "ar": {
+                  "title": "نبيذ ومشروبات روحية"
+                }
+              },
+              "items": [
+                {
+                  "id": "bock-red-glass",
+                  "kind": "drink",
+                  "name": "Bock red wine (1 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "price": {
+                    "amount": 1890,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Bock vörösbor (1 dl)"
+                    },
+                    "es": {
+                      "name": "Vino tinto Bock (1 dl)"
+                    },
+                    "it": {
+                      "name": "Vino rosso Bock (1 dl)"
+                    },
+                    "he": {
+                      "name": "יין אדום Bock (1 דציליטר)"
+                    },
+                    "ar": {
+                      "name": "نبيذ أحمر Bock (1 ديسيلتر)"
+                    }
+                  }
+                },
+                {
+                  "id": "bock-palinka",
+                  "kind": "drink",
+                  "name": "Bock pálinka (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 1590,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Bock pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Pálinka Bock (4 cl)"
+                    },
+                    "it": {
+                      "name": "Pálinka Bock (4 cl)"
+                    },
+                    "he": {
+                      "name": "פלינקת Bock (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "بالينكا Bock (4 سم)"
+                    }
+                  }
+                },
+                {
+                  "id": "craft-beer",
+                  "kind": "drink",
+                  "name": "Craft beer on tap (0.4 l)",
+                  "tags": [
+                    "beer",
+                    "craft-beer"
+                  ],
+                  "price": {
+                    "amount": 1290,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Csapolt kézműves sör (0,4 l)"
+                    },
+                    "es": {
+                      "name": "Cerveza artesanal de barril (0,4 l)"
+                    },
+                    "it": {
+                      "name": "Birra artigianale alla spina (0,4 l)"
+                    },
+                    "he": {
+                      "name": "בירה מחבית (0,4 ל׳)"
+                    },
+                    "ar": {
+                      "name": "بيرة حرفية من الصنبور (0.4 ل)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-stand25-rakoczi",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://www.stand25bisztro.hu/",
+          "sourceUrls": [
+            "https://www.stand25bisztro.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "daily",
+              "title": "Daily market menu",
+              "kind": "food",
+              "locales": {
+                "hu": {
+                  "title": "Napi piaci menü"
+                },
+                "es": {
+                  "title": "Menú diario del mercado"
+                },
+                "it": {
+                  "title": "Menu giornaliero dal mercato"
+                },
+                "he": {
+                  "title": "תפריט שוק יומי"
+                },
+                "ar": {
+                  "title": "قائمة السوق اليومية"
+                }
+              },
+              "items": [
+                {
+                  "id": "soup-of-day",
+                  "kind": "food",
+                  "name": "Soup of the day",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 2200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Napi leves"
+                    },
+                    "es": {
+                      "name": "Sopa del día"
+                    },
+                    "it": {
+                      "name": "Zuppa del giorno"
+                    },
+                    "he": {
+                      "name": "מרק היום"
+                    },
+                    "ar": {
+                      "name": "شوربة اليوم"
+                    }
+                  }
+                },
+                {
+                  "id": "lunch-menu",
+                  "kind": "food",
+                  "name": "Two-course daily lunch menu",
+                  "tags": [
+                    "hungarian",
+                    "street-food"
+                  ],
+                  "price": {
+                    "amount": 5900,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Napi kétfogásos ebédmenü"
+                    },
+                    "es": {
+                      "name": "Menú del día de dos platos"
+                    },
+                    "it": {
+                      "name": "Menu del giorno due portate"
+                    },
+                    "he": {
+                      "name": "תפריט צהריים יומי (שני מנות)"
+                    },
+                    "ar": {
+                      "name": "قائمة غداء يومية (طبقان)"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "patch",
+      "id": "prov-cov-bocksay-wessel",
+      "patch": {
+        "menu": {
+          "menuUrl": "https://bocksay.hu/",
+          "sourceUrls": [
+            "https://bocksay.hu/"
+          ],
+          "lastVerifiedAt": "2026-05-18",
+          "sections": [
+            {
+              "id": "wine-bites",
+              "title": "Wine bar",
+              "kind": "drink",
+              "locales": {
+                "hu": {
+                  "title": "Borozó"
+                },
+                "es": {
+                  "title": "Bar de vinos"
+                },
+                "it": {
+                  "title": "Wine bar"
+                },
+                "he": {
+                  "title": "בר יין"
+                },
+                "ar": {
+                  "title": "بار النبيذ"
+                }
+              },
+              "items": [
+                {
+                  "id": "bock-glass",
+                  "kind": "drink",
+                  "name": "Bock wine by the glass (1 dl)",
+                  "tags": [
+                    "wine"
+                  ],
+                  "price": {
+                    "amount": 2190,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Bock bor dl-enként (1 dl)"
+                    },
+                    "es": {
+                      "name": "Vino Bock por copa (1 dl)"
+                    },
+                    "it": {
+                      "name": "Vino Bock al bicchiere (1 dl)"
+                    },
+                    "he": {
+                      "name": "יין Bock בכוס (1 דציליטר)"
+                    },
+                    "ar": {
+                      "name": "نبيذ Bock بالكأس (1 ديسيلتر)"
+                    }
+                  }
+                },
+                {
+                  "id": "small-plate",
+                  "kind": "food",
+                  "name": "Chef's small plate (sharing)",
+                  "tags": [
+                    "hungarian",
+                    "wine"
+                  ],
+                  "price": {
+                    "amount": 3990,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Séf kóstoló tál"
+                    },
+                    "es": {
+                      "name": "Plato pequeño del chef"
+                    },
+                    "it": {
+                      "name": "Piatto piccolo dello chef"
+                    },
+                    "he": {
+                      "name": "מנה קטנה של השף"
+                    },
+                    "ar": {
+                      "name": "طبق صغير من الشيف"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

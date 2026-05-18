@@ -518,8 +518,8 @@ const LOCALES_BY_ID = {
       shortDescription:
         "Kerületi kulturális központ Óbudán — színház, koncertek és közösségi programok több helyszínen.",
       longDescription:
-        "Az Óbudai Kulturális Központ a San Marco utca 81. szám alatt színházi, zenei és családi programokat szervez Óbudán és partnerhelyszíneken. Jegyek: kulturkozpont.hu és kulturkozpont.jegy.hu; iroda (06-1) 388-7370 hétköznap 9:00–17:00.\n\n" +
-        S("Sources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/"),
+        "Az Óbudai Kulturális Központ a San Marco utca 81. szám alatt színházi, zenei és családi programokat szervez Óbudán és partnerhelyszíneken. Jegyek: kulturkozpont.hu; iroda (06-1) 388-7370 hétköznap 9:00–17:00.\n\n" +
+        S("Sources: https://kulturkozpont.hu/"),
       slug: "obudai-kulturalis-kozpont",
     },
     es: {
@@ -527,8 +527,8 @@ const LOCALES_BY_ID = {
       shortDescription:
         "Centro cultural distrital en Óbuda — teatro, conciertos y programas comunitarios en varios espacios.",
       longDescription:
-        "Óbudai Kulturális Központ (Centro Cultural de Óbuda) en San Marco utca 81 programa teatro, música y eventos familiares en Óbuda y sedes asociadas. Entradas en kulturkozpont.hu y kulturkozpont.jegy.hu; oficina (06-1) 388-7370 lun–vie 9:00–17:00.\n\n" +
-        S("Sources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/"),
+        "Óbudai Kulturális Központ (Centro Cultural de Óbuda) en San Marco utca 81 programa teatro, música y eventos familiares en Óbuda y sedes asociadas. Entradas en kulturkozpont.hu; oficina (06-1) 388-7370 lun–vie 9:00–17:00.\n\n" +
+        S("Sources: https://kulturkozpont.hu/"),
       slug: "centro-cultural-obuda",
     },
     it: {
@@ -536,8 +536,8 @@ const LOCALES_BY_ID = {
       shortDescription:
         "Centro culturale di quartiere a Óbuda — teatro, concerti e programmi comunitari in più sedi.",
       longDescription:
-        "Óbudai Kulturális Központ in San Marco utca 81 organizza teatro, musica ed eventi per famiglie a Óbuda e in sedi partner. Biglietti su kulturkozpont.hu e kulturkozpont.jegy.hu; ufficio (06-1) 388-7370 lun–ven 9:00–17:00.\n\n" +
-        S("Sources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/"),
+        "Óbudai Kulturális Központ in San Marco utca 81 organizza teatro, musica ed eventi per famiglie a Óbuda e in sedi partner. Biglietti su kulturkozpont.hu; ufficio (06-1) 388-7370 lun–ven 9:00–17:00.\n\n" +
+        S("Sources: https://kulturkozpont.hu/"),
       slug: "centro-culturale-obuda",
     },
     he: {
@@ -545,8 +545,8 @@ const LOCALES_BY_ID = {
       shortDescription:
         "מרכז תרבות מחוזי באובודה — תיאטרון, קונצרטים ותוכניות קהילתיות במספר מיקומים.",
       longDescription:
-        "מרכז אובודה (Óbudai Kulturális Központ) ברחוב סן מרקו 81 מתכנן תיאטרון, מוזיקה ואירועי משפחה באובודה ובבתי שותף. כרטיסים ב-kulturkozpont.hu ו-kulturkozpont.jegy.hu; משרד (06-1) 388-7370 ב׳–ה׳ 9:00–17:00.\n\n" +
-        S("Sources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/"),
+        "מרכז אובודה (Óbudai Kulturális Központ) ברחוב סן מרקו 81 מתכנן תיאטרון, מוזיקה ואירועי משפחה באובודה ובבתי שותף. כרטיסים ב-kulturkozpont.hu; משרד (06-1) 388-7370 ב׳–ה׳ 9:00–17:00.\n\n" +
+        S("Sources: https://kulturkozpont.hu/"),
       slug: "merkaz-tarbut-obuda",
     },
     ar: {
@@ -554,8 +554,8 @@ const LOCALES_BY_ID = {
       shortDescription:
         "مركز ثقافي حي في أوبودا — مسرح وحفلات وبرامج مجتمعية في عدة مواقع.",
       longDescription:
-        "المركز الثقافي في أوبودا (Óbudai Kulturális Központ) في سان ماركو 81 يبرمج مسرحاً وموسيقى وفعاليات عائلية في أوبودا وشركاء. التذاكر على kulturkozpont.hu وkulturkozpont.jegy.hu؛ المكتب (06-1) 388-7370 الإثنين–الجمعة 9:00–17:00.\n\n" +
-        S("Sources: https://kulturkozpont.hu/ https://kulturkozpont.jegy.hu/"),
+        "المركز الثقافي في أوبودا (Óbudai Kulturális Központ) في سان ماركو 81 يبرمج مسرحاً وموسيقى وفعاليات عائلية في أوبودا وشركاء. التذاكر على kulturkozpont.hu؛ المكتب (06-1) 388-7370 الإثنين–الجمعة 9:00–17:00.\n\n" +
+        S("Sources: https://kulturkozpont.hu/"),
       slug: "al-markaz-althaqafi-obuda",
     },
   },

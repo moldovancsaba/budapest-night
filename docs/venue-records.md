@@ -177,8 +177,19 @@ Wrong (do not use): Kertész utca 20, 1075; phone `+36 1 322 0617`; neighborhood
 
 ---
 
-## 9. After deploy
+## 9. Menus (Eat & Drink)
+
+Restaurants, cafés, and party venues need `menu.sections[]` with localized items. Do **not** send `menu.venueLink` or `menuTags` — ingest computes them.
+
+- Curator prompt: `scripts/cursor-curator-menu-prompt.txt`
+- Workflow + batch history: [catalog-curation.md](./catalog-curation.md)
+- Patch existing `prov-*` ids only; full rules in `src/lib/curator/menuIngestRules.ts`
+- Apply menu-only batches: `npm run ingest:db -- scripts/ingest-payloads/<menu-batch>.json` then `npm run db:backfill-menu-venue-links`
+
+---
+
+## 10. After deploy
 
 - Open the full venue URL on each locale; confirm no “Not found” flash while catalog loads (share pages wait for catalog `isLoading`).
 - Spot-check map pin vs address line.
-- Run `npm run audit:catalog` for copy/URL issues.
+- Run `npm run audit:catalog -- --skip-urls` for copy/menu/URL issues (see [catalog-curation.md](./catalog-curation.md)).

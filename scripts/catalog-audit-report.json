@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-05-16T18:16:49.485Z",
+  "generatedAt": "2026-05-18T20:54:32.031Z",
   "baseUrl": "https://budapest-night.vercel.app",
   "options": {
     "liveUrlChecks": false
   },
   "catalogCounts": {
     "providers": 145,
-    "events": 29,
+    "events": 28,
     "meetups": 37
   },
   "findingCatalog": {
@@ -71,7 +71,14 @@
       "category": "location",
       "title": "Postal code ≠ borough",
       "description": "Budapest postal code or street landmark implies a different app borough than the row.",
-      "remediation": "Run node scripts/fix-venue-locations.cjs and ingest venue-location-fix.json."
+      "remediation": "Fix per scripts/cursor-curator-location-rules.txt; register postal in budapest-location-registry.json; run npm run audit:locations."
+    },
+    "postal_not_registered": {
+      "severity": "critical",
+      "category": "location",
+      "title": "Postal code not in registry",
+      "description": "Address postal is missing from src/data/budapest-location-registry.json.",
+      "remediation": "Add postalToAppBorough row with kerulet + appBorough before ingest."
     },
     "neighborhood_not_in_borough": {
       "severity": "high",
@@ -84,8 +91,8 @@
       "severity": "critical",
       "category": "location",
       "title": "Wrong area label for address",
-      "description": "e.g. Csörsz utca 18 (MOM / 1124) labeled as Infopark (1117 office park, different area).",
-      "remediation": "Use Ferencváros, Millenniumi Városközpont; fix copy that says Infopark."
+      "description": "e.g. Csörsz utca 18 (MOM / 1124 XII. ker.) labeled as Infopark (1117 office park, different area).",
+      "remediation": "Use Buda, MOM Park; fix copy that says Infopark."
     },
     "duplicate_address_inconsistent": {
       "severity": "high",
@@ -244,635 +251,30 @@
   },
   "totals": {
     "byCode": {
-      "postal_borough_mismatch": 25,
-      "landmark_neighborhood_mismatch": 3,
-      "duplicate_address_inconsistent": 3,
-      "canonical_location_mismatch": 10,
-      "sources_host_mismatch": 1,
-      "missing_menu": 92,
-      "email_domain_mismatch": 2,
-      "image_source_off_venue_site": 38,
-      "forbidden_district_copy": 18,
-      "duplicate_meetup_cover": 3
+      "image_source_off_venue_site": 39,
+      "missing_menu": 75
     },
     "bySeverity": {
-      "high": 59,
-      "critical": 3,
-      "medium": 95,
-      "low": 38
+      "low": 39,
+      "medium": 75
     },
-    "totalFindings": 195,
-    "rowsWithFindings": 107
+    "totalFindings": 114,
+    "rowsWithFindings": 86
   },
   "providers": {
     "summary": {
       "byCode": {
-        "postal_borough_mismatch": 25,
-        "landmark_neighborhood_mismatch": 3,
-        "duplicate_address_inconsistent": 3,
-        "canonical_location_mismatch": 10,
-        "sources_host_mismatch": 1,
-        "missing_menu": 92,
-        "email_domain_mismatch": 2,
-        "image_source_off_venue_site": 38,
-        "forbidden_district_copy": 18
+        "image_source_off_venue_site": 39,
+        "missing_menu": 75
       },
       "bySeverity": {
-        "high": 56,
-        "critical": 3,
-        "medium": 95,
-        "low": 38
+        "low": 39,
+        "medium": 75
       },
-      "totalFindings": 192,
-      "rowsWithFindings": 104
+      "totalFindings": 114,
+      "rowsWithFindings": 86
     },
     "flagged": [
-      {
-        "type": "provider",
-        "id": "prov-cov-mom-eden-infopark",
-        "name": "MOM Eden Restaurant",
-        "website": "https://momkult.hu/en/restaurant",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Ferencváros (1124) but borough is Újbuda",
-            "expectedBorough": "Ferencváros",
-            "postal": "1124"
-          },
-          {
-            "code": "landmark_neighborhood_mismatch",
-            "severity": "critical",
-            "category": "location",
-            "message": "Csörsz utca 18 (MOM Cultural Centre / 1124) is not in Infopark — use Ferencváros, Millenniumi Városközpont"
-          },
-          {
-            "code": "duplicate_address_inconsistent",
-            "severity": "high",
-            "category": "location",
-            "message": "Same address as prov-momkult-ujbuda, prov-cov-mom-cafe-mill, prov-cov-cafe-mom-infopark but different borough labels",
-            "peers": [
-              {
-                "id": "prov-momkult-ujbuda",
-                "borough": "Újbuda",
-                "neighborhood": "Infopark"
-              },
-              {
-                "id": "prov-cov-mom-cafe-mill",
-                "borough": "Ferencváros",
-                "neighborhood": "Millenniumi Városközpont"
-              },
-              {
-                "id": "prov-cov-cafe-mom-infopark",
-                "borough": "Újbuda",
-                "neighborhood": "Infopark"
-              }
-            ]
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: borough must be Ferencváros for prov-cov-mom-eden-infopark (official address — id suffix is legacy, not the district)"
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: neighborhood must be Millenniumi Városközpont for prov-cov-mom-eden-infopark"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-mom-eden-infopark: description mentions a wrong district for prov-cov-mom-eden-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Suggested: Ferencváros / Millenniumi Városközpont",
-            "reason": "canonical"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-cafe-mom-infopark",
-        "name": "MOM Café",
-        "website": "https://momkult.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Ferencváros (1124) but borough is Újbuda",
-            "expectedBorough": "Ferencváros",
-            "postal": "1124"
-          },
-          {
-            "code": "landmark_neighborhood_mismatch",
-            "severity": "critical",
-            "category": "location",
-            "message": "Csörsz utca 18 (MOM Cultural Centre / 1124) is not in Infopark — use Ferencváros, Millenniumi Városközpont"
-          },
-          {
-            "code": "duplicate_address_inconsistent",
-            "severity": "high",
-            "category": "location",
-            "message": "Same address as prov-momkult-ujbuda, prov-cov-mom-cafe-mill, prov-cov-mom-eden-infopark but different borough labels",
-            "peers": [
-              {
-                "id": "prov-momkult-ujbuda",
-                "borough": "Újbuda",
-                "neighborhood": "Infopark"
-              },
-              {
-                "id": "prov-cov-mom-cafe-mill",
-                "borough": "Ferencváros",
-                "neighborhood": "Millenniumi Városközpont"
-              },
-              {
-                "id": "prov-cov-mom-eden-infopark",
-                "borough": "Újbuda",
-                "neighborhood": "Infopark"
-              }
-            ]
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: borough must be Ferencváros for prov-cov-cafe-mom-infopark (official address — id suffix is legacy, not the district)"
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: neighborhood must be Millenniumi Városközpont for prov-cov-cafe-mom-infopark"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "forbidden_district_copy",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-cov-cafe-mom-infopark: description mentions a wrong district for prov-cov-cafe-mom-infopark — use Ferencváros, 1124 Budapest, Csörsz utca 18, Hungary"
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Suggested: Ferencváros / Millenniumi Városközpont",
-            "reason": "canonical"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-momkult-ujbuda",
-        "name": "MOM Cultural Centre",
-        "website": "https://momkult.hu/",
-        "category": "Venues",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Ferencváros (1124) but borough is Újbuda",
-            "expectedBorough": "Ferencváros",
-            "postal": "1124"
-          },
-          {
-            "code": "landmark_neighborhood_mismatch",
-            "severity": "critical",
-            "category": "location",
-            "message": "Csörsz utca 18 (MOM Cultural Centre / 1124) is not in Infopark — use Ferencváros, Millenniumi Városközpont"
-          },
-          {
-            "code": "duplicate_address_inconsistent",
-            "severity": "high",
-            "category": "location",
-            "message": "Same address as prov-cov-mom-cafe-mill, prov-cov-cafe-mom-infopark, prov-cov-mom-eden-infopark but different borough labels",
-            "peers": [
-              {
-                "id": "prov-cov-mom-cafe-mill",
-                "borough": "Ferencváros",
-                "neighborhood": "Millenniumi Városközpont"
-              },
-              {
-                "id": "prov-cov-cafe-mom-infopark",
-                "borough": "Újbuda",
-                "neighborhood": "Infopark"
-              },
-              {
-                "id": "prov-cov-mom-eden-infopark",
-                "borough": "Újbuda",
-                "neighborhood": "Infopark"
-              }
-            ]
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-momkult-ujbuda: borough must be Ferencváros for prov-momkult-ujbuda (official address — id suffix is legacy, not the district)"
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "prov-momkult-ujbuda: neighborhood must be Millenniumi Városközpont for prov-momkult-ujbuda"
-          },
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Suggested: Ferencváros / Millenniumi Városközpont",
-            "reason": "canonical"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-ebner-gellert",
-        "name": "Ébner Confectionery",
-        "website": "https://www.ebnercukraszda.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1114) but borough is Buda",
-            "expectedBorough": "Újbuda",
-            "postal": "1114"
-          },
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "ebnercukraszda.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-gellert-bar-party",
-        "name": "Gellért Lobby Bar",
-        "website": "https://www.danubiusgellert.com/bars",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1114) but borough is Buda",
-            "expectedBorough": "Újbuda",
-            "postal": "1114"
-          },
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "danubiusgellert.com",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-gellert-brasserie",
-        "name": "Gellért Brasserie",
-        "website": "https://www.danubiusgellert.com/dining",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1114) but borough is Buda",
-            "expectedBorough": "Újbuda",
-            "postal": "1114"
-          },
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "danubiusgellert.com",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-kacsa-becsi",
-        "name": "Kacsa Étterem",
-        "website": "https://www.kacsaetterem.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Buda (1036) but borough is Óbuda",
-            "expectedBorough": "Buda",
-            "postal": "1036"
-          },
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "kacsaetterem.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-corvin-club-ferencvaros",
-        "name": "Corvin Club",
-        "website": "https://corvinclub.hu/",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1085) but borough is Ferencváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1085"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-kuplung-kiraly",
-        "name": "Kuplung",
-        "website": "https://www.kuplung.hu/",
-        "category": "Venues",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1075) but borough is Terézváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1075"
-          },
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "kuplung.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-gellert-spa-events",
-        "name": "Gellért Spa Cultural Hall",
-        "website": "https://www.gellertspa.hu/",
-        "category": "Venues",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1114) but borough is Buda",
-            "expectedBorough": "Újbuda",
-            "postal": "1114"
-          },
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "gellertspa.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-cafe-corvin",
-        "name": "Café Frei Corvin",
-        "website": "https://www.cafefrei.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1082) but borough is Ferencváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1082"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-lucky-luciano",
-        "name": "Lucky Luciano Coffee",
-        "website": "https://luckyluciano.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1111) but borough is Ferencváros",
-            "expectedBorough": "Újbuda",
-            "postal": "1111"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-gellert-cafe",
-        "name": "Gellért Café",
-        "website": "https://www.danubiusgellert.com/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1114) but borough is Buda",
-            "expectedBorough": "Újbuda",
-            "postal": "1114"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-varfok-taban",
-        "name": "Varfok Kávézó",
-        "website": "https://www.varfokkavezo.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "varfokkavezo.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
       {
         "type": "provider",
         "id": "prov-cov-gloriett-cafe-rozsadomb",
@@ -885,6 +287,27 @@
             "severity": "low",
             "category": "image",
             "websiteHost": "gloriett.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-ebner-gellert",
+        "name": "Ébner Confectionery",
+        "website": "https://www.ebnercukraszda.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "ebnercukraszda.hu",
             "imageSourceHost": "upload.wikimedia.org"
           },
           {
@@ -917,27 +340,6 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-liliom-moricz",
-        "name": "Liliom Café",
-        "website": "https://www.liliomcafe.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "liliomcafe.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-gelibi-gellert",
         "name": "Gelibi Café",
         "website": "https://www.gelibi.hu/",
@@ -949,27 +351,6 @@
             "category": "image",
             "websiteHost": "gelibi.hu",
             "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-hard-rock-vaci",
-        "name": "Hard Rock Cafe Budapest",
-        "website": "https://cafe.hardrock.com/budapest/",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "email_domain_mismatch",
-            "severity": "medium",
-            "category": "contact",
-            "emailHost": "hardrock.com",
-            "websiteHost": "cafe.hardrock.com"
           },
           {
             "code": "missing_menu",
@@ -1022,28 +403,6 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-instant-kiraly",
-        "name": "Instant-Fogas",
-        "website": "https://instant.co.hu/",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1075) but borough is Terézváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1075"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-becketts-liszt",
         "name": "Beckett's Irish Pub",
         "website": "https://www.becketts.hu/",
@@ -1076,28 +435,6 @@
             "category": "image",
             "websiteHost": "bluebirdbar.hu",
             "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-a38-muegyetem",
-        "name": "A38 Ship",
-        "website": "https://www.a38.hu/en",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1111) but borough is Ferencváros",
-            "expectedBorough": "Újbuda",
-            "postal": "1111"
           },
           {
             "code": "missing_menu",
@@ -1150,18 +487,17 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-robertson-castle",
-        "name": "Robertson Bar",
-        "website": "https://www.robertsonbar.hu/",
+        "id": "prov-cov-gellert-bar-party",
+        "name": "Gellért Lobby Bar",
+        "website": "https://www.danubiusgellert.com/bars",
         "category": "Parties",
         "issues": [
           {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Belváros (1011) but borough is Buda",
-            "expectedBorough": "Belváros",
-            "postal": "1011"
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "danubiusgellert.com",
+            "imageSourceHost": "upload.wikimedia.org"
           },
           {
             "code": "missing_menu",
@@ -1277,136 +613,6 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-mazel-tov-kiraly",
-        "name": "Mazel Tov",
-        "website": "https://mazeltov.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1075) but borough is Terézváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1075"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-bocksay-wessel",
-        "name": "Bocksay Bistro",
-        "website": "https://www.bocksay.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "bocksay.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-stand25-rakoczi",
-        "name": "Stand25 Bisztró",
-        "website": "https://www.stand25bisztro.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "image_source_off_venue_site",
-            "severity": "low",
-            "category": "image",
-            "websiteHost": "stand25bisztro.hu",
-            "imageSourceHost": "upload.wikimedia.org"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-betes-corvin",
-        "name": "Bétés Restaurant",
-        "website": "https://www.betesetterem.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1082) but borough is Ferencváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1082"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-bamba-marha",
-        "name": "Bamba Marha",
-        "website": "https://www.bambamarha.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Újbuda (1111) but borough is Ferencváros",
-            "expectedBorough": "Újbuda",
-            "postal": "1111"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-pestbuda-castle",
-        "name": "Pest-Buda Bistro",
-        "website": "https://www.pestbuda.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Belváros (1011) but borough is Buda",
-            "expectedBorough": "Belváros",
-            "postal": "1011"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-citadella-rest",
         "name": "Citadella Restaurant",
         "website": "https://www.citadellarestaurant.hu/",
@@ -1428,18 +634,38 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-21-rozsadomb",
-        "name": "21 Hungarian Kitchen",
-        "website": "https://www.21restaurant.hu/",
+        "id": "prov-cov-gellert-brasserie",
+        "name": "Gellért Brasserie",
+        "website": "https://www.danubiusgellert.com/dining",
         "category": "Restaurants",
         "issues": [
           {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Belváros (1012) but borough is Buda",
-            "expectedBorough": "Belváros",
-            "postal": "1012"
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "danubiusgellert.com",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-buena-vista-obuda",
+        "name": "Buena Vista Bistro",
+        "website": "https://www.buenavista.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "buenavista.hu",
+            "imageSourceHost": "upload.wikimedia.org"
           },
           {
             "code": "missing_menu",
@@ -1460,6 +686,27 @@
             "severity": "low",
             "category": "image",
             "websiteHost": "3dcafe.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          },
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kacsa-becsi",
+        "name": "Kacsa Étterem",
+        "website": "https://www.kacsaetterem.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "kacsaetterem.hu",
             "imageSourceHost": "upload.wikimedia.org"
           },
           {
@@ -1555,50 +802,6 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-pierrot-parliament",
-        "name": "Pierrot Café",
-        "website": "https://www.pierrot.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Buda (1014) but borough is Belváros",
-            "expectedBorough": "Buda",
-            "postal": "1014"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-espresso-embassy-kiraly",
-        "name": "Espresso Embassy",
-        "website": "https://espressoembassy.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Belváros (1051) but borough is Terézváros",
-            "expectedBorough": "Belváros",
-            "postal": "1051"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-contessa-jewish-q",
         "name": "Szpünik Café",
         "website": "https://szimpla.hu/szpunik",
@@ -1662,93 +865,6 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-rudas-buda-party",
-        "name": "Rudas Party Nights",
-        "website": "https://www.rudasfurdo.hu/en/party",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "canonical_location_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Suggested: Buda / Tabán",
-            "reason": "street"
-          },
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-new-york-cafe-belvaros",
-        "name": "New York Café",
-        "website": "https://www.newyorkcafe.hu",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1073) but borough is Belváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1073"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-okk-obuda",
-        "name": "Óbuda Cultural Centre",
-        "website": "https://kulturkozpont.hu/",
-        "category": "Venues",
-        "issues": [
-          {
-            "code": "sources_host_mismatch",
-            "severity": "medium",
-            "category": "copy",
-            "websiteHost": "kulturkozpont.hu",
-            "sourceHosts": [
-              "kulturkozpont.hu",
-              "kulturkozpont.jegy.hu"
-            ]
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-otkert-belvaros",
-        "name": "Ötkert",
-        "website": "https://otkert.hu/en/",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-doboz-erzsebetvaros",
-        "name": "Doboz",
-        "website": "https://doboz.co.hu/en/",
-        "category": "Parties",
-        "issues": [
-          {
-            "code": "email_domain_mismatch",
-            "severity": "medium",
-            "category": "contact",
-            "emailHost": "doboz.pm",
-            "websiteHost": "doboz.co.hu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-pesti-vigado-vaci",
         "name": "Pesti Vigadó",
         "website": "https://www.vigado.hu/",
@@ -1759,6 +875,22 @@
             "severity": "low",
             "category": "image",
             "websiteHost": "vigado.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-kuplung-kiraly",
+        "name": "Kuplung",
+        "website": "https://www.kuplung.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "kuplung.hu",
             "imageSourceHost": "upload.wikimedia.org"
           }
         ]
@@ -1781,23 +913,6 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-corvin-cinema",
-        "name": "Corvin Cinema",
-        "website": "https://www.corvinmozi.hu/",
-        "category": "Venues",
-        "issues": [
-          {
-            "code": "postal_borough_mismatch",
-            "severity": "high",
-            "category": "location",
-            "message": "Postal/address implies Erzsébetváros (1082) but borough is Ferencváros",
-            "expectedBorough": "Erzsébetváros",
-            "postal": "1082"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-ferenc-nagy",
         "name": "Ferenc Római Catholic Parish Cultural Events",
         "website": "https://www.ferenciektere.hu/",
@@ -1808,6 +923,22 @@
             "severity": "low",
             "category": "image",
             "websiteHost": "ferenciektere.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-gellert-spa-events",
+        "name": "Gellért Spa Cultural Hall",
+        "website": "https://www.gellertspa.hu/",
+        "category": "Venues",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "gellertspa.hu",
             "imageSourceHost": "upload.wikimedia.org"
           }
         ]
@@ -1846,9 +977,23 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-csendes-nagy",
-        "name": "Csendes",
-        "website": "https://www.csendes.com/",
+        "id": "prov-cov-cafe-corvin",
+        "name": "Café Frei Corvin",
+        "website": "https://www.cafefrei.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-lucky-luciano",
+        "name": "Lucky Luciano Coffee",
+        "website": "https://luckyluciano.hu/",
         "category": "Cafés",
         "issues": [
           {
@@ -1874,15 +1019,31 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-ruszwurm-castle",
-        "name": "Ruszwurm Confectionery",
-        "website": "https://www.ruszwurm.hu/",
+        "id": "prov-cov-gellert-cafe",
+        "name": "Gellért Café",
+        "website": "https://www.danubiusgellert.com/",
         "category": "Cafés",
         "issues": [
           {
             "code": "missing_menu",
             "severity": "medium",
             "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-varfok-taban",
+        "name": "Varfok Kávézó",
+        "website": "https://www.varfokkavezo.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "varfokkavezo.hu",
+            "imageSourceHost": "upload.wikimedia.org"
           }
         ]
       },
@@ -1902,37 +1063,25 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-manno-kolosy",
-        "name": "Manno Caffè",
-        "website": "https://www.mannocaffe.hu/",
+        "id": "prov-cov-liliom-moricz",
+        "name": "Liliom Café",
+        "website": "https://www.liliomcafe.hu/",
         "category": "Cafés",
         "issues": [
           {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "liliomcafe.hu",
+            "imageSourceHost": "upload.wikimedia.org"
           }
         ]
       },
       {
         "type": "provider",
-        "id": "prov-cov-2b-becsi",
-        "name": "2B Coffee",
-        "website": "https://www.2bcoffee.hu/",
-        "category": "Cafés",
-        "issues": [
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-hadik-kosztolanyi",
-        "name": "Hadik Kávéház",
-        "website": "https://www.hadikkavehaz.hu/",
+        "id": "prov-cov-cafe-mom-infopark",
+        "name": "MOM Café",
+        "website": "https://momkult.hu/",
         "category": "Cafés",
         "issues": [
           {
@@ -2028,9 +1177,23 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-legio-nagy",
-        "name": "Légió Hungarian Pub",
-        "website": "https://www.legio.hu/",
+        "id": "prov-cov-a38-muegyetem",
+        "name": "A38 Ship",
+        "website": "https://www.a38.hu/en",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-robertson-castle",
+        "name": "Robertson Bar",
+        "website": "https://www.robertsonbar.hu/",
         "category": "Parties",
         "issues": [
           {
@@ -2140,37 +1303,9 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-bock-deak",
-        "name": "Bock Bistro",
-        "website": "https://www.bockbistro.hu/",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
         "id": "prov-cov-spoon-rest-prom",
         "name": "Spoon Restaurant",
         "website": "https://www.spoon.hu/en/restaurant",
-        "category": "Restaurants",
-        "issues": [
-          {
-            "code": "missing_menu",
-            "severity": "medium",
-            "category": "menu"
-          }
-        ]
-      },
-      {
-        "type": "provider",
-        "id": "prov-cov-aszu-andrassy",
-        "name": "Aszu Étterem",
-        "website": "https://www.aszuetterem.hu/",
         "category": "Restaurants",
         "issues": [
           {
@@ -2196,9 +1331,9 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-ket-szerecsen-oktogon",
-        "name": "Két Szerecsen",
-        "website": "https://www.ketszerecsen.hu/",
+        "id": "prov-cov-mazel-tov-kiraly",
+        "name": "Mazel Tov",
+        "website": "https://mazeltov.hu/",
         "category": "Restaurants",
         "issues": [
           {
@@ -2213,6 +1348,66 @@
         "id": "prov-cov-vegazzi-kazinczy",
         "name": "Vegazzi",
         "website": "https://www.vegazzi.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bocksay-wessel",
+        "name": "Bocksay Bistro",
+        "website": "https://www.bocksay.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "bocksay.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-stand25-rakoczi",
+        "name": "Stand25 Bisztró",
+        "website": "https://www.stand25bisztro.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "image_source_off_venue_site",
+            "severity": "low",
+            "category": "image",
+            "websiteHost": "stand25bisztro.hu",
+            "imageSourceHost": "upload.wikimedia.org"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-betes-corvin",
+        "name": "Bétés Restaurant",
+        "website": "https://www.betesetterem.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-bamba-marha",
+        "name": "Bamba Marha",
+        "website": "https://www.bambamarha.hu/",
         "category": "Restaurants",
         "issues": [
           {
@@ -2252,6 +1447,20 @@
       },
       {
         "type": "provider",
+        "id": "prov-cov-pestbuda-castle",
+        "name": "Pest-Buda Bistro",
+        "website": "https://www.pestbuda.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
         "id": "prov-cov-remiz-taban",
         "name": "Remiz Restaurant",
         "website": "https://www.remizrestaurant.hu/",
@@ -2266,9 +1475,9 @@
       },
       {
         "type": "provider",
-        "id": "prov-cov-buena-vista-obuda",
-        "name": "Buena Vista Bistro",
-        "website": "https://www.buenavista.hu/",
+        "id": "prov-cov-21-rozsadomb",
+        "name": "21 Hungarian Kitchen",
+        "website": "https://www.21restaurant.hu/",
         "category": "Restaurants",
         "issues": [
           {
@@ -2283,6 +1492,20 @@
         "id": "prov-cov-sushi-kolosy",
         "name": "Sushi Sei",
         "website": "https://www.sushisei.hu/",
+        "category": "Restaurants",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-mom-eden-infopark",
+        "name": "MOM Eden Restaurant",
+        "website": "https://momkult.hu/en/restaurant",
         "category": "Restaurants",
         "issues": [
           {
@@ -2311,6 +1534,20 @@
         "id": "prov-cov-madal-deak",
         "name": "MADÁL - specialty coffee",
         "website": "https://madalcoffee.com/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-pierrot-parliament",
+        "name": "Pierrot Café",
+        "website": "https://www.pierrot.hu/",
         "category": "Cafés",
         "issues": [
           {
@@ -2353,6 +1590,20 @@
         "id": "prov-cov-opera-cafe",
         "name": "Opera Café Budapest",
         "website": "https://www.operacafe.hu/",
+        "category": "Cafés",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-espresso-embassy-kiraly",
+        "name": "Espresso Embassy",
+        "website": "https://espressoembassy.hu/",
         "category": "Cafés",
         "issues": [
           {
@@ -2431,6 +1682,20 @@
             "category": "menu"
           }
         ]
+      },
+      {
+        "type": "provider",
+        "id": "prov-cov-rudas-buda-party",
+        "name": "Rudas Party Nights",
+        "website": "https://www.rudasfurdo.hu/en/party",
+        "category": "Parties",
+        "issues": [
+          {
+            "code": "missing_menu",
+            "severity": "medium",
+            "category": "menu"
+          }
+        ]
       }
     ]
   },
@@ -2445,88 +1710,11 @@
   },
   "meetups": {
     "summary": {
-      "byCode": {
-        "duplicate_meetup_cover": 3
-      },
-      "bySeverity": {
-        "high": 3
-      },
-      "totalFindings": 3,
-      "rowsWithFindings": 3
+      "byCode": {},
+      "bySeverity": {},
+      "totalFindings": 0,
+      "rowsWithFindings": 0
     },
-    "flagged": [
-      {
-        "type": "meetup",
-        "id": "grp-cov-meet-vaci",
-        "name": "Váci utca After-Work Circle",
-        "issues": [
-          {
-            "code": "duplicate_meetup_cover",
-            "severity": "high",
-            "category": "image",
-            "sharedWith": [
-              {
-                "type": "meetup",
-                "id": "grp-cov-meet-parliament",
-                "name": "Parliament Riverside Walk"
-              },
-              {
-                "type": "meetup",
-                "id": "grp-cov-meet-promenade",
-                "name": "Promenade Boat & Jazz Circle"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "meetup",
-        "id": "grp-cov-meet-parliament",
-        "name": "Parliament Riverside Walk",
-        "issues": [
-          {
-            "code": "duplicate_meetup_cover",
-            "severity": "high",
-            "category": "image",
-            "sharedWith": [
-              {
-                "type": "meetup",
-                "id": "grp-cov-meet-vaci",
-                "name": "Váci utca After-Work Circle"
-              },
-              {
-                "type": "meetup",
-                "id": "grp-cov-meet-promenade",
-                "name": "Promenade Boat & Jazz Circle"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "meetup",
-        "id": "grp-cov-meet-promenade",
-        "name": "Promenade Boat & Jazz Circle",
-        "issues": [
-          {
-            "code": "duplicate_meetup_cover",
-            "severity": "high",
-            "category": "image",
-            "sharedWith": [
-              {
-                "type": "meetup",
-                "id": "grp-cov-meet-vaci",
-                "name": "Váci utca After-Work Circle"
-              },
-              {
-                "type": "meetup",
-                "id": "grp-cov-meet-parliament",
-                "name": "Parliament Riverside Walk"
-              }
-            ]
-          }
-        ]
-      }
-    ]
+    "flagged": []
   }
 }

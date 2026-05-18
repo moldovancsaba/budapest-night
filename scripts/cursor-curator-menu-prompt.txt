@@ -3,6 +3,10 @@
 ---
 You enrich **existing venues** with published food & drink menus so `/eat-drink` and themed tours (pálinka, foodie, coffee) work.
 
+**Ops guide:** `docs/catalog-curation.md` · **Status:** `npm run menu:status` (needs `MONGODB_URI`)
+
+**Production snapshot (2026-05-18):** 29 / 104 eat-drink providers have `menu.sections`; **75** `missing_menu`; 0 high-severity catalog issues. Batches 3–5 generators: `scripts/generate-menu-batch-{3,4,5}.cjs`. Run `npm run menu:status` for current counts.
+
 Use tools (web search, fetch, terminal, **image read/vision**). Prefer **batch patches** (5–15 venues per run) when safe.
 
 ## Menu only as PNG/JPG on the site (required workflow)
@@ -30,6 +34,8 @@ Verify after ingest:
 - Tags: `src/data/menuTags.ts`
 - Tours need items: `src/data/tourTemplates.ts` (palinka / foodie / coffee)
 - Gold example: `scripts/ingest-payloads/example-menu-sample.json`
+- Applied batches (reference): `scripts/ingest-payloads/cursor-curated-menu-batch-2026-05-18-batch{3,4,5}.json`, `cursor-patch-menu-audit-fixes-2026-05-16.json`
+- Extend an existing generator or copy its helpers: `scripts/generate-menu-batch-3.cjs` (food/wine), `generate-menu-batch-4.cjs` (nightlife drinks), `generate-menu-batch-5.cjs` (cafés)
 
 ## Live catalog
 - `GET https://budapest-night.vercel.app/api/public/menu-items?locale=hu` → note `providersWithMenu`, `tourReadiness`
@@ -125,20 +131,31 @@ Do **not** re-upsert whole venue unless needed. Patch an **existing** `prov-*` i
 - Only `published` prices unless noted in `missingOrUncertain`.
 
 ## Output file
-`scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json`
+`scripts/ingest-payloads/cursor-curated-menu-batch-<date>-batch<N>.json`
 
-## Ingest
-`npm run ingest:listing` validates **provider patch** menus (sections, items, and `locales` on every item/section) before POST. Fix all dry-run errors before `--force`.
+Optional generator: `scripts/generate-menu-batch-<N>.cjs` → writes the JSON above.
+
+## Ingest (preferred for menu-only patches)
+
+**Use `npm run ingest:db`** for `provider` + `patch` with only `menu` (no full `address`). `ingest:listing` dry-run can fail on image-only or menu-only patches that skip address validation paths.
 
 ```bash
+# Optional: validate menu shape via listing dry-run (may fail on patch-only edge cases)
 npm run ingest:listing -- --dry-run scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json
-npm run ingest:listing -- --force scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json
+
+# Apply to Mongo
+npm run ingest:db -- scripts/ingest-payloads/cursor-curated-menu-batch-<date>.json
+npm run db:backfill-menu-venue-links
+npm run audit:catalog -- --skip-urls
 ```
 
-Legacy payloads without menu translations may pass only with `--skip-locale-check` (provider profile only — **not** a substitute for menu `locales`).
+Use **`npm run ingest:listing -- --force`** when the payload also upserts full provider documents (new venue, contact, location).
 
-After deploy, optional local repair:
-`npm run db:recompute-menu-tags`
+Legacy payloads without menu translations may pass listing only with `--skip-locale-check` (provider profile only — **not** a substitute for menu `locales`).
+
+After ingest: `npm run db:recompute-menu-tags` (optional).
+
+**Live API cache:** providers list is CDN-cached ~60s — use `GET .../providers?_=<timestamp>` when verifying.
 
 ## Final reply
 - Count of venues patched
