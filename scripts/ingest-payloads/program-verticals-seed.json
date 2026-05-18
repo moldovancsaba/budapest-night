@@ -18,8 +18,8 @@
       "document": {
         "id": "prov-urania-film",
         "name": "Uránia National Film Theatre",
-        "borough": "Belváros",
-        "neighborhood": "Inner City",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
         "address": "1088 Budapest, Rákóczi út 21, Hungary",
         "activityTypes": [
           "Cinema",
@@ -288,7 +288,7 @@
         "id": "prov-nemzeti-szinhaz",
         "name": "Hungarian National Theatre",
         "borough": "Ferencváros",
-        "neighborhood": "Millennium Quarter",
+        "neighborhood": "Millenniumi Városközpont",
         "address": "1095 Budapest, Bajor Gizi park 1, Hungary",
         "activityTypes": [
           "Theatre"
@@ -556,7 +556,7 @@
         "id": "prov-mupa-budapest",
         "name": "MÜPA Budapest",
         "borough": "Ferencváros",
-        "neighborhood": "Millennium Quarter",
+        "neighborhood": "Millenniumi Városközpont",
         "address": "1095 Budapest, Komor Marcell u. 1, Hungary",
         "activityTypes": [
           "Live Music",
