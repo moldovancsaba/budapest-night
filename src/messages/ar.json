@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Pesti Est — فعاليات وثقافة بودابست",
-    "description": "دليل برامج مجاني لبودابست: سينما ومسرح ومعارض وحفلات."
+    "description": "دليل برامج مجاني لبودابست: سينما ومسرح ومعارض وحفلات.",
+    "brandSubtitle": "Pesti Est — دليل برامج بودابست"
   },
   "locale": {
     "label": "اللغة",
@@ -682,6 +683,16 @@
     "browseAllEvents": "كل الفعاليات",
     "boroughTitle": "حسب المنطقة",
     "emptyVertical": "لا توجد قوائم في هذا القسم بعد.",
+    "loading": "جارٍ تحميل برنامج الأسبوع…",
+    "weekRange": "{start} – {end}",
+    "editorialTitle": "البرنامج الثقافي في بودابست",
+    "editorialBody": "Pesti Est هو الدليل الأسبوعي المجاني لبودابست — سينما ومسرح ومعارض وحفلات وبرامج عائلية، يُحدَّث كل خميس.",
+    "sponsorLabel": "راعي الأسبوع",
+    "heroCta": "برنامج هذا الأسبوع",
+    "moreThisWeek": "المزيد هذا الأسبوع",
+    "promotedTitle": "شركاء مميزون",
+    "officialProgram": "البرنامج الرسمي",
+    "repertoire": "البرنامج الفني",
     "vertical": {
       "mozi": "سينما",
       "szinhaz": "مسرح",

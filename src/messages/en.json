@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Pesti Est — Budapest events, culture & going out",
-    "description": "Free Budapest program guide: cinema, theatre, exhibitions, concerts, restaurants and nightlife by district."
+    "description": "Free Budapest program guide: cinema, theatre, exhibitions, concerts, restaurants and nightlife by district.",
+    "brandSubtitle": "Pesti Est — Budapest program guide"
   },
   "locale": {
     "label": "Language",
@@ -682,6 +683,16 @@
     "browseAllEvents": "Browse all events",
     "boroughTitle": "By district",
     "emptyVertical": "No listings yet for this vertical.",
+    "loading": "Loading this week's program…",
+    "weekRange": "{start} – {end}",
+    "editorialTitle": "Budapest cultural program",
+    "editorialBody": "Pesti Est is the digital successor to Budapest's free weekly program magazine—cinema, theatre, exhibitions, concerts, and family events, refreshed every Thursday.",
+    "sponsorLabel": "Week sponsor",
+    "heroCta": "This week's program",
+    "moreThisWeek": "More this week",
+    "promotedTitle": "Featured partners",
+    "officialProgram": "Official program",
+    "repertoire": "Repertoire",
     "vertical": {
       "mozi": "Cinema",
       "szinhaz": "Theatre",

@@ -16,8 +16,15 @@ describe("eventDisplay", () => {
   });
 
   it("detects upcoming events", () => {
-    expect(isUpcoming({ endsAt: "2099-01-01T00:00:00+01:00" })).toBe(true);
-    expect(isUpcoming({ endsAt: "2020-01-01T00:00:00+01:00" })).toBe(false);
+    expect(isUpcoming({ endsAt: "2099-01-01T00:00:00+01:00", status: "scheduled" })).toBe(
+      true,
+    );
+    expect(isUpcoming({ endsAt: "2020-01-01T00:00:00+01:00", status: "scheduled" })).toBe(
+      false,
+    );
+    expect(isUpcoming({ endsAt: "2099-01-01T00:00:00+01:00", status: "archived" })).toBe(
+      false,
+    );
   });
 
   it("formats HUF entry fees without euro symbol", () => {

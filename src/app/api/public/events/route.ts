@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getDb, COL } from "@/lib/mongodb";
 import { parseAppLocaleParam, resolveEventsForLocale } from "@/lib/eventLocale";
 import { isUpcoming } from "@/lib/eventDisplay";
+import { archiveFinishedEvents } from "@/lib/eventsArchive";
 import { toPublicNightEvent } from "@/lib/publicEvent";
 import { featuredEventIds, getActivePromotions } from "@/lib/promotionsDb";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
@@ -22,6 +23,10 @@ export async function GET(req: NextRequest) {
   const locale = parseAppLocaleParam(req.nextUrl.searchParams.get("locale"));
   const upcomingOnly = req.nextUrl.searchParams.get("upcoming") !== "0";
   const borough = req.nextUrl.searchParams.get("borough");
+
+  if (upcomingOnly) {
+    await archiveFinishedEvents(db);
+  }
 
   const [rows, providerRows, promos] = await Promise.all([
     db.collection(COL.events).find({}).toArray(),

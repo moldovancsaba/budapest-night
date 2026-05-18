@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
 import { Link } from "@/i18n/routing";
 import { buildProgramPath, type ProgramVerticalSlug } from "@/lib/appPaths";
 import {
@@ -29,6 +30,7 @@ export function ProgramVerticalView({
   onOpenEvent,
   onShareProvider,
 }: Props) {
+  const locale = useLocale() as AppLocale;
   const t = useTranslations("program");
   const def = getVertical(vertical);
   const { data: providers = [] } = useProvidersCatalog();
@@ -47,7 +49,7 @@ export function ProgramVerticalView({
   if (!def) {
     return (
       <p className="text-muted-foreground">
-        <Link href={buildProgramPath()}>← {t("weekTitle")}</Link>
+        <Link href={buildProgramPath(undefined, { locale })}>← {t("weekTitle")}</Link>
       </p>
     );
   }
@@ -55,7 +57,7 @@ export function ProgramVerticalView({
   return (
     <div className="space-y-8">
       <header>
-        <Link href={buildProgramPath()}>
+        <Link href={buildProgramPath(undefined, { locale })}>
           <Button variant="ghost" size="sm" className="mb-4 rounded-full">
             ← {t("weekTitle")}
           </Button>

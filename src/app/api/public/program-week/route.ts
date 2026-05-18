@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { getDb, COL } from "@/lib/mongodb";
 import { getCurrentWeekId, getWeekBounds, eventsInWeek } from "@/lib/programWeekCalendar";
 import type { ProgramWeekDoc, PublicProgramWeek } from "@/types/programWeek";
+import {
+  PROGRAM_WEEK_LOCALE_DEFAULTS,
+  resolveProgramWeekLocaleBlock,
+} from "@/lib/programWeekCopy";
 import type { AppLocale } from "@/i18n/config";
 import { resolveProvidersForLocale } from "@/lib/providerLocale";
 import { resolveEventsForLocale } from "@/lib/eventLocale";
@@ -16,11 +20,13 @@ import {
   promotionLabelByTarget,
   weekSponsorFromPromos,
 } from "@/lib/promotionsDb";
+import { archiveFinishedEvents } from "@/lib/eventsArchive";
+import { isUpcoming } from "@/lib/eventDisplay";
 
 export const dynamic = "force-dynamic";
 
 function resolveWeekCopy(doc: ProgramWeekDoc, locale: AppLocale): PublicProgramWeek {
-  const block = doc.locales[locale] ?? doc.locales.hu;
+  const block = resolveProgramWeekLocaleBlock(doc, locale);
   return {
     weekId: doc.weekId,
     weekStartsAt: doc.weekStartsAt,
@@ -58,12 +64,12 @@ export async function GET(req: Request) {
       weekStartsAt: bounds.startsAt,
       weekEndsAt: bounds.endsAt,
       published: true,
-      locales: {
-        hu: {
-          headline: "Ez a hét Budapesten",
-          intro: "A legjobb programok egy helyen — események és helyszínek kerület szerint.",
-        },
-      },
+      locales: Object.fromEntries(
+        (["hu", "en", "es", "it", "he", "ar"] as AppLocale[]).map((loc) => [
+          loc,
+          PROGRAM_WEEK_LOCALE_DEFAULTS[loc],
+        ]),
+      ) as ProgramWeekDoc["locales"],
       featuredEventIds: [],
       featuredProviderIds: [],
       updatedAt: new Date().toISOString(),
@@ -76,9 +82,15 @@ export async function GET(req: Request) {
 
   let week = resolveWeekCopy(doc, locale);
 
+  await archiveFinishedEvents(db);
+  const nowIso = new Date().toISOString();
+
   const [rawProviders, rawEvents, promos] = await Promise.all([
     db.collection(COL.providers).find({}).toArray(),
-    db.collection(COL.events).find({ status: "scheduled" }).toArray(),
+    db
+      .collection(COL.events)
+      .find({ status: "scheduled", endsAt: { $gte: nowIso } })
+      .toArray(),
     getActivePromotions(db),
   ]);
 
@@ -100,7 +112,7 @@ export async function GET(req: Request) {
     ]),
   );
   const events = resolveEventsForLocale(rawEvents as unknown as NightEvent[], locale)
-    .filter((e) => eventsInWeek(e.startsAt, weekId))
+    .filter((e) => eventsInWeek(e.startsAt, weekId) && isUpcoming(e))
     .map((e) => toPublicNightEvent(e, providersById))
     .sort((a, b) => a.startsAt.localeCompare(b.startsAt));
 
@@ -122,7 +134,7 @@ export async function GET(req: Request) {
 
   let featuredEvents =
     week.featuredEventIds.length > 0
-      ? events.filter((e) => week.featuredEventIds.includes(e.id))
+      ? events.filter((e) => week.featuredEventIds.includes(e.id) && isUpcoming(e))
       : events.slice(0, 8);
 
   let featuredProviders =

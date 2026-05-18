@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Pesti Est — Budapesti programok, kultúra és szórakozás",
-    "description": "Ingyenes budapesti programmagazin: mozi, színház, kiállítás, koncert, étterem és éjszaka kerület szerint."
+    "description": "Ingyenes budapesti programmagazin: mozi, színház, kiállítás, koncert, étterem és éjszaka kerület szerint.",
+    "brandSubtitle": "Pesti Est — budapesti programmagazin"
   },
   "locale": {
     "label": "Nyelv",
@@ -682,6 +683,16 @@
     "browseAllEvents": "Összes esemény",
     "boroughTitle": "Kerület szerint",
     "emptyVertical": "Ehhez a műfajhoz még nincs lista.",
+    "loading": "Heti program betöltése…",
+    "weekRange": "{start} – {end}",
+    "editorialTitle": "Budapesti kulturális program",
+    "editorialBody": "A Pesti Est a város ingyenes heti programmagazinjának online változata: mozi, színház, kiállítás, koncert és családi programok — minden csütörtökön frissül.",
+    "sponsorLabel": "Heti szponzor",
+    "heroCta": "Ez a hét",
+    "moreThisWeek": "További programok ezen a héten",
+    "promotedTitle": "Kiemelt partnerek",
+    "officialProgram": "Hivatalos műsor",
+    "repertoire": "Repertoár",
     "vertical": {
       "mozi": "Mozi",
       "szinhaz": "Színház",

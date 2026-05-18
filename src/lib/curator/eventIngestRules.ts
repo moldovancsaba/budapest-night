@@ -33,7 +33,7 @@ Never put a concert listing only as a Venues provider. Never use \`category: "Ev
 ### Identity & schema
 - \`id\`: \`^event-[a-z0-9-]+$\` (e.g. \`event-moby-budapest-park-2026\`).
 - Zod shape: \`src/lib/eventSchema.ts\`; validator: \`scripts/ingest-listing-automation.cjs\` (\`validateEvent\`).
-- \`status\`: \`scheduled\` | \`cancelled\` | \`sold_out\` | \`postponed\` (default \`scheduled\`).
+- \`status\`: \`scheduled\` | \`cancelled\` | \`sold_out\` | \`postponed\` (default \`scheduled\`). Past \`scheduled\` rows are auto-set to \`archived\` by the platform after \`endsAt\`.
 
 ### Schedule (ISO 8601 with offset)
 - \`startsAt\`, \`endsAt\`: real show window from the official page (e.g. \`2026-08-01T20:00:00+02:00\`).

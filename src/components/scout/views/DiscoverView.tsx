@@ -94,7 +94,13 @@ export function DiscoverView({
       )
       .filter((p) =>
         filters.activity ? p.activityTypes.includes(filters.activity) : true,
-      );
+      )
+      .sort((a, b) => {
+        const ap = a.isPromoted ? 0 : 1;
+        const bp = b.isPromoted ? 0 : 1;
+        if (ap !== bp) return ap - bp;
+        return a.name.localeCompare(b.name);
+      });
   }, [providers, category, borough, neighborhood, filters]);
 
   const featured = useMemo(

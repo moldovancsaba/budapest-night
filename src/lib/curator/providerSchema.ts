@@ -72,6 +72,9 @@ export const curatedProviderSchema = z
     rating: z.number().min(0).max(5),
     reviewCount: z.number().int().min(0).max(1_000_000),
     badges: z.array(badge).max(4),
+    externalProgramUrl: z.string().url().max(500).optional(),
+    repertoireUrl: z.string().url().max(500).optional(),
+    chainId: z.string().min(2).max(80).optional(),
     image: z
       .string()
       .max(2000)

@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Pesti Est — Eventos y cultura en Budapest",
-    "description": "Guía gratuita de programación en Budapest: cine, teatro, exposiciones y conciertos."
+    "description": "Guía gratuita de programación en Budapest: cine, teatro, exposiciones y conciertos.",
+    "brandSubtitle": "Pesti Est — guía de programas de Budapest"
   },
   "locale": {
     "label": "Idioma",
@@ -682,6 +683,16 @@
     "browseAllEvents": "Ver todos los eventos",
     "boroughTitle": "Por distrito",
     "emptyVertical": "Aún no hay listados en esta categoría.",
+    "loading": "Cargando el programa de la semana…",
+    "weekRange": "{start} – {end}",
+    "editorialTitle": "Programa cultural de Budapest",
+    "editorialBody": "Pesti Est es la guía semanal gratuita de Budapest: cine, teatro, exposiciones, conciertos y programas familiares, actualizada cada jueves.",
+    "sponsorLabel": "Patrocinador de la semana",
+    "heroCta": "Programa de la semana",
+    "moreThisWeek": "Más esta semana",
+    "promotedTitle": "Socios destacados",
+    "officialProgram": "Programa oficial",
+    "repertoire": "Repertorio",
     "vertical": {
       "mozi": "Cine",
       "szinhaz": "Teatro",

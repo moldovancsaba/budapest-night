@@ -43,6 +43,8 @@ import {
 } from "@/hooks/useVenueDisplay";
 import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
+import { buildProgramPath } from "@/lib/appPaths";
+import { Link } from "@/i18n/routing";
 import { JsonLd, localBusinessJsonLd } from "@/components/seo/JsonLd";
 import type { AppLocale } from "@/i18n/config";
 
@@ -388,6 +390,34 @@ export function ProviderProfile({
                 <Globe className="h-4 w-4 text-muted-foreground" />{" "}
                 {provider.website}
               </a>
+              {provider.externalProgramUrl ? (
+                <a
+                  href={provider.externalProgramUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-foreground hover:text-foreground"
+                >
+                  <Globe className="h-4 w-4 text-muted-foreground" />
+                  {tProgram("officialProgram")}
+                </a>
+              ) : null}
+              {provider.repertoireUrl ? (
+                <a
+                  href={provider.repertoireUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-foreground hover:text-foreground"
+                >
+                  <Globe className="h-4 w-4 text-muted-foreground" />
+                  {tProgram("repertoire")}
+                </a>
+              ) : null}
+              <Link
+                href={buildProgramPath(undefined, { locale })}
+                className="flex items-center gap-2 text-sm font-medium text-primary underline"
+              >
+                {tProgram("moreThisWeek")}
+              </Link>
               <a
                 href={`tel:${provider.phone}`}
                 className="flex items-center gap-2 text-foreground hover:text-foreground"

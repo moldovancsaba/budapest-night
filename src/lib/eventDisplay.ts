@@ -90,6 +90,10 @@ export function lowestEntryFee(fees: EntryFee[]): EntryFee | null {
   return priced.reduce((a, b) => (a.amount <= b.amount ? a : b));
 }
 
-export function isUpcoming(event: Pick<NightEvent, "endsAt">, now = Date.now()): boolean {
+export function isUpcoming(
+  event: Pick<NightEvent, "endsAt" | "status">,
+  now = Date.now(),
+): boolean {
+  if (event.status === "archived") return false;
   return new Date(event.endsAt).getTime() >= now;
 }

@@ -2,7 +2,12 @@ import type { AgeRange, Borough, DayTimeTag, FeaturedBadge } from "@/types/provi
 import type { EventLocalesMap } from "@/types/eventLocale";
 import type { VenueLink } from "@/types/venueLink";
 
-export type EventStatus = "scheduled" | "cancelled" | "sold_out" | "postponed";
+export type EventStatus =
+  | "scheduled"
+  | "cancelled"
+  | "sold_out"
+  | "postponed"
+  | "archived";
 
 export type EventCurrency = "HUF" | "EUR" | "FREE";
 
@@ -51,6 +56,8 @@ export interface NightEvent {
   email: string;
   phone: string;
   status: EventStatus;
+  /** Set when status becomes `archived` after `endsAt` passes. */
+  archivedAt?: string;
   /** Gate / doors open before show (ISO); optional when only show start is published. */
   doorsOpenAt?: string;
   locales?: EventLocalesMap;

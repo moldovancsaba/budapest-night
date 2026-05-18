@@ -24,10 +24,12 @@ describe("appPaths", () => {
     expect(parseAppRoute("/split", new URLSearchParams()).view).toBe("Split Check");
     expect(parseAppRoute("/eat-drink", new URLSearchParams()).view).toBe("Eat & Drink");
     expect(parseAppRoute("/program", new URLSearchParams()).view).toBe("Program");
+    expect(parseAppRoute("/ez-a-het", new URLSearchParams()).view).toBe("Program");
     const vertical = parseAppRoute("/program/mozi", new URLSearchParams());
     expect(vertical.view).toBe("Program");
     expect(vertical.programVertical).toBe("mozi");
     expect(buildProgramPath()).toBe("/program");
+    expect(buildProgramPath(undefined, { locale: "hu" })).toBe("/ez-a-het");
     expect(buildProgramPath("szinhaz")).toBe("/program/szinhaz");
   });
 

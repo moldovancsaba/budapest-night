@@ -1,7 +1,8 @@
 {
   "meta": {
     "title": "Pesti Est — אירועים ותרבות בבודפשט",
-    "description": "מדריך תוכניות חינמי לבודפשט: קולנוע, תיאטרון, תערוכות וקונצרטים."
+    "description": "מדריך תוכניות חינמי לבודפשט: קולנוע, תיאטרון, תערוכות וקונצרטים.",
+    "brandSubtitle": "Pesti Est — מדריך התוכניות של בודפשט"
   },
   "locale": {
     "label": "שפה",
@@ -682,6 +683,16 @@
     "browseAllEvents": "כל האירועים",
     "boroughTitle": "לפי רובע",
     "emptyVertical": "אין עדיין רישומים בקטגוריה זו.",
+    "loading": "טוען את תוכנית השבוע…",
+    "weekRange": "{start} – {end}",
+    "editorialTitle": "תוכנית תרבות בבודפשט",
+    "editorialBody": "Pesti Est היא המדריך השבועי החינמי של בודפשט — קולנוע, תיאטרון, תערוכות, קונצרטים ותוכניות למשפחות, מתעדכן בכל חמישי.",
+    "sponsorLabel": "נותן חסות השבוע",
+    "heroCta": "תוכנית השבוע",
+    "moreThisWeek": "עוד השבוע",
+    "promotedTitle": "שותפים מומלצים",
+    "officialProgram": "תוכנית רשמית",
+    "repertoire": "רפרטואר",
     "vertical": {
       "mozi": "קולנוע",
       "szinhaz": "תיאטרון",

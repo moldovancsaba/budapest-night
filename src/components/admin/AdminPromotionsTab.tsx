@@ -65,7 +65,13 @@ export function AdminPromotionsTab() {
           <option value="featured_venue">featured_venue</option>
           <option value="featured_event">featured_event</option>
           <option value="week_sponsor">week_sponsor</option>
+          <option value="vertical_sponsor">vertical_sponsor</option>
         </select>
+        <Button variant="outline" asChild>
+          <a href="/api/admin/promotions/export" download>
+            Export CSV
+          </a>
+        </Button>
         <Input placeholder="targetId (prov-* or event-*)" value={targetId} onChange={(e) => setTargetId(e.target.value)} />
         <Input placeholder="Label" value={label} onChange={(e) => setLabel(e.target.value)} />
         <Input type="datetime-local" value={startsAt} onChange={(e) => setStartsAt(e.target.value)} />

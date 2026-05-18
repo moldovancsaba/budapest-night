@@ -1,0 +1,14 @@
+Curate Budapest program venues for Pesti Est verticals: mozi (cinema), szinhaz (theatre), kiallitas (exhibition/gallery), koncert (live music), csalad (family).
+
+Rules:
+- Use official venue websites only; include Sources: https://... in longDescription.
+- Set activityTypes from src/data/catalogFilters.ts (English canonical tags).
+- Mozi: activityTypes includes Cinema; set externalProgramUrl to official műsor/tickets page when published.
+- Szinhaz: activityTypes includes Theatre; set repertoireUrl when a dedicated repertoire page exists.
+- Kiallitas: Gallery and/or Exhibition; link timed exhibitions as separate events when dates are published.
+- Koncert: prefer timed events with startsAt; venue hosts use venueIds.
+- Csalad: ageRanges includes Family or All ages; family-friendly copy in shortDescription.
+- Provide locales.hu plus en, es, it, he, ar blocks per existing ingest rules.
+- borough/neighborhood/address must pass Hungarian postal validation.
+
+Output JSON array of provider objects matching curatedProviderSchema.

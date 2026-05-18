@@ -242,7 +242,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     };
   }
 
-  if (segments[0] === "program") {
+  if (segments[0] === "program" || segments[0] === "ez-a-het") {
     const vertical = segments[1] as ProgramVerticalSlug | undefined;
     const validVerticals = new Set(["mozi", "szinhaz", "kiallitas", "koncert", "csalad"]);
     return {
@@ -309,8 +309,16 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
   };
 }
 
-export function buildProgramPath(vertical?: ProgramVerticalSlug): string {
-  return vertical ? `/program/${vertical}` : "/program";
+export function buildProgramPath(
+  vertical?: ProgramVerticalSlug,
+  options?: { locale?: AppLocale },
+): string {
+  const loc = options?.locale;
+  if (vertical) {
+    return loc === "hu" ? `/ez-a-het/${vertical}` : `/program/${vertical}`;
+  }
+  if (loc === "hu") return "/ez-a-het";
+  return "/program";
 }
 
 export function buildTourPath(tourId: string, seed?: string): string {

@@ -46,7 +46,7 @@ export const nightEventSchema = z.object({
   bookingUrl: z.string().url().max(500).or(z.literal("")),
   email: z.string().max(200),
   phone: z.string().max(80),
-  status: z.enum(["scheduled", "cancelled", "sold_out", "postponed"]),
+  status: z.enum(["scheduled", "cancelled", "sold_out", "postponed", "archived"]),
   doorsOpenAt: isoDateTime.optional(),
   locales: z.record(z.string(), z.any()).optional(),
 });

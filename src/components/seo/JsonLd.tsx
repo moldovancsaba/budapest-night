@@ -15,7 +15,18 @@ export function eventJsonLd(event: {
   url?: string;
   locationName?: string;
   address?: string;
+  offers?: { price: number; currency: string; name?: string }[];
 }) {
+  const offerList =
+    event.offers?.length &&
+    event.offers.map((o) => ({
+      "@type": "Offer",
+      name: o.name ?? "Admission",
+      price: o.price,
+      priceCurrency: o.currency === "FREE" ? "HUF" : o.currency,
+      availability: "https://schema.org/InStock",
+    }));
+
   return {
     "@context": "https://schema.org",
     "@type": "Event",
@@ -31,6 +42,31 @@ export function eventJsonLd(event: {
       address: event.address,
     },
     ...(event.url ? { url: event.url } : {}),
+    ...(offerList ? { offers: offerList } : {}),
+  };
+}
+
+export function collectionPageJsonLd(page: {
+  name: string;
+  description?: string;
+  url: string;
+  items: { name: string; url?: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: page.name,
+    description: page.description,
+    url: page.url,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: page.items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        ...(item.url ? { url: item.url } : {}),
+      })),
+    },
   };
 }
 

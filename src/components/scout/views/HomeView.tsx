@@ -16,7 +16,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
+import { PROGRAM_VERTICALS } from "@/lib/programVerticals";
 import {
   useCategoryLabel,
   useDistrictLabel,
@@ -126,6 +128,7 @@ interface Props {
 }
 
 export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
+  const locale = useLocale() as AppLocale;
   const tProgram = useTranslations("program");
   const districtLabel = useDistrictLabel();
   const neighborhoodLabel = useNeighborhoodLabel();
@@ -149,6 +152,8 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
   const popularPicks = s.homePopularPickProviderNames
     .map((name) => providers.find((p) => p.name === name))
     .filter((p): p is Provider => !!p);
+
+  const promotedPartners = providers.filter((p) => p.isPromoted).slice(0, 6);
 
   const popularGroup = s.homePopularMeetupGroupId.trim()
     ? meetups.find((g) => g.id === s.homePopularMeetupGroupId.trim())
@@ -194,7 +199,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
                 className="rounded-full border-border bg-card/50 px-6 text-foreground hover:bg-muted"
                 asChild
               >
-                <Link href={buildProgramPath()}>{tProgram("weekTitle")}</Link>
+                <Link href={buildProgramPath(undefined, { locale })}>{tProgram("heroCta")}</Link>
               </Button>
             </div>
             <p className="mt-4 text-sm font-medium text-primary">{tProgram("thuNote")}</p>
@@ -225,6 +230,45 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
           </div>
         </div>
       </section>
+
+      {/* PROGRAM VERTICALS */}
+      <section>
+        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+          {tProgram("verticalsTitle")}
+        </h2>
+        <div className="mt-6 flex flex-wrap justify-center gap-2">
+          {PROGRAM_VERTICALS.map((v) => (
+            <Link key={v.id} href={buildProgramPath(v.id, { locale })}>
+              <Button variant="outline" className="rounded-full">
+                {tProgram(`vertical.${v.id}`)}
+              </Button>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {promotedPartners.length > 0 && (
+        <section>
+          <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+            {tProgram("promotedTitle")}
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {promotedPartners.map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => onOpenProvider(p)}
+                className="rounded-2xl border border-primary/30 bg-card p-4 text-left transition hover:border-primary"
+              >
+                <p className="font-semibold text-foreground">{p.name}</p>
+                {p.promotionLabel ? (
+                  <p className="mt-1 text-xs font-medium text-primary">{p.promotionLabel}</p>
+                ) : null}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CATEGORIES */}
       <section>

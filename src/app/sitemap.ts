@@ -20,7 +20,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     "",
     "/program",
+    "/ez-a-het",
     ...PROGRAM_VERTICALS.map((v) => `/program/${v.id}`),
+    ...PROGRAM_VERTICALS.map((v) => `/ez-a-het/${v.id}`),
     "/venues",
     "/events",
     "/parties",
@@ -34,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const locale of locales) {
     for (const p of staticPaths) {
+      if (p.startsWith("/ez-a-het") && locale !== "hu") continue;
       entries.push({
         url: `${BASE}${localePath(locale, p)}`,
         changeFrequency: p === "" || p === "/program" ? "daily" : "weekly",
@@ -45,9 +48,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const db = await getDb();
   if (!db) return entries;
 
+  const nowIso = new Date().toISOString();
   const [providers, events] = await Promise.all([
     db.collection(COL.providers).find({}).project({ id: 1, locales: 1 }).toArray(),
-    db.collection(COL.events).find({ status: "scheduled" }).project({ id: 1, locales: 1, startsAt: 1 }).toArray(),
+    db
+      .collection(COL.events)
+      .find({
+        status: "scheduled",
+        endsAt: { $gte: nowIso },
+      })
+      .project({ id: 1, locales: 1, startsAt: 1 })
+      .toArray(),
   ]);
 
   for (const locale of locales) {

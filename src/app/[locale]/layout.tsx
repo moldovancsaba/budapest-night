@@ -41,10 +41,15 @@ export async function generateMetadata({
   for (const loc of locales) {
     languages[loc] = loc === "hu" ? siteUrl : `${siteUrl}/${loc}`;
   }
+  const description =
+    locale === "hu"
+      ? t("description")
+      : `${t("brandSubtitle")} · ${t("description")}`;
+
   return {
     metadataBase: new URL(siteUrl),
     title: t("title"),
-    description: t("description"),
+    description,
     authors: [{ name: "Pesti Est" }],
     alternates: {
       canonical: locale === "hu" ? siteUrl : `${siteUrl}/${locale}`,
@@ -52,7 +57,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: t("title"),
-      description: t("description"),
+      description,
       type: "website",
       locale,
       siteName: "Pesti Est",

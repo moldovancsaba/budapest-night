@@ -229,6 +229,11 @@ export function EventProfile({
             url,
             locationName: place,
             address,
+            offers: event.entryFees.map((f) => ({
+              price: f.amount,
+              currency: f.currency,
+              name: f.label,
+            })),
           })}
         />
         <div className="overflow-y-auto bg-background">{content}</div>

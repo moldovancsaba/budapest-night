@@ -15,8 +15,8 @@ export type ProgramVertical = {
 export const PROGRAM_VERTICALS: ProgramVertical[] = [
   {
     id: "mozi",
-    activityTypes: ["Cinema", "Theatre"],
-    eventActivityTypes: ["Live Music", "Festival"],
+    activityTypes: ["Cinema"],
+    eventActivityTypes: ["Cinema", "Festival"],
   },
   {
     id: "szinhaz",
