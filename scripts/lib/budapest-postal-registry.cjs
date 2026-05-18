@@ -23,6 +23,7 @@ const NEIGHBORHOODS = {
     "Jewish Quarter",
     "Gozsdu Udvar",
     "Kazinczy utca",
+    "Király utca",
     "Wesselényi utca",
     "Rákóczi tér",
   ],

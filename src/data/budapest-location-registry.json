@@ -395,6 +395,11 @@
       "kerulet": "XI",
       "keruletName": "Újbuda"
     },
+    "1117": {
+      "appBorough": "Újbuda",
+      "kerulet": "XI",
+      "keruletName": "Újbuda"
+    },
     "1118": {
       "appBorough": "Buda",
       "kerulet": "XI",
@@ -556,6 +561,13 @@
       "source": "https://www.budapestpark.hu/"
     },
     {
+      "id": "prov-central-market-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Fővám tér",
+      "address": "1093 Budapest, Vámház körút 1-3, Hungary",
+      "source": "https://piaconline.hu/en/central-market-hall/"
+    },
+    {
       "id": "prov-a38-ferencvaros",
       "borough": "Ferencváros",
       "neighborhood": "Petőfi Bridge",
@@ -652,6 +664,83 @@
       "neighborhood": "Infopark",
       "address": "1117 Budapest, Infopark sétány 1, Hungary",
       "source": "https://www.binxrooftop.hu/"
+    },
+    {
+      "id": "prov-cov-frici-jewish-q",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Király utca",
+      "address": "1077 Budapest, Király utca 55, Hungary",
+      "source": "https://www.fricipapa.hu/"
+    },
+    {
+      "id": "prov-cov-kuplung-kiraly",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Király utca",
+      "address": "1075 Budapest, Király utca 46, Hungary",
+      "source": "https://www.kuplung.hu/"
+    },
+    {
+      "id": "prov-new-york-cafe-belvaros",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér",
+      "address": "1073 Budapest, Erzsébet körút 9-11, Hungary",
+      "source": "https://www.newyorkcafe.hu/"
+    },
+    {
+      "id": "prov-corvin-club-ferencvaros",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed",
+      "address": "1085 Budapest, Blaha Lujza tér 1-2, Hungary",
+      "source": "https://corvinclub.hu/"
+    },
+    {
+      "id": "prov-cov-a38-muegyetem",
+      "borough": "Ferencváros",
+      "neighborhood": "Petőfi Bridge",
+      "address": "1111 Budapest, Petőfi híd, budai hídfő, Hungary",
+      "source": "https://a38.hu/"
+    },
+    {
+      "id": "prov-cov-ebner-gellert",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér",
+      "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+      "source": "https://www.ebnercukraszda.hu/"
+    },
+    {
+      "id": "prov-cov-robertson-castle",
+      "borough": "Buda",
+      "neighborhood": "Castle District",
+      "address": "1011 Budapest, Robertson utca 1, Hungary",
+      "source": "https://www.robertsonbar.hu/"
+    },
+    {
+      "id": "prov-cov-pestbuda-castle",
+      "borough": "Buda",
+      "neighborhood": "Castle District",
+      "address": "1011 Budapest, Fortuna utca 3, Hungary",
+      "source": "https://www.pestbuda.hu/"
+    },
+    {
+      "id": "prov-cov-21-rozsadomb",
+      "borough": "Buda",
+      "neighborhood": "Rózsadomb",
+      "address": "1012 Budapest, Fortuna utca 21, Hungary",
+      "source": "https://www.21restaurant.hu/"
+    },
+    {
+      "id": "prov-cov-betes-corvin",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed",
+      "address": "1082 Budapest, Futó utca 3, Hungary",
+      "source": "https://www.betesetterem.hu/"
+    },
+    {
+      "id": "prov-cov-kacsa-becsi",
+      "borough": "Óbuda",
+      "neighborhood": "Bécsi út",
+      "address": "1036 Budapest, Fő utca 82, Hungary",
+      "source": "https://www.kacsaetterem.hu/"
     }
   ],
   "addressOverrides": [
@@ -710,10 +799,88 @@
       "note": "Tabán venues"
     },
     {
-      "pattern": "fő\\s+utca|fo\\s+utca",
+      "pattern": "101[34]\\s+Budapest[^\\n]*fő\\s+utca|101[34]\\s+Budapest[^\\n]*fo\\s+utca",
       "borough": "Buda",
       "neighborhood": "Castle District",
-      "note": "Castle quarter Fő utca"
+      "note": "Buda Castle Fő utca (I. ker. 1013–1014 only — not Óbuda Fő utca)"
+    },
+    {
+      "pattern": "erzsébet körút|erzsebet korut",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Rákóczi tér",
+      "note": "New York Café / VII. grand boulevard"
+    },
+    {
+      "pattern": "petőfi híd|petofi hid",
+      "borough": "Ferencváros",
+      "neighborhood": "Petőfi Bridge",
+      "note": "A38 ship at Buda bridge foot"
+    },
+    {
+      "pattern": "vámház|vamhaz",
+      "borough": "Ferencváros",
+      "neighborhood": "Fővám tér",
+      "note": "Nagy Vásárcsarnok / Great Market Hall"
+    },
+    {
+      "pattern": "futó utca|futo utca",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed",
+      "note": "Corvin quarter side streets"
+    },
+    {
+      "pattern": "király utca|kiraly utca",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Király utca",
+      "note": "VII. party strip (Kuplung, etc.)"
+    },
+    {
+      "pattern": "bartók béla|bartok bela",
+      "borough": "Buda",
+      "neighborhood": "Szent Gellért tér",
+      "note": "1114 Gellért quarter"
+    },
+    {
+      "pattern": "blaha lujza",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed",
+      "note": "Corvin Club / VIII.–IX. bucket"
+    },
+    {
+      "pattern": "corvin",
+      "borough": "Ferencváros",
+      "neighborhood": "Corvin-negyed",
+      "note": "District VIII Corvin quarter — app bucket Ferencváros"
+    },
+    {
+      "pattern": "király utca 55|kiraly utca 55",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Király utca",
+      "note": "Frici Papa official address"
+    },
+    {
+      "pattern": "akácfa|akacfa",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Gozsdu Udvar",
+      "note": "Gozsdu courtyard strip"
+    },
+    {
+      "pattern": "baross|október 23|oktober 23",
+      "borough": "Újbuda",
+      "neighborhood": "Kelenföld",
+      "note": "South Buda / Ferencváros border XI."
+    },
+    {
+      "pattern": "arany jános",
+      "borough": "Belváros",
+      "neighborhood": "Inner City",
+      "note": "District V"
+    },
+    {
+      "pattern": "wesselényi",
+      "borough": "Erzsébetváros",
+      "neighborhood": "Wesselényi utca",
+      "note": "District VII"
     }
   ],
   "forbiddenPairings": [

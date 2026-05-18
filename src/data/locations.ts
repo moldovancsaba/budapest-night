@@ -14,12 +14,20 @@ export const BOROUGHS: Borough[] = [
 export const NEIGHBORHOODS: Record<Borough, string[]> = {
   Belváros: ["Váci utca", "Deák tér", "Parliament", "Danube Promenade", "Inner City"],
   Terézváros: ["Andrássy út", "Opera", "Oktogon", "Király utca", "Liszt Ferenc tér", "Stefánia út"],
-  Erzsébetváros: ["Jewish Quarter", "Gozsdu Udvar", "Kazinczy utca", "Wesselényi utca", "Rákóczi tér"],
+  Erzsébetváros: [
+    "Jewish Quarter",
+    "Gozsdu Udvar",
+    "Kazinczy utca",
+    "Király utca",
+    "Wesselényi utca",
+    "Rákóczi tér",
+  ],
   Ferencváros: [
     "Corvin-negyed",
     "Műegyetem",
     "Petőfi Bridge",
     "Nagytemplom utca",
+    "Fővám tér",
     "Boráros tér",
     "Millenniumi Városközpont",
     "Fábián Juli",

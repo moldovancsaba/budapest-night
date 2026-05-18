@@ -1,5 +1,7 @@
 # Budapest Night — Location rules (blocking)
 
+Full venue checklist: docs/venue-records.md
+
 Copy this entire file into any curator chat that sets `borough`, `neighborhood`, or `address`.
 Registry version: see `version` in `src/data/budapest-location-registry.json`.
 

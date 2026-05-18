@@ -24,6 +24,13 @@
   "prov-cov-buena-vista-obuda": {
     "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg"
   },
+  "prov-central-market-ferencvaros": {
+    "website": "https://piaconline.hu/en/central-market-hall/",
+    "localImagePath": "scripts/imgbb-asset-sources/providers/fixed-central-market-ferencvaros.jpg",
+    "neighborhood": "Fővám tér",
+    "category": "Venues",
+    "activityTypes": ["Street Food", "Gallery", "Late Kitchen"]
+  },
   "prov-cov-gellert-bar-party": {
     "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg"
   },

@@ -1,0 +1,315 @@
+{
+  "sourceUrls": [
+    "https://piaconline.hu/en/central-market-hall/"
+  ],
+  "notes": "Image/data fix for prov-central-market-ferencvaros",
+  "missingOrUncertain": [],
+  "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-central-market-ferencvaros",
+        "name": "Great Market Hall",
+        "category": "Venues",
+        "borough": "Ferencváros",
+        "neighborhood": "Fővám tér",
+        "address": "1093 Budapest, Vámház körút 1-3, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Gallery",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "1897 Zsolnay-tiled market hall — lángos, paprika, produce, and food stalls by the Danube.",
+        "longDescription": "The Great Market Hall (Nagy Vásárcsarnok) at Vámház körút 1-3 is Budapest's largest covered market, opened in 1897 with three floors of produce, Hungarian specialties, and prepared food. Hours and vendor info are published on piaconline.hu (market operator).\n\nSources: https://piaconline.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/XZ1nmjfb/04e745bada58.jpg",
+        "email": "",
+        "website": "https://piaconline.hu/en/central-market-hall/",
+        "phone": "+36 1 273 3100",
+        "locales": {
+          "hu": {
+            "name": "Nagy Vásárcsarnok",
+            "shortDescription": "1897-es Zsolnay-cserépes piaccsarnok — lángos, paprika, zöldség és ételstandok a Duna mellett.",
+            "longDescription": "A Nagy Vásárcsarnok a Vámház körút 1-3. szám alatt Budapest legnagyobb fedett piaca, 1897-ben nyílt, három szinten termelőkkel, magyar specialitásokkal és kész ételekkel. Nyitvatartás és árusok: piaconline.hu.\n\nSources: https://piaconline.hu/",
+            "slug": "nagy-vasarcsarnok"
+          },
+          "es": {
+            "name": "Gran Mercado Cubierto",
+            "shortDescription": "Mercado de 1897 con azulejos Zsolnay — lángos, pimentón, productos y puestos junto al Danubio.",
+            "longDescription": "El Gran Mercado Cubierto (Nagy Vásárcsarnok) en Vámház körút 1-3 es el mayor mercado cubierto de Budapest, inaugurado en 1897 con tres plantas de productos, especialidades húngaras y comida preparada. Horarios e info en piaconline.hu.\n\nSources: https://piaconline.hu/",
+            "slug": "gran-mercado-budapest"
+          },
+          "it": {
+            "name": "Grande Mercato Coperto",
+            "shortDescription": "Mercato del 1897 con piastrelle Zsolnay — lángos, paprika, prodotti e bancarelle sul Danubio.",
+            "longDescription": "Il Grande Mercato Coperto (Nagy Vásárcsarnok) in Vámház körút 1-3 è il più grande mercato coperto di Budapest, del 1897, con tre piani di prodotti, specialità ungheresi e street food. Orari su piaconline.hu.\n\nSources: https://piaconline.hu/",
+            "slug": "grande-mercato-budapest"
+          },
+          "he": {
+            "name": "אולם השוק הגדול",
+            "shortDescription": "שוק מקורה מ-1897 עם אריחי Zsolnay — לאנגוש, פפריקה, תוצרת ודוכני אוכל ליד הדנובה.",
+            "longDescription": "אולם השוק הגדול (Nagy Vásárcsarnok) ברחוב ואמהאז 1-3 הוא שוק מקורה הגדול בבודפשט, נפתח ב-1897 עם שלוש קומות של תוצרת, מטעמים הונגריים ואוכל מוכן. שעות ומידע ב-piaconline.hu.\n\nSources: https://piaconline.hu/",
+            "slug": "ulam-ha-shuk-ha-gadol"
+          },
+          "ar": {
+            "name": "سوق العظيم المغطى",
+            "shortDescription": "سوق 1897 ببلاط زولناي — لانغوش وبابريكا ومنتجات وأكشاك بجانب الدانوب.",
+            "longDescription": "سوق العظيم (Nagy Vásárcsarnok) في فامهاز 1-3 أكبر سوق مغطى في بودابست، افتُتح 1897 بثلاثة طوابق من المنتجات والتخصصات المجرية والطعام الجاهز. المواعيد على piaconline.hu.\n\nSources: https://piaconline.hu/",
+            "slug": "al-souq-al-kabir"
+          },
+          "en": {
+            "slug": "nagy-vasarcsarnok"
+          }
+        },
+        "priceCurrency": "HUF",
+        "menuTags": [
+          "coffee",
+          "goulash",
+          "hungarian",
+          "palinka"
+        ],
+        "menu": {
+          "menuUrl": "https://fakanaletterem.hu/etlap/",
+          "sourceUrls": [
+            "https://fakanaletterem.hu/etlap/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "lunch",
+              "title": "Homestyle specialties",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "gulyasleves",
+                  "kind": "food",
+                  "name": "Beef goulash soup",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3100,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Gulyásleves marhahússal"
+                    },
+                    "es": {
+                      "name": "Sopa goulash con ternera"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash con manzo"
+                    },
+                    "he": {
+                      "name": "מרק גולאש עם בקר"
+                    },
+                    "ar": {
+                      "name": "حساء غولاش بلحم البقر"
+                    }
+                  }
+                },
+                {
+                  "id": "sertes-porkolt",
+                  "kind": "food",
+                  "name": "Pork stew with dumplings",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 5100,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Sertéspörkölt galuskával"
+                    },
+                    "es": {
+                      "name": "Estofado de cerdo con ñoquis"
+                    },
+                    "it": {
+                      "name": "Stufato di maiale con gnocchi"
+                    },
+                    "he": {
+                      "name": "תבשיל חזיר עם גנוקי"
+                    },
+                    "ar": {
+                      "name": "يخنة لحم الخنزير مع نيوكي"
+                    }
+                  }
+                },
+                {
+                  "id": "goulash-tasting-plate",
+                  "kind": "food",
+                  "name": "Goulash tasting plate (goulash soup, chicken stew, pork stew)",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 8700,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "„Goulash” kóstolótál (gulyásleves, csirkepörkölt, sertéspörkölt)"
+                    },
+                    "es": {
+                      "name": "Bandeja degustación «Goulash» (goulash, pollo, cerdo)"
+                    },
+                    "it": {
+                      "name": "Piatto degustazione «Goulash» (goulash, pollo, maiale)"
+                    },
+                    "he": {
+                      "name": "מגש טעימות «גולאש» (מרק, עוף, חזיר)"
+                    },
+                    "ar": {
+                      "name": "طبق تذوق «غولاش» (حساء، دجاج، لحم خنزير)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Házias specialitások"
+                },
+                "es": {
+                  "title": "Especialidades caseras"
+                },
+                "it": {
+                  "title": "Specialità della casa"
+                },
+                "he": {
+                  "title": "מנות ביתיות"
+                },
+                "ar": {
+                  "title": "أطباق منزلية"
+                }
+              }
+            },
+            {
+              "id": "drinks",
+              "title": "House drinks",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "fakanal-palinka",
+                  "kind": "drink",
+                  "name": "Fakanál pálinka (swing-top bottle, Villány muscat)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 3400,
+                    "currency": "HUF",
+                    "unit": "bottle",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Fakanál pálinka (csatos üvegben, Villányi muskotály)"
+                    },
+                    "es": {
+                      "name": "Pálinka Fakanál (botella con tapón, Villány muscat)"
+                    },
+                    "it": {
+                      "name": "Pálinka Fakanál (bottiglia a vite, Villány muscat)"
+                    },
+                    "he": {
+                      "name": "פלינקה Fakanál (בקבוק בורג, וילאני מוסקט)"
+                    },
+                    "ar": {
+                      "name": "بالينكا Fakanál (زجاجة بغطاء، فيلاني موسكات)"
+                    }
+                  }
+                },
+                {
+                  "id": "lavazza-espresso",
+                  "kind": "drink",
+                  "name": "Lavazza espresso",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 1200,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Lavazza presszókávé"
+                    },
+                    "es": {
+                      "name": "Espresso Lavazza"
+                    },
+                    "it": {
+                      "name": "Espresso Lavazza"
+                    },
+                    "he": {
+                      "name": "אספרסו Lavazza"
+                    },
+                    "ar": {
+                      "name": "إسبريسو Lavazza"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Házi italok"
+                },
+                "es": {
+                  "title": "Bebidas de la casa"
+                },
+                "it": {
+                  "title": "Bevande della casa"
+                },
+                "he": {
+                  "title": "משקאות הבית"
+                },
+                "ar": {
+                  "title": "مشروبات منزلية"
+                }
+              }
+            }
+          ],
+          "venueLink": {
+            "id": "prov-central-market-ferencvaros",
+            "name": "Great Market Hall",
+            "category": "Restaurants",
+            "borough": "Ferencváros",
+            "neighborhood": "Boráros tér",
+            "address": "1093 Budapest, Vámház körút 1-3, Hungary",
+            "website": "https://piaconline.hu/",
+            "menuUrl": "https://fakanaletterem.hu/etlap/"
+          }
+        },
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/GreatMarketHallBudapest_2014.jpg/1280px-GreatMarketHallBudapest_2014.jpg"
+      }
+    }
+  ]
+}

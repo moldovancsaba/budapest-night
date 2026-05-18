@@ -116,6 +116,12 @@ function scrubForbiddenLocationCopy(doc) {
         .replace(/\bInfopark\b/gi, "MOM Cultural Centre")
         .replace(/\binfopark\b/g, "MOM");
     }
+    if (/fábián\s+juli|fabian juli/i.test(address)) {
+      s = s
+        .replace(/,?\s*not on Óbuda Island\.?/gi, ".")
+        .replace(/Hajógyári[^.]*\.?/gi, "")
+        .replace(/Óbuda-sziget|Obuda Island|Óbuda Island/gi, "southern Pest");
+    }
     return s;
   };
   if (next.shortDescription) next.shortDescription = scrub(next.shortDescription);

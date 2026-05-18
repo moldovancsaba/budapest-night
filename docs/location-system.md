@@ -2,6 +2,8 @@
 
 Commercial rule: **every provider row’s `borough`, `neighborhood`, and `address` must match the registry or ingest is rejected.**
 
+**New venue checklist:** [venue-records.md](./venue-records.md) (address, contact, slugs, ingest workflow).
+
 ## Files
 
 | Path | Role |

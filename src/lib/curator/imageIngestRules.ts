@@ -15,6 +15,7 @@ export const BANNED_IMGBB_HASHES = [
   "cbe8e6335604", // duplicate relief upload (NEXT_PUBLIC_IMG_BB_HOME_HERO mistake)
   "126cf4283420", // Italian newspaper scan wrongly bulk-uploaded (e.g. Gellért Brasserie)
   "0fe6d212760e", // same newspaper bytes under second ImgBB URL (e.g. Buena Vista Bistro)
+  "ff4674d43955", // Fehérvári úti market hall photo on Great Market Hall (Vámház körút)
 ] as const;
 
 export function getCatalogImageUniquenessRulesForPrompt(): string {

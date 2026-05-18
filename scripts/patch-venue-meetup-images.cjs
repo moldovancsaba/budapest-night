@@ -25,6 +25,7 @@ const BAD_IMAGE_MARKERS = [
   "126cf4283420", // Il Friuli newspaper scan (e.g. Gellért Brasserie)
   "0fe6d212760e", // same newspaper under second ImgBB URL
   "d61ba9ebae99", // re-upload of newspaper via bad Wikimedia fallback
+  "ff4674d43955", // Fehérvári úti hall on Central Market Hall listing
 ];
 
 /** Local meetup placeholders that were bulk-copied (same file bytes). */

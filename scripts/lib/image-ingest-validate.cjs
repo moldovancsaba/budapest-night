@@ -8,6 +8,7 @@ const BANNED_IMGBB_HASHES = [
   "cbe8e6335604",
   "126cf4283420",
   "0fe6d212760e",
+  "ff4674d43955",
   "cde3b78d5c56",
   "cb56a463140e",
   "cf91ad578e08",
