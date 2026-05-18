@@ -468,7 +468,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-teal">
-              Budapest Night · API v{API_VERSION}
+              Pesti Est · API v{API_VERSION}
             </p>
             <h1 className="font-display text-xl font-bold sm:text-2xl">HTTP API reference</h1>
             <p className="mt-1 max-w-xl text-sm text-muted-foreground">
@@ -517,7 +517,7 @@ export function ApiDocsPage({ origin }: { origin: string }) {
         <main className="min-w-0 flex-1">
           <Section id="overview" title="Overview">
             <p>
-              Budapest Night exposes JSON APIs for the public catalog, a{" "}
+              Pesti Est exposes JSON APIs for the public catalog, a{" "}
               <strong>machine ingest</strong> pipeline secured by <code className="rounded bg-muted px-1 font-mono text-sm">INGEST_API_KEY</code>, and{" "}
               <strong>browser session</strong> APIs for the admin console. Unless noted, request and response bodies use{" "}
               <code className="rounded bg-muted px-1 font-mono text-sm">application/json</code> with UTF-8.

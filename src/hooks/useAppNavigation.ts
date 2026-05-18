@@ -53,7 +53,8 @@ export function useAppNavigation() {
         | "Meet-Up Groups"
         | "Eat & Drink"
         | "My Account"
-        | "Home",
+        | "Home"
+        | "Program",
       location?: { borough?: BoroughChoice; neighborhood?: string },
     ) => {
       const loc: LocationFilter | undefined =

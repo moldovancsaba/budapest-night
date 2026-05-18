@@ -3,9 +3,9 @@ import { headers } from "next/headers";
 import { ApiDocsPage } from "@/components/api/ApiDocsPage";
 
 export const metadata: Metadata = {
-  title: "HTTP API reference | BudapestNight Budapest",
+  title: "HTTP API reference | Pesti Est",
   description:
-    "Budapest Night HTTP APIs: public catalog, Night Guide streaming chat, machine ingest, and admin session endpoints.",
+    "Pesti Est HTTP APIs: public catalog, program week, newsletter, Night Guide streaming chat, machine ingest, and admin session endpoints.",
   robots: { index: true, follow: true },
 };
 

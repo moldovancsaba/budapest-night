@@ -38,6 +38,8 @@ import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc, SiteGuide, SiteGuideNavigateTo } from "@/types/site";
 import { DEFAULT_SITE } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
+import { Link } from "@/i18n/routing";
+import { buildProgramPath } from "@/lib/appPaths";
 import { cacheBustMediaUrl } from "@/lib/siteMedia";
 import { toast } from "sonner";
 import { CdnImage } from "@/components/ui/CdnImage";
@@ -111,7 +113,8 @@ type HomeNavigateView =
   | "Saved"
   | "Calculator"
   | "Meet-Up Groups"
-  | "Eat & Drink";
+  | "Eat & Drink"
+  | "Program";
 
 interface Props {
   onNavigate: (
@@ -123,6 +126,7 @@ interface Props {
 }
 
 export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
+  const tProgram = useTranslations("program");
   const districtLabel = useDistrictLabel();
   const neighborhoodLabel = useNeighborhoodLabel();
   const locationLine = useVenueLocationLine();
@@ -184,8 +188,17 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
               >
                 {home.heroSecondaryCta}
               </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full border-border bg-card/50 px-6 text-foreground hover:bg-muted"
+                asChild
+              >
+                <Link href={buildProgramPath()}>{tProgram("weekTitle")}</Link>
+              </Button>
             </div>
-            <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm font-medium text-primary">{tProgram("thuNote")}</p>
+            <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
               <span className="grid h-6 w-6 place-items-center rounded-full bg-muted text-foreground">
                 <Sparkles className="h-3.5 w-3.5" />
               </span>
@@ -557,11 +570,23 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup }: Props) {
             </p>
           </div>
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
               if (!email) return;
-              toast.success(home.newsletterSuccess);
-              setEmail("");
+              try {
+                const locale = document.documentElement.lang || "hu";
+                const r = await fetch("/api/public/newsletter/subscribe", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ email, locale }),
+                });
+                const j = (await r.json()) as { ok?: boolean };
+                if (!r.ok || !j.ok) throw new Error("subscribe failed");
+                toast.success(home.newsletterSuccess);
+                setEmail("");
+              } catch {
+                toast.error(tProgram("subscribeError"));
+              }
             }}
             className="flex w-full flex-col gap-2 sm:flex-row md:w-auto"
           >

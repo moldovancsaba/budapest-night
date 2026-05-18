@@ -3,6 +3,7 @@ import { getDb, COL } from "@/lib/mongodb";
 import { parseAppLocaleParam, resolveEventsForLocale } from "@/lib/eventLocale";
 import { isUpcoming } from "@/lib/eventDisplay";
 import { toPublicNightEvent } from "@/lib/publicEvent";
+import { featuredEventIds, getActivePromotions } from "@/lib/promotionsDb";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
 import type { NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";
@@ -22,10 +23,15 @@ export async function GET(req: NextRequest) {
   const upcomingOnly = req.nextUrl.searchParams.get("upcoming") !== "0";
   const borough = req.nextUrl.searchParams.get("borough");
 
-  const [rows, providerRows] = await Promise.all([
+  const [rows, providerRows, promos] = await Promise.all([
     db.collection(COL.events).find({}).toArray(),
     db.collection(COL.providers).find({}).toArray(),
+    getActivePromotions(db),
   ]);
+  const featuredIds = featuredEventIds(promos);
+  const promoByTarget = new Map(
+    promos.filter((p) => p.type === "featured_event").map((p) => [p.targetId, p.label]),
+  );
   const eventsRaw = (rows as unknown as (NightEvent & { _id?: unknown })[]).map(stripId);
   const providersById = new Map(
     (providerRows as unknown as Provider[]).map((p) => [
@@ -39,5 +45,20 @@ export async function GET(req: NextRequest) {
   if (borough) events = events.filter((e) => e.borough === borough);
   events.sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
 
-  return NextResponse.json(events.map((e) => toPublicNightEvent(e, providersById)));
+  const publicEvents = events.map((e) => {
+    const base = toPublicNightEvent(e, providersById);
+    if (!featuredIds.has(e.id)) return base;
+    return {
+      ...base,
+      isFeatured: true,
+      promotionLabel: promoByTarget.get(e.id) ?? base.promotionLabel,
+    };
+  });
+  publicEvents.sort((a, b) => {
+    const af = featuredIds.has(a.id) ? 0 : 1;
+    const bf = featuredIds.has(b.id) ? 0 : 1;
+    if (af !== bf) return af - bf;
+    return new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime();
+  });
+  return NextResponse.json(publicEvents);
 }

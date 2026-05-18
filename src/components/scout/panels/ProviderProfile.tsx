@@ -43,6 +43,7 @@ import {
 } from "@/hooks/useVenueDisplay";
 import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
+import { JsonLd, localBusinessJsonLd } from "@/components/seo/JsonLd";
 import type { AppLocale } from "@/i18n/config";
 
 export function ProviderProfile({
@@ -62,6 +63,7 @@ export function ProviderProfile({
 }) {
   const locale = useLocale() as AppLocale;
   const t = useTranslations("venue");
+  const tProgram = useTranslations("program");
   const tMenu = useTranslations("menu");
   const categoryLabel = useCategoryLabel();
   const activityLabel = useActivityTypeLabel();
@@ -396,6 +398,30 @@ export function ProviderProfile({
             </div>
           </div>
 
+          <div className="rounded-xl border border-border bg-muted/30 p-4">
+            <p className="text-sm font-semibold text-foreground">{tProgram("qrTitle")}</p>
+            <p className="mt-1 text-xs text-muted-foreground">{tProgram("qrHint")}</p>
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <img
+                src={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=200`}
+                alt=""
+                width={120}
+                height={120}
+                className="rounded-lg border border-border bg-white p-2"
+              />
+              <a
+                href={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=400`}
+                download={`pestiest-${provider.id}-qr.svg`}
+                className="text-sm font-medium text-primary underline"
+              >
+                {tProgram("qrDownload")}
+              </a>
+            </div>
+            {(provider.partnerTier === "partner" || provider.isPromoted) && (
+              <p className="mt-2 text-xs font-medium text-primary">{tProgram("partnerBadge")}</p>
+            )}
+          </div>
+
           <ProviderMap address={provider.address} borough={provider.borough} />
 
           {similar.length > 0 && (
@@ -424,8 +450,22 @@ export function ProviderProfile({
     </>
   );
 
-  if (isPage) {
-    return <div className="overflow-y-auto bg-background">{content}</div>;
+  if (isPage && provider) {
+    const url = buildAbsoluteVenueUrl(provider, locale);
+    return (
+      <>
+        <JsonLd
+          data={localBusinessJsonLd({
+            name: provider.name,
+            description: provider.shortDescription,
+            address: provider.address,
+            url,
+            telephone: provider.phone,
+          })}
+        />
+        <div className="overflow-y-auto bg-background">{content}</div>
+      </>
+    );
   }
 
   return (

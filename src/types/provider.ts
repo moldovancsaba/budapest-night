@@ -62,4 +62,9 @@ export interface Provider extends ProviderReviewsMeta {
   eventOfferings?: EventOffering[];
   /** Denormalized union of menu item tags (computed on ingest). */
   menuTags?: string[];
+  /** Active paid / featured placement (from promotions collection). */
+  promotionLabel?: string;
+  isPromoted?: boolean;
+  /** Partner distribution tier for QR kit eligibility. */
+  partnerTier?: "listed" | "partner";
 }

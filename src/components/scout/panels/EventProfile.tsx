@@ -16,7 +16,10 @@ import {
   useFormatEntryFee,
   useFormatEventSchedule,
 } from "@/hooks/useEventDisplay";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import type { AppLocale } from "@/i18n/config";
+import { buildAbsoluteEventFullUrl } from "@/lib/appShareUrls";
+import { eventJsonLd, JsonLd } from "@/components/seo/JsonLd";
 import { ProviderCard } from "../ProviderCard";
 
 export function EventProfile({
@@ -30,6 +33,7 @@ export function EventProfile({
   onOpenVenue: (p: Provider) => void;
   variant?: "sheet" | "page";
 }) {
+  const locale = useLocale() as AppLocale;
   const t = useTranslations("event");
   const schedule = useFormatEventSchedule();
   const doors = useFormatDoorsOpen();
@@ -208,7 +212,28 @@ export function EventProfile({
   );
 
   if (isPage) {
-    return <div className="overflow-y-auto bg-background">{content}</div>;
+    const url = buildAbsoluteEventFullUrl(event, locale);
+    const place = primaryHost && "name" in primaryHost ? primaryHost.name : placeLine(event);
+    const address =
+      primaryHost && "address" in primaryHost
+        ? primaryHost.address
+        : hostVenueRows[0]?.link.address;
+    return (
+      <>
+        <JsonLd
+          data={eventJsonLd({
+            title: event.title,
+            description: event.shortDescription || event.longDescription,
+            startDate: event.startsAt,
+            endDate: event.endsAt,
+            url,
+            locationName: place,
+            address,
+          })}
+        />
+        <div className="overflow-y-auto bg-background">{content}</div>
+      </>
+    );
   }
 
   return (

@@ -46,7 +46,11 @@ export function EventCard({ event, onOpen }: Props) {
           alt={event.title}
           className="transition-transform duration-500 group-hover:scale-105"
         />
-        {event.badges[0] ? (
+        {event.promotionLabel || event.isFeatured ? (
+          <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
+            {event.promotionLabel ?? badgeLabel("Featured")}
+          </span>
+        ) : event.badges[0] ? (
           <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background">
             {badgeLabel(event.badges[0])}
           </span>

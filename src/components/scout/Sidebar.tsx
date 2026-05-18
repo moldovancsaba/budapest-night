@@ -2,6 +2,7 @@
 
 import {
   CalendarDays,
+  CalendarRange,
   PartyPopper,
   UtensilsCrossed,
   Coffee,
@@ -31,6 +32,7 @@ export type ViewKey =
   | "Split Check"
   | "Meet-Up Groups"
   | "Home"
+  | "Program"
   | "Eat & Drink"
   | "My Account";
 
@@ -43,6 +45,7 @@ type NavItem = {
 
 const EXPLORE_ITEMS: NavItem[] = [
   { key: "Home", labelKey: "home", icon: Home },
+  { key: "Program", labelKey: "program", icon: CalendarRange },
   { key: "Events", labelKey: "events", icon: CalendarDays },
   { key: "Venues", labelKey: "venues", icon: Building2 },
   { key: "Parties", labelKey: "parties", icon: PartyPopper },

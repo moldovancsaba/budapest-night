@@ -15,7 +15,7 @@ type LlmOut = { skip?: boolean; reason?: string; provider?: unknown };
 
 function buildSystemPrompt(): string {
   const hoods = JSON.stringify(NEIGHBORHOODS, null, 0);
-  return `You are a careful data curator for Budapest Night, a Budapest nightlife and culture directory.
+  return `You are a careful data curator for Pesti Est, Budapest's weekly program and culture directory.
 
 Your job: decide if the page describes ONE concrete Budapest VENUE (physical place: concert park, arena, club, ruin bar, restaurant, café, gallery, etc.). If the page is only a single dated concert/festival show with tickets, return {"skip":true,"reason":"Use timed event ingest (resource event), not provider"}.
 

@@ -1,7 +1,8 @@
 export const locales = ["en", "es", "it", "hu", "he", "ar"] as const;
 export type AppLocale = (typeof locales)[number];
 
-export const defaultLocale: AppLocale = "en";
+/** Pesti Est is HU-first; English uses locale prefix `/en/...`. */
+export const defaultLocale: AppLocale = "hu";
 
 export const localeLabels: Record<AppLocale, string> = {
   en: "English",

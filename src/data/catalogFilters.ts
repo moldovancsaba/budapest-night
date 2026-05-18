@@ -13,6 +13,8 @@ export const ACTIVITY_TYPES = [
   "Coffee & Brunch",
   "Gallery",
   "Theatre",
+  "Cinema",
+  "Exhibition",
   "Festival",
   "Boat Party",
   "Thermal Bath",
@@ -20,6 +22,7 @@ export const ACTIVITY_TYPES = [
   "Electronic",
   "Cocktails",
   "Late Kitchen",
+  "Family Program",
 ];
 
 export const AGE_RANGES: AgeRange[] = ["All ages", "Family", "18+", "21+", "Late night"];

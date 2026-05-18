@@ -7,6 +7,9 @@ export type PublicNightEvent = NightEvent & {
   venues: EventVenueLink[];
   /** True when every venueId matched a live provider or stored venueLinks snapshot. */
   venuesResolved: boolean;
+  /** Active featured_event promotion (public API only). */
+  isFeatured?: boolean;
+  promotionLabel?: string;
 };
 
 export function toPublicNightEvent(

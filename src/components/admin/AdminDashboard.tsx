@@ -15,6 +15,9 @@ import type { SiteDoc, SiteAccountSettings, SiteCalculatorCopy } from "@/types/s
 import type { Borough } from "@/types/provider";
 import type { VenueReview } from "@/types/venueReview";
 import { AdminReviewsTab } from "@/components/admin/AdminReviewsTab";
+import { AdminProgramWeekTab } from "@/components/admin/AdminProgramWeekTab";
+import { AdminPromotionsTab } from "@/components/admin/AdminPromotionsTab";
+import type { NightEvent } from "@/types/event";
 
 async function adminFetch(input: RequestInfo, init?: RequestInit) {
   return fetch(input, { ...init, credentials: "include" });
@@ -36,14 +39,16 @@ export default function AdminDashboard() {
   const [accountDraft, setAccountDraft] = useState("{}");
   const [busy, setBusy] = useState(false);
   const [reviews, setReviews] = useState<VenueReview[]>([]);
+  const [events, setEvents] = useState<NightEvent[]>([]);
 
   const load = useCallback(async () => {
-    const [pr, mg, st, loc, rev] = await Promise.all([
+    const [pr, mg, st, loc, rev, ev] = await Promise.all([
       adminFetch("/api/admin/providers"),
       adminFetch("/api/admin/meetup-groups"),
       adminFetch("/api/admin/site"),
       adminFetch("/api/admin/locations"),
       adminFetch("/api/admin/reviews?limit=50"),
+      fetch("/api/public/events?locale=hu&upcoming=0"),
     ]);
     if (pr.status === 401) {
       router.push("/admin/login");
@@ -68,6 +73,7 @@ export default function AdminDashboard() {
       setLocationsJson(JSON.stringify(rows, null, 2));
     }
     if (rev.ok) setReviews(await rev.json());
+    if (ev.ok) setEvents(await ev.json());
   }, [router]);
 
   const deleteReview = async (id: string) => {
@@ -116,6 +122,25 @@ export default function AdminDashboard() {
       await load();
     } catch {
       toast.error("Save failed");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const savePartnerTier = async (id: string, partnerTier: "listed" | "partner") => {
+    setBusy(true);
+    try {
+      const r = await fetch("/api/admin/providers", {
+        method: "PATCH",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, partnerTier }),
+      });
+      if (!r.ok) throw new Error("patch failed");
+      toast.success(partnerTier === "partner" ? "Marked as partner" : "Partner tier cleared");
+      await load();
+    } catch {
+      toast.error("Partner tier update failed");
     } finally {
       setBusy(false);
     }
@@ -263,7 +288,7 @@ export default function AdminDashboard() {
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-card px-4 py-3 sm:px-6">
         <div className="flex items-center gap-4">
           <Link href="/" className="font-display text-lg font-semibold text-foreground hover:text-teal">
-            Budapest NightC
+            Pesti Est
           </Link>
           <span className="text-muted-foreground">Admin</span>
         </div>
@@ -289,6 +314,8 @@ export default function AdminDashboard() {
             <TabsTrigger value="site">Site & images</TabsTrigger>
             <TabsTrigger value="upload">ImgBB upload</TabsTrigger>
             <TabsTrigger value="reviews">Community reviews</TabsTrigger>
+            <TabsTrigger value="program-week">Program week</TabsTrigger>
+            <TabsTrigger value="promotions">Promotions</TabsTrigger>
           </TabsList>
 
           <TabsContent value="providers" className="space-y-3 rounded-xl border border-border bg-card p-4">
@@ -298,7 +325,14 @@ export default function AdminDashboard() {
             </p>
             <div className="max-h-[480px] space-y-2 overflow-y-auto">
               {providers.slice(0, 80).map((p) => (
-                <ProviderRow key={p.id} p={p} disabled={busy} onSave={saveProviderImage} onSaveMenu={saveProviderMenu} />
+                <ProviderRow
+                  key={p.id}
+                  p={p}
+                  disabled={busy}
+                  onSave={saveProviderImage}
+                  onSaveMenu={saveProviderMenu}
+                  onSavePartnerTier={savePartnerTier}
+                />
               ))}
             </div>
             {providers.length > 80 && (
@@ -522,6 +556,14 @@ export default function AdminDashboard() {
             )}
           </TabsContent>
 
+          <TabsContent value="program-week" className="space-y-3 rounded-xl border border-border bg-card p-4">
+            <AdminProgramWeekTab providers={providers} events={events} />
+          </TabsContent>
+
+          <TabsContent value="promotions" className="space-y-3 rounded-xl border border-border bg-card p-4">
+            <AdminPromotionsTab />
+          </TabsContent>
+
           <TabsContent value="upload" className="space-y-3 rounded-xl border border-border bg-card p-4">
             <p className="text-sm text-muted-foreground">
               Upload an image to ImgBB (uses IMGBB_API_KEY). The direct URL is copied to your clipboard for pasting into provider/site fields.
@@ -548,14 +590,17 @@ function ProviderRow({
   disabled,
   onSave,
   onSaveMenu,
+  onSavePartnerTier,
 }: {
   p: Provider;
   disabled: boolean;
   onSave: (id: string, image: string) => void;
   onSaveMenu: (id: string, menuJson: string) => void;
+  onSavePartnerTier: (id: string, tier: "listed" | "partner") => void;
 }) {
   const [img, setImg] = useState(p.image);
   const [menuJson, setMenuJson] = useState(() => JSON.stringify(p.menu ?? null, null, 2));
+  const [partnerTier, setPartnerTier] = useState<"listed" | "partner">(p.partnerTier ?? "listed");
   return (
     <div className="space-y-2 rounded-lg border border-border p-2">
       <div className="flex flex-wrap items-end gap-2">
@@ -565,6 +610,23 @@ function ProviderRow({
             {p.category} · {p.borough} · {p.id}
           </p>
         </div>
+        <select
+          className="rounded border border-input bg-background px-2 py-1 text-xs"
+          value={partnerTier}
+          disabled={disabled}
+          onChange={(e) => setPartnerTier(e.target.value as "listed" | "partner")}
+        >
+          <option value="listed">listed</option>
+          <option value="partner">partner</option>
+        </select>
+        <Button
+          size="sm"
+          variant="outline"
+          disabled={disabled}
+          onClick={() => onSavePartnerTier(p.id, partnerTier)}
+        >
+          Save partner
+        </Button>
         <Input className="min-w-[200px] flex-[2] font-mono text-xs" value={img} onChange={(e) => setImg(e.target.value)} placeholder="https://i.ibb.co/..." />
         <Button size="sm" variant="secondary" disabled={disabled} onClick={() => onSave(p.id, img)}>
           Save image

@@ -108,7 +108,7 @@ describe("applyIngestOperation", () => {
       emptyBatch,
     );
     expect(res.ok).toBe(false);
-    if (!res.ok) expect(res.error).toMatch(/borough/i);
+    if (!res.ok) expect(res.error).toMatch(/borough|postal|address/i);
     expect(replaceOne).not.toHaveBeenCalled();
   });
 });

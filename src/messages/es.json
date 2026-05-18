@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Budapest Night — Eventos, fiestas, gastronomía y cultura",
-    "description": "Descubre la vida nocturna de Budapest: eventos, fiestas, restaurantes, cafés y cultura por distrito y barrio."
+    "title": "Pesti Est — Eventos y cultura en Budapest",
+    "description": "Guía gratuita de programación en Budapest: cine, teatro, exposiciones y conciertos."
   },
   "locale": {
     "label": "Idioma",
@@ -40,7 +40,8 @@
     "closeMenu": "Cerrar menú",
     "openMenu": "Abrir menú",
     "notifications": "Notificaciones",
-    "brand": "Budapest Night"
+    "brand": "Pesti Est",
+    "program": "Esta semana en Budapest"
   },
   "sidebar": {
     "listVenueTitle": "Publica tu local",
@@ -125,10 +126,10 @@
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} reseñas)",
     "reviewsSourceOsm": "OpenStreetMap",
-    "reviewsSourceBn": "Budapest Night",
+    "reviewsSourceBn": "Pesti Est",
     "listedOnOsm": "En OpenStreetMap (datos cartográficos comunitarios)",
     "communityReviewsTitle": "Reseñas de la comunidad",
-    "communityReviewsHint": "Valoraciones de visitantes en Budapest Night — una reseña por navegador.",
+    "communityReviewsHint": "Valoraciones de visitantes en Pesti Est — una reseña por navegador.",
     "reviewsLoading": "Cargando reseñas…",
     "reviewsEmpty": "Aún no hay reseñas. Sé el primero.",
     "reviewWriteTitle": "Escribir reseña",
@@ -235,7 +236,7 @@
     "similarNearby": "Círculos similares cerca",
     "shareTitle": "Compartir {name}",
     "shareDescription": "Comparte este círculo cultural con un amigo.",
-    "onPlatform": "{name} en Budapest Night",
+    "onPlatform": "{name} en Pesti Est",
     "pageEyebrow": "Cultura y comunidad",
     "heroTitleLine1": "Encuentra tu",
     "heroTitleLine2": "círculo cultural",
@@ -315,7 +316,7 @@
     "copied": "Copiado",
     "copyFailed": "No se pudo copiar",
     "reset": "Restablecer",
-    "shareLine": "Budapest Night: {perPerson} cada uno ({people} personas, {total} total)",
+    "shareLine": "Pesti Est: {perPerson} cada uno ({people} personas, {total} total)",
     "fromBudgetCta": "Dividir entre el grupo"
   },
   "home": {
@@ -335,7 +336,7 @@
     "guidesSectionTitle": "Guías destacadas por distrito",
     "guidesViewAllLabel": "Ver todas las guías",
     "guideCtaDefault": "Explorar guía",
-    "howItWorksSectionTitle": "Cómo funciona Budapest Night",
+    "howItWorksSectionTitle": "Cómo funciona Pesti Est",
     "popularPicksSectionTitle": "Selección neón para empezar",
     "popularPicksViewAllLabel": "Ver todo",
     "culturePickBadge": "Elección cultural",
@@ -547,6 +548,9 @@
     "coffeeBrunch": "Café y brunch",
     "gallery": "Galería",
     "theatre": "Teatro",
+    "cinema": "Cine",
+    "exhibition": "Exposición",
+    "familyProgram": "Programa familiar",
     "festival": "Festival",
     "boatParty": "Fiesta en barco",
     "thermalBath": "Baños termales",
@@ -659,6 +663,31 @@
       "unknown_tour": "Este tour no está disponible.",
       "not_enough_venues": "Aún no hay suficientes locales con cartas coincidentes.",
       "error": "No se pudo cargar el tour. Inténtalo de nuevo."
+    }
+  },
+  "program": {
+    "weekTitle": "Esta semana en Budapest",
+    "weekSubtitle": "Destacados de Pesti Est.",
+    "verticalsTitle": "Por tipo",
+    "thuNote": "Semana nueva cada jueves.",
+    "partnerBadge": "Partner Pesti Est",
+    "qrTitle": "QR del local",
+    "qrDownload": "Descargar QR",
+    "qrHint": "Para mostrador — enlace al local en Pesti Est.",
+    "newsletterConfirm": "Confirma tu email.",
+    "subscribeError": "Error al suscribirse.",
+    "featuredEvents": "Eventos destacados",
+    "featuredVenues": "Lugares destacados",
+    "eventsThisWeek": "{count} eventos esta semana",
+    "browseAllEvents": "Ver todos los eventos",
+    "boroughTitle": "Por distrito",
+    "emptyVertical": "Aún no hay listados en esta categoría.",
+    "vertical": {
+      "mozi": "Cine",
+      "szinhaz": "Teatro",
+      "kiallitas": "Exposiciones",
+      "koncert": "Conciertos",
+      "csalad": "Familia"
     }
   }
 }

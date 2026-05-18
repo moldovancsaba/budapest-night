@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Budapest Night — אירועים, מסיבות, אוכל ותרבות",
-    "description": "גלו את חיי הלילה בבודפשט: אירועים, מסיבות, מסעדות, בתי קפה ותרבות לפי רובע ושכונה."
+    "title": "Pesti Est — אירועים ותרבות בבודפשט",
+    "description": "מדריך תוכניות חינמי לבודפשט: קולנוע, תיאטרון, תערוכות וקונצרטים."
   },
   "locale": {
     "label": "שפה",
@@ -40,7 +40,8 @@
     "closeMenu": "סגור תפריט",
     "openMenu": "פתח תפריט",
     "notifications": "התראות",
-    "brand": "Budapest Night"
+    "brand": "Pesti Est",
+    "program": "השבוע בבודפשט"
   },
   "sidebar": {
     "listVenueTitle": "פרסמו את המקום שלכם",
@@ -125,10 +126,10 @@
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} ביקורות)",
     "reviewsSourceOsm": "OpenStreetMap",
-    "reviewsSourceBn": "Budapest Night",
+    "reviewsSourceBn": "Pesti Est",
     "listedOnOsm": "רשום ב-OpenStreetMap (נתוני מפה קהילתיים)",
     "communityReviewsTitle": "ביקורות קהילה",
-    "communityReviewsHint": "דירוגים ממבקרים ב-Budapest Night — ביקורת אחת לדפדפן.",
+    "communityReviewsHint": "דירוגים ממבקרים ב-Pesti Est — ביקורת אחת לדפדפן.",
     "reviewsLoading": "טוען ביקורות…",
     "reviewsEmpty": "אין עדיין ביקורות. תהיה הראשון.",
     "reviewWriteTitle": "כתוב ביקורת",
@@ -235,7 +236,7 @@
     "similarNearby": "מעגלים דומים בקרבת מקום",
     "shareTitle": "שתף את {name}",
     "shareDescription": "שתף מעגל תרבות זה עם חבר.",
-    "onPlatform": "{name} ב-Budapest Night",
+    "onPlatform": "{name} ב-Pesti Est",
     "pageEyebrow": "תרבות וקהילה",
     "heroTitleLine1": "מצא את",
     "heroTitleLine2": "מעגל התרבות שלך",
@@ -315,7 +316,7 @@
     "copied": "הועתק",
     "copyFailed": "ההעתקה נכשלה",
     "reset": "איפוס",
-    "shareLine": "Budapest Night: {perPerson} לאדם ({people} אנשים, {total} סה״כ)",
+    "shareLine": "Pesti Est: {perPerson} לאדם ({people} אנשים, {total} סה״כ)",
     "fromBudgetCta": "חלקו בין הקבוצה"
   },
   "home": {
@@ -335,7 +336,7 @@
     "guidesSectionTitle": "מדריכי מחוז מומלצים",
     "guidesViewAllLabel": "כל המדריכים",
     "guideCtaDefault": "למדריך",
-    "howItWorksSectionTitle": "איך Budapest Night עובד",
+    "howItWorksSectionTitle": "איך Pesti Est עובד",
     "popularPicksSectionTitle": "בחירות ניאון להתחלה",
     "popularPicksViewAllLabel": "הצג הכל",
     "culturePickBadge": "בחירת תרבות",
@@ -547,6 +548,9 @@
     "coffeeBrunch": "קפה וברנץ'",
     "gallery": "גלריה",
     "theatre": "תיאטרון",
+    "cinema": "קולנוע",
+    "exhibition": "תערוכה",
+    "familyProgram": "תוכנית למשפחות",
     "festival": "פסטיבל",
     "boatParty": "מסיבת סירה",
     "thermalBath": "מרחצאות",
@@ -659,6 +663,31 @@
       "unknown_tour": "הסיור הזה לא זמין.",
       "not_enough_venues": "אין עדיין מספיק מקומות עם תפריט תואם.",
       "error": "לא ניתן לטעון את הסיור. נסו שוב."
+    }
+  },
+  "program": {
+    "weekTitle": "השבוע בבודפשט",
+    "weekSubtitle": "מובילי Pesti Est.",
+    "verticalsTitle": "לפי סוג",
+    "thuNote": "שבוע חדש בכל חמישי.",
+    "partnerBadge": "שותף Pesti Est",
+    "qrTitle": "QR למקום",
+    "qrDownload": "הורד QR",
+    "qrHint": "להדפסה בדלפק.",
+    "newsletterConfirm": "אשרו במייל.",
+    "subscribeError": "ההרשמה נכשלה.",
+    "featuredEvents": "אירועים נבחרים",
+    "featuredVenues": "מקומות נבחרים",
+    "eventsThisWeek": "{count} אירועים השבוע",
+    "browseAllEvents": "כל האירועים",
+    "boroughTitle": "לפי רובע",
+    "emptyVertical": "אין עדיין רישומים בקטגוריה זו.",
+    "vertical": {
+      "mozi": "קולנוע",
+      "szinhaz": "תיאטרון",
+      "kiallitas": "תערוכות",
+      "koncert": "קונצרטים",
+      "csalad": "משפחה"
     }
   }
 }

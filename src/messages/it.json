@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Budapest Night — Eventi, feste, cibo e cultura",
-    "description": "Scopri la nightlife di Budapest: eventi, feste, ristoranti, caffè e cultura per quartiere e zona."
+    "title": "Pesti Est — Eventi e cultura a Budapest",
+    "description": "Guida gratuita ai programmi di Budapest: cinema, teatro, mostre e concerti."
   },
   "locale": {
     "label": "Lingua",
@@ -40,7 +40,8 @@
     "closeMenu": "Chiudi menu",
     "openMenu": "Apri menu",
     "notifications": "Notifiche",
-    "brand": "Budapest Night"
+    "brand": "Pesti Est",
+    "program": "Questa settimana a Budapest"
   },
   "sidebar": {
     "listVenueTitle": "Inserisci il tuo locale",
@@ -125,10 +126,10 @@
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} recensioni)",
     "reviewsSourceOsm": "OpenStreetMap",
-    "reviewsSourceBn": "Budapest Night",
+    "reviewsSourceBn": "Pesti Est",
     "listedOnOsm": "Su OpenStreetMap (dati cartografici della community)",
     "communityReviewsTitle": "Recensioni della community",
-    "communityReviewsHint": "Valutazioni dei visitatori su Budapest Night — una recensione per browser.",
+    "communityReviewsHint": "Valutazioni dei visitatori su Pesti Est — una recensione per browser.",
     "reviewsLoading": "Caricamento recensioni…",
     "reviewsEmpty": "Nessuna recensione ancora. Sii il primo.",
     "reviewWriteTitle": "Scrivi una recensione",
@@ -235,7 +236,7 @@
     "similarNearby": "Circoli simili nelle vicinanze",
     "shareTitle": "Condividi {name}",
     "shareDescription": "Condividi questo circolo culturale con un amico.",
-    "onPlatform": "{name} su Budapest Night",
+    "onPlatform": "{name} su Pesti Est",
     "pageEyebrow": "Cultura e comunità",
     "heroTitleLine1": "Trova il tuo",
     "heroTitleLine2": "circolo culturale",
@@ -315,7 +316,7 @@
     "copied": "Copiato",
     "copyFailed": "Copia fallita",
     "reset": "Reimposta",
-    "shareLine": "Budapest Night: {perPerson} a testa ({people} persone, {total} totale)",
+    "shareLine": "Pesti Est: {perPerson} a testa ({people} persone, {total} totale)",
     "fromBudgetCta": "Dividi tra il gruppo"
   },
   "home": {
@@ -335,7 +336,7 @@
     "guidesSectionTitle": "Guide di quartiere in evidenza",
     "guidesViewAllLabel": "Tutte le guide",
     "guideCtaDefault": "Esplora guida",
-    "howItWorksSectionTitle": "Come funziona Budapest Night",
+    "howItWorksSectionTitle": "Come funziona Pesti Est",
     "popularPicksSectionTitle": "Scelte neon per iniziare",
     "popularPicksViewAllLabel": "Vedi tutto",
     "culturePickBadge": "Scelta cultura",
@@ -547,6 +548,9 @@
     "coffeeBrunch": "Caffè e brunch",
     "gallery": "Galleria",
     "theatre": "Teatro",
+    "cinema": "Cinema",
+    "exhibition": "Mostra",
+    "familyProgram": "Programma per famiglie",
     "festival": "Festival",
     "boatParty": "Boat party",
     "thermalBath": "Terme",
@@ -659,6 +663,31 @@
       "unknown_tour": "Questo tour non è disponibile.",
       "not_enough_venues": "Non ci sono ancora abbastanza locali con menu compatibili.",
       "error": "Impossibile caricare il tour. Riprova."
+    }
+  },
+  "program": {
+    "weekTitle": "Questa settimana a Budapest",
+    "weekSubtitle": "In evidenza su Pesti Est.",
+    "verticalsTitle": "Per tipo",
+    "thuNote": "Nuova settimana ogni giovedì.",
+    "partnerBadge": "Partner Pesti Est",
+    "qrTitle": "QR locale",
+    "qrDownload": "Scarica QR",
+    "qrHint": "Per il bancone — link al locale su Pesti Est.",
+    "newsletterConfirm": "Conferma via email.",
+    "subscribeError": "Iscrizione non riuscita.",
+    "featuredEvents": "Eventi in evidenza",
+    "featuredVenues": "Locali in evidenza",
+    "eventsThisWeek": "{count} eventi questa settimana",
+    "browseAllEvents": "Tutti gli eventi",
+    "boroughTitle": "Per quartiere",
+    "emptyVertical": "Nessuna scheda per questa categoria.",
+    "vertical": {
+      "mozi": "Cinema",
+      "szinhaz": "Teatro",
+      "kiallitas": "Mostre",
+      "koncert": "Concerti",
+      "csalad": "Famiglia"
     }
   }
 }

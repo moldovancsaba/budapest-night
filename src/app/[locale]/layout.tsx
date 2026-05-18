@@ -6,7 +6,8 @@ import { Noto_Sans_Devanagari, Rubik } from "next/font/google";
 import { Providers } from "../providers";
 import { APP_FAVICON } from "@/config/brand";
 import { routing } from "@/i18n/routing";
-import { isRtlLocale, type AppLocale } from "@/i18n/config";
+import { isRtlLocale, locales, type AppLocale } from "@/i18n/config";
+import { getSiteOrigin } from "@/lib/appPaths";
 import "../globals.css";
 
 /** Display + UI sans: HU (latin-ext), AR, HE, RU (cyrillic), EN/ES/IT. */
@@ -35,14 +36,26 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  const siteUrl = getSiteOrigin();
+  const languages: Record<string, string> = {};
+  for (const loc of locales) {
+    languages[loc] = loc === "hu" ? siteUrl : `${siteUrl}/${loc}`;
+  }
   return {
+    metadataBase: new URL(siteUrl),
     title: t("title"),
     description: t("description"),
-    authors: [{ name: "Budapest Night" }],
+    authors: [{ name: "Pesti Est" }],
+    alternates: {
+      canonical: locale === "hu" ? siteUrl : `${siteUrl}/${locale}`,
+      languages,
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
       type: "website",
+      locale,
+      siteName: "Pesti Est",
     },
     twitter: { card: "summary_large_image" },
     icons: {

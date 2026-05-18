@@ -277,7 +277,7 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
       navigateTo: "Venues",
     },
   ],
-  howItWorksSectionTitle: "How Budapest Night works",
+  howItWorksSectionTitle: "How Pesti Est works",
   howItWorksSteps: [
     {
       step: 1,

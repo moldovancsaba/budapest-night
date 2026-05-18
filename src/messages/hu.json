@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Budapest Night — Események, bulik, étterem és kultúra",
-    "description": "Fedezd fel Budapest éjszakai életét: események, bulik, éttermek, kávézók és kultúra kerület és városrész szerint."
+    "title": "Pesti Est — Budapesti programok, kultúra és szórakozás",
+    "description": "Ingyenes budapesti programmagazin: mozi, színház, kiállítás, koncert, étterem és éjszaka kerület szerint."
   },
   "locale": {
     "label": "Nyelv",
@@ -40,7 +40,8 @@
     "closeMenu": "Menü bezárása",
     "openMenu": "Menü megnyitása",
     "notifications": "Értesítések",
-    "brand": "Budapest Night"
+    "brand": "Pesti Est",
+    "program": "Ez a hét"
   },
   "sidebar": {
     "listVenueTitle": "Hirdesd a helyed",
@@ -125,10 +126,10 @@
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} értékelés)",
     "reviewsSourceOsm": "OpenStreetMap",
-    "reviewsSourceBn": "Budapest Night",
+    "reviewsSourceBn": "Pesti Est",
     "listedOnOsm": "Szerepel az OpenStreetMapen (közösségi térképadat)",
     "communityReviewsTitle": "Közösségi értékelések",
-    "communityReviewsHint": "Látogatói értékelések a Budapest Nightön — böngészőnként egy értékelés.",
+    "communityReviewsHint": "Látogatói értékelések a Pesti Estön — böngészőnként egy értékelés.",
     "reviewsLoading": "Értékelések betöltése…",
     "reviewsEmpty": "Még nincs értékelés. Legyél te az első.",
     "reviewWriteTitle": "Értékelés írása",
@@ -235,7 +236,7 @@
     "similarNearby": "Hasonló körök a közelben",
     "shareTitle": "{name} megosztása",
     "shareDescription": "Oszd meg ezt a kulturális kört egy barátoddal.",
-    "onPlatform": "{name} a Budapest Night-on",
+    "onPlatform": "{name} a Pesti Esten",
     "pageEyebrow": "Kultúra és közösség",
     "heroTitleLine1": "Találd meg a",
     "heroTitleLine2": "kultúrkörödet",
@@ -343,7 +344,7 @@
     "copied": "Vágólapra másolva",
     "copyFailed": "Másolás sikertelen",
     "reset": "Beállítások visszaállítása",
-    "shareLine": "Budapest Night osztás: {perPerson} fejenként ({people} fő, {total} összesen)",
+    "shareLine": "Pesti Est osztás: {perPerson} fejenként ({people} fő, {total} összesen)",
     "fromBudgetCta": "Oszd el a csapat között"
   },
   "home": {
@@ -383,7 +384,7 @@
     "guidesSectionTitle": "Kiemelt kerületi útmutatók",
     "guidesViewAllLabel": "Összes útmutató",
     "guideCtaDefault": "Útmutató megnyitása",
-    "howItWorksSectionTitle": "Így működik a Budapest Night",
+    "howItWorksSectionTitle": "Így működik a Pesti Est",
     "popularPicksSectionTitle": "Neon ajánlatok indulásnak",
     "popularPicksViewAllLabel": "Összes",
     "culturePickBadge": "Kultúra ajánlat",
@@ -547,6 +548,9 @@
     "coffeeBrunch": "Kávé és brunch",
     "gallery": "Galéria",
     "theatre": "Színház",
+    "cinema": "Mozi",
+    "exhibition": "Kiállítás",
+    "familyProgram": "Családi program",
     "festival": "Fesztivál",
     "boatParty": "Hajóbulik",
     "thermalBath": "Fürdő",
@@ -659,6 +663,31 @@
       "unknown_tour": "Ez a túra nem elérhető.",
       "not_enough_venues": "Még nincs elég egyező hely — nézz vissza később.",
       "error": "Nem sikerült betölteni a túrát. Próbáld újra."
+    }
+  },
+  "program": {
+    "weekTitle": "Ez a hét Budapesten",
+    "weekSubtitle": "A Pesti Est kiemelései — csütörtökönként frissül.",
+    "verticalsTitle": "Böngészés típus szerint",
+    "thuNote": "Friss hét minden csütörtökön.",
+    "partnerBadge": "Pesti Est partner",
+    "qrTitle": "Helyszín QR",
+    "qrDownload": "QR letöltése",
+    "qrHint": "Nyomtasd ki a pultra — a helyszín Pesti Est oldalára mutat.",
+    "newsletterConfirm": "Erősítsd meg a feliratkozást az e-mailben.",
+    "subscribeError": "A feliratkozás nem sikerült.",
+    "featuredEvents": "Kiemelt események",
+    "featuredVenues": "Kiemelt helyszínek",
+    "eventsThisWeek": "{count} esemény ezen a héten",
+    "browseAllEvents": "Összes esemény",
+    "boroughTitle": "Kerület szerint",
+    "emptyVertical": "Ehhez a műfajhoz még nincs lista.",
+    "vertical": {
+      "mozi": "Mozi",
+      "szinhaz": "Színház",
+      "kiallitas": "Kiállítás",
+      "koncert": "Koncert",
+      "csalad": "Család"
     }
   }
 }

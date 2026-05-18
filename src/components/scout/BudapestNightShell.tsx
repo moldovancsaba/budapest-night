@@ -10,6 +10,8 @@ import { CalculatorView } from "@/components/scout/views/CalculatorView";
 import { SplitCheckView } from "@/components/scout/views/SplitCheckView";
 import { MeetupGroupsView } from "@/components/scout/views/MeetupGroupsView";
 import { HomeView } from "@/components/scout/views/HomeView";
+import { ProgramWeekView } from "@/components/scout/views/ProgramWeekView";
+import { ProgramVerticalView } from "@/components/scout/views/ProgramVerticalView";
 import { MyAccountView } from "@/components/scout/views/MyAccountView";
 import { EatDrinkView } from "@/components/scout/views/EatDrinkView";
 import { TourView } from "@/components/scout/views/TourView";
@@ -310,6 +312,21 @@ export default function BudapestNightShell() {
                 onNavigate={navigateToView}
                 onOpenProvider={openVenue}
                 onOpenGroup={openGroup}
+              />
+            )}
+            {view === "Program" && !route.programVertical && (
+              <ProgramWeekView
+                onOpenProvider={openVenue}
+                onOpenEvent={openEvent}
+                onShareProvider={setShareProvider}
+              />
+            )}
+            {view === "Program" && route.programVertical && (
+              <ProgramVerticalView
+                vertical={route.programVertical}
+                onOpenProvider={openVenue}
+                onOpenEvent={openEvent}
+                onShareProvider={setShareProvider}
               />
             )}
             {view === "Events" && (

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Budapest Night — فعاليات وحفلات ومطاعم وثقافة",
-    "description": "اكتشف الحياة الليلية في بودابست: فعاليات وحفلات ومطاعم ومقاهٍ وثقافة حسب الحي والمنطقة."
+    "title": "Pesti Est — فعاليات وثقافة بودابست",
+    "description": "دليل برامج مجاني لبودابست: سينما ومسرح ومعارض وحفلات."
   },
   "locale": {
     "label": "اللغة",
@@ -40,7 +40,8 @@
     "closeMenu": "إغلاق القائمة",
     "openMenu": "فتح القائمة",
     "notifications": "الإشعارات",
-    "brand": "Budapest Night"
+    "brand": "Pesti Est",
+    "program": "هذا الأسبوع في بودابست"
   },
   "sidebar": {
     "listVenueTitle": "أدرج مكانك",
@@ -124,10 +125,10 @@
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} مراجعات)",
     "reviewsSourceOsm": "OpenStreetMap",
-    "reviewsSourceBn": "Budapest Night",
+    "reviewsSourceBn": "Pesti Est",
     "listedOnOsm": "مُدرَج على OpenStreetMap (بيانات خريطة مجتمعية)",
     "communityReviewsTitle": "مراجعات المجتمع",
-    "communityReviewsHint": "تقييمات الزوار على Budapest Night — مراجعة واحدة لكل متصفح.",
+    "communityReviewsHint": "تقييمات الزوار على Pesti Est — مراجعة واحدة لكل متصفح.",
     "reviewsLoading": "جاري تحميل المراجعات…",
     "reviewsEmpty": "لا توجد مراجعات بعد. كن الأول.",
     "reviewWriteTitle": "اكتب مراجعة",
@@ -235,7 +236,7 @@
     "similarNearby": "دوائر مشابهة قريبة",
     "shareTitle": "مشاركة {name}",
     "shareDescription": "شارك هذه الدائرة الثقافية مع صديق.",
-    "onPlatform": "{name} على Budapest Night",
+    "onPlatform": "{name} على Pesti Est",
     "pageEyebrow": "ثقافة ومجتمع",
     "heroTitleLine1": "اعثر على",
     "heroTitleLine2": "دائرة ثقافتك",
@@ -315,7 +316,7 @@
     "copied": "تم النسخ",
     "copyFailed": "فشل النسخ",
     "reset": "إعادة تعيين",
-    "shareLine": "Budapest Night: {perPerson} لكل شخص ({people} أشخاص، {total} الإجمالي)",
+    "shareLine": "Pesti Est: {perPerson} لكل شخص ({people} أشخاص، {total} الإجمالي)",
     "fromBudgetCta": "قسّم بين المجموعة"
   },
   "home": {
@@ -335,7 +336,7 @@
     "guidesSectionTitle": "أدلة المناطق المميزة",
     "guidesViewAllLabel": "كل الأدلة",
     "guideCtaDefault": "استكشف الدليل",
-    "howItWorksSectionTitle": "كيف يعمل Budapest Night",
+    "howItWorksSectionTitle": "كيف يعمل Pesti Est",
     "popularPicksSectionTitle": "اختيارات نيون للبداية",
     "popularPicksViewAllLabel": "عرض الكل",
     "culturePickBadge": "اختيار ثقافي",
@@ -547,6 +548,9 @@
     "coffeeBrunch": "قهوة وبرنش",
     "gallery": "معرض",
     "theatre": "مسرح",
+    "cinema": "سينما",
+    "exhibition": "معرض",
+    "familyProgram": "برنامج عائلي",
     "festival": "مهرجان",
     "boatParty": "حفلة قارب",
     "thermalBath": "حمامات",
@@ -659,6 +663,31 @@
       "unknown_tour": "هذه الجولة غير متاحة.",
       "not_enough_venues": "لا توجد أماكن كافية بقوائم متطابقة بعد.",
       "error": "تعذّر تحميل الجولة. حاول مرة أخرى."
+    }
+  },
+  "program": {
+    "weekTitle": "هذا الأسبوع في بودابست",
+    "weekSubtitle": "أبرز ما في Pesti Est.",
+    "verticalsTitle": "حسب النوع",
+    "thuNote": "أسبوع جديد كل خميس.",
+    "partnerBadge": "شريك Pesti Est",
+    "qrTitle": "QR للمكان",
+    "qrDownload": "تحميل QR",
+    "qrHint": "للطباعة عند المنضدة.",
+    "newsletterConfirm": "أكّد عبر البريد.",
+    "subscribeError": "فشل الاشتراك.",
+    "featuredEvents": "فعاليات مميزة",
+    "featuredVenues": "أماكن مميزة",
+    "eventsThisWeek": "{count} فعالية هذا الأسبوع",
+    "browseAllEvents": "كل الفعاليات",
+    "boroughTitle": "حسب المنطقة",
+    "emptyVertical": "لا توجد قوائم في هذا القسم بعد.",
+    "vertical": {
+      "mozi": "سينما",
+      "szinhaz": "مسرح",
+      "kiallitas": "معارض",
+      "koncert": "حفلات",
+      "csalad": "عائلة"
     }
   }
 }

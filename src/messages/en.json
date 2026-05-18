@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Budapest Night — Events, Parties, Food & Culture",
-    "description": "Discover Budapest nightlife, parties, restaurants, cafés, and culture by district and neighborhood."
+    "title": "Pesti Est — Budapest events, culture & going out",
+    "description": "Free Budapest program guide: cinema, theatre, exhibitions, concerts, restaurants and nightlife by district."
   },
   "locale": {
     "label": "Language",
@@ -40,7 +40,8 @@
     "closeMenu": "Close menu",
     "openMenu": "Open menu",
     "notifications": "Notifications",
-    "brand": "Budapest Night"
+    "brand": "Pesti Est",
+    "program": "This week"
   },
   "sidebar": {
     "listVenueTitle": "List your venue",
@@ -119,10 +120,10 @@
     "photoCounter": "{current} / {total}",
     "reviewsCount": "({count} reviews)",
     "reviewsSourceOsm": "OpenStreetMap",
-    "reviewsSourceBn": "Budapest Night",
+    "reviewsSourceBn": "Pesti Est",
     "listedOnOsm": "Listed on OpenStreetMap (community map data)",
     "communityReviewsTitle": "Community reviews",
-    "communityReviewsHint": "Ratings from visitors on Budapest Night — one review per browser.",
+    "communityReviewsHint": "Ratings from visitors on Pesti Est — one review per browser.",
     "reviewsLoading": "Loading reviews…",
     "reviewsEmpty": "No reviews yet. Be the first to share your experience.",
     "reviewWriteTitle": "Write a review",
@@ -235,7 +236,7 @@
     "similarNearby": "Similar circles nearby",
     "shareTitle": "Share {name}",
     "shareDescription": "Share this culture circle with a friend.",
-    "onPlatform": "{name} on Budapest Night",
+    "onPlatform": "{name} on Pesti Est",
     "pageEyebrow": "Culture & community",
     "heroTitleLine1": "Find your",
     "heroTitleLine2": "culture circle",
@@ -343,7 +344,7 @@
     "copied": "Copied to clipboard",
     "copyFailed": "Could not copy",
     "reset": "Reset split settings",
-    "shareLine": "Budapest Night crew split: {perPerson} each ({people} people, {total} total incl. tip)",
+    "shareLine": "Pesti Est crew split: {perPerson} each ({people} people, {total} total incl. tip)",
     "fromBudgetCta": "Split among crew"
   },
   "home": {
@@ -383,7 +384,7 @@
     "guidesSectionTitle": "Featured district guides",
     "guidesViewAllLabel": "View all guides",
     "guideCtaDefault": "Explore guide",
-    "howItWorksSectionTitle": "How Budapest Night works",
+    "howItWorksSectionTitle": "How Pesti Est works",
     "popularPicksSectionTitle": "Neon picks to get you started",
     "popularPicksViewAllLabel": "View all",
     "culturePickBadge": "Culture pick",
@@ -547,6 +548,9 @@
     "coffeeBrunch": "Coffee & Brunch",
     "gallery": "Gallery",
     "theatre": "Theatre",
+    "cinema": "Cinema",
+    "exhibition": "Exhibition",
+    "familyProgram": "Family program",
     "festival": "Festival",
     "boatParty": "Boat Party",
     "thermalBath": "Thermal Bath",
@@ -659,6 +663,31 @@
       "unknown_tour": "This tour is not available.",
       "not_enough_venues": "Not enough venues with matching menus yet — check back after more listings are ingested.",
       "error": "Could not load this tour. Try again."
+    }
+  },
+  "program": {
+    "weekTitle": "This week in Budapest",
+    "weekSubtitle": "Highlights from Pesti Est — refreshed every Thursday.",
+    "verticalsTitle": "Browse by type",
+    "thuNote": "Fresh week every Thursday.",
+    "partnerBadge": "Pesti Est partner",
+    "qrTitle": "Venue QR",
+    "qrDownload": "Download QR",
+    "qrHint": "Print for counter display — links to this venue on Pesti Est.",
+    "newsletterConfirm": "Check your email to confirm subscription.",
+    "subscribeError": "Subscription failed. Try again.",
+    "featuredEvents": "Featured events",
+    "featuredVenues": "Featured venues",
+    "eventsThisWeek": "{count} events this week",
+    "browseAllEvents": "Browse all events",
+    "boroughTitle": "By district",
+    "emptyVertical": "No listings yet for this vertical.",
+    "vertical": {
+      "mozi": "Cinema",
+      "szinhaz": "Theatre",
+      "kiallitas": "Exhibitions",
+      "koncert": "Concerts",
+      "csalad": "Family"
     }
   }
 }

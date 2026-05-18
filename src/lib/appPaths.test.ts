@@ -3,6 +3,7 @@ import {
   buildEventFullPath,
   buildGroupFullPath,
   buildGroupPath,
+  buildProgramPath,
   buildPathForView,
   buildSectionPath,
   buildTourPath,
@@ -22,6 +23,12 @@ describe("appPaths", () => {
     expect(parseAppRoute("/budget", new URLSearchParams()).view).toBe("Calculator");
     expect(parseAppRoute("/split", new URLSearchParams()).view).toBe("Split Check");
     expect(parseAppRoute("/eat-drink", new URLSearchParams()).view).toBe("Eat & Drink");
+    expect(parseAppRoute("/program", new URLSearchParams()).view).toBe("Program");
+    const vertical = parseAppRoute("/program/mozi", new URLSearchParams());
+    expect(vertical.view).toBe("Program");
+    expect(vertical.programVertical).toBe("mozi");
+    expect(buildProgramPath()).toBe("/program");
+    expect(buildProgramPath("szinhaz")).toBe("/program/szinhaz");
   });
 
   it("parses tour routes", () => {

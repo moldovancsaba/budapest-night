@@ -8,6 +8,7 @@ import type { NightEvent } from "@/types/event";
 /** URL path segment (no leading slash, no locale). */
 export type AppSection =
   | "home"
+  | "program"
   | "venues"
   | "events"
   | "parties"
@@ -20,10 +21,13 @@ export type AppSection =
   | "split"
   | "account";
 
+export type ProgramVerticalSlug = "mozi" | "szinhaz" | "kiallitas" | "koncert" | "csalad";
+
 export const DISCOVER_SECTIONS: AppSection[] = ["venues", "parties", "restaurants", "cafes"];
 
 const VIEW_TO_SECTION: Record<ViewKey, AppSection> = {
   Home: "home",
+  Program: "program",
   Venues: "venues",
   Events: "events",
   Parties: "parties",
@@ -39,6 +43,7 @@ const VIEW_TO_SECTION: Record<ViewKey, AppSection> = {
 
 const SECTION_TO_VIEW: Record<AppSection, ViewKey> = {
   home: "Home",
+  program: "Program",
   venues: "Venues",
   events: "Events",
   parties: "Parties",
@@ -74,6 +79,7 @@ const SLUG_TO_BOROUGH = Object.fromEntries(
 ) as Record<string, Borough>;
 
 const KNOWN_SECTIONS = new Set<string>([
+  "program",
   "venues",
   "events",
   "parties",
@@ -96,6 +102,7 @@ export interface AppRoute {
   view: ViewKey;
   section: AppSection;
   location: LocationFilter | null;
+  programVertical: ProgramVerticalSlug | null;
   venueId: string | null;
   groupId: string | null;
   tourId: string | null;
@@ -172,6 +179,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       view: sectionToView(fromSection),
       section: fromSection,
       location,
+      programVertical: null,
       venueId: entityKey,
       groupId: null,
       tourId: null,
@@ -189,6 +197,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       view: "Events",
       section: "events",
       location,
+      programVertical: null,
       venueId: null,
       groupId: null,
       tourId: null,
@@ -205,6 +214,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       view: "Eat & Drink",
       section: "eat-drink",
       location,
+      programVertical: null,
       venueId: null,
       groupId: null,
       tourId: decodeURIComponent(segments[1]),
@@ -221,6 +231,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       view: "Meet-Up Groups",
       section: "culture",
       location,
+      programVertical: null,
       venueId: null,
       groupId: entityKey,
       tourId: null,
@@ -231,11 +242,30 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     };
   }
 
+  if (segments[0] === "program") {
+    const vertical = segments[1] as ProgramVerticalSlug | undefined;
+    const validVerticals = new Set(["mozi", "szinhaz", "kiallitas", "koncert", "csalad"]);
+    return {
+      view: "Program",
+      section: "program",
+      location,
+      programVertical: vertical && validVerticals.has(vertical) ? vertical : null,
+      venueId: null,
+      groupId: null,
+      tourId: null,
+      eventId: null,
+      fullPage: false,
+      fromSection: "program",
+      invalid: Boolean(vertical && !validVerticals.has(vertical)),
+    };
+  }
+
   if (segments.length === 0) {
     return {
       view: "Home",
       section: "home",
       location,
+      programVertical: null,
       venueId: null,
       groupId: null,
       tourId: null,
@@ -252,6 +282,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
       view: "Home",
       section: "home",
       location: null,
+      programVertical: null,
       venueId: null,
       groupId: null,
       tourId: null,
@@ -267,6 +298,7 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     view: sectionToView(appSection),
     section: appSection,
     location,
+    programVertical: null,
     venueId: null,
     groupId: null,
     tourId: null,
@@ -275,6 +307,10 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     fromSection: appSection,
     invalid: false,
   };
+}
+
+export function buildProgramPath(vertical?: ProgramVerticalSlug): string {
+  return vertical ? `/program/${vertical}` : "/program";
 }
 
 export function buildTourPath(tourId: string, seed?: string): string {
@@ -373,7 +409,10 @@ export function tourSeedFromSearch(search: URLSearchParams): string | null {
   return seed?.trim() ? seed : null;
 }
 
+/** Live Vercel deployment — override with NEXT_PUBLIC_SITE_URL when you add a custom domain. */
+export const DEFAULT_SITE_ORIGIN = "https://budapest-night.vercel.app";
+
 export function getSiteOrigin(): string {
   if (typeof window !== "undefined") return window.location.origin;
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://budapest-night.vercel.app";
+  return process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_ORIGIN;
 }
