@@ -441,6 +441,7 @@
     "back": "Volver",
     "copyLink": "Copiar enlace",
     "linkCopied": "Enlace copiado",
+    "loading": "Cargando…",
     "notFoundTitle": "No encontrado",
     "notFoundBody": "Este listado puede haberse movido o el enlace está desactualizado."
   },

@@ -141,9 +141,12 @@ npm run ingest:listing -- --dry-run scripts/ingest-payloads/venue-location-fix.j
 
 # Apply (requires INGEST_API_KEY in env)
 npm run ingest:listing -- --force scripts/ingest-payloads/venue-location-fix.json
+
+# If POST /api/ingest returns 500 (or before a deploy with the latest registry), write directly:
+npm run ingest:db -- scripts/ingest-payloads/venue-location-fix.json
 ```
 
-Ingest **rejects** providers that fail `validateProviderLocationForIngest` (wrong borough vs postal, forbidden pairings, unknown neighborhood, etc.).
+Ingest **rejects** providers that fail `validateProviderLocationForIngest` (wrong borough vs postal, forbidden pairings, unknown neighborhood, etc.). Invalid location returns **HTTP 422** with `{ ok: false, results: [...] }`, not an empty 500.
 
 ---
 

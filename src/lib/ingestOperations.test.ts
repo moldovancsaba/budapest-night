@@ -74,4 +74,41 @@ describe("applyIngestOperation", () => {
     const res = await applyIngestOperation(db, { resource: "nope", action: "list" }, emptyBatch);
     expect(res.ok).toBe(false);
   });
+
+  it("returns location validation error instead of throwing on provider upsert", async () => {
+    const replaceOne = vi.fn(async () => ({ modifiedCount: 1 }));
+    const db = mockDb({
+      providers: { replaceOne, findOne: vi.fn(async () => null) },
+      events: { find: vi.fn(() => ({ toArray: async () => [] })) },
+    });
+    const locales = {
+      hu: { name: "T", shortDescription: "S", longDescription: "L\n\nSources: https://example.com", slug: "t-hu" },
+      es: { name: "T", shortDescription: "S", longDescription: "L\n\nSources: https://example.com", slug: "t-es" },
+      it: { name: "T", shortDescription: "S", longDescription: "L\n\nSources: https://example.com", slug: "t-it" },
+      he: { name: "T", shortDescription: "S", longDescription: "L\n\nSources: https://example.com", slug: "t-he" },
+      ar: { name: "T", shortDescription: "S", longDescription: "L\n\nSources: https://example.com", slug: "t-ar" },
+    };
+    const res = await applyIngestOperation(
+      db,
+      {
+        resource: "provider",
+        action: "upsert",
+        document: {
+          id: "prov-test-location-reject",
+          name: "Location Test",
+          category: "Cafés",
+          borough: "Belváros",
+          neighborhood: "Inner City",
+          address: "9999 Budapest, Nowhere utca 1, Hungary",
+          shortDescription: "Test.",
+          longDescription: "Test.\n\nSources: https://example.com",
+          locales,
+        },
+      },
+      emptyBatch,
+    );
+    expect(res.ok).toBe(false);
+    if (!res.ok) expect(res.error).toMatch(/borough/i);
+    expect(replaceOne).not.toHaveBeenCalled();
+  });
 });

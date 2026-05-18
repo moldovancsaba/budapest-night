@@ -2392,10 +2392,10 @@
       "gapKey": "Restaurants|Erzsébetváros|Jewish Quarter",
       "id": "prov-cov-frici-jewish-q",
       "name": "Frici Papa",
-      "address": "1075 Budapest, Kertész utca 20, Hungary",
+      "address": "1077 Budapest, Király utca 55, Hungary",
       "website": "https://www.fricipapa.hu/",
-      "phone": "+36 1 322 0617",
-      "email": "",
+      "phone": "+36 1 351 0197",
+      "email": "fricipapa55@gmail.com",
       "imageSource": "https://www.fricipapa.hu/images/frici-interior.jpg",
       "activityTypes": [
         "Street Food",
@@ -2412,11 +2412,11 @@
         "Weekend"
       ],
       "pricePerClass": 0,
-      "shortDescription": "Beloved Jewish Quarter eatery — hearty Hungarian plates, daily menus, and no-frills dining room.",
-      "longDescription": "Frici Papa on Kertész utca serves generous Hungarian home cooking at wallet-friendly prices deep in the Jewish Quarter. Regulars come for schnitzel, soups, and daily chalkboard specials. Hours posted at fricipapa.hu.",
+      "shortDescription": "Classic Hungarian canteen on Király utca 55 — hearty lunch plates and daily specials near the Jewish Quarter.",
+      "longDescription": "Frici Papa at Király utca 55 serves generous Hungarian home cooking at wallet-friendly prices. Regulars come for schnitzel, soups, and daily chalkboard specials. Contact and hours on fricipapa.hu.",
       "category": "Restaurants",
       "borough": "Erzsébetváros",
-      "neighborhood": "Jewish Quarter"
+      "neighborhood": "Király utca"
     },
     {
       "gapKey": "Restaurants|Erzsébetváros|Gozsdu Udvar",

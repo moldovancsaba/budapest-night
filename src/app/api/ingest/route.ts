@@ -39,54 +39,60 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
-  const denied = requireIngestKey(req);
-  if (denied) return denied;
-
-  const db = await getDb();
-  if (!db) return NextResponse.json({ error: "No database" }, { status: 503 });
-
-  let body: unknown;
   try {
-    body = await req.json();
-  } catch {
-    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
-  }
+    const denied = requireIngestKey(req);
+    if (denied) return denied;
 
-  const ops: unknown[] = Array.isArray((body as { operations?: unknown }).operations)
-    ? ((body as { operations: unknown[] }).operations ?? [])
-    : isPlainObject(body) && typeof (body as { resource?: unknown }).resource === "string"
-      ? [body]
-      : [];
+    const db = await getDb();
+    if (!db) return NextResponse.json({ error: "No database" }, { status: 503 });
 
-  if (ops.length === 0) {
-    return NextResponse.json(
-      { error: "Send { operations: [...] } or a single operation { resource, action, ... }" },
-      { status: 400 },
-    );
-  }
-  if (ops.length > MAX_OPS) {
-    return NextResponse.json({ error: `At most ${MAX_OPS} operations per request` }, { status: 400 });
-  }
-
-  const confirmHeader = req.headers.get("x-ingest-confirm")?.trim().toLowerCase();
-  const batch: IngestBatchContext = {
-    providerIdsInBatch: new Set(),
-    replaceAllConfirmed: confirmHeader === "replace-all",
-  };
-  const results: { index: number; ok: boolean; error?: string; data?: unknown }[] = [];
-  for (let i = 0; i < ops.length; i++) {
-    const res = await applyIngestOperation(db, ops[i], batch);
-    if (res.ok === false) {
-      results.push({ index: i, ok: false, error: res.error });
-      continue;
+    let body: unknown;
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
     }
-    results.push({
-      index: i,
-      ok: true,
-      ...(res.data !== undefined ? { data: res.data } : {}),
-    });
-  }
 
-  const allOk = results.every((r) => r.ok);
-  return NextResponse.json({ ok: allOk, results }, { status: allOk ? 200 : 422 });
+    const ops: unknown[] = Array.isArray((body as { operations?: unknown }).operations)
+      ? ((body as { operations: unknown[] }).operations ?? [])
+      : isPlainObject(body) && typeof (body as { resource?: unknown }).resource === "string"
+        ? [body]
+        : [];
+
+    if (ops.length === 0) {
+      return NextResponse.json(
+        { error: "Send { operations: [...] } or a single operation { resource, action, ... }" },
+        { status: 400 },
+      );
+    }
+    if (ops.length > MAX_OPS) {
+      return NextResponse.json({ error: `At most ${MAX_OPS} operations per request` }, { status: 400 });
+    }
+
+    const confirmHeader = req.headers.get("x-ingest-confirm")?.trim().toLowerCase();
+    const batch: IngestBatchContext = {
+      providerIdsInBatch: new Set(),
+      replaceAllConfirmed: confirmHeader === "replace-all",
+    };
+    const results: { index: number; ok: boolean; error?: string; data?: unknown }[] = [];
+    for (let i = 0; i < ops.length; i++) {
+      const res = await applyIngestOperation(db, ops[i], batch);
+      if (res.ok === false) {
+        results.push({ index: i, ok: false, error: res.error });
+        continue;
+      }
+      results.push({
+        index: i,
+        ok: true,
+        ...(res.data !== undefined ? { data: res.data } : {}),
+      });
+    }
+
+    const allOk = results.every((r) => r.ok);
+    return NextResponse.json({ ok: allOk, results }, { status: allOk ? 200 : 422 });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Ingest failed";
+    console.error("[api/ingest] POST failed:", e);
+    return NextResponse.json({ ok: false, error: message }, { status: 500 });
+  }
 }

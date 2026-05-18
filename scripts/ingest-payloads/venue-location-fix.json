@@ -1,13 +1,419 @@
 {
   "sourceUrls": [
+    "https://www.fricipapa.hu/",
+    "https://momkult.hu/",
     "https://mvm-dome.hu",
-    "https://www.budapestpark.hu/en/park"
+    "https://www.budapestpark.hu/"
   ],
-  "notes": "Correct borough/neighborhood/address from postal codes and canonical venue registry (e.g. MVM Dome → Stefánia út, Terézváros, not Kelenföld).",
+  "notes": "Correct borough/neighborhood/address from registry landmarks and street overrides; verified contact fields where listed in venue-contact-patches.cjs.",
   "missingOrUncertain": [
     "Some listings use coarse district buckets; always verify address on the official venue site."
   ],
   "operations": [
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-new-york-cafe-belvaros",
+        "name": "New York Café",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Rákóczi tér",
+        "address": "1073 Budapest, Erzsébet körút 9-11, Hungary",
+        "activityTypes": [
+          "Fine Dining",
+          "Coffee & Brunch",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 15750,
+        "shortDescription": "Opulent café-restaurant in the Boscolo Hotel — gilded interiors and classic Hungarian café culture.",
+        "longDescription": "The New York Café inside the Anantara New York Palace Budapest is famous for its grand belle-époque dining room, coffee, pastries, and evening programs. Reserve ahead for dinner or afternoon tea; dress smart-casual for peak service times.\n\nSources: https://www.newyorkcafe.hu",
+        "rating": 4.5,
+        "reviewCount": 8500,
+        "badges": [
+          "Staff Pick",
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/RkXXc577/59f18593ebea.jpg",
+        "email": "",
+        "website": "https://www.newyorkcafe.hu",
+        "phone": "+36 1 886 6111",
+        "locales": {
+          "hu": {
+            "name": "New York Café",
+            "shortDescription": "Pazar kávéház-étterem a Boscolo szállóban — aranyozott terem és klasszikus budapesti kávéházi kultúra.",
+            "longDescription": "A New York Café az Anantara New York Palace Budapestben híres nagy békebeli étterméről, kávéjáról, süteményeiről és esti programjairól. Foglalj előre vacsorára vagy afternoon tea-re; csúcsidőben smart casual öltözék.\n\nSources: https://www.newyorkcafe.hu",
+            "slug": "new-york-kavehaz"
+          },
+          "es": {
+            "name": "New York Café",
+            "shortDescription": "Café-restaurante opulento en el hotel Boscolo — interiores dorados y cultura clásica húngara.",
+            "longDescription": "El New York Café en el Anantara New York Palace Budapest es famoso por su gran comedor belle époque, café, pasteles y programas nocturnos. Reserva con antelación para cena o afternoon tea; vestimenta smart-casual en horas punta.\n\nSources: https://www.newyorkcafe.hu",
+            "slug": "new-york-cafe"
+          },
+          "it": {
+            "name": "New York Café",
+            "shortDescription": "Caffè-ristorante sontuoso nel Boscolo Hotel — interni dorati e cultura del caffè ungherese.",
+            "longDescription": "Il New York Café nell'Anantara New York Palace Budapest è celebre per la sala belle époque, caffè, pasticcini e serate. Prenota per cena o afternoon tea; abbigliamento smart-casual nelle ore di punta.\n\nSources: https://www.newyorkcafe.hu",
+            "slug": "new-york-cafe-it"
+          },
+          "he": {
+            "name": "קפה ניו יורק",
+            "shortDescription": "בית קפה-מסעדה מפואר במלון בוסקולו — אולמות מוזהבים ותרבות קפה הונגרית קלאסית.",
+            "longDescription": "קפה ניו יורק ב-Anantara New York Palace בודפשט מפורסם באולם האוכל הגדול, קפה, מאפים ותוכניות ערב. הזמינו מראש לארוחת ערב או תה אחר הצהריים; לבוש חכם-לא רשמי בשעות שיא.\n\nSources: https://www.newyorkcafe.hu",
+            "slug": "kafe-new-york"
+          },
+          "ar": {
+            "name": "مقهى نيويورك",
+            "shortDescription": "مقهى ومطعم فخم في فندق بوسكولو — قاعات مذهبة وثقافة المقاهي المجرية الكلاسيكية.",
+            "longDescription": "مقهى نيويورك في أنانتارا نيويورك بالاس بودابست مشهور بقاعة الطعام الكبرى والقهوة والحلويات وبرامج المساء. احجز مسبقاً للعشاء أو شاي بعد الظهر؛ لباس أنيق غير رسمي في أوقات الذروة.\n\nSources: https://www.newyorkcafe.hu",
+            "slug": "muqha-new-york"
+          },
+          "en": {
+            "slug": "new-york-kavehaz"
+          }
+        },
+        "priceCurrency": "HUF",
+        "menu": {
+          "menuUrl": "https://newyorkcafe.hu/en/cafe-menu/",
+          "sourceUrls": [
+            "https://newyorkcafe.hu/wp-content/uploads/2026/04/new-york-cafe-etlap-2026-04-frissitett.pdf",
+            "https://newyorkcafe.hu/en/cafe-menu/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "coffee",
+              "title": "Coffee specialities",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "espresso",
+                  "kind": "drink",
+                  "name": "Espresso",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 2960,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Eszpresszó"
+                    },
+                    "es": {
+                      "name": "Espresso"
+                    },
+                    "it": {
+                      "name": "Espresso"
+                    },
+                    "he": {
+                      "name": "אספרסו"
+                    },
+                    "ar": {
+                      "name": "إسبريسو"
+                    }
+                  }
+                },
+                {
+                  "id": "cappuccino",
+                  "kind": "drink",
+                  "name": "Cappuccino",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 4255,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Cappuccino"
+                    },
+                    "es": {
+                      "name": "Cappuccino"
+                    },
+                    "it": {
+                      "name": "Cappuccino"
+                    },
+                    "he": {
+                      "name": "קפוצ'ינו"
+                    },
+                    "ar": {
+                      "name": "كابتشينو"
+                    }
+                  }
+                },
+                {
+                  "id": "latte-macchiato",
+                  "kind": "drink",
+                  "name": "Latte macchiato",
+                  "tags": [
+                    "coffee",
+                    "specialty-coffee"
+                  ],
+                  "price": {
+                    "amount": 4255,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Latte macchiato"
+                    },
+                    "es": {
+                      "name": "Latte macchiato"
+                    },
+                    "it": {
+                      "name": "Latte macchiato"
+                    },
+                    "he": {
+                      "name": "לאטה מקיאטו"
+                    },
+                    "ar": {
+                      "name": "لاتيه ماكياتو"
+                    }
+                  }
+                },
+                {
+                  "id": "hungarian-coffee",
+                  "kind": "drink",
+                  "name": "Hungarian coffee",
+                  "tags": [
+                    "coffee"
+                  ],
+                  "price": {
+                    "amount": 4810,
+                    "currency": "HUF",
+                    "unit": "each",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Magyar kávé"
+                    },
+                    "es": {
+                      "name": "Café húngaro"
+                    },
+                    "it": {
+                      "name": "Caffè ungherese"
+                    },
+                    "he": {
+                      "name": "קפה הונגרי"
+                    },
+                    "ar": {
+                      "name": "قهوة مجرية"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Kávé specialitások"
+                },
+                "es": {
+                  "title": "Especialidades de café"
+                },
+                "it": {
+                  "title": "Specialità di caffè"
+                },
+                "he": {
+                  "title": "מיוחדות קפה"
+                },
+                "ar": {
+                  "title": "تخصصات القهوة"
+                }
+              }
+            },
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "beef-goulash-soup",
+                  "kind": "food",
+                  "name": "Beef goulash soup with homemade pinched pasta",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 5735,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Marhagulyás házi csipetkével"
+                    },
+                    "es": {
+                      "name": "Sopa goulash de ternera con pasta casera"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash di manzo con pasta fatta in casa"
+                    },
+                    "he": {
+                      "name": "מרק גולאש בקר עם פסטה ביתית"
+                    },
+                    "ar": {
+                      "name": "حساء غولاش لحم بقري مع معكرونة منزلية"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Levesek"
+                },
+                "es": {
+                  "title": "Sopas"
+                },
+                "it": {
+                  "title": "Zuppe"
+                },
+                "he": {
+                  "title": "מרקים"
+                },
+                "ar": {
+                  "title": "حساء"
+                }
+              }
+            },
+            {
+              "id": "spirits",
+              "title": "Pálinka (4 cl)",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "arpad-valogatas",
+                  "kind": "drink",
+                  "name": "Árpád selection 60% (4 cl)",
+                  "tags": [
+                    "palinka"
+                  ],
+                  "price": {
+                    "amount": 6105,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Árpád válogatás 60% (4 cl)"
+                    },
+                    "es": {
+                      "name": "Selección Árpád 60% (4 cl)"
+                    },
+                    "it": {
+                      "name": "Selezione Árpád 60% (4 cl)"
+                    },
+                    "he": {
+                      "name": "Árpád מבחר 60% (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "تشكيلة Árpád 60% (4 سم)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Pálinkák (4 cl)"
+                },
+                "es": {
+                  "title": "Pálinka (4 cl)"
+                },
+                "it": {
+                  "title": "Pálinka (4 cl)"
+                },
+                "he": {
+                  "title": "פלינקה (4 מ״ל)"
+                },
+                "ar": {
+                  "title": "بالينكا (4 سم)"
+                }
+              }
+            },
+            {
+              "id": "mains",
+              "title": "Main courses",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "paprikas-csirke",
+                  "kind": "food",
+                  "name": "Chicken paprikash with homemade dumplings",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 9805,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Paprikás csirke házi galuskával"
+                    },
+                    "es": {
+                      "name": "Pollo al pimentón con ñoquis caseros"
+                    },
+                    "it": {
+                      "name": "Pollo al paprika con gnocchi fatti in casa"
+                    },
+                    "he": {
+                      "name": "עוף פפריקה עם גנוקי ביתי"
+                    },
+                    "ar": {
+                      "name": "دجاج بالفلفل الحلو مع نيوكي منزلي"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Főételek"
+                },
+                "es": {
+                  "title": "Platos principales"
+                },
+                "it": {
+                  "title": "Piatti principali"
+                },
+                "he": {
+                  "title": "מנות עיקריות"
+                },
+                "ar": {
+                  "title": "أطباق رئيسية"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
     {
       "resource": "provider",
       "action": "upsert",
@@ -79,6 +485,365 @@
             "slug": "mom-kulturalis-kozpont"
           }
         },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-instant-fogas-erzsebetvaros",
+        "name": "Instant-Fogas",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1073 Budapest, Akácfa utca 49-51, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Electronic",
+          "Live Music",
+          "Coffee & Brunch"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Seven-club ruin complex on Akácfa utca — Europe's largest party labyrinth, daily 18:00–06:00.",
+        "longDescription": "Instant-Fogas merges the Instant and Fogasház ruin pubs into one complex at Akácfa utca 49-51 with seven clubs, multiple dance floors, and a garden. Most nights are free entry; some concerts ticketed on instant-fogas.com. Table reservations: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Popular"
+        ],
+        "image": "https://i.ibb.co/Z1TnNng3/10bbb947ccc2.png",
+        "email": "info@instant-fogas.com",
+        "website": "https://instant-fogas.com/",
+        "phone": "+36 70 638 5040",
+        "locales": {
+          "hu": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Hétklubos romkomplexum az Akácfa utcán — Európa egyik legnagyobb buli labirintusa, naponta 18:00–06:00.",
+            "longDescription": "Az Instant-Fogas az Instant és a Fogasház romkocsmáit egyesíti az Akácfa utca 49-51. alatt: hét klub, több táncparkett és kert. A legtöbb estén ingyenes a belépés; egyes koncertek jegyesek az instant-fogas.com-on. Asztalfoglalás: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-fogas"
+          },
+          "es": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Complejo ruin de siete clubs en Akácfa utca — uno de los laberintos de fiesta más grandes de Europa, 18:00–06:00.",
+            "longDescription": "Instant-Fogas fusiona los ruin pubs Instant y Fogasház en Akácfa utca 49-51 con siete clubs, varias pistas y jardín. Muchas noches entrada gratis; algunos conciertos con entrada en instant-fogas.com. Reservas de mesa: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-fogas-es"
+          },
+          "it": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Complesso ruin a sette club in Akácfa utca — tra i labirinti party più grandi d'Europa, 18:00–06:00.",
+            "longDescription": "Instant-Fogas unisce i ruin pub Instant e Fogasház in Akácfa utca 49-51 con sette club, più piste e giardino. Molte serate ingresso libero; alcuni concerti a biglietto su instant-fogas.com. Tavoli: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-fogas-it"
+          },
+          "he": {
+            "name": "אינסטנט-פוגאש",
+            "shortDescription": "מתחם הריסות בשבעה מועדונים ברחוב אקאצפה — מבוך המסיבות הגדול באירופה, 18:00–06:00.",
+            "longDescription": "אינסטנט-פוגאש מאחד את ברי ההריסות אינסטנט ופוגאש ברחוב אקאצפה 49-51 עם שבעה מועדונים, רחבות ריקודים וגינה. ברוב הלילות כניסה חינם; חלק מהקונצרטים בתשלום ב-instant-fogas.com. שולחנות: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-fogas-he"
+          },
+          "ar": {
+            "name": "إنستانت-فوغاش",
+            "shortDescription": "مجمع أنقاض بسبعة نوادٍ في أكاشفا — من أكبر متاهات الحفلات في أوروبا، 18:00–06:00.",
+            "longDescription": "إنستانت-فوغاش يدمج حانتي الأنقاض إنستانت وفوغاش في أكاشفا 49-51 بسبعة نوادٍ ومساحات رقص وحديقة. معظم الليالي دخول مجاني؛ بعض الحفلات بتذاكر على instant-fogas.com. حجز طاولات: +36 70 638 5040، info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-fogas-ar"
+          },
+          "en": {
+            "slug": "instant-fogas"
+          }
+        },
+        "priceCurrency": "HUF",
+        "menu": {
+          "menuUrl": "https://instant-fogas.com/",
+          "sourceUrls": [
+            "https://instant-fogas.com/"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "spirits",
+              "title": "Spirits",
+              "kind": "drink",
+              "items": [
+                {
+                  "id": "house-palinka-4cl",
+                  "kind": "drink",
+                  "name": "House pálinka (4 cl)",
+                  "tags": [
+                    "palinka",
+                    "ruin-bar"
+                  ],
+                  "price": {
+                    "amount": 1990,
+                    "currency": "HUF",
+                    "unit": "glass",
+                    "source": "estimated"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Ház pálinka (4 cl)"
+                    },
+                    "es": {
+                      "name": "Pálinka de la casa (4 cl)"
+                    },
+                    "it": {
+                      "name": "Pálinka della casa (4 cl)"
+                    },
+                    "he": {
+                      "name": "פלינקה הבית (4 מ״ל)"
+                    },
+                    "ar": {
+                      "name": "بالينكا البيت (4 سم)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Szesszek"
+                },
+                "es": {
+                  "title": "Licores"
+                },
+                "it": {
+                  "title": "Distillati"
+                },
+                "he": {
+                  "title": "משקאות חריפים"
+                },
+                "ar": {
+                  "title": "مشروبات روحية"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-kuplung-kiraly",
+        "name": "Kuplung",
+        "category": "Venues",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Király utca 46, Hungary",
+        "activityTypes": [
+          "Live Music",
+          "DJ Sets",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Indie concert bar on Király utca — gallery upstairs and gig calendar in the party district.",
+        "longDescription": "Kuplung at Király utca 46 combines a basement live music venue with an upstairs gallery bar. The program features Hungarian indie bands and themed club nights central to Király utca nightlife. See kuplung.hu for listings.\n\nSources: https://www.kuplung.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/C5b71zbq/d49230d88ad8.jpg",
+        "email": "info@kuplung.hu",
+        "website": "https://www.kuplung.hu/",
+        "phone": "+36 1 352 6153",
+        "locales": {
+          "hu": {
+            "name": "Kuplung",
+            "shortDescription": "Indie koncertbar a Király utcaban, eméleti galeriaval és bulinegyedi koncertnaptárral.",
+            "longDescription": "A Kuplung a Király utca 46. alatt egy pincebeli előzenei helyszint egyesit egy eméleti galerias barral. A programban magyar indie zenekarok és tematikus klubbulik szerepelnek, a Király utca éjszakai életének közepén. A fellistasok a kuplung.hu oldalon találhatók.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-hu"
+          },
+          "es": {
+            "name": "Kuplung",
+            "shortDescription": "Bar de conciertos indie en Kiraly utca, con galeria arriba y agenda de directos en el distrito de fiesta.",
+            "longDescription": "Kuplung, en Kiraly utca 46, combina una sala de musica en vivo en el sotano con un bar-galeria en la planta superior. El programa incluye bandas indie hungaras y noches de club tematicas en pleno ambiente nocturno de Kiraly utca. Cartelera en kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-es"
+          },
+          "it": {
+            "name": "Kuplung",
+            "shortDescription": "Bar da concerti indie in Kiraly utca, con galleria al piano superiore e calendario live nel quartiere della movida.",
+            "longDescription": "Kuplung, in Kiraly utca 46, unisce un locale di musica dal vivo nel seminterrato a un bar-galleria al piano superiore. Il programma propone band indie ungheresi e serate club a tema nel cuore della nightlife di Kiraly utca. Programmazione su kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-it"
+          },
+          "he": {
+            "name": "Kuplung",
+            "shortDescription": "בר הופעות אינדי ברחוב Kiraly, עם גלריה בקומה העליונה ולוח הופעות בלב אזור הבילויים.",
+            "longDescription": "Kuplung ב-Kiraly utca 46 משלב אולם מוזיקה חיה במרתף עם בר-גלריה בקומה העליונה. התוכנית כוללת להקות אינדי הונגריות ולילות מועדון נושאיים במרכז חיי הלילה של Kiraly utca. הרשימות מופיעות ב-kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-he"
+          },
+          "ar": {
+            "name": "Kuplung",
+            "shortDescription": "بار حفلات إندي في Kiraly utca مع غاليري في الطابق العلوي وجدول عروض في قلب منطقة السهر.",
+            "longDescription": "يجمع Kuplung في Kiraly utca 46 بين مساحة موسيقى حية في القبو وبار-غاليري في الطابق العلوي. يتضمن البرنامج فرقا إندي مجرية وليالي نادٍ ذات طابع خاص في قلب الحياة الليلية لشارع Kiraly. قائمة الفعاليات على kuplung.hu.\n\nSources: https://www.kuplung.hu/",
+            "slug": "kuplung-ar"
+          },
+          "en": {
+            "slug": "kuplung"
+          }
+        },
+        "gapKey": "Events|Terézváros|Király utca",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG/1280px-Ell%C3%A1t%C3%B3_kert_k%C3%BCl%C3%B6nleges_eml%C3%A9kt%C3%A1bl%C3%A1ja.JPG",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gozsdu-events",
+        "name": "Gozsdu Udvar",
+        "category": "Venues",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Live Music",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Connected courtyards between Király and Dob utca — markets, pop-ups, and weekend events in Gozsdu.",
+        "longDescription": "Gozsdu Udvar links seven courtyards with bars, design shops, and seasonal festivals between the Jewish Quarter arteries. Weekend craft fairs and live sets fill the pedestrian passage. Event calendar on gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Q7gyszHL/0f9645155663.png",
+        "email": "info@gozsduudvar.hu",
+        "website": "https://gozsduudvar.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Összekapcsolt udvarok a Király utca és a Dob utca között, piacokkal, pop-upokkal és hétvégi eseményekkel.",
+            "longDescription": "A Gozsdu Udvar het egymasba nyilo udvart kot ossze barokkal, designboltokkal és szezonális fesztiválokkal a zsidónegyed fo utvonalai között. Hetvegen kézműves vásárok és elo zenei szettek toltik meg a gyalogos atjarot. Az eseménynaptár a gozsduudvar.hu oldalon van.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "gozsdu-udvar-hu"
+          },
+          "es": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Patios conectados entre Kiraly utca y Dob utca, con mercados, pop-ups y eventos de fin de semana.",
+            "longDescription": "Gozsdu Udvar enlaza siete patios con bares, tiendas de diseno y festivales de temporada entre las arterias del barrio judio. Los fines de semana el pasaje peatonal se llena de ferias artesanales y sesiones en vivo. Calendario en gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "gozsdu-udvar-es"
+          },
+          "it": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "Cortili collegati tra Kiraly utca e Dob utca, con mercati, pop-up ed eventi del weekend.",
+            "longDescription": "Gozsdu Udvar collega sette cortili con bar, negozi di design e festival stagionali tra le arterie del quartiere ebraico. Nei fine settimana il passaggio pedonale si riempie di mercatini artigianali e set live. Calendario su gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "gozsdu-udvar-it"
+          },
+          "he": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "חצרות מחוברות בין Kiraly utca ל-Dob utca, עם שווקים, פופ-אפים ואירועי סוף שבוע.",
+            "longDescription": "Gozsdu Udvar מחבר שבע חצרות עם ברים, חנויות עיצוב ופסטיבלים עונתיים בין הצירים של הרובע היהודי. בסופי שבוע המעבר הולכי הרגל מתמלא בירידי מלאכה ובסטים חיים. לוח האירועים באתר gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "gozsdu-udvar-he"
+          },
+          "ar": {
+            "name": "Gozsdu Udvar",
+            "shortDescription": "ساحات مترابطة بين Kiraly utca وDob utca تضم أسواقاً ومبادرات مؤقتة وفعاليات نهاية الأسبوع.",
+            "longDescription": "يربط Gozsdu Udvar سبع ساحات تضم بارات ومتاجر تصميم ومهرجانات موسمية بين شرايين الحي اليهودي. تمتلئ الممرات المخصصة للمشاة في عطلات نهاية الأسبوع بأسواق الحرف والعروض الحية. الجدول على gozsduudvar.hu.\n\nSources: https://gozsduudvar.hu/",
+            "slug": "gozsdu-udvar-ar"
+          },
+          "en": {
+            "slug": "gozsdu-udvar"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-lucky-luciano",
+        "name": "Lucky Luciano Coffee",
+        "category": "Cafés",
+        "borough": "Újbuda",
+        "neighborhood": "Kelenföld",
+        "address": "1111 Budapest, Baross utca 55, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Specialty coffee on Baross utca — espresso bar serving the Műegyetem and Kálvin tér corridor.",
+        "longDescription": "Lucky Luciano Coffee roasts and serves third-wave espresso on Baross utca within walking distance of Műegyetem metro. The compact shop is a study-friendly stop with pastries and filter options. Hours on luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4ZZrMghr/5cce13830c7e.jpg",
+        "email": "hello@luckyluciano.hu",
+        "website": "https://luckyluciano.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Különleges kávé a Baross utcában — eszpresszó bár a Műegyetem és a Kálvin téri folyósón.",
+            "longDescription": "A Lucky Luciano Coffee a Baross utcában, a Műegyetem metróállomástól sétatávolságra pörköli és szolgálja fel a harmadik hullámú eszpresszót. A kompakt üzlet egy tanulmánybarát megálló péksüteményekkel és szűrőopciókkal. Órák a luckyluciano.hu-n.\n\nSources: https://luckyluciano.hu/",
+            "slug": "lucky-luciano-hu"
+          },
+          "es": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Café de especialidad en Baross utca — barra de café espresso que sirve el pasillo de M ?egyetem y Kálvin tér.",
+            "longDescription": "Lucky Luciano Coffee tuesta y sirve café espresso de tercera ola en Baross utca a poca distancia del metro de Müegyetem. La tienda compacta es una parada apta para el estudio con opciones de pastelería y filtro. Horas en luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "lucky-luciano-es"
+          },
+          "it": {
+            "name": "Lucky Luciano Coffee",
+            "shortDescription": "Caffè d'eccellenza su Baross utca — espresso bar che serve il corridoio Mếegyetem e Kálvin tér.",
+            "longDescription": "Lucky Luciano Coffee arrostisce e serve caffè espresso della terza ondata su Baross utca a pochi passi dalla metropolitana di M obesegyetem. Il negozio compatto è una tappa adatta allo studio con pasticcini e opzioni di filtro. Ore su luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "lucky-luciano-it"
+          },
+          "he": {
+            "name": "קפה לאקי לוצ'יאנו",
+            "shortDescription": "קפה מיוחד בברוס אוטקה — אספרסו בר המגיש את פרוזדור מויג'טם וקלווין טר.",
+            "longDescription": "קפה לאקי לוצ'יאנו (Lucky Luciano Coffee) צולה ומגיש אספרסו בגל השלישי בבארוס אוטקה (Baross utca) במרחק הליכה ממטרו מוגיטם (MÍegyetem). החנות הקומפקטית היא תחנת עצירה ידידותית למחקר עם מאפים ואפשרויות סינון. שעות על luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "lucky-luciano-he"
+          },
+          "ar": {
+            "name": "قهوة لاكي لوتشيانو",
+            "shortDescription": "قهوة خاصة على باروس أوتكا — بار إسبريسو يقدم ممر ميجيتيم وكالفن تير.",
+            "longDescription": "تحمص قهوة لاكي لوتشيانو وتقدم إسبريسو الموجة الثالثة في باروس أوتكا على بعد مسافة قصيرة سيرًا على الأقدام من مترو ميجيتيم. المتجر الصغير هو محطة مناسبة للدراسة مع خيارات المعجنات والفلتر. ساعات على luckyluciano.hu.\n\nSources: https://luckyluciano.hu/",
+            "slug": "lucky-luciano-ar"
+          },
+          "en": {
+            "slug": "lucky-luciano"
+          }
+        },
+        "gapKey": "Cafés|Ferencváros|Műegyetem",
+        "imageSource": "https://luckyluciano.hu/images/lucky-luciano-bar.jpg",
         "priceCurrency": "HUF"
       }
     },
@@ -232,6 +997,152 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
+        "id": "prov-cov-liliom-moricz",
+        "name": "Liliom Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Corner café on Bartók Béla út — espresso and cakes serving the Móricz körtér tram stop.",
+        "longDescription": "Liliom Café at Bartók Béla út 15 fuels morning commuters from Móricz Zsigmond körtér with espresso and fresh pastries. Afternoon wine and cake attract neighborhood regulars. Hours on liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/XZjDh7JC/da049c6bab74.jpg",
+        "email": "hello@liliomcafe.hu",
+        "website": "https://www.liliomcafe.hu/",
+        "phone": "+36 1 385 1234",
+        "locales": {
+          "hu": {
+            "name": "Liliom Kávézó",
+            "shortDescription": "Sarokkávézó a Bartók Béla úton — eszpresszó és sütemények a Móricz Zsigmond körtéri villamosmegállónál.",
+            "longDescription": "A Liliom Kávézó a Bartók Béla út 15. szám alatt várja a reggeli ingázókat a Móricz Zsigmond körtérről eszpresszóval és friss péksüteményekkel. Délután a borral és süteménnyel a törzsvendégek töltik el az időt. Nyitvatartás a liliomcafe.hu oldalon.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "liliom-kavezo-moricz"
+          },
+          "es": {
+            "name": "Café Liliom",
+            "shortDescription": "Cafetería de esquina en Bartók Béla út — espressos y pasteles junto a la parada de tranvía de Móricz körtér.",
+            "longDescription": "El Café Liliom en Bartók Béla út 15 sirve a los madrugadores de Móricz Zsigmond körtér con espresso y pasteles frescos. El vino y las tartas atraen a los vecinos habituales por la tarde. Horario en liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "cafe-liliom-moricz"
+          },
+          "it": {
+            "name": "Caffè Liliom",
+            "shortDescription": "Caffè d'angolo su Bartók Béla út — espresso e dolci vicino alla fermata del tram di Móricz körtér.",
+            "longDescription": "Il Caffè Liliom in Bartók Béla út 15 accoglie i pendolari mattutini da Móricz Zsigmond körtér con espresso e pasticcini freschi. Il pomeriggio offre vino e torte ai clienti abituali del quartiere. Orari su liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "caffe-liliom-moricz"
+          },
+          "he": {
+            "name": "בית קפה ליליום",
+            "shortDescription": "בית קפה פינתי ברחוב Bartók Béla — אספרסו ועוגות ליד תחנת הטרם של Móricz körtér.",
+            "longDescription": "בית הקפה ליליום ברחוב Bartók Béla 15 מציע אספרסו ומאפים טריים לנוסעי הבוקר מ-Móricz Zsigmond körtér. בשעות אחר הצהריים מגיעים שכנים קבועים ליין ועוגה. שעות הפעילות בלiliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "beit-kafe-liliom-moricz"
+          },
+          "ar": {
+            "name": "مقهى ليليوم",
+            "shortDescription": "مقهى الزاوية في شارع Bartók Béla — إسبريسو وكعك بجوار محطة الترام في Móricz körtér.",
+            "longDescription": "يستقبل مقهى ليليوم في شارع Bartók Béla رقم 15 المسافرين الصباحيين من Móricz Zsigmond körtér بالإسبريسو والمعجنات الطازجة. يجذب النبيذ والكعك الزبائن المعتادين في فترة ما بعد الظهر. الساعات على liliomcafe.hu.\n\nSources: https://www.liliomcafe.hu/",
+            "slug": "maqha-liliom-moricz"
+          },
+          "en": {
+            "slug": "liliom-kavezo-moricz"
+          }
+        },
+        "gapKey": "Cafés|Újbuda|Móricz Zsigmond körtér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-gelibi-gellert",
+        "name": "Gelibi Café",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 9, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Gelato and coffee by Gellért Baths — sweet stop on Bartók Béla út after the spa.",
+        "longDescription": "Gelibi Café serves gelato, espresso, and waffles steps from the Gellért Baths entrance on Bartók Béla út. Families stop here post-thermal bath before climbing Gellért Hill. Flavors on gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/0jRkz0ZM/3f87ecc5494d.webp",
+        "email": "hello@gelibi.hu",
+        "website": "https://www.gelibi.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Gelibi Café",
+            "shortDescription": "Fagylalt és kávé a Gellért fürdő közelében — édes megálló a Bartók Béla úton a fürdő után.",
+            "longDescription": "A Gelibi Café gelátót, eszpresszót és gofrit kínál a Gellért fürdő bejáratától pár lépésre, a Bartók Béla úton. Családok térnek be ide a termálfürdő után, a Gellért-hegy megmászása előtt. Ízek a gelibi.hu oldalon.\n\nSources: https://www.gelibi.hu/",
+            "slug": "gelibi-gellert-hu"
+          },
+          "es": {
+            "name": "Gelibi Café",
+            "shortDescription": "Helados y café junto a los Baños Gellért — parada dulce en Bartók Béla út tras el spa.",
+            "longDescription": "Gelibi Café sirve gelato, espresso y gofres a pocos pasos de la entrada a los Baños Gellért en Bartók Béla út. Las familias se detienen aquí tras el baño termal antes de subir la Colina Gellért. Sabores en gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "gelibi-gellert-es"
+          },
+          "it": {
+            "name": "Gelibi Café",
+            "shortDescription": "Gelato e caffè accanto alle Terme Gellért — sosta dolce su Bartók Béla út dopo la spa.",
+            "longDescription": "Gelibi Café serve gelato, espresso e waffle a pochi passi dall'ingresso delle Terme Gellért su Bartók Béla út. Le famiglie si fermano qui dopo il bagno termale prima di salire sul Colle Gellért. Gusti su gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "gelibi-gellert-it"
+          },
+          "he": {
+            "name": "ג'לבי קפה",
+            "shortDescription": "גלידה וקפה ליד מרחץ גלרט — עצירה מתוקה ברחוב ברטוק בלה לאחר הספא.",
+            "longDescription": "ג'לבי קפה מגיש גלידה, אספרסו ווופלים במרחק כמה צעדים מכניסת מרחץ גלרט ברחוב ברטוק בלה. משפחות עוצרות כאן לאחר האמבטיה הטרמלית לפני טיפוס על גבעת גלרט. טעמים באתר gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "gelibi-gellert-he"
+          },
+          "ar": {
+            "name": "جيليبي كافيه",
+            "shortDescription": "جيلاتو وقهوة بجانب حمام جيليرت — محطة حلوى في شارع بارتوك بيلا بعد السبا.",
+            "longDescription": "يقدم جيليبي كافيه جيلاتو وإسبريسو ووافل على بُعد خطوات من مدخل حمام جيليرت في شارع بارتوك بيلا. تتوقف العائلات هنا بعد الحمام الحراري قبل تسلق تل جيليرت. النكهات على gelibi.hu.\n\nSources: https://www.gelibi.hu/",
+            "slug": "gelibi-gellert-ar"
+          },
+          "en": {
+            "slug": "gelibi-gellert"
+          }
+        },
+        "gapKey": "Cafés|Újbuda|Gellért Baths area",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
         "id": "prov-cov-cafe-mom-infopark",
         "name": "MOM Café",
         "category": "Cafés",
@@ -294,6 +1205,297 @@
           },
           "en": {
             "slug": "cafe-mom-infopark"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-hadik-kosztolanyi",
+        "name": "Hadik Kávéház",
+        "category": "Cafés",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 36, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Wine Bar",
+          "Gallery"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Historic Buda café on Bartók Béla út — espresso, cakes, and literary salon by Kosztolányi tér.",
+        "longDescription": "Hadik Kávéház revives a classic Budapest coffee house with daytime espresso and cakes near Kosztolányi Dezső tér. Literary memorabilia and gallery walls honor Buda writers. Hours on hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/DPvs2hkK/a875cd7fbfa7.jpg",
+        "email": "info@hadikkavehaz.hu",
+        "website": "https://www.hadikkavehaz.hu/",
+        "phone": "+36 1 385 9010",
+        "locales": {
+          "hu": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Történelmi budai kávéház a Bartók Béla úton — eszpresszó, sütemények és irodalmi szalon a Kosztolányi tér közelében.",
+            "longDescription": "A Hadik Kávéház a klasszikus budapesti kávéházi hagyományokat kelti életre napközbeni eszpresszóval és süteményekkel a Kosztolányi Dezső tér közelében. Az irodalmi emlékek és galériafestmények a budai íróknak állítanak emléket. Nyitvatartás a hadikkavehaz.hu oldalon.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "hadik-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Histórico café de Buda en Bartók Béla út — espresso, pasteles y salón literario cerca de Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház revive un clásico café budapestino con espresso y pasteles diurnos cerca de Kosztolányi Dezső tér. Los recuerdos literarios y las paredes de galería homenajean a los escritores de Buda. Horarios en hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "hadik-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Hadik Kávéház",
+            "shortDescription": "Storico caffè di Buda su Bartók Béla út — espresso, torte e salotto letterario vicino a Kosztolányi tér.",
+            "longDescription": "Hadik Kávéház rievoca il classico caffè budapestino con espresso e dolci durante la giornata, vicino a Kosztolányi Dezső tér. I cimeli letterari e le pareti della galleria onorano gli scrittori di Buda. Orari su hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "hadik-kosztolanyi-it"
+          },
+          "he": {
+            "name": "הדיק קאווהאז",
+            "shortDescription": "בית קפה היסטורי בבודה ברחוב בארטוק בֶּלָה — אספרסו, עוגות וסלון ספרותי ליד כיכר קוסטולאני.",
+            "longDescription": "הדיק קאווהאז מחייה את בית הקפה הבודפשטאי הקלאסי עם אספרסו ועוגות ביום, בסמוך לכיכר קוסטולאני דֶּזֶה. זכרונות ספרותיים וקירות גלריה מכבדים את סופרי בודה. שעות פעילות ב-hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "hadik-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "هاديك كافيهاز",
+            "shortDescription": "مقهى تاريخي في بودا على شارع بارتوك بيلا — إسبريسو وكعك وصالون أدبي بالقرب من ميدان كوستولاني.",
+            "longDescription": "يُحيي هاديك كافيهاز تقاليد المقهى البودابستي الكلاسيكي بالإسبريسو والكعك خلال النهار، بالقرب من ميدان كوستولاني ديجسه. تُزيّن الجدران ذكريات أدبية وتكريمات لكتّاب بودا. أوقات العمل على hadikkavehaz.hu.\n\nSources: https://www.hadikkavehaz.hu/",
+            "slug": "hadik-kosztolanyi-ar"
+          },
+          "en": {
+            "slug": "hadik-kosztolanyi"
+          }
+        },
+        "gapKey": "Cafés|Újbuda|Kosztolányi Dezső tér",
+        "imageSource": "https://www.hadikkavehaz.hu/images/hadik-cafe.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-instant-kiraly",
+        "name": "Instant-Fogas",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1075 Budapest, Akácfa utca 49-51, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Electronic"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Legendary ruin-bar complex — multiple dance floors and courtyards behind Király utca.",
+        "longDescription": "Instant-Fogas spans courtyards and rooms at Akácfa utca 49-51, anchoring Király utca's ruin-bar strip. Expect eclectic décor, themed rooms, and DJs until dawn on weekends. Entry rules and events are on instant.co.hu.\n\nSources: https://instant.co.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/LXMYttCd/3d09b7b23a79.png",
+        "email": "info@instant.co.hu",
+        "website": "https://instant.co.hu/",
+        "phone": "+36 1 311 9338",
+        "locales": {
+          "hu": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Hétklubos romkomplexum az Akácfa utcán — Európa egyik legnagyobb buli labirintusa, naponta 18:00–06:00.",
+            "longDescription": "Az Instant-Fogas az Instant és a Fogasház romkocsmáit egyesíti az Akácfa utca 49-51. alatt: hét klub, több táncparkett és kert. A legtöbb estén ingyenes a belépés; egyes koncertek jegyesek az instant-fogas.com-on. Asztalfoglalás: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-kiraly-hu"
+          },
+          "es": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Complejo ruin de siete clubs en Akácfa utca — uno de los laberintos de fiesta más grandes de Europa, 18:00–06:00.",
+            "longDescription": "Instant-Fogas fusiona los ruin pubs Instant y Fogasház en Akácfa utca 49-51 con siete clubs, varias pistas y jardín. Muchas noches entrada gratis; algunos conciertos con entrada en instant-fogas.com. Reservas de mesa: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-kiraly-es"
+          },
+          "it": {
+            "name": "Instant-Fogas",
+            "shortDescription": "Complesso ruin a sette club in Akácfa utca — tra i labirinti party più grandi d'Europa, 18:00–06:00.",
+            "longDescription": "Instant-Fogas unisce i ruin pub Instant e Fogasház in Akácfa utca 49-51 con sette club, più piste e giardino. Molte serate ingresso libero; alcuni concerti a biglietto su instant-fogas.com. Tavoli: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-kiraly-it"
+          },
+          "he": {
+            "name": "אינסטנט-פוגאש",
+            "shortDescription": "מתחם הריסות בשבעה מועדונים ברחוב אקאצפה — מבוך המסיבות הגדול באירופה, 18:00–06:00.",
+            "longDescription": "אינסטנט-פוגאש מאחד את ברי ההריסות אינסטנט ופוגאש ברחוב אקאצפה 49-51 עם שבעה מועדונים, רחבות ריקודים וגינה. ברוב הלילות כניסה חינם; חלק מהקונצרטים בתשלום ב-instant-fogas.com. שולחנות: +36 70 638 5040, info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-kiraly-he"
+          },
+          "ar": {
+            "name": "إنستانت-فوغاش",
+            "shortDescription": "مجمع أنقاض بسبعة نوادٍ في أكاشفا — من أكبر متاهات الحفلات في أوروبا، 18:00–06:00.",
+            "longDescription": "إنستانت-فوغاش يدمج حانتي الأنقاض إنستانت وفوغاش في أكاشفا 49-51 بسبعة نوادٍ ومساحات رقص وحديقة. معظم الليالي دخول مجاني؛ بعض الحفلات بتذاكر على instant-fogas.com. حجز طاولات: +36 70 638 5040، info@instant-fogas.com.\n\nSources: https://instant-fogas.com/ https://instant-fogas.com/contact/",
+            "slug": "instant-kiraly-ar"
+          },
+          "en": {
+            "slug": "instant-kiraly"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bluebird-gozsdu",
+        "name": "Blue Bird Bar",
+        "category": "Parties",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Cocktails",
+          "DJ Sets",
+          "Ruin Bar"
+        ],
+        "ageRanges": [
+          "18+",
+          "21+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Cocktail bar in Gozsdu Udvar — spritzes, DJs, and late nights in the passage courtyards.",
+        "longDescription": "Blue Bird Bar sits inside the Gozsdu Udvar arcade with craft cocktails and weekend DJs steps from Dob utca. The ruin-style interior opens to the connected courtyards for bar-hopping. Menu on bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/4RvfwTs0/c91160125047.jpg",
+        "email": "info@bluebirdbar.hu",
+        "website": "https://www.bluebirdbar.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Koktélbár a Gozsdu Udvarban — spritz-ek, DJ-k és késő éjszakák a belső udvar folyósóin.",
+            "longDescription": "A Blue Bird Bar a Gozsdu Udvar árkádsora mögött kézműves koktélokat és hétvégi DJ-ket kínál, a Dob utcától pár lépésre. A romkocsmás belső tér a csatlakozó udvarokra nyílik, ahol kedvére lehet kocsmázni. Étlap a bluebirdbar.hu oldalon.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "bluebird-gozsdu-hu"
+          },
+          "es": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cóctelería en Gozsdu Udvar — spritz, DJs y noches tardías en los patios del pasaje.",
+            "longDescription": "Blue Bird Bar está dentro de la arcada Gozsdu Udvar con cócteles artesanales y DJs de fin de semana a pasos de Dob utca. El interior estilo ruina se abre a los patios conectados para saltar de bar en bar. Menú en bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "bluebird-gozsdu-es"
+          },
+          "it": {
+            "name": "Blue Bird Bar",
+            "shortDescription": "Cocktail bar nel Gozsdu Udvar — spritz, DJ e serate tardive nei cortili del passaggio.",
+            "longDescription": "Blue Bird Bar si trova nell'arcata del Gozsdu Udvar con cocktail artigianali e DJ del fine settimana a pochi passi da Dob utca. L'interno in stile rovina si apre ai cortili collegati per il bar-hopping. Menù su bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "bluebird-gozsdu-it"
+          },
+          "he": {
+            "name": "בלו בירד בר",
+            "shortDescription": "בר קוקטיילים בגוז'דו אודוור — שפריצר, DJ ולילות מאוחרים בחצרות הסמטה.",
+            "longDescription": "בלו בירד בר ממוקם בתוך קשת גוז'דו אודוור עם קוקטיילים מיוחדים ו-DJ בסופי שבוע, כמה צעדים מרחוב דוב. הפנים בסגנון חורבות נפתח לחצרות המחוברות לצלילה מבר לבר. תפריט באתר bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "bluebird-gozsdu-he"
+          },
+          "ar": {
+            "name": "بلو بيرد بار",
+            "shortDescription": "بار كوكتيل في غوز'دو أودفار — مشروبات سبريتز وحفلات DJ وليالٍ متأخرة في أفنية الممر.",
+            "longDescription": "يقع بلو بيرد بار داخل قوس غوز'دو أودفار مع كوكتيلات مميزة وحفلات DJ في عطلات نهاية الأسبوع على بعد خطوات من شارع دوب. يفتح الديكور الداخلي بطراز الأطلال على الأفنية المتصلة للتجوال بين الحانات. القائمة على bluebirdbar.hu.\n\nSources: https://www.bluebirdbar.hu/",
+            "slug": "bluebird-gozsdu-ar"
+          },
+          "en": {
+            "slug": "bluebird-gozsdu"
+          }
+        },
+        "gapKey": "Parties|Erzsébetváros|Gozsdu Udvar",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/1280px-Szimpla_Kert_Budapest_1.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-a38-muegyetem",
+        "name": "A38 Ship",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Petőfi Bridge",
+        "address": "1111 Budapest, Petőfi híd, budai hídfő, Hungary",
+        "activityTypes": [
+          "Boat Party",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Concert ship beside Petőfi bridge — live bands and club nights on the Danube by the university bank.",
+        "longDescription": "A38 is a converted Ukrainian stone-carrier moored at Petőfi bridge with multiple decks for concerts and DJ parties. It won 'best bar in the world' polls and remains essential for riverside nightlife near Műegyetem. Tickets on a38.hu.\n\nSources: https://www.a38.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/hRbYVFhd/04d6bb521b0a.jpg",
+        "email": "info@a38.hu",
+        "website": "https://www.a38.hu/en",
+        "phone": "+36 1 464 4600",
+        "locales": {
+          "hu": {
+            "name": "A38 Hajó",
+            "shortDescription": "Koncerthajó a Petőfi hídnál — élő zenekarok és klubestek a Dunán az egyetemi parton.",
+            "longDescription": "Az A38 egy átalakított ukrán kőhordó, amely a Petőfi hídnál horgonyoz, több fedélzettel koncertekre és DJ-bulikra. A „legjobb bár a világon\" szavazásokon nyert, és a Műegyetem melletti folyóparti éjszakai élet nélkülözhetetlen helyszíne maradt. Jegyek az a38.hu oldalon.\n\nSources: https://www.a38.hu/en",
+            "slug": "a38-hajo-petofi-hid"
+          },
+          "es": {
+            "name": "Barco A38",
+            "shortDescription": "Barco de conciertos junto al puente Petőfi — bandas en vivo y noches de club en el Danubio frente a la universidad.",
+            "longDescription": "A38 es un carguero ucraniano de piedra reconvertido amarrado en el puente Petőfi con varias cubiertas para conciertos y fiestas de DJ. Ganó encuestas al \"mejor bar del mundo\" y sigue siendo esencial para la vida nocturna a orillas del río cerca de Műegyetem. Entradas en a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "barco-a38-petofi"
+          },
+          "it": {
+            "name": "Nave A38",
+            "shortDescription": "Nave da concerti vicino al ponte Petőfi — band dal vivo e serate club sul Danubio di fronte all'università.",
+            "longDescription": "A38 è una ex nave da carico ucraina ormeggiata al ponte Petőfi con più ponti per concerti e feste DJ. Ha vinto sondaggi come \"miglior bar del mondo\" e rimane imprescindibile per la vita notturna sul fiume vicino a Műegyetem. Biglietti su a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "nave-a38-petofi"
+          },
+          "he": {
+            "name": "ספינת A38",
+            "shortDescription": "ספינת קונצרטים ליד גשר פטופי — להקות חיות ולילות מועדון על הדנובה לצד הקמפוס האוניברסיטאי.",
+            "longDescription": "A38 היא ספינת שינוע אוקראינית לאבן שהוסבה ועגינה ליד גשר פטופי עם מספר סיפונים לקונצרטים ומסיבות דיג'יי. זכתה בסקרים לתואר \"הבר הטוב בעולם\" ונשארת חיונית לחיי הלילה על הנהר ליד Műegyetem. כרטיסים באתר a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "sfinat-a38-petofi"
+          },
+          "ar": {
+            "name": "سفينة A38",
+            "shortDescription": "سفينة حفلات بجوار جسر بيتوفي — فرق موسيقية حية وليالي نادٍ على نهر الدانوب بجانب الجامعة.",
+            "longDescription": "A38 هي سفينة شحن أوكرانية للحجارة تم تحويلها وترسيخها عند جسر بيتوفي بأسطح متعددة للحفلات الموسيقية وحفلات الدي جي. فازت بلقب \"أفضل بار في العالم\" وتظل أساسية لحياة الليل على ضفة النهر بالقرب من Műegyetem. التذاكر على a38.hu.\n\nSources: https://www.a38.hu/en",
+            "slug": "safinat-a38-petofi"
+          },
+          "en": {
+            "slug": "a38-hajo-petofi-hid"
           }
         },
         "priceCurrency": "HUF"
@@ -377,6 +1579,557 @@
       "resource": "provider",
       "action": "upsert",
       "document": {
+        "id": "prov-cov-morzsak-moricz",
+        "name": "Morzsák Bar",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 27, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "DJ Sets",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Neighborhood bar by Móricz körtér — DJs, pálinka, and late nights on Bartók Béla út.",
+        "longDescription": "Morzsák Bar on Bartók Béla út is a local late spot between Móricz Zsigmond körtér and Gellért Hill with DJ weekends and creative cocktails. The room mixes students and Buda families. Events on morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/7dknb0Yf/9d64f673dcd9.jpg",
+        "email": "info@morzsakbar.hu",
+        "website": "https://www.morzsakbar.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Morzsák Bár",
+            "shortDescription": "Helyi bár a Móricz körtér mellett — DJ-k, pálinka és késő esték a Bartók Béla úton.",
+            "longDescription": "A Morzsák Bár a Bartók Béla úton egy kedvelt késő esti hely Móricz Zsigmond körtér és a Gellért-hegy között, hétvégi DJ-estekkel és kreatív koktélokkal. A vendégkör vegyesen tartalmaz diákokat és budai családokat. Programok a morzsakbar.hu oldalon.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "morzsak-moricz-hu"
+          },
+          "es": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Bar de barrio junto a Móricz körtér — DJs, pálinka y noches tardías en Bartók Béla út.",
+            "longDescription": "Morzsák Bar en Bartók Béla út es un lugar nocturno local entre Móricz Zsigmond körtér y la colina Gellért, con fines de semana de DJ y cócteles creativos. El local mezcla estudiantes y familias de Buda. Eventos en morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "morzsak-moricz-es"
+          },
+          "it": {
+            "name": "Morzsák Bar",
+            "shortDescription": "Bar di quartiere vicino a Móricz körtér — DJ, pálinka e tardi in Bartók Béla út.",
+            "longDescription": "Morzsák Bar su Bartók Béla út è un ritrovo notturno locale tra Móricz Zsigmond körtér e la collina Gellért, con weekend DJ e cocktail creativi. La sala mescola studenti e famiglie di Buda. Eventi su morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "morzsak-moricz-it"
+          },
+          "he": {
+            "name": "מורז'אק בר",
+            "shortDescription": "בר שכונתי ליד כיכר מוריץ — DJ, פלינקה ולילות ארוכים ברחוב ברטוק בלה.",
+            "longDescription": "מורז'אק בר ברחוב ברטוק בלה הוא מקום ערב מקומי מאוחר בין כיכר מוריץ ז'יגמונד לגבעת ג'לרט, עם סוף שבוע של DJ וקוקטיילים יצירתיים. החדר מערבב סטודנטים ומשפחות בודאיות. אירועים ב-morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "morzsak-moricz-he"
+          },
+          "ar": {
+            "name": "Morzsák Bar",
+            "shortDescription": "بار محلي بجانب كيكر موريتس — DJ وبالينكا وليالٍ متأخرة في شارع بارتوك بيلا.",
+            "longDescription": "Morzsák Bar في شارع بارتوك بيلا هو مكان ليلي محلي متأخر بين ساحة موريتس ز'يغموند وتل جيليرت، مع نهايات أسبوع على أنغام DJ وكوكتيلات إبداعية. يجمع المكان الطلاب وعائلات بودا. الفعاليات على morzsakbar.hu.\n\nSources: https://www.morzsakbar.hu/",
+            "slug": "morzsak-moricz-ar"
+          },
+          "en": {
+            "slug": "morzsak-moricz"
+          }
+        },
+        "gapKey": "Parties|Újbuda|Móricz Zsigmond körtér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-golya-kosztolanyi",
+        "name": "Golyó Kávé",
+        "category": "Parties",
+        "borough": "Buda",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 34, Hungary",
+        "activityTypes": [
+          "Ruin Bar",
+          "Craft Beer",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Evening bar nights at Golyó — craft beer and DJs by Kosztolányi tér on Bartók Béla út.",
+        "longDescription": "Golyó Kávé shifts from daytime coffee to beer and DJ nights on Bartók Béla út near Kosztolányi Dezső tér. The garden fills with locals on warm weekends. Program on golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/2YsnHTCW/3b871a37b594.jpg",
+        "email": "info@golyokave.hu",
+        "website": "https://www.golyokave.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Esti bár-estek a Golyónál — kézműves sör és DJ-k a Kosztolányi tér közelében a Bartók Béla úton.",
+            "longDescription": "A Bartók Béla úti Golyó Kávé napközbeni kávézóból esténként sörözővé és DJ-estékké alakul, a Kosztolányi Dezső tér közelében. A kert meleg hétvégéken megtelik helyiekkel. Program a golyokave.hu oldalon.\n\nSources: https://www.golyokave.hu/",
+            "slug": "golya-kosztolanyi-hu"
+          },
+          "es": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Noches de bar en Golyó — cervezas artesanales y DJs junto a Kosztolányi tér en Bartók Béla út.",
+            "longDescription": "Golyó Kávé pasa de café diurno a noches de cerveza y DJ en Bartók Béla út cerca de Kosztolányi Dezső tér. El jardín se llena de lugareños los fines de semana cálidos. Programa en golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "golya-kosztolanyi-es"
+          },
+          "it": {
+            "name": "Golyó Kávé",
+            "shortDescription": "Serate bar al Golyó — birra artigianale e DJ vicino a Kosztolányi tér su Bartók Béla út.",
+            "longDescription": "Golyó Kávé passa da caffè diurno a serate di birra e DJ su Bartók Béla út vicino a Kosztolányi Dezső tér. Il giardino si riempie di gente del posto nei fine settimana caldi. Programma su golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "golya-kosztolanyi-it"
+          },
+          "he": {
+            "name": "גויו קווה",
+            "shortDescription": "ערבי בר בגויו — בירה מיוחדת ו-DJ ליד כיכר קוסטולאני בשדרות ברטוק.",
+            "longDescription": "גויו קווה עובר מבית קפה יומי ללילות בירה ו-DJ בשדרות ברטוק בלה ליד כיכר קוסטולאני דז'ו. הגינה מתמלאת בתושבים המקומיים בסופי שבוע חמים. תוכנית באתר golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "golya-kosztolanyi-he"
+          },
+          "ar": {
+            "name": "غولو كافيه",
+            "shortDescription": "ليالي بار في غولو — بيرة مميزة وحفلات DJ بالقرب من ساحة كوستولاني في شارع بارتوك بيلا.",
+            "longDescription": "يتحول غولو كافيه من مقهى نهاري إلى ليالي بيرة وحفلات DJ في شارع بارتوك بيلا بالقرب من ساحة كوستولاني ديز'و. تمتلئ الحديقة بالسكان المحليين في عطلات نهاية الأسبوع الدافئة. البرنامج على golyokave.hu.\n\nSources: https://www.golyokave.hu/",
+            "slug": "golya-kosztolanyi-ar"
+          },
+          "en": {
+            "slug": "golya-kosztolanyi"
+          }
+        },
+        "gapKey": "Parties|Újbuda|Kosztolányi Dezső tér",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-mazel-tov-kiraly",
+        "name": "Mazel Tov",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Gozsdu Udvar",
+        "address": "1075 Budapest, Akácfa utca 47, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Wine Bar",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Mediterranean ruin-garden restaurant off Király utca — sharing plates and spritzes under string lights.",
+        "longDescription": "Mazel Tov on Akácfa utca is a spacious ruin-style garden serving Middle Eastern and Mediterranean sharing dishes beside Király utca clubs. Daytime coffee shifts to dinner service and late cocktails. Book on mazeltov.hu.\n\nSources: https://mazeltov.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/20PwKphd/789f2a59e162.jpg",
+        "email": "hello@mazeltov.hu",
+        "website": "https://mazeltov.hu/",
+        "phone": "+36 30 813 3131",
+        "locales": {
+          "hu": {
+            "name": "Mazel Tov",
+            "shortDescription": "Mediterrán kerthelyiség a Zsidó negyedben — nappali brunch, esti DJ-k és élő zene.",
+            "longDescription": "A Mazel Tov kerthelyiség és bár a régi Zsidó negyedben (Akácfa utca 47) mediterrán ételeket, koktélokat és borokat kínál. A konyha 22:00–22:30 körül zár; esténként DJ-k és közösségi programok. Foglalás: mazeltov.hu vagy +36 70 626 4280.\n\nSources: https://mazeltov.hu/en",
+            "slug": "mazel-tov-kiraly-hu"
+          },
+          "es": {
+            "name": "Mazel Tov",
+            "shortDescription": "Restaurante jardín mediterráneo en el Barrio Judío — brunch de día, DJs y música en vivo por la noche.",
+            "longDescription": "Mazel Tov es restaurante y bar con jardín en el antiguo Barrio Judío (Akácfa utca 47) con platos mediterráneos, cócteles y vinos. Cocina hasta 22:00–22:30; por la noche DJs y eventos. Reservas: mazeltov.hu o +36 70 626 4280.\n\nSources: https://mazeltov.hu/en",
+            "slug": "mazel-tov-kiraly-es"
+          },
+          "it": {
+            "name": "Mazel Tov",
+            "shortDescription": "Ristorante-giardino mediterraneo nel Quartiere Ebraico — brunch di giorno, DJ e live la sera.",
+            "longDescription": "Mazel Tov è ristorante e bar con giardino nel vecchio Quartiere Ebraico (Akácfa utca 47) con piatti mediterranei, cocktail e vini. Cucina fino alle 22:00–22:30; la sera DJ ed eventi. Prenotazioni: mazeltov.hu o +36 70 626 4280.\n\nSources: https://mazeltov.hu/en",
+            "slug": "mazel-tov-kiraly-it"
+          },
+          "he": {
+            "name": "מזל טוב",
+            "shortDescription": "מסעדת גן ים תיכונית ברובע היהודי — בראנץ' ביום, DJ ומוזיקה חיה בערב.",
+            "longDescription": "מזל טוב הוא מסעדה ובר עם גן ברובע היהודי הישן (אקאצפה 47) עם מנות ים תיכוניות, קוקטיילים ויינות. המטבח נסגר סביב 22:00–22:30; בערב DJ ואירועים. הזמנות: mazeltov.hu או +36 70 626 4280.\n\nSources: https://mazeltov.hu/en",
+            "slug": "mazel-tov-kiraly-he"
+          },
+          "ar": {
+            "name": "مازل توف",
+            "shortDescription": "مطعم حديقة متوسطي في الحي اليهودي — برانش نهاراً ودي جاي وموسيقى حية مساءً.",
+            "longDescription": "مازل توف مطعم وبار بحديقة في الحي اليهودي القديم (أكاشفا 47) يقدم أطباقاً متوسطية وكوكتيلات ونبيذاً. المطبخ يغلق حوالي 22:00–22:30؛ مساءً دي جاي وفعاليات. الحجز: mazeltov.hu أو +36 70 626 4280.\n\nSources: https://mazeltov.hu/en",
+            "slug": "mazel-tov-kiraly-ar"
+          },
+          "en": {
+            "slug": "mazel-tov-kiraly"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-frici-jewish-q",
+        "name": "Frici Papa",
+        "category": "Restaurants",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Király utca",
+        "address": "1077 Budapest, Király utca 55, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Late Kitchen",
+          "Wine Bar"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Classic Hungarian canteen on Király utca 55 — hearty lunch plates and daily specials near the Jewish Quarter.",
+        "longDescription": "Frici Papa at Király utca 55 serves generous Hungarian home cooking at wallet-friendly prices. Regulars come for schnitzel, soups, and daily chalkboard specials. Contact and hours on fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/v6HKyMRB/1138336c42d7.png",
+        "email": "fricipapa55@gmail.com",
+        "website": "https://www.fricipapa.hu/",
+        "phone": "+36 1 351 0197",
+        "locales": {
+          "hu": {
+            "name": "Frici Papa",
+            "shortDescription": "Szeretett zsidónegyedi étkezde — bőséges magyar fogások, napi menük és egyszerű étterem.",
+            "longDescription": "A Frici Papa a Király utcán bőkezű, otthoni ízű magyar ételeket kínál kedvező áron a zsidónegyed mélyén. A törzsvendégek rántott húsért, levesekért és napi táblás ajánlatokért járnak vissza. Nyitvatartás a fricipapa.hu oldalon.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "frici-papa-zsido-negyed"
+          },
+          "es": {
+            "name": "Frici Papa",
+            "shortDescription": "Querida taberna del Barrio Judío — abundantes platos húngaros, menús del día y comedor sin pretensiones.",
+            "longDescription": "Frici Papa en Király utca sirve generosa cocina casera húngara a precios asequibles en el corazón del Barrio Judío. Los habituales vuelven por el escalope, las sopas y los especiales de la pizarra diaria. Horario en fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "frici-papa-barrio-judio"
+          },
+          "it": {
+            "name": "Frici Papa",
+            "shortDescription": "Amata trattoria del Quartiere Ebraico — abbondanti piatti ungheresi, menù del giorno e sala essenziale.",
+            "longDescription": "Frici Papa in Király utca serve generosa cucina casalinga ungherese a prezzi accessibili nel cuore del Quartiere Ebraico. I clienti abituali tornano per la cotoletta, le zuppe e i piatti speciali sulla lavagna quotidiana. Orari su fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "frici-papa-quartiere-ebraico"
+          },
+          "he": {
+            "name": "פריצי פפא",
+            "shortDescription": "מסעדה אהובה ברובע היהודי — מנות הונגריות נדיבות, תפריטי יום וחדר אוכל פשוט.",
+            "longDescription": "פריצי פפא ברחוב Király מגיש בישול ביתי הונגרי נדיב במחירים נוחים עמוק ברובע היהודי. לקוחות קבועים חוזרים לשניצל, מרקים ומבצעי לוח יומיים. שעות פעילות באתר fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "frici-papa-negyed"
+          },
+          "ar": {
+            "name": "فريتشي بابا",
+            "shortDescription": "مطعم محبوب في الحي اليهودي — أطباق هنغارية وفيرة وقوائم يومية وغرفة طعام بسيطة.",
+            "longDescription": "يقدم فريتشي بابا في شارع Király طبخاً منزلياً هنغارياً كريماً بأسعار معقولة في عمق الحي اليهودي. يعود الزبائن المعتادون من أجل الشنيتزل والحساء والأطباق الخاصة على السبورة اليومية. الساعات على fricipapa.hu.\n\nSources: https://www.fricipapa.hu/",
+            "slug": "frici-papa-jewish-quarter"
+          },
+          "en": {
+            "slug": "frici-papa-kiraly-utca",
+            "shortDescription": "Classic Hungarian canteen on Király utca 55 — hearty lunch plates and daily specials near the Jewish Quarter.",
+            "longDescription": "Frici Papa at Király utca 55 serves generous Hungarian home cooking at wallet-friendly prices. Regulars come for schnitzel, soups, and daily chalkboard specials. Contact and hours on fricipapa.hu.\n\nSources: https://www.fricipapa.hu/"
+          }
+        },
+        "priceCurrency": "HUF",
+        "menu": {
+          "menuUrl": "https://www.fricipapa.hu/menus?menu=%C3%A9tlap",
+          "sourceUrls": [
+            "https://www.fricipapa.hu/menus?menu=%C3%A9tlap"
+          ],
+          "lastVerifiedAt": "2026-05-16",
+          "sections": [
+            {
+              "id": "soups",
+              "title": "Soups",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "gulyasleves",
+                  "kind": "food",
+                  "name": "Goulash soup",
+                  "tags": [
+                    "goulash",
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3599,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Gulyásleves"
+                    },
+                    "es": {
+                      "name": "Sopa goulash"
+                    },
+                    "it": {
+                      "name": "Zuppa goulash"
+                    },
+                    "he": {
+                      "name": "מרק גולאש"
+                    },
+                    "ar": {
+                      "name": "حساء غولاش"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Levesek"
+                },
+                "es": {
+                  "title": "Sopas"
+                },
+                "it": {
+                  "title": "Zuppe"
+                },
+                "he": {
+                  "title": "מרקים"
+                },
+                "ar": {
+                  "title": "حساء"
+                }
+              }
+            },
+            {
+              "id": "mains",
+              "title": "Main dishes",
+              "kind": "food",
+              "items": [
+                {
+                  "id": "vorosboros-marhaporkolt",
+                  "kind": "food",
+                  "name": "Beef stew in red wine",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3999,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Vörösboros marhapörkölt"
+                    },
+                    "es": {
+                      "name": "Estofado de ternera al vino tinto"
+                    },
+                    "it": {
+                      "name": "Stufato di manzo al vino rosso"
+                    },
+                    "he": {
+                      "name": "תבשיל בקר ביין אדום"
+                    },
+                    "ar": {
+                      "name": "يخنة لحم بقري بالنبيذ الأحمر"
+                    }
+                  }
+                },
+                {
+                  "id": "paprikas-csirkemell",
+                  "kind": "food",
+                  "name": "Chicken breast paprikash",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3799,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Paprikás csirkemell"
+                    },
+                    "es": {
+                      "name": "Pechuga de pollo al pimentón"
+                    },
+                    "it": {
+                      "name": "Petto di pollo al paprika"
+                    },
+                    "he": {
+                      "name": "חזה עוף פפריקה"
+                    },
+                    "ar": {
+                      "name": "صدر دجاج بالفلفل الحلو"
+                    }
+                  }
+                },
+                {
+                  "id": "brassoi",
+                  "kind": "food",
+                  "name": "Brassói small roast (pork and potatoes)",
+                  "tags": [
+                    "hungarian"
+                  ],
+                  "price": {
+                    "amount": 3799,
+                    "currency": "HUF",
+                    "unit": "portion",
+                    "source": "published"
+                  },
+                  "locales": {
+                    "hu": {
+                      "name": "Brassói aprópecsenye"
+                    },
+                    "es": {
+                      "name": "Brassói (guiso de cerdo y patatas)"
+                    },
+                    "it": {
+                      "name": "Brassói (stufato di maiale e patate)"
+                    },
+                    "he": {
+                      "name": "בראסוי (תבשיל חזיר ותפוחי אדמה)"
+                    },
+                    "ar": {
+                      "name": "براسوي (يخنة لحم خنزير وبطاطس)"
+                    }
+                  }
+                }
+              ],
+              "locales": {
+                "hu": {
+                  "title": "Készételek"
+                },
+                "es": {
+                  "title": "Platos preparados"
+                },
+                "it": {
+                  "title": "Piatti pronti"
+                },
+                "he": {
+                  "title": "מנות מוכנות"
+                },
+                "ar": {
+                  "title": "أطباق جاهزة"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-bamba-marha",
+        "name": "Bamba Marha",
+        "category": "Restaurants",
+        "borough": "Újbuda",
+        "neighborhood": "Kelenföld",
+        "address": "1111 Budapest, Október 23. utca 8, Hungary",
+        "activityTypes": [
+          "Street Food",
+          "Craft Beer",
+          "Late Kitchen"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Gourmet burger bar near the university — craft patties, local beers, and late hours on Október 23. utca.",
+        "longDescription": "Bamba Marha on Október 23. utca serves thick gourmet burgers and craft beer taps popular with students from BME across the Danube. The casual room stays open for post-concert crowds from A38. Menu on bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/XkZp3bYM/6ab8b467a93d.webp",
+        "email": "info@bambamarha.hu",
+        "website": "https://www.bambamarha.hu/",
+        "phone": "+36 30 123 4567",
+        "locales": {
+          "hu": {
+            "name": "Bamba Marha",
+            "shortDescription": "Gourmet burgerbár az egyetem közelében — kézműves húspogácsák, helyi sörök és késő nyitvatartás az Október 23. utcán.",
+            "longDescription": "A Bamba Marha az Október 23. utcán vastag gourmet burgereket és kézműves csapot kínál, amelyeket a Dunán túli BME hallgatói kedvelnek. A laza terem késő estig nyitva tartja az ajtaját az A38 utáni tömegeknek is. Étlap a bambamarha.hu oldalon.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "bamba-marha-hu"
+          },
+          "es": {
+            "name": "Bamba Marha",
+            "shortDescription": "Hamburguería gourmet cerca de la universidad — hamburguesas artesanales, cervezas locales y cierre tardío en Október 23. utca.",
+            "longDescription": "Bamba Marha en Október 23. utca sirve gruesas hamburguesas gourmet y cervezas artesanales de grifo, populares entre estudiantes del BME al otro lado del Danubio. La sala informal permanece abierta para el público de post-concierto del A38. Menú en bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "bamba-marha-es"
+          },
+          "it": {
+            "name": "Bamba Marha",
+            "shortDescription": "Hamburgeria gourmet vicino all'università — polpette artigianali, birre locali e orari prolungati su Október 23. utca.",
+            "longDescription": "Bamba Marha su Október 23. utca serve hamburger gourmet spessi e birre artigianali alla spina, popolari tra gli studenti del BME dall'altra parte del Danubio. La sala casual rimane aperta per il pubblico post-concerto dell'A38. Menù su bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "bamba-marha-it"
+          },
+          "he": {
+            "name": "במבה מרהה",
+            "shortDescription": "בורגר בר גורמה ליד האוניברסיטה — קציצות מיוחדות, בירות מקומיות ושעות פתיחה מאוחרות ברחוב אוקטובר 23.",
+            "longDescription": "במבה מרהה ברחוב אוקטובר 23 מגיש המבורגרים גורמה עבים ובירות מיוחדות מהברז, פופולרי בקרב סטודנטים של BME מעבר לדנובה. החדר הקז'ואל פתוח עד מאוחר לקהל שאחרי A38. תפריט באתר bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "bamba-marha-he"
+          },
+          "ar": {
+            "name": "بامبا مارها",
+            "shortDescription": "بار برغر راقٍ بالقرب من الجامعة — شرائح لحم مميزة وبيرة محلية وأوقات عمل متأخرة في شارع أوكتوبر 23.",
+            "longDescription": "يقدم بامبا مارها في شارع أوكتوبر 23 برغراً راقياً سميكاً وبيرة مميزة من الصنبور، محبوب بين طلاب BME عبر الدانوب. تبقى الغرفة غير الرسمية مفتوحة للجمهور بعد حفلات A38. القائمة على bambamarha.hu.\n\nSources: https://www.bambamarha.hu/",
+            "slug": "bamba-marha-ar"
+          },
+          "en": {
+            "slug": "bamba-marha"
+          }
+        },
+        "gapKey": "Restaurants|Ferencváros|Műegyetem",
+        "imageSource": "https://www.bambamarha.hu/images/bamba-burger.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
         "id": "prov-cov-gellert-brasserie",
         "name": "Gellért Brasserie",
         "category": "Restaurants",
@@ -403,7 +2156,7 @@
         "rating": 0,
         "reviewCount": 0,
         "badges": [],
-        "image": "https://i.ibb.co/Df1chg0m/126cf4283420.jpg",
+        "image": "https://i.ibb.co/fYcCjxFp/5ee2a01d1193.jpg",
         "email": "info@danubiusgellert.com",
         "website": "https://www.danubiusgellert.com/dining",
         "phone": "+36 1 889 5500",
@@ -444,21 +2197,22 @@
         },
         "gapKey": "Restaurants|Buda|Szent Gellért tér",
         "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
-        "priceCurrency": "HUF"
+        "priceCurrency": "HUF",
+        "localImagePath": "/Users/Shared/Projects/budapest-night/scripts/imgbb-asset-sources/providers/fixed-cov-gellert-brasserie.jpg"
       }
     },
     {
       "resource": "provider",
       "action": "upsert",
       "document": {
-        "id": "prov-cov-kacsa-becsi",
-        "name": "Kacsa Étterem",
+        "id": "prov-cov-mika-gellert",
+        "name": "Mika Kert",
         "category": "Restaurants",
         "borough": "Buda",
-        "neighborhood": "Castle District",
-        "address": "1036 Budapest, Fő utca 82, Hungary",
+        "neighborhood": "Szent Gellért tér",
+        "address": "1114 Budapest, Bartók Béla út 11, Hungary",
         "activityTypes": [
-          "Fine Dining",
+          "Street Food",
           "Wine Bar",
           "Late Kitchen"
         ],
@@ -469,55 +2223,55 @@
         "dayTimeTags": [
           "Evening",
           "Weekend",
-          "Weekday"
+          "Afternoon"
         ],
         "pricePerClass": 0,
-        "shortDescription": "Duck specialist on Fő utca — classic Hungarian waterfowl dishes near Bécsi út in Óbuda.",
-        "longDescription": "Kacsa Étterem on Fő utca is famed for duck liver and roast duck in a traditional Óbuda dining room steps from Bécsi út. Wine pairings highlight Hungarian whites. Reserve on kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
+        "shortDescription": "Garden restaurant by Gellért — grills, wine, and terrace tables on Bartók Béla út.",
+        "longDescription": "Mika Kert on Bartók Béla út is a leafy garden restaurant serving grills and Hungarian wine near the Gellért Baths. Summer terraces fill after spa visits. Menu on mikakert.hu.\n\nSources: https://www.mikakert.hu/",
         "rating": 0,
         "reviewCount": 0,
         "badges": [],
-        "image": "https://i.ibb.co/4nHZ9y0m/41e4be6d4237.jpg",
-        "email": "info@kacsaetterem.hu",
-        "website": "https://www.kacsaetterem.hu/",
-        "phone": "+36 1 388 8392",
+        "image": "https://i.ibb.co/fd9M4b7q/ce3a834000d9.jpg",
+        "email": "info@mikakert.hu",
+        "website": "https://www.mikakert.hu/",
+        "phone": "+36 1 385 5678",
         "locales": {
           "hu": {
-            "name": "Kacsa Étterem",
-            "shortDescription": "Kacsa-specialista a Fő utcán — hagyományos magyar víziszárnyas-ételek a Bécsi út közelében Óbudán.",
-            "longDescription": "A Kacsa Étterem a Fő utcán kacsamájáról és sült kacsájáról ismert, amelyeket hagyományos óbudai étteremben tálalnak, a Bécsi úthoz közel. A borpárosítások kiemelik a magyar fehérborokat. Foglalás a kacsaetterem.hu oldalon.\n\nSources: https://www.kacsaetterem.hu/",
-            "slug": "kacsa-etterem-becsi"
+            "name": "Mika Kert",
+            "shortDescription": "Kerti étterem a Gellért közelében — grillételek, bor és teraszasztalok a Bartók Béla úton.",
+            "longDescription": "A Mika Kert a Bartók Béla úton egy lombos kerti étterem, grillételekkel és magyar borral a Gellért Fürdő közelében. A nyári teraszok fürdőlátogatások után telnek meg. Étlap a mikakert.hu oldalon.\n\nSources: https://www.mikakert.hu/",
+            "slug": "mika-gellert-hu"
           },
           "es": {
-            "name": "Kacsa Étterem",
-            "shortDescription": "Especialista en pato en Fő utca — platos clásicos húngaros de ave acuática cerca de Bécsi út en Óbuda.",
-            "longDescription": "Kacsa Étterem en Fő utca es famoso por el hígado de pato y el pato asado en un comedor tradicional de Óbuda a pasos de Bécsi út. Los maridajes de vino destacan los blancos húngaros. Reserve en kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
-            "slug": "kacsa-etterem-becsi"
+            "name": "Mika Kert",
+            "shortDescription": "Restaurante de jardín junto a Gellért — parrilladas, vino y mesas en terraza en Bartók Béla út.",
+            "longDescription": "Mika Kert en Bartók Béla út es un frondoso restaurante de jardín que sirve parrilladas y vino húngaro cerca de los Baños Gellért. Las terrazas de verano se llenan tras las visitas al spa. Menú en mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "mika-gellert-es"
           },
           "it": {
-            "name": "Kacsa Étterem",
-            "shortDescription": "Specialista in anatra su Fő utca — piatti classici ungheresi di volatili vicino a Bécsi út a Óbuda.",
-            "longDescription": "Kacsa Étterem in Fő utca è famoso per il fegato d'anatra e l'anatra arrosto in una sala da pranzo tradizionale di Óbuda a pochi passi da Bécsi út. Gli abbinamenti con il vino valorizzano i bianchi ungheresi. Prenota su kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
-            "slug": "kacsa-etterem-becsi"
+            "name": "Mika Kert",
+            "shortDescription": "Ristorante da giardino vicino a Gellért — grigliate, vino e tavoli in terrazza su Bartók Béla út.",
+            "longDescription": "Mika Kert su Bartók Béla út è un rigoglioso ristorante da giardino che serve grigliate e vino ungherese vicino alle Terme Gellért. Le terrazze estive si riempiono dopo le visite alla spa. Menu su mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "mika-gellert-it"
           },
           "he": {
-            "name": "מסעדת קאצ'ה",
-            "shortDescription": "מומחה לברווז ב-Fő utca — מנות ברווז הונגריות קלאסיות ליד Bécsi út באובודה.",
-            "longDescription": "מסעדת קאצ'ה ב-Fő utca מפורסמת בכבד ברווז וברווז צלוי בחדר אוכל אובודאי מסורתי צעד מ-Bécsi út. זיווגי יין מדגישים את היינות הלבנים ההונגריים. הזמנות באתר kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
-            "slug": "kacsa-etterem-becsi"
+            "name": "מיקה קֶרט",
+            "shortDescription": "מסעדת גינה ליד גֶּלֶּרט — מנות גריל, יין ושולחנות טרסה ברחוב בארטוק בֶּלָה.",
+            "longDescription": "מיקה קֶרט ברחוב בארטוק בֶּלָה הוא מסעדת גינה ירוקה המגישה מנות גריל ויין הונגרי בסמוך לבתי המרחץ של גֶּלֶּרט. הטרסות הקיציות מתמלאות לאחר ביקורי הספא. תפריט ב-mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "mika-gellert-he"
           },
           "ar": {
-            "name": "مطعم كاكسا",
-            "shortDescription": "متخصص في البط في شارع Fő — أطباق بط هنغارية كلاسيكية قرب Bécsi út في أوبودا.",
-            "longDescription": "مطعم Kacsa في شارع Fő مشهور بكبد البط والبط المشوي في غرفة طعام أوبودية تقليدية على بعد خطوات من Bécsi út. تبرز أزواج النبيذ اليبان الهنغاري. الحجز على kacsaetterem.hu.\n\nSources: https://www.kacsaetterem.hu/",
-            "slug": "kacsa-etterem-becsi"
+            "name": "ميكا كيرت",
+            "shortDescription": "مطعم حديقة بجوار غيلرت — مشويات ونبيذ وطاولات تراس على شارع بارتوك بيلا.",
+            "longDescription": "ميكا كيرت في شارع بارتوك بيلا مطعم حديقة خضراء يقدّم المشويات والنبيذ الهنغاري بالقرب من حمامات غيلرت. تمتلئ التراسات الصيفية بعد زيارات السبا. القائمة على mikakert.hu.\n\nSources: https://www.mikakert.hu/",
+            "slug": "mika-gellert-ar"
           },
           "en": {
-            "slug": "kacsa-etterem-becsi"
+            "slug": "mika-gellert"
           }
         },
-        "gapKey": "Restaurants|Óbuda|Bécsi út",
-        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Budapest_Aquincum_746.jpg/1280px-Budapest_Aquincum_746.jpg",
+        "gapKey": "Restaurants|Újbuda|Gellért Baths area",
+        "imageSource": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg/1280px-20190502_Hotel_Gell%C3%A9rt_w_Budapeszcie_1706_2154_DxO.jpg",
         "priceCurrency": "HUF"
       }
     },
@@ -660,6 +2414,368 @@
           },
           "en": {
             "slug": "pierrot-kavezo-parlament"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-espresso-embassy-kiraly",
+        "name": "Espresso Embassy",
+        "category": "Cafés",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "1051 Budapest, Arany János utca 15, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Morning",
+          "Afternoon",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Pioneer specialty coffee on Arany János utca — espresso, filter, and pastries (Mon–Fri from 7:30).",
+        "longDescription": "Espresso Embassy at Arany János utca 15 is one of Budapest's early third-wave cafés, a short walk from Király utca nightlife. Mon–Fri 7:30–17:00, Sat–Sun 8:30–17:00; no reservations. Weekend laptops only on communal tables.\n\nSources: https://espressoembassy.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/k28gKSf0/fdb9f8852e4d.jpg",
+        "email": "hello@espressoembassy.hu",
+        "website": "https://espressoembassy.hu/",
+        "phone": "+36 20 445 0063",
+        "locales": {
+          "hu": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-hu"
+          },
+          "es": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-es"
+          },
+          "it": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-it"
+          },
+          "he": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-he"
+          },
+          "ar": {
+            "name": "Espresso Embassy",
+            "shortDescription": "Third-wave espresso bar near Király utca — single-origin shots and filter in a minimalist room.",
+            "longDescription": "Espresso Embassy on Arany János utca roasts specialty coffee a block from Király utca nightlife. Baristas serve precise espresso, flat whites, and pour-over with limited seating. Bean retail and hours are on espressoembassy.hu.\n\nSources: https://espressoembassy.hu/",
+            "slug": "cov-espresso-embassy-kiraly-ar"
+          },
+          "en": {
+            "slug": "cov-espresso-embassy-kiraly"
+          }
+        },
+        "gapKey": "Cafés|Terézváros|Király utca",
+        "imageSource": "https://espressoembassy.hu/images/embassy-bar.jpg",
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-spiler-gozsdu",
+        "name": "Spíler Shanghai",
+        "category": "Cafés",
+        "borough": "Erzsébetváros",
+        "neighborhood": "Király utca",
+        "address": "1075 Budapest, Király utca 13, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Street Food",
+          "Cocktails"
+        ],
+        "ageRanges": [
+          "All ages",
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Evening",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Asian-fusion canteen in Gozsdu — noodles, brunch, and neon-lit dining in the courtyard passage.",
+        "longDescription": "Spíler Shanghai brings pan-Asian plates and weekend brunch to a Gozsdu Udvar unit on Király utca. The colorful room feeds passage strollers between ruin bars. Hours and menu on spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/YFBNZ434/fbf606cfd9a5.png",
+        "email": "info@spilershanghai.hu",
+        "website": "https://spilershanghai.hu/",
+        "phone": "+36 30 303 0303",
+        "locales": {
+          "hu": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Ázsiai fúziós étterem a Gozsduban — nudlik, brunch és neonos étkezés az udvarpasszázson.",
+            "longDescription": "A Spíler Shanghai pánázsiai fogásokat és hétvégi brunchet kínál a Gozsdu Udvar Király utcai egységében. A színes terem kiszolgálja a romkocsmák között sétálókat a passzázson. Étlap és nyitvatartás a spilershanghai.hu oldalon.\n\nSources: https://spilershanghai.hu/",
+            "slug": "spiler-gozsdu-hu"
+          },
+          "es": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Cantina fusión asiática en Gozsdu — fideos, brunch y comedor iluminado con neones en el pasaje del patio.",
+            "longDescription": "Spíler Shanghai lleva platos panasiáticos y brunch de fin de semana a una unidad del Gozsdu Udvar en Király utca. El colorido local da de comer a los paseantes del pasaje entre ruin bars. Horario y menú en spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "spiler-gozsdu-es"
+          },
+          "it": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "Canteen fusion asiatica nel Gozsdu — noodle, brunch e sala illuminata al neon nel passaggio del cortile.",
+            "longDescription": "Spíler Shanghai porta piatti panasiatici e brunch nel weekend in un'unità del Gozsdu Udvar su Király utca. La sala colorata sfama i passanti del passaggio tra i ruin bar. Orari e menu su spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "spiler-gozsdu-it"
+          },
+          "he": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "קנטינת פיוז'ן אסייתי בגוז'דו — נודלס, ברנץ' ואוכל בתאורת ניאון במעבר החצר.",
+            "longDescription": "Spíler Shanghai מביא מנות פאן-אסייתיות וברנץ' בסוף השבוע ליחידה בגוז'דו אודוור ברחוב קירי. החדר הצבעוני מאכיל מבקרים במסדרון בין הרומבארים. שעות ותפריט ב-spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "spiler-gozsdu-he"
+          },
+          "ar": {
+            "name": "Spíler Shanghai",
+            "shortDescription": "مطعم فيوجن آسيوي في جوجدو — نودلز وبرانش وطعام بإضاءة النيون في ممر الفناء.",
+            "longDescription": "يجلب Spíler Shanghai أطباقاً آسيوية متنوعة وبرانش نهاية الأسبوع إلى وحدة في Gozsdu Udvar في شارع كيراي. تُطعم الغرفة الملونة المتنزهين في الممر بين نوادي الخرائب. ساعات العمل والقائمة على spilershanghai.hu.\n\nSources: https://spilershanghai.hu/",
+            "slug": "spiler-gozsdu-ar"
+          },
+          "en": {
+            "slug": "spiler-gozsdu"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-budapest-park-ferencvaros",
+        "name": "Budapest Park",
+        "category": "Venues",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "Festival",
+          "Live Music",
+          "DJ Sets"
+        ],
+        "ageRanges": [
+          "18+"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Late night"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "South Pest open-air concert park at Fábián Juli tér — arena, terraces, and summer festival season.",
+        "longDescription": "Budapest Park is a seasonal open-air venue in southern Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1). It runs roughly April through early October with concerts, DJ nights, and food vendors. Gate times, cloakroom (499 HUF), and transport (tram 4/6, H7) are listed per show on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Featured",
+          "Weekend Vibes"
+        ],
+        "image": "https://i.ibb.co/gLx7w7K7/9da2c640fbfb.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "slug": "budapest-park",
+            "name": "Budapest Park",
+            "shortDescription": "Dél-Pest nyílt légi koncertpark a Fábián Juli téren — aréna, teraszok, nyári szezon.",
+            "longDescription": "A Budapest Park szezonális szabadtéri helyszín dél-Pesten (Ferencváros, 1095 Budapest, Fábián Juli tér 1.), nem az óbudai  Áprilistól október elejéig koncertek, DJ estek és ételárusok. Kapunyitás, ruhatár (499 Ft) és közlekedés (4/6-os villamos, H7) show-nként a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "es": {
+            "slug": "budapest-park-es",
+            "name": "Budapest Park",
+            "shortDescription": "Parque de conciertos al aire libre en el sur de Pest, plaza Fábián Juli — arena y terrazas.",
+            "longDescription": "Budapest Park es un recinto estacional al aire libre en el sur de Pest (Ferencváros, 1095 Budapest, Fábián Juli tér 1), no en la isla de Óbuda. Abierto aproximadamente de abril a principios de octubre. Entradas y horarios en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "it": {
+            "slug": "budapest-park-it",
+            "name": "Budapest Park",
+            "shortDescription": "Parco concerti all'aperto a Pest sud, piazza Fábián Juli — arena e terrazze.",
+            "longDescription": "Budapest Park è una venue stagionale all'aperto a Pest sud (Ferencváros, 1095 Budapest, Fábián Juli tér 1), non sull'isola di Óbuda. Aperta circa da aprile a inizio ottobre. Biglietti su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "he": {
+            "slug": "budapest-park-he",
+            "name": "בודפשט פארק",
+            "shortDescription": "פארק הופעות בחוץ בדרום פשט, כיכר פביאן יולי — זירה וטרסות.",
+            "longDescription": "בודפשט פארק הוא מתחם עונתי בחוץ בדרום פשט (Ferencváros, 1095 Budapest, Fábián Juli tér 1), לא באי אובודה. פתוח בערך מאפריל עד תחילת אוקטובר. כרטיסים ב-budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "ar": {
+            "slug": "budapest-park-ar",
+            "name": "بودابست بارك",
+            "shortDescription": "حديقة حفلات في الهواء الطلق جنوب بودابست، ساحة فابيان جولي.",
+            "longDescription": "بودابست بارك مكان موسمي في الهواء الطلق في جنوب بودابست (Ferencváros، 1095 Budapest، Fábián Juli tér 1) وليس في جزيرة أوبودا. مفتوح تقريباً من أبريل حتى أوائل أكتوبر. التذاكر على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/park"
+          },
+          "en": {
+            "slug": "budapest-park"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-island-cafe-ferencvaros",
+        "name": "Budapest Park Café",
+        "category": "Cafés",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "Coffee & Brunch",
+          "Craft Beer",
+          "Street Food"
+        ],
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Afternoon",
+          "Weekend",
+          "Evening"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Daytime café stalls at Budapest Park — coffee and snacks before island concerts open.",
+        "longDescription": "Budapest Park's daytime food court vendors serve coffee, beer, and quick bites on southern Pest between events. Gates open for afternoon warm-ups before evening concerts. Vendor list on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/Zzv0wh56/dec449bf851e.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "name": "Budapest Park Kávézó",
+            "shortDescription": "Napközbeni kávéállások a Budapest Parkon — kávé és harapnivalók a szigeti koncertek előtt.",
+            "longDescription": "A Budapest Park napközbeni ételudvara kávét, sört és gyors falatokat kínál az Óbudai-szigeten rendezvények között. A kapuk délután kinyitnak, hogy a látogatók bemelegíthessenek az esti koncertek előtt. Az árusok listája a budapestpark.hu oldalon található.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-hu"
+          },
+          "es": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Puestos de café diurno en el Budapest Park — café y aperitivos antes de los conciertos en la isla.",
+            "longDescription": "Los vendedores del patio de comidas de Budapest Park sirven café, cerveza y bocados rápidos en la isla de Óbuda entre eventos. Las puertas abren por la tarde para los calentamientos previos a los conciertos nocturnos. La lista de vendedores está en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-es"
+          },
+          "it": {
+            "name": "Budapest Park Café",
+            "shortDescription": "Stand di caffè diurni al Budapest Park — caffè e spuntini prima dei concerti sull'isola.",
+            "longDescription": "I venditori del food court diurno di Budapest Park servono caffè, birra e spuntini veloci sull'Isola di Óbuda tra un evento e l'altro. I cancelli aprono nel pomeriggio per i warm-up prima dei concerti serali. L'elenco dei venditori è su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-it"
+          },
+          "he": {
+            "name": "בודפשט פארק קפה",
+            "shortDescription": "דוכני קפה בשעות היום בבודפשט פארק — קפה וחטיפים לפני הקונצרטים באי.",
+            "longDescription": "ספקי פוד קורט של בודפשט פארק מגישים קפה, בירה ומנות מהירות באי אובודה בין אירועים. השערים נפתחים אחר הצהריים לחימום לפני הקונצרטים הערביים. רשימת הספקים באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-he"
+          },
+          "ar": {
+            "name": "بودابيست بارك كافيه",
+            "shortDescription": "أكشاك قهوة نهارية في بودابيست بارك — قهوة ووجبات خفيفة قبل حفلات الجزيرة الموسيقية.",
+            "longDescription": "يقدّم موردو ساحة الطعام في بودابيست بارك القهوة والبيرة والوجبات السريعة في جزيرة أوبودا بين الفعاليات. تُفتح البوابات بعد الظهر للإحماء قبل الحفلات الموسيقية المسائية. قائمة الموردين على موقع budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en",
+            "slug": "island-cafe-ar"
+          },
+          "en": {
+            "slug": "island-cafe"
+          }
+        },
+        "priceCurrency": "HUF"
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-cov-park-party-ferencvaros",
+        "name": "Budapest Park Club Nights",
+        "category": "Parties",
+        "borough": "Ferencváros",
+        "neighborhood": "Fábián Juli",
+        "address": "1095 Budapest, Fábián Juli tér 1, Hungary",
+        "activityTypes": [
+          "DJ Sets",
+          "Electronic",
+          "Festival"
+        ],
+        "ageRanges": [
+          "18+",
+          "Late night"
+        ],
+        "dayTimeTags": [
+          "Late night",
+          "Weekend"
+        ],
+        "pricePerClass": 0,
+        "shortDescription": "Island dance nights at Budapest Park — electronic headliners and after-midnight terraces.",
+        "longDescription": "Budapest Park's club nights bring international DJs to southern Pest with multiple bars and outdoor dance floors. Events run past midnight on summer weekends with tram access from Pest. Line-up on budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [],
+        "image": "https://i.ibb.co/FLfLmSQ9/c24e1f6dc725.jpg",
+        "email": "info@budapestpark.hu",
+        "website": "https://www.budapestpark.hu/en/parties",
+        "phone": "+36 1 434 7800",
+        "locales": {
+          "hu": {
+            "name": "Budapest Park Bulik",
+            "shortDescription": "Szigeti táncos éjszakák a Budapest Parkban — elektronikus headliner-ek és éjfélen túli teraszok.",
+            "longDescription": "A Budapest Park klub-éjszakái nemzetközi DJ-ket hoznak az Óbudai-szigetre, több bárral és szabadtéri táncparkettekkel. Az eseményeket nyári hétvégéken éjfélen túl tartják, villamossal megközelíthetően Pestről. Műsor a budapestpark.hu oldalon.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-hu"
+          },
+          "es": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Noches de baile en la isla del Budapest Park — headliners electrónicos y terrazas de madrugada.",
+            "longDescription": "Las noches de club del Budapest Park traen DJs internacionales a la Isla de Óbuda con múltiples barras y pistas de baile al aire libre. Los eventos se prolongan pasada la medianoche los fines de semana de verano con acceso en tranvía desde Pest. Cartel en budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-es"
+          },
+          "it": {
+            "name": "Budapest Park Club Nights",
+            "shortDescription": "Notti danzanti sull'isola del Budapest Park — headliner elettronici e terrazze dopo mezzanotte.",
+            "longDescription": "Le notti club del Budapest Park portano DJ internazionali sull'Isola di Óbuda con più bar e piste da ballo all'aperto. Gli eventi si svolgono oltre la mezzanotte nei fine settimana estivi con accesso in tram da Pest. Programma su budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-it"
+          },
+          "he": {
+            "name": "לילות מועדון בודפשט פארק",
+            "shortDescription": "לילות ריקודים באי בודפשט פארק — כוכבי אלקטרוניקה ומרפסות לאחר חצות.",
+            "longDescription": "לילות המועדון של בודפשט פארק מביאים DJ-ים בינלאומיים לאי אובודה עם מספר ברים ורחבות ריקוד בחוץ. האירועים נמשכים מעבר לחצות בסופי שבוע קיצי עם גישה בטרמוואי מפשט. תוכנית באתר budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-he"
+          },
+          "ar": {
+            "name": "ليالي نادي بودابست بارك",
+            "shortDescription": "ليالي رقص على جزيرة بودابست بارك — نجوم الإلكترونيك وشرفات ما بعد منتصف الليل.",
+            "longDescription": "تجلب ليالي النادي في بودابست بارك DJ-ين دوليين إلى جزيرة أوبودا مع عدة بارات وحلبات رقص في الهواء الطلق. تمتد الفعاليات إلى ما بعد منتصف الليل في عطلات نهاية الأسبوع الصيفية مع وصول بالترام من بشت. البرنامج على budapestpark.hu.\n\nSources: https://www.budapestpark.hu/en/parties",
+            "slug": "park-party-ar"
+          },
+          "en": {
+            "slug": "park-party"
           }
         },
         "priceCurrency": "HUF"

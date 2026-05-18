@@ -100,11 +100,11 @@ function withResolvedLocation(provider: Provider): Provider {
   return { ...provider, ...resolveProviderLocation(provider) };
 }
 
-function finalizeProvider(doc: Provider): Provider {
+function finalizeProvider(doc: Provider): Provider | { error: string } {
   const resolved = withResolvedLocation(applyMenuToProvider(doc) as Provider);
   const locErrs = validateProviderLocationForIngest(resolved, `provider ${resolved.id}`);
   if (locErrs.length) {
-    throw new Error(locErrs.join("; "));
+    return { error: locErrs.join("; ") };
   }
   return resolved;
 }
@@ -331,10 +331,11 @@ export async function applyIngestOperation(
     if (localeErrs.length) return { ok: false, error: localeErrs.join("; ") };
     const menuLocaleErrs = validateProviderMenuLocalesForIngest(rest, "provider.document");
     if (menuLocaleErrs.length) return { ok: false, error: menuLocaleErrs.join("; ") };
-    const withMenu = finalizeProvider(rest as Provider);
-    await db.collection(COL.providers).replaceOne({ id: withMenu.id }, withMenu, { upsert: true });
-    batch.providerIdsInBatch.add(withMenu.id);
-    await refreshEventsLinkedToHost(db, withMenu.id);
+    const finalized = finalizeProvider(rest as Provider);
+    if ("error" in finalized) return { ok: false, error: finalized.error };
+    await db.collection(COL.providers).replaceOne({ id: finalized.id }, finalized, { upsert: true });
+    batch.providerIdsInBatch.add(finalized.id);
+    await refreshEventsLinkedToHost(db, finalized.id);
     return { ok: true };
   }
 
@@ -367,14 +368,15 @@ export async function applyIngestOperation(
       );
       if (menuLocaleErrs.length) return { ok: false, error: menuLocaleErrs.join("; ") };
     }
-    const final = finalizeProvider(merged);
+    const finalized = finalizeProvider(merged);
+    if ("error" in finalized) return { ok: false, error: finalized.error };
     const setDoc: Partial<Provider> = {};
     for (const key of Object.keys(patch) as (keyof Provider)[]) {
-      (setDoc as Record<string, unknown>)[key as string] = final[key];
+      (setDoc as Record<string, unknown>)[key as string] = finalized[key];
     }
     if (patch.menu !== undefined) {
-      setDoc.menu = final.menu;
-      setDoc.menuTags = final.menuTags;
+      setDoc.menu = finalized.menu;
+      setDoc.menuTags = finalized.menuTags;
     }
     await db.collection(COL.providers).updateOne({ id }, { $set: setDoc });
     await refreshEventsLinkedToHost(db, id);
@@ -407,10 +409,12 @@ export async function applyIngestOperation(
         `providers.upsertMany document ${rest.id}`,
       );
       if (menuLocaleErrs.length) return { ok: false, error: menuLocaleErrs.join("; ") };
+      const finalized = finalizeProvider(rest as Provider);
+      if ("error" in finalized) return { ok: false, error: finalized.error };
       writes.push({
         replaceOne: {
           filter: { id: rest.id },
-          replacement: withResolvedLocation(applyMenuToProvider(rest) as Provider) as unknown as Document,
+          replacement: finalized as unknown as Document,
           upsert: true,
         },
       });

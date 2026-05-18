@@ -52,6 +52,7 @@ import {
 } from "@/lib/appShareUrls";
 import { ShareablePageChrome } from "@/components/scout/ShareablePageChrome";
 import { ShareableMissing } from "@/components/scout/ShareableMissing";
+import { ShareablePageLoading } from "@/components/scout/ShareablePageLoading";
 
 const DISCOVER_VIEWS: Category[] = [
   "Venues",
@@ -95,9 +96,9 @@ export default function BudapestNightShell() {
   const { saved } = useSaved();
   const { items } = useCalculator();
   const { data: site } = useSiteCatalog();
-  const { data: providers = [] } = useProvidersCatalog();
-  const { data: events = [] } = useEventsCatalog();
-  const { data: groups = [] } = useMeetupGroupsCatalog();
+  const { data: providers = [], isLoading: providersLoading } = useProvidersCatalog();
+  const { data: events = [], isLoading: eventsLoading } = useEventsCatalog();
+  const { data: groups = [], isLoading: groupsLoading } = useMeetupGroupsCatalog();
 
   useEffect(() => {
     if (!venueId) {
@@ -179,6 +180,8 @@ export default function BudapestNightShell() {
               onClose={closeEvent}
               onOpenVenue={openVenue}
             />
+          ) : eventsLoading ? (
+            <ShareablePageLoading />
           ) : (
             <ShareableMissing backHref={backHref} />
           ))}
@@ -193,6 +196,8 @@ export default function BudapestNightShell() {
               onOpenAnother={openVenue}
               onOpenEvent={openEvent}
             />
+          ) : providersLoading ? (
+            <ShareablePageLoading />
           ) : (
             <ShareableMissing backHref={backHref} />
           ))}
@@ -209,6 +214,8 @@ export default function BudapestNightShell() {
               onOpenVenue={openVenue}
               onOpenEvent={openEvent}
             />
+          ) : groupsLoading ? (
+            <ShareablePageLoading />
           ) : (
             <ShareableMissing backHref={backHref} />
           ))}

@@ -469,6 +469,7 @@
     "back": "Back",
     "copyLink": "Copy link",
     "linkCopied": "Link copied",
+    "loading": "Loading…",
     "notFoundTitle": "Not found",
     "notFoundBody": "This listing may have moved or the link is outdated."
   },

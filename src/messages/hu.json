@@ -469,6 +469,7 @@
     "back": "Vissza",
     "copyLink": "Link másolása",
     "linkCopied": "Link másolva",
+    "loading": "Betöltés…",
     "notFoundTitle": "Nem található",
     "notFoundBody": "Ez a lista áthelyezésre kerülhetett, vagy a link elavult."
   },
