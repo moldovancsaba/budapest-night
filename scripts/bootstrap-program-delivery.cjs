@@ -19,13 +19,14 @@ const FEATURED_PROVIDERS = [
   "prov-urania-film",
   "prov-nemzeti-szinhaz",
   "prov-katona-szinhaz",
+  "prov-art-plus-cinema",
 ];
 
+/** Pilot QR pack: venue ship, cinema, theatre */
 const PARTNER_PROVIDERS = [
+  "prov-a38-ferencvaros",
   "prov-urania-film",
   "prov-nemzeti-szinhaz",
-  "prov-art-plus-cinema",
-  "prov-mupa-budapest",
 ];
 
 const PROGRAM_WEEK_LOCALES = {
@@ -177,20 +178,21 @@ async function main() {
     contractRef: `PE-2026-EVT-${String(i + 1).padStart(3, "0")}`,
   }));
 
+  const venuePromos = [
+    { targetId: "prov-urania-film", label: "Mozipartner" },
+    { targetId: "prov-nemzeti-szinhaz", label: "Színház partner" },
+    { targetId: "prov-katona-szinhaz", label: "Kiemelt színház" },
+    { targetId: "prov-art-plus-cinema", label: "Art mozi partner" },
+  ].map((v, i) => ({
+    type: "featured_venue",
+    targetId: v.targetId,
+    label: v.label,
+    contractRef: `PE-2026-VEN-${String(i + 1).padStart(3, "0")}`,
+  }));
+
   const promos = [
     ...eventPromos,
-    {
-      type: "featured_venue",
-      targetId: "prov-urania-film",
-      label: "Mozipartner",
-      contractRef: "PE-2026-VEN-001",
-    },
-    {
-      type: "featured_venue",
-      targetId: "prov-nemzeti-szinhaz",
-      label: "Színház partner",
-      contractRef: "PE-2026-VEN-002",
-    },
+    ...venuePromos,
     {
       type: "week_sponsor",
       targetId: "https://budapest-night.vercel.app",

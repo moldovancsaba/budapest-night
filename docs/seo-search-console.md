@@ -45,7 +45,17 @@ npm run ops:seo-smoke
 npm run audit:program-locales
 ```
 
-`ops:seo-smoke` checks robots, sitemap, `/ez-a-het`, program-week API, and featured events on production (default base: `https://budapest-night.vercel.app`).
+`ops:seo-smoke` checks robots, sitemap, `/ez-a-het`, program-week API, featured events, and **≥5 mozi** listings on production (default base: `https://budapest-night.vercel.app`).
+
+**Ops bundle (program + monetization + verticals):**
+
+```bash
+npm run seed:program-verticals
+node -r ./scripts/load-env.cjs scripts/bootstrap-program-delivery.cjs
+npm run ops:seo-smoke
+```
+
+Re-run `bootstrap-program-delivery.cjs` after any full vertical seed ingest (seed upserts clear `partnerTier` unless set on the document).
 
 ## Post-cutover
 

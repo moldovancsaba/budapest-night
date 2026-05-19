@@ -68,6 +68,7 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
               ) : (
                 week.sponsorName
               )}
+              <span className="mt-1 block text-[10px] text-muted-foreground/90">{t("adDisclosure")}</span>
             </p>
           ) : null}
           <p className="mt-2 text-xs text-muted-foreground">

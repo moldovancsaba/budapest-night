@@ -24,6 +24,7 @@ interface Props {
 
 export function EventCard({ event, onOpen }: Props) {
   const t = useTranslations("event");
+  const tProgram = useTranslations("program");
   const schedule = useFormatEventSchedule();
   const doors = useFormatDoorsOpen();
   const fromPrice = useEventFromPrice();
@@ -47,9 +48,16 @@ export function EventCard({ event, onOpen }: Props) {
           className="transition-transform duration-500 group-hover:scale-105"
         />
         {event.promotionLabel || event.isFeatured ? (
-          <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
-            {event.promotionLabel ?? badgeLabel("Featured")}
-          </span>
+          <div className="absolute left-3 top-3 flex max-w-[85%] flex-col gap-1">
+            <span className="w-fit rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
+              {event.promotionLabel ?? badgeLabel("Featured")}
+            </span>
+            {event.promotionLabel ? (
+              <span className="rounded bg-background/90 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                {tProgram("adDisclosure")}
+              </span>
+            ) : null}
+          </div>
         ) : event.badges[0] ? (
           <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background">
             {badgeLabel(event.badges[0])}

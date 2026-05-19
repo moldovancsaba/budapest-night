@@ -3,6 +3,7 @@
     "https://www.urania.hu/en",
     "https://www.artpluscinema.hu",
     "https://www.cirkogeco.com",
+    "https://toldi.hu",
     "https://puskinmozi.hu",
     "https://nemzetiszinhaz.hu",
     "https://katonajozsef.hu",
@@ -210,6 +211,73 @@
             "shortDescription": "سينما فنية في شارع باريسي — أفلام مستقلة وعروض مسائية.",
             "longDescription": "سيركو-جيجي قرب Ferenciek tere يعرض أفلاماً دولية ومجرية. البرنامج على cirkogeco.com.\n\nSources: https://www.cirkogeco.com https://www.cirkogeco.com/en/movies",
             "slug": "cirko-gege-ar"
+          }
+        }
+      }
+    },
+    {
+      "resource": "provider",
+      "action": "upsert",
+      "document": {
+        "id": "prov-toldi-mozi",
+        "name": "Toldi Cinema",
+        "borough": "Belváros",
+        "neighborhood": "Inner City",
+        "address": "1054 Budapest, Bajcsy-Zsilinszky út 36-38, Hungary",
+        "activityTypes": [
+          "Cinema"
+        ],
+        "website": "https://toldi.hu",
+        "phone": "+36 1 266 4242",
+        "email": "info@toldi.hu",
+        "externalProgramUrl": "https://toldi.hu/program",
+        "image": "https://i.ibb.co/nNmMm6Cf/0e45661c9f87.png",
+        "category": "Venues",
+        "ageRanges": [
+          "All ages",
+          "Family"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekend",
+          "Weekday"
+        ],
+        "pricePerClass": 0,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Staff Pick"
+        ],
+        "locales": {
+          "hu": {
+            "name": "Toldi Cinema",
+            "shortDescription": "Bajcsy-Zsilinszky út art cinema — festival screenings and Hungarian premieres.",
+            "longDescription": "Toldi Cinema (Toldi Mozi) programmes arthouse and festival titles on Bajcsy-Zsilinszky út. Schedules and tickets: toldi.hu.\n\nSources: https://toldi.hu https://toldi.hu/program",
+            "slug": "toldi-mozi-hu"
+          },
+          "es": {
+            "name": "Toldi Cinema",
+            "shortDescription": "Bajcsy-Zsilinszky út art cinema — festival screenings and Hungarian premieres.",
+            "longDescription": "Toldi Cinema (Toldi Mozi) programmes arthouse and festival titles on Bajcsy-Zsilinszky út. Schedules and tickets: toldi.hu.\n\nSources: https://toldi.hu https://toldi.hu/program",
+            "slug": "toldi-mozi-es"
+          },
+          "it": {
+            "name": "Toldi Cinema",
+            "shortDescription": "Bajcsy-Zsilinszky út art cinema — festival screenings and Hungarian premieres.",
+            "longDescription": "Toldi Cinema (Toldi Mozi) programmes arthouse and festival titles on Bajcsy-Zsilinszky út. Schedules and tickets: toldi.hu.\n\nSources: https://toldi.hu https://toldi.hu/program",
+            "slug": "toldi-mozi-it"
+          },
+          "he": {
+            "name": "Toldi Cinema",
+            "shortDescription": "Bajcsy-Zsilinszky út art cinema — festival screenings and Hungarian premieres.",
+            "longDescription": "Toldi Cinema (Toldi Mozi) programmes arthouse and festival titles on Bajcsy-Zsilinszky út. Schedules and tickets: toldi.hu.\n\nSources: https://toldi.hu https://toldi.hu/program",
+            "slug": "toldi-mozi-he"
+          },
+          "ar": {
+            "name": "Toldi Cinema",
+            "shortDescription": "Bajcsy-Zsilinszky út art cinema — festival screenings and Hungarian premieres.",
+            "longDescription": "Toldi Cinema (Toldi Mozi) programmes arthouse and festival titles on Bajcsy-Zsilinszky út. Schedules and tickets: toldi.hu.\n\nSources: https://toldi.hu https://toldi.hu/program",
+            "slug": "toldi-mozi-ar"
           }
         }
       }

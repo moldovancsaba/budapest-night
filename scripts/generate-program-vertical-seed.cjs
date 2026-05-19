@@ -66,6 +66,23 @@ const VENUES = [
     image: "https://i.ibb.co/nNmMm6Cf/0e45661c9f87.png",
   },
   {
+    id: "prov-toldi-mozi",
+    name: "Toldi Cinema",
+    borough: "Belváros",
+    neighborhood: "Inner City",
+    address: "1054 Budapest, Bajcsy-Zsilinszky út 36-38, Hungary",
+    activityTypes: ["Cinema"],
+    website: "https://toldi.hu",
+    phone: "+36 1 266 4242",
+    email: "info@toldi.hu",
+    externalProgramUrl: "https://toldi.hu/program",
+    shortDescription: "Bajcsy-Zsilinszky út art cinema — festival screenings and Hungarian premieres.",
+    longDescription:
+      "Toldi Cinema (Toldi Mozi) programmes arthouse and festival titles on Bajcsy-Zsilinszky út. Schedules and tickets: toldi.hu.\n\nSources: https://toldi.hu https://toldi.hu/program",
+    slugBase: "toldi-mozi",
+    image: "https://i.ibb.co/nNmMm6Cf/0e45661c9f87.png",
+  },
+  {
     id: "prov-puskin-mozi",
     name: "Puskin Cinema",
     borough: "Belváros",
@@ -169,6 +186,8 @@ const VENUES = [
   },
 ];
 
+const PARTNER_TIER_IDS = new Set(["prov-urania-film", "prov-nemzeti-szinhaz"]);
+
 const operations = VENUES.map((v) => {
   const { slugBase, shortDescription, longDescription, ...rest } = v;
   const locales =
@@ -186,6 +205,7 @@ const operations = VENUES.map((v) => {
       rating: 0,
       reviewCount: 0,
       badges: ["Staff Pick"],
+      ...(PARTNER_TIER_IDS.has(v.id) ? { partnerTier: "partner" } : {}),
       locales,
     },
   };

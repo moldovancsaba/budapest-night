@@ -26,7 +26,7 @@ export async function GET(
   const slug = getVenuePathKey(raw, locale);
   const origin = getSiteOrigin();
   const localePath = locale === "hu" ? "" : `/${locale}`;
-  const url = `${origin}${localePath}/venue/${encodeURIComponent(slug)}?utm_source=partner_qr&utm_medium=qr&utm_content=${encodeURIComponent(providerId)}`;
+  const url = `${origin}${localePath}/venue/${encodeURIComponent(slug)}?utm_source=pestiest&utm_medium=qr&utm_content=${encodeURIComponent(providerId)}`;
 
   const svg = await QRCode.toString(url, {
     type: "svg",

@@ -284,7 +284,12 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
               >
                 <p className="font-semibold text-foreground">{p.name}</p>
                 {p.promotionLabel ? (
-                  <p className="mt-1 text-xs font-medium text-primary">{p.promotionLabel}</p>
+                  <p className="mt-1 text-xs font-medium text-primary">
+                    {p.promotionLabel}
+                    <span className="mt-0.5 block text-[10px] font-normal text-muted-foreground">
+                      {tProgram("adDisclosure")}
+                    </span>
+                  </p>
                 ) : null}
               </button>
             ))}

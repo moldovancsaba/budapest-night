@@ -13,7 +13,7 @@ function venueQrUrl(provider: Provider, locale: AppLocale): string {
   const slug = getVenuePathKey(provider, locale);
   const origin = getSiteOrigin();
   const localePath = locale === "hu" ? "" : `/${locale}`;
-  return `${origin}${localePath}/venue/${encodeURIComponent(slug)}?utm_source=partner_qr&utm_medium=qr&utm_content=${encodeURIComponent(provider.id)}`;
+  return `${origin}${localePath}/venue/${encodeURIComponent(slug)}?utm_source=pestiest&utm_medium=qr&utm_content=${encodeURIComponent(provider.id)}`;
 }
 
 export async function buildPartnerQrPackPdf(

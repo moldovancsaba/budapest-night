@@ -35,6 +35,7 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
   const { isSaved, toggle } = useSaved();
   const { add } = useCalculator();
   const t = useTranslations("venue");
+  const tProgram = useTranslations("program");
   const ageLabel = useAgeRangeLabel();
   const dayLabel = useDayTimeLabel();
   const activityLabel = useActivityTypeLabel();
@@ -57,11 +58,22 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
           alt={provider.name}
           className="transition-transform duration-500 group-hover:scale-105"
         />
-        {provider.badges[0] && (
+        {provider.isPromoted || provider.promotionLabel ? (
+          <div className="absolute left-3 top-3 flex max-w-[85%] flex-col gap-1">
+            <span className="w-fit rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
+              {provider.promotionLabel ?? badgeLabel("Featured")}
+            </span>
+            {provider.promotionLabel ? (
+              <span className="rounded bg-background/90 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                {tProgram("adDisclosure")}
+              </span>
+            ) : null}
+          </div>
+        ) : provider.badges[0] ? (
           <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background ">
             {badgeLabel(provider.badges[0])}
           </span>
-        )}
+        ) : null}
         {provider.announcementBadge && (
           <span className="absolute left-3 bottom-3 inline-flex items-center gap-1 rounded-full bg-foreground px-2.5 py-1 text-[11px] font-semibold text-background ">
             <Megaphone className="h-3 w-3" />

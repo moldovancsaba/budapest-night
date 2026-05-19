@@ -62,7 +62,13 @@ async function main() {
   }
 
   const mozi = await get("/api/public/providers?vertical=mozi");
-  add("providers mozi vertical", mozi.ok, `status ${mozi.status}`);
+  let moziCount = 0;
+  try {
+    moziCount = JSON.parse(mozi.text).length;
+    add("providers mozi vertical", mozi.ok && moziCount >= 5, `count: ${moziCount}`);
+  } catch {
+    add("providers mozi vertical", false, "invalid JSON");
+  }
 
   const failed = checks.filter((c) => !c.pass);
   console.log(`\nSEO smoke — ${BASE}\n`);
