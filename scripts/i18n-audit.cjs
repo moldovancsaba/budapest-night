@@ -56,28 +56,58 @@ function addUsed(namespace, key) {
 
 function scanSource() {
   const files = walkDir(SRC, [".ts", ".tsx"]);
-  const varNsRe =
+  const bindRe =
     /const\s+(\w+)\s*=\s*useTranslations\(\s*["'`]([^"'`]+)["'`]\s*\)/g;
 
   for (const file of files) {
     const text = fs.readFileSync(file, "utf8");
-    /** @type {Map<string, string>} */
-    const varToNs = new Map();
+    /** @type {{ varName: string; ns: string; index: number }[]} */
+    const bindings = [];
     let m;
-    while ((m = varNsRe.exec(text))) varToNs.set(m[1], m[2]);
+    while ((m = bindRe.exec(text))) {
+      bindings.push({ varName: m[1], ns: m[2], index: m.index });
+    }
+    if (!bindings.length) continue;
 
-    for (const [varName, ns] of varToNs) {
-      const callRe = new RegExp(
-        `\\b${varName}\\(\\s*["'\`]([a-zA-Z0-9_.]+)["'\`]`,
-        "g",
-      );
-      while ((m = callRe.exec(text))) addUsed(ns, m[1]);
+    const boundVars = [...new Set(bindings.map((b) => b.varName))];
+    const callRe = new RegExp(
+      `\\b(${boundVars.join("|")})\\(\\s*["'\`]([a-zA-Z0-9_.]+)["'\`]`,
+      "g",
+    );
+    while ((m = callRe.exec(text))) {
+      const varName = m[1];
+      const key = m[2];
+      const callIndex = m.index;
+      let ns = null;
+      for (let i = bindings.length - 1; i >= 0; i--) {
+        const b = bindings[i];
+        if (b.index > callIndex) continue;
+        if (b.varName === varName) {
+          ns = b.ns;
+          break;
+        }
+      }
+      if (ns) addUsed(ns, key);
+    }
 
+    for (const varName of boundVars) {
       const dynRe = new RegExp(
         `\\b${varName}\\(\\s*\`([a-zA-Z0-9_]+)\\.\\$\\{`,
         "g",
       );
-      while ((m = dynRe.exec(text))) addUsed(ns, `${m[1]}.*`);
+      while ((m = dynRe.exec(text))) {
+        const callIndex = m.index;
+        let ns = null;
+        for (let i = bindings.length - 1; i >= 0; i--) {
+          const b = bindings[i];
+          if (b.index > callIndex) continue;
+          if (b.varName === varName) {
+            ns = b.ns;
+            break;
+          }
+        }
+        if (ns) addUsed(ns, `${m[1]}.*`);
+      }
     }
   }
 }

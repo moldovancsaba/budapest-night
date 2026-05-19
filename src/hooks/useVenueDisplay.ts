@@ -35,8 +35,9 @@ export function useCategoryLabel() {
 }
 
 export function useDistrictLabel() {
-  const t = useTranslations("district");
-  return (borough: BoroughChoice) => (borough === "All" ? t("all") : t(DISTRICT_KEY[borough]));
+  const tDistrict = useTranslations("district");
+  return (borough: BoroughChoice) =>
+    borough === "All" ? tDistrict("all") : tDistrict(DISTRICT_KEY[borough]);
 }
 
 export function useAgeRangeLabel() {

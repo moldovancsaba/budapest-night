@@ -20,29 +20,29 @@ function withDistinctGuideImages(guides: SiteGuide[]): SiteGuide[] {
 }
 
 export function useCalculatorCopy(): SiteCalculatorCopy {
-  const t = useTranslations("calculator");
+  const tCalc = useTranslations("calculator");
   return {
-    title: t("title"),
-    subtitle: t("subtitle"),
-    clearAllCta: t("clearAllCta"),
-    emptyTitle: t("emptyTitle"),
-    emptyMessage: t("emptyMessage"),
-    asideTitle: t("asideTitle"),
-    asideSubtitle: t("asideSubtitle"),
-    asideFootnote: t("asideFootnote"),
-    providerLinePriceSuffix: t("providerLinePriceSuffix"),
-    estimatedTotalLabel: t("estimatedTotalLabel"),
+    title: tCalc("title"),
+    subtitle: tCalc("subtitle"),
+    clearAllCta: tCalc("clearAllCta"),
+    emptyTitle: tCalc("emptyTitle"),
+    emptyMessage: tCalc("emptyMessage"),
+    asideTitle: tCalc("asideTitle"),
+    asideSubtitle: tCalc("asideSubtitle"),
+    asideFootnote: tCalc("asideFootnote"),
+    providerLinePriceSuffix: tCalc("providerLinePriceSuffix"),
+    estimatedTotalLabel: tCalc("estimatedTotalLabel"),
   };
 }
 
 export function useTrustPillars(): SiteTrustPillar[] {
-  const t = useTranslations("trust");
-  return t.raw("pillars") as SiteTrustPillar[];
+  const tTrust = useTranslations("trust");
+  return tTrust.raw("pillars") as SiteTrustPillar[];
 }
 
 export function useAccountCopy(): SiteAccountSettings {
-  const t = useTranslations("account");
-  return t.raw("settings") as SiteAccountSettings;
+  const tAccount = useTranslations("account");
+  return tAccount.raw("settings") as SiteAccountSettings;
 }
 
 export type HomeCopy = {
@@ -87,46 +87,46 @@ export type HomeCopy = {
 };
 
 export function useHomeCopy(): HomeCopy {
-  const t = useTranslations("home");
+  const tHome = useTranslations("home");
   return {
-    heroTitle: t("heroTitle"),
-    heroSubtitle: t("heroSubtitle"),
-    heroPrimaryCta: t("heroPrimaryCta"),
-    heroSecondaryCta: t("heroSecondaryCta"),
-    heroTagline: t("heroTagline"),
-    heroImageAlt: t("heroImageAlt"),
-    categoriesTitle: t("categoriesTitle"),
-    exploreCta: t("exploreCta"),
-    categories: t.raw("categories") as HomeCopy["categories"],
-    neighborhoodSectionTitle: t("neighborhoodSectionTitle"),
-    popularNeighborhoodsCaption: t("popularNeighborhoodsCaption"),
-    allDistrictsHint: t("allDistrictsHint"),
-    openDiscoverAll: t("openDiscoverAll"),
-    viewAllNeighborhoods: t("viewAllNeighborhoods"),
-    guidesSectionTitle: t("guidesSectionTitle"),
-    guidesViewAllLabel: t("guidesViewAllLabel"),
-    guideCtaDefault: t("guideCtaDefault"),
-    howItWorksSectionTitle: t("howItWorksSectionTitle"),
-    popularPicksSectionTitle: t("popularPicksSectionTitle"),
-    popularPicksViewAllLabel: t("popularPicksViewAllLabel"),
-    culturePickBadge: t("culturePickBadge"),
-    cultureCircleLabel: t("cultureCircleLabel"),
-    freeToJoin: t("freeToJoin"),
-    newsletterTitle: t("newsletterTitle"),
-    newsletterSubtitle: t("newsletterSubtitle"),
-    newsletterPlaceholder: t("newsletterPlaceholder"),
-    newsletterCta: t("newsletterCta"),
-    newsletterFinePrint: t("newsletterFinePrint"),
-    newsletterSuccess: t("newsletterSuccess"),
-    guides: withDistinctGuideImages(t.raw("guides") as SiteGuide[]),
-    howItWorksSteps: t.raw("howItWorksSteps") as SiteHowStep[],
+    heroTitle: tHome("heroTitle"),
+    heroSubtitle: tHome("heroSubtitle"),
+    heroPrimaryCta: tHome("heroPrimaryCta"),
+    heroSecondaryCta: tHome("heroSecondaryCta"),
+    heroTagline: tHome("heroTagline"),
+    heroImageAlt: tHome("heroImageAlt"),
+    categoriesTitle: tHome("categoriesTitle"),
+    exploreCta: tHome("exploreCta"),
+    categories: tHome.raw("categories") as HomeCopy["categories"],
+    neighborhoodSectionTitle: tHome("neighborhoodSectionTitle"),
+    popularNeighborhoodsCaption: tHome("popularNeighborhoodsCaption"),
+    allDistrictsHint: tHome("allDistrictsHint"),
+    openDiscoverAll: tHome("openDiscoverAll"),
+    viewAllNeighborhoods: tHome("viewAllNeighborhoods"),
+    guidesSectionTitle: tHome("guidesSectionTitle"),
+    guidesViewAllLabel: tHome("guidesViewAllLabel"),
+    guideCtaDefault: tHome("guideCtaDefault"),
+    howItWorksSectionTitle: tHome("howItWorksSectionTitle"),
+    popularPicksSectionTitle: tHome("popularPicksSectionTitle"),
+    popularPicksViewAllLabel: tHome("popularPicksViewAllLabel"),
+    culturePickBadge: tHome("culturePickBadge"),
+    cultureCircleLabel: tHome("cultureCircleLabel"),
+    freeToJoin: tHome("freeToJoin"),
+    newsletterTitle: tHome("newsletterTitle"),
+    newsletterSubtitle: tHome("newsletterSubtitle"),
+    newsletterPlaceholder: tHome("newsletterPlaceholder"),
+    newsletterCta: tHome("newsletterCta"),
+    newsletterFinePrint: tHome("newsletterFinePrint"),
+    newsletterSuccess: tHome("newsletterSuccess"),
+    guides: withDistinctGuideImages(tHome.raw("guides") as SiteGuide[]),
+    howItWorksSteps: tHome.raw("howItWorksSteps") as SiteHowStep[],
   };
 }
 
 export function useDiscoverChrome() {
-  const t = useTranslations("discover");
+  const tDiscover = useTranslations("discover");
   return {
-    eyebrow: t("eyebrow"),
-    tagline: t("tagline"),
+    eyebrow: tDiscover("eyebrow"),
+    tagline: tDiscover("tagline"),
   };
 }
