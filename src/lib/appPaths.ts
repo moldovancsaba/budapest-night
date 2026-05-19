@@ -172,6 +172,24 @@ export function parseAppRoute(pathname: string, search: URLSearchParams): AppRou
     .map((part) => part.split("?")[0]!);
   const location = parseLocation(search);
 
+  if (segments[0] === "v" && segments[1]) {
+    const fromSection = parseFromSection(search, "venues");
+    const { entityKey, fullPage } = parseEntityRouteKey(segments[1], segments[2]);
+    return {
+      view: sectionToView(fromSection),
+      section: fromSection,
+      location,
+      programVertical: null,
+      venueId: entityKey,
+      groupId: null,
+      tourId: null,
+      eventId: null,
+      fullPage,
+      fromSection,
+      invalid: false,
+    };
+  }
+
   if (segments[0] === "venue" && segments[1]) {
     const fromSection = parseFromSection(search, "venues");
     const { entityKey, fullPage } = parseEntityRouteKey(segments[1], segments[2]);

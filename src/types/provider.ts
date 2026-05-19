@@ -67,6 +67,8 @@ export interface Provider extends ProviderReviewsMeta {
   isPromoted?: boolean;
   /** Partner distribution tier for QR kit eligibility. */
   partnerTier?: "listed" | "partner";
+  /** Optional: staff confirms English-friendly service (tourist filter). */
+  englishFriendly?: boolean;
   /** Official cinema showtimes / műsor page (mozi vertical). */
   externalProgramUrl?: string;
   /** Theatre repertoire or ticket office program URL. */

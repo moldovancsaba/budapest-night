@@ -17,12 +17,14 @@ export interface FilterState {
   ages: AgeRange[];
   times: DayTimeTag[];
   activity: string | null;
+  englishFriendly: boolean;
 }
 
 export const EMPTY_FILTERS: FilterState = {
   ages: [],
   times: [],
   activity: null,
+  englishFriendly: false,
 };
 
 export function Filters({
@@ -37,7 +39,11 @@ export function Filters({
   const ageLabel = useAgeRangeLabel();
   const dayLabel = useDayTimeLabel();
   const activityLabel = useActivityTypeLabel();
-  const has = value.ages.length + value.times.length + (value.activity ? 1 : 0);
+  const has =
+    value.ages.length +
+    value.times.length +
+    (value.activity ? 1 : 0) +
+    (value.englishFriendly ? 1 : 0);
 
   const toggle = <T,>(arr: T[], v: T): T[] =>
     arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
@@ -113,6 +119,16 @@ export function Filters({
                 {activityLabel(act)}
               </Chip>
             ))}
+          </FilterGroup>
+          <FilterGroup label={t("access")}>
+            <Chip
+              active={value.englishFriendly}
+              onClick={() =>
+                onChange({ ...value, englishFriendly: !value.englishFriendly })
+              }
+            >
+              {t("englishFriendly")}
+            </Chip>
           </FilterGroup>
         </div>
       )}

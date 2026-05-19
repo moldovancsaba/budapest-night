@@ -2,6 +2,14 @@ import type { Db } from "mongodb";
 import { COL } from "@/lib/mongodb";
 import type { ActivePromotion, PromotionDoc } from "@/types/promotion";
 
+/** Keep promotions that apply to the requested locale (empty locales = all). */
+export function filterPromosByLocale(
+  promos: ActivePromotion[],
+  locale: string,
+): ActivePromotion[] {
+  return promos.filter((p) => !p.locales?.length || p.locales.includes(locale));
+}
+
 export async function getActivePromotions(db: Db, at = new Date()): Promise<ActivePromotion[]> {
   const now = at.toISOString();
   const rows = (await db
@@ -53,4 +61,16 @@ export function weekSponsorFromPromos(
   if (!s) return null;
   const url = /^https?:\/\//i.test(s.targetId) ? s.targetId : undefined;
   return { name: s.label, url };
+}
+
+export function verticalSponsorsFromPromos(
+  promos: ActivePromotion[],
+): Record<string, { name: string; url?: string }> {
+  const out: Record<string, { name: string; url?: string }> = {};
+  for (const p of promos) {
+    if (p.type !== "vertical_sponsor" || !p.verticalSlug) continue;
+    const url = /^https?:\/\//i.test(p.targetId) ? p.targetId : undefined;
+    out[p.verticalSlug] = { name: p.label, url };
+  }
+  return out;
 }

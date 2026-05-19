@@ -9,6 +9,7 @@ import type { ViewKey } from "@/components/scout/Sidebar";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import type { PublicNightEvent } from "@/lib/publicEvent";
+import { persistAttributionFromSearch } from "@/lib/attribution";
 import {
   type AppRoute,
   type AppSection,
@@ -41,6 +42,10 @@ export function useAppNavigation() {
   useEffect(() => {
     if (route.invalid) router.replace("/");
   }, [route.invalid, router]);
+
+  useEffect(() => {
+    persistAttributionFromSearch(searchParams);
+  }, [searchParams]);
 
   const navigateToView = useCallback(
     (

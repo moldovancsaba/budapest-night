@@ -95,6 +95,7 @@ export function DiscoverView({
       .filter((p) =>
         filters.activity ? p.activityTypes.includes(filters.activity) : true,
       )
+      .filter((p) => (filters.englishFriendly ? Boolean(p.englishFriendly) : true))
       .sort((a, b) => {
         const ap = a.isPromoted ? 0 : 1;
         const bp = b.isPromoted ? 0 : 1;

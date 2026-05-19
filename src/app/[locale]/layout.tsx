@@ -68,6 +68,7 @@ export async function generateMetadata({
       apple: [{ url: APP_FAVICON.apple, type: "image/png" }],
       shortcut: APP_FAVICON.shortcut,
     },
+    manifest: "/manifest.webmanifest",
   };
 }
 

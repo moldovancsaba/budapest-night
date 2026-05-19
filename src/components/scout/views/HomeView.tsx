@@ -162,7 +162,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
   const promotedPartners = providers.filter((p) => p.isPromoted).slice(0, 6);
   const featuredHomeEvents = events
     .filter((e) => e.isFeatured && isUpcoming(e))
-    .slice(0, 6);
+    .slice(0, 8);
 
   const popularGroup = s.homePopularMeetupGroupId.trim()
     ? meetups.find((g) => g.id === s.homePopularMeetupGroupId.trim())

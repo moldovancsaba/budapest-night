@@ -70,6 +70,8 @@
     "crowd": "Közönség",
     "dayTime": "Nap és idő",
     "vibe": "Hangulat",
+    "access": "Akadálymentesség",
+    "englishFriendly": "Angolul is",
     "any": "Bármely"
   },
   "dayTime": {
@@ -152,7 +154,7 @@
     "shareSummary": "{name} — {category}, {neighborhood}, {borough}. {price}. {description}"
   },
   "discover": {
-    "eyebrow": "Budapest éjszaka",
+    "eyebrow": "Budapesti programmagazin",
     "title": "Fedezd fel: {category} Budapesten",
     "tagline": "Válogatott. Helyi. Éjszakára készült.",
     "findByArea": "Találj {blurb} kerület és városrész szerint.",

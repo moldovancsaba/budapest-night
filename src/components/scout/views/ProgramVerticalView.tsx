@@ -11,6 +11,7 @@ import {
   eventMatchesVertical,
 } from "@/lib/programVerticals";
 import { useProvidersCatalog, useEventsCatalog } from "@/hooks/useCatalog";
+import { useProgramWeek } from "@/hooks/useProgramWeek";
 import { Button } from "@/components/ui/button";
 import type { Provider } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
@@ -35,6 +36,8 @@ export function ProgramVerticalView({
   const def = getVertical(vertical);
   const { data: providers = [] } = useProvidersCatalog();
   const { data: events = [] } = useEventsCatalog();
+  const { data: programWeek } = useProgramWeek();
+  const verticalSponsor = programWeek?.verticalSponsors?.[vertical];
 
   const filteredProviders = useMemo(() => {
     if (!def) return [];
@@ -64,6 +67,23 @@ export function ProgramVerticalView({
         </Link>
         <h1 className="font-display text-3xl font-bold">{t(`vertical.${vertical}`)}</h1>
         <p className="mt-2 text-muted-foreground">{t("weekSubtitle")}</p>
+        {verticalSponsor && (
+          <p className="mt-3 text-sm text-muted-foreground">
+            {t("sponsorLabel")}:{" "}
+            {verticalSponsor.url ? (
+              <a
+                href={verticalSponsor.url}
+                className="font-medium text-primary underline-offset-2 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {verticalSponsor.name}
+              </a>
+            ) : (
+              <span className="font-medium text-foreground">{verticalSponsor.name}</span>
+            )}
+          </p>
+        )}
       </header>
 
       {filteredEvents.length > 0 && (

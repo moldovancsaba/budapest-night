@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.pestiest.hu" }],
+      "destination": "https://pestiest.hu/:path*",
+      "permanent": true
+    }
+  ],
   "crons": [
     {
       "path": "/api/cron/curator",
@@ -15,6 +23,10 @@
     {
       "path": "/api/cron/archive-events",
       "schedule": "15 * * * *"
+    },
+    {
+      "path": "/api/cron/promotions",
+      "schedule": "30 * * * *"
     }
   ]
 }

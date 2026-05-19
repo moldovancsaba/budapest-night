@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import QRCode from "qrcode";
 import { getDb, COL } from "@/lib/mongodb";
-import { getVenuePathKey } from "@/lib/providerLocale";
 import type { Provider } from "@/types/provider";
 import type { AppLocale } from "@/i18n/config";
-import { getSiteOrigin } from "@/lib/appPaths";
+import { buildPartnerVenueUrl } from "@/lib/partnerQrUrl";
 
 export async function GET(
   req: Request,
@@ -23,10 +22,7 @@ export async function GET(
     | null;
   if (!raw) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const slug = getVenuePathKey(raw, locale);
-  const origin = getSiteOrigin();
-  const localePath = locale === "hu" ? "" : `/${locale}`;
-  const url = `${origin}${localePath}/venue/${encodeURIComponent(slug)}?utm_source=pestiest&utm_medium=qr&utm_content=${encodeURIComponent(providerId)}`;
+  const url = buildPartnerVenueUrl(raw, locale);
 
   const svg = await QRCode.toString(url, {
     type: "svg",

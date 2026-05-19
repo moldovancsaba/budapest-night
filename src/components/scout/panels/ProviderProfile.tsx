@@ -447,7 +447,9 @@ export function ProviderProfile({
                 {tProgram("qrDownload")}
               </a>
             </div>
-            {(provider.partnerTier === "partner" || provider.isPromoted) && (
+            {(provider.partnerTier === "listed" ||
+              provider.partnerTier === "partner" ||
+              provider.isPromoted) && (
               <p className="mt-2 text-xs font-medium text-primary">{tProgram("partnerBadge")}</p>
             )}
           </div>

@@ -16,8 +16,10 @@ import type { NightEvent } from "@/types/event";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import {
   featuredEventIds,
+  filterPromosByLocale,
   getActivePromotions,
   promotionLabelByTarget,
+  verticalSponsorsFromPromos,
   weekSponsorFromPromos,
 } from "@/lib/promotionsDb";
 import { archiveFinishedEvents } from "@/lib/eventsArchive";
@@ -95,9 +97,11 @@ export async function GET(req: Request) {
     getActivePromotions(db),
   ]);
 
-  const promoLabels = promotionLabelByTarget(promos);
-  const featuredEvIds = featuredEventIds(promos);
-  const sponsor = weekSponsorFromPromos(promos);
+  const scopedPromos = filterPromosByLocale(promos, locale);
+  const promoLabels = promotionLabelByTarget(scopedPromos);
+  const featuredEvIds = featuredEventIds(scopedPromos);
+  const sponsor = weekSponsorFromPromos(scopedPromos);
+  const verticalSponsors = verticalSponsorsFromPromos(scopedPromos);
   if (sponsor && !week.sponsorName) {
     week = { ...week, sponsorName: sponsor.name, sponsorUrl: sponsor.url ?? week.sponsorUrl };
   }
@@ -166,6 +170,7 @@ export async function GET(req: Request) {
       spotlightEvents,
       featuredProviders,
       fallbackEventCount: events.length,
+      verticalSponsors,
     },
     {
       headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120" },

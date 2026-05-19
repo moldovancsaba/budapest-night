@@ -37,6 +37,13 @@ export async function POST(req: Request) {
   const origin = getSiteOrigin();
   const confirmUrl = `${origin}/api/public/newsletter/confirm?token=${confirmToken}`;
 
+  const privacyUrl = process.env.NEXT_PUBLIC_PRIVACY_POLICY_URL;
+  const privacyLine = privacyUrl
+    ? locale === "hu"
+      ? `<p style="font-size:12px;color:#666"><a href="${privacyUrl}">Adatvédelmi tájékoztató</a></p>`
+      : `<p style="font-size:12px;color:#666"><a href="${privacyUrl}">Privacy policy</a></p>`
+    : "";
+
   if (process.env.RESEND_API_KEY) {
     await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -48,7 +55,7 @@ export async function POST(req: Request) {
         from: process.env.NEWSLETTER_FROM ?? "Pesti Est <onboarding@resend.dev>",
         to: normalized,
         subject: locale === "hu" ? "Erősítsd meg a Pesti Est hírlevelet" : "Confirm your Pesti Est newsletter",
-        html: `<p>${locale === "hu" ? "Kattints a feliratkozás megerősítéséhez:" : "Click to confirm:"}</p><p><a href="${confirmUrl}">${confirmUrl}</a></p>`,
+        html: `<p>${locale === "hu" ? "Kattints a feliratkozás megerősítéséhez:" : "Click to confirm:"}</p><p><a href="${confirmUrl}">${confirmUrl}</a></p>${privacyLine}`,
       }),
     }).catch(() => undefined);
   }

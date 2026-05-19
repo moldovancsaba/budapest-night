@@ -75,6 +75,7 @@ export const curatedProviderSchema = z
     externalProgramUrl: z.string().url().max(500).optional(),
     repertoireUrl: z.string().url().max(500).optional(),
     chainId: z.string().min(2).max(80).optional(),
+    englishFriendly: z.boolean().optional(),
     image: z
       .string()
       .max(2000)

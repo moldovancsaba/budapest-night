@@ -36,7 +36,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   for (const locale of locales) {
     for (const p of staticPaths) {
-      if (p.startsWith("/ez-a-het") && locale !== "hu") continue;
+      if (locale === "hu" && p.startsWith("/program")) continue;
+      if (locale !== "hu" && p.startsWith("/ez-a-het")) continue;
       entries.push({
         url: `${BASE}${localePath(locale, p)}`,
         changeFrequency: p === "" || p === "/program" ? "daily" : "weekly",

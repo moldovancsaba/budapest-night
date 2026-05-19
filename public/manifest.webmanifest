@@ -1,0 +1,22 @@
+{
+  "name": "Pesti Est",
+  "short_name": "Pesti Est",
+  "description": "Ingyenes budapesti programmagazin — mozi, színház, kiállítás, koncert.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#c41e3a",
+  "lang": "hu",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

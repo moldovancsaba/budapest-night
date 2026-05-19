@@ -70,6 +70,8 @@
     "crowd": "Crowd",
     "dayTime": "Day & time",
     "vibe": "Vibe",
+    "access": "Access",
+    "englishFriendly": "English-friendly",
     "any": "Any"
   },
   "dayTime": {
@@ -152,7 +154,7 @@
     "saveGroup": "Save group"
   },
   "discover": {
-    "eyebrow": "Budapest after dark",
+    "eyebrow": "Budapest program guide",
     "title": "Discover {category} in Budapest",
     "tagline": "Curated. Local. Built for nights out.",
     "findByArea": "Find {blurb} by district and neighborhood.",

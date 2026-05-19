@@ -14,6 +14,7 @@ export type ProgramWeekPayload = {
   spotlightEvents?: PublicNightEvent[];
   featuredProviders: Provider[];
   fallbackEventCount: number;
+  verticalSponsors?: Record<string, { name: string; url?: string }>;
 };
 
 export function useProgramWeek(week = "current") {

@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb, COL } from "@/lib/mongodb";
 import { parseAppLocaleParam, resolveProvidersForLocale } from "@/lib/providerLocale";
-import { featuredVenueIds, getActivePromotions } from "@/lib/promotionsDb";
+import {
+  featuredVenueIds,
+  filterPromosByLocale,
+  getActivePromotions,
+} from "@/lib/promotionsDb";
 import type { Provider } from "@/types/provider";
 import { getVertical, providerMatchesVertical } from "@/lib/programVerticals";
 import type { ProgramVerticalId } from "@/lib/programVerticals";
@@ -25,7 +29,7 @@ export async function GET(req: NextRequest) {
   if (verticalDef) {
     providers = providers.filter((p) => providerMatchesVertical(p, verticalDef));
   }
-  const promos = await getActivePromotions(db);
+  const promos = filterPromosByLocale(await getActivePromotions(db), locale);
   const featured = featuredVenueIds(promos);
   const promoByTarget = new Map(
     promos.filter((p) => p.type === "featured_venue").map((p) => [p.targetId, p.label]),

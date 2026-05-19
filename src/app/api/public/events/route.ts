@@ -4,7 +4,11 @@ import { parseAppLocaleParam, resolveEventsForLocale } from "@/lib/eventLocale";
 import { isUpcoming } from "@/lib/eventDisplay";
 import { archiveFinishedEvents } from "@/lib/eventsArchive";
 import { toPublicNightEvent } from "@/lib/publicEvent";
-import { featuredEventIds, getActivePromotions } from "@/lib/promotionsDb";
+import {
+  featuredEventIds,
+  filterPromosByLocale,
+  getActivePromotions,
+} from "@/lib/promotionsDb";
 import { resolveProviderLocation } from "@/lib/budapestLocation";
 import type { NightEvent } from "@/types/event";
 import type { Provider } from "@/types/provider";
@@ -33,9 +37,12 @@ export async function GET(req: NextRequest) {
     db.collection(COL.providers).find({}).toArray(),
     getActivePromotions(db),
   ]);
-  const featuredIds = featuredEventIds(promos);
+  const scopedPromos = filterPromosByLocale(promos, locale);
+  const featuredIds = featuredEventIds(scopedPromos);
   const promoByTarget = new Map(
-    promos.filter((p) => p.type === "featured_event").map((p) => [p.targetId, p.label]),
+    scopedPromos
+      .filter((p) => p.type === "featured_event")
+      .map((p) => [p.targetId, p.label]),
   );
   const eventsRaw = (rows as unknown as (NightEvent & { _id?: unknown })[]).map(stripId);
   const providersById = new Map(

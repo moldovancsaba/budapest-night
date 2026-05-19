@@ -21,7 +21,8 @@ export async function GET() {
     .sort({ startsAt: -1 })
     .toArray()) as unknown as PromotionDoc[];
 
-  const header = "id,type,targetId,label,startsAt,endsAt,priority,verticalSlug,contractRef";
+  const header =
+    "id,type,targetId,label,startsAt,endsAt,priority,verticalSlug,locales,contractRef,internalNotes";
   const lines = rows.map((r) =>
     [
       r._id,
@@ -32,7 +33,9 @@ export async function GET() {
       r.endsAt,
       String(r.priority),
       r.verticalSlug ?? "",
+      (r.locales ?? []).join("|"),
       r.contractRef ?? "",
+      r.internalNotes ?? "",
     ]
       .map(csvEscape)
       .join(","),

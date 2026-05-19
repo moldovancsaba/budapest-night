@@ -51,6 +51,10 @@ describe("appPaths", () => {
     expect(venue.venueId).toBe("ny-cafe");
     expect(venue.view).toBe("Restaurants");
 
+    const short = parseAppRoute("/v/ny-cafe", new URLSearchParams("utm_medium=qr"));
+    expect(short.venueId).toBe("ny-cafe");
+    expect(short.view).toBe("Venues");
+
     const group = parseAppRoute("/group/art-walk", new URLSearchParams());
     expect(group.groupId).toBe("art-walk");
     expect(group.view).toBe("Meet-Up Groups");
