@@ -262,7 +262,7 @@
       "weekly": "שבועי",
       "monthly": "חודשי",
       "weekend": "סוף שבוע",
-      "popup": "חד-פעמי"
+      "popup": "אירוע חד-פעמי"
     }
   },
   "calculator": {
@@ -375,7 +375,7 @@
         "title": "חיי לילה ואוכל בבלווארוש",
         "desc": "ברים על הדנובה, ביסטרות ומטבחים מאוחרים במרכז.",
         "borough": "בלווארוש",
-        "neighborhood": "עיר פנים",
+        "neighborhood": "מרכז העיר",
         "tone": "orange",
         "ctaLabel": "למדריך",
         "navigateTo": "Eat & Drink",
@@ -514,7 +514,7 @@
     "wesselenyiUtca": "Wesselényi utca",
     "rakocziTer": "Rákóczi tér",
     "corvinNegyed": "מתחם קורווין",
-    "muegyetem": "Műegyetem",
+    "muegyetem": "אוניברסיטת טכנולוגיה",
     "petofiBridge": "גשר פטופי",
     "nagytemplomUtca": "Nagytemplom utca",
     "borarosTer": "Boráros tér",

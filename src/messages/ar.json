@@ -262,7 +262,7 @@
       "weekly": "أسبوعي",
       "monthly": "شهري",
       "weekend": "نهاية الأسبوع",
-      "popup": "مؤقت"
+      "popup": "فعالية منبثقة"
     }
   },
   "calculator": {
@@ -375,7 +375,7 @@
         "title": "حياة ليلية ومطاعم في بلفاروس",
         "desc": "حانات على الدانوب ومطابخ متأخرة في وسط المدينة.",
         "borough": "بلفاروس",
-        "neighborhood": "المدينة الداخلية",
+        "neighborhood": "وسط المدينة",
         "tone": "orange",
         "ctaLabel": "استكشف الدليل",
         "navigateTo": "Eat & Drink",
@@ -464,7 +464,7 @@
     "ctaHome": "عودة إلى شوارع النيون",
     "ctaEvents": "اعثر على أماكن حقيقية",
     "statLabel": "احتمال أن هذا الرابط موجود",
-    "statValue": "0.0%"
+    "statValue": "0.0٪"
   },
   "trust": {
     "pillars": [
@@ -514,7 +514,7 @@
     "wesselenyiUtca": "Wesselényi utca",
     "rakocziTer": "Rákóczi tér",
     "corvinNegyed": "حي كورفين",
-    "muegyetem": "Műegyetem",
+    "muegyetem": "جامعة التكنولوجيا",
     "petofiBridge": "جسر بيتوفي",
     "nagytemplomUtca": "Nagytemplom utca",
     "borarosTer": "Boráros tér",

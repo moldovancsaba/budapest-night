@@ -69,7 +69,7 @@
       "toastSampleRemove": "שמור מקומות מגלו כדי לנהל אותם כאן.",
       "priceUnits": {
         "class": "כרטיס",
-        "week": "כניסה",
+        "week": "דמי כניסה",
         "party": "אדם",
         "visit": "ביקור"
       },
@@ -92,7 +92,7 @@
       "clearCta": "נקה תוכנית",
       "priceUnits": {
         "class": "כרטיס",
-        "week": "כניסה",
+        "week": "דמי כניסה",
         "party": "אדם",
         "visit": "ביקור"
       }
@@ -209,33 +209,6 @@
       "supportTextBefore": "שאלות? כתוב ל",
       "supportEmail": "hello@budapestnight.com",
       "supportTextAfter": ""
-    }
-  },
-  "meta": {
-    "title": "Pesti Est — Budapest events, culture & going out",
-    "description": "Free Budapest program guide: cinema, theatre, exhibitions, concerts, restaurants and nightlife by district."
-  },
-  "nav": {
-    "brand": "Pesti Est",
-    "program": "This week in Budapest"
-  },
-  "program": {
-    "weekTitle": "This week in Budapest",
-    "weekSubtitle": "Highlights from Pesti Est — refreshed every Thursday.",
-    "verticalsTitle": "Browse by type",
-    "thuNote": "Fresh week every Thursday.",
-    "partnerBadge": "Pesti Est partner",
-    "qrTitle": "Venue QR",
-    "qrDownload": "Download QR",
-    "qrHint": "Print for counter display — links to this venue on Pesti Est.",
-    "newsletterConfirm": "Check your email to confirm subscription.",
-    "subscribeError": "Subscription failed. Try again.",
-    "vertical": {
-      "mozi": "Cinema",
-      "szinhaz": "Theatre",
-      "kiallitas": "Exhibitions",
-      "koncert": "Concerts",
-      "csalad": "Family"
     }
   }
 }
