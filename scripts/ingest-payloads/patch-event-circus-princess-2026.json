@@ -1,0 +1,68 @@
+{
+  "sourceUrls": [
+    "https://new.operett.hu/repertoar/a-cirkuszhercegno",
+    "https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387"
+  ],
+  "notes": "Single event ingest — Circus Princess matinee in current program week (Sun 17 May 2026).",
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-circus-princess-operetta-2026",
+        "title": "The Circus Princess — matinee at Budapest Operetta Theatre",
+        "shortDescription": "Kalman operetta matinee — Sunday 17 May 2026, 11:00 at Nagymező utca (Terézváros).",
+        "longDescription": "The Budapest Operetta & Musical Theatre presents Emmerich Kálmán’s The Circus Princess (A cirkuszhercegnő) in a Sunday matinee on 17 May 2026 at 11:00. 1065 Budapest, Nagymező utca 17. Tickets via operett.jegy.hu and new.operett.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+        "startsAt": "2026-05-17T11:00:00+02:00",
+        "endsAt": "2026-05-17T13:30:00+02:00",
+        "venueIds": ["prov-operetta-terezvaros"],
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "entryFees": [],
+        "activityTypes": ["Theatre", "Live Music"],
+        "ageRanges": ["All ages", "Family"],
+        "dayTimeTags": ["Weekend", "Afternoon"],
+        "badges": ["Featured"],
+        "image": "https://i.ibb.co/23Qxxqb3/0c6f2e11225e.jpg",
+        "website": "https://new.operett.hu/repertoar/a-cirkuszhercegno",
+        "bookingUrl": "https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387",
+        "email": "jegy@operett.hu",
+        "phone": "+36 1 312-4866",
+        "timezone": "Europe/Budapest",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "circus-princess-operetta-2026",
+            "title": "A cirkuszhercegnő — délelőtti előadás az Operettben",
+            "shortDescription": "Kálmán operett — 2026. május 17., vasárnap 11:00, Nagymező utca (Terézváros).",
+            "longDescription": "A Budapesti Operettszínház Kálmán Emmerich A cirkuszhercegnő című operettjét mutatja be 2026. május 17-én, vasárnap 11:00-kor. 1065 Budapest, Nagymező utca 17. Jegyek: operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno https://operett.jegy.hu/program/a-cirkuszhercegno-161201/1412387"
+          },
+          "es": {
+            "slug": "circus-princess-operetta-2026",
+            "title": "La princesa del circo — matinal en la Operetta",
+            "shortDescription": "Opereta de Kálmán — 17 mayo 2026, 11:00, Nagymező.",
+            "longDescription": "La princesa del circo en el Teatro de Opereta de Budapest el 17 de mayo de 2026 a las 11:00. Entradas en operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno"
+          },
+          "it": {
+            "slug": "circus-princess-operetta-2026",
+            "title": "La principessa del circo — matinée all'Operetta",
+            "shortDescription": "Operetta di Kálmán — 17 maggio 2026, ore 11:00.",
+            "longDescription": "La principessa del circo al Teatro dell'Operetta di Budapest il 17 maggio 2026 alle 11:00. Biglietti su operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno"
+          },
+          "he": {
+            "slug": "circus-princess-operetta-2026",
+            "title": "נסיכת הקרקס — מופע צהריים באופרטה",
+            "shortDescription": "אופרטה של קלמן — 17 במאי 2026, 11:00.",
+            "longDescription": "נסיכת הקרקס בתיאטרון האופרטה בבודפשט ב-17 במאי 2026 בשעה 11:00. כרטיסים ב-operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno"
+          },
+          "ar": {
+            "slug": "circus-princess-operetta-2026",
+            "title": "أميرة السيرك — عرض ظهيرة في الأوبريتا",
+            "shortDescription": "أوبريتا لكالمان — 17 مايو 2026، 11:00.",
+            "longDescription": "أميرة السيرك في مسرح الأوبريتا بودابست في 17 مايو 2026 الساعة 11:00. التذاكر على operett.jegy.hu.\n\nSources: https://new.operett.hu/repertoar/a-cirkuszhercegno"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -29,6 +29,7 @@
     "seed:program-verticals:gen": "node scripts/generate-program-vertical-seed.cjs",
     "seed:program-verticals": "npm run seed:program-verticals:gen && npm run ingest:db -- scripts/ingest-payloads/program-verticals-seed.json",
     "ops:publish-program": "node -r ./scripts/load-env.cjs scripts/bootstrap-program-delivery.cjs",
+    "ops:program-week": "node -r ./scripts/load-env.cjs scripts/patch-program-week-current.cjs",
     "ops:seo-smoke": "node scripts/seo-production-smoke.cjs",
     "menu:status": "node -r ./scripts/load-env.cjs scripts/menu-batch-status.cjs",
     "audit:locations": "node -r ./scripts/load-env.cjs scripts/fix-venue-locations.cjs",

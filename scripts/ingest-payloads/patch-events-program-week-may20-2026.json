@@ -1,0 +1,167 @@
+{
+  "sourceUrls": [
+    "https://www.zenehaza.hu/en/occasion/makam-trio",
+    "https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949"
+  ],
+  "notes": "Fill program week 2026-05-14 — May 20 listings.",
+  "operations": [
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-makam-trio-zenehaza-2026",
+        "title": "Makám Trio — free concert at House of Music Hungary",
+        "shortDescription": "Pop-jazz trio — Tuesday 20 May 2026, 20:00, Magyar Zene Háza (City Park).",
+        "longDescription": "Makám Trio (Zoltán Krulik, Luca Kézdy, István Bata) play a free pop-jazz set at the House of Music Hungary (Magyar Zene Háza) on 20 May 2026 at 20:00. 1095 Budapest, Magyar Zene Háza park. Details: zenehaza.hu.\n\nSources: https://www.zenehaza.hu/en/occasion/makam-trio",
+        "startsAt": "2026-05-20T20:00:00+02:00",
+        "endsAt": "2026-05-20T21:30:00+02:00",
+        "venueIds": [
+          "prov-mupa-budapest"
+        ],
+        "borough": "Ferencváros",
+        "neighborhood": "Műegyetem",
+        "entryFees": [
+          {
+            "id": "free",
+            "label": "Free admission",
+            "amount": 0,
+            "currency": "FREE",
+            "source": "published"
+          }
+        ],
+        "activityTypes": [
+          "Live Music",
+          "Jazz"
+        ],
+        "ageRanges": [
+          "All ages"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday"
+        ],
+        "badges": [
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/23Qxxqb3/0c6f2e11225e.jpg",
+        "website": "https://www.zenehaza.hu/en/occasion/makam-trio",
+        "bookingUrl": "https://www.zenehaza.hu/en/occasion/makam-trio",
+        "timezone": "Europe/Budapest",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "makam-trio-zenehaza-2026",
+            "title": "Makám Trio — ingyenes koncert a Magyar Zene Házában",
+            "shortDescription": "Pop-jazz trió — 2026. május 20., kedd 20:00, Városliget.",
+            "longDescription": "A Makám Trio ingyenes pop-jazz estet ad a Magyar Zene Házában 2026. május 20-án 20:00-kor. Részletek: zenehaza.hu.\n\nSources: https://www.zenehaza.hu/en/occasion/makam-trio"
+          },
+          "es": {
+            "slug": "makam-trio-zenehaza-2026-es",
+            "title": "Makám Trio — free concert at House of Music Hungary",
+            "shortDescription": "Pop-jazz trio — Tuesday 20 May 2026, 20:00, Magyar Zene Háza (City Park).",
+            "longDescription": "Makám Trio (Zoltán Krulik, Luca Kézdy, István Bata) play a free pop-jazz set at the House of Music Hungary (Magyar Zene Háza) on 20 May 2026 at 20:00. 1095 Budapest, Magyar Zene Háza park. Details: zenehaza.hu.\n\nSources: https://www.zenehaza.hu/en/occasion/makam-trio"
+          },
+          "it": {
+            "slug": "makam-trio-zenehaza-2026-it",
+            "title": "Makám Trio — free concert at House of Music Hungary",
+            "shortDescription": "Pop-jazz trio — Tuesday 20 May 2026, 20:00, Magyar Zene Háza (City Park).",
+            "longDescription": "Makám Trio (Zoltán Krulik, Luca Kézdy, István Bata) play a free pop-jazz set at the House of Music Hungary (Magyar Zene Háza) on 20 May 2026 at 20:00. 1095 Budapest, Magyar Zene Háza park. Details: zenehaza.hu.\n\nSources: https://www.zenehaza.hu/en/occasion/makam-trio"
+          },
+          "he": {
+            "slug": "makam-trio-zenehaza-2026-he",
+            "title": "Makám Trio — free concert at House of Music Hungary",
+            "shortDescription": "Pop-jazz trio — Tuesday 20 May 2026, 20:00, Magyar Zene Háza (City Park).",
+            "longDescription": "Makám Trio (Zoltán Krulik, Luca Kézdy, István Bata) play a free pop-jazz set at the House of Music Hungary (Magyar Zene Háza) on 20 May 2026 at 20:00. 1095 Budapest, Magyar Zene Háza park. Details: zenehaza.hu.\n\nSources: https://www.zenehaza.hu/en/occasion/makam-trio"
+          },
+          "ar": {
+            "slug": "makam-trio-zenehaza-2026-ar",
+            "title": "Makám Trio — free concert at House of Music Hungary",
+            "shortDescription": "Pop-jazz trio — Tuesday 20 May 2026, 20:00, Magyar Zene Háza (City Park).",
+            "longDescription": "Makám Trio (Zoltán Krulik, Luca Kézdy, István Bata) play a free pop-jazz set at the House of Music Hungary (Magyar Zene Háza) on 20 May 2026 at 20:00. 1095 Budapest, Magyar Zene Háza park. Details: zenehaza.hu.\n\nSources: https://www.zenehaza.hu/en/occasion/makam-trio"
+          }
+        },
+        "email": "info@pestiest.hu",
+        "phone": "+36 1 555 0000"
+      }
+    },
+    {
+      "resource": "event",
+      "action": "upsert",
+      "document": {
+        "id": "event-guido-mancusi-zeneakademia-2026",
+        "title": "Guido Mancusi & Budafok Dohnányi Orchestra — Liszt Academy",
+        "shortDescription": "Symphonic evening — Tuesday 20 May 2026, 19:30, Zeneakadémia Grand Hall (Terézváros).",
+        "longDescription": "Guido Mancusi conducts the Budafok Dohnányi Orchestra at the Liszt Ferenc Academy Grand Hall on 20 May 2026 at 19:30. Program includes Brahms, Liszt, Tchaikovsky, Bartók, and Mancusi. Tickets from 4,900 HUF on koncert.zeneakademia.hu.\n\nSources: https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949",
+        "startsAt": "2026-05-20T19:30:00+02:00",
+        "endsAt": "2026-05-20T22:00:00+02:00",
+        "venueIds": [
+          "prov-operetta-terezvaros"
+        ],
+        "borough": "Terézváros",
+        "neighborhood": "Opera",
+        "entryFees": [
+          {
+            "id": "from",
+            "label": "From",
+            "amount": 4900,
+            "currency": "HUF",
+            "source": "published"
+          }
+        ],
+        "activityTypes": [
+          "Live Music",
+          "Theatre"
+        ],
+        "ageRanges": [
+          "All ages"
+        ],
+        "dayTimeTags": [
+          "Evening",
+          "Weekday"
+        ],
+        "badges": [
+          "Featured"
+        ],
+        "image": "https://i.ibb.co/23Qxxqb3/0c6f2e11225e.jpg",
+        "website": "https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949",
+        "bookingUrl": "https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949",
+        "timezone": "Europe/Budapest",
+        "status": "scheduled",
+        "locales": {
+          "hu": {
+            "slug": "guido-mancusi-zeneakademia-2026",
+            "title": "Guido Mancusi & Budafoki Dohnányi Zenekar — Zeneakadémia",
+            "shortDescription": "Szimfonikus est — 2026. május 20., kedd 19:30, Nagyterem.",
+            "longDescription": "Guido Mancusi a Budafoki Dohnányi Zenekart vezeti a Zeneakadémia Nagytermében 2026. május 20-án 19:30-kor. Jegyek: koncert.zeneakademia.hu.\n\nSources: https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949"
+          },
+          "es": {
+            "slug": "guido-mancusi-zeneakademia-2026-es",
+            "title": "Guido Mancusi & Budafok Dohnányi Orchestra — Liszt Academy",
+            "shortDescription": "Symphonic evening — Tuesday 20 May 2026, 19:30, Zeneakadémia Grand Hall (Terézváros).",
+            "longDescription": "Guido Mancusi conducts the Budafok Dohnányi Orchestra at the Liszt Ferenc Academy Grand Hall on 20 May 2026 at 19:30. Program includes Brahms, Liszt, Tchaikovsky, Bartók, and Mancusi. Tickets from 4,900 HUF on koncert.zeneakademia.hu.\n\nSources: https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949"
+          },
+          "it": {
+            "slug": "guido-mancusi-zeneakademia-2026-it",
+            "title": "Guido Mancusi & Budafok Dohnányi Orchestra — Liszt Academy",
+            "shortDescription": "Symphonic evening — Tuesday 20 May 2026, 19:30, Zeneakadémia Grand Hall (Terézváros).",
+            "longDescription": "Guido Mancusi conducts the Budafok Dohnányi Orchestra at the Liszt Ferenc Academy Grand Hall on 20 May 2026 at 19:30. Program includes Brahms, Liszt, Tchaikovsky, Bartók, and Mancusi. Tickets from 4,900 HUF on koncert.zeneakademia.hu.\n\nSources: https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949"
+          },
+          "he": {
+            "slug": "guido-mancusi-zeneakademia-2026-he",
+            "title": "Guido Mancusi & Budafok Dohnányi Orchestra — Liszt Academy",
+            "shortDescription": "Symphonic evening — Tuesday 20 May 2026, 19:30, Zeneakadémia Grand Hall (Terézváros).",
+            "longDescription": "Guido Mancusi conducts the Budafok Dohnányi Orchestra at the Liszt Ferenc Academy Grand Hall on 20 May 2026 at 19:30. Program includes Brahms, Liszt, Tchaikovsky, Bartók, and Mancusi. Tickets from 4,900 HUF on koncert.zeneakademia.hu.\n\nSources: https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949"
+          },
+          "ar": {
+            "slug": "guido-mancusi-zeneakademia-2026-ar",
+            "title": "Guido Mancusi & Budafok Dohnányi Orchestra — Liszt Academy",
+            "shortDescription": "Symphonic evening — Tuesday 20 May 2026, 19:30, Zeneakadémia Grand Hall (Terézváros).",
+            "longDescription": "Guido Mancusi conducts the Budafok Dohnányi Orchestra at the Liszt Ferenc Academy Grand Hall on 20 May 2026 at 19:30. Program includes Brahms, Liszt, Tchaikovsky, Bartók, and Mancusi. Tickets from 4,900 HUF on koncert.zeneakademia.hu.\n\nSources: https://koncert.zeneakademia.hu/programs/2026-05-20-guido-mancusi-budafok-dohnanyi-orchestra-13949"
+          }
+        },
+        "email": "info@pestiest.hu",
+        "phone": "+36 1 555 0000"
+      }
+    }
+  ]
+}
