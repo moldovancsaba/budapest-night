@@ -8,12 +8,10 @@ import {
   Sparkles,
   Users,
   ArrowRight,
-  Mail,
   Star,
   Building2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import { useLocale, useTranslations } from "next-intl";
@@ -43,7 +41,6 @@ import { CMS_MEDIA } from "@/config/defaultMedia";
 import { Link } from "@/i18n/routing";
 import { buildProgramPath } from "@/lib/appPaths";
 import { cacheBustMediaUrl } from "@/lib/siteMedia";
-import { toast } from "sonner";
 import { CdnImage } from "@/components/ui/CdnImage";
 import { SiteLucideIcon } from "@/lib/siteLucideIcon";
 import {
@@ -143,7 +140,6 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
   const home = useHomeCopy();
   const trustPillars = useTrustPillars();
   const [borough, setBorough] = useState<BoroughChoice>("All");
-  const [email, setEmail] = useState("");
   const { data: providers = [] } = useProvidersCatalog();
   const { data: events = [] } = useEventsCatalog();
   const { data: meetups = [] } = useMeetupGroupsCatalog();
@@ -626,61 +622,6 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
         </section>
       )}
 
-      {/* EMAIL */}
-      <section className="overflow-hidden rounded-[2rem] border border-border bg-card px-6 py-10 sm:px-12">
-        <div className="grid items-center gap-6 md:grid-cols-[auto_1fr_auto]">
-          <span className="grid h-14 w-14 place-items-center rounded-full bg-muted text-foreground ">
-            <Mail className="h-6 w-6" />
-          </span>
-          <div>
-            <h2 className="font-display text-xl font-bold text-foreground sm:text-2xl">
-              {home.newsletterTitle}
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {home.newsletterSubtitle}
-            </p>
-          </div>
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-              if (!email) return;
-              try {
-                const locale = document.documentElement.lang || "hu";
-                const r = await fetch("/api/public/newsletter/subscribe", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({ email, locale }),
-                });
-                const j = (await r.json()) as { ok?: boolean };
-                if (!r.ok || !j.ok) throw new Error("subscribe failed");
-                toast.success(home.newsletterSuccess);
-                setEmail("");
-              } catch {
-                toast.error(tProgram("subscribeError"));
-              }
-            }}
-            className="flex w-full flex-col gap-2 sm:flex-row md:w-auto"
-          >
-            <Input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={home.newsletterPlaceholder}
-              className="h-11 rounded-full border-border/80 bg-background/50 sm:w-64"
-            />
-            <Button
-              type="submit"
-              className="h-11 rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
-            >
-              {home.newsletterCta}
-            </Button>
-          </form>
-        </div>
-        <p className="mt-4 text-center text-xs text-muted-foreground md:text-left">
-          {home.newsletterFinePrint}
-        </p>
-      </section>
     </div>
   );
 }

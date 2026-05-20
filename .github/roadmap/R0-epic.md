@@ -20,8 +20,7 @@ Umbrella epic for transforming the **Budapest Night** codebase into **PestiEst**
 4. [#5 — R4 Partner distribution](https://github.com/moldovancsaba/budapest-night/issues/5)
 5. [#6 — R5 Monetization featured inventory](https://github.com/moldovancsaba/budapest-night/issues/6)
 6. [#7 — R6 SEO & structured data](https://github.com/moldovancsaba/budapest-night/issues/7)
-7. [#8 — R7 Newsletter digest](https://github.com/moldovancsaba/budapest-night/issues/8)
-8. [#9 — R8 International layer](https://github.com/moldovancsaba/budapest-night/issues/9)
+7. [#9 — R8 International layer](https://github.com/moldovancsaba/budapest-night/issues/9)
 
 **Project board:** https://github.com/users/moldovancsaba/projects/43
 

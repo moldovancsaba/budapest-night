@@ -305,11 +305,6 @@ const SITE_DOC = `interface SiteDoc {
   trustLines: string[];
   popularPicksSectionTitle: string;
   popularPicksViewAllLabel: string;
-  newsletterTitle: string;
-  newsletterSubtitle: string;
-  newsletterPlaceholder: string;
-  newsletterCta: string;
-  newsletterFinePrint: string;
   sidebarTitle: string;
   sidebarBody: string;
   sidebarCtaLabel: string;

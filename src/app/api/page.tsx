@@ -5,7 +5,7 @@ import { ApiDocsPage } from "@/components/api/ApiDocsPage";
 export const metadata: Metadata = {
   title: "HTTP API reference | Pesti Est",
   description:
-    "Pesti Est HTTP APIs: public catalog, program week, newsletter, Night Guide streaming chat, machine ingest, and admin session endpoints.",
+    "Pesti Est HTTP APIs: public catalog, program week, Night Guide streaming chat, machine ingest, and admin session endpoints.",
   robots: { index: true, follow: true },
 };
 

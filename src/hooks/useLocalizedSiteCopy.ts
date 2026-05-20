@@ -76,12 +76,6 @@ export type HomeCopy = {
   culturePickBadge: string;
   cultureCircleLabel: string;
   freeToJoin: string;
-  newsletterTitle: string;
-  newsletterSubtitle: string;
-  newsletterPlaceholder: string;
-  newsletterCta: string;
-  newsletterFinePrint: string;
-  newsletterSuccess: string;
   guides: SiteGuide[];
   howItWorksSteps: SiteHowStep[];
 };
@@ -112,12 +106,6 @@ export function useHomeCopy(): HomeCopy {
     culturePickBadge: tHome("culturePickBadge"),
     cultureCircleLabel: tHome("cultureCircleLabel"),
     freeToJoin: tHome("freeToJoin"),
-    newsletterTitle: tHome("newsletterTitle"),
-    newsletterSubtitle: tHome("newsletterSubtitle"),
-    newsletterPlaceholder: tHome("newsletterPlaceholder"),
-    newsletterCta: tHome("newsletterCta"),
-    newsletterFinePrint: tHome("newsletterFinePrint"),
-    newsletterSuccess: tHome("newsletterSuccess"),
     guides: withDistinctGuideImages(tHome.raw("guides") as SiteGuide[]),
     howItWorksSteps: tHome.raw("howItWorksSteps") as SiteHowStep[],
   };

@@ -57,8 +57,6 @@ Rebrand the product from working title **Budapest Night** to **Pesti Est** on al
 
 - Full mozi/színház catalog (R3)
 - Weekly home UX (R2)
-- Newsletter (R7)
-
 ## Estimate
 
 **M** (3–5 dev days) + design/copy review

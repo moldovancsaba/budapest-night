@@ -193,11 +193,6 @@ export interface SiteDoc {
   trustLines: string[];
   popularPicksSectionTitle: string;
   popularPicksViewAllLabel: string;
-  newsletterTitle: string;
-  newsletterSubtitle: string;
-  newsletterPlaceholder: string;
-  newsletterCta: string;
-  newsletterFinePrint: string;
   sidebarTitle: string;
   sidebarBody: string;
   sidebarCtaLabel: string;
@@ -330,11 +325,6 @@ export const DEFAULT_SITE: Omit<SiteDoc, "_id"> = {
   trustLines: ["Curated Budapest listings", "District-first search", "Built for nights out"],
   popularPicksSectionTitle: "Neon picks to get you started",
   popularPicksViewAllLabel: "View all",
-  newsletterTitle: "Get the latest Budapest night picks for your district",
-  newsletterSubtitle: "New events, parties, restaurants, cafés, and culture — in your inbox.",
-  newsletterPlaceholder: "Enter your email",
-  newsletterCta: "Sign me up!",
-  newsletterFinePrint: "No spam. Unsubscribe anytime.",
   sidebarTitle: "List your venue",
   sidebarBody: "Reach night owls and culture seekers with a featured listing.",
   sidebarCtaLabel: "Get in touch",

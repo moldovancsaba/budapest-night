@@ -488,27 +488,6 @@ export default function AdminDashboard() {
                     />
                   </Field>
                 </div>
-                <p className="text-sm font-medium text-foreground">Newsletter</p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <Field label="Newsletter title" className="sm:col-span-2">
-                    <Input value={site.newsletterTitle ?? ""} onChange={(e) => setSite({ ...site, newsletterTitle: e.target.value })} />
-                  </Field>
-                  <Field label="Newsletter subtitle" className="sm:col-span-2">
-                    <Input value={site.newsletterSubtitle ?? ""} onChange={(e) => setSite({ ...site, newsletterSubtitle: e.target.value })} />
-                  </Field>
-                  <Field label="Email placeholder">
-                    <Input
-                      value={site.newsletterPlaceholder ?? ""}
-                      onChange={(e) => setSite({ ...site, newsletterPlaceholder: e.target.value })}
-                    />
-                  </Field>
-                  <Field label="Submit button label">
-                    <Input value={site.newsletterCta ?? ""} onChange={(e) => setSite({ ...site, newsletterCta: e.target.value })} />
-                  </Field>
-                  <Field label="Fine print" className="sm:col-span-2">
-                    <Input value={site.newsletterFinePrint ?? ""} onChange={(e) => setSite({ ...site, newsletterFinePrint: e.target.value })} />
-                  </Field>
-                </div>
                 <Field label="Guides JSON (SiteGuide[]: id?, title, desc, borough, neighborhood, imageUrl, tone, ctaLabel?, ctaHref?)">
                   <Textarea value={guidesDraft} onChange={(e) => setGuidesDraft(e.target.value)} rows={10} className="font-mono text-xs" />
                 </Field>

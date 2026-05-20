@@ -25,7 +25,6 @@ export function AdminPromotionsTab() {
   const [startsAt, setStartsAt] = useState("");
   const [endsAt, setEndsAt] = useState("");
   const [verticalSlug, setVerticalSlug] = useState("");
-  const [testEmail, setTestEmail] = useState("");
 
   const load = () =>
     adminFetch("/api/admin/promotions").then(async (r) => {
@@ -88,24 +87,6 @@ export function AdminPromotionsTab() {
     load();
   };
 
-  const sendNewsletterTest = async () => {
-    if (!testEmail.trim()) {
-      toast.error("Test email required");
-      return;
-    }
-    const r = await adminFetch("/api/admin/newsletter/test", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: testEmail.trim() }),
-    });
-    if (!r.ok) {
-      const data = (await r.json()) as { error?: string };
-      toast.error(data.error ?? "Send failed");
-      return;
-    }
-    toast.success("Test digest sent");
-  };
-
   return (
     <div className="space-y-6 max-w-2xl">
       <div className="grid gap-2">
@@ -139,20 +120,6 @@ export function AdminPromotionsTab() {
             <a href="/api/admin/qr-pack?partner=1&print=1" target="_blank" rel="noopener noreferrer">
               A5 QR pack (HTML print)
             </a>
-          </Button>
-        </div>
-        <div className="flex flex-wrap items-end gap-2 rounded border p-3">
-          <div className="flex-1 min-w-[200px]">
-            <p className="mb-1 text-xs font-medium text-muted-foreground">Newsletter test (Resend)</p>
-            <Input
-              type="email"
-              placeholder="you@example.com"
-              value={testEmail}
-              onChange={(e) => setTestEmail(e.target.value)}
-            />
-          </div>
-          <Button type="button" variant="secondary" onClick={sendNewsletterTest}>
-            Send test digest
           </Button>
         </div>
         <Input placeholder="targetId (prov-* or event-*)" value={targetId} onChange={(e) => setTargetId(e.target.value)} />

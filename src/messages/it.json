@@ -345,12 +345,6 @@
     "culturePickBadge": "Scelta cultura",
     "cultureCircleLabel": "Circolo culturale",
     "freeToJoin": "Gratuito",
-    "newsletterTitle": "Le migliori serate di Budapest nel tuo quartiere",
-    "newsletterSubtitle": "Eventi, feste, ristoranti, caffè e cultura — nella tua inbox.",
-    "newsletterPlaceholder": "La tua email",
-    "newsletterCta": "Iscrivimi!",
-    "newsletterFinePrint": "Niente spam. Cancellati quando vuoi.",
-    "newsletterSuccess": "Sei in lista! Ti scriviamo presto.",
     "categories": {
       "events": {
         "description": "Concerti, festival e spettacoli con biglietto, con orario di inizio e fine"
@@ -677,8 +671,6 @@
     "qrTitle": "QR locale",
     "qrDownload": "Scarica QR",
     "qrHint": "Per il bancone — link al locale su Pesti Est.",
-    "newsletterConfirm": "Conferma via email.",
-    "subscribeError": "Iscrizione non riuscita.",
     "featuredEvents": "Eventi in evidenza",
     "spotlightEvents": "In arrivo — scelti dalla redazione",
     "spotlightEventsHint": "Grandi eventi dopo questa settimana.",

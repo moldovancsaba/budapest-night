@@ -393,12 +393,6 @@
     "culturePickBadge": "Culture pick",
     "cultureCircleLabel": "Culture circle",
     "freeToJoin": "Free to join",
-    "newsletterTitle": "Get the latest Budapest night picks for your district",
-    "newsletterSubtitle": "New events, parties, restaurants, cafés, and culture — in your inbox.",
-    "newsletterPlaceholder": "Enter your email",
-    "newsletterCta": "Sign me up!",
-    "newsletterFinePrint": "No spam. Unsubscribe anytime.",
-    "newsletterSuccess": "You're on the list! We'll be in touch soon.",
     "guides": [
       {
         "id": "guide-belvaros",
@@ -677,8 +671,6 @@
     "qrTitle": "Venue QR",
     "qrDownload": "Download QR",
     "qrHint": "Print for counter display — links to this venue on Pesti Est.",
-    "newsletterConfirm": "Check your email to confirm subscription.",
-    "subscribeError": "Subscription failed. Try again.",
     "featuredEvents": "Featured events",
     "spotlightEvents": "Coming up — editor's picks",
     "spotlightEventsHint": "Headline shows after this week — tickets and details on Pesti Est.",

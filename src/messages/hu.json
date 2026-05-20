@@ -393,12 +393,6 @@
     "culturePickBadge": "Kultúra ajánlat",
     "cultureCircleLabel": "Kultúrkör",
     "freeToJoin": "Ingyenes csatlakozás",
-    "newsletterTitle": "Legfrissebb budapesti éjszakai tippek a kerületedre",
-    "newsletterSubtitle": "Új események, bulik, éttermek, kávézók és kultúra — e-mailben.",
-    "newsletterPlaceholder": "E-mail címed",
-    "newsletterCta": "Feliratkozom",
-    "newsletterFinePrint": "Nincs spam. Bármikor leiratkozhatsz.",
-    "newsletterSuccess": "Feliratkoztál! Hamarosan jelentkezünk.",
     "guides": [
       {
         "id": "guide-belvaros",
@@ -677,8 +671,6 @@
     "qrTitle": "Helyszín QR",
     "qrDownload": "QR letöltése",
     "qrHint": "Nyomtasd ki a pultra — a helyszín Pesti Est oldalára mutat.",
-    "newsletterConfirm": "Erősítsd meg a feliratkozást az e-mailben.",
-    "subscribeError": "A feliratkozás nem sikerült.",
     "featuredEvents": "Kiemelt események",
     "spotlightEvents": "Közelgő kiemelt programok",
     "spotlightEventsHint": "A hét után induló nagy események — jegyek és részletek egy kattintással.",

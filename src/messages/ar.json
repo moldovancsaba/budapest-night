@@ -345,12 +345,6 @@
     "culturePickBadge": "اختيار ثقافي",
     "cultureCircleLabel": "دائرة ثقافية",
     "freeToJoin": "مجاني",
-    "newsletterTitle": "أفضل ليالي بودابست لمنطقتك",
-    "newsletterSubtitle": "فعاليات وحفلات ومطاعم ومقاهٍ وثقافة — في بريدك.",
-    "newsletterPlaceholder": "بريدك الإلكتروني",
-    "newsletterCta": "سجّلني!",
-    "newsletterFinePrint": "بدون إزعاج. إلغاء في أي وقت.",
-    "newsletterSuccess": "أنت على القائمة! سنتواصل قريباً.",
     "categories": {
       "events": {
         "description": "حفلات ومهرجانات وعروض بتذاكر مع وقت بداية ونهاية"
@@ -677,8 +671,6 @@
     "qrTitle": "QR للمكان",
     "qrDownload": "تحميل QR",
     "qrHint": "للطباعة عند المنضدة.",
-    "newsletterConfirm": "أكّد عبر البريد.",
-    "subscribeError": "فشل الاشتراك.",
     "featuredEvents": "فعاليات مميزة",
     "spotlightEvents": "قريباً — اختيارات التحرير",
     "spotlightEventsHint": "فعاليات كبرى بعد هذا الأسبوع.",

@@ -30,5 +30,4 @@ export const COL = {
   venueReviews: "venueReviews",
   programWeeks: "programWeeks",
   promotions: "promotions",
-  newsletterSubscribers: "newsletterSubscribers",
 } as const;

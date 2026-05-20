@@ -345,12 +345,6 @@
     "culturePickBadge": "בחירת תרבות",
     "cultureCircleLabel": "מעגל תרבות",
     "freeToJoin": "הצטרפות חינם",
-    "newsletterTitle": "הלילות הכי טובים בבודפשט למחוז שלך",
-    "newsletterSubtitle": "אירועים, מסיבות, מסעדות, בתי קפה ותרבות — למייל.",
-    "newsletterPlaceholder": "האימייל שלך",
-    "newsletterCta": "רשמו אותי!",
-    "newsletterFinePrint": "בלי ספאם. ביטול בכל עת.",
-    "newsletterSuccess": "נרשמת! נהיה בקשר בקרוב.",
     "categories": {
       "events": {
         "description": "קונצרטים, פסטיבלים והופעות בתשלום עם שעת התחלה וסיום"
@@ -677,8 +671,6 @@
     "qrTitle": "QR למקום",
     "qrDownload": "הורד QR",
     "qrHint": "להדפסה בדלפק.",
-    "newsletterConfirm": "אשרו במייל.",
-    "subscribeError": "ההרשמה נכשלה.",
     "featuredEvents": "אירועים נבחרים",
     "spotlightEvents": "בקרוב — בחירת המערכת",
     "spotlightEventsHint": "אירועים גדולים לאחר השבוע הנוכחי.",

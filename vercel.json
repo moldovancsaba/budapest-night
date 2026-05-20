@@ -17,10 +17,6 @@
       "schedule": "30 4 * * 0"
     },
     {
-      "path": "/api/cron/newsletter",
-      "schedule": "0 5 * * 4"
-    },
-    {
       "path": "/api/cron/archive-events",
       "schedule": "15 * * * *"
     },
