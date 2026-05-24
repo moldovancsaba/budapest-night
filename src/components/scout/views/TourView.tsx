@@ -1,16 +1,29 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, Loader2, MapPin, RefreshCw } from "lucide-react";
+import { ChevronLeft, MapPin, RefreshCw } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import { Link, useRouter } from "@/i18n/routing";
 import { buildSectionPath, buildTourPath } from "@/lib/appPaths";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
-import { CdnImage } from "@/components/ui/CdnImage";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
+import {
+  Anchor,
+  Badge,
+  Box,
+  Card,
+  Group,
+  List,
+  Loader,
+  Paper,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 
 type TourStop = {
   providerId: string;
@@ -82,112 +95,127 @@ export function TourView({ tourId, seed, onOpen }: Props) {
   const description = t(`${tourId}.description`);
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap items-center gap-3">
-        <Link
-          href={buildSectionPath("eat-drink")}
-          className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-        >
-          <ChevronLeft className="h-4 w-4" />
+    <Stack gap="lg">
+      <Anchor
+        component={Link}
+        href={buildSectionPath("eat-drink")}
+        size="sm"
+        c="dimmed"
+        underline="never"
+      >
+        <Group gap={4} wrap="nowrap">
+          <ChevronLeft size={16} />
           {t("backToEatDrink")}
-        </Link>
-      </div>
+        </Group>
+      </Anchor>
 
-      <div>
-        <h1 className="font-display text-3xl font-bold text-foreground">
+      <Stack gap="sm">
+        <Title order={1} size="h2" tt="uppercase" lts="0.02em">
           {title}
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+        </Title>
+        <Text size="sm" c="dimmed" maw={640}>
           {description}
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          <Button
+        </Text>
+        <Group gap="xs">
+          <AppButton
             size="sm"
             variant="outline"
+            radius="xl"
             onClick={reshuffle}
             disabled={loading}
+            leftSection={<RefreshCw size={16} />}
           >
-            <RefreshCw className="mr-2 h-4 w-4" />
             {t("reshuffle")}
-          </Button>
-        </div>
-      </div>
+          </AppButton>
+        </Group>
+      </Stack>
 
       {loading ? (
-        <div className="flex justify-center py-20">
-          <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        </div>
+        <Group justify="center" py={80}>
+          <Loader color="gray" />
+        </Group>
       ) : error ? (
-        <p className="rounded-2xl border border-dashed border-border py-12 text-center text-sm text-muted-foreground">
-          {t(`errors.${error}`)}
-        </p>
+        <Paper radius="xl" withBorder py={48} ta="center">
+          <Text size="sm" c="dimmed">
+            {t(`errors.${error}`)}
+          </Text>
+        </Paper>
       ) : (
-        <ol className="space-y-6">
+        <Stack component="ol" gap="lg" style={{ listStyle: "none", margin: 0, padding: 0 }}>
           {stops.map((stop, idx) => {
             const provider = providers.find((p) => p.id === stop.providerId);
             return (
-              <li
-                key={`${stop.providerId}-${idx}`}
-                className="overflow-hidden rounded-2xl border border-border/70 bg-card/50"
-              >
-                <div className="relative h-40 w-full">
-                  <CdnImage
-                    fill
-                    resolveBase={stop.website}
-                    src={stop.image || CMS_MEDIA.fallbackListing}
-                    alt={stop.providerName}
-                  />
-                  <span className="absolute left-4 top-4 grid h-8 w-8 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
-                    {idx + 1}
-                  </span>
-                </div>
-                <div className="space-y-3 p-5">
-                  <div>
-                    <h2 className="font-display text-xl font-semibold text-foreground">
+              <Card key={`${stop.providerId}-${idx}`} radius="xl" p={0} withBorder>
+                <Card.Section>
+                  <Box pos="relative" h={160}>
+                    <ResolvedCoverImage
+                      src={stop.image || CMS_MEDIA.fallbackListing}
+                      resolveBase={stop.website}
+                      alt={stop.providerName}
+                    />
+                    <Badge
+                      pos="absolute"
+                      top={16}
+                      left={16}
+                      radius="xl"
+                      color="brand"
+                      variant="filled"
+                      size="lg"
+                    >
+                      {idx + 1}
+                    </Badge>
+                  </Box>
+                </Card.Section>
+                <Stack gap="sm" p="lg">
+                  <Stack gap={4}>
+                    <Title order={2} size="h4">
                       {stop.providerName}
-                    </h2>
-                    <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
-                      <MapPin className="h-3.5 w-3.5" />
-                      {stop.address}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
+                    </Title>
+                    <Group gap={4} wrap="nowrap" align="flex-start">
+                      <MapPin size={14} style={{ flexShrink: 0, marginTop: 2 }} />
+                      <Text size="xs" c="dimmed">
+                        {stop.address}
+                      </Text>
+                    </Group>
+                    <Text size="xs" c="dimmed">
                       {stop.borough} · {stop.neighborhood}
-                    </p>
-                  </div>
+                    </Text>
+                  </Stack>
                   {stop.highlightItems.length > 0 && (
-                    <ul className="space-y-1 text-sm">
+                    <List size="sm" spacing={4}>
                       {stop.highlightItems.map((item) => (
-                        <li
-                          key={item.name}
-                          className="flex justify-between gap-2"
-                        >
-                          <span className="text-foreground">{item.name}</span>
-                          {item.priceLabel ? (
-                            <span className="shrink-0 text-xs text-muted-foreground">
-                              {item.priceLabel}
-                            </span>
-                          ) : null}
-                        </li>
+                        <List.Item key={item.name}>
+                          <Group justify="space-between" gap="sm" wrap="nowrap">
+                            <Text span size="sm">
+                              {item.name}
+                            </Text>
+                            {item.priceLabel ? (
+                              <Text span size="xs" c="dimmed" style={{ flexShrink: 0 }}>
+                                {item.priceLabel}
+                              </Text>
+                            ) : null}
+                          </Group>
+                        </List.Item>
                       ))}
-                    </ul>
+                    </List>
                   )}
                   {provider ? (
-                    <Button size="sm" onClick={() => onOpen(provider)}>
+                    <AppButton size="sm" radius="xl" onClick={() => onOpen(provider)}>
                       {t("openVenue")}
-                    </Button>
+                    </AppButton>
                   ) : null}
-                </div>
-              </li>
+                </Stack>
+              </Card>
             );
           })}
-        </ol>
+        </Stack>
       )}
 
       {activeSeed ? (
-        <p className="text-center text-[10px] text-muted-foreground">
+        <Text ta="center" size="xs" c="dimmed">
           {t("shareHint")}
-        </p>
+        </Text>
       ) : null}
-    </div>
+    </Stack>
   );
 }

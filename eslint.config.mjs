@@ -15,6 +15,22 @@ const eslintConfig = [
   },
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    files: ["src/components/scout/**/*.{ts,tsx}", "src/components/admin/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              group: ["@/components/ui/*", "@/components/ui"],
+              message: "Use Mantine primitives or @/components/mantine/* (GDS migration).",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     rules: {
       "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-empty-object-type": "off",

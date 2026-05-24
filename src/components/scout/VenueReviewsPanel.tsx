@@ -1,15 +1,14 @@
 "use client";
 
 import type { Provider } from "@/types/provider";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { AppButton } from "@/components/mantine/AppButton";
+import { Group, Paper, Stack, Text, Textarea, TextInput, Title } from "@mantine/core";
 import { StarRatingInput } from "@/components/scout/StarRatingInput";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { toast } from "sonner";
+import { notify } from "@/lib/notify";
 
 function formatReviewDate(iso: string, locale: string): string {
   try {
@@ -38,7 +37,7 @@ export function VenueReviewsPanel({ provider }: { provider: Provider }) {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (rating < 1) {
-      toast.error(t("reviewRatingRequired"));
+      notify.error(t("reviewRatingRequired"));
       return;
     }
     if (!reviewerId) return;
@@ -49,104 +48,121 @@ export function VenueReviewsPanel({ provider }: { provider: Provider }) {
         body,
         website: honeypot,
       });
-      toast.success(data?.mine ? t("reviewUpdated") : t("reviewThanks"));
+      notify.success(data?.mine ? t("reviewUpdated") : t("reviewThanks"));
     } catch (err) {
       const code = err instanceof Error ? err.message : "submit_failed";
-      if (code === "rate_limit") toast.error(t("reviewRateLimit"));
-      else toast.error(t("reviewSubmitFailed"));
+      if (code === "rate_limit") notify.error(t("reviewRateLimit"));
+      else notify.error(t("reviewSubmitFailed"));
     }
   };
 
   return (
-    <section className="rounded-2xl border border-border/60 bg-card/50 p-4">
-      <h3 className="font-display text-base font-semibold text-foreground">
+    <Paper withBorder radius="xl" p="md">
+      <Title order={3} size="h4">
         {t("communityReviewsTitle")}
-      </h3>
-      <p className="mt-1 text-xs text-muted-foreground">{t("communityReviewsHint")}</p>
+      </Title>
+      <Text size="xs" c="dimmed" mt={4}>
+        {t("communityReviewsHint")}
+      </Text>
 
       {isLoading ? (
-        <p className="mt-4 text-sm text-muted-foreground">{t("reviewsLoading")}</p>
+        <Text size="sm" c="dimmed" mt="md">
+          {t("reviewsLoading")}
+        </Text>
       ) : (
         <>
           {data && data.summary.reviewCount > 0 ? (
-            <p className="mt-3 flex items-center gap-1 text-sm">
-              <Star className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
-              <span className="font-semibold">{data.summary.rating}</span>
-              <span className="text-muted-foreground">
+            <Group gap={4} mt="md" align="center">
+              <Star size={16} fill="currentColor" aria-hidden />
+              <Text size="sm" fw={600}>
+                {data.summary.rating}
+              </Text>
+              <Text size="sm" c="dimmed">
                 {t("reviewsCount", { count: data.summary.reviewCount })}
-              </span>
-              <span className="text-xs text-muted-foreground">· {t("reviewsSourceBn")}</span>
-            </p>
+              </Text>
+              <Text size="xs" c="dimmed">
+                · {t("reviewsSourceBn")}
+              </Text>
+            </Group>
           ) : null}
 
           {data && data.reviews.length > 0 ? (
-            <ul className="mt-4 space-y-3">
+            <Stack gap="sm" mt="md">
               {data.reviews.map((rev) => (
-                <li
-                  key={rev.id}
-                  className="rounded-xl border border-border/50 bg-background/40 p-3"
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <p className="text-sm font-medium text-foreground">{rev.displayName}</p>
-                    <span className="flex items-center gap-0.5 text-xs text-muted-foreground">
-                      <Star className="h-3 w-3 fill-foreground text-foreground" />
-                      {rev.rating}
-                    </span>
-                  </div>
-                  {rev.body ? (
-                    <p className="mt-2 text-sm leading-relaxed text-foreground/85">{rev.body}</p>
-                  ) : null}
-                  <p className="mt-2 text-[10px] text-muted-foreground">
-                    {formatReviewDate(rev.createdAt, locale)}
-                  </p>
-                </li>
+                <Paper key={rev.id} withBorder radius="md" p="sm">
+                  <Stack gap={4}>
+                    <Group justify="space-between" gap="xs" wrap="nowrap">
+                      <Text size="sm" fw={500}>
+                        {rev.displayName}
+                      </Text>
+                      <Group gap={2} align="center" wrap="nowrap">
+                        <Star size={12} fill="currentColor" />
+                        <Text size="xs" c="dimmed">
+                          {rev.rating}
+                        </Text>
+                      </Group>
+                    </Group>
+                    {rev.body ? (
+                      <Text size="sm" lh={1.5}>
+                        {rev.body}
+                      </Text>
+                    ) : null}
+                    <Text size="xs" c="dimmed">
+                      {formatReviewDate(rev.createdAt, locale)}
+                    </Text>
+                  </Stack>
+                </Paper>
               ))}
-            </ul>
+            </Stack>
           ) : (
-            <p className="mt-4 text-sm text-muted-foreground">{t("reviewsEmpty")}</p>
+            <Text size="sm" c="dimmed" mt="md">
+              {t("reviewsEmpty")}
+            </Text>
           )}
 
-          <form onSubmit={onSubmit} className="mt-6 space-y-3 border-t border-border/60 pt-4">
-            <p className="text-sm font-medium text-foreground">
-              {data?.mine ? t("reviewEditTitle") : t("reviewWriteTitle")}
-            </p>
-            <StarRatingInput
-              value={rating}
-              onChange={setRating}
-              label={t("reviewYourRating")}
-              disabled={submit.isPending}
-            />
-            <Input
-              value={displayName}
-              onChange={(e) => setDisplayName(e.target.value)}
-              placeholder={t("reviewDisplayNamePlaceholder")}
-              maxLength={40}
-              disabled={submit.isPending}
-            />
-            <Textarea
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
-              placeholder={t("reviewBodyPlaceholder")}
-              rows={3}
-              maxLength={500}
-              disabled={submit.isPending}
-            />
-            <input
-              type="text"
-              name="website"
-              value={honeypot}
-              onChange={(e) => setHoneypot(e.target.value)}
-              className="hidden"
-              tabIndex={-1}
-              autoComplete="off"
-              aria-hidden
-            />
-            <Button type="submit" disabled={submit.isPending || !reviewerId} className="w-full">
-              {data?.mine ? t("reviewUpdateButton") : t("reviewSubmitButton")}
-            </Button>
+          <form onSubmit={onSubmit}>
+            <Stack gap="sm" mt="lg" pt="md" style={{ borderTop: "1px solid var(--mantine-color-default-border)" }}>
+              <Text size="sm" fw={500}>
+                {data?.mine ? t("reviewEditTitle") : t("reviewWriteTitle")}
+              </Text>
+              <StarRatingInput
+                value={rating}
+                onChange={setRating}
+                label={t("reviewYourRating")}
+                disabled={submit.isPending}
+              />
+              <TextInput
+                value={displayName}
+                onChange={(e) => setDisplayName(e.currentTarget.value)}
+                placeholder={t("reviewDisplayNamePlaceholder")}
+                maxLength={40}
+                disabled={submit.isPending}
+              />
+              <Textarea
+                value={body}
+                onChange={(e) => setBody(e.currentTarget.value)}
+                placeholder={t("reviewBodyPlaceholder")}
+                rows={3}
+                maxLength={500}
+                disabled={submit.isPending}
+              />
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+              />
+              <AppButton type="submit" fullWidth disabled={submit.isPending || !reviewerId}>
+                {data?.mine ? t("reviewUpdateButton") : t("reviewSubmitButton")}
+              </AppButton>
+            </Stack>
           </form>
         </>
       )}
-    </section>
+    </Paper>
   );
 }

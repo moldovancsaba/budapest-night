@@ -1,16 +1,16 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { ActionIcon, Anchor, Box, Container, Group, Text } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import { Link2, ArrowLeft } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { toast } from "sonner";
+import { notify } from "@/lib/notify";
 import { Link } from "@/i18n/routing";
 import { Logo } from "@/components/scout/Logo";
 import { LocaleSwitcher } from "@/components/i18n/LocaleSwitcher";
 import { ThemeToggle } from "@/components/i18n/ThemeToggle";
 import { CurrencySwitcher } from "@/components/i18n/CurrencySwitcher";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { useSiteCatalog } from "@/hooks/useCatalog";
 
 export function ShareablePageChrome({
@@ -34,61 +34,88 @@ export function ShareablePageChrome({
   const copyLink = () => {
     if (!shareUrl) return;
     navigator.clipboard.writeText(shareUrl);
-    toast.success(t("linkCopied"));
+    notify.success(t("linkCopied"));
   };
 
-  const containerClass = wide
-    ? "mx-auto w-full max-w-3xl px-4 sm:px-6 lg:max-w-[1400px] lg:px-8"
-    : "mx-auto w-full max-w-3xl px-4 sm:px-6";
+  const containerSize = wide ? undefined : "md";
+  const containerStyles = wide
+    ? { maxWidth: 1400, width: "100%", marginInline: "auto" as const }
+    : undefined;
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <header className="sticky top-0 z-30 border-b border-border/80 bg-background">
-        <div className={cn("flex items-center justify-between gap-3 py-3", containerClass)}>
-          <div className="flex min-w-0 items-center gap-2">
-            <Link
-              href={backHref}
-              className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-border bg-card text-foreground hover:border-foreground/40"
-              aria-label={t("back")}
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/"
-              className="hidden items-center gap-2 rounded-full transition-opacity hover:opacity-80 sm:flex"
-              aria-label={tn("goHome")}
-            >
-              <Logo logoUrl={site?.logoUrl} logoLightUrl={site?.logoLightUrl} withWordmark={false} size={40} />
-              <span className="font-display text-sm font-bold tracking-widest text-foreground">
-                {tn("brand")}
-              </span>
-            </Link>
-            {title ? (
-              <p className="truncate font-display text-sm font-semibold text-foreground sm:text-base">
-                {title}
-              </p>
-            ) : null}
-          </div>
-          <div className="flex shrink-0 items-center gap-2">
-            {shareUrl ? (
-              <Button
-                type="button"
-                variant="outline"
-                size="sm"
-                className="gap-2"
-                onClick={copyLink}
+    <Box style={{ display: "flex", minHeight: "100vh", flexDirection: "column" }}>
+      <Box
+        component="header"
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 30,
+          borderBottom: "1px solid var(--mantine-color-default-border)",
+        }}
+      >
+        <Container size={containerSize} px="md" py="sm" style={containerStyles}>
+          <Group justify="space-between" gap="sm" wrap="nowrap">
+            <Group gap="sm" wrap="nowrap" style={{ minWidth: 0, flex: 1 }}>
+              <ActionIcon
+                component={Link}
+                href={backHref}
+                variant="default"
+                size="xl"
+                radius="xl"
+                aria-label={t("back")}
               >
-                <Link2 className="h-4 w-4" />
-                <span className="hidden sm:inline">{t("copyLink")}</span>
-              </Button>
-            ) : null}
-            <ThemeToggle />
-            <CurrencySwitcher variant="header" />
-            <LocaleSwitcher variant="header" />
-          </div>
-        </div>
-      </header>
-      <main className={cn("flex-1", containerClass)}>{children}</main>
-    </div>
+                <ArrowLeft size={16} />
+              </ActionIcon>
+              <Box visibleFrom="sm">
+                <Anchor
+                  component={Link}
+                  href="/"
+                  underline="never"
+                  c="inherit"
+                  aria-label={tn("goHome")}
+                >
+                  <Group gap="sm" wrap="nowrap">
+                    <Logo
+                      logoUrl={site?.logoUrl}
+                      logoLightUrl={site?.logoLightUrl}
+                      withWordmark={false}
+                      size={40}
+                    />
+                    <Text size="sm" fw={700} tt="uppercase" lts="0.08em">
+                      {tn("brand")}
+                    </Text>
+                  </Group>
+                </Anchor>
+              </Box>
+              {title ? (
+                <Text size="sm" fw={600} truncate visibleFrom="sm">
+                  {title}
+                </Text>
+              ) : null}
+            </Group>
+            <Group gap="xs" wrap="nowrap" style={{ flexShrink: 0 }}>
+              {shareUrl ? (
+                <AppButton type="button" variant="outline" size="sm" onClick={copyLink}>
+                  <Group gap="xs" wrap="nowrap">
+                    <Link2 size={16} />
+                    <Text component="span" visibleFrom="sm">
+                      {t("copyLink")}
+                    </Text>
+                  </Group>
+                </AppButton>
+              ) : null}
+              <ThemeToggle />
+              <CurrencySwitcher variant="header" />
+              <LocaleSwitcher variant="header" />
+            </Group>
+          </Group>
+        </Container>
+      </Box>
+      <Box component="main" style={{ flex: 1 }}>
+        <Container size={containerSize} px="md" py="md" style={containerStyles}>
+          {children}
+        </Container>
+      </Box>
+    </Box>
   );
 }

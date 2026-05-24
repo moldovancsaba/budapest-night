@@ -6,7 +6,7 @@ import { Link } from "@/i18n/routing";
 import { buildProgramPath, buildSectionPath } from "@/lib/appPaths";
 import { PROGRAM_VERTICALS } from "@/lib/programVerticals";
 import { useProgramWeek } from "@/hooks/useProgramWeek";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { Provider } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { EventCard } from "@/components/scout/EventCard";
@@ -15,6 +15,15 @@ import { BOROUGHS } from "@/data/locations";
 import { useDistrictLabel } from "@/hooks/useVenueDisplay";
 import { ProgramWeekJsonLd } from "@/components/seo/ProgramWeekJsonLd";
 import type { AppLocale } from "@/i18n/config";
+import {
+  Anchor,
+  Group,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 
 type Props = {
   onOpenProvider: (p: Provider) => void;
@@ -30,10 +39,18 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
   const { data, isLoading, isError } = useProgramWeek();
 
   if (isLoading) {
-    return <p className="text-muted-foreground">{t("loading")}</p>;
+    return (
+      <Text c="dimmed" size="sm">
+        {t("loading")}
+      </Text>
+    );
   }
   if (isError || !data) {
-    return <p className="text-muted-foreground">{t("weekSubtitle")}</p>;
+    return (
+      <Text c="dimmed" size="sm">
+        {t("weekSubtitle")}
+      </Text>
+    );
   }
 
   const { week, featuredEvents, spotlightEvents = [], featuredProviders, fallbackEventCount } =
@@ -46,93 +63,121 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
   return (
     <>
       <ProgramWeekJsonLd week={week} events={[...featuredEvents, ...spotlightEvents]} />
-      <div className="space-y-10">
-        <header className="rounded-[2rem] border border-border bg-card px-6 py-10 sm:px-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary">{t("thuNote")}</p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-foreground sm:text-4xl">
+      <Stack gap={40}>
+        <Paper radius="xl" withBorder px={{ base: "lg", sm: 40 }} py={40}>
+          <Text size="xs" fw={600} tt="uppercase" c="brand" lts="0.12em">
+            {t("thuNote")}
+          </Text>
+          <Title order={1} mt="sm" size="h2" tt="uppercase" lts="0.02em">
             {week.headline || t("weekTitle")}
-          </h1>
-          <p className="mt-2 text-sm text-muted-foreground">{weekRange}</p>
+          </Title>
+          <Text size="sm" c="dimmed" mt="xs">
+            {weekRange}
+          </Text>
           {week.intro ? (
-            <p className="mt-4 max-w-2xl text-muted-foreground">{week.intro}</p>
+            <Text c="dimmed" mt="md" maw={640}>
+              {week.intro}
+            </Text>
           ) : (
-            <p className="mt-4 max-w-2xl text-muted-foreground">{t("weekSubtitle")}</p>
+            <Text c="dimmed" mt="md" maw={640}>
+              {t("weekSubtitle")}
+            </Text>
           )}
           {week.sponsorName ? (
-            <p className="mt-4 text-sm text-muted-foreground">
-              <span className="font-medium">{t("sponsorLabel")}: </span>
+            <Text size="sm" c="dimmed" mt="md">
+              <Text span fw={500}>
+                {t("sponsorLabel")}:{" "}
+              </Text>
               {week.sponsorUrl ? (
-                <a href={week.sponsorUrl} className="underline" target="_blank" rel="noreferrer">
+                <Anchor href={week.sponsorUrl} target="_blank" rel="noreferrer" underline="always">
                   {week.sponsorName}
-                </a>
+                </Anchor>
               ) : (
                 week.sponsorName
               )}
-              <span className="mt-1 block text-[10px] text-muted-foreground/90">{t("adDisclosure")}</span>
-            </p>
+              <Text component="span" display="block" size="xs" c="dimmed" mt={4}>
+                {t("adDisclosure")}
+              </Text>
+            </Text>
           ) : null}
-          <p className="mt-2 text-xs text-muted-foreground">
+          <Text size="xs" c="dimmed" mt="xs">
             {t("eventsThisWeek", { count: fallbackEventCount })}
-          </p>
-        </header>
+          </Text>
+        </Paper>
 
-        <section className="rounded-2xl border border-border/80 bg-muted/30 px-6 py-8">
-          <h2 className="font-display text-lg font-semibold text-foreground">{t("editorialTitle")}</h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">{t("editorialBody")}</p>
-        </section>
+        <Paper radius="xl" withBorder px="lg" py="xl" bg="gray.0">
+          <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+            {t("editorialTitle")}
+          </Title>
+          <Text size="sm" c="dimmed" mt="sm" maw={720} lh={1.6}>
+            {t("editorialBody")}
+          </Text>
+        </Paper>
 
-        <section>
-          <h2 className="mb-4 font-display text-xl font-bold">{t("verticalsTitle")}</h2>
-          <div className="flex flex-wrap gap-2">
+        <Stack gap="md">
+          <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+            {t("verticalsTitle")}
+          </Title>
+          <Group gap="xs">
             {PROGRAM_VERTICALS.map((v) => (
-              <Link key={v.id} href={buildProgramPath(v.id, { locale })}>
-                <Button variant="outline" className="rounded-full">
-                  {t(`vertical.${v.id}`)}
-                </Button>
-              </Link>
+              <AppButton
+                key={v.id}
+                component={Link}
+                href={buildProgramPath(v.id, { locale })}
+                variant="outline"
+                radius="xl"
+              >
+                {t(`vertical.${v.id}`)}
+              </AppButton>
             ))}
-          </div>
-        </section>
+          </Group>
+        </Stack>
 
         {featuredEvents.length > 0 && (
-          <section>
-            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-              <h2 className="flex items-center gap-2 font-display text-xl font-bold">
-                <CalendarDays className="h-5 w-5" />
-                {t("featuredEvents")}
-              </h2>
-              <Link href={buildSectionPath("events")}>
-                <Button variant="ghost" size="sm" className="rounded-full">
-                  {t("browseAllEvents")} →
-                </Button>
-              </Link>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Stack gap="md">
+            <Group justify="space-between" align="flex-end" wrap="wrap">
+              <Group gap="xs">
+                <CalendarDays size={20} />
+                <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+                  {t("featuredEvents")}
+                </Title>
+              </Group>
+              <AppButton component={Link} href={buildSectionPath("events")} variant="subtle" size="sm" radius="xl">
+                {t("browseAllEvents")} →
+              </AppButton>
+            </Group>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
               {featuredEvents.map((ev) => (
                 <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
               ))}
-            </div>
-          </section>
+            </SimpleGrid>
+          </Stack>
         )}
 
         {spotlightEvents.length > 0 && (
-          <section>
-            <div className="mb-4 space-y-1">
-              <h2 className="font-display text-xl font-bold">{t("spotlightEvents")}</h2>
-              <p className="text-sm text-muted-foreground">{t("spotlightEventsHint")}</p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Stack gap="md">
+            <Stack gap={4}>
+              <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+                {t("spotlightEvents")}
+              </Title>
+              <Text size="sm" c="dimmed">
+                {t("spotlightEventsHint")}
+              </Text>
+            </Stack>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
               {spotlightEvents.map((ev) => (
                 <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
               ))}
-            </div>
-          </section>
+            </SimpleGrid>
+          </Stack>
         )}
 
         {featuredProviders.length > 0 && (
-          <section>
-            <h2 className="mb-4 font-display text-xl font-bold">{t("featuredVenues")}</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Stack gap="md">
+            <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+              {t("featuredVenues")}
+            </Title>
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
               {featuredProviders.map((p) => (
                 <ProviderCard
                   key={p.id}
@@ -141,23 +186,29 @@ export function ProgramWeekView({ onOpenProvider, onOpenEvent, onShareProvider }
                   onShare={onShareProvider}
                 />
               ))}
-            </div>
-          </section>
+            </SimpleGrid>
+          </Stack>
         )}
 
-        <section>
-          <h2 className="mb-4 font-display text-xl font-bold">{t("boroughTitle")}</h2>
-          <div className="flex flex-wrap gap-2">
+        <Stack gap="md">
+          <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+            {t("boroughTitle")}
+          </Title>
+          <Group gap="xs">
             {BOROUGHS.map((b) => (
-              <Link key={b} href={buildSectionPath("events", { location: { borough: b } })}>
-                <Button variant="outline" className="rounded-full">
-                  {districtLabel(b)}
-                </Button>
-              </Link>
+              <AppButton
+                key={b}
+                component={Link}
+                href={buildSectionPath("events", { location: { borough: b } })}
+                variant="outline"
+                radius="xl"
+              >
+                {districtLabel(b)}
+              </AppButton>
             ))}
-          </div>
-        </section>
-      </div>
+          </Group>
+        </Stack>
+      </Stack>
     </>
   );
 }

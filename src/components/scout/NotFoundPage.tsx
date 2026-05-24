@@ -9,9 +9,8 @@ import {
   ArrowRight,
   Home,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { CYBER_PANEL } from "@/lib/cyberTheme";
-import { cn } from "@/lib/utils";
+import { Box, Group, Paper, Stack, Text, Title } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 
 export type NotFoundCopy = {
   code: string;
@@ -60,99 +59,137 @@ export function NotFoundPage({
   }, [copy.excuses.length]);
 
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background px-4 py-16">
-      <div className="pointer-events-none absolute left-[8%] top-[18%] text-muted-foreground/20">
-        <Martini className="h-16 w-16 animate-pulse" />
-      </div>
-      <div className="pointer-events-none absolute right-[10%] top-[22%] text-muted-foreground/25">
-        <Music2
-          className="h-14 w-14 animate-pulse"
-          style={{ animationDelay: "0.6s" }}
-        />
-      </div>
-      <div className="pointer-events-none absolute bottom-[20%] left-[12%] text-muted-foreground/20">
-        <MapPin
-          className="h-12 w-12 animate-pulse"
-          style={{ animationDelay: "1.1s" }}
-        />
-      </div>
-
-      <div
-        className={cn(
-          "relative z-10 w-full max-w-2xl text-center",
-          CYBER_PANEL,
-          "p-8 sm:p-12",
-        )}
+    <Box
+      pos="relative"
+      style={{
+        display: "flex",
+        minHeight: "100vh",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+        padding: "4rem 1rem",
+      }}
+    >
+      <Box
+        pos="absolute"
+        left="8%"
+        top="18%"
+        c="dimmed"
+        opacity={0.2}
+        style={{ pointerEvents: "none" }}
       >
-        <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.35em] text-muted-foreground">
-          <Sparkles className="h-3.5 w-3.5" />
-          {copy.subtitle}
-          <Sparkles className="h-3.5 w-3.5" />
-        </p>
+        <Martini size={64} />
+      </Box>
+      <Box
+        pos="absolute"
+        right="10%"
+        top="22%"
+        c="dimmed"
+        opacity={0.25}
+        style={{ pointerEvents: "none" }}
+      >
+        <Music2 size={56} />
+      </Box>
+      <Box
+        pos="absolute"
+        bottom="20%"
+        left="12%"
+        c="dimmed"
+        opacity={0.2}
+        style={{ pointerEvents: "none" }}
+      >
+        <MapPin size={48} />
+      </Box>
 
-        <h1
-          className={cn(
-            "mt-4 font-display text-[clamp(5rem,22vw,9rem)] font-bold leading-none tracking-tighter text-foreground transition-transform",
-            glitch && "translate-x-[2px] skew-x-1",
-          )}
+      <Paper
+        withBorder
+        radius="xl"
+        p={{ base: "xl", sm: 48 }}
+        maw={672}
+        w="100%"
+        ta="center"
+        style={{
+          position: "relative",
+          zIndex: 10,
+          transform: glitch ? "translateX(2px) skewX(1deg)" : undefined,
+          transition: "transform 120ms ease",
+        }}
+      >
+        <Group justify="center" gap="xs" mb="md">
+          <Sparkles size={14} />
+          <Text size="xs" fw={600} tt="uppercase" lts="0.35em" c="dimmed">
+            {copy.subtitle}
+          </Text>
+          <Sparkles size={14} />
+        </Group>
+
+        <Title
+          order={1}
+          style={{
+            fontSize: "clamp(5rem, 22vw, 9rem)",
+            lineHeight: 1,
+            letterSpacing: "-0.05em",
+          }}
           aria-hidden
         >
           {copy.code}
-        </h1>
+        </Title>
 
-        <h2 className="mt-2 font-display text-2xl font-bold text-foreground sm:text-3xl">
+        <Title order={2} size="h2" mt="sm">
           {copy.headline}
-        </h2>
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+        </Title>
+        <Text size="sm" c="dimmed" mt="md" lh={1.6}>
           {copy.line1}
-        </p>
-        <p className="mt-2 text-sm italic text-muted-foreground/90">
+        </Text>
+        <Text size="sm" c="dimmed" fs="italic" mt="xs">
           {copy.line2}
-        </p>
+        </Text>
 
-        <div className="mx-auto mt-8 max-w-md rounded-2xl border border-border/60 bg-card/60 px-5 py-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+        <Paper withBorder radius="xl" p="md" mt="xl" mx="auto" maw={420}>
+          <Text size="xs" fw={600} tt="uppercase" lts="0.2em" c="dimmed">
             {copy.excusesTitle}
-          </p>
-          <p
-            key={excuseIdx}
-            className="mt-2 min-h-[2.5rem] font-display text-base font-semibold text-foreground animate-in fade-in duration-300"
-          >
+          </Text>
+          <Text key={excuseIdx} size="md" fw={600} mt="sm" mih={40}>
             “{copy.excuses[excuseIdx] ?? "…"}”
-          </p>
-        </div>
+          </Text>
+        </Paper>
 
-        <div className="mt-6 flex items-center justify-center gap-3 text-xs text-muted-foreground">
-          <span>{copy.statLabel}</span>
-          <span className="rounded-full bg-muted px-2.5 py-0.5 font-mono font-bold text-foreground">
+        <Group justify="center" gap="sm" mt="lg">
+          <Text size="xs" c="dimmed">
+            {copy.statLabel}
+          </Text>
+          <Text
+            size="xs"
+            fw={700}
+            ff="monospace"
+            px="sm"
+            py={2}
+            style={{ borderRadius: 9999, background: "var(--mantine-color-gray-light)" }}
+          >
             {copy.statValue}
-          </span>
-        </div>
+          </Text>
+        </Group>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button
-            asChild
-            size="lg"
-            className="w-full rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90 sm:w-auto"
-          >
-            <Link href="/">
-              <Home className="h-4 w-4" />
-              {copy.ctaHome}
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="w-full rounded-full border-border bg-muted px-6 text-foreground hover:bg-muted sm:w-auto"
-          >
-            <Link href="/events">
-              {copy.ctaEvents}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </div>
+        <Stack gap="sm" mt="xl" align="center" maw={280} w="100%">
+          <Link href="/">
+            <AppButton component="span" size="lg" radius="xl" w="100%">
+              <Group gap="xs" wrap="nowrap" justify="center">
+                <Home size={16} />
+                {copy.ctaHome}
+              </Group>
+            </AppButton>
+          </Link>
+          <Link href="/events">
+            <AppButton component="span" size="lg" variant="outline" radius="xl" w="100%">
+              <Group gap="xs" wrap="nowrap" justify="center">
+                {copy.ctaEvents}
+                <ArrowRight size={16} />
+              </Group>
+            </AppButton>
+          </Link>
+        </Stack>
+      </Paper>
+    </Box>
   );
 }

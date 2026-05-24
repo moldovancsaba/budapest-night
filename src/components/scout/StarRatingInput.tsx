@@ -1,7 +1,7 @@
 "use client";
 
+import { Group, UnstyledButton } from "@mantine/core";
 import { Star } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 type Props = {
   value: number;
@@ -12,30 +12,25 @@ type Props = {
 
 export function StarRatingInput({ value, onChange, label, disabled }: Props) {
   return (
-    <div className="flex items-center gap-1" role="group" aria-label={label}>
+    <Group gap={4} role="group" aria-label={label}>
       {[1, 2, 3, 4, 5].map((n) => (
-        <button
+        <UnstyledButton
           key={n}
           type="button"
           disabled={disabled}
           onClick={() => onChange(n)}
-          className={cn(
-            "rounded p-0.5 transition-colors",
-            disabled && "cursor-not-allowed opacity-50",
-          )}
           aria-label={`${n}`}
           aria-pressed={value >= n}
+          style={{ opacity: disabled ? 0.5 : 1, lineHeight: 0 }}
         >
           <Star
-            className={cn(
-              "h-6 w-6",
-              value >= n
-                ? "fill-foreground text-foreground"
-                : "fill-transparent text-muted-foreground",
-            )}
+            size={24}
+            strokeWidth={1.5}
+            fill={value >= n ? "var(--mantine-color-text)" : "transparent"}
+            color={value >= n ? "var(--mantine-color-text)" : "var(--mantine-color-dimmed)"}
           />
-        </button>
+        </UnstyledButton>
       ))}
-    </div>
+    </Group>
   );
 }

@@ -1,5 +1,19 @@
-import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import {
+  ActionIcon,
+  Anchor,
+  Badge,
+  Box,
+  Drawer,
+  Group,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { Provider } from "@/types/provider";
 import {
   Heart,
@@ -17,13 +31,11 @@ import {
 } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useSaved, useCalculator } from "@/store/useScout";
-import { toast } from "sonner";
-import { cn } from "@/lib/utils";
+import { notify } from "@/lib/notify";
 import { useEventsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { eventsForVenue } from "@/lib/eventsAtVenue";
 import { EventCard } from "@/components/scout/EventCard";
-import { CdnImage } from "@/components/ui/CdnImage";
 import { ProviderCard } from "../ProviderCard";
 import { ProviderMap } from "./ProviderMap";
 import { VenueMenuPanel } from "@/components/scout/VenueMenuPanel";
@@ -47,6 +59,7 @@ import { buildProgramPath } from "@/lib/appPaths";
 import { Link } from "@/i18n/routing";
 import { JsonLd, localBusinessJsonLd } from "@/components/seo/JsonLd";
 import type { AppLocale } from "@/i18n/config";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 
 export function ProviderProfile({
   provider,
@@ -84,14 +97,14 @@ export function ProviderProfile({
     if (!provider) return [];
     const urls: string[] = [];
     const seen = new Set<string>();
-    const add = (raw?: string) => {
+    const addUrl = (raw?: string) => {
       const u = resolveImageUrl(raw, provider.website);
       if (!u || seen.has(u)) return;
       seen.add(u);
       urls.push(u);
     };
-    add(provider.image);
-    for (const g of provider.galleryImages ?? []) add(g);
+    addUrl(provider.image);
+    for (const g of provider.galleryImages ?? []) addUrl(g);
     if (urls.length === 0) urls.push(CMS_MEDIA.fallbackListing);
     return urls;
   }, [provider]);
@@ -123,8 +136,7 @@ export function ProviderProfile({
 
   const shareUrl = buildAbsoluteVenueUrl(provider, locale);
 
-  const pageCardGrid =
-    "grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5";
+  const pageCardCols = { base: 1, sm: 2, lg: 3, xl: 4 };
 
   const shareEmail = () => {
     const body = `${shareSummary(provider)}\n\n${shareUrl}`;
@@ -139,346 +151,413 @@ export function ProviderProfile({
 
   const content = (
     <>
-        <div className={isPage ? "relative h-80 w-full overflow-hidden" : "relative h-64 w-full overflow-hidden"}>
-          <CdnImage
-            fill
-            resolveBase={provider.website}
-            src={current}
-            alt={provider.name}
-          />
-          {provider.badges[0] && (
-            <span className="absolute left-5 top-5 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background">
-              {badgeLabel(provider.badges[0])}
-            </span>
-          )}
-          {gallery.length > 1 && (
-            <>
-              <button
-                onClick={() =>
-                  setPhotoIdx((i) => (i - 1 + gallery.length) % gallery.length)
-                }
-                aria-label={t("prevPhoto")}
-                className="absolute left-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card hover:bg-card"
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </button>
-              <button
-                onClick={() => setPhotoIdx((i) => (i + 1) % gallery.length)}
-                aria-label={t("nextPhoto")}
-                className="absolute right-3 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card hover:bg-card"
-              >
-                <ChevronRight className="h-4 w-4" />
-              </button>
-              <span className="absolute right-3 top-3 rounded-full bg-foreground/70 px-2.5 py-1 text-[11px] font-semibold text-background">
-                {t("photoCounter", {
-                  current: photoIdx + 1,
-                  total: gallery.length,
-                })}
-              </span>
-              <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
-                {gallery.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setPhotoIdx(i)}
-                    aria-label={t("goToPhoto", { n: i + 1 })}
-                    className={cn(
-                      "h-2 rounded-full transition-all",
-                      i === photoIdx ? "w-6 bg-foreground" : "w-2 bg-card/80",
-                    )}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+      <Box pos="relative" h={isPage ? 320 : 256} style={{ overflow: "hidden" }}>
+        <ResolvedCoverImage src={current} resolveBase={provider.website} alt={provider.name} />
+        {provider.badges[0] && (
+          <Badge
+            radius="xl"
+            variant="filled"
+            color="dark"
+            tt="uppercase"
+            size="sm"
+            style={{ position: "absolute", top: 20, left: 20 }}
+          >
+            {badgeLabel(provider.badges[0])}
+          </Badge>
+        )}
+        {gallery.length > 1 && (
+          <>
+            <ActionIcon
+              variant="filled"
+              color="gray"
+              radius="xl"
+              size="lg"
+              onClick={() =>
+                setPhotoIdx((i) => (i - 1 + gallery.length) % gallery.length)
+              }
+              aria-label={t("prevPhoto")}
+              style={{
+                position: "absolute",
+                left: 12,
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+            >
+              <ChevronLeft size={16} />
+            </ActionIcon>
+            <ActionIcon
+              variant="filled"
+              color="gray"
+              radius="xl"
+              size="lg"
+              onClick={() => setPhotoIdx((i) => (i + 1) % gallery.length)}
+              aria-label={t("nextPhoto")}
+              style={{
+                position: "absolute",
+                right: 12,
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+            >
+              <ChevronRight size={16} />
+            </ActionIcon>
+            <Badge
+              radius="xl"
+              variant="filled"
+              color="dark"
+              size="sm"
+              style={{ position: "absolute", top: 12, right: 12, opacity: 0.85 }}
+            >
+              {t("photoCounter", {
+                current: photoIdx + 1,
+                total: gallery.length,
+              })}
+            </Badge>
+            <Group
+              gap={6}
+              justify="center"
+              style={{
+                position: "absolute",
+                bottom: 12,
+                left: "50%",
+                transform: "translateX(-50%)",
+              }}
+            >
+              {gallery.map((_, i) => (
+                <Box
+                  key={i}
+                  component="button"
+                  type="button"
+                  onClick={() => setPhotoIdx(i)}
+                  aria-label={t("goToPhoto", { n: i + 1 })}
+                  style={{
+                    height: 8,
+                    borderRadius: 9999,
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    width: i === photoIdx ? 24 : 8,
+                    background:
+                      i === photoIdx
+                        ? "var(--mantine-color-dark-filled)"
+                        : "rgba(255,255,255,0.8)",
+                    transition: "width 150ms ease",
+                  }}
+                />
+              ))}
+            </Group>
+          </>
+        )}
+      </Box>
 
-        <div className="space-y-6 p-6 pb-12">
-          {provider.announcementTitle && bannerOpen && (
-            <div className="flex items-start gap-3 rounded-2xl border border-border bg-muted p-4">
-              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-muted text-foreground">
-                <Megaphone className="h-4 w-4" />
-              </div>
-              <div className="flex-1">
-                <p className="font-display text-sm font-semibold text-foreground">
+      <Stack gap="xl" p="lg" pb={48}>
+        {provider.announcementTitle && bannerOpen && (
+          <Paper withBorder radius="xl" p="md">
+            <Group align="flex-start" gap="md" wrap="nowrap">
+              <ActionIcon variant="light" color="gray" radius="xl" size="lg">
+                <Megaphone size={16} />
+              </ActionIcon>
+              <Stack gap={4} style={{ flex: 1 }}>
+                <Text size="sm" fw={600}>
                   {provider.announcementTitle}
-                </p>
-                {provider.announcementDescription && (
-                  <p className="mt-0.5 text-xs text-muted-foreground">
+                </Text>
+                {provider.announcementDescription ? (
+                  <Text size="xs" c="dimmed">
                     {provider.announcementDescription}
-                  </p>
-                )}
-              </div>
-              <button
+                  </Text>
+                ) : null}
+              </Stack>
+              <ActionIcon
+                variant="subtle"
+                color="gray"
                 onClick={() => setBannerOpen(false)}
                 aria-label={t("dismissAnnouncement")}
-                className="rounded-full p-1 text-muted-foreground hover:bg-card"
               >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
-          )}
+                <X size={16} />
+              </ActionIcon>
+            </Group>
+          </Paper>
+        )}
 
-          {gallery.length > 1 && (
-            <div className="flex gap-2 overflow-x-auto">
-              {gallery.map((src, i) => (
-                <button
-                  key={i}
-                  onClick={() => setPhotoIdx(i)}
-                  aria-label={t("viewPhoto", { n: i + 1 })}
-                  className={cn(
-                    "relative h-16 w-24 shrink-0 overflow-hidden rounded-lg border-2 transition-all",
-                    i === photoIdx
-                      ? "border-foreground"
-                      : "border-transparent opacity-70 hover:opacity-100",
-                  )}
-                >
-                  <CdnImage
-                    fill
-                    resolveBase={provider.website}
-                    src={src}
-                    alt={`${provider.name} photo ${i + 1}`}
-                  />
-                </button>
-              ))}
-            </div>
-          )}
+        {gallery.length > 1 && (
+          <Group gap="xs" style={{ overflowX: "auto" }}>
+            {gallery.map((src, i) => (
+              <Box
+                key={i}
+                component="button"
+                type="button"
+                onClick={() => setPhotoIdx(i)}
+                aria-label={t("viewPhoto", { n: i + 1 })}
+                style={{
+                  position: "relative",
+                  height: 64,
+                  width: 96,
+                  flexShrink: 0,
+                  overflow: "hidden",
+                  borderRadius: "var(--mantine-radius-md)",
+                  border: `2px solid ${i === photoIdx ? "var(--mantine-color-dark-filled)" : "transparent"}`,
+                  opacity: i === photoIdx ? 1 : 0.7,
+                  cursor: "pointer",
+                  padding: 0,
+                }}
+              >
+                <ResolvedCoverImage
+                  src={src}
+                  resolveBase={provider.website}
+                  alt={`${provider.name} photo ${i + 1}`}
+                />
+              </Box>
+            ))}
+          </Group>
+        )}
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              {categoryLabel(provider.category)}
-            </p>
-            <h2 className="mt-1 font-display text-2xl font-bold text-foreground">
-              {provider.name}
-            </h2>
-            <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4" />
+        <Stack gap="xs">
+          <Text size="xs" fw={600} tt="uppercase" lts="0.18em" c="dimmed">
+            {categoryLabel(provider.category)}
+          </Text>
+          <Title order={2} size="h2">
+            {provider.name}
+          </Title>
+          <Group gap={6} wrap="nowrap">
+            <MapPin size={16} style={{ flexShrink: 0 }} />
+            <Text size="sm" c="dimmed">
               {provider.address}
-            </p>
-            <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
-              <ProviderRating provider={provider} variant="profile" />
-              {provider.reviewCount > 0 ? (
-                <span className="text-border">|</span>
+            </Text>
+          </Group>
+          <Group gap="md" align="center">
+            <ProviderRating provider={provider} variant="profile" />
+            {provider.reviewCount > 0 ? (
+              <Text c="dimmed" aria-hidden>
+                |
+              </Text>
+            ) : null}
+            <Text size="md">
+              <Text component="span" fw={700}>
+                {price.main}
+              </Text>
+              {price.suffix ? (
+                <Text component="span" size="xs" c="dimmed">
+                  {price.suffix}
+                </Text>
               ) : null}
-              <span className="font-display text-base">
-                <span className="font-bold text-foreground">{price.main}</span>
-                {price.suffix && (
-                  <span className="text-xs text-muted-foreground">
-                    {price.suffix}
-                  </span>
-                )}
-              </span>
-            </div>
-          </div>
+            </Text>
+          </Group>
+        </Stack>
 
-          <div className="flex flex-wrap gap-2">
-            {provider.activityTypes.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground"
-              >
-                {activityLabel(tag)}
-              </span>
-            ))}
-            {provider.ageRanges.map((a) => (
-              <span
-                key={a}
-                className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
-              >
-                {ageLabel(a)}
-              </span>
-            ))}
-            {provider.dayTimeTags.map((d) => (
-              <span
-                key={d}
-                className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
-              >
-                {dayLabel(d)}
-              </span>
-            ))}
-          </div>
+        <Group gap="xs">
+          {provider.activityTypes.map((tag) => (
+            <Badge key={tag} radius="xl" variant="light" color="gray">
+              {activityLabel(tag)}
+            </Badge>
+          ))}
+          {provider.ageRanges.map((a) => (
+            <Badge key={a} radius="xl" variant="light" color="gray">
+              {ageLabel(a)}
+            </Badge>
+          ))}
+          {provider.dayTimeTags.map((d) => (
+            <Badge key={d} radius="xl" variant="outline" color="gray">
+              {dayLabel(d)}
+            </Badge>
+          ))}
+        </Group>
 
-          <p className="text-sm leading-relaxed text-foreground/85">
-            {provider.longDescription}
-          </p>
-          <ProviderOsmAttribution provider={provider} />
+        <Text size="sm" lh={1.6}>
+          {provider.longDescription}
+        </Text>
+        <ProviderOsmAttribution provider={provider} />
 
-          <VenueReviewsPanel provider={provider} />
+        <VenueReviewsPanel provider={provider} />
 
-          {(provider.menu?.sections?.length ||
-            (provider.eventOfferings?.length ?? 0) > 0) && (
-            <div>
-              <h3 className="font-display text-base font-semibold text-foreground">
-                {tMenu("title")}
-              </h3>
-              <div className="mt-3">
-                <VenueMenuPanel provider={provider} />
-              </div>
-            </div>
-          )}
+        {(provider.menu?.sections?.length ||
+          (provider.eventOfferings?.length ?? 0) > 0) && (
+          <Stack gap="sm">
+            <Title order={3} size="h4">
+              {tMenu("title")}
+            </Title>
+            <VenueMenuPanel provider={provider} />
+          </Stack>
+        )}
 
-          {venueEvents.length > 0 && (
-            <div>
-              <h3 className="font-display text-base font-semibold text-foreground">
+        {venueEvents.length > 0 && (
+          <Stack gap="md">
+            <Stack gap={4}>
+              <Title order={3} size="h4">
                 {t("upcomingEvents")}
-              </h3>
-              <p className="mt-1 text-xs text-muted-foreground">{t("upcomingEventsHint")}</p>
-              <div className={cn("mt-4", isPage ? pageCardGrid : "grid gap-4")}>
-                {venueEvents.map((event) => (
-                  <EventCard key={event.id} event={event} onOpen={onOpenEvent} />
-                ))}
-              </div>
-            </div>
-          )}
+              </Title>
+              <Text size="xs" c="dimmed">
+                {t("upcomingEventsHint")}
+              </Text>
+            </Stack>
+            <SimpleGrid cols={isPage ? pageCardCols : 1} spacing="md">
+              {venueEvents.map((event) => (
+                <EventCard key={event.id} event={event} onOpen={onOpenEvent} />
+              ))}
+            </SimpleGrid>
+          </Stack>
+        )}
 
-          <div className="grid grid-cols-2 gap-2">
-            {provider.bookingEnabled && (
-              <Button
-                className="col-span-2 bg-primary text-primary-foreground hover:bg-primary/90"
+        <SimpleGrid cols={2} spacing="xs">
+          {provider.bookingEnabled && (
+            <Box style={{ gridColumn: "1 / -1" }}>
+              <AppButton
+                w="100%"
                 aria-label={t("reserveAt", { name: provider.name })}
-                onClick={() => toast.success(t("bookingSoon"))}
+                onClick={() => notify.success(t("bookingSoon"))}
               >
-                <Calendar className="h-4 w-4" /> {t("reserve")}
-              </Button>
-            )}
-            <Button
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => {
-                add(provider.id);
-                toast.success(t("addedToBudget", { name: provider.name }));
-              }}
-            >
-              <Plus className="h-4 w-4" /> {t("addToBudget")}
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => {
-                toggle(provider.id);
-                toast.success(saved ? t("removed") : t("saved"));
-              }}
-            >
-              <Heart
-                className={cn("h-4 w-4", saved && "fill-foreground text-foreground")}
-              />
+                <Group gap="xs" wrap="nowrap" justify="center">
+                  <Calendar size={16} />
+                  {t("reserve")}
+                </Group>
+              </AppButton>
+            </Box>
+          )}
+          <AppButton
+            onClick={() => {
+              add(provider.id);
+              notify.success(t("addedToBudget", { name: provider.name }));
+            }}
+          >
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <Plus size={16} />
+              {t("addToBudget")}
+            </Group>
+          </AppButton>
+          <AppButton
+            variant="outline"
+            onClick={() => {
+              toggle(provider.id);
+              notify.success(saved ? t("removed") : t("saved"));
+            }}
+          >
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <Heart size={16} fill={saved ? "currentColor" : "none"} />
               {saved ? t("saved") : t("save")}
-            </Button>
-            <Button variant="outline" onClick={shareEmail}>
-              <Mail className="h-4 w-4" /> {t("shareEmail")}
-            </Button>
-            <Button variant="outline" onClick={shareWhatsapp}>
-              <MessageCircle className="h-4 w-4" /> {t("shareWhatsapp")}
-            </Button>
-          </div>
+            </Group>
+          </AppButton>
+          <AppButton variant="outline" onClick={shareEmail}>
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <Mail size={16} />
+              {t("shareEmail")}
+            </Group>
+          </AppButton>
+          <AppButton variant="outline" onClick={shareWhatsapp}>
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <MessageCircle size={16} />
+              {t("shareWhatsapp")}
+            </Group>
+          </AppButton>
+        </SimpleGrid>
 
-          <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">
-              {t("contactVenue")}
-            </h3>
-            <div className="mt-3 space-y-2 text-sm">
-              <a
-                href={`mailto:${provider.email}`}
-                className="flex items-center gap-2 text-foreground hover:text-foreground"
-              >
-                <Mail className="h-4 w-4 text-muted-foreground" />{" "}
+        <Paper radius="xl" p="lg" bg="gray.1">
+          <Title order={4} size="sm" fw={600}>
+            {t("contactVenue")}
+          </Title>
+          <Stack gap="xs" mt="sm">
+            <Anchor href={`mailto:${provider.email}`} size="sm">
+              <Group gap="xs" wrap="nowrap">
+                <Mail size={16} />
                 {provider.email}
-              </a>
-              <a
-                href={provider.website}
+              </Group>
+            </Anchor>
+            <Anchor href={provider.website} target="_blank" rel="noreferrer" size="sm">
+              <Group gap="xs" wrap="nowrap">
+                <Globe size={16} />
+                {provider.website}
+              </Group>
+            </Anchor>
+            {provider.externalProgramUrl ? (
+              <Anchor
+                href={provider.externalProgramUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-foreground"
+                size="sm"
               >
-                <Globe className="h-4 w-4 text-muted-foreground" />{" "}
-                {provider.website}
-              </a>
-              {provider.externalProgramUrl ? (
-                <a
-                  href={provider.externalProgramUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-foreground hover:text-foreground"
-                >
-                  <Globe className="h-4 w-4 text-muted-foreground" />
+                <Group gap="xs" wrap="nowrap">
+                  <Globe size={16} />
                   {tProgram("officialProgram")}
-                </a>
-              ) : null}
-              {provider.repertoireUrl ? (
-                <a
-                  href={provider.repertoireUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 text-foreground hover:text-foreground"
-                >
-                  <Globe className="h-4 w-4 text-muted-foreground" />
+                </Group>
+              </Anchor>
+            ) : null}
+            {provider.repertoireUrl ? (
+              <Anchor href={provider.repertoireUrl} target="_blank" rel="noreferrer" size="sm">
+                <Group gap="xs" wrap="nowrap">
+                  <Globe size={16} />
                   {tProgram("repertoire")}
-                </a>
-              ) : null}
-              <Link
-                href={buildProgramPath(undefined, { locale })}
-                className="flex items-center gap-2 text-sm font-medium text-primary underline"
-              >
-                {tProgram("moreThisWeek")}
-              </Link>
-              <a
-                href={`tel:${provider.phone}`}
-                className="flex items-center gap-2 text-foreground hover:text-foreground"
-              >
-                <Phone className="h-4 w-4 text-muted-foreground" />{" "}
+                </Group>
+              </Anchor>
+            ) : null}
+            <Anchor component={Link} href={buildProgramPath(undefined, { locale })} size="sm" fw={500}>
+              {tProgram("moreThisWeek")}
+            </Anchor>
+            <Anchor href={`tel:${provider.phone}`} size="sm">
+              <Group gap="xs" wrap="nowrap">
+                <Phone size={16} />
                 {provider.phone}
-              </a>
-            </div>
-          </div>
+              </Group>
+            </Anchor>
+          </Stack>
+        </Paper>
 
-          <div className="rounded-xl border border-border bg-muted/30 p-4">
-            <p className="text-sm font-semibold text-foreground">{tProgram("qrTitle")}</p>
-            <p className="mt-1 text-xs text-muted-foreground">{tProgram("qrHint")}</p>
-            <div className="mt-3 flex flex-wrap items-center gap-3">
-              <img
-                src={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=200`}
-                alt=""
-                width={120}
-                height={120}
-                className="rounded-lg border border-border bg-white p-2"
-              />
-              <a
-                href={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=400`}
-                download={`pestiest-${provider.id}-qr.svg`}
-                className="text-sm font-medium text-primary underline"
-              >
-                {tProgram("qrDownload")}
-              </a>
-            </div>
-            {(provider.partnerTier === "listed" ||
-              provider.partnerTier === "partner" ||
-              provider.isPromoted) && (
-              <p className="mt-2 text-xs font-medium text-primary">{tProgram("partnerBadge")}</p>
-            )}
-          </div>
-
-          <ProviderMap address={provider.address} borough={provider.borough} />
-
-          {similar.length > 0 && (
-            <div>
-              <h3 className="font-display text-base font-semibold text-foreground">
-                {t("moreNearby")}
-              </h3>
-              <div
-                className={cn(
-                  "mt-3",
-                  isPage ? pageCardGrid : "grid grid-cols-1 gap-4 sm:grid-cols-2",
-                )}
-              >
-                {similar.map((p) => (
-                  <ProviderCard
-                    key={p.id}
-                    provider={p}
-                    onOpen={onOpenAnother}
-                    onShare={onShare}
-                  />
-                ))}
-              </div>
-            </div>
+        <Paper withBorder radius="xl" p="md">
+          <Text size="sm" fw={600}>
+            {tProgram("qrTitle")}
+          </Text>
+          <Text size="xs" c="dimmed" mt={4}>
+            {tProgram("qrHint")}
+          </Text>
+          <Group gap="md" mt="sm" align="flex-start">
+            <Box
+              component="img"
+              src={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=200`}
+              alt=""
+              width={120}
+              height={120}
+              style={{
+                borderRadius: "var(--mantine-radius-md)",
+                border: "1px solid var(--mantine-color-default-border)",
+                background: "white",
+                padding: 8,
+              }}
+            />
+            <Anchor
+              href={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=400`}
+              download={`pestiest-${provider.id}-qr.svg`}
+              size="sm"
+              fw={500}
+            >
+              {tProgram("qrDownload")}
+            </Anchor>
+          </Group>
+          {(provider.partnerTier === "listed" ||
+            provider.partnerTier === "partner" ||
+            provider.isPromoted) && (
+            <Text size="xs" fw={500} c="brand" mt="xs">
+              {tProgram("partnerBadge")}
+            </Text>
           )}
-        </div>
+        </Paper>
+
+        <ProviderMap address={provider.address} borough={provider.borough} />
+
+        {similar.length > 0 && (
+          <Stack gap="md">
+            <Title order={3} size="h4">
+              {t("moreNearby")}
+            </Title>
+            <SimpleGrid cols={isPage ? pageCardCols : { base: 1, sm: 2 }} spacing="md">
+              {similar.map((p) => (
+                <ProviderCard
+                  key={p.id}
+                  provider={p}
+                  onOpen={onOpenAnother}
+                  onShare={onShare}
+                />
+              ))}
+            </SimpleGrid>
+          </Stack>
+        )}
+      </Stack>
     </>
   );
 
@@ -496,19 +575,22 @@ export function ProviderProfile({
             activityTypes: provider.activityTypes,
           })}
         />
-        <div className="overflow-y-auto bg-background">{content}</div>
+        <Box style={{ overflowY: "auto" }}>{content}</Box>
       </>
     );
   }
 
   return (
-    <Sheet open={!!provider} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent
-        side="right"
-        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
-      >
-        {content}
-      </SheetContent>
-    </Sheet>
+    <Drawer
+      opened={!!provider}
+      onClose={onClose}
+      position="right"
+      size="xl"
+      padding={0}
+      withCloseButton={false}
+      styles={{ body: { padding: 0, height: "100%", overflowY: "auto" } }}
+    >
+      {content}
+    </Drawer>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Anchor, Code, Paper, PasswordInput, Stack, Text, Title } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
+import { useState } from "react";
+import { AppButton } from "@/components/mantine/AppButton";
+import { notify } from "@/lib/notify";
 
 export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
@@ -23,10 +23,12 @@ export default function AdminLoginPage() {
       });
       const j = await r.json().catch(() => ({}));
       if (!r.ok) {
-        toast.error((j as { error?: string }).error || "Login failed");
+        notify.error((j as { error?: string }).error || "Check your password and try again.", {
+          title: "Login failed",
+        });
         return;
       }
-      toast.success("Signed in");
+      notify.success("Redirecting to admin…", { title: "Signed in" });
       router.push("/admin");
       router.refresh();
     } finally {
@@ -35,31 +37,34 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted px-4">
-      <form onSubmit={submit} className="w-full max-w-sm space-y-4 rounded-2xl border border-border bg-card p-8">
-        <h1 className="font-display text-xl font-bold text-foreground">Pesti Est Admin</h1>
-        <p className="text-sm text-muted-foreground">
-          Use the value of <code className="rounded bg-muted px-1 font-mono text-xs">ADMIN_PASSWORD</code> from{" "}
-          <code className="font-mono text-xs">.env</code> or <code className="font-mono text-xs">.env.local</code> locally, or from
-          your host&apos;s environment (e.g. Vercel). <code className="font-mono text-xs">.env.example</code> is not loaded by the app.
-          For local dev, run <code className="font-mono text-xs">npm run env:generate</code> to write a strong password into{" "}
-          <code className="font-mono text-xs">.env.local</code>.
-        </p>
-        <Input
-          type="password"
-          autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          className="h-11"
-        />
-        <Button type="submit" className="w-full" disabled={busy || !password}>
-          {busy ? "Signing in…" : "Sign in"}
-        </Button>
-        <Link href="/" className="block text-center text-sm text-teal hover:underline">
-          ← Back to site
-        </Link>
-      </form>
-    </div>
+    <Stack mih="100vh" align="center" justify="center" px="md" bg="var(--mantine-color-gray-light)">
+      <Paper component="form" onSubmit={submit} w="100%" maw={400} p="xl" radius="lg" withBorder>
+        <Stack gap="md">
+          <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+            Pesti Est Admin
+          </Title>
+          <Text size="sm" c="dimmed">
+            Use the value of <Code>ADMIN_PASSWORD</Code> from <Code>.env</Code> or <Code>.env.local</Code> locally,
+            or from your host&apos;s environment (e.g. Vercel). <Code>.env.example</Code> is not loaded by the app. For
+            local dev, run <Code>npm run env:generate</Code> to write a strong password into <Code>.env.local</Code>.
+          </Text>
+          <PasswordInput
+            label="Password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.currentTarget.value)}
+            placeholder="Password"
+            size="md"
+            required
+          />
+          <AppButton type="submit" fullWidth loading={busy} disabled={!password}>
+            {busy ? "Signing in…" : "Sign in"}
+          </AppButton>
+          <Anchor component={Link} href="/" size="sm" ta="center">
+            ← Back to site
+          </Anchor>
+        </Stack>
+      </Paper>
+    </Stack>
   );
 }

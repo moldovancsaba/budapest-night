@@ -2,9 +2,9 @@
 
 import { BOROUGHS } from "@/data/locations";
 import type { BoroughChoice } from "@/types/provider";
+import { Chip, Group, Text } from "@mantine/core";
 import { useDistrictLabel } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
 
 export function BoroughBar({
   value,
@@ -19,30 +19,26 @@ export function BoroughBar({
 
   return (
     <div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+      <Text mb={8} size="10px" fw={700} tt="uppercase" c="dimmed" style={{ letterSpacing: "0.18em" }}>
         {t("label")}
-      </p>
-      <div className="flex flex-wrap gap-2">
+      </Text>
+      <Group gap={8}>
         {choices.map((b) => {
-          const active = value === b;
           return (
-            <button
+            <Chip
               key={b}
-              type="button"
-              onClick={() => onChange(b)}
-              className={cn(
-                "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
-                active
-                  ? "border-foreground bg-primary text-primary-foreground"
-                  : "border-border bg-card text-foreground hover:border-foreground/40 hover:text-foreground",
-              )}
-              aria-pressed={active}
+              checked={value === b}
+              onChange={() => onChange(b)}
+              radius="xl"
+              color="brand"
+              variant="filled"
+              size="md"
             >
               {districtLabel(b)}
-            </button>
+            </Chip>
           );
         })}
-      </div>
+      </Group>
     </div>
   );
 }

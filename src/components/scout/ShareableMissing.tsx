@@ -1,19 +1,23 @@
 "use client";
 
+import { Anchor, Stack, Text, Title } from "@mantine/core";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { Button } from "@/components/ui/button";
 
 export function ShareableMissing({ backHref }: { backHref: string }) {
   const t = useTranslations("sharePage");
 
   return (
-    <div className="px-6 py-16 text-center">
-      <p className="font-display text-xl font-bold text-foreground">{t("notFoundTitle")}</p>
-      <p className="mt-2 text-sm text-muted-foreground">{t("notFoundBody")}</p>
-      <Button asChild className="mt-6 bg-primary text-primary-foreground">
-        <Link href={backHref}>{t("back")}</Link>
-      </Button>
-    </div>
+    <Stack px="lg" py={64} align="center" ta="center" gap="sm">
+      <Title order={2} size="h3" tt="uppercase" lts="0.04em">
+        {t("notFoundTitle")}
+      </Title>
+      <Text size="sm" c="dimmed" maw={360}>
+        {t("notFoundBody")}
+      </Text>
+      <Anchor component={Link} href={backHref} size="sm" fw={600} mt="md" underline="always">
+        {t("back")}
+      </Anchor>
+    </Stack>
   );
 }

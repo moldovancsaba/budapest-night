@@ -1,14 +1,54 @@
+"use client";
+
 import type { ReactNode } from "react";
 import Link from "next/link";
+import {
+  Anchor,
+  Badge,
+  Box,
+  Code,
+  Container,
+  Group,
+  List,
+  Paper,
+  Stack,
+  Table,
+  Text,
+  Title,
+} from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
+
+function methodBadgeColor(method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"): string {
+  if (method === "GET") return "teal";
+  if (method === "POST") return "blue";
+  if (method === "PUT") return "yellow";
+  if (method === "PATCH") return "grape";
+  return "red";
+}
+
+function InlineCode({ children }: { children: ReactNode }) {
+  return <Code>{children}</Code>;
+}
 
 function CodeBlock({ title, children }: { title?: string; children: string }) {
   return (
-    <figure className="my-4 space-y-2">
-      {title ? <figcaption className="text-xs font-medium text-muted-foreground">{title}</figcaption> : null}
-      <pre className="max-h-[min(70vh,520px)] overflow-auto rounded-xl border border-border bg-card p-4 text-[13px] leading-relaxed text-card-foreground shadow-sm">
-        <code className="font-mono whitespace-pre">{children}</code>
-      </pre>
-    </figure>
+    <Stack gap="xs" my="md" component="figure">
+      {title ? (
+        <Text component="figcaption" size="xs" fw={500} c="dimmed">
+          {title}
+        </Text>
+      ) : null}
+      <Paper
+        withBorder
+        radius="md"
+        p="md"
+        style={{ maxHeight: "min(70vh, 520px)", overflow: "auto" }}
+      >
+        <Code block fz={13} style={{ whiteSpace: "pre" }}>
+          {children}
+        </Code>
+      </Paper>
+    </Stack>
   );
 }
 
@@ -22,10 +62,22 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 border-b border-border/60 py-14 last:border-0">
-      <h2 className="font-display text-2xl font-bold tracking-tight text-foreground">{title}</h2>
-      <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-foreground/90">{children}</div>
-    </section>
+    <Box
+      component="section"
+      id={id}
+      py="xl"
+      style={{
+        scrollMarginTop: 96,
+        borderBottom: "1px solid var(--mantine-color-default-border)",
+      }}
+    >
+      <Title order={2} size="h2">
+        {title}
+      </Title>
+      <Stack gap="md" mt="lg" fz={15} lh={1.65}>
+        {children}
+      </Stack>
+    </Box>
   );
 }
 
@@ -40,27 +92,24 @@ function EndpointCard({
   auth: string;
   children: ReactNode;
 }) {
-  const methodColor =
-    method === "GET"
-      ? "bg-emerald-500/15 text-emerald-800 dark:text-emerald-200"
-      : method === "POST"
-        ? "bg-sky-500/15 text-sky-800 dark:text-sky-200"
-        : method === "PUT"
-          ? "bg-amber-500/15 text-amber-900 dark:text-amber-100"
-          : method === "PATCH"
-            ? "bg-violet-500/15 text-violet-800 dark:text-violet-200"
-            : "bg-rose-500/15 text-rose-800 dark:text-rose-200";
   return (
-    <article className="rounded-xl border border-border bg-background/80 p-5 shadow-sm">
-      <div className="flex flex-wrap items-center gap-3 gap-y-2">
-        <span className={`rounded-md px-2.5 py-1 text-xs font-bold tracking-wide ${methodColor}`}>{method}</span>
-        <code className="font-mono text-sm text-foreground">{path}</code>
-      </div>
-      <p className="mt-2 text-xs text-muted-foreground">
-        <span className="font-semibold text-foreground/80">Auth:</span> {auth}
-      </p>
-      <div className="mt-4 space-y-3 text-sm leading-relaxed text-foreground/90">{children}</div>
-    </article>
+    <Paper component="article" withBorder radius="md" p="md">
+      <Group gap="sm" wrap="wrap" align="center">
+        <Badge color={methodBadgeColor(method)} variant="light" radius="sm" tt="uppercase">
+          {method}
+        </Badge>
+        <Code fz="sm">{path}</Code>
+      </Group>
+      <Text size="xs" c="dimmed" mt="xs">
+        <Text component="span" fw={600} inherit>
+          Auth:
+        </Text>{" "}
+        {auth}
+      </Text>
+      <Stack gap="sm" mt="md" fz="sm" lh={1.65}>
+        {children}
+      </Stack>
+    </Paper>
   );
 }
 
@@ -458,236 +507,250 @@ export function ApiDocsPage({ origin }: { origin: string }) {
   const base = origin || "https://budapest-night.vercel.app";
 
   return (
-    <div className="min-h-screen bg-ivory text-foreground">
-      <header className="sticky top-0 z-10 border-b border-border/80 bg-ivory/95 backdrop-blur supports-[backdrop-filter]:bg-ivory/80">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-teal">
-              Pesti Est · API v{API_VERSION}
-            </p>
-            <h1 className="font-display text-xl font-bold sm:text-2xl">HTTP API reference</h1>
-            <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-              Catalog, machine ingest, and admin endpoints (app package{" "}
-              <span className="font-mono text-foreground/80">v{API_VERSION}</span>). Paths are relative to your deployment
-              (for example <span className="font-mono text-foreground/80">{base}</span>).
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2 text-sm">
-            <Link
-              href="/"
-              className="rounded-lg border border-border bg-background px-3 py-2 font-medium text-foreground transition hover:bg-muted"
-            >
-              Home
-            </Link>
-            <Link
-              href="/admin"
-              className="rounded-lg border border-border bg-background px-3 py-2 font-medium text-foreground transition hover:bg-muted"
-            >
-              Admin
-            </Link>
-          </div>
-        </div>
-      </header>
+    <Box style={{ minHeight: "100vh" }}>
+      <Box
+        component="header"
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 10,
+          borderBottom: "1px solid var(--mantine-color-default-border)",
+          backdropFilter: "blur(8px)",
+          backgroundColor: "color-mix(in srgb, var(--mantine-color-body) 95%, transparent)",
+        }}
+      >
+        <Container size="lg" px="md" py="md">
+          <Group justify="space-between" align="flex-start" gap="md" wrap="wrap">
+            <Stack gap={4} maw={576}>
+              <Text size="xs" fw={600} tt="uppercase" lts="0.12em" c="brand">
+                Pesti Est · API v{API_VERSION}
+              </Text>
+              <Title order={1} size="h2">
+                HTTP API reference
+              </Title>
+              <Text size="sm" c="dimmed">
+                Catalog, machine ingest, and admin endpoints (app package{" "}
+                <Code>v{API_VERSION}</Code>). Paths are relative to your deployment (for example{" "}
+                <Code>{base}</Code>).
+              </Text>
+            </Stack>
+            <Group gap="xs">
+              <AppButton component={Link} href="/" variant="outline">
+                Home
+              </AppButton>
+              <AppButton component={Link} href="/admin" variant="outline">
+                Admin
+              </AppButton>
+            </Group>
+          </Group>
+        </Container>
+      </Box>
 
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-20 pt-8 lg:flex-row lg:items-start lg:gap-12 sm:px-6">
-        <nav
-          aria-label="On this page"
-          className="lg:sticky lg:top-24 lg:w-52 lg:shrink-0 lg:self-start"
-        >
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">On this page</p>
-          <ul className="mt-3 space-y-1 text-sm">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="block rounded-md px-2 py-1.5 text-foreground/80 transition hover:bg-muted hover:text-foreground"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      <Container size="lg" px="md" pb="xl" pt="lg">
+        <Group align="flex-start" gap="xl" wrap="wrap">
+          <Box
+            component="nav"
+            aria-label="On this page"
+            w={{ base: "100%", lg: 208 }}
+            pos={{ lg: "sticky" }}
+            top={{ lg: 96 }}
+            style={{ flexShrink: 0, alignSelf: "flex-start" }}
+          >
+            <Text size="xs" fw={600} tt="uppercase" c="dimmed">
+              On this page
+            </Text>
+            <Stack component="ul" gap={4} mt="sm" style={{ listStyle: "none", margin: 0, padding: 0 }}>
+              {nav.map((item) => (
+                <Box component="li" key={item.href}>
+                  <Anchor href={item.href} size="sm" underline="never">
+                    {item.label}
+                  </Anchor>
+                </Box>
+              ))}
+            </Stack>
+          </Box>
 
-        <main className="min-w-0 flex-1">
+          <Box component="main" style={{ minWidth: 0, flex: 1 }}>
           <Section id="overview" title="Overview">
-            <p>
+            <Text>
               Pesti Est exposes JSON APIs for the public catalog, a{" "}
-              <strong>machine ingest</strong> pipeline secured by <code className="rounded bg-muted px-1 font-mono text-sm">INGEST_API_KEY</code>, and{" "}
+              <strong>machine ingest</strong> pipeline secured by <InlineCode>INGEST_API_KEY</InlineCode>, and{" "}
               <strong>browser session</strong> APIs for the admin console. Unless noted, request and response bodies use{" "}
-              <code className="rounded bg-muted px-1 font-mono text-sm">application/json</code> with UTF-8.
-            </p>
-            <ul className="list-inside list-disc space-y-2 text-foreground/90">
-              <li>
+              <InlineCode>application/json</InlineCode> with UTF-8.
+            </Text>
+            <List spacing="xs" size="sm">
+              <List.Item>
                 <strong>Public routes</strong> are read-only and safe to call from browsers or edge caches (no secrets
                 required).
-              </li>
-              <li>
-                <strong>Admin routes</strong> require an HTTP-only cookie set by <code className="font-mono">POST /api/admin/login</code>; use a
-                browser or forward <code className="font-mono">Cookie</code> from the same origin.
-              </li>
-              <li>
+              </List.Item>
+              <List.Item>
+                <strong>Admin routes</strong> require an HTTP-only cookie set by <InlineCode>POST /api/admin/login</InlineCode>; use a
+                browser or forward <InlineCode>Cookie</InlineCode> from the same origin.
+              </List.Item>
+              <List.Item>
                 <strong>Ingest</strong> is intended for servers, ETL jobs, or trusted partners — never expose{" "}
-                <code className="font-mono">INGEST_API_KEY</code> in client-side code.
-              </li>
-              <li>
+                <InlineCode>INGEST_API_KEY</InlineCode> in client-side code.
+              </List.Item>
+              <List.Item>
                 <strong>Prices</strong> are stored in HUF on providers and menu items; the web app reads{" "}
-                <code className="font-mono">currencyRates</code> from <code className="font-mono">GET /api/public/site</code> for EUR/USD display.
-              </li>
-            </ul>
+                <InlineCode>currencyRates</InlineCode> from <InlineCode>GET /api/public/site</InlineCode> for EUR/USD display.
+              </List.Item>
+            </List>
           </Section>
 
           <Section id="urls" title="Venue &amp; event URLs (web app)">
-            <p>
+            <Text>
               These paths are implemented by the Next.js app (not separate JSON resources). They open the venue sheet or a
               shareable full page and accept either a <strong>canonical slug</strong> or a legacy key.
-            </p>
-            <ul className="list-inside list-disc space-y-2 text-foreground/90">
-              <li>
-                <code className="font-mono">/venue/{"{slug}"}</code> — venue profile (query <code className="font-mono">?from=venues|events|…</code> controls back navigation).
-              </li>
-              <li>
-                <code className="font-mono">/venue/{"{slug}"}/full</code> — full-page venue layout with share chrome.
-              </li>
-              <li>
-                <code className="font-mono">/event/{"{slug}"}</code> and <code className="font-mono">/event/{"{slug}"}/full</code> — timed event profiles.
-              </li>
-              <li>
-                Locale prefix optional: <code className="font-mono">/hu/venue/budapest-park</code> uses Hungarian copy; slug resolution checks all locales.
-              </li>
-            </ul>
-            <p>
+            </Text>
+            <List spacing="xs" size="sm">
+              <List.Item>
+                <InlineCode>/venue/{"{slug}"}</InlineCode> — venue profile (query <InlineCode>?from=venues|events|…</InlineCode> controls back navigation).
+              </List.Item>
+              <List.Item>
+                <InlineCode>/venue/{"{slug}"}/full</InlineCode> — full-page venue layout with share chrome.
+              </List.Item>
+              <List.Item>
+                <InlineCode>/event/{"{slug}"}</InlineCode> and <InlineCode>/event/{"{slug}"}/full</InlineCode> — timed event profiles.
+              </List.Item>
+              <List.Item>
+                Locale prefix optional: <InlineCode>/hu/venue/budapest-park</InlineCode> uses Hungarian copy; slug resolution checks all locales.
+              </List.Item>
+            </List>
+            <Text>
               <strong>Canonical slugs</strong> must not embed the wrong Budapest district (e.g. use{" "}
-              <code className="font-mono">budapest-park</code> for the Ferencváros open-air park, not{" "}
-              <code className="font-mono">prov-budapest-park-ferencvaros</code>). Set{" "}
-              <code className="font-mono">locales.en.slug</code> on ingest; logic lives in{" "}
-              <code className="font-mono">src/lib/venueSlug.ts</code>. Legacy <code className="font-mono">prov-*</code> URL segments still resolve but the app redirects to the canonical slug.
-            </p>
-            <p>
-              Timed events link to hosts via <code className="font-mono">venueIds</code> (internal ids). The venue UI lists upcoming events whose{" "}
-              <code className="font-mono">venueIds</code> include that provider.
-            </p>
+              <InlineCode>budapest-park</InlineCode> for the Ferencváros open-air park, not{" "}
+              <InlineCode>prov-budapest-park-ferencvaros</InlineCode>). Set{" "}
+              <InlineCode>locales.en.slug</InlineCode> on ingest; logic lives in{" "}
+              <InlineCode>src/lib/venueSlug.ts</InlineCode>. Legacy <InlineCode>prov-*</InlineCode> URL segments still resolve but the app redirects to the canonical slug.
+            </Text>
+            <Text>
+              Timed events link to hosts via <InlineCode>venueIds</InlineCode> (internal ids). The venue UI lists upcoming events whose{" "}
+              <InlineCode>venueIds</InlineCode> include that provider.
+            </Text>
           </Section>
 
           <Section id="public" title="Public catalog (read)">
-            <p>These endpoints read from MongoDB when <code className="font-mono">MONGODB_URI</code> is configured; otherwise they fall back to built-in defaults where noted.</p>
+            <Text>These endpoints read from MongoDB when <InlineCode>MONGODB_URI</InlineCode> is configured; otherwise they fall back to built-in defaults where noted.</Text>
 
-            <div className="space-y-6">
+            <Stack gap="lg">
               <EndpointCard method="GET" path="/api/public/providers" auth="None">
-                <p>
-                  Returns <code className="font-mono">Provider[]</code>. Mongo <code className="font-mono">_id</code> is stripped from each object.
-                </p>
-                <p>
-                  <strong>Query:</strong> <code className="font-mono">locale</code> — optional{" "}
-                  <code className="font-mono">en</code> | <code className="font-mono">hu</code> | <code className="font-mono">es</code> |{" "}
-                  <code className="font-mono">it</code> | <code className="font-mono">he</code> | <code className="font-mono">ar</code> (overlays{" "}
-                  <code className="font-mono">locales[locale]</code> on name, descriptions, and slug). Public venue links should use{" "}
-                  <code className="font-mono">locales.en.slug</code> when set, otherwise the canonical slug algorithm in{" "}
-                  <code className="font-mono">getCanonicalVenueSlug()</code> — not raw internal ids in marketing URLs.
-                </p>
-                <p className="text-muted-foreground">
+                <Text>
+                  Returns <InlineCode>Provider[]</InlineCode>. Mongo <InlineCode>_id</InlineCode> is stripped from each object.
+                </Text>
+                <Text>
+                  <strong>Query:</strong> <InlineCode>locale</InlineCode> — optional{" "}
+                  <InlineCode>en</InlineCode> | <InlineCode>hu</InlineCode> | <InlineCode>es</InlineCode> |{" "}
+                  <InlineCode>it</InlineCode> | <InlineCode>he</InlineCode> | <InlineCode>ar</InlineCode> (overlays{" "}
+                  <InlineCode>locales[locale]</InlineCode> on name, descriptions, and slug). Public venue links should use{" "}
+                  <InlineCode>locales.en.slug</InlineCode> when set, otherwise the canonical slug algorithm in{" "}
+                  <InlineCode>getCanonicalVenueSlug()</InlineCode> — not raw internal ids in marketing URLs.
+                </Text>
+                <Text c="dimmed">
                   <strong>503</strong> if the database is not configured.
-                </p>
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/events" auth="None">
-                <p>
-                  Returns <code className="font-mono">PublicNightEvent[]</code> — timed concerts and ticketed shows (not venue listings).
-                  Each event includes <code className="font-mono">venues</code> (resolved host snapshots) and{" "}
-                  <code className="font-mono">venuesResolved</code>.
-                </p>
-                <p>
+                <Text>
+                  Returns <InlineCode>PublicNightEvent[]</InlineCode> — timed concerts and ticketed shows (not venue listings).
+                  Each event includes <InlineCode>venues</InlineCode> (resolved host snapshots) and{" "}
+                  <InlineCode>venuesResolved</InlineCode>.
+                </Text>
+                <Text>
                   <strong>Query:</strong>{" "}
-                  <code className="font-mono">locale</code> (same as providers);{" "}
-                  <code className="font-mono">upcoming=0</code> to include past/cancelled;{" "}
-                  <code className="font-mono">borough</code> to filter by district. Default: upcoming scheduled events only, sorted by{" "}
-                  <code className="font-mono">startsAt</code>.
-                </p>
-                <p className="text-muted-foreground">
-                  Stored <code className="font-mono">venueIds</code> must reference existing <code className="font-mono">prov-*</code> ids. On ingest,{" "}
-                  <code className="font-mono">venueLinks</code> and district fields sync from the primary host.
-                </p>
+                  <InlineCode>locale</InlineCode> (same as providers);{" "}
+                  <InlineCode>upcoming=0</InlineCode> to include past/cancelled;{" "}
+                  <InlineCode>borough</InlineCode> to filter by district. Default: upcoming scheduled events only, sorted by{" "}
+                  <InlineCode>startsAt</InlineCode>.
+                </Text>
+                <Text c="dimmed">
+                  Stored <InlineCode>venueIds</InlineCode> must reference existing <InlineCode>prov-*</InlineCode> ids. On ingest,{" "}
+                  <InlineCode>venueLinks</InlineCode> and district fields sync from the primary host.
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/menu-items" auth="None">
-                <p>
+                <Text>
                   Flat menu board for Eat &amp; Drink: dishes and drinks with prices, each row linked to a host venue via{" "}
-                  <code className="font-mono">venue</code> (<code className="font-mono">VenueLink</code>).
-                </p>
-                <p>
+                  <InlineCode>venue</InlineCode> (<InlineCode>VenueLink</InlineCode>).
+                </Text>
+                <Text>
                   <strong>Query:</strong>{" "}
-                  <code className="font-mono">locale</code> (optional, e.g. <code className="font-mono">it</code> — resolves item{" "}
-                  <code className="font-mono">name</code> and section titles from <code className="font-mono">locales</code>),{" "}
-                  <code className="font-mono">tag</code> (canonical menu tag),{" "}
-                  <code className="font-mono">q</code> (search name, venue, section, address, category),{" "}
-                  <code className="font-mono">kind</code> (<code className="font-mono">food</code> | <code className="font-mono">drink</code> |{" "}
-                  <code className="font-mono">other</code>),{" "}
-                  <code className="font-mono">borough</code>,{" "}
-                  <code className="font-mono">categories</code> (comma-separated),{" "}
-                  <code className="font-mono">limit</code> (max 500, default 120).
-                </p>
-                <p>
-                  <strong>400</strong> if <code className="font-mono">tag</code> is not a canonical tag. Empty catalog returns{" "}
-                  <code className="font-mono">{"{ items: [], providersWithMenu: 0, tourReadiness: {...} }"}</code> when DB is missing.
-                </p>
+                  <InlineCode>locale</InlineCode> (optional, e.g. <InlineCode>it</InlineCode> — resolves item{" "}
+                  <InlineCode>name</InlineCode> and section titles from <InlineCode>locales</InlineCode>),{" "}
+                  <InlineCode>tag</InlineCode> (canonical menu tag),{" "}
+                  <InlineCode>q</InlineCode> (search name, venue, section, address, category),{" "}
+                  <InlineCode>kind</InlineCode> (<InlineCode>food</InlineCode> | <InlineCode>drink</InlineCode> |{" "}
+                  <InlineCode>other</InlineCode>),{" "}
+                  <InlineCode>borough</InlineCode>,{" "}
+                  <InlineCode>categories</InlineCode> (comma-separated),{" "}
+                  <InlineCode>limit</InlineCode> (max 500, default 120).
+                </Text>
+                <Text>
+                  <strong>400</strong> if <InlineCode>tag</InlineCode> is not a canonical tag. Empty catalog returns{" "}
+                  <InlineCode>{"{ items: [], providersWithMenu: 0, tourReadiness: {...} }"}</InlineCode> when DB is missing.
+                </Text>
                 <CodeBlock title="Example response">{MENU_ITEMS_RESPONSE}</CodeBlock>
-                <p className="text-sm text-muted-foreground">
-                  Canonical tags: <code className="font-mono">palinka</code>, <code className="font-mono">coffee</code>,{" "}
-                  <code className="font-mono">specialty-coffee</code>, <code className="font-mono">goulash</code>,{" "}
-                  <code className="font-mono">hungarian</code>, <code className="font-mono">street-food</code>, and others in{" "}
-                  <code className="font-mono">src/data/menuTags.ts</code>.
-                </p>
+                <Text size="sm" c="dimmed">
+                  Canonical tags: <InlineCode>palinka</InlineCode>, <InlineCode>coffee</InlineCode>,{" "}
+                  <InlineCode>specialty-coffee</InlineCode>, <InlineCode>goulash</InlineCode>,{" "}
+                  <InlineCode>hungarian</InlineCode>, <InlineCode>street-food</InlineCode>, and others in{" "}
+                  <InlineCode>src/data/menuTags.ts</InlineCode>.
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/tours/{tourId}" auth="None">
-                <p>
+                <Text>
                   Generates a themed three-stop tour from venues with <strong>published menu items</strong> matching the template tags.
-                  Templates: <code className="font-mono">palinka</code>, <code className="font-mono">foodie</code>,{" "}
-                  <code className="font-mono">coffee</code>.
-                </p>
-                <p>
-                  <strong>Query:</strong> <code className="font-mono">seed</code> — optional shuffle seed (defaults to tour id + timestamp).
-                </p>
-                <p>
-                  <strong>404</strong> unknown <code className="font-mono">tourId</code>.{" "}
-                  <strong>422</strong> <code className="font-mono">{"{ \"error\": \"not_enough_venues\" }"}</code> when fewer than three eligible venues.
-                  Check readiness via <code className="font-mono">tourReadiness</code> on menu-items.
-                </p>
+                  Templates: <InlineCode>palinka</InlineCode>, <InlineCode>foodie</InlineCode>,{" "}
+                  <InlineCode>coffee</InlineCode>.
+                </Text>
+                <Text>
+                  <strong>Query:</strong> <InlineCode>seed</InlineCode> — optional shuffle seed (defaults to tour id + timestamp).
+                </Text>
+                <Text>
+                  <strong>404</strong> unknown <InlineCode>tourId</InlineCode>.{" "}
+                  <strong>422</strong> <InlineCode>{"{ \"error\": \"not_enough_venues\" }"}</InlineCode> when fewer than three eligible venues.
+                  Check readiness via <InlineCode>tourReadiness</InlineCode> on menu-items.
+                </Text>
                 <CodeBlock title="Example response">{TOUR_RESPONSE}</CodeBlock>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/meetup-groups" auth="None">
-                <p>
-                  Returns <code className="font-mono">PublicMeetupGroup[]</code>: each row includes{" "}
-                  <code className="font-mono">venues</code> and <code className="font-mono">events</code> resolved from live
-                  catalogs plus stored <code className="font-mono">venueLinks</code> /{" "}
-                  <code className="font-mono">eventLinks</code> snapshots. <code className="font-mono">_id</code> stripped.
-                </p>
-                <p className="text-muted-foreground">
+                <Text>
+                  Returns <InlineCode>PublicMeetupGroup[]</InlineCode>: each row includes{" "}
+                  <InlineCode>venues</InlineCode> and <InlineCode>events</InlineCode> resolved from live
+                  catalogs plus stored <InlineCode>venueLinks</InlineCode> /{" "}
+                  <InlineCode>eventLinks</InlineCode> snapshots. <InlineCode>_id</InlineCode> stripped.
+                </Text>
+                <Text c="dimmed">
                   <strong>503</strong> if the database is not configured.
-                </p>
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/locations" auth="None">
-                <p>
-                  Returns a borough → neighborhoods map: <code className="font-mono">Record&lt;Borough, string[]&gt;</code>. If the
+                <Text>
+                  Returns a borough → neighborhoods map: <InlineCode>Record&lt;Borough, string[]&gt;</InlineCode>. If the
                   locations collection is empty or DB is unavailable, the app falls back to static neighborhood lists from the
                   codebase.
-                </p>
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/public/site" auth="None">
-                <p>
-                  Returns the marketing shell document for <code className="font-mono">_id: &quot;main&quot;</code>, or merged defaults
-                  when missing. Includes <code className="font-mono">currencyRates</code> ({`{ hufPerEur, hufPerUsd }`}) used by the header
+                <Text>
+                  Returns the marketing shell document for <InlineCode>_id: &quot;main&quot;</InlineCode>, or merged defaults
+                  when missing. Includes <InlineCode>currencyRates</InlineCode> ({`{ hufPerEur, hufPerUsd }`}) used by the header
                   currency switcher (HUF is canonical in Mongo provider/event documents).
-                </p>
+                </Text>
                 <CodeBlock title="Shape (SiteDoc)">{SITE_DOC}</CodeBlock>
               </EndpointCard>
 
-            </div>
+            </Stack>
 
-            <h3 className="mt-10 font-display text-lg font-semibold">Entity references</h3>
+            <Title order={3} size="h4" mt="xl">
+              Entity references
+            </Title>
             <CodeBlock title="VenueLink (events, menus, API rows)">{VENUE_LINK}</CodeBlock>
             <CodeBlock title="Provider">{PROVIDER_FIELDS}</CodeBlock>
             <CodeBlock title="VenueMenu &amp; MenuItem">{VENUE_MENU}</CodeBlock>
@@ -696,49 +759,49 @@ export function ApiDocsPage({ origin }: { origin: string }) {
           </Section>
 
           <Section id="ingest" title="Machine ingest (full CMS via API)">
-              <p>
-                Use <code className="font-mono">INGEST_API_KEY</code> for headless content management: read catalog and
+              <Text>
+                Use <InlineCode>INGEST_API_KEY</InlineCode> for headless content management: read catalog and
                 settings, bulk replace collections, patch singletons, upload images to ImgBB, and mirror everything the admin
                 UI can change in MongoDB. <strong>Stored raster URLs</strong> in provider, meet-up, and site documents must be{" "}
-                <code className="font-mono">https://</code> on <strong>imgbb.com</strong> (e.g. <code className="font-mono">i.ibb.co</code>) or empty; other hosts are rejected.
-              </p>
-              <p>
-                <strong>Provider locales:</strong> root fields are English. Every <code className="font-mono">provider</code>{" "}
-                upsert should include <code className="font-mono">locales</code> for{" "}
-                <code className="font-mono">hu</code>, <code className="font-mono">es</code>, <code className="font-mono">it</code>,{" "}
-                <code className="font-mono">he</code>, and <code className="font-mono">ar</code> (each with{" "}
-                <code className="font-mono">name</code>, <code className="font-mono">shortDescription</code>,{" "}
-                <code className="font-mono">longDescription</code>, <code className="font-mono">slug</code>). Also set{" "}
-                <code className="font-mono">locales.en.slug</code> to the district-neutral canonical URL segment. Public reads accept{" "}
-                <code className="font-mono">?locale=</code> on providers and events. See{" "}
-                <code className="font-mono">src/lib/curator/localeIngestRules.ts</code> and{" "}
-                <code className="font-mono">src/lib/curator/eventLocaleIngestRules.ts</code>.
-              </p>
-              <p>
-                <strong>Menus (Eat &amp; Drink):</strong> attach <code className="font-mono">menu</code> to an existing{" "}
-                <code className="font-mono">prov-*</code> via <code className="font-mono">provider</code> + <code className="font-mono">patch</code> or{" "}
-                <code className="font-mono">upsert</code>. Do not send <code className="font-mono">menuTags</code> or{" "}
-                <code className="font-mono">menu.venueLink</code>. Specialist prompt:{" "}
-                <code className="font-mono">scripts/cursor-curator-menu-prompt.txt</code> · rules:{" "}
-                <code className="font-mono">src/lib/curator/menuIngestRules.ts</code>.
-              </p>
-              <p>
-                <strong>Timed events:</strong> use <code className="font-mono">resource: &quot;event&quot;</code> (not provider category{" "}
-                <code className="font-mono">Events</code>). Upsert host venues first in the same <code className="font-mono">operations</code> array.
-                Ticket tiers go in <code className="font-mono">entryFees</code> (HUF/EUR), not <code className="font-mono">pricePerClass</code> on the venue.
-                Prompt: <code className="font-mono">scripts/cursor-curator-events-prompt.txt</code>.
-              </p>
+                <InlineCode>https://</InlineCode> on <strong>imgbb.com</strong> (e.g. <InlineCode>i.ibb.co</InlineCode>) or empty; other hosts are rejected.
+              </Text>
+              <Text>
+                <strong>Provider locales:</strong> root fields are English. Every <InlineCode>provider</InlineCode>{" "}
+                upsert should include <InlineCode>locales</InlineCode> for{" "}
+                <InlineCode>hu</InlineCode>, <InlineCode>es</InlineCode>, <InlineCode>it</InlineCode>,{" "}
+                <InlineCode>he</InlineCode>, and <InlineCode>ar</InlineCode> (each with{" "}
+                <InlineCode>name</InlineCode>, <InlineCode>shortDescription</InlineCode>,{" "}
+                <InlineCode>longDescription</InlineCode>, <InlineCode>slug</InlineCode>). Also set{" "}
+                <InlineCode>locales.en.slug</InlineCode> to the district-neutral canonical URL segment. Public reads accept{" "}
+                <InlineCode>?locale=</InlineCode> on providers and events. See{" "}
+                <InlineCode>src/lib/curator/localeIngestRules.ts</InlineCode> and{" "}
+                <InlineCode>src/lib/curator/eventLocaleIngestRules.ts</InlineCode>.
+              </Text>
+              <Text>
+                <strong>Menus (Eat &amp; Drink):</strong> attach <InlineCode>menu</InlineCode> to an existing{" "}
+                <InlineCode>prov-*</InlineCode> via <InlineCode>provider</InlineCode> + <InlineCode>patch</InlineCode> or{" "}
+                <InlineCode>upsert</InlineCode>. Do not send <InlineCode>menuTags</InlineCode> or{" "}
+                <InlineCode>menu.venueLink</InlineCode>. Specialist prompt:{" "}
+                <InlineCode>scripts/cursor-curator-menu-prompt.txt</InlineCode> · rules:{" "}
+                <InlineCode>src/lib/curator/menuIngestRules.ts</InlineCode>.
+              </Text>
+              <Text>
+                <strong>Timed events:</strong> use <InlineCode>resource: &quot;event&quot;</InlineCode> (not provider category{" "}
+                <InlineCode>Events</InlineCode>). Upsert host venues first in the same <InlineCode>operations</InlineCode> array.
+                Ticket tiers go in <InlineCode>entryFees</InlineCode> (HUF/EUR), not <InlineCode>pricePerClass</InlineCode> on the venue.
+                Prompt: <InlineCode>scripts/cursor-curator-events-prompt.txt</InlineCode>.
+              </Text>
 
-            <div className="space-y-6">
+            <Stack gap="lg">
               <EndpointCard method="GET" path="/api/cron/curator" auth="Bearer CRON_SECRET (Vercel Cron)">
-                <p>
-                  <strong>Optional automation:</strong> when <code className="font-mono">CURATOR_ENABLED=true</code>, runs Serper search → fetches an official page → OpenAI JSON → Zod validate → dedupe → Mongo{" "}
-                  <code className="font-mono">provider</code> upsert (same as ingest). Requires <code className="font-mono">SERPER_API_KEY</code> and{" "}
-                  <code className="font-mono">CURATOR_OPENAI_API_KEY</code>. Response JSON includes <code className="font-mono">steps</code>. Schedule in <code className="font-mono">vercel.json</code>.
-                </p>
-                <p className="text-muted-foreground">
-                  <strong>401</strong> if the bearer token does not match <code className="font-mono">CRON_SECRET</code>. Returns <strong>200</strong> with a descriptive body for skip/config errors so crons do not retry endlessly.
-                </p>
+                <Text>
+                  <strong>Optional automation:</strong> when <InlineCode>CURATOR_ENABLED=true</InlineCode>, runs Serper search → fetches an official page → OpenAI JSON → Zod validate → dedupe → Mongo{" "}
+                  <InlineCode>provider</InlineCode> upsert (same as ingest). Requires <InlineCode>SERPER_API_KEY</InlineCode> and{" "}
+                  <InlineCode>CURATOR_OPENAI_API_KEY</InlineCode>. Response JSON includes <InlineCode>steps</InlineCode>. Schedule in <InlineCode>vercel.json</InlineCode>.
+                </Text>
+                <Text c="dimmed">
+                  <strong>401</strong> if the bearer token does not match <InlineCode>CRON_SECRET</InlineCode>. Returns <strong>200</strong> with a descriptive body for skip/config errors so crons do not retry endlessly.
+                </Text>
               </EndpointCard>
 
               <EndpointCard
@@ -746,10 +809,10 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 path="/api/ingest"
                 auth="Bearer INGEST_API_KEY or header X-Ingest-Key: &lt;key&gt;"
               >
-                <p>
+                <Text>
                   Returns a compact JSON summary of ingest capabilities and limits (same authentication as{" "}
-                  <code className="font-mono">POST /api/ingest</code>).
-                </p>
+                  <InlineCode>POST /api/ingest</InlineCode>).
+                </Text>
               </EndpointCard>
 
               <EndpointCard
@@ -757,14 +820,14 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 path="/api/ingest/upload"
                 auth="Bearer INGEST_API_KEY or header X-Ingest-Key: &lt;key&gt;"
               >
-                <p>
-                  Same behavior as <code className="font-mono">POST /api/admin/upload</code>, but for API clients:{" "}
-                  <code className="font-mono">multipart/form-data</code> with field <code className="font-mono">file</code>. Requires{" "}
-                  <code className="font-mono">IMGBB_API_KEY</code> on the server.
-                </p>
-                <p className="text-muted-foreground">
-                  Success: <code className="font-mono">{"{ \"url\": string, \"displayUrl\": string }"}</code>.
-                </p>
+                <Text>
+                  Same behavior as <InlineCode>POST /api/admin/upload</InlineCode>, but for API clients:{" "}
+                  <InlineCode>multipart/form-data</InlineCode> with field <InlineCode>file</InlineCode>. Requires{" "}
+                  <InlineCode>IMGBB_API_KEY</InlineCode> on the server.
+                </Text>
+                <Text c="dimmed">
+                  Success: <InlineCode>{"{ \"url\": string, \"displayUrl\": string }"}</InlineCode>.
+                </Text>
               </EndpointCard>
 
               <EndpointCard
@@ -772,231 +835,246 @@ export function ApiDocsPage({ origin }: { origin: string }) {
                 path="/api/ingest"
                 auth="Bearer INGEST_API_KEY or header X-Ingest-Key: &lt;key&gt;"
               >
-              <p>
+              <Text>
                 Batch <strong>read + write</strong> operations for providers, timed events, meetup groups, site, and locations.
-                Up to <strong>100 operations</strong> per request. Each result may include <code className="font-mono">data</code> for successful reads or write metadata (e.g.{" "}
-                <code className="font-mono">{"{ \"replaced\": 12 }"}</code>, <code className="font-mono">{"{ \"deletedCount\": 3 }"}</code>).
-              </p>
-              <p>
-                <strong>503</strong> if <code className="font-mono">INGEST_API_KEY</code> is not set. <strong>401</strong> if the key is missing or wrong.{" "}
+                Up to <strong>100 operations</strong> per request. Each result may include <InlineCode>data</InlineCode> for successful reads or write metadata (e.g.{" "}
+                <InlineCode>{"{ \"replaced\": 12 }"}</InlineCode>, <InlineCode>{"{ \"deletedCount\": 3 }"}</InlineCode>).
+              </Text>
+              <Text>
+                <strong>503</strong> if <InlineCode>INGEST_API_KEY</InlineCode> is not set. <strong>401</strong> if the key is missing or wrong.{" "}
                 <strong>503</strong> if MongoDB is unavailable.
-              </p>
-              <p>
-                <strong>Request:</strong> either a single operation object or <code className="font-mono">{"{ \"operations\": [ ... ] }"}</code>.
-              </p>
+              </Text>
+              <Text>
+                <strong>Request:</strong> either a single operation object or <InlineCode>{"{ \"operations\": [ ... ] }"}</InlineCode>.
+              </Text>
               <CodeBlock title="Batch example (reads + writes)">{INGEST_BATCH}</CodeBlock>
               <CodeBlock title="Single operation (shorthand)">{INGEST_SINGLE}</CodeBlock>
-              <p>
-                <strong>Read actions</strong> (successful results include <code className="font-mono">data</code>)
-              </p>
-              <ul className="list-inside list-disc space-y-1 text-sm">
-                <li>
-                  <code className="font-mono">providers</code> + <code className="font-mono">list</code> → <code className="font-mono">Provider[]</code> (<code className="font-mono">_id</code> stripped).
-                </li>
-                <li>
-                  <code className="font-mono">provider</code> + <code className="font-mono">get</code> + <code className="font-mono">id</code> → one provider or error <code className="font-mono">provider not found</code>.
-                </li>
-                <li>
-                  <code className="font-mono">meetupGroups</code> + <code className="font-mono">list</code> / <code className="font-mono">meetupGroup</code> + <code className="font-mono">get</code> — same pattern.
-                </li>
-                <li>
-                  <code className="font-mono">site</code> + <code className="font-mono">get</code> → <code className="font-mono">SiteDoc</code> (defaults merged if missing).
-                </li>
-                <li>
-                  <code className="font-mono">locations</code> + <code className="font-mono">list</code> → raw Mongo rows{" "}
-                  <code className="font-mono">{"{ borough, neighborhoods }[]"}</code>.
-                </li>
-                <li>
-                  <code className="font-mono">events</code> + <code className="font-mono">list</code> → <code className="font-mono">NightEvent[]</code>.
-                </li>
-                <li>
-                  <code className="font-mono">event</code> + <code className="font-mono">get</code> + <code className="font-mono">id</code> → one event or error.
-                </li>
-              </ul>
-              <p>
+              <Text>
+                <strong>Read actions</strong> (successful results include <InlineCode>data</InlineCode>)
+              </Text>
+              <List spacing="xs" size="sm">
+                <List.Item>
+                  <InlineCode>providers</InlineCode> + <InlineCode>list</InlineCode> → <InlineCode>Provider[]</InlineCode> (<InlineCode>_id</InlineCode> stripped).
+                </List.Item>
+                <List.Item>
+                  <InlineCode>provider</InlineCode> + <InlineCode>get</InlineCode> + <InlineCode>id</InlineCode> → one provider or error <InlineCode>provider not found</InlineCode>.
+                </List.Item>
+                <List.Item>
+                  <InlineCode>meetupGroups</InlineCode> + <InlineCode>list</InlineCode> / <InlineCode>meetupGroup</InlineCode> + <InlineCode>get</InlineCode> — same pattern.
+                </List.Item>
+                <List.Item>
+                  <InlineCode>site</InlineCode> + <InlineCode>get</InlineCode> → <InlineCode>SiteDoc</InlineCode> (defaults merged if missing).
+                </List.Item>
+                <List.Item>
+                  <InlineCode>locations</InlineCode> + <InlineCode>list</InlineCode> → raw Mongo rows{" "}
+                  <InlineCode>{"{ borough, neighborhoods }[]"}</InlineCode>.
+                </List.Item>
+                <List.Item>
+                  <InlineCode>events</InlineCode> + <InlineCode>list</InlineCode> → <InlineCode>NightEvent[]</InlineCode>.
+                </List.Item>
+                <List.Item>
+                  <InlineCode>event</InlineCode> + <InlineCode>get</InlineCode> + <InlineCode>id</InlineCode> → one event or error.
+                </List.Item>
+              </List>
+              <Text>
                 <strong>Write actions</strong>
-              </p>
-              <ul className="list-inside list-disc space-y-1 text-sm">
-                <li>
-                  <code className="font-mono">provider</code>: <code className="font-mono">upsert</code>, <code className="font-mono">patch</code>, <code className="font-mono">delete</code> (by <code className="font-mono">id</code>).
-                  Menu patches recompute <code className="font-mono">menuTags</code> and <code className="font-mono">menu.venueLink</code>; linked events refresh host snapshots when the venue changes.
-                </li>
-                <li>
-                  <code className="font-mono">event</code>: <code className="font-mono">upsert</code>, <code className="font-mono">patch</code>, <code className="font-mono">delete</code>.
-                  Every <code className="font-mono">venueIds[]</code> entry must exist before the event is saved. Ingest writes <code className="font-mono">venueLinks</code> and syncs district from <code className="font-mono">venueIds[0]</code>.
-                  Do not send <code className="font-mono">venueLinks</code> in payloads.
-                </li>
-                <li>
-                  <code className="font-mono">providers</code>: <code className="font-mono">upsertMany</code> (bulk by <code className="font-mono">id</code>),{" "}
-                  <code className="font-mono">replaceAll</code> (clears collection then inserts array; max <strong>2000</strong> docs),{" "}
-                  <code className="font-mono">deleteMany</code> with <code className="font-mono">ids: string[]</code> (max <strong>500</strong> ids).
-                </li>
-                <li>
-                  <code className="font-mono">meetupGroup</code> / <code className="font-mono">meetupGroups</code>: same as providers (including{" "}
-                  <code className="font-mono">replaceAll</code> / <code className="font-mono">deleteMany</code>).
-                </li>
-                <li>
-                  <code className="font-mono">site</code>: <code className="font-mono">patch</code> (partial merge) or <code className="font-mono">put</code> with full <code className="font-mono">document</code> (replaces <code className="font-mono">_id: &quot;main&quot;</code>).
-                </li>
-                <li>
-                  <code className="font-mono">locations</code>: <code className="font-mono">replace</code> — deletes all rows, then inserts the provided array.
-                </li>
-              </ul>
-              <p>
-                <strong>Response (JSON):</strong> per-operation results with optional <code className="font-mono">data</code>. HTTP <strong>200</strong> when every operation succeeded;{" "}
+              </Text>
+              <List spacing="xs" size="sm">
+                <List.Item>
+                  <InlineCode>provider</InlineCode>: <InlineCode>upsert</InlineCode>, <InlineCode>patch</InlineCode>, <InlineCode>delete</InlineCode> (by <InlineCode>id</InlineCode>).
+                  Menu patches recompute <InlineCode>menuTags</InlineCode> and <InlineCode>menu.venueLink</InlineCode>; linked events refresh host snapshots when the venue changes.
+                </List.Item>
+                <List.Item>
+                  <InlineCode>event</InlineCode>: <InlineCode>upsert</InlineCode>, <InlineCode>patch</InlineCode>, <InlineCode>delete</InlineCode>.
+                  Every <InlineCode>venueIds[]</InlineCode> entry must exist before the event is saved. Ingest writes <InlineCode>venueLinks</InlineCode> and syncs district from <InlineCode>venueIds[0]</InlineCode>.
+                  Do not send <InlineCode>venueLinks</InlineCode> in payloads.
+                </List.Item>
+                <List.Item>
+                  <InlineCode>providers</InlineCode>: <InlineCode>upsertMany</InlineCode> (bulk by <InlineCode>id</InlineCode>),{" "}
+                  <InlineCode>replaceAll</InlineCode> (clears collection then inserts array; max <strong>2000</strong> docs),{" "}
+                  <InlineCode>deleteMany</InlineCode> with <InlineCode>ids: string[]</InlineCode> (max <strong>500</strong> ids).
+                </List.Item>
+                <List.Item>
+                  <InlineCode>meetupGroup</InlineCode> / <InlineCode>meetupGroups</InlineCode>: same as providers (including{" "}
+                  <InlineCode>replaceAll</InlineCode> / <InlineCode>deleteMany</InlineCode>).
+                </List.Item>
+                <List.Item>
+                  <InlineCode>site</InlineCode>: <InlineCode>patch</InlineCode> (partial merge) or <InlineCode>put</InlineCode> with full <InlineCode>document</InlineCode> (replaces <InlineCode>_id: &quot;main&quot;</InlineCode>).
+                </List.Item>
+                <List.Item>
+                  <InlineCode>locations</InlineCode>: <InlineCode>replace</InlineCode> — deletes all rows, then inserts the provided array.
+                </List.Item>
+              </List>
+              <Text>
+                <strong>Response (JSON):</strong> per-operation results with optional <InlineCode>data</InlineCode>. HTTP <strong>200</strong> when every operation succeeded;{" "}
                 <strong>422</strong> when any operation failed.
-              </p>
+              </Text>
               <CodeBlock title="Example response">{INGEST_RESPONSE}</CodeBlock>
-              <p className="text-sm text-muted-foreground">
+              <Text size="sm" c="dimmed">
                 <strong>curl</strong> example (replace the host and key):
-              </p>
+              </Text>
               <CodeBlock>{`curl -sS -X POST "${base}/api/ingest" \\
   -H "Authorization: Bearer $INGEST_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{"resource":"provider","action":"patch","id":"my-id","patch":{"rating":5}}'`}</CodeBlock>
             </EndpointCard>
-            </div>
+            </Stack>
           </Section>
 
           <Section id="admin" title="Admin console APIs">
-            <p>
-              Used by <Link href="/admin" className="font-medium text-teal underline-offset-4 hover:underline">/admin</Link>. Authenticate with{" "}
-              <code className="font-mono">POST /api/admin/login</code>, then call other routes from the same origin with the session cookie.
-            </p>
+            <Text>
+              Used by <Anchor component={Link} href="/admin" c="brand">/admin</Anchor>. Authenticate with{" "}
+              <InlineCode>POST /api/admin/login</InlineCode>, then call other routes from the same origin with the session cookie.
+            </Text>
 
-            <div className="space-y-6">
+            <Stack gap="lg">
               <EndpointCard method="POST" path="/api/admin/login" auth="None (sets cookie on success)">
-                <p>
-                  Body: <code className="font-mono">{"{ \"password\": string }"}</code> matching <code className="font-mono">ADMIN_PASSWORD</code>.
-                </p>
-                <p className="text-muted-foreground">
-                  <strong>200</strong> <code className="font-mono">{"{ \"ok\": true }"}</code> and sets HTTP-only cookie. <strong>401</strong> invalid password.{" "}
+                <Text>
+                  Body: <InlineCode>{"{ \"password\": string }"}</InlineCode> matching <InlineCode>ADMIN_PASSWORD</InlineCode>.
+                </Text>
+                <Text c="dimmed">
+                  <strong>200</strong> <InlineCode>{"{ \"ok\": true }"}</InlineCode> and sets HTTP-only cookie. <strong>401</strong> invalid password.{" "}
                   <strong>500</strong> if admin password env is missing.
-                </p>
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="POST" path="/api/admin/logout" auth="None">
-                <p>Clears the admin session cookie. Returns <code className="font-mono">{"{ \"ok\": true }"}</code>.</p>
+                <Text>Clears the admin session cookie. Returns <InlineCode>{"{ \"ok\": true }"}</InlineCode>.</Text>
               </EndpointCard>
 
               <EndpointCard method="POST" path="/api/admin/upload" auth="Admin session cookie">
-                <p>
-                  <code className="font-mono">multipart/form-data</code> with field name <code className="font-mono">file</code> (image blob). Uploads to ImgBB using{" "}
-                  <code className="font-mono">IMGBB_API_KEY</code>.
-                </p>
-                <p className="text-muted-foreground">
-                  Success: <code className="font-mono">{"{ \"url\": string, \"displayUrl\": string }"}</code>. Errors <strong>400</strong> missing file,{" "}
+                <Text>
+                  <InlineCode>multipart/form-data</InlineCode> with field name <InlineCode>file</InlineCode> (image blob). Uploads to ImgBB using{" "}
+                  <InlineCode>IMGBB_API_KEY</InlineCode>.
+                </Text>
+                <Text c="dimmed">
+                  Success: <InlineCode>{"{ \"url\": string, \"displayUrl\": string }"}</InlineCode>. Errors <strong>400</strong> missing file,{" "}
                   <strong>401</strong> not logged in, <strong>500</strong> missing ImgBB key, <strong>502</strong> ImgBB failure.
-                </p>
+                </Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/admin/providers" auth="Admin session">
-                <p>Returns raw Mongo documents (includes <code className="font-mono">_id</code>).</p>
+                <Text>Returns raw Mongo documents (includes <InlineCode>_id</InlineCode>).</Text>
               </EndpointCard>
               <EndpointCard method="POST" path="/api/admin/providers" auth="Admin session">
-                <p>
-                  Full replace/upsert by <code className="font-mono">id</code>. Body: full <code className="font-mono">Provider</code> (+ optional <code className="font-mono">_id</code> ignored).
-                </p>
+                <Text>
+                  Full replace/upsert by <InlineCode>id</InlineCode>. Body: full <InlineCode>Provider</InlineCode> (+ optional <InlineCode>_id</InlineCode> ignored).
+                </Text>
               </EndpointCard>
               <EndpointCard method="PATCH" path="/api/admin/providers" auth="Admin session">
-                <p>
-                  Body: <code className="font-mono">{"{ \"id\": string, ...partial fields }"}</code> — <code className="font-mono">$set</code> style merge.
-                </p>
+                <Text>
+                  Body: <InlineCode>{"{ \"id\": string, ...partial fields }"}</InlineCode> — <InlineCode>$set</InlineCode> style merge.
+                </Text>
               </EndpointCard>
               <EndpointCard method="DELETE" path="/api/admin/providers?id=&lt;id&gt;" auth="Admin session">
-                <p>Deletes one provider by <code className="font-mono">id</code> query param.</p>
+                <Text>Deletes one provider by <InlineCode>id</InlineCode> query param.</Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/admin/meetup-groups" auth="Admin session">
-                <p>Raw meetup group documents.</p>
+                <Text>Raw meetup group documents.</Text>
               </EndpointCard>
               <EndpointCard method="POST" path="/api/admin/meetup-groups" auth="Admin session">
-                <p>Upsert full <code className="font-mono">MeetupGroup</code> by <code className="font-mono">id</code>.</p>
+                <Text>Upsert full <InlineCode>MeetupGroup</InlineCode> by <InlineCode>id</InlineCode>.</Text>
               </EndpointCard>
               <EndpointCard method="PATCH" path="/api/admin/meetup-groups" auth="Admin session">
-                <p>Partial update by <code className="font-mono">id</code>.</p>
+                <Text>Partial update by <InlineCode>id</InlineCode>.</Text>
               </EndpointCard>
               <EndpointCard method="DELETE" path="/api/admin/meetup-groups?id=&lt;id&gt;" auth="Admin session">
-                <p>Deletes one meetup group by <code className="font-mono">id</code> query param.</p>
+                <Text>Deletes one meetup group by <InlineCode>id</InlineCode> query param.</Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/admin/site" auth="Admin session">
-                <p>Returns <code className="font-mono">SiteDoc</code> (or defaults).</p>
+                <Text>Returns <InlineCode>SiteDoc</InlineCode> (or defaults).</Text>
               </EndpointCard>
               <EndpointCard method="PATCH" path="/api/admin/site" auth="Admin session">
-                <p>JSON partial patch merged into <code className="font-mono">_id: &quot;main&quot;</code>.</p>
+                <Text>JSON partial patch merged into <InlineCode>_id: &quot;main&quot;</InlineCode>.</Text>
               </EndpointCard>
 
               <EndpointCard method="GET" path="/api/admin/locations" auth="Admin session">
-                <p>Array of <code className="font-mono">{"{ borough, neighborhoods }"}</code> rows.</p>
+                <Text>Array of <InlineCode>{"{ borough, neighborhoods }"}</InlineCode> rows.</Text>
               </EndpointCard>
               <EndpointCard method="PUT" path="/api/admin/locations" auth="Admin session">
-                <p>
-                  Body: <code className="font-mono">{"{ \"locations\": LocRow[] }"}</code> — replaces the entire locations collection.
-                </p>
+                <Text>
+                  Body: <InlineCode>{"{ \"locations\": LocRow[] }"}</InlineCode> — replaces the entire locations collection.
+                </Text>
               </EndpointCard>
-            </div>
+            </Stack>
           </Section>
 
           <Section id="errors" title="Common errors and environment">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-border text-left">
-                  <th className="py-2 pr-4 font-semibold">HTTP</th>
-                  <th className="py-2 pr-4 font-semibold">Typical cause</th>
-                </tr>
-              </thead>
-              <tbody className="text-foreground/90">
-                <tr className="border-b border-border/70">
-                  <td className="py-2 pr-4 font-mono">400</td>
-                  <td>Malformed JSON or missing required fields (ingest, login).</td>
-                </tr>
-                <tr className="border-b border-border/70">
-                  <td className="py-2 pr-4 font-mono">401</td>
-                  <td>Admin cookie missing/invalid, wrong admin password, or wrong ingest key.</td>
-                </tr>
-                <tr className="border-b border-border/70">
-                  <td className="py-2 pr-4 font-mono">422</td>
-                  <td>Ingest: one or more operations failed (see <code className="font-mono">results[].error</code>).</td>
-                </tr>
-                <tr className="border-b border-border/70">
-                  <td className="py-2 pr-4 font-mono">500 / 502</td>
-                  <td>Missing server env (ImgBB, admin password), or upstream API/upload errors.</td>
-                </tr>
-                <tr className="border-b border-border/70">
-                  <td className="py-2 pr-4 font-mono">503</td>
-                  <td>Mongo not configured, or ingest key not configured on server.</td>
-                </tr>
-              </tbody>
-            </table>
-            <h3 className="mt-8 font-display text-lg font-semibold">Environment variables (server)</h3>
-            <ul className="list-inside list-disc space-y-1 text-sm text-foreground/90">
-              <li>
-                <code className="font-mono">MONGODB_URI</code>, optional <code className="font-mono">MONGODB_DB</code>
-              </li>
-              <li>
-                <code className="font-mono">ADMIN_PASSWORD</code>, optional <code className="font-mono">ADMIN_SESSION_SECRET</code>
-              </li>
-              <li>
-                <code className="font-mono">INGEST_API_KEY</code> — required for <code className="font-mono">POST /api/ingest</code>
-              </li>
-              <li>
-                Optional <code className="font-mono">INGEST_BASE_URL</code> — for local ingest scripts only (see{" "}
-                <code className="font-mono">scripts/ingest-listing-automation.cjs</code>); not required on Vercel.
-              </li>
-              <li>
-                <code className="font-mono">IMGBB_API_KEY</code> — admin image upload
-              </li>
-            </ul>
-            <p className="text-sm text-muted-foreground">
-              <code className="font-mono">npm run vercel:env:push</code> syncs Mongo, ImgBB, admin, session, ingest, optional{" "}
-              <code className="font-mono">NEXT_PUBLIC_IMG_BB_*</code>, and optional curator keys (see{" "}
-              <code className="font-mono">scripts/sync-vercel-env.cjs</code>). Run <code className="font-mono">npm run env:generate</code> locally to mint ingest/admin secrets into{" "}
-              <code className="font-mono">.env.local</code>. See <code className="font-mono">.env.example</code> for the full list.
-            </p>
+            <Table fz="sm" striped highlightOnHover withTableBorder>
+              <Table.Thead>
+                <Table.Tr>
+                  <Table.Th>HTTP</Table.Th>
+                  <Table.Th>Typical cause</Table.Th>
+                </Table.Tr>
+              </Table.Thead>
+              <Table.Tbody>
+                <Table.Tr>
+                  <Table.Td>
+                    <Code>400</Code>
+                  </Table.Td>
+                  <Table.Td>Malformed JSON or missing required fields (ingest, login).</Table.Td>
+                </Table.Tr>
+                <Table.Tr>
+                  <Table.Td>
+                    <Code>401</Code>
+                  </Table.Td>
+                  <Table.Td>Admin cookie missing/invalid, wrong admin password, or wrong ingest key.</Table.Td>
+                </Table.Tr>
+                <Table.Tr>
+                  <Table.Td>
+                    <Code>422</Code>
+                  </Table.Td>
+                  <Table.Td>
+                    Ingest: one or more operations failed (see <InlineCode>results[].error</InlineCode>).
+                  </Table.Td>
+                </Table.Tr>
+                <Table.Tr>
+                  <Table.Td>
+                    <Code>500 / 502</Code>
+                  </Table.Td>
+                  <Table.Td>Missing server env (ImgBB, admin password), or upstream API/upload errors.</Table.Td>
+                </Table.Tr>
+                <Table.Tr>
+                  <Table.Td>
+                    <Code>503</Code>
+                  </Table.Td>
+                  <Table.Td>Mongo not configured, or ingest key not configured on server.</Table.Td>
+                </Table.Tr>
+              </Table.Tbody>
+            </Table>
+            <Title order={3} size="h4" mt="lg">
+              Environment variables (server)
+            </Title>
+            <List spacing="xs" size="sm">
+              <List.Item>
+                <InlineCode>MONGODB_URI</InlineCode>, optional <InlineCode>MONGODB_DB</InlineCode>
+              </List.Item>
+              <List.Item>
+                <InlineCode>ADMIN_PASSWORD</InlineCode>, optional <InlineCode>ADMIN_SESSION_SECRET</InlineCode>
+              </List.Item>
+              <List.Item>
+                <InlineCode>INGEST_API_KEY</InlineCode> — required for <InlineCode>POST /api/ingest</InlineCode>
+              </List.Item>
+              <List.Item>
+                Optional <InlineCode>INGEST_BASE_URL</InlineCode> — for local ingest scripts only (see{" "}
+                <InlineCode>scripts/ingest-listing-automation.cjs</InlineCode>); not required on Vercel.
+              </List.Item>
+              <List.Item>
+                <InlineCode>IMGBB_API_KEY</InlineCode> — admin image upload
+              </List.Item>
+            </List>
+            <Text size="sm" c="dimmed">
+              <InlineCode>npm run vercel:env:push</InlineCode> syncs Mongo, ImgBB, admin, session, ingest, optional{" "}
+              <InlineCode>NEXT_PUBLIC_IMG_BB_*</InlineCode>, and optional curator keys (see{" "}
+              <InlineCode>scripts/sync-vercel-env.cjs</InlineCode>). Run <InlineCode>npm run env:generate</InlineCode> locally to mint ingest/admin secrets into{" "}
+              <InlineCode>.env.local</InlineCode>. See <InlineCode>.env.example</InlineCode> for the full list.
+            </Text>
           </Section>
-        </main>
-      </div>
-    </div>
+          </Box>
+        </Group>
+      </Container>
+    </Box>
   );
 }

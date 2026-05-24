@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
+import { Group, Select, Stack, Text, TextInput, Textarea } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
+import { notify } from "@/lib/notify";
 import { locales, type AppLocale } from "@/i18n/config";
 import { PROGRAM_WEEK_LOCALE_DEFAULTS } from "@/lib/programWeekCopy";
 import { DEFAULT_SITE_ORIGIN, buildProgramPath } from "@/lib/appPaths";
@@ -69,7 +68,7 @@ export function AdminProgramWeekTab({
 
   useEffect(() => {
     loadWeek(weekId);
-  }, []);
+  }, [weekId]);
 
   const patchLocale = (loc: AppLocale, patch: Partial<ProgramWeekLocaleBlock>) => {
     setLocaleBlocks((prev) => ({
@@ -97,112 +96,107 @@ export function AdminProgramWeekTab({
       }),
     });
     if (!r.ok) {
-      toast.error("Save failed");
+      notify.error("Save failed");
       return;
     }
     setPublished(publish);
-    toast.success(publish ? "Program week published" : "Draft saved");
+    notify.success(publish ? "Program week published" : "Draft saved");
     loadWeek(weekId);
   };
 
   const block = localeBlocks[activeLocale];
 
   return (
-    <div className="space-y-4 max-w-3xl">
-      <p className="text-sm text-muted-foreground">
+    <Stack gap="md" maw={960}>
+      <Text size="sm" c="dimmed">
         {events.length} events · {providers.length} providers · current Thu-start week:{" "}
         {getCurrentWeekId()}
-      </p>
+      </Text>
 
-      <div className="flex flex-wrap gap-2 items-end">
-        <div className="min-w-[200px]">
-          <label className="text-xs text-muted-foreground">Week</label>
-          <select
-            className="mt-1 w-full rounded border border-input bg-background px-2 py-1 text-sm"
-            value={weekId}
-            onChange={(e) => {
-              setWeekId(e.target.value);
-              loadWeek(e.target.value);
-            }}
-          >
-            {[weekId, ...weekOptions.filter((w) => w !== weekId)].map((w) => (
-              <option key={w} value={w}>
-                {w}
-              </option>
-            ))}
-          </select>
-        </div>
-        <Input
-          className="max-w-[180px]"
+      <Group gap="sm" align="end" wrap="wrap">
+        <Select
+          label="Week"
+          style={{ minWidth: 220 }}
+          data={[weekId, ...weekOptions.filter((w) => w !== weekId)].map((w) => ({
+            value: w,
+            label: w,
+          }))}
+          value={weekId}
+          searchable
+          allowDeselect={false}
+          onChange={(value) => {
+            if (!value) return;
+            setWeekId(value);
+            loadWeek(value);
+          }}
+        />
+        <TextInput
+          style={{ maxWidth: 240 }}
           placeholder="Or type weekId (YYYY-MM-DD)"
           value={weekId}
-          onChange={(e) => setWeekId(e.target.value)}
+          onChange={(e) => setWeekId(e.currentTarget.value)}
         />
-        <span className="text-xs text-muted-foreground">
+        <Text size="xs" c="dimmed">
           {published ? "Published" : "Draft"}
-        </span>
-      </div>
+        </Text>
+      </Group>
 
-      <div className="flex flex-wrap gap-1">
+      <Group gap="xs" wrap="wrap">
         {locales.map((loc) => (
-          <Button
+          <AppButton
             key={loc}
             type="button"
-            size="sm"
+            size="xs"
             variant={activeLocale === loc ? "default" : "outline"}
             onClick={() => setActiveLocale(loc)}
           >
             {loc.toUpperCase()}
-          </Button>
+          </AppButton>
         ))}
-      </div>
+      </Group>
 
-      <Input
+      <TextInput
         value={block.headline}
-        onChange={(e) => patchLocale(activeLocale, { headline: e.target.value })}
+        onChange={(e) => patchLocale(activeLocale, { headline: e.currentTarget.value })}
         placeholder={`${activeLocale.toUpperCase()} headline`}
       />
       <Textarea
         value={block.intro ?? ""}
-        onChange={(e) => patchLocale(activeLocale, { intro: e.target.value })}
+        onChange={(e) => patchLocale(activeLocale, { intro: e.currentTarget.value })}
         placeholder={`${activeLocale.toUpperCase()} intro`}
-        rows={3}
+        minRows={3}
       />
 
       <Textarea
         value={featuredEventIds}
-        onChange={(e) => setFeaturedEventIds(e.target.value)}
+        onChange={(e) => setFeaturedEventIds(e.currentTarget.value)}
         placeholder="Featured event IDs (one per line)"
-        rows={4}
+        minRows={4}
       />
       <Textarea
         value={featuredProviderIds}
-        onChange={(e) => setFeaturedProviderIds(e.target.value)}
+        onChange={(e) => setFeaturedProviderIds(e.currentTarget.value)}
         placeholder="Featured provider IDs (one per line)"
-        rows={4}
+        minRows={4}
       />
-      <Input value={sponsorName} onChange={(e) => setSponsorName(e.target.value)} placeholder="Sponsor name" />
-      <Input value={sponsorUrl} onChange={(e) => setSponsorUrl(e.target.value)} placeholder="Sponsor URL" />
+      <TextInput value={sponsorName} onChange={(e) => setSponsorName(e.currentTarget.value)} placeholder="Sponsor name" />
+      <TextInput value={sponsorUrl} onChange={(e) => setSponsorUrl(e.currentTarget.value)} placeholder="Sponsor URL" />
 
-      <div className="flex flex-wrap gap-2">
-        <Button onClick={() => save(true)}>Publish week</Button>
-        <Button variant="secondary" onClick={() => save(false)}>
+      <Group gap="sm" wrap="wrap">
+        <AppButton onClick={() => save(true)}>Publish week</AppButton>
+        <AppButton variant="secondary" onClick={() => save(false)}>
           Save draft
-        </Button>
-        <Button variant="outline" asChild>
-          <a href={`${DEFAULT_SITE_ORIGIN}${buildProgramPath()}`} target="_blank" rel="noreferrer">
-            Preview HU (/ez-a-het)
-          </a>
-        </Button>
-        <Button variant="outline" asChild>
-          <a href={`${DEFAULT_SITE_ORIGIN}/en/program`} target="_blank" rel="noreferrer">
-            Preview EN
-          </a>
-        </Button>
-        <Button
+        </AppButton>
+        <AppButton variant="outline" component="a" href={`${DEFAULT_SITE_ORIGIN}${buildProgramPath()}`} target="_blank" rel="noreferrer">
+          Preview HU (/ez-a-het)
+        </AppButton>
+        <AppButton variant="outline" component="a" href={`${DEFAULT_SITE_ORIGIN}/en/program`} target="_blank" rel="noreferrer">
+          Preview EN
+        </AppButton>
+        <AppButton
           type="button"
           variant="ghost"
-          size="sm"
+          size="xs"
           onClick={() => {
             const out = {} as LocaleBlocks;
             for (const loc of locales) out[loc] = { ...PROGRAM_WEEK_LOCALE_DEFAULTS[loc] };
@@ -210,8 +204,8 @@ export function AdminProgramWeekTab({
           }}
         >
           Reset copy to defaults
-        </Button>
-      </div>
-    </div>
+        </AppButton>
+      </Group>
+    </Stack>
   );
 }

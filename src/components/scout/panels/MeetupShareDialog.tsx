@@ -1,14 +1,10 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { Group, Modal, Stack, Text } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import { Mail, MessageCircle, Link2 } from "lucide-react";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
-import { toast } from "sonner";
+import { notify } from "@/lib/notify";
 import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteGroupFullUrl } from "@/lib/appShareUrls";
 import type { AppLocale } from "@/i18n/config";
@@ -30,50 +26,59 @@ export function MeetupShareDialog({
   const summary = `${group.name} — ${locationLine(group.borough, group.neighborhood)}. ${group.description} Instagram: ${group.instagram}`;
 
   return (
-    <Dialog open={!!group} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="font-display">
-            {t("shareTitle", { name: group.name })}
-          </DialogTitle>
-          <DialogDescription>{t("shareDescription")}</DialogDescription>
-        </DialogHeader>
-        <div className="space-y-2">
-          <Button
-            variant="outline"
-            className="w-full justify-start"
-            onClick={() =>
-              window.open(
-                `mailto:?subject=${encodeURIComponent(group.name)}&body=${encodeURIComponent(summary + "\n\n" + url)}`,
-              )
-            }
-          >
-            <Mail className="h-4 w-4" /> {tv("shareEmail")}
-          </Button>
-          <Button
-            variant="outline"
-            className="w-full justify-start"
-            onClick={() =>
-              window.open(
-                `https://wa.me/?text=${encodeURIComponent(summary + " " + url)}`,
-                "_blank",
-              )
-            }
-          >
-            <MessageCircle className="h-4 w-4" /> {tv("shareWhatsapp")}
-          </Button>
-          <Button
-            variant="outline"
-            className="w-full justify-start"
-            onClick={() => {
-              navigator.clipboard.writeText(url);
-              toast.success(tv("linkCopied"));
-            }}
-          >
-            <Link2 className="h-4 w-4" /> {tv("copyLink")}
-          </Button>
-        </div>
-      </DialogContent>
-    </Dialog>
+    <Modal
+      opened={!!group}
+      onClose={onClose}
+      title={t("shareTitle", { name: group.name })}
+      size="md"
+    >
+      <Text size="sm" c="dimmed" mb="md">
+        {t("shareDescription")}
+      </Text>
+      <Stack gap="xs">
+        <AppButton
+          variant="outline"
+          w="100%"
+          onClick={() =>
+            window.open(
+              `mailto:?subject=${encodeURIComponent(group.name)}&body=${encodeURIComponent(summary + "\n\n" + url)}`,
+            )
+          }
+        >
+          <Group gap="xs" wrap="nowrap">
+            <Mail size={16} />
+            {tv("shareEmail")}
+          </Group>
+        </AppButton>
+        <AppButton
+          variant="outline"
+          w="100%"
+          onClick={() =>
+            window.open(
+              `https://wa.me/?text=${encodeURIComponent(summary + " " + url)}`,
+              "_blank",
+            )
+          }
+        >
+          <Group gap="xs" wrap="nowrap">
+            <MessageCircle size={16} />
+            {tv("shareWhatsapp")}
+          </Group>
+        </AppButton>
+        <AppButton
+          variant="outline"
+          w="100%"
+          onClick={() => {
+            navigator.clipboard.writeText(url);
+            notify.success(tv("linkCopied"));
+          }}
+        >
+          <Group gap="xs" wrap="nowrap">
+            <Link2 size={16} />
+            {tv("copyLink")}
+          </Group>
+        </AppButton>
+      </Stack>
+    </Modal>
   );
 }

@@ -1,19 +1,10 @@
 import { useCalculator } from "@/store/useScout";
-import { Button } from "@/components/ui/button";
-import {
-  Calculator,
-  Minus,
-  Plus,
-  Trash2,
-  X,
-  Loader2,
-  Users,
-} from "lucide-react";
+import { Calculator, Minus, Plus, Trash2, Users, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
 import { EmptyState } from "../EmptyState";
-import { CdnImage } from "@/components/ui/CdnImage";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useCalculatorCopy } from "@/hooks/useLocalizedSiteCopy";
 import { CMS_MEDIA } from "@/config/defaultMedia";
@@ -21,6 +12,19 @@ import { providerLineHuf } from "@/lib/venueDisplay";
 import { useFormatHuf } from "@/hooks/useFormatHuf";
 import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import { useFormatVenuePrice, useVenueLocationLine } from "@/hooks/useVenueDisplay";
+import { AppButton } from "@/components/mantine/AppButton";
+import {
+  ActionIcon,
+  Box,
+  Divider,
+  Grid,
+  Group,
+  Loader,
+  Paper,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 
 export function CalculatorView() {
   const t = useTranslations("calculator");
@@ -45,147 +49,157 @@ export function CalculatorView() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin" />
-      </div>
+      <Group justify="center" py={96}>
+        <Loader color="gray" />
+      </Group>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <header className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="font-display text-3xl font-bold text-foreground">
+    <Stack gap="lg">
+      <Group justify="space-between" align="flex-end" wrap="wrap">
+        <Stack gap={4}>
+          <Title order={1} size="h2" tt="uppercase" lts="0.02em">
             {c.title}
-          </h1>
-          <p className="mt-1 text-sm text-muted-foreground">{c.subtitle}</p>
-        </div>
+          </Title>
+          <Text size="sm" c="dimmed">
+            {c.subtitle}
+          </Text>
+        </Stack>
         {rows.length > 0 && (
-          <Button variant="outline" onClick={clear}>
-            <Trash2 className="h-4 w-4" /> {c.clearAllCta}
-          </Button>
+          <AppButton variant="outline" radius="xl" onClick={clear} leftSection={<Trash2 size={16} />}>
+            {c.clearAllCta}
+          </AppButton>
         )}
-      </header>
+      </Group>
 
       {rows.length === 0 ? (
-        <EmptyState
-          icon={Calculator}
-          title={c.emptyTitle}
-          message={c.emptyMessage}
-        />
+        <EmptyState icon={Calculator} title={c.emptyTitle} message={c.emptyMessage} />
       ) : (
-        <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
-          <div className="space-y-3">
-            {rows.map((r) => {
-              const linePrice = formatPrice(r.provider);
-              return (
-                <div
-                  className="flex items-center gap-4 rounded-2xl bg-card p-4 "
-                  key={r.providerId}
-                >
-                  <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-muted">
-                    <CdnImage
-                      fill
-                      resolveBase={r.provider.website}
-                      src={
-                        r.provider.image?.trim()
-                          ? r.provider.image
-                          : CMS_MEDIA.fallbackListing
-                      }
-                      alt=""
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate font-display font-semibold text-foreground">
-                      {r.provider.name}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {locationLine(
-                        r.provider.borough,
-                        r.provider.neighborhood,
-                      )}{" "}
-                      · {linePrice.main}
-                      {linePrice.suffix ?? ""}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-1 rounded-full border border-border bg-card p-1">
-                    <button
-                      onClick={() => setClasses(r.providerId, r.classes - 1)}
-                      className="grid h-7 w-7 place-items-center rounded-full hover:bg-secondary"
-                      aria-label={t("decreaseGuests")}
-                    >
-                      <Minus className="h-3.5 w-3.5" />
-                    </button>
-                    <span className="w-8 text-center text-sm font-semibold">
-                      {r.classes}
-                    </span>
-                    <button
-                      onClick={() => setClasses(r.providerId, r.classes + 1)}
-                      className="grid h-7 w-7 place-items-center rounded-full hover:bg-secondary"
-                      aria-label={t("increaseGuests")}
-                    >
-                      <Plus className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                  <div className="w-20 text-right font-display font-bold text-foreground">
-                    {formatHuf(r.subtotalHuf)}
-                  </div>
-                  <button
-                    onClick={() => remove(r.providerId)}
-                    aria-label={t("remove", { name: r.provider.name })}
-                    className="grid h-9 w-9 place-items-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-              );
-            })}
-          </div>
+        <Grid gutter="lg">
+          <Grid.Col span={{ base: 12, lg: 8 }}>
+            <Stack gap="sm">
+              {rows.map((r) => {
+                const linePrice = formatPrice(r.provider);
+                return (
+                  <Paper key={r.providerId} radius="xl" withBorder p="md">
+                    <Group wrap="nowrap" align="center" gap="md">
+                      <Box pos="relative" w={64} h={64} style={{ flexShrink: 0, overflow: "hidden", borderRadius: 12 }}>
+                        <ResolvedCoverImage
+                          src={
+                            r.provider.image?.trim()
+                              ? r.provider.image
+                              : CMS_MEDIA.fallbackListing
+                          }
+                          resolveBase={r.provider.website}
+                          alt=""
+                        />
+                      </Box>
+                      <Stack gap={2} style={{ flex: 1, minWidth: 0 }}>
+                        <Text fw={600} truncate>
+                          {r.provider.name}
+                        </Text>
+                        <Text size="xs" c="dimmed">
+                          {locationLine(r.provider.borough, r.provider.neighborhood)} ·{" "}
+                          {linePrice.main}
+                          {linePrice.suffix ?? ""}
+                        </Text>
+                      </Stack>
+                      <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
+                        <ActionIcon
+                          variant="subtle"
+                          radius="xl"
+                          onClick={() => setClasses(r.providerId, r.classes - 1)}
+                          aria-label={t("decreaseGuests")}
+                        >
+                          <Minus size={14} />
+                        </ActionIcon>
+                        <Text w={32} ta="center" fw={600} size="sm">
+                          {r.classes}
+                        </Text>
+                        <ActionIcon
+                          variant="subtle"
+                          radius="xl"
+                          onClick={() => setClasses(r.providerId, r.classes + 1)}
+                          aria-label={t("increaseGuests")}
+                        >
+                          <Plus size={14} />
+                        </ActionIcon>
+                      </Group>
+                      <Text fw={700} w={80} ta="right" style={{ flexShrink: 0 }}>
+                        {formatHuf(r.subtotalHuf)}
+                      </Text>
+                      <ActionIcon
+                        variant="subtle"
+                        radius="xl"
+                        color="gray"
+                        onClick={() => remove(r.providerId)}
+                        aria-label={t("remove", { name: r.provider.name })}
+                      >
+                        <X size={16} />
+                      </ActionIcon>
+                    </Group>
+                  </Paper>
+                );
+              })}
+            </Stack>
+          </Grid.Col>
 
-          <aside className="h-fit rounded-2xl bg-card p-6 lg:sticky lg:top-6">
-            <h3 className="font-display text-base font-semibold text-foreground">
-              {c.asideTitle}
-            </h3>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {c.asideSubtitle}
-            </p>
-            <div className="mt-5 space-y-2 border-t border-border pt-5 text-sm">
-              {rows.map((r) => (
-                <div key={r.providerId} className="flex justify-between">
-                  <span className="truncate pr-2 text-muted-foreground">
-                    {r.provider.name} × {r.classes}{" "}
-                    {r.classes === 1 ? t("guest") : t("guests")}
-                  </span>
-                  <span className="font-medium text-foreground">
-                    {formatHuf(r.subtotalHuf)}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="mt-5 flex items-baseline justify-between border-t border-border pt-5">
-              <span className="font-display text-sm font-semibold text-foreground">
-                {c.estimatedTotalLabel}
-              </span>
-              <span className="font-display text-3xl font-bold text-foreground">
-                {formatHuf(totalHuf)}
-              </span>
-            </div>
-            <p className="mt-3 text-[11px] leading-relaxed text-muted-foreground">
-              {c.asideFootnote}
-            </p>
-            {totalHuf > 0 && (
-              <Button
-                asChild
-                className="mt-4 w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                <Link href={buildPathForView("Split Check")}>
-                  <Users className="h-4 w-4" /> {ts("fromBudgetCta")}
-                </Link>
-              </Button>
-            )}
-          </aside>
-        </div>
+          <Grid.Col span={{ base: 12, lg: 4 }}>
+            <Paper
+              radius="xl"
+              withBorder
+              p="lg"
+              style={{ position: "sticky", top: 24 }}
+            >
+              <Title order={3} size="h5" tt="uppercase" lts="0.04em">
+                {c.asideTitle}
+              </Title>
+              <Text size="xs" c="dimmed" mt={4}>
+                {c.asideSubtitle}
+              </Text>
+              <Stack gap="xs" mt="lg" pt="md">
+                <Divider />
+                {rows.map((r) => (
+                  <Group key={r.providerId} justify="space-between" gap="xs" wrap="nowrap">
+                    <Text size="sm" c="dimmed" truncate style={{ flex: 1 }}>
+                      {r.provider.name} × {r.classes}{" "}
+                      {r.classes === 1 ? t("guest") : t("guests")}
+                    </Text>
+                    <Text size="sm" fw={500} style={{ flexShrink: 0 }}>
+                      {formatHuf(r.subtotalHuf)}
+                    </Text>
+                  </Group>
+                ))}
+              </Stack>
+              <Divider mt="lg" />
+              <Group justify="space-between" align="baseline" mt="md">
+                <Text fw={600} size="sm" tt="uppercase" lts="0.04em">
+                  {c.estimatedTotalLabel}
+                </Text>
+                <Title order={2} size="h2">
+                  {formatHuf(totalHuf)}
+                </Title>
+              </Group>
+              <Text size="xs" c="dimmed" mt="sm" lh={1.5}>
+                {c.asideFootnote}
+              </Text>
+              {totalHuf > 0 && (
+                <AppButton
+                  component={Link}
+                  href={buildPathForView("Split Check")}
+                  fullWidth
+                  radius="xl"
+                  mt="md"
+                  leftSection={<Users size={16} />}
+                >
+                  {ts("fromBudgetCta")}
+                </AppButton>
+              )}
+            </Paper>
+          </Grid.Col>
+        </Grid>
       )}
-    </div>
+    </Stack>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Group, Paper, Stack, Text } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { VenueReview } from "@/types/venueReview";
 
 type Props = {
@@ -11,32 +12,39 @@ type Props = {
 
 export function AdminReviewsTab({ reviews, busy, onDelete }: Props) {
   return (
-    <>
-      <p className="text-sm text-muted-foreground">
+    <Stack gap="sm">
+      <Text size="sm" c="dimmed">
         Visitor reviews posted on venue pages. Deleting recalculates venue averages.
-      </p>
-      <div className="max-h-[480px] space-y-2 overflow-y-auto">
+      </Text>
+      <Stack gap="sm" mah={480} style={{ overflowY: "auto" }}>
         {reviews.map((r) => (
-          <div
-            key={r.id}
-            className="flex flex-wrap items-start justify-between gap-2 rounded-lg border border-border/60 p-3 text-sm"
-          >
-            <div className="min-w-0">
-              <p className="font-medium text-foreground">
+          <Paper key={r.id} withBorder p="sm">
+            <Group justify="space-between" align="flex-start" gap="sm" wrap="wrap">
+              <Stack gap={2} style={{ minWidth: 0, flex: 1 }}>
+                <Text fw={600} size="sm">
                 {r.displayName} · {r.rating}★ · {r.providerId}
-              </p>
-              {r.body ? <p className="mt-1 text-muted-foreground">{r.body}</p> : null}
-              <p className="mt-1 text-[10px] text-muted-foreground">{r.updatedAt}</p>
-            </div>
-            <Button variant="destructive" size="sm" disabled={busy} onClick={() => onDelete(r.id)}>
-              Remove
-            </Button>
-          </div>
+                </Text>
+                {r.body ? (
+                  <Text size="sm" c="dimmed">
+                    {r.body}
+                  </Text>
+                ) : null}
+                <Text size="xs" c="dimmed">
+                  {r.updatedAt}
+                </Text>
+              </Stack>
+              <AppButton variant="destructive" size="xs" disabled={busy} onClick={() => onDelete(r.id)}>
+                Remove
+              </AppButton>
+            </Group>
+          </Paper>
         ))}
         {reviews.length === 0 ? (
-          <p className="text-sm text-muted-foreground">No community reviews yet.</p>
+          <Text size="sm" c="dimmed">
+            No community reviews yet.
+          </Text>
         ) : null}
-      </div>
-    </>
+      </Stack>
+    </Stack>
   );
 }

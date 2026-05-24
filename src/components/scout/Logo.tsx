@@ -1,66 +1,77 @@
 "use client";
 
+import { Box, Group, Stack, Text, useMantineColorScheme } from "@mantine/core";
 import Image from "next/image";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
-import { isBundledBrandLogo, resolveThemeLogoUrl, type ThemeLogoUrls } from "@/config/brand";
 import { useTranslations } from "next-intl";
+import { isBundledBrandLogo, resolveThemeLogoUrl, type ThemeLogoUrls } from "@/config/brand";
 
 export function Logo({
   logoUrl,
   logoLightUrl,
   size = 128,
   withWordmark = false,
-  className = "",
+  style,
 }: ThemeLogoUrls & {
   size?: number;
   withWordmark?: boolean;
-  className?: string;
+  style?: React.CSSProperties;
 }) {
   const t = useTranslations("nav");
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  const theme = mounted && resolvedTheme === "light" ? "light" : "dark";
+  const { colorScheme } = useMantineColorScheme();
+  const theme = colorScheme === "light" ? "light" : "dark";
   const src = resolveThemeLogoUrl(theme, { logoUrl, logoLightUrl });
   const isBundledLogo = isBundledBrandLogo(src);
   const isLight = theme === "light";
 
   return (
-    <div className={cn("flex items-center gap-3", className)}>
-      <div
-        className={cn(
-          "relative shrink-0 overflow-hidden",
-          isLight
-            ? "bg-transparent"
-            : isBundledLogo
-              ? "rounded-lg bg-black"
-              : "rounded-full bg-black ring-2 ring-border",
-        )}
-        style={{ width: size, height: size }}
+    <Group gap="sm" wrap="nowrap" style={style}>
+      <Box
+        pos="relative"
+        style={{
+          width: size,
+          height: size,
+          flexShrink: 0,
+          overflow: "hidden",
+          borderRadius: isLight ? undefined : isBundledLogo ? 8 : "50%",
+          background: isLight ? "transparent" : "black",
+          boxShadow: !isLight && !isBundledLogo ? "0 0 0 2px var(--mantine-color-default-border)" : undefined,
+        }}
       >
         <Image
           src={src}
           alt={t("brand")}
           fill
-          className={cn("object-center object-contain", !isLight && isBundledLogo && "p-1")}
+          style={{
+            objectFit: "contain",
+            objectPosition: "center",
+            padding: !isLight && isBundledLogo ? 4 : undefined,
+          }}
           sizes={`${size}px`}
           priority={isBundledLogo}
         />
-      </div>
-      {withWordmark && (
-        <div className="leading-tight">
-          <div className="font-display text-lg font-bold tracking-widest text-sidebar-foreground">
+      </Box>
+      {withWordmark ? (
+        <Stack gap={0} lh={1.2}>
+          <Text
+            ff="var(--font-rubik), system-ui, sans-serif"
+            size="lg"
+            fw={700}
+            style={{ letterSpacing: "0.2em" }}
+            c="gray.0"
+          >
             Budapest
-          </div>
-          <div className="font-display text-[11px] font-semibold tracking-[0.35em] text-brand">
+          </Text>
+          <Text
+            ff="var(--font-rubik), system-ui, sans-serif"
+            size="11px"
+            fw={600}
+            style={{ letterSpacing: "0.35em" }}
+            c="brand"
+          >
             NIGHT
-          </div>
-        </div>
-      )}
-    </div>
+          </Text>
+        </Stack>
+      ) : null}
+    </Group>
   );
 }

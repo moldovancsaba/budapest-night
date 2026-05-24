@@ -1,13 +1,13 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { Group, Loader, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { useSaved } from "@/store/useScout";
 import { ProviderCard } from "../ProviderCard";
 import { EmptyState } from "../EmptyState";
-import { Heart, Loader2 } from "lucide-react";
+import { Heart } from "lucide-react";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
-
 export function SavedView({
   onOpen,
   onShare,
@@ -21,36 +21,29 @@ export function SavedView({
   const list = providers.filter((p) => saved.includes(p.id));
 
   return (
-    <div className="space-y-6">
-      <header>
-        <h1 className="font-display text-3xl font-bold text-foreground">
+    <Stack gap="lg">
+      <Stack gap={4}>
+        <Title order={1} size="h2" tt="uppercase" lts="0.02em">
           {t("title")}
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">{t("subtitle")}</p>
-      </header>
+        </Title>
+        <Text size="sm" c="dimmed">
+          {t("subtitle")}
+        </Text>
+      </Stack>
 
       {isLoading ? (
-        <div className="flex justify-center py-16 text-muted-foreground">
-          <Loader2 className="h-8 w-8 animate-spin" />
-        </div>
+        <Group justify="center" py={64}>
+          <Loader color="gray" />
+        </Group>
       ) : list.length === 0 ? (
-        <EmptyState
-          icon={Heart}
-          title={t("emptyTitle")}
-          message={t("emptyMessage")}
-        />
+        <EmptyState icon={Heart} title={t("emptyTitle")} message={t("emptyMessage")} />
       ) : (
-        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <SimpleGrid cols={{ base: 1, sm: 2, xl: 3 }} spacing="md">
           {list.map((p) => (
-            <ProviderCard
-              key={p.id}
-              provider={p}
-              onOpen={onOpen}
-              onShare={onShare}
-            />
+            <ProviderCard key={p.id} provider={p} onOpen={onOpen} onShare={onShare} />
           ))}
-        </div>
+        </SimpleGrid>
       )}
-    </div>
+    </Stack>
   );
 }

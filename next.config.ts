@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   serverExternalPackages: ["dotenv"],
+  transpilePackages: ["@gds/theme"],
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "i.ibb.co", pathname: "/**" },

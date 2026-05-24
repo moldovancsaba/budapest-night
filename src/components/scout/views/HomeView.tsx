@@ -10,9 +10,8 @@ import {
   ArrowRight,
   Star,
   Building2,
+  type LucideIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
@@ -41,7 +40,7 @@ import { CMS_MEDIA } from "@/config/defaultMedia";
 import { Link } from "@/i18n/routing";
 import { buildProgramPath } from "@/lib/appPaths";
 import { cacheBustMediaUrl } from "@/lib/siteMedia";
-import { CdnImage } from "@/components/ui/CdnImage";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { SiteLucideIcon } from "@/lib/siteLucideIcon";
 import {
   useProvidersCatalog,
@@ -54,7 +53,23 @@ import { EventCard } from "@/components/scout/EventCard";
 import { isUpcoming } from "@/lib/eventDisplay";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { BOROUGHS, NEIGHBORHOODS } from "@/data/locations";
-import { CYBER_PANEL, CYBER_TONE_BG, CYBER_TONE_LINK } from "@/lib/cyberTheme";
+import { AppButton } from "@/components/mantine/AppButton";
+import {
+  Badge,
+  Box,
+  Card,
+  Chip,
+  Grid,
+  Group,
+  Paper,
+  ScrollArea,
+  SimpleGrid,
+  Stack,
+  Text,
+  ThemeIcon,
+  Title,
+  UnstyledButton,
+} from "@mantine/core";
 
 const HOME_BOROUGH_CHOICES: BoroughChoice[] = ["All", ...BOROUGHS];
 
@@ -77,25 +92,16 @@ function openMarketingLink(href: string | undefined, inApp: () => void) {
 
 const CATEGORY_TILES: {
   key: Category | "Events" | "Meet-Up Groups";
-  icon: React.ComponentType<{ className?: string }>;
+  icon: LucideIcon;
   descKey: keyof HomeCopy["categories"];
-  tone: "orange" | "teal" | "pink" | "amber" | "blue";
 }[] = [
-  { key: "Events", icon: CalendarDays, descKey: "events", tone: "orange" },
-  { key: "Venues", icon: Building2, descKey: "venues", tone: "teal" },
-  { key: "Parties", icon: PartyPopper, descKey: "parties", tone: "pink" },
-  {
-    key: "Restaurants",
-    icon: UtensilsCrossed,
-    descKey: "restaurants",
-    tone: "amber",
-  },
-  { key: "Cafés", icon: Coffee, descKey: "cafes", tone: "blue" },
-  { key: "Meet-Up Groups", icon: Palette, descKey: "culture", tone: "orange" },
+  { key: "Events", icon: CalendarDays, descKey: "events" },
+  { key: "Venues", icon: Building2, descKey: "venues" },
+  { key: "Parties", icon: PartyPopper, descKey: "parties" },
+  { key: "Restaurants", icon: UtensilsCrossed, descKey: "restaurants" },
+  { key: "Cafés", icon: Coffee, descKey: "cafes" },
+  { key: "Meet-Up Groups", icon: Palette, descKey: "culture" },
 ];
-
-const TONE_BG = CYBER_TONE_BG;
-const TONE_LINK = CYBER_TONE_LINK;
 
 const GUIDE_NAV_BY_ID: Record<string, SiteGuideNavigateTo> = {
   "guide-belvaros": "Eat & Drink",
@@ -171,136 +177,127 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
   };
 
   return (
-    <div className="space-y-16">
-      {/* HERO */}
-      <section className={cn("relative overflow-hidden", CYBER_PANEL)}>
-        <div className="relative grid items-center gap-8 p-8 sm:p-12 md:grid-cols-[1.1fr_1fr] md:p-16">
-          <div className="relative z-10">
-            <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl md:text-6xl">
-              <span className="text-foreground">{home.heroTitle}</span>
-            </h1>
-            <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+    <Stack gap={64}>
+      <Paper radius="xl" withBorder style={{ overflow: "hidden" }}>
+        <Grid gutter="xl" p={{ base: "xl", sm: 48, md: 64 }} align="center">
+          <Grid.Col span={{ base: 12, md: 7 }}>
+            <Title order={1} size="h1" lh={1.05} tt="uppercase" lts="0.02em">
+              {home.heroTitle}
+            </Title>
+            <Text mt="lg" maw={480} size="lg" c="dimmed" lh={1.6}>
               {home.heroSubtitle}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button
+            </Text>
+            <Group mt="xl" gap="sm" wrap="wrap">
+              <AppButton
                 size="lg"
-                className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
+                radius="xl"
                 onClick={() => onNavigate("Events")}
+                rightSection={<ArrowRight size={16} />}
               >
-                {home.heroPrimaryCta} <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full border-border bg-card/50 px-6 text-foreground hover:bg-muted"
-                onClick={scrollToNeighborhoods}
-              >
+                {home.heroPrimaryCta}
+              </AppButton>
+              <AppButton size="lg" variant="outline" radius="xl" onClick={scrollToNeighborhoods}>
                 {home.heroSecondaryCta}
-              </Button>
-              <Button
+              </AppButton>
+              <AppButton
+                component={Link}
+                href={buildProgramPath(undefined, { locale })}
                 size="lg"
                 variant="outline"
-                className="rounded-full border-border bg-card/50 px-6 text-foreground hover:bg-muted"
-                asChild
+                radius="xl"
               >
-                <Link href={buildProgramPath(undefined, { locale })}>{tProgram("heroCta")}</Link>
-              </Button>
-            </div>
-            <p className="mt-4 text-sm font-medium text-primary">{tProgram("thuNote")}</p>
-            <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-muted text-foreground">
-                <Sparkles className="h-3.5 w-3.5" />
-              </span>
-              {home.heroTagline}
-            </p>
-          </div>
-          <div className="relative">
-            <div className="relative aspect-[5/4] overflow-hidden rounded-2xl border border-border">
-              <CdnImage fill src={cacheBustMediaUrl(s.homeHeroUrl)} alt={home.heroImageAlt} />
-            </div>
-            <span
-              className="absolute -right-2 -top-2 hidden text-muted-foreground md:block"
-              aria-hidden
+                {tProgram("heroCta")}
+              </AppButton>
+            </Group>
+            <Text mt="md" size="sm" fw={500} c="brand">
+              {tProgram("thuNote")}
+            </Text>
+            <Group mt="md" gap="xs">
+              <ThemeIcon radius="xl" size="md" variant="light" color="gray">
+                <Sparkles size={14} />
+              </ThemeIcon>
+              <Text size="sm" c="dimmed">
+                {home.heroTagline}
+              </Text>
+            </Group>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 5 }}>
+            <Box
+              pos="relative"
+              style={{ aspectRatio: "5/4", overflow: "hidden", borderRadius: "var(--mantine-radius-xl)" }}
             >
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path
-                  d="M24 4v10M40 12l-7 7M44 28H34M12 12l7 7M4 28h10"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </section>
+              <ResolvedCoverImage src={cacheBustMediaUrl(s.homeHeroUrl)} alt={home.heroImageAlt} />
+            </Box>
+          </Grid.Col>
+        </Grid>
+      </Paper>
 
-      {/* PROGRAM VERTICALS */}
-      <section>
-        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+      <Stack gap="md" align="center">
+        <Title order={2} size="h2" ta="center" tt="uppercase" lts="0.04em">
           {tProgram("verticalsTitle")}
-        </h2>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+        </Title>
+        <Group gap="xs" justify="center">
           {PROGRAM_VERTICALS.map((v) => (
-            <Link key={v.id} href={buildProgramPath(v.id, { locale })}>
-              <Button variant="outline" className="rounded-full">
-                {tProgram(`vertical.${v.id}`)}
-              </Button>
-            </Link>
+            <AppButton
+              key={v.id}
+              component={Link}
+              href={buildProgramPath(v.id, { locale })}
+              variant="outline"
+              radius="xl"
+            >
+              {tProgram(`vertical.${v.id}`)}
+            </AppButton>
           ))}
-        </div>
-      </section>
+        </Group>
+      </Stack>
 
       {featuredHomeEvents.length > 0 && (
-        <section>
-          <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+        <Stack gap="md">
+          <Title order={2} size="h2" ta="center" tt="uppercase" lts="0.04em">
             {tProgram("featuredEvents")}
-          </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          </Title>
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
             {featuredHomeEvents.map((ev) => (
               <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
             ))}
-          </div>
-        </section>
+          </SimpleGrid>
+        </Stack>
       )}
 
       {promotedPartners.length > 0 && (
-        <section>
-          <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+        <Stack gap="md">
+          <Title order={2} size="h2" ta="center" tt="uppercase" lts="0.04em">
             {tProgram("promotedTitle")}
-          </h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          </Title>
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
             {promotedPartners.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                onClick={() => onOpenProvider(p)}
-                className="rounded-2xl border border-primary/30 bg-card p-4 text-left transition hover:border-primary"
-              >
-                <p className="font-semibold text-foreground">{p.name}</p>
-                {p.promotionLabel ? (
-                  <p className="mt-1 text-xs font-medium text-primary">
-                    {p.promotionLabel}
-                    <span className="mt-0.5 block text-[10px] font-normal text-muted-foreground">
-                      {tProgram("adDisclosure")}
-                    </span>
-                  </p>
-                ) : null}
-              </button>
+              <UnstyledButton key={p.id} onClick={() => onOpenProvider(p)} w="100%">
+                <Paper radius="xl" withBorder p="md" style={{ borderColor: "var(--mantine-color-brand-4)" }}>
+                  <Text fw={600}>{p.name}</Text>
+                  {p.promotionLabel ? (
+                    <Stack gap={2} mt={4}>
+                      <Text size="xs" fw={500} c="brand">
+                        {p.promotionLabel}
+                      </Text>
+                      <Text size="10px" c="dimmed">
+                        {tProgram("adDisclosure")}
+                      </Text>
+                    </Stack>
+                  ) : null}
+                </Paper>
+              </UnstyledButton>
             ))}
-          </div>
-        </section>
+          </SimpleGrid>
+        </Stack>
       )}
 
-      {/* CATEGORIES */}
-      <section>
-        <h2 className="text-center font-display text-3xl font-bold text-foreground sm:text-4xl">
+      <Stack gap="lg">
+        <Title order={2} size="h1" ta="center" tt="uppercase" lts="0.04em">
           {home.categoriesTitle}
-        </h2>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {CATEGORY_TILES.map(({ key, icon: Icon, descKey, tone }) => (
-            <button
+        </Title>
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 5 }} spacing="md">
+          {CATEGORY_TILES.map(({ key, icon: Icon, descKey }) => (
+            <UnstyledButton
               key={key}
               onClick={() =>
                 onNavigate(
@@ -311,146 +308,155 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
                       : (key as Category),
                 )
               }
-              className="group flex flex-col items-center rounded-3xl border border-border/80 bg-card/90 p-6 text-center transition-all hover:-translate-y-1 hover:border-foreground/40/40"
+              w="100%"
             >
-              <span
-                className={cn(
-                  "grid h-16 w-16 place-items-center rounded-full",
-                  TONE_BG[tone],
-                )}
-              >
-                <Icon className="h-7 w-7" />
-              </span>
-              <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
-                {key === "Meet-Up Groups"
-                  ? tNav("culture")
-                  : key === "Events"
-                    ? tNav("events")
-                    : categoryLabel(key as Category)}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {home.categories[descKey].description}
-              </p>
-              <span
-                className={cn(
-                  "mt-4 inline-flex items-center gap-1 text-sm font-semibold",
-                  TONE_LINK[tone],
-                )}
-              >
-                {home.exploreCta}{" "}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </button>
+              <Paper radius="xl" withBorder p="xl" ta="center">
+                <ThemeIcon size={64} radius="xl" variant="light" color="gray" mx="auto">
+                  <Icon size={28} />
+                </ThemeIcon>
+                <Title order={3} size="h5" mt="md">
+                  {key === "Meet-Up Groups"
+                    ? tNav("culture")
+                    : key === "Events"
+                      ? tNav("events")
+                      : categoryLabel(key as Category)}
+                </Title>
+                <Text size="sm" c="dimmed" mt="sm" lh={1.5}>
+                  {home.categories[descKey].description}
+                </Text>
+                <Group gap={4} justify="center" mt="md">
+                  <Text size="sm" fw={600} c="brand">
+                    {home.exploreCta}
+                  </Text>
+                  <ArrowRight size={14} />
+                </Group>
+              </Paper>
+            </UnstyledButton>
           ))}
-        </div>
-      </section>
+        </SimpleGrid>
+      </Stack>
 
-      {/* NEIGHBORHOOD DISCOVERY */}
-      <section
+      <Paper
         id="home-neighborhoods"
-        className={cn(
-          "relative overflow-hidden px-6 py-12 sm:px-12 sm:py-14",
-          CYBER_PANEL,
-        )}
+        radius="xl"
+        withBorder
+        px={{ base: "lg", sm: 48 }}
+        py={{ base: "xl", sm: 56 }}
+        pos="relative"
+        style={{ overflow: "hidden" }}
       >
         <Building2
-          className="pointer-events-none absolute -left-4 top-6 h-32 w-32 text-foreground/[0.04]"
+          size={128}
+          style={{
+            position: "absolute",
+            left: -16,
+            top: 24,
+            opacity: 0.04,
+            pointerEvents: "none",
+          }}
           aria-hidden
         />
         <Building2
-          className="pointer-events-none absolute -right-4 bottom-6 h-32 w-32 text-foreground/[0.04]"
+          size={128}
+          style={{
+            position: "absolute",
+            right: -16,
+            bottom: 24,
+            opacity: 0.04,
+            pointerEvents: "none",
+          }}
           aria-hidden
         />
-        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
-          {home.neighborhoodSectionTitle}
-        </h2>
-        <div className="mt-7 flex flex-wrap justify-center gap-2">
-          {HOME_BOROUGH_CHOICES.map((b) => {
-            const active = b === borough;
-            const label = districtLabel(b);
-            return (
-              <button
+        <Stack gap="md" align="center">
+          <Title order={2} size="h2" ta="center" tt="uppercase" lts="0.04em">
+            {home.neighborhoodSectionTitle}
+          </Title>
+          <Group gap="xs" justify="center">
+            {HOME_BOROUGH_CHOICES.map((b) => (
+              <Chip
                 key={b}
-                type="button"
-                onClick={() => setBorough(b)}
-                className={cn(
-                  "rounded-full border px-5 py-2 text-sm font-semibold transition-colors",
-                  active
-                    ? "border-foreground bg-primary text-primary-foreground"
-                    : "border-border bg-card/80 text-foreground hover:border-foreground/40 hover:text-foreground",
-                )}
+                checked={b === borough}
+                onChange={() => setBorough(b)}
+                radius="xl"
+                color="brand"
+                variant="filled"
+                size="md"
               >
-                {label}
-              </button>
-            );
-          })}
-        </div>
-        <p className="mt-6 text-center text-sm font-medium text-muted-foreground">
-          {borough === "All"
-            ? home.allDistrictsHint
-            : home.popularNeighborhoodsCaption
-                .replace(/\{district\}/g, districtLabel(borough))
-                .replace(/\{borough\}/g, districtLabel(borough))}
-        </p>
-        <div className="mt-3 flex flex-wrap justify-center gap-2">
-          {borough === "All" ? (
-            <button
-              type="button"
-              onClick={() => onNavigate("Events", { borough: "All" })}
-              className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
-            >
-              {home.openDiscoverAll}
-            </button>
-          ) : (
-            <>
-              {hoodList.map((n) => (
-                <button
-                  key={n}
-                  type="button"
-                  onClick={() =>
-                    onNavigate("Events", { borough, neighborhood: n })
-                  }
-                  className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
+                {districtLabel(b)}
+              </Chip>
+            ))}
+          </Group>
+          <Text size="sm" fw={500} c="dimmed" ta="center">
+            {borough === "All"
+              ? home.allDistrictsHint
+              : home.popularNeighborhoodsCaption
+                  .replace(/\{district\}/g, districtLabel(borough))
+                  .replace(/\{borough\}/g, districtLabel(borough))}
+          </Text>
+          <Group gap="xs" justify="center">
+            {borough === "All" ? (
+              <AppButton
+                size="sm"
+                variant="outline"
+                radius="xl"
+                onClick={() => onNavigate("Events", { borough: "All" })}
+              >
+                {home.openDiscoverAll}
+              </AppButton>
+            ) : (
+              <>
+                {hoodList.map((n) => (
+                  <AppButton
+                    key={n}
+                    size="sm"
+                    variant="outline"
+                    radius="xl"
+                    onClick={() => onNavigate("Events", { borough, neighborhood: n })}
+                  >
+                    {neighborhoodLabel(n)}
+                  </AppButton>
+                ))}
+                <AppButton
+                  size="sm"
+                  variant="outline"
+                  radius="xl"
+                  onClick={() => onNavigate("Events", { borough })}
                 >
-                  {neighborhoodLabel(n)}
-                </button>
-              ))}
-              <button
-                type="button"
-                onClick={() => onNavigate("Events", { borough })}
-                className="rounded-full border border-border bg-card/80 px-4 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
-              >
-                {home.viewAllNeighborhoods}
-              </button>
-            </>
-          )}
-        </div>
-      </section>
+                  {home.viewAllNeighborhoods}
+                </AppButton>
+              </>
+            )}
+          </Group>
+        </Stack>
+      </Paper>
 
-      {/* GUIDES */}
       {home.guides.length > 0 && (
-        <section>
-          <div className="mb-6 flex items-end justify-between gap-4">
-            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+        <Stack gap="md">
+          <Group justify="space-between" align="flex-end">
+            <Title order={2} size="h2" tt="uppercase" lts="0.04em">
               {home.guidesSectionTitle}
-            </h2>
-            <button
-              type="button"
-              onClick={() =>
-                openMarketingLink(s.guidesViewAllHref, () => {
-                  onNavigate("Venues");
-                })
-              }
-              className="hidden items-center gap-1 text-sm font-semibold text-foreground hover:text-foreground sm:inline-flex"
-            >
-              {home.guidesViewAllLabel} <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            </Title>
+            <Box visibleFrom="sm">
+              <UnstyledButton
+                onClick={() =>
+                  openMarketingLink(s.guidesViewAllHref, () => {
+                    onNavigate("Venues");
+                  })
+                }
+              >
+                <Group gap={4}>
+                  <Text size="sm" fw={600}>
+                    {home.guidesViewAllLabel}
+                  </Text>
+                  <ArrowRight size={14} />
+                </Group>
+              </UnstyledButton>
+            </Box>
+          </Group>
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="md">
             {home.guides.map((g) => (
-              <button
+              <UnstyledButton
                 key={g.id ?? g.title}
-                type="button"
                 onClick={() =>
                   openMarketingLink(g.ctaHref, () => {
                     const target = resolveGuideNavigateTo(g);
@@ -461,168 +467,160 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
                     onNavigate(target, location);
                   })
                 }
-                className="group flex flex-col overflow-hidden rounded-2xl bg-card text-left transition-all hover:-translate-y-0.5"
+                w="100%"
               >
-                <div className="relative h-36 overflow-hidden">
-                  <CdnImage
-                    fill
-                    src={g.imageUrl}
-                    alt={g.title}
-                    className="transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <span
-                    className={cn(
-                      "absolute -bottom-4 left-4 grid h-10 w-10 place-items-center rounded-full border-2 border-card",
-                      TONE_BG[g.tone],
-                    )}
-                  >
-                    <Building2 className="h-4 w-4" />
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-5 pt-6">
-                  <h3 className="font-display text-base font-semibold leading-snug text-foreground">
-                    {g.title}
-                  </h3>
-                  <p className="mt-2 flex-1 text-sm text-muted-foreground">
-                    {g.desc}
-                  </p>
-                  <span
-                    className={cn(
-                      "mt-4 inline-flex items-center gap-1 text-sm font-semibold",
-                      TONE_LINK[g.tone],
-                    )}
-                  >
-                    {g.ctaLabel?.trim() || home.guideCtaDefault}{" "}
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </div>
-              </button>
+                <Card radius="xl" p={0} withBorder>
+                  <Card.Section>
+                    <Box pos="relative" h={144}>
+                      <ResolvedCoverImage src={g.imageUrl} alt={g.title} />
+                      <ThemeIcon
+                        pos="absolute"
+                        bottom={-16}
+                        left={16}
+                        size="lg"
+                        radius="xl"
+                        variant="light"
+                        color="gray"
+                        style={{ border: "2px solid var(--mantine-color-body)" }}
+                      >
+                        <Building2 size={16} />
+                      </ThemeIcon>
+                    </Box>
+                  </Card.Section>
+                  <Stack gap="xs" p="lg" pt={28}>
+                    <Title order={3} size="h5" lh={1.3}>
+                      {g.title}
+                    </Title>
+                    <Text size="sm" c="dimmed" style={{ flex: 1 }}>
+                      {g.desc}
+                    </Text>
+                    <Group gap={4}>
+                      <Text size="sm" fw={600} c="brand">
+                        {g.ctaLabel?.trim() || home.guideCtaDefault}
+                      </Text>
+                      <ArrowRight size={14} />
+                    </Group>
+                  </Stack>
+                </Card>
+              </UnstyledButton>
             ))}
-          </div>
-        </section>
+          </SimpleGrid>
+        </Stack>
       )}
 
-      {/* HOW IT WORKS */}
-      <section>
-        <h2 className="text-center font-display text-2xl font-bold text-foreground sm:text-3xl">
+      <Stack gap="lg">
+        <Title order={2} size="h2" ta="center" tt="uppercase" lts="0.04em">
           {home.howItWorksSectionTitle}
-        </h2>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
+        </Title>
+        <SimpleGrid cols={{ base: 1, md: 3 }} spacing="md">
           {home.howItWorksSteps.map((step) => (
-            <div
-              key={step.step}
-              className="rounded-3xl border border-border/80 bg-card/90 p-6 "
-            >
-              <div className="flex items-start gap-4">
-                <span
-                  className={cn(
-                    "grid h-9 w-9 shrink-0 place-items-center rounded-full text-sm font-bold",
-                    TONE_BG[step.tone],
-                  )}
-                >
-                  {step.step}
-                </span>
-                <div className="flex-1">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-display text-base font-semibold text-foreground">
+            <Paper key={step.step} radius="xl" withBorder p="lg">
+              <Group align="flex-start" wrap="nowrap" gap="md">
+                <ThemeIcon size="lg" radius="xl" variant="light" color="gray">
+                  <Text size="sm" fw={700}>
+                    {step.step}
+                  </Text>
+                </ThemeIcon>
+                <Stack gap="xs" style={{ flex: 1 }}>
+                  <Group justify="space-between" wrap="nowrap">
+                    <Title order={3} size="h6">
                       {step.title}
-                    </h3>
-                    <SiteLucideIcon
-                      name={step.icon}
-                      className={cn("h-5 w-5 shrink-0", TONE_LINK[step.tone])}
-                    />
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">
+                    </Title>
+                    <SiteLucideIcon name={step.icon} />
+                  </Group>
+                  <Text size="sm" c="dimmed">
                     {step.desc}
-                  </p>
-                </div>
-              </div>
-            </div>
+                  </Text>
+                </Stack>
+              </Group>
+            </Paper>
           ))}
-        </div>
-      </section>
+        </SimpleGrid>
+      </Stack>
 
-      {/* TRUST STRIP */}
-      <section className={cn("px-6 py-8 sm:px-10", CYBER_PANEL)}>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <Paper radius="xl" withBorder px={{ base: "lg", sm: 40 }} py="xl">
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="lg">
           {trustPillars.map((pillar) => (
-            <div key={pillar.title} className="flex items-start gap-3">
-              <span
-                className={cn(
-                  "grid h-10 w-10 shrink-0 place-items-center rounded-full",
-                  TONE_BG[pillar.tone],
-                )}
-              >
-                <SiteLucideIcon name={pillar.icon} className="h-5 w-5" />
-              </span>
-              <div>
-                <h3 className="font-display text-sm font-semibold text-foreground">
+            <Group key={pillar.title} align="flex-start" wrap="nowrap" gap="sm">
+              <ThemeIcon size="lg" radius="xl" variant="light" color="gray">
+                <SiteLucideIcon name={pillar.icon} />
+              </ThemeIcon>
+              <Stack gap={4}>
+                <Text size="sm" fw={600}>
                   {pillar.title}
-                </h3>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                </Text>
+                <Text size="xs" c="dimmed" lh={1.5}>
                   {pillar.desc}
-                </p>
-              </div>
-            </div>
+                </Text>
+              </Stack>
+            </Group>
           ))}
-        </div>
-      </section>
+        </SimpleGrid>
+      </Paper>
 
-      {/* POPULAR PICKS */}
       {(popularPicks.length > 0 || popularGroup) && (
-        <section>
-          <div className="mb-6 flex items-end justify-between">
-            <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+        <Stack gap="md">
+          <Group justify="space-between" align="flex-end">
+            <Title order={2} size="h2" tt="uppercase" lts="0.04em">
               {home.popularPicksSectionTitle}
-            </h2>
-            <button
-              type="button"
-              onClick={() => onNavigate("Events")}
-              className="inline-flex items-center gap-1 text-sm font-semibold text-foreground hover:text-foreground"
-            >
-              {home.popularPicksViewAllLabel}{" "}
-              <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
-          <div className="-mx-4 flex snap-x gap-4 overflow-x-auto px-4 pb-2 scrollbar-hide sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3 xl:grid-cols-6">
-            {popularPicks.map((p) => (
-              <PreviewCard key={p.id} provider={p} onOpen={onOpenProvider} />
-            ))}
-            {popularGroup && (
-              <button
-                onClick={() => onOpenGroup(popularGroup)}
-                className="group flex w-64 shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-card text-left transition-all hover:-translate-y-0.5 sm:w-auto"
-              >
-                <div className="relative grid h-32 place-items-center bg-muted">
-                  <Users className="h-10 w-10 text-foreground" />
-                  <span className="absolute left-2 top-2 rounded-full bg-brand px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-foreground">
-                    {home.culturePickBadge}
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-3">
-                  <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">
-                    {popularGroup.name}
-                  </h3>
-                  <p className="mt-0.5 text-xs text-muted-foreground">
-                    {locationLine(
-                      popularGroup.borough,
-                      popularGroup.neighborhood,
-                    )}
-                  </p>
-                  <p className="mt-1 text-[11px] text-muted-foreground">
-                    {popularGroup.ageRange} · {home.cultureCircleLabel}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-foreground">
-                    {home.freeToJoin}
-                  </p>
-                </div>
-              </button>
-            )}
-          </div>
-        </section>
+            </Title>
+            <UnstyledButton onClick={() => onNavigate("Events")}>
+              <Group gap={4}>
+                <Text size="sm" fw={600}>
+                  {home.popularPicksViewAllLabel}
+                </Text>
+                <ArrowRight size={14} />
+              </Group>
+            </UnstyledButton>
+          </Group>
+          <ScrollArea type="auto" offsetScrollbars>
+            <Group gap="md" wrap="nowrap" pb="xs">
+              {popularPicks.map((p) => (
+                <PreviewCard key={p.id} provider={p} onOpen={onOpenProvider} />
+              ))}
+              {popularGroup && (
+                <UnstyledButton onClick={() => onOpenGroup(popularGroup)} style={{ width: 256, flexShrink: 0 }}>
+                  <Card radius="xl" p={0} withBorder w={256}>
+                    <Card.Section>
+                      <Box pos="relative" h={128} bg="gray.1">
+                        <Group justify="center" align="center" h="100%">
+                          <Users size={40} />
+                        </Group>
+                        <Badge
+                          pos="absolute"
+                          top={8}
+                          left={8}
+                          radius="xl"
+                          color="brand"
+                          tt="uppercase"
+                          size="xs"
+                        >
+                          {home.culturePickBadge}
+                        </Badge>
+                      </Box>
+                    </Card.Section>
+                    <Stack gap={4} p="sm">
+                      <Text fw={600} size="sm" lineClamp={1}>
+                        {popularGroup.name}
+                      </Text>
+                      <Text size="xs" c="dimmed">
+                        {locationLine(popularGroup.borough, popularGroup.neighborhood)}
+                      </Text>
+                      <Text size="11px" c="dimmed">
+                        {popularGroup.ageRange} · {home.cultureCircleLabel}
+                      </Text>
+                      <Text size="sm" fw={600} mt={4}>
+                        {home.freeToJoin}
+                      </Text>
+                    </Stack>
+                  </Card>
+                </UnstyledButton>
+              )}
+            </Group>
+          </ScrollArea>
+        </Stack>
       )}
-
-    </div>
+    </Stack>
   );
 }
 
@@ -640,50 +638,56 @@ function PreviewCard({
   const formatPrice = useFormatVenuePrice();
   const price = formatPrice(provider);
   const badge = provider.badges[0];
+
   return (
-    <button
-      onClick={() => onOpen(provider)}
-      className="group flex w-64 shrink-0 snap-start flex-col overflow-hidden rounded-2xl bg-card text-left transition-all hover:-translate-y-0.5 sm:w-auto"
-    >
-      <div className="relative h-32 overflow-hidden bg-muted">
-        <CdnImage
-          fill
-          resolveBase={provider.website}
-          src={
-            provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing
-          }
-          alt={provider.name}
-          className="transition-transform duration-500 group-hover:scale-105"
-        />
-        {badge && (
-          <span className="absolute left-2 top-2 rounded-full bg-card px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground">
-            {badgeLabel(badge)}
-          </span>
-        )}
-      </div>
-      <div className="flex flex-1 flex-col p-3">
-        <h3 className="line-clamp-1 font-display text-sm font-semibold text-foreground">
-          {provider.name}
-        </h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">
-          {locationLine(provider.borough, provider.neighborhood)}
-        </p>
-        <p className="mt-1 text-[11px] text-muted-foreground">
-          {ageLabel(provider.ageRanges[0])} ·{" "}
-          {activityLabel(provider.activityTypes[0])}
-        </p>
-        <div className="mt-2 flex items-center justify-between">
-          <span className="text-sm font-semibold text-foreground">
-            {price.main}
-            {price.suffix && (
-              <span className="text-[10px] font-normal text-muted-foreground">
-                {price.suffix}
-              </span>
+    <UnstyledButton onClick={() => onOpen(provider)} style={{ width: 256, flexShrink: 0 }}>
+      <Card radius="xl" p={0} withBorder w={256}>
+        <Card.Section>
+          <Box pos="relative" h={128}>
+            <ResolvedCoverImage
+              resolveBase={provider.website}
+              src={provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing}
+              alt={provider.name}
+            />
+            {badge && (
+              <Badge
+                pos="absolute"
+                top={8}
+                left={8}
+                radius="xl"
+                tt="uppercase"
+                variant="filled"
+                color="dark"
+                size="xs"
+              >
+                {badgeLabel(badge)}
+              </Badge>
             )}
-          </span>
-          <Star className="h-3.5 w-3.5 fill-foreground text-foreground" />
-        </div>
-      </div>
-    </button>
+          </Box>
+        </Card.Section>
+        <Stack gap={4} p="sm">
+          <Text fw={600} size="sm" lineClamp={1}>
+            {provider.name}
+          </Text>
+          <Text size="xs" c="dimmed">
+            {locationLine(provider.borough, provider.neighborhood)}
+          </Text>
+          <Text size="11px" c="dimmed">
+            {ageLabel(provider.ageRanges[0])} · {activityLabel(provider.activityTypes[0])}
+          </Text>
+          <Group justify="space-between" mt={4}>
+            <Text size="sm" fw={600}>
+              {price.main}
+              {price.suffix && (
+                <Text component="span" size="10px" fw={400} c="dimmed">
+                  {price.suffix}
+                </Text>
+              )}
+            </Text>
+            <Star size={14} fill="currentColor" />
+          </Group>
+        </Stack>
+      </Card>
+    </UnstyledButton>
   );
 }

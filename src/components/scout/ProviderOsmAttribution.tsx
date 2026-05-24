@@ -1,6 +1,7 @@
 "use client";
 
 import type { Provider } from "@/types/provider";
+import { Anchor, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
 
 /** Shown when OSM is linked but no published score tags exist yet. */
@@ -11,15 +12,16 @@ export function ProviderOsmAttribution({ provider }: { provider: Provider }) {
   if (provider.rating > 0 || provider.reviewCount > 0) return null;
 
   return (
-    <p className="text-xs text-muted-foreground">
-      <a
+    <Text size="xs" c="dimmed">
+      <Anchor
         href={provider.reviewsProfileUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline-offset-2 hover:text-foreground hover:underline"
+        size="xs"
+        c="dimmed"
       >
         {t("listedOnOsm")}
-      </a>
-    </p>
+      </Anchor>
+    </Text>
   );
 }

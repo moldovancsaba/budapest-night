@@ -1,5 +1,6 @@
 "use client";
 
+import type { LucideIcon } from "lucide-react";
 import {
   CalendarDays,
   CalendarRange,
@@ -16,12 +17,23 @@ import {
   Wine,
   Building2,
 } from "lucide-react";
+import {
+  ActionIcon,
+  Box,
+  Group,
+  Overlay,
+  Paper,
+  ScrollArea,
+  Stack,
+  Text,
+  UnstyledButton,
+} from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
 import { Logo } from "./Logo";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { Category } from "@/types/provider";
 
 export type ViewKey =
@@ -39,7 +51,7 @@ export type ViewKey =
 type NavItem = {
   key: ViewKey;
   labelKey: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: LucideIcon;
   disabled?: boolean;
 };
 
@@ -71,14 +83,6 @@ interface Props {
   sidebarPromo?: { title: string; body: string; cta: string };
 }
 
-const navLinkClass = (isActive: boolean) =>
-  cn(
-    "flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
-    isActive
-      ? "bg-primary text-primary-foreground"
-      : "text-sidebar-foreground/85 hover:bg-sidebar-accent hover:text-foreground",
-  );
-
 export function Sidebar({
   active,
   mobileOpen,
@@ -89,99 +93,132 @@ export function Sidebar({
 }: Props) {
   const t = useTranslations("nav");
   const ts = useTranslations("sidebar");
+  const desktop = useMediaQuery("(min-width: 75em)");
 
   const renderItems = (items: NavItem[]) =>
     items.map(({ key, labelKey, icon: Icon, disabled }) => (
-      <li key={key}>
+      <Box key={key}>
         {disabled ? (
-          <button
+          <UnstyledButton
             type="button"
             disabled
             title={t("unavailable")}
-            className={cn(
-              "flex w-full cursor-not-allowed items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium opacity-45",
-            )}
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              borderRadius: 12,
+              padding: "10px 12px",
+              opacity: 0.45,
+              cursor: "not-allowed",
+              fontSize: 14,
+              fontWeight: 500,
+            }}
           >
-            <Icon className="h-4 w-4 shrink-0" />
+            <Icon size={16} />
             {t(labelKey)}
-          </button>
+          </UnstyledButton>
         ) : (
-          <Link
+          <UnstyledButton
+            component={Link}
             href={buildPathForView(key)}
             onClick={onCloseMobile}
-            className={navLinkClass(active === key)}
             aria-current={active === key ? "page" : undefined}
+            style={{
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              borderRadius: 12,
+              padding: "10px 12px",
+              fontSize: 14,
+              fontWeight: 500,
+              background: active === key ? "var(--mantine-color-brand-6)" : "transparent",
+              color: active === key ? "var(--mantine-color-white)" : "var(--mantine-color-gray-3)",
+            }}
           >
-            <Icon className="h-4 w-4 shrink-0" />
+            <Icon size={16} />
             {t(labelKey)}
-          </Link>
+          </UnstyledButton>
         )}
-      </li>
+      </Box>
     ));
 
   return (
     <>
-      {mobileOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-background lg:hidden"
+      {!desktop && mobileOpen ? (
+        <Overlay
+          backgroundOpacity={0.45}
           onClick={onCloseMobile}
+          zIndex={199}
+          fixed
           aria-hidden
         />
-      )}
-      <aside
-        className={cn(
-          "fixed inset-y-0 start-0 z-50 flex w-72 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground transition-transform duration-300 lg:sticky lg:top-0 lg:h-screen lg:translate-x-0",
-          mobileOpen
-            ? "translate-x-0"
-            : "-translate-x-full rtl:translate-x-full",
-        )}
+      ) : null}
+      <Stack
+        h="100%"
+        gap={0}
+        bg="dark.8"
+        style={{ borderRight: "1px solid var(--mantine-color-dark-4)" }}
       >
-        <div className="flex items-center justify-between p-6">
+        <Group justify="space-between" p="lg">
           <Link
             href="/"
             onClick={onCloseMobile}
-            className="rounded-lg transition-opacity hover:opacity-80"
             aria-label={t("goHome")}
           >
             <Logo logoUrl={logoUrl} logoLightUrl={logoLightUrl} size={96} />
           </Link>
-          <button
-            className="rounded-md p-2 text-sidebar-foreground/70 hover:bg-sidebar-accent lg:hidden"
+          <ActionIcon
+            variant="subtle"
+            color="gray"
             onClick={onCloseMobile}
             aria-label={t("closeMenu")}
+            hiddenFrom="lg"
           >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
+            <X size={20} />
+          </ActionIcon>
+        </Group>
 
-        <nav className="flex-1 px-4 py-2" aria-label="Main">
-          <p className="px-3 pb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+        <ScrollArea style={{ flex: 1, paddingInline: 16, paddingBottom: 8 }} aria-label="Main">
+          <Text px="sm" pb={8} size="10px" fw={700} tt="uppercase" c="dimmed" style={{ letterSpacing: "0.2em" }}>
             {t("explore")}
-          </p>
-          <ul className="space-y-1">{renderItems(EXPLORE_ITEMS)}</ul>
+          </Text>
+          <Stack gap={4}>{renderItems(EXPLORE_ITEMS)}</Stack>
 
-          <p className="px-3 pb-2 pt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          <Text
+            px="sm"
+            pb={8}
+            pt="xl"
+            size="10px"
+            fw={700}
+            tt="uppercase"
+            c="dimmed"
+            style={{ letterSpacing: "0.2em" }}
+          >
             {t("yourNight")}
-          </p>
-          <ul className="space-y-1">{renderItems(NIGHT_ITEMS)}</ul>
-        </nav>
+          </Text>
+          <Stack gap={4}>{renderItems(NIGHT_ITEMS)}</Stack>
+        </ScrollArea>
 
-        <div className="m-4 rounded-2xl border border-border bg-sidebar-accent p-5">
-          <p className="font-display text-sm font-semibold text-sidebar-foreground">
+        <Paper m="md" radius="xl" withBorder p="lg" bg="dark.6">
+          <Text size="sm" fw={600}>
             {sidebarPromo?.title ?? ts("listVenueTitle")}
-          </p>
-          <p className="mt-1 text-xs leading-relaxed text-sidebar-foreground/70">
+          </Text>
+          <Text mt={4} size="xs" c="dimmed" lh={1.5}>
             {sidebarPromo?.body ?? ts("listVenueBody")}
-          </p>
-          <Button
+          </Text>
+          <AppButton
             size="sm"
-            variant="secondary"
-            className="mt-3 w-full border border-foreground bg-primary text-primary-foreground hover:bg-primary/90"
+            color="brand"
+            fullWidth
+            mt="md"
           >
             {sidebarPromo?.cta ?? ts("listVenueCta")}
-          </Button>
-        </div>
-      </aside>
+          </AppButton>
+        </Paper>
+      </Stack>
     </>
   );
 }

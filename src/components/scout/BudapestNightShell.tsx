@@ -24,8 +24,19 @@ import { Logo } from "@/components/scout/Logo";
 import type { Provider, Category } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
-import { Menu, Heart, Bell, UserCircle } from "lucide-react";
+import {
+  ActionIcon,
+  Anchor,
+  AppShell,
+  Badge,
+  Box,
+  Group,
+  Text,
+} from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+import { Menu as MenuIcon, Heart, Bell, UserCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { AppLocale } from "@/i18n/config";
 import { findProviderByVenueKey, getVenuePathKey } from "@/lib/providerLocale";
 import { findEventByKey } from "@/lib/eventLocale";
@@ -101,6 +112,7 @@ export default function BudapestNightShell() {
   const { data: providers = [], isLoading: providersLoading } = useProvidersCatalog();
   const { data: events = [], isLoading: eventsLoading } = useEventsCatalog();
   const { data: groups = [], isLoading: groupsLoading } = useMeetupGroupsCatalog();
+  const smUp = useMediaQuery("(min-width: 48em)");
 
   useEffect(() => {
     if (!venueId) {
@@ -226,162 +238,217 @@ export default function BudapestNightShell() {
   }
 
   return (
-    <div className="flex min-h-screen w-full bg-background">
-      <Sidebar
-        active={view}
-        mobileOpen={mobileNav}
-        onCloseMobile={() => setMobileNav(false)}
-        logoUrl={site?.logoUrl}
-        logoLightUrl={site?.logoLightUrl}
-        sidebarPromo={undefined}
-      />
+    <>
+      <AppShell
+        navbar={{
+          width: 288,
+          breakpoint: "lg",
+          collapsed: { mobile: !mobileNav, desktop: false },
+        }}
+        header={{ height: 64 }}
+        padding={0}
+        styles={{
+          navbar: {
+            backgroundColor: "var(--mantine-color-dark-8)",
+            borderRightColor: "var(--mantine-color-dark-4)",
+          },
+        }}
+      >
+        <AppShell.Navbar p={0}>
+          <Sidebar
+            active={view}
+            mobileOpen={mobileNav}
+            onCloseMobile={() => setMobileNav(false)}
+            logoUrl={site?.logoUrl}
+            logoLightUrl={site?.logoLightUrl}
+            sidebarPromo={undefined}
+          />
+        </AppShell.Navbar>
 
-      <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 flex items-center justify-between border-b border-border/80 bg-background px-4 py-3 sm:px-8">
-          <div className="flex items-center gap-3">
-            <button
-              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card lg:hidden"
-              onClick={() => setMobileNav(true)}
-              aria-label={t("openMenu")}
-            >
-              <Menu className="h-5 w-5" />
-            </button>
-            <Link
-              href="/"
-              className="flex items-center gap-3 rounded-full transition-opacity hover:opacity-80"
-              aria-label={t("goHome")}
-            >
-              <Logo logoUrl={site?.logoUrl} logoLightUrl={site?.logoLightUrl} withWordmark={false} size={48} />
-              <span className="font-display text-base font-bold tracking-widest text-foreground sm:text-lg">
-                {t("brand")}
-              </span>
-            </Link>
-          </div>
+        <AppShell.Header>
+            <Group justify="space-between" h="100%" px={{ base: "md", sm: "xl" }} wrap="nowrap">
+              <Group gap="sm" wrap="nowrap">
+                <ActionIcon
+                  variant="default"
+                  size="lg"
+                  radius="xl"
+                  onClick={() => setMobileNav(true)}
+                  aria-label={t("openMenu")}
+                  hiddenFrom="lg"
+                >
+                  <MenuIcon size={20} strokeWidth={1.75} />
+                </ActionIcon>
+                <Anchor component={Link} href="/" underline="never" aria-label={t("goHome")}>
+                  <Group gap="sm" wrap="nowrap">
+                    <Logo
+                      logoUrl={site?.logoUrl}
+                      logoLightUrl={site?.logoLightUrl}
+                      withWordmark={false}
+                      size={48}
+                    />
+                    <Text
+                      ff="var(--font-rubik), system-ui, sans-serif"
+                      size={smUp ? "lg" : "md"}
+                      fw={700}
+                      style={{ letterSpacing: "0.2em" }}
+                    >
+                      {t("brand")}
+                    </Text>
+                  </Group>
+                </Anchor>
+              </Group>
 
-          <div className="flex items-center gap-2">
-            <Link
-              href={buildPathForView("Saved")}
-              className="relative grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground hover:border-foreground/40"
-              aria-label={t("saved")}
-            >
-              <Heart className="h-4 w-4" />
-              {saved.length > 0 && (
-                <span className="absolute -right-1 -top-1 grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
-                  {saved.length}
-                </span>
+              <Group gap="xs" wrap="nowrap">
+                <Box pos="relative">
+                  <ActionIcon
+                    component={Link}
+                    href={buildPathForView("Saved")}
+                    variant="default"
+                    size="lg"
+                    radius="xl"
+                    aria-label={t("saved")}
+                  >
+                    <Heart size={16} strokeWidth={1.75} />
+                  </ActionIcon>
+                  {saved.length > 0 ? (
+                    <Badge
+                      size="xs"
+                      circle
+                      color="brand"
+                      pos="absolute"
+                      top={-4}
+                      right={-4}
+                      style={{ pointerEvents: "none" }}
+                    >
+                      {saved.length}
+                    </Badge>
+                  ) : null}
+                </Box>
+                <ActionIcon
+                  variant="default"
+                  size="lg"
+                  radius="xl"
+                  aria-label={t("notifications")}
+                >
+                  <Bell size={16} strokeWidth={1.75} />
+                </ActionIcon>
+                {smUp ? (
+                  <AppButton
+                    component={Link}
+                    href={buildPathForView("Calculator")}
+                    variant="outline"
+                    radius="xl"
+                    size="compact-md"
+                    rightSection={
+                      items.length > 0 ? (
+                        <Badge size="xs" circle color="brand">
+                          {items.length}
+                        </Badge>
+                      ) : undefined
+                    }
+                  >
+                    {t("budget")}
+                  </AppButton>
+                ) : null}
+                <ThemeToggle />
+                <CurrencySwitcher variant="header" />
+                <LocaleSwitcher variant="header" />
+                <ActionIcon
+                  component={Link}
+                  href={buildPathForView("My Account")}
+                  variant={view === "My Account" ? "filled" : "default"}
+                  color={view === "My Account" ? "brand" : undefined}
+                  size="lg"
+                  radius="xl"
+                  aria-label={t("myAccount")}
+                >
+                  <UserCircle size={20} strokeWidth={1.75} />
+                </ActionIcon>
+              </Group>
+            </Group>
+          </AppShell.Header>
+
+          <AppShell.Main>
+            <Box maw={1400} mx="auto" px={{ base: "md", sm: "xl" }} py={{ base: "md", sm: "xl" }}>
+              {view === "Home" && (
+                <HomeView
+                  onNavigate={navigateToView}
+                  onOpenProvider={openVenue}
+                  onOpenGroup={openGroup}
+                  onOpenEvent={openEvent}
+                />
               )}
-            </Link>
-            <button
-              className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card text-foreground hover:border-foreground/40"
-              aria-label={t("notifications")}
-            >
-              <Bell className="h-4 w-4" />
-            </button>
-            <Link
-              href={buildPathForView("Calculator")}
-              className="relative hidden items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-foreground/40 hover:text-foreground sm:flex"
-            >
-              {t("budget")}
-              {items.length > 0 && (
-                <span className="grid h-5 min-w-[1.25rem] place-items-center rounded-full bg-primary px-1.5 text-[10px] font-bold tabular-nums text-primary-foreground">
-                  {items.length}
-                </span>
+              {view === "Program" && !route.programVertical && (
+                <ProgramWeekView
+                  onOpenProvider={openVenue}
+                  onOpenEvent={openEvent}
+                  onShareProvider={setShareProvider}
+                />
               )}
-            </Link>
-            <ThemeToggle />
-            <CurrencySwitcher variant="header" />
-            <LocaleSwitcher variant="header" />
-            <Link
-              href={buildPathForView("My Account")}
-              className={`grid h-10 w-10 place-items-center rounded-full border text-foreground hover:border-foreground/40 ${
-                view === "My Account"
-                  ? "border-foreground bg-primary text-primary-foreground"
-                  : "border-border bg-card"
-              }`}
-              aria-label={t("myAccount")}
-            >
-              <UserCircle className="h-5 w-5" />
-            </Link>
-          </div>
-        </header>
-
-        <main className="flex-1 px-4 py-6 sm:px-8 sm:py-10">
-          <div className="mx-auto max-w-[1400px] animate-fade-in">
-            {view === "Home" && (
-              <HomeView
-                onNavigate={navigateToView}
-                onOpenProvider={openVenue}
-                onOpenGroup={openGroup}
-                onOpenEvent={openEvent}
-              />
-            )}
-            {view === "Program" && !route.programVertical && (
-              <ProgramWeekView
-                onOpenProvider={openVenue}
-                onOpenEvent={openEvent}
-                onShareProvider={setShareProvider}
-              />
-            )}
-            {view === "Program" && route.programVertical && (
-              <ProgramVerticalView
-                vertical={route.programVertical}
-                onOpenProvider={openVenue}
-                onOpenEvent={openEvent}
-                onShareProvider={setShareProvider}
-              />
-            )}
-            {view === "Events" && (
-              <EventsView
-                key={`events-${discoverKey}`}
-                onOpen={openEvent}
-                initialBorough={initialBorough}
-                initialNeighborhood={initialNeighborhood}
-              />
-            )}
-            {DISCOVER_VIEWS.includes(view as Category) && (
-              <DiscoverView
-                key={`${view}-${discoverKey}`}
-                category={view as Category}
-                onOpen={openVenue}
-                onShare={setShareProvider}
-                initialBorough={initialBorough}
-                initialNeighborhood={initialNeighborhood}
-              />
-            )}
-            {view === "Saved" && (
-              <SavedView onOpen={openVenue} onShare={setShareProvider} />
-            )}
-            {view === "Calculator" && <CalculatorView />}
-            {view === "Split Check" && <SplitCheckView />}
-            {view === "Meet-Up Groups" && (
-              <MeetupGroupsView onOpen={openGroup} onShare={setShareGroup} />
-            )}
-            {view === "Eat & Drink" && !tourId && (
-              <EatDrinkView onOpen={openVenue} />
-            )}
-            {view === "Eat & Drink" && tourId && (
-              <TourView tourId={tourId} seed={tourSeed} onOpen={openVenue} />
-            )}
-            {view === "My Account" && (
-              <MyAccountView
-                onNavigate={navigateToView}
-                onOpenProvider={openVenue}
-                onShareProvider={setShareProvider}
-              />
-            )}
-            {view !== "Home" && <TrustStrip />}
-            <footer className="mt-10 border-t border-border/60 pt-6 text-center text-xs text-muted-foreground">
-              {t("brand")} · {tf("tagline")} ·{" "}
-              <Link
-                href="/admin"
-                className="text-foreground underline hover:text-foreground/90"
+              {view === "Program" && route.programVertical && (
+                <ProgramVerticalView
+                  vertical={route.programVertical}
+                  onOpenProvider={openVenue}
+                  onOpenEvent={openEvent}
+                  onShareProvider={setShareProvider}
+                />
+              )}
+              {view === "Events" && (
+                <EventsView
+                  key={`events-${discoverKey}`}
+                  onOpen={openEvent}
+                  initialBorough={initialBorough}
+                  initialNeighborhood={initialNeighborhood}
+                />
+              )}
+              {DISCOVER_VIEWS.includes(view as Category) && (
+                <DiscoverView
+                  key={`${view}-${discoverKey}`}
+                  category={view as Category}
+                  onOpen={openVenue}
+                  onShare={setShareProvider}
+                  initialBorough={initialBorough}
+                  initialNeighborhood={initialNeighborhood}
+                />
+              )}
+              {view === "Saved" && (
+                <SavedView onOpen={openVenue} onShare={setShareProvider} />
+              )}
+              {view === "Calculator" && <CalculatorView />}
+              {view === "Split Check" && <SplitCheckView />}
+              {view === "Meet-Up Groups" && (
+                <MeetupGroupsView onOpen={openGroup} onShare={setShareGroup} />
+              )}
+              {view === "Eat & Drink" && !tourId && (
+                <EatDrinkView onOpen={openVenue} />
+              )}
+              {view === "Eat & Drink" && tourId && (
+                <TourView tourId={tourId} seed={tourSeed} onOpen={openVenue} />
+              )}
+              {view === "My Account" && (
+                <MyAccountView
+                  onNavigate={navigateToView}
+                  onOpenProvider={openVenue}
+                  onShareProvider={setShareProvider}
+                />
+              )}
+              {view !== "Home" && <TrustStrip />}
+              <Box
+                component="footer"
+                mt="xl"
+                pt="md"
+                style={{ borderTop: "1px solid var(--mantine-color-default-border)" }}
               >
-                {tf("admin")}
-              </Link>
-            </footer>
-          </div>
-        </main>
-      </div>
+                <Text size="xs" c="dimmed" ta="center">
+                  {t("brand")} · {tf("tagline")} ·{" "}
+                  <Anchor component={Link} href="/admin" size="xs" underline="always">
+                    {tf("admin")}
+                  </Anchor>
+                </Text>
+              </Box>
+            </Box>
+          </AppShell.Main>
+      </AppShell>
 
       <ProviderProfile
         provider={openProvider}
@@ -411,6 +478,6 @@ export default function BudapestNightShell() {
         group={shareGroup}
         onClose={() => setShareGroup(null)}
       />
-    </div>
+    </>
   );
 }

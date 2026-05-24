@@ -1,5 +1,19 @@
-import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+"use client";
+
+import {
+  Alert,
+  Anchor,
+  Badge,
+  Box,
+  Drawer,
+  Group,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import {
   Heart,
   MapPin,
@@ -10,8 +24,7 @@ import {
   CalendarClock,
 } from "lucide-react";
 import { useSaved } from "@/store/useScout";
-import { toast } from "sonner";
-import { cn } from "@/lib/utils";
+import { notify } from "@/lib/notify";
 import { useEventsCatalog, useMeetupGroupsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
 import { useFormatEventSchedule } from "@/hooks/useEventDisplay";
 import { eventStubFromMeetupLink, type PublicMeetupGroup } from "@/lib/publicMeetup";
@@ -21,7 +34,6 @@ import { MeetupLogo } from "../MeetupLogo";
 import { MeetupGroupCard } from "../MeetupGroupCard";
 import { ProviderCard } from "../ProviderCard";
 import { EventCard } from "../EventCard";
-import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useAgeRangeLabel,
@@ -30,6 +42,7 @@ import {
   useVenueLocationLine,
 } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 
 export function MeetupGroupProfile({
   group,
@@ -82,222 +95,251 @@ export function MeetupGroupProfile({
 
   const content = (
     <>
-        <div className={isPage ? "relative h-56 w-full overflow-hidden" : "relative h-44 w-full overflow-hidden"}>
-          <CdnImage
-            fill
-            resolveBase={
-              group.coverImageUrl?.trim() ? group.website : undefined
-            }
-            src={
-              group.coverImageUrl?.trim()
-                ? group.coverImageUrl
-                : CMS_MEDIA.fallbackMeetup
-            }
-            alt={group.name}
-          />
-        </div>
-        <div className="bg-secondary px-6 pb-6 pt-6">
-          <div className="flex items-start gap-5">
-            <MeetupLogo group={group} size="lg" />
-            <div className="min-w-0 flex-1">
-              <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-foreground">
-                {groupTypeLabel(group.groupType)}
-              </span>
-              <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-foreground">
-                {group.name}
-              </h2>
-              <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4" />
-                {locationLine(group.borough, group.neighborhood)}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="space-y-6 p-6 pb-12">
-          <div className="flex flex-wrap gap-2">
-            <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-              {ageLabel(group.ageRange)}
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-              <CalendarClock className="h-3.5 w-3.5" />
-              {cadenceLabel(group.cadence)}
-            </span>
-            <span className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground">
+      <Box pos="relative" h={isPage ? 224 : 176} style={{ overflow: "hidden" }}>
+        <ResolvedCoverImage
+          src={
+            group.coverImageUrl?.trim()
+              ? group.coverImageUrl
+              : CMS_MEDIA.fallbackMeetup
+          }
+          resolveBase={group.coverImageUrl?.trim() ? group.website : undefined}
+          alt={group.name}
+        />
+      </Box>
+      <Box px="lg" pb="lg" pt="lg" bg="gray.1">
+        <Group align="flex-start" gap="lg" wrap="nowrap">
+          <MeetupLogo group={group} size="lg" />
+          <Stack gap="xs" style={{ minWidth: 0, flex: 1 }}>
+            <Badge radius="xl" variant="light" color="gray" w="fit-content" tt="uppercase" size="xs">
               {groupTypeLabel(group.groupType)}
-            </span>
-          </div>
+            </Badge>
+            <Title order={2} size="h2" lh={1.2}>
+              {group.name}
+            </Title>
+            <Group gap={6} wrap="nowrap">
+              <MapPin size={16} style={{ flexShrink: 0 }} />
+              <Text size="sm" c="dimmed">
+                {locationLine(group.borough, group.neighborhood)}
+              </Text>
+            </Group>
+          </Stack>
+        </Group>
+      </Box>
 
-          <p className="text-sm leading-relaxed text-foreground/85">
-            {group.description}
-          </p>
+      <Stack gap="xl" p="lg" pb={48}>
+        <Group gap="xs">
+          <Badge radius="xl" variant="light" color="gray">
+            {ageLabel(group.ageRange)}
+          </Badge>
+          <Badge
+            radius="xl"
+            variant="outline"
+            color="gray"
+            leftSection={<CalendarClock size={14} />}
+          >
+            {cadenceLabel(group.cadence)}
+          </Badge>
+          <Badge radius="xl" variant="light" color="gray">
+            {groupTypeLabel(group.groupType)}
+          </Badge>
+        </Group>
 
-          <div className="grid grid-cols-2 gap-2">
-            <Button
-              className="bg-foreground text-background hover:bg-foreground/90"
-              onClick={() => {
-                toggle(group.id);
-                toast.success(saved ? tv("removed") : tv("savedGroup"));
-              }}
-            >
-              <Heart
-                className={cn("h-4 w-4", saved && "fill-foreground text-foreground")}
-              />
+        <Text size="sm" lh={1.6}>
+          {group.description}
+        </Text>
+
+        <SimpleGrid cols={2} spacing="xs">
+          <AppButton
+            onClick={() => {
+              toggle(group.id);
+              notify.success(saved ? tv("removed") : tv("savedGroup"));
+            }}
+          >
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <Heart size={16} fill={saved ? "currentColor" : "none"} />
               {saved ? t("unsave") : t("save")}
-            </Button>
-            <Button variant="outline" asChild>
-              <a href={websiteUrl} target="_blank" rel="noreferrer">
-                <Globe className="h-4 w-4" /> {t("visitWebsite")}
-              </a>
-            </Button>
-            <Button variant="outline" onClick={shareEmail}>
-              <Mail className="h-4 w-4" /> {tv("shareEmail")}
-            </Button>
-            <Button variant="outline" onClick={shareWhatsapp}>
-              <MessageCircle className="h-4 w-4" /> {tv("shareWhatsapp")}
-            </Button>
-          </div>
+            </Group>
+          </AppButton>
+          <AppButton
+            variant="outline"
+            component="a"
+            href={websiteUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <Globe size={16} />
+              {t("visitWebsite")}
+            </Group>
+          </AppButton>
+          <AppButton variant="outline" onClick={shareEmail}>
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <Mail size={16} />
+              {tv("shareEmail")}
+            </Group>
+          </AppButton>
+          <AppButton variant="outline" onClick={shareWhatsapp}>
+            <Group gap="xs" wrap="nowrap" justify="center">
+              <MessageCircle size={16} />
+              {tv("shareWhatsapp")}
+            </Group>
+          </AppButton>
+        </SimpleGrid>
 
-          {(group.venueIds?.length ?? 0) > group.venues.length ? (
-            <p className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
-              {t("venueLinkMissing", {
-                count: (group.venueIds?.length ?? 0) - group.venues.length,
-              })}
-            </p>
-          ) : null}
+        {(group.venueIds?.length ?? 0) > group.venues.length ? (
+          <Alert color="yellow" radius="md">
+            {t("venueLinkMissing", {
+              count: (group.venueIds?.length ?? 0) - group.venues.length,
+            })}
+          </Alert>
+        ) : null}
 
-          {group.venues.length > 0 && (
-            <div>
-              <h3 className="font-display text-base font-semibold text-foreground">
+        {group.venues.length > 0 && (
+          <Stack gap="md">
+            <Stack gap={4}>
+              <Title order={3} size="h4">
                 {t("hostVenues")}
-              </h3>
-              <p className="mt-1 text-xs text-muted-foreground">{t("hostVenuesHint")}</p>
-              <div className="mt-4 grid gap-4">
-                {group.venues.map((link) => {
-                  const provider = providers.find((p) => p.id === link.id) ?? null;
-                  return provider ? (
-                    <ProviderCard
-                      key={link.id}
-                      provider={provider}
-                      onOpen={onOpenVenue}
-                      onShare={() => {}}
-                    />
-                  ) : (
-                    <div
-                      key={link.id}
-                      className="rounded-2xl border border-border/70 bg-card/50 p-4"
-                    >
-                      <p className="font-display font-semibold text-foreground">{link.name}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">{link.address}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {(group.eventIds?.length ?? 0) > group.events.length ? (
-            <p className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
-              {t("eventLinkMissing", {
-                count: (group.eventIds?.length ?? 0) - group.events.length,
-              })}
-            </p>
-          ) : null}
-
-          {group.events.length > 0 && (
-            <div>
-              <h3 className="font-display text-base font-semibold text-foreground">
-                {t("organizedEvents")}
-              </h3>
-              <p className="mt-1 text-xs text-muted-foreground">{t("organizedEventsHint")}</p>
-              <div className="mt-4 grid gap-4">
-                {group.events.map((link) => {
-                  const full = allEvents.find((e) => e.id === link.id);
-                  if (full) {
-                    return <EventCard key={link.id} event={full} onOpen={onOpenEvent} />;
-                  }
-                  const stub = eventStubFromMeetupLink(link, group);
-                  const { dateLine, timeLine } = formatSchedule(stub);
-                  return (
-                    <button
-                      key={link.id}
-                      type="button"
-                      onClick={() => onOpenEvent(stub)}
-                      className="w-full rounded-2xl border border-border/70 bg-card/50 p-4 text-left"
-                    >
-                      <p className="font-display font-semibold text-foreground">{link.title}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {dateLine} · {timeLine}
-                      </p>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {link.borough} · {link.neighborhood}
-                      </p>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          <div className="rounded-2xl bg-secondary p-5">
-            <h3 className="font-display text-sm font-semibold text-foreground">
-              {t("connect")}
-            </h3>
-            <div className="mt-3 space-y-2 text-sm">
-              <a
-                href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-foreground"
-              >
-                <Instagram className="h-4 w-4 text-muted-foreground" />{" "}
-                {group.instagram}
-              </a>
-              <a
-                href={websiteUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 text-foreground hover:text-foreground"
-              >
-                <Globe className="h-4 w-4 text-muted-foreground" />{" "}
-                {group.website}
-              </a>
-            </div>
-          </div>
-
-          {similar.length > 0 && (
-            <div>
-              <h3 className="font-display text-base font-semibold text-foreground">
-                {t("similarNearby")}
-              </h3>
-              <div className="mt-3 grid grid-cols-1 gap-4">
-                {similar.map((g) => (
-                  <MeetupGroupCard
-                    key={g.id}
-                    group={g}
-                    onOpen={onOpenAnother}
-                    onShare={onShare}
+              </Title>
+              <Text size="xs" c="dimmed">
+                {t("hostVenuesHint")}
+              </Text>
+            </Stack>
+            <Stack gap="md">
+              {group.venues.map((link) => {
+                const provider = providers.find((p) => p.id === link.id) ?? null;
+                return provider ? (
+                  <ProviderCard
+                    key={link.id}
+                    provider={provider}
+                    onOpen={onOpenVenue}
+                    onShare={() => {}}
                   />
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+                ) : (
+                  <Paper key={link.id} withBorder radius="xl" p="md">
+                    <Text fw={600}>{link.name}</Text>
+                    <Text size="sm" c="dimmed" mt={4}>
+                      {link.address}
+                    </Text>
+                  </Paper>
+                );
+              })}
+            </Stack>
+          </Stack>
+        )}
+
+        {(group.eventIds?.length ?? 0) > group.events.length ? (
+          <Alert color="yellow" radius="md">
+            {t("eventLinkMissing", {
+              count: (group.eventIds?.length ?? 0) - group.events.length,
+            })}
+          </Alert>
+        ) : null}
+
+        {group.events.length > 0 && (
+          <Stack gap="md">
+            <Stack gap={4}>
+              <Title order={3} size="h4">
+                {t("organizedEvents")}
+              </Title>
+              <Text size="xs" c="dimmed">
+                {t("organizedEventsHint")}
+              </Text>
+            </Stack>
+            <Stack gap="md">
+              {group.events.map((link) => {
+                const full = allEvents.find((e) => e.id === link.id);
+                if (full) {
+                  return <EventCard key={link.id} event={full} onOpen={onOpenEvent} />;
+                }
+                const stub = eventStubFromMeetupLink(link, group);
+                const { dateLine, timeLine } = formatSchedule(stub);
+                return (
+                  <Paper
+                    key={link.id}
+                    component="button"
+                    type="button"
+                    withBorder
+                    radius="xl"
+                    p="md"
+                    w="100%"
+                    onClick={() => onOpenEvent(stub)}
+                    style={{ cursor: "pointer", textAlign: "left" }}
+                  >
+                    <Text fw={600}>{link.title}</Text>
+                    <Text size="xs" c="dimmed" mt={4}>
+                      {dateLine} · {timeLine}
+                    </Text>
+                    <Text size="xs" c="dimmed" mt={4}>
+                      {link.borough} · {link.neighborhood}
+                    </Text>
+                  </Paper>
+                );
+              })}
+            </Stack>
+          </Stack>
+        )}
+
+        <Paper radius="xl" p="lg" bg="gray.1">
+          <Title order={4} size="sm" fw={600}>
+            {t("connect")}
+          </Title>
+          <Stack gap="xs" mt="sm">
+            <Anchor
+              href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
+              target="_blank"
+              rel="noreferrer"
+              size="sm"
+            >
+              <Group gap="xs" wrap="nowrap">
+                <Instagram size={16} />
+                {group.instagram}
+              </Group>
+            </Anchor>
+            <Anchor href={websiteUrl} target="_blank" rel="noreferrer" size="sm">
+              <Group gap="xs" wrap="nowrap">
+                <Globe size={16} />
+                {group.website}
+              </Group>
+            </Anchor>
+          </Stack>
+        </Paper>
+
+        {similar.length > 0 && (
+          <Stack gap="md">
+            <Title order={3} size="h4">
+              {t("similarNearby")}
+            </Title>
+            <Stack gap="md">
+              {similar.map((g) => (
+                <MeetupGroupCard
+                  key={g.id}
+                  group={g}
+                  onOpen={onOpenAnother}
+                  onShare={onShare}
+                />
+              ))}
+            </Stack>
+          </Stack>
+        )}
+      </Stack>
     </>
   );
 
   if (isPage) {
-    return <div className="overflow-y-auto bg-background">{content}</div>;
+    return <Box style={{ overflowY: "auto" }}>{content}</Box>;
   }
 
   return (
-    <Sheet open={!!group} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent
-        side="right"
-        className="w-full overflow-y-auto p-0 sm:max-w-xl bg-background"
-      >
-        {content}
-      </SheetContent>
-    </Sheet>
+    <Drawer
+      opened={!!group}
+      onClose={onClose}
+      position="right"
+      size="xl"
+      padding={0}
+      withCloseButton={false}
+      styles={{ body: { padding: 0, height: "100%", overflowY: "auto" } }}
+    >
+      {content}
+    </Drawer>
   );
 }

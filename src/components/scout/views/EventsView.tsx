@@ -1,19 +1,28 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { CalendarDays, Loader2, MapPin, Sparkles } from "lucide-react";
+import { CalendarDays, MapPin, Sparkles } from "lucide-react";
+import {
+  Box,
+  Grid,
+  Group,
+  Loader,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 import { BoroughBar } from "../BoroughBar";
 import { NeighborhoodChips } from "../NeighborhoodChips";
 import { EventCard } from "../EventCard";
 import { EmptyState } from "../EmptyState";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { NEIGHBORHOODS as FALLBACK_HOODS } from "@/data/locations";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Borough, BoroughChoice } from "@/types/provider";
-import { CdnImage } from "@/components/ui/CdnImage";
 import { useEventsCatalog, useNeighborhoodsCatalog } from "@/hooks/useCatalog";
 import { BAKED_EVENTS_LISTING_HERO } from "@/config/defaultMedia";
-import { CYBER_PANEL } from "@/lib/cyberTheme";
-import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import {
   useDistrictLabel,
@@ -34,9 +43,7 @@ export function EventsView({
   const t = useTranslations("timedEvents");
   const districtLabel = useDistrictLabel();
   const neighborhoodLabel = useNeighborhoodLabel();
-  const [borough, setBorough] = useState<BoroughChoice>(
-    initialBorough ?? "All",
-  );
+  const [borough, setBorough] = useState<BoroughChoice>(initialBorough ?? "All");
   const [neighborhood, setNeighborhood] = useState<string | null>(() => {
     const b = initialBorough ?? "All";
     return b === "All" ? null : (initialNeighborhood ?? null);
@@ -77,10 +84,12 @@ export function EventsView({
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center gap-3 py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-        <p className="text-sm">{t("loading")}</p>
-      </div>
+      <Stack align="center" justify="center" gap="sm" py={96}>
+        <Loader color="gray" />
+        <Text size="sm" c="dimmed">
+          {t("loading")}
+        </Text>
+      </Stack>
     );
   }
 
@@ -95,27 +104,35 @@ export function EventsView({
   }
 
   return (
-    <div className="space-y-8">
-      <section className={cn("relative overflow-hidden", CYBER_PANEL)}>
-        <div className="relative grid items-center gap-6 p-8 sm:p-10 md:grid-cols-[1.2fr_1fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+    <Stack gap="xl">
+      <Paper radius="xl" withBorder style={{ overflow: "hidden" }}>
+        <Grid gutter="xl" p={{ base: "xl", sm: 40 }}>
+          <Grid.Col span={{ base: 12, md: 7 }}>
+            <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.2em">
               {t("eyebrow")}
-            </p>
-            <h1 className="mt-2 font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl">
-              <span className="text-foreground">{t("title")}</span>
-            </h1>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+            </Text>
+            <Title order={1} mt="sm" size="h1" tt="uppercase" lts="0.02em" lh={1.1}>
+              {t("title")}
+            </Title>
+            <Text c="dimmed" mt="md" maw={420} size="sm">
               {t("subtitle")}
-            </p>
-          </div>
-          <div className="relative ml-auto hidden h-44 w-full max-w-md overflow-hidden rounded-2xl border border-border md:block">
-            <CdnImage fill src={BAKED_EVENTS_LISTING_HERO} alt={t("heroAlt")} />
-          </div>
-        </div>
-      </section>
+            </Text>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 5 }} display={{ base: "none", md: "block" }}>
+            <Box
+              pos="relative"
+              h={176}
+              maw={400}
+              ml="auto"
+              style={{ overflow: "hidden", borderRadius: "var(--mantine-radius-xl)" }}
+            >
+              <ResolvedCoverImage src={BAKED_EVENTS_LISTING_HERO} alt={t("heroAlt")} />
+            </Box>
+          </Grid.Col>
+        </Grid>
+      </Paper>
 
-      <section className="space-y-5">
+      <Stack gap="md">
         <BoroughBar
           value={borough}
           onChange={(b) => {
@@ -130,26 +147,26 @@ export function EventsView({
             onChange={setNeighborhood}
           />
         )}
-      </section>
+      </Stack>
 
       {featured.length > 0 && (
-        <section>
-          <div className="mb-4 flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-foreground" />
-            <h2 className="font-display text-lg font-semibold text-foreground">
+        <Stack gap="md">
+          <Group gap="xs">
+            <Sparkles size={16} />
+            <Title order={2} size="h4" tt="uppercase" lts="0.04em">
               {t("featured")}
-            </h2>
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            </Title>
+          </Group>
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
             {featured.map((e) => (
               <EventCard key={e.id} event={e} onOpen={onOpen} />
             ))}
-          </div>
-        </section>
+          </SimpleGrid>
+        </Stack>
       )}
 
-      <section>
-        <h2 className="mb-4 font-display text-lg font-semibold text-foreground">
+      <Stack gap="md">
+        <Title order={2} size="h4" tt="uppercase" lts="0.04em">
           {borough !== "All"
             ? t("resultsIn", {
                 count: filtered.length,
@@ -157,7 +174,7 @@ export function EventsView({
               })
             : t("results", { count: filtered.length })}
           {neighborhood ? ` · ${neighborhoodLabel(neighborhood)}` : ""}
-        </h2>
+        </Title>
         {filtered.length === 0 ? (
           <EmptyState
             icon={MapPin}
@@ -165,13 +182,13 @@ export function EventsView({
             message={t("noMatchesHint")}
           />
         ) : (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
             {filtered.map((e) => (
               <EventCard key={e.id} event={e} onOpen={onOpen} />
             ))}
-          </div>
+          </SimpleGrid>
         )}
-      </section>
-    </div>
+      </Stack>
+    </Stack>
   );
 }

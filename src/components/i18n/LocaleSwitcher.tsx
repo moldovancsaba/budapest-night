@@ -1,23 +1,22 @@
 "use client";
 
+import { ActionIcon, Menu, Select, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
+import { Languages } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { locales, localeLabels, type AppLocale } from "@/i18n/config";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Languages } from "lucide-react";
-import { cn } from "@/lib/utils";
+
+const LOCALE_DATA = locales.map((code) => ({
+  value: code,
+  label: localeLabels[code],
+}));
 
 export function LocaleSwitcher({
-  className,
+  style,
   variant = "default",
 }: {
-  className?: string;
+  style?: React.CSSProperties;
   variant?: "default" | "header";
 }) {
   const locale = useLocale() as AppLocale;
@@ -25,34 +24,66 @@ export function LocaleSwitcher({
   const pathname = usePathname();
   const t = useTranslations("locale");
   const isHeader = variant === "header";
+  const smUp = useMediaQuery("(min-width: 48em)");
+
+  const switchLocale = (next: AppLocale) => {
+    router.replace(pathname, { locale: next });
+  };
+
+  if (isHeader && !smUp) {
+    return (
+      <Menu position="bottom-end" withinPortal>
+        <Menu.Target>
+          <ActionIcon
+            variant="default"
+            size="lg"
+            radius="xl"
+            aria-label={t("label")}
+            style={style}
+          >
+            <Languages size={16} strokeWidth={1.75} />
+          </ActionIcon>
+        </Menu.Target>
+        <Menu.Dropdown>
+          {locales.map((code) => (
+            <Menu.Item
+              key={code}
+              onClick={() => switchLocale(code)}
+              fw={code === locale ? 600 : 400}
+            >
+              {localeLabels[code]}
+            </Menu.Item>
+          ))}
+        </Menu.Dropdown>
+      </Menu>
+    );
+  }
 
   return (
     <Select
+      data={LOCALE_DATA}
       value={locale}
-      onValueChange={(next) => {
-        router.replace(pathname, { locale: next as AppLocale });
-      }}
-    >
-      <SelectTrigger
-        className={cn(
-          isHeader
-            ? "h-10 w-10 shrink-0 gap-0 rounded-full border-border bg-card p-0 text-foreground shadow-none hover:border-foreground/40 focus:ring-foreground/30 sm:w-auto sm:gap-1.5 sm:px-3 [&>svg]:hidden sm:[&>svg]:block"
-            : "h-10 w-[148px] gap-2 border-border bg-card text-sm",
-          className,
-        )}
-        aria-label={t("label")}
-      >
-        <Languages className="h-4 w-4 shrink-0 text-muted-foreground" />
-        <span className="text-[11px] font-semibold uppercase tracking-wide sm:hidden">{locale}</span>
-        <SelectValue className="hidden whitespace-nowrap text-xs sm:inline sm:text-sm" />
-      </SelectTrigger>
-      <SelectContent align="end" className="border-border bg-card">
-        {locales.map((code) => (
-          <SelectItem key={code} value={code}>
-            {localeLabels[code]}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+      onChange={(next) => next && switchLocale(next as AppLocale)}
+      aria-label={t("label")}
+      leftSection={<Languages size={16} strokeWidth={1.75} />}
+      comboboxProps={{ position: "bottom-end", withinPortal: true }}
+      w={isHeader ? undefined : 148}
+      radius={isHeader ? "xl" : "md"}
+      style={style}
+      styles={
+        isHeader
+          ? {
+              input: {
+                borderRadius: 9999,
+                width: smUp ? "auto" : 40,
+                minWidth: smUp ? 120 : 40,
+              },
+            }
+          : undefined
+      }
+      renderOption={({ option }) => (
+        <Text size="sm">{option.label}</Text>
+      )}
+    />
   );
 }

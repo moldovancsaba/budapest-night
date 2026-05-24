@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Loader2, MapPin, Search, Sparkles, Wine } from "lucide-react";
+import { MapPin, Search, Sparkles, Wine } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import { Link } from "@/i18n/routing";
@@ -12,10 +12,20 @@ import { useFormatMenuPrice } from "@/hooks/useFormatMenuPrice";
 import type { PublicMenuItemRow } from "@/lib/publicMenuItem";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
-import { CYBER_PANEL } from "@/lib/cyberTheme";
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
+import {
+  Box,
+  Chip,
+  Group,
+  Loader,
+  Paper,
+  SimpleGrid,
+  Stack,
+  Text,
+  TextInput,
+  Title,
+  UnstyledButton,
+} from "@mantine/core";
 
 interface Props {
   onOpen: (p: Provider) => void;
@@ -98,184 +108,197 @@ export function EatDrinkView({ onOpen }: Props) {
   };
 
   return (
-    <div className="space-y-8">
-      <div
-        className={cn(
-          "relative overflow-hidden rounded-3xl border border-border/80 p-8 sm:p-10",
-          CYBER_PANEL,
-        )}
-      >
-        <div className="relative z-10 max-w-2xl">
-          <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            <Wine className="h-4 w-4" />
-            {t("eyebrow")}
-          </p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-foreground sm:text-4xl">
+    <Stack gap="xl">
+      <Paper radius="xl" withBorder p={{ base: "xl", sm: 40 }} pos="relative" style={{ overflow: "hidden" }}>
+        <Stack gap="sm" maw={640} style={{ position: "relative", zIndex: 1 }}>
+          <Group gap="xs">
+            <Wine size={16} />
+            <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.2em">
+              {t("eyebrow")}
+            </Text>
+          </Group>
+          <Title order={1} size="h2" tt="uppercase" lts="0.02em">
             {t("title")}
-          </h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          </Title>
+          <Text size="sm" c="dimmed" lh={1.6}>
             {t("subtitle")}
-          </p>
-        </div>
-        <Sparkles className="pointer-events-none absolute -right-4 top-4 h-32 w-32 text-muted-foreground/20" />
-      </div>
+          </Text>
+        </Stack>
+        <Sparkles
+          size={128}
+          style={{
+            position: "absolute",
+            right: -16,
+            top: 16,
+            opacity: 0.12,
+            pointerEvents: "none",
+          }}
+          aria-hidden
+        />
+      </Paper>
 
-      <section>
-        <h2 className="font-display text-lg font-semibold text-foreground">
+      <Stack gap="md">
+        <Title order={2} size="h4" tt="uppercase" lts="0.04em">
           {t("toursTitle")}
-        </h2>
-        <p className="mt-1 text-sm text-muted-foreground">
+        </Title>
+        <Text size="sm" c="dimmed">
           {t("toursSubtitle")}
           {!loading && providersWithMenu > 0 ? (
-            <span className="mt-1 block">{t("venuesWithMenus", { count: providersWithMenu })}</span>
+            <Text component="span" display="block" mt={4}>
+              {t("venuesWithMenus", { count: providersWithMenu })}
+            </Text>
           ) : null}
-        </p>
-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+        </Text>
+        <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="md">
           {TOUR_TEMPLATES.map((tpl) => {
             const readiness = tourReadiness[tpl.id];
             const ready = readiness?.ready ?? false;
             const inner = (
-              <>
-                <p className="font-display text-base font-semibold text-foreground group-hover:text-foreground">
+              <Stack gap="xs">
+                <Text fw={600} size="md">
                   {t(`tours.${tpl.id}.title`)}
-                </p>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                </Text>
+                <Text size="xs" c="dimmed" lh={1.5}>
                   {t(`tours.${tpl.id}.description`)}
-                </p>
-                <p className="mt-2 text-xs text-muted-foreground">
+                </Text>
+                <Text size="xs" c="dimmed">
                   {ready
                     ? t("tourReady", { count: readiness?.eligible ?? 0 })
                     : t("tourNeedsMenus", {
                         eligible: readiness?.eligible ?? 0,
                         required: readiness?.stopCount ?? tpl.stopCount,
                       })}
-                </p>
+                </Text>
                 {ready ? (
-                  <span className="mt-3 inline-block text-xs font-medium text-foreground">
+                  <Text size="xs" fw={500} mt="xs">
                     {t("startTour")} →
-                  </span>
+                  </Text>
                 ) : null}
-              </>
+              </Stack>
             );
             return ready ? (
-              <Link
+              <Paper
                 key={tpl.id}
+                component={Link}
                 href={buildTourPath(tpl.id)}
-                className="group rounded-2xl border border-border/70 bg-card/60 p-5 transition hover:border-foreground/40 hover:bg-muted"
+                radius="xl"
+                withBorder
+                p="lg"
+                style={{ textDecoration: "none", color: "inherit" }}
               >
                 {inner}
-              </Link>
+              </Paper>
             ) : (
-              <div
+              <Paper
                 key={tpl.id}
-                className="rounded-2xl border border-dashed border-border/70 bg-card/40 p-5 opacity-80"
+                radius="xl"
+                withBorder
+                p="lg"
+                style={{ opacity: 0.8, borderStyle: "dashed" }}
               >
                 {inner}
-              </div>
+              </Paper>
             );
           })}
-        </div>
-      </section>
+        </SimpleGrid>
+      </Stack>
 
-      <section className="space-y-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 className="font-display text-lg font-semibold text-foreground">
+      <Stack gap="md">
+        <Group justify="space-between" align="flex-end" wrap="wrap" gap="md">
+          <Stack gap={4}>
+            <Title order={2} size="h4" tt="uppercase" lts="0.04em">
               {t("browseTitle")}
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              {loading
-                ? t("loading")
-                : t("resultsCount", { shown: items.length, total })}
-            </p>
-          </div>
-          <div className="relative w-full sm:max-w-xs">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
-              placeholder={t("searchPlaceholder")}
-              className="pl-9"
-            />
-          </div>
-        </div>
+            </Title>
+            <Text size="sm" c="dimmed">
+              {loading ? t("loading") : t("resultsCount", { shown: items.length, total })}
+            </Text>
+          </Stack>
+          <TextInput
+            value={q}
+            onChange={(e) => setQ(e.currentTarget.value)}
+            placeholder={t("searchPlaceholder")}
+            leftSection={<Search size={16} />}
+            maw={320}
+            style={{ flex: 1, minWidth: 200 }}
+            radius="xl"
+          />
+        </Group>
 
-        <div className="flex flex-wrap gap-2">
-          <Button
+        <Group gap="xs">
+          <AppButton
             size="sm"
             variant={kind === null ? "default" : "outline"}
+            radius="xl"
             onClick={() => {
               setKind(null);
               setTag(null);
             }}
           >
             {t("filterAll")}
-          </Button>
-          <Button
+          </AppButton>
+          <AppButton
             size="sm"
             variant={kind === "food" ? "default" : "outline"}
+            radius="xl"
             onClick={() => {
               setKind("food");
               setTag(null);
             }}
           >
             {t("filterFood")}
-          </Button>
-          <Button
+          </AppButton>
+          <AppButton
             size="sm"
             variant={kind === "drink" ? "default" : "outline"}
+            radius="xl"
             onClick={() => {
               setKind("drink");
               setTag(null);
             }}
           >
             {t("filterDrink")}
-          </Button>
-        </div>
+          </AppButton>
+        </Group>
 
-        <div className="flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setTag(null)}
-            className={cn(
-              "rounded-full px-3 py-1 text-xs font-medium transition",
-              tag === null
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-            )}
+        <Group gap="xs">
+          <Chip
+            checked={tag === null}
+            onChange={() => setTag(null)}
+            radius="xl"
+            color="brand"
+            variant="filled"
           >
             {t("allTags")}
-          </button>
+          </Chip>
           {boardTags.map((tg) => {
             const key = menuTagMessageKey(tg);
             return (
-              <button
+              <Chip
                 key={tg}
-                type="button"
-                onClick={() => setTag(tg === tag ? null : tg)}
-                className={cn(
-                  "rounded-full px-3 py-1 text-xs font-medium transition",
-                  tag === tg
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-                )}
+                checked={tag === tg}
+                onChange={() => setTag(tg === tag ? null : tg)}
+                radius="xl"
+                color="brand"
+                variant="filled"
               >
                 {key ? tTag(key) : tg}
-              </button>
+              </Chip>
             );
           })}
-        </div>
+        </Group>
 
         {loading ? (
-          <div className="flex justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-          </div>
+          <Group justify="center" py={64}>
+            <Loader color="gray" />
+          </Group>
         ) : items.length === 0 ? (
-          <p className="rounded-2xl border border-dashed border-border py-12 text-center text-sm text-muted-foreground">
-            {t("empty")}
-          </p>
+          <Paper radius="xl" withBorder py={48} ta="center" style={{ borderStyle: "dashed" }}>
+            <Text size="sm" c="dimmed">
+              {t("empty")}
+            </Text>
+          </Paper>
         ) : (
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="sm">
             {items.map((row) => {
               const price = row.price
                 ? formatPrice({
@@ -292,47 +315,45 @@ export function EatDrinkView({ onOpen }: Props) {
                   })
                 : null;
               return (
-                <li key={row.id}>
-                  <button
-                    type="button"
-                    onClick={() => openRow(row)}
-                    className="flex w-full flex-col rounded-2xl border border-border/70 bg-card/50 p-4 text-left transition hover:border-foreground/40/40 hover:bg-card"
-                  >
-                    <p className="font-medium text-foreground">{row.name}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">
+                <UnstyledButton key={row.id} onClick={() => openRow(row)} w="100%">
+                  <Paper radius="xl" withBorder p="md" w="100%">
+                    <Text fw={500}>{row.name}</Text>
+                    <Text size="xs" c="dimmed" mt={4}>
                       {t("atVenue", {
                         venue: row.venue.name,
                         kind: itemKindLabel(row.kind),
                         section: row.sectionTitle,
                       })}
                       {row.eventTitle ? ` · ${row.eventTitle}` : ""}
-                    </p>
-                    <p className="mt-2 flex items-start gap-1 text-xs text-muted-foreground">
-                      <MapPin className="mt-0.5 h-3 w-3 shrink-0" />
-                      <span>
-                        <span className="block text-foreground">
+                    </Text>
+                    <Group gap={4} align="flex-start" mt="xs" wrap="nowrap">
+                      <MapPin size={12} style={{ flexShrink: 0, marginTop: 2 }} />
+                      <Box>
+                        <Text size="xs" span>
                           {row.venue.borough} · {row.venue.neighborhood}
-                        </span>
-                        <span className="mt-0.5 block">{row.venue.address}</span>
-                      </span>
-                    </p>
+                        </Text>
+                        <Text size="xs" c="dimmed" display="block" mt={2}>
+                          {row.venue.address}
+                        </Text>
+                      </Box>
+                    </Group>
                     {price ? (
-                      <p className="mt-2 text-sm font-semibold text-foreground">
+                      <Text size="sm" fw={600} mt="sm">
                         {price.main}
                         {price.suffix ? (
-                          <span className="ml-1 text-xs font-normal text-muted-foreground">
+                          <Text component="span" size="xs" fw={400} c="dimmed" ml={4}>
                             {price.suffix}
-                          </span>
+                          </Text>
                         ) : null}
-                      </p>
+                      </Text>
                     ) : null}
-                  </button>
-                </li>
+                  </Paper>
+                </UnstyledButton>
               );
             })}
-          </ul>
+          </SimpleGrid>
         )}
-      </section>
-    </div>
+      </Stack>
+    </Stack>
   );
 }

@@ -1,162 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Pesti Est — Mantine-only global styles (no Tailwind). */
 
-/* RTL layout helpers */
-[dir="rtl"] aside.fixed {
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* RTL layout helpers for fixed sidebars */
+[dir="rtl"] .mantine-AppShell-navbar {
   left: auto;
   right: 0;
 }
-[dir="rtl"] aside.-translate-x-full {
-  --tw-translate-x: 100%;
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
-
-/* Budapest Night — flat monochrome; primary = CTA; brand = small red accent. */
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 6%;
-
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 6%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 6%;
-
-    --primary: 0 0% 6%;
-    --primary-foreground: 0 0% 100%;
-
-    --brand: 358 72% 46%;
-    --brand-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 12%;
-
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 42%;
-
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 100%;
-
-    --teal: 0 0% 6%;
-    --teal-foreground: 0 0% 100%;
-    --teal-soft: 0 0% 96%;
-
-    --orange: 358 72% 46%;
-    --orange-foreground: 0 0% 100%;
-    --orange-soft: 0 0% 96%;
-
-    --beige: 0 0% 94%;
-    --ivory: 0 0% 99%;
-
-    --destructive: 358 72% 46%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 0 0% 6%;
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 99%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 6%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 94%;
-    --sidebar-accent-foreground: 0 0% 6%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 0 0% 6%;
-
-    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 6%;
-
-    --brand: 358 70% 50%;
-    --brand-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 92%;
-
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 62%;
-
-    --accent: 0 0% 92%;
-    --accent-foreground: 0 0% 6%;
-
-    --teal: 0 0% 98%;
-    --teal-foreground: 0 0% 6%;
-    --teal-soft: 0 0% 12%;
-
-    --orange: 358 70% 50%;
-    --orange-foreground: 0 0% 100%;
-    --orange-soft: 0 0% 12%;
-
-    --beige: 0 0% 12%;
-    --ivory: 0 0% 6%;
-
-    --destructive: 358 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 0 0% 70%;
-
-    --sidebar-background: 0 0% 3%;
-    --sidebar-foreground: 0 0% 94%;
-    --sidebar-primary: 0 0% 98%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 0 0% 70%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  html {
-    font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
-  }
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-}
-
-@layer utilities {
-  .font-display {
-    font-family: var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif;
-    letter-spacing: 0.06em;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

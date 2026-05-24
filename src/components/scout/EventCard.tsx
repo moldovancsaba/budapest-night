@@ -1,9 +1,10 @@
 "use client";
 
 import { CalendarDays, MapPin, Ticket } from "lucide-react";
+import Image from "next/image";
+import { Badge, Card, Group, Stack, Text } from "@mantine/core";
 import type { PublicNightEvent } from "@/lib/publicEvent";
-import { CdnImage } from "@/components/ui/CdnImage";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useEventDisplayLabels,
@@ -38,74 +39,85 @@ export function EventCard({ event, onOpen }: Props) {
     : null;
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
-      <div className="relative h-44 overflow-hidden bg-muted">
-        <CdnImage
-          fill
-          resolveBase={event.website}
-          src={event.image?.trim() ? event.image : CMS_MEDIA.fallbackListing}
-          alt={event.title}
-          className="transition-transform duration-500 group-hover:scale-105"
-        />
-        {event.promotionLabel || event.isFeatured ? (
-          <div className="absolute left-3 top-3 flex max-w-[85%] flex-col gap-1">
-            <span className="w-fit rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
-              {event.promotionLabel ?? badgeLabel("Featured")}
-            </span>
-            {event.promotionLabel ? (
-              <span className="rounded bg-background/90 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                {tProgram("adDisclosure")}
-              </span>
-            ) : null}
-          </div>
-        ) : event.badges[0] ? (
-          <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background">
-            {badgeLabel(event.badges[0])}
-          </span>
-        ) : null}
-      </div>
-
-      <div className="flex flex-1 flex-col p-5">
-        <button
-          type="button"
-          onClick={() => onOpen(event)}
-          className="text-left"
-        >
-          <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-foreground">
-            {event.title}
-          </h3>
-        </button>
-        <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-foreground">
-          <CalendarDays className="h-4 w-4 shrink-0" />
-          <span>
-            {dateLine} · {timeLine}
-          </span>
-        </p>
-        {doors(event) ? (
-          <p className="mt-1 text-xs text-muted-foreground">{doors(event)}</p>
-        ) : null}
-        <p className="mt-2 flex items-start gap-1 text-sm text-muted-foreground">
-          <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-          <span>
-            <span className="block text-foreground">{placeLine(event, primaryHost)}</span>
-            {primaryHost?.address ? (
-              <span className="mt-0.5 block text-xs">{primaryHost.address}</span>
-            ) : null}
-          </span>
-        </p>
-        <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-          {event.shortDescription}
-        </p>
-        <div className="mt-4 flex items-center justify-between gap-2">
-          <span className="flex items-center gap-1 text-sm font-semibold text-foreground">
-            <Ticket className="h-4 w-4 text-foreground" />
-            {fromPrice(event.entryFees)}
-          </span>
-          <Button size="sm" variant="secondary" onClick={() => onOpen(event)}>
-            {t("viewEvent")}
-          </Button>
+    <Card radius="xl" p={0} withBorder style={{ overflow: "hidden" }}>
+      <Card.Section>
+        <div style={{ position: "relative", height: 176, overflow: "hidden" }}>
+          <Image
+            fill
+            src={event.image?.trim() ? event.image : CMS_MEDIA.fallbackListing}
+            alt={event.title}
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
-      </div>
-    </article>
+        {event.promotionLabel || event.isFeatured ? (
+          <Stack gap={4} style={{ position: "absolute", top: 12, left: 12, maxWidth: "85%" }}>
+            <Badge radius="xl" tt="uppercase" variant="filled" color="brand" size="sm">
+              {event.promotionLabel ?? badgeLabel("Featured")}
+            </Badge>
+            {event.promotionLabel ? (
+              <Badge radius="sm" variant="light" color="gray" size="xs">
+                {tProgram("adDisclosure")}
+              </Badge>
+            ) : null}
+          </Stack>
+        ) : event.badges[0] ? (
+          <Badge
+            radius="xl"
+            tt="uppercase"
+            variant="filled"
+            color="dark"
+            size="sm"
+            style={{ position: "absolute", top: 12, left: 12 }}
+          >
+            {badgeLabel(event.badges[0])}
+          </Badge>
+        ) : null}
+      </Card.Section>
+
+      <Stack gap="sm" p="lg" style={{ flex: 1 }}>
+        <AppButton type="button" variant="subtle" onClick={() => onOpen(event)} px={0} justify="flex-start" color="gray">
+          <Text fw={600} size="lg" ta="left">
+            {event.title}
+          </Text>
+        </AppButton>
+        <Group gap={6} wrap="nowrap">
+          <CalendarDays size={16} />
+          <Text size="sm" fw={500}>
+            {dateLine} · {timeLine}
+          </Text>
+        </Group>
+        {doors(event) ? (
+          <Text size="xs" c="dimmed">
+            {doors(event)}
+          </Text>
+        ) : null}
+        <Group align="flex-start" gap={6} wrap="nowrap">
+          <MapPin size={16} style={{ marginTop: 2 }} />
+          <Stack gap={2}>
+            <Text size="sm">{placeLine(event, primaryHost)}</Text>
+            {primaryHost?.address ? (
+              <Text size="xs" c="dimmed">
+                {primaryHost.address}
+              </Text>
+            ) : null}
+          </Stack>
+        </Group>
+        <Text size="sm" c="dimmed" lineClamp={2}>
+          {event.shortDescription}
+        </Text>
+        <Group justify="space-between" gap="xs" mt="xs">
+          <Group gap={4}>
+            <Ticket size={16} />
+            <Text size="sm" fw={600}>
+            {fromPrice(event.entryFees)}
+            </Text>
+          </Group>
+          <AppButton size="sm" variant="secondary" onClick={() => onOpen(event)}>
+            {t("viewEvent")}
+          </AppButton>
+        </Group>
+      </Stack>
+    </Card>
   );
 }

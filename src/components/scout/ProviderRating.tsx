@@ -2,15 +2,15 @@
 
 import type { Provider } from "@/types/provider";
 import { Star } from "lucide-react";
+import { Anchor, Group, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
 
 type Props = {
   provider: Provider;
   variant: "card" | "profile";
-  className?: string;
 };
 
-export function ProviderRating({ provider, variant, className }: Props) {
+export function ProviderRating({ provider, variant }: Props) {
   const t = useTranslations("venue");
   const hasScore = provider.rating > 0 || provider.reviewCount > 0;
   if (!hasScore) return null;
@@ -23,29 +23,41 @@ export function ProviderRating({ provider, variant, className }: Props) {
       : null;
 
   return (
-    <span className={className ?? "flex items-center gap-1 text-sm"}>
+    <Group gap={6} align="center" wrap="nowrap">
       {provider.rating > 0 ? (
         <>
-          <Star className="h-4 w-4 fill-foreground text-foreground" aria-hidden />
-          <span className="font-semibold text-foreground">{provider.rating}</span>
+          <Star
+            size={16}
+            fill="var(--mantine-color-text)"
+            color="var(--mantine-color-text)"
+            aria-hidden
+          />
+          <Text component="span" size="sm" fw={600}>
+            {provider.rating}
+          </Text>
         </>
       ) : null}
       {countLabel ? (
-        <span className="text-muted-foreground">{countLabel}</span>
+        <Text component="span" size="sm" c="dimmed">
+          {countLabel}
+        </Text>
       ) : null}
       {provider.reviewsSource === "budapest-night" ? (
-        <span className="text-xs text-muted-foreground">{t("reviewsSourceBn")}</span>
+        <Text component="span" size="xs" c="dimmed">
+          {t("reviewsSourceBn")}
+        </Text>
       ) : null}
       {provider.reviewsSource === "osm" && provider.reviewsProfileUrl ? (
-        <a
+        <Anchor
           href={provider.reviewsProfileUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+          size="xs"
+          c="dimmed"
         >
           {t("reviewsSourceOsm")}
-        </a>
+        </Anchor>
       ) : null}
-    </span>
+    </Group>
   );
 }

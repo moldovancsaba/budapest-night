@@ -6,12 +6,12 @@ import {
   Calendar,
   Megaphone,
 } from "lucide-react";
+import Image from "next/image";
+import { ActionIcon, Badge, Card, Group, Stack, Text } from "@mantine/core";
 import type { Provider } from "@/types/provider";
-import { CdnImage } from "@/components/ui/CdnImage";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
 import { useSaved, useCalculator } from "@/store/useScout";
-import { toast } from "sonner";
-import { cn } from "@/lib/utils";
+import { notify } from "@/lib/notify";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useActivityTypeLabel,
@@ -47,150 +47,162 @@ export function ProviderCard({ provider, onOpen, onShare }: Props) {
   const located = resolveProviderLocation(provider);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl bg-card transition-all hover:-translate-y-0.5">
-      <div className="relative h-44 overflow-hidden bg-muted">
-        <CdnImage
-          fill
-          resolveBase={provider.website}
-          src={
-            provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing
-          }
-          alt={provider.name}
-          className="transition-transform duration-500 group-hover:scale-105"
-        />
+    <Card radius="xl" p={0} withBorder style={{ overflow: "hidden" }}>
+      <Card.Section>
+        <div style={{ position: "relative", height: 176, overflow: "hidden" }}>
+          <Image
+            fill
+            src={provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing}
+            alt={provider.name}
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
         {provider.isPromoted || provider.promotionLabel ? (
-          <div className="absolute left-3 top-3 flex max-w-[85%] flex-col gap-1">
-            <span className="w-fit rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground">
+          <Stack gap={4} style={{ position: "absolute", top: 12, left: 12, maxWidth: "85%" }}>
+            <Badge radius="xl" tt="uppercase" variant="filled" color="brand" size="sm">
               {provider.promotionLabel ?? badgeLabel("Featured")}
-            </span>
+            </Badge>
             {provider.promotionLabel ? (
-              <span className="rounded bg-background/90 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+              <Badge radius="sm" variant="light" color="gray" size="xs">
                 {tProgram("adDisclosure")}
-              </span>
+              </Badge>
             ) : null}
-          </div>
+          </Stack>
         ) : provider.badges[0] ? (
-          <span className="absolute left-3 top-3 rounded-full bg-foreground px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-background ">
+          <Badge
+            radius="xl"
+            tt="uppercase"
+            variant="filled"
+            color="dark"
+            size="sm"
+            style={{ position: "absolute", top: 12, left: 12 }}
+          >
             {badgeLabel(provider.badges[0])}
-          </span>
+          </Badge>
         ) : null}
         {provider.announcementBadge && (
-          <span className="absolute left-3 bottom-3 inline-flex items-center gap-1 rounded-full bg-foreground px-2.5 py-1 text-[11px] font-semibold text-background ">
-            <Megaphone className="h-3 w-3" />
+          <Badge
+            radius="xl"
+            variant="filled"
+            color="dark"
+            size="sm"
+            style={{ position: "absolute", left: 12, bottom: 12 }}
+            leftSection={<Megaphone size={12} />}
+          >
             {provider.announcementBadge}
-          </span>
+          </Badge>
         )}
-        <button
+        <ActionIcon
           onClick={(e) => {
             e.stopPropagation();
             toggle(provider.id);
-            toast.success(saved ? t("removed") : t("saved"));
+            notify.success(saved ? t("removed") : t("saved"));
           }}
           aria-label={saved ? t("unsave") : t("save")}
-          className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-card transition-colors hover:bg-card"
+          variant="filled"
+          color="dark"
+          radius="xl"
+          style={{ position: "absolute", top: 12, right: 12 }}
         >
           <Heart
-            className={cn(
-              "h-4 w-4",
-              saved ? "fill-foreground text-foreground" : "text-foreground",
-            )}
+            size={16}
+            style={{ fill: saved ? "currentColor" : "none" }}
           />
-        </button>
-      </div>
+        </ActionIcon>
+      </Card.Section>
 
-      <div className="flex flex-1 flex-col p-5">
-        <button onClick={() => onOpen(provider)} className="text-left">
-          <h3 className="font-display text-lg font-semibold text-foreground transition-colors group-hover:text-foreground">
+      <Stack gap="sm" p="lg" style={{ flex: 1 }}>
+        <AppButton variant="subtle" onClick={() => onOpen(provider)} px={0} justify="flex-start" color="gray">
+          <Text fw={600} size="lg" ta="left">
             {provider.name}
-          </h3>
-        </button>
-        <p className="mt-1 flex items-start gap-1 text-sm text-muted-foreground">
-          <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-          <span>
-            <span className="block text-foreground">
+          </Text>
+        </AppButton>
+        <Group align="flex-start" gap={6} wrap="nowrap">
+          <MapPin size={14} style={{ marginTop: 2, flexShrink: 0 }} />
+          <Stack gap={2}>
+            <Text size="sm">
               {locationLine(located.borough, located.neighborhood)}
-            </span>
+            </Text>
             {located.address ? (
-              <span className="mt-0.5 block text-xs">{located.address}</span>
+              <Text size="xs" c="dimmed">
+                {located.address}
+              </Text>
             ) : null}
-          </span>
-        </p>
+          </Stack>
+        </Group>
 
-        <p className="mt-3 text-xs text-muted-foreground">
+        <Text size="xs" c="dimmed">
           {provider.activityTypes.slice(0, 3).map(activityLabel).join(" · ")}
-        </p>
+        </Text>
 
-        <div className="mt-3 flex flex-wrap gap-1.5">
+        <Group gap={6}>
           {provider.ageRanges.slice(0, 2).map((a) => (
-            <span
-              key={a}
-              className="rounded-full bg-secondary px-2 py-0.5 text-[11px] font-medium text-secondary-foreground"
-            >
+            <Badge key={a} radius="xl" variant="light" color="gray" size="sm">
               {ageLabel(a)}
-            </span>
+            </Badge>
           ))}
           {provider.dayTimeTags.slice(0, 2).map((d) => (
-            <span
-              key={d}
-              className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
-            >
+            <Badge key={d} radius="xl" variant="outline" color="gray" size="sm">
               {dayLabel(d)}
-            </span>
+            </Badge>
           ))}
-        </div>
+        </Group>
 
-        <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-          <div>
-            <span className="font-display text-lg font-bold text-foreground">
+        <Group justify="space-between" pt="sm" style={{ borderTop: "1px solid var(--mantine-color-gray-7)" }}>
+          <Group gap={4}>
+            <Text fw={700} size="lg">
               {price.main}
-            </span>
+            </Text>
             {price.suffix && (
-              <span className="text-xs text-muted-foreground">
+              <Text size="xs" c="dimmed">
                 {price.suffix}
-              </span>
+              </Text>
             )}
-          </div>
+          </Group>
           <ProviderRating provider={provider} variant="card" />
-        </div>
+        </Group>
 
-        <div className="mt-4 flex gap-2">
+        <Group gap="xs">
           {provider.bookingEnabled ? (
-            <Button
+            <AppButton
               onClick={() => onOpen(provider)}
               aria-label={t("reserveAt", { name: provider.name })}
-              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+              color="brand"
+              style={{ flex: 1 }}
             >
-              <Calendar className="h-4 w-4" /> {t("reserve")}
-            </Button>
+              <Calendar size={16} /> {t("reserve")}
+            </AppButton>
           ) : (
-            <Button
+            <AppButton
               onClick={() => onOpen(provider)}
-              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90"
+              color="brand"
+              style={{ flex: 1 }}
             >
               {t("viewDetails")}
-            </Button>
+            </AppButton>
           )}
-          <Button
+          <AppButton
             variant="outline"
-            size="icon"
             aria-label={t("addToBudget")}
+            px="sm"
             onClick={() => {
               add(provider.id);
-              toast.success(t("addedToBudget", { name: provider.name }));
+              notify.success(t("addedToBudget", { name: provider.name }));
             }}
           >
-            <Plus className="h-4 w-4" />
-          </Button>
-          <Button
+            <Plus size={16} />
+          </AppButton>
+          <AppButton
             variant="outline"
-            size="icon"
             aria-label={t("share")}
+            px="sm"
             onClick={() => onShare(provider)}
           >
-            <Share2 className="h-4 w-4" />
-          </Button>
-        </div>
-      </div>
-    </article>
+            <Share2 size={16} />
+          </AppButton>
+        </Group>
+      </Stack>
+    </Card>
   );
 }

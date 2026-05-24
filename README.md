@@ -16,7 +16,11 @@
 
 ## Stack
 
-Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query.
+Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@gds/theme` (GDS v2.2).
+
+**Monorepo:** depends on `../general-design-system/packages/gds-theme` — run `npm run build` in that package after cloning.
+
+**Design system:** [General Design System](https://github.com/moldovancsaba/general-design-system) is SSOT for UI/UX. Local adapter: [docs/design-system-adapter.md](docs/design-system-adapter.md).
 
 ## Environment variables
 

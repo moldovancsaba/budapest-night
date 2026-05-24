@@ -1,37 +1,32 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { Group, Paper, SimpleGrid, Stack, Text, ThemeIcon } from "@mantine/core";
 import { SiteLucideIcon } from "@/lib/siteLucideIcon";
 import { useTrustPillars } from "@/hooks/useLocalizedSiteCopy";
-import { CYBER_PANEL, CYBER_TONE_BG } from "@/lib/cyberTheme";
+import { MANTINE_PANEL_RADIUS } from "@/lib/mantine/surfaceTokens";
 
 export function TrustStrip() {
   const pillars = useTrustPillars();
 
   return (
-    <section className={cn("mt-12 p-8", CYBER_PANEL)}>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <Paper withBorder radius={MANTINE_PANEL_RADIUS} p="xl" mt="xl">
+      <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="lg">
         {pillars.map((pillar) => (
-          <div key={pillar.title} className="flex items-start gap-3">
-            <div
-              className={cn(
-                "grid h-10 w-10 shrink-0 place-items-center rounded-full",
-                CYBER_TONE_BG[pillar.tone] ?? CYBER_TONE_BG.teal,
-              )}
-            >
-              <SiteLucideIcon name={pillar.icon} className="h-5 w-5" />
-            </div>
-            <div>
-              <p className="font-display text-sm font-semibold text-foreground">
+          <Group key={pillar.title} align="flex-start" gap="sm" wrap="nowrap">
+            <ThemeIcon size={40} radius="xl" variant="light" color="gray" aria-hidden>
+              <SiteLucideIcon name={pillar.icon} />
+            </ThemeIcon>
+            <Stack gap={4}>
+              <Text size="sm" fw={600} tt="uppercase" style={{ letterSpacing: "0.04em" }}>
                 {pillar.title}
-              </p>
-              <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+              </Text>
+              <Text size="xs" c="dimmed" lh={1.5}>
                 {pillar.desc}
-              </p>
-            </div>
-          </div>
+              </Text>
+            </Stack>
+          </Group>
         ))}
-      </div>
-    </section>
+      </SimpleGrid>
+    </Paper>
   );
 }

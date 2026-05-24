@@ -1,5 +1,6 @@
+import type { CSSProperties } from "react";
 import { Baby, Building2, Heart, Coffee, Blocks, Users } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Box, Text } from "@mantine/core";
 import type { MeetupGroup } from "@/types/meetup";
 
 const ICONS = {
@@ -11,12 +12,48 @@ const ICONS = {
   community: Users,
 } as const;
 
-const PALETTES: Record<MeetupGroup["palette"], { bg: string; fg: string; mark: string }> = {
-  teal: { bg: "bg-muted", fg: "text-foreground", mark: "bg-foreground text-background" },
-  orange: { bg: "bg-muted", fg: "text-foreground", mark: "bg-foreground text-background" },
-  beige: { bg: "bg-secondary", fg: "text-foreground", mark: "bg-foreground text-background" },
-  charcoal: { bg: "bg-foreground", fg: "text-background", mark: "bg-card text-foreground" },
+const PALETTES: Record<
+  MeetupGroup["palette"],
+  { container: CSSProperties; iconColor: string; badge: CSSProperties }
+> = {
+  teal: {
+    container: { backgroundColor: "var(--mantine-color-gray-1)" },
+    iconColor: "var(--mantine-color-text)",
+    badge: {
+      backgroundColor: "var(--mantine-color-text)",
+      color: "var(--mantine-color-body)",
+    },
+  },
+  orange: {
+    container: { backgroundColor: "var(--mantine-color-gray-1)" },
+    iconColor: "var(--mantine-color-text)",
+    badge: {
+      backgroundColor: "var(--mantine-color-text)",
+      color: "var(--mantine-color-body)",
+    },
+  },
+  beige: {
+    container: { backgroundColor: "var(--mantine-color-gray-2)" },
+    iconColor: "var(--mantine-color-text)",
+    badge: {
+      backgroundColor: "var(--mantine-color-text)",
+      color: "var(--mantine-color-body)",
+    },
+  },
+  charcoal: {
+    container: { backgroundColor: "var(--mantine-color-text)" },
+    iconColor: "var(--mantine-color-body)",
+    badge: {
+      backgroundColor: "var(--mantine-color-default)",
+      color: "var(--mantine-color-text)",
+    },
+  },
 };
+
+const SIZES = {
+  md: { box: 56, icon: 20, badge: 24, badgeFont: 10 },
+  lg: { box: 80, icon: 28, badge: 32, badgeFont: 12 },
+} as const;
 
 export function MeetupLogo({
   group,
@@ -27,27 +64,41 @@ export function MeetupLogo({
 }) {
   const Icon = ICONS[group.icon];
   const p = PALETTES[group.palette];
-  const dim = size === "lg" ? "h-20 w-20" : "h-14 w-14";
-  const iconSize = size === "lg" ? "h-7 w-7" : "h-5 w-5";
-  const badgeSize = size === "lg" ? "h-8 w-8 text-xs" : "h-6 w-6 text-[10px]";
+  const dim = SIZES[size];
+
   return (
-    <div
-      className={cn(
-        "relative grid place-items-center rounded-full border border-border",
-        dim,
-        p.bg,
-      )}
+    <Box
+      style={{
+        position: "relative",
+        display: "grid",
+        placeItems: "center",
+        width: dim.box,
+        height: dim.box,
+        borderRadius: "50%",
+        border: "1px solid var(--mantine-color-default-border)",
+        ...p.container,
+      }}
     >
-      <Icon className={cn(iconSize, p.fg)} strokeWidth={1.75} />
-      <span
-        className={cn(
-          "absolute -bottom-1 -right-1 grid place-items-center rounded-full font-display font-bold",
-          badgeSize,
-          p.mark,
-        )}
+      <Icon size={dim.icon} color={p.iconColor} strokeWidth={1.75} aria-hidden />
+      <Text
+        component="span"
+        ff="var(--mantine-font-family-headings)"
+        fw={700}
+        fz={dim.badgeFont}
+        style={{
+          position: "absolute",
+          bottom: -4,
+          right: -4,
+          display: "grid",
+          placeItems: "center",
+          width: dim.badge,
+          height: dim.badge,
+          borderRadius: "50%",
+          ...p.badge,
+        }}
       >
         {group.initials}
-      </span>
-    </div>
+      </Text>
+    </Box>
   );
 }

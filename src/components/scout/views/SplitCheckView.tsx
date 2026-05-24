@@ -10,13 +10,9 @@ import {
   RotateCcw,
   Copy,
   ArrowRight,
-  Loader2,
   Sparkles,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
-import { Switch } from "@/components/ui/switch";
+import { AppButton } from "@/components/mantine/AppButton";
 import { EmptyState } from "../EmptyState";
 import { useCalculator, useCrewSplit } from "@/store/useScout";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
@@ -24,11 +20,22 @@ import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import { useFormatHuf } from "@/hooks/useFormatHuf";
 import { computeCrewSplit } from "@/lib/crewSplit";
 import { providerLineHuf } from "@/lib/venueDisplay";
-import { CYBER_PANEL } from "@/lib/cyberTheme";
-import { cn } from "@/lib/utils";
+import { notify } from "@/lib/notify";
 import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
-import { toast } from "sonner";
+import {
+  ActionIcon,
+  Grid,
+  Group,
+  Loader,
+  Paper,
+  Slider,
+  Stack,
+  Switch,
+  Text,
+  TextInput,
+  Title,
+} from "@mantine/core";
 
 const TIP_PRESETS = [0, 10, 15, 20] as const;
 
@@ -76,7 +83,7 @@ export function SplitCheckView() {
       if (displayCurrency === "EUR") huf = Math.round(n * rates.hufPerEur);
       else if (displayCurrency === "USD") huf = Math.round(n * rates.hufPerUsd);
       setManualTotal(huf);
-      toast.success(t("manualApplied"));
+      notify.success(t("manualApplied"));
     } else {
       setManualTotal(null);
       setManualInput("");
@@ -91,251 +98,278 @@ export function SplitCheckView() {
     });
     try {
       await navigator.clipboard.writeText(line);
-      toast.success(t("copied"));
+      notify.success(t("copied"));
     } catch {
-      toast.error(t("copyFailed"));
+      notify.error(t("copyFailed"));
     }
   };
 
   if (isLoading) {
     return (
-      <div className="flex justify-center py-24 text-muted-foreground">
-        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-      </div>
+      <Group justify="center" py={96}>
+        <Loader color="gray" />
+      </Group>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <header>
-        <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          <Sparkles className="h-3.5 w-3.5" />
-          {t("eyebrow")}
-        </p>
-        <h1 className="mt-2 font-display text-3xl font-bold text-foreground sm:text-4xl">
+    <Stack gap="lg">
+      <Stack gap="xs">
+        <Group gap="xs">
+          <Sparkles size={14} />
+          <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.2em">
+            {t("eyebrow")}
+          </Text>
+        </Group>
+        <Title order={1} size="h2" tt="uppercase" lts="0.02em">
           {t("title")}
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
+        </Title>
+        <Text size="sm" c="dimmed" maw={640}>
           {t("subtitle")}
-        </p>
-      </header>
+        </Text>
+      </Stack>
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-        <div className="space-y-5">
-          {/* Source total */}
-          <section className={cn(CYBER_PANEL, "p-6")}>
-            <h2 className="font-display text-lg font-semibold text-foreground">
-              {t("sourceTitle")}
-            </h2>
-            {usingBudget ? (
-              <div className="mt-4 space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  {t("fromBudget", {
-                    count: venueCount,
-                    total: formatHuf(budgetSubtotalHuf),
-                  })}
-                </p>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className="rounded-full border-border text-foreground"
-                >
-                  <Link href={buildPathForView("Calculator")}>
-                    {t("editBudget")} <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-              </div>
-            ) : (
-              <div className="mt-4 space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  {t("manualHint")}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Input
-                    type="number"
-                    min={0}
-                    step={1}
-                    placeholder={t("manualPlaceholder")}
-                    value={manualInput}
-                    onChange={(e) => setManualInput(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && applyManual()}
-                    className="max-w-[200px] rounded-full border-border bg-card/80"
-                  />
-                  <Button
-                    onClick={applyManual}
-                    className="rounded-full bg-primary text-primary-foreground"
+      <Grid gutter="lg">
+        <Grid.Col span={{ base: 12, lg: 8 }}>
+          <Stack gap="md">
+            <Paper radius="xl" withBorder p="lg">
+              <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+                {t("sourceTitle")}
+              </Title>
+              {usingBudget ? (
+                <Stack gap="sm" mt="md">
+                  <Text size="sm" c="dimmed">
+                    {t("fromBudget", {
+                      count: venueCount,
+                      total: formatHuf(budgetSubtotalHuf),
+                    })}
+                  </Text>
+                  <AppButton
+                    component={Link}
+                    href={buildPathForView("Calculator")}
+                    variant="outline"
+                    size="sm"
+                    radius="xl"
+                    rightSection={<ArrowRight size={14} />}
                   >
-                    {t("manualApply")}
-                  </Button>
-                  <Button asChild variant="outline" className="rounded-full">
-                    <Link href={buildPathForView("Calculator")}>
+                    {t("editBudget")}
+                  </AppButton>
+                </Stack>
+              ) : (
+                <Stack gap="sm" mt="md">
+                  <Text size="sm" c="dimmed">
+                    {t("manualHint")}
+                  </Text>
+                  <Group gap="xs" wrap="wrap">
+                    <TextInput
+                      type="number"
+                      min={0}
+                      step={1}
+                      placeholder={t("manualPlaceholder")}
+                      value={manualInput}
+                      onChange={(e) => setManualInput(e.currentTarget.value)}
+                      onKeyDown={(e) => e.key === "Enter" && applyManual()}
+                      maw={200}
+                      radius="xl"
+                    />
+                    <AppButton radius="xl" onClick={applyManual}>
+                      {t("manualApply")}
+                    </AppButton>
+                    <AppButton
+                      component={Link}
+                      href={buildPathForView("Calculator")}
+                      variant="outline"
+                      radius="xl"
+                    >
                       {t("goBudget")}
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            )}
-          </section>
+                    </AppButton>
+                  </Group>
+                </Stack>
+              )}
+            </Paper>
 
-          {subtotalHuf <= 0 ? (
-            <EmptyState
-              icon={HandCoins}
-              title={t("emptyTitle")}
-              message={t("emptyMessage")}
-            />
-          ) : (
-            <>
-              {/* Crew size */}
-              <section className={cn(CYBER_PANEL, "p-6")}>
-                <div className="flex items-center justify-between gap-3">
-                  <h2 className="font-display text-lg font-semibold text-foreground">
-                    {t("crewTitle")}
-                  </h2>
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setPeople(settings.people - 1)}
-                      className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card hover:border-foreground/40"
-                      aria-label={t("fewerPeople")}
-                    >
-                      <Minus className="h-4 w-4" />
-                    </button>
-                    <span className="flex min-w-[3rem] items-center justify-center gap-1 font-display text-2xl font-bold text-foreground">
-                      <Users className="h-5 w-5" />
-                      {settings.people}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setPeople(settings.people + 1)}
-                      className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card hover:border-foreground/40"
-                      aria-label={t("morePeople")}
-                    >
-                      <Plus className="h-4 w-4" />
-                    </button>
-                  </div>
-                </div>
-                <Slider
-                  className="mt-6"
-                  min={2}
-                  max={20}
-                  step={1}
-                  value={[settings.people]}
-                  onValueChange={([v]) => setPeople(v ?? settings.people)}
-                />
-                <p className="mt-2 text-xs text-muted-foreground">
-                  {t("crewHint")}
-                </p>
-              </section>
-
-              {/* Tip */}
-              <section className={cn(CYBER_PANEL, "p-6")}>
-                <h2 className="font-display text-lg font-semibold text-foreground">
-                  {t("tipTitle")}
-                </h2>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {TIP_PRESETS.map((pct) => (
-                    <button
-                      key={pct}
-                      type="button"
-                      onClick={() => setTipPercent(pct)}
-                      className={cn(
-                        "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
-                        settings.tipPercent === pct
-                          ? "border-foreground bg-primary text-primary-foreground"
-                          : "border-border bg-card/80 hover:border-foreground/40 hover:text-foreground",
-                      )}
-                    >
-                      {pct === 0 ? t("noTip") : `${pct}%`}
-                    </button>
-                  ))}
-                </div>
-                <div className="mt-5 flex items-center justify-between gap-4 rounded-2xl border border-border/60 bg-card/50 px-4 py-3">
-                  <div>
-                    <p className="text-sm font-medium text-foreground">
-                      {t("roundUpLabel")}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {t("roundUpHint")}
-                    </p>
-                  </div>
-                  <Switch
-                    checked={settings.roundUp}
-                    onCheckedChange={setRoundUp}
+            {subtotalHuf <= 0 ? (
+              <EmptyState
+                icon={HandCoins}
+                title={t("emptyTitle")}
+                message={t("emptyMessage")}
+              />
+            ) : (
+              <>
+                <Paper radius="xl" withBorder p="lg">
+                  <Group justify="space-between" wrap="nowrap">
+                    <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+                      {t("crewTitle")}
+                    </Title>
+                    <Group gap="xs" wrap="nowrap">
+                      <ActionIcon
+                        variant="outline"
+                        radius="xl"
+                        size="lg"
+                        onClick={() => setPeople(settings.people - 1)}
+                        aria-label={t("fewerPeople")}
+                      >
+                        <Minus size={16} />
+                      </ActionIcon>
+                      <Group gap={4} wrap="nowrap" miw={48} justify="center">
+                        <Users size={20} />
+                        <Text size="xl" fw={700}>
+                          {settings.people}
+                        </Text>
+                      </Group>
+                      <ActionIcon
+                        variant="outline"
+                        radius="xl"
+                        size="lg"
+                        onClick={() => setPeople(settings.people + 1)}
+                        aria-label={t("morePeople")}
+                      >
+                        <Plus size={16} />
+                      </ActionIcon>
+                    </Group>
+                  </Group>
+                  <Slider
+                    mt="xl"
+                    min={2}
+                    max={20}
+                    step={1}
+                    value={settings.people}
+                    onChange={(v) => setPeople(v)}
+                    color="brand"
                   />
-                </div>
-              </section>
-            </>
-          )}
-        </div>
+                  <Text size="xs" c="dimmed" mt="xs">
+                    {t("crewHint")}
+                  </Text>
+                </Paper>
 
-        {/* Result aside */}
-        <aside
-          className={cn(
-            CYBER_PANEL,
-            "h-fit p-6 lg:sticky lg:top-24",
-            subtotalHuf <= 0 && "opacity-60",
-          )}
-        >
-          <h3 className="font-display text-lg font-semibold text-foreground">
-            {t("resultTitle")}
-          </h3>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {t("resultSubtitle")}
-          </p>
+                <Paper radius="xl" withBorder p="lg">
+                  <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+                    {t("tipTitle")}
+                  </Title>
+                  <Group gap="xs" mt="md">
+                    {TIP_PRESETS.map((pct) => (
+                      <AppButton
+                        key={pct}
+                        size="sm"
+                        radius="xl"
+                        variant={settings.tipPercent === pct ? "default" : "outline"}
+                        onClick={() => setTipPercent(pct)}
+                      >
+                        {pct === 0 ? t("noTip") : `${pct}%`}
+                      </AppButton>
+                    ))}
+                  </Group>
+                  <Paper radius="xl" withBorder p="md" mt="lg">
+                    <Group justify="space-between" wrap="nowrap">
+                      <Stack gap={2}>
+                        <Text size="sm" fw={500}>
+                          {t("roundUpLabel")}
+                        </Text>
+                        <Text size="xs" c="dimmed">
+                          {t("roundUpHint")}
+                        </Text>
+                      </Stack>
+                      <Switch
+                        checked={settings.roundUp}
+                        onChange={(e) => setRoundUp(e.currentTarget.checked)}
+                        color="brand"
+                      />
+                    </Group>
+                  </Paper>
+                </Paper>
+              </>
+            )}
+          </Stack>
+        </Grid.Col>
 
-          <div className="mt-6 space-y-2 text-sm">
-            <div className="flex justify-between text-muted-foreground">
-              <span>{t("lineSubtotal")}</span>
-              <span>{formatHuf(split.subtotal)}</span>
-            </div>
-            <div className="flex justify-between text-muted-foreground">
-              <span>{t("lineTip", { percent: settings.tipPercent })}</span>
-              <span>{formatHuf(split.tipAmount)}</span>
-            </div>
-            <div className="flex justify-between border-t border-border/60 pt-2 font-medium text-foreground">
-              <span>{t("lineTotal")}</span>
-              <span>{formatHuf(split.grandTotal)}</span>
-            </div>
-          </div>
+        <Grid.Col span={{ base: 12, lg: 4 }}>
+          <Paper
+            radius="xl"
+            withBorder
+            p="lg"
+            style={{
+              position: "sticky",
+              top: 96,
+              opacity: subtotalHuf <= 0 ? 0.6 : 1,
+            }}
+          >
+            <Title order={3} size="h4" tt="uppercase" lts="0.04em">
+              {t("resultTitle")}
+            </Title>
+            <Text size="xs" c="dimmed" mt={4}>
+              {t("resultSubtitle")}
+            </Text>
 
-          <div className="mt-6 rounded-2xl border border-border bg-muted p-5 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              {t("eachPays")}
-            </p>
-            <p className="mt-2 font-display text-5xl font-bold text-foreground">
-              {formatHuf(split.perPerson)}
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              {settings.roundUp && split.perPerson > split.perPersonRaw
-                ? t("roundedNote", { raw: split.perPersonRaw.toFixed(2) })
-                : t("splitAmong", { count: settings.people })}
-            </p>
-          </div>
+            <Stack gap="xs" mt="lg">
+              <Group justify="space-between">
+                <Text size="sm" c="dimmed">
+                  {t("lineSubtotal")}
+                </Text>
+                <Text size="sm" c="dimmed">
+                  {formatHuf(split.subtotal)}
+                </Text>
+              </Group>
+              <Group justify="space-between">
+                <Text size="sm" c="dimmed">
+                  {t("lineTip", { percent: settings.tipPercent })}
+                </Text>
+                <Text size="sm" c="dimmed">
+                  {formatHuf(split.tipAmount)}
+                </Text>
+              </Group>
+              <Group justify="space-between" pt="xs" style={{ borderTop: "1px solid var(--mantine-color-gray-3)" }}>
+                <Text size="sm" fw={500}>
+                  {t("lineTotal")}
+                </Text>
+                <Text size="sm" fw={500}>
+                  {formatHuf(split.grandTotal)}
+                </Text>
+              </Group>
+            </Stack>
 
-          <p className="mt-4 text-center text-sm italic text-muted-foreground">
-            {t("funLine")}
-          </p>
+            <Paper radius="xl" withBorder p="lg" mt="lg" ta="center" bg="gray.0">
+              <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.2em">
+                {t("eachPays")}
+              </Text>
+              <Title order={2} size="3rem" mt="xs">
+                {formatHuf(split.perPerson)}
+              </Title>
+              <Text size="xs" c="dimmed" mt="xs">
+                {settings.roundUp && split.perPerson > split.perPersonRaw
+                  ? t("roundedNote", { raw: split.perPersonRaw.toFixed(2) })
+                  : t("splitAmong", { count: settings.people })}
+              </Text>
+            </Paper>
 
-          <div className="mt-6 flex flex-col gap-2">
-            <Button
-              disabled={subtotalHuf <= 0}
-              onClick={copyShare}
-              className="w-full rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              <Copy className="h-4 w-4" /> {t("copyCta")}
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={reset}
-              className="w-full rounded-full text-muted-foreground"
-            >
-              <RotateCcw className="h-3.5 w-3.5" /> {t("reset")}
-            </Button>
-          </div>
-        </aside>
-      </div>
-    </div>
+            <Text size="sm" c="dimmed" ta="center" mt="md" fs="italic">
+              {t("funLine")}
+            </Text>
+
+            <Stack gap="xs" mt="lg">
+              <AppButton
+                disabled={subtotalHuf <= 0}
+                onClick={copyShare}
+                fullWidth
+                radius="xl"
+                leftSection={<Copy size={16} />}
+              >
+                {t("copyCta")}
+              </AppButton>
+              <AppButton
+                variant="subtle"
+                size="sm"
+                onClick={reset}
+                fullWidth
+                radius="xl"
+                leftSection={<RotateCcw size={14} />}
+                c="dimmed"
+              >
+                {t("reset")}
+              </AppButton>
+            </Stack>
+          </Paper>
+        </Grid.Col>
+      </Grid>
+    </Stack>
   );
 }

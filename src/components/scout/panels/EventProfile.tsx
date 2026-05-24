@@ -1,11 +1,21 @@
 "use client";
 
-import { Sheet, SheetContent } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+import {
+  ActionIcon,
+  Alert,
+  Badge,
+  Box,
+  Drawer,
+  Group,
+  Paper,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Provider } from "@/types/provider";
 import { CalendarDays, ExternalLink, MapPin, Ticket, X } from "lucide-react";
-import { CdnImage } from "@/components/ui/CdnImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import {
@@ -21,6 +31,7 @@ import type { AppLocale } from "@/i18n/config";
 import { buildAbsoluteEventFullUrl } from "@/lib/appShareUrls";
 import { eventJsonLd, JsonLd } from "@/components/seo/JsonLd";
 import { ProviderCard } from "../ProviderCard";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 
 export function EventProfile({
   event,
@@ -56,136 +67,148 @@ export function EventProfile({
 
   const content = (
     <>
-      <div
-        className={
-          isPage
-            ? "relative h-72 w-full overflow-hidden"
-            : "relative h-56 w-full overflow-hidden"
-        }
-      >
-        <CdnImage
-          fill
-          resolveBase={event.website}
+      <Box pos="relative" h={isPage ? 288 : 224} style={{ overflow: "hidden" }}>
+        <ResolvedCoverImage
           src={event.image?.trim() ? event.image : CMS_MEDIA.fallbackListing}
+          resolveBase={event.website}
           alt={event.title}
         />
         {!isPage ? (
-          <button
-            type="button"
+          <ActionIcon
+            variant="filled"
+            color="gray"
+            radius="xl"
+            size="lg"
             onClick={onClose}
             aria-label={t("close")}
-            className="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full bg-card"
+            style={{ position: "absolute", top: 16, right: 16 }}
           >
-            <X className="h-4 w-4" />
-          </button>
+            <X size={16} />
+          </ActionIcon>
         ) : null}
-      </div>
+      </Box>
 
-      <div className="space-y-6 p-6 pb-12">
-        <div>
+      <Stack gap="xl" p="lg" pb={48}>
+        <Stack gap="xs">
           {event.badges[0] ? (
-            <span className="rounded-full bg-muted px-3 py-1 text-xs font-semibold text-foreground">
+            <Badge radius="xl" variant="light" color="gray" w="fit-content">
               {badgeLabel(event.badges[0])}
-            </span>
+            </Badge>
           ) : null}
-          <h2
-            className={
-              isPage
-                ? "mt-2 font-display text-3xl font-bold text-foreground"
-                : "mt-2 font-display text-2xl font-bold text-foreground"
-            }
-          >
+          <Title order={isPage ? 1 : 2} size={isPage ? "h1" : "h2"}>
             {event.title}
-          </h2>
-          <p className="mt-2 flex items-center gap-2 text-sm font-medium text-foreground">
-            <CalendarDays className="h-4 w-4" />
-            {dateLine} · {timeLine}
-          </p>
+          </Title>
+          <Group gap="xs" wrap="nowrap">
+            <CalendarDays size={16} />
+            <Text size="sm" fw={500}>
+              {dateLine} · {timeLine}
+            </Text>
+          </Group>
           {doors(event) ? (
-            <p className="text-xs text-muted-foreground">{doors(event)}</p>
+            <Text size="xs" c="dimmed">
+              {doors(event)}
+            </Text>
           ) : null}
-          <p className="mt-2 flex items-start gap-1.5 text-sm text-muted-foreground">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-            <span>
-              {placeLine(event, primaryHost)}
+          <Group gap={6} align="flex-start" wrap="nowrap">
+            <MapPin size={16} style={{ marginTop: 2, flexShrink: 0 }} />
+            <Stack gap={2}>
+              <Text size="sm" c="dimmed">
+                {placeLine(event, primaryHost)}
+              </Text>
               {primaryHost?.address ? (
-                <span className="mt-0.5 block text-xs">{primaryHost.address}</span>
+                <Text size="xs" c="dimmed">
+                  {primaryHost.address}
+                </Text>
               ) : null}
-            </span>
-          </p>
-          <p className="mt-1 text-lg font-semibold text-foreground">
+            </Stack>
+          </Group>
+          <Text size="lg" fw={600}>
             {fromPrice(event.entryFees)}
-          </p>
-        </div>
+          </Text>
+        </Stack>
 
-        <p className="text-sm leading-relaxed text-foreground/90">{event.longDescription}</p>
+        <Text size="sm" lh={1.6}>
+          {event.longDescription}
+        </Text>
 
-        <div className="flex flex-wrap gap-2">
+        <Group gap="xs">
           {event.activityTypes.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-secondary px-3 py-1 text-xs font-medium"
-            >
+            <Badge key={tag} radius="xl" variant="light" color="gray">
               {activityLabel(tag)}
-            </span>
+            </Badge>
           ))}
           {event.ageRanges.map((a) => (
-            <span
-              key={a}
-              className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
-            >
+            <Badge key={a} radius="xl" variant="outline" color="gray">
               {ageLabel(a)}
-            </span>
+            </Badge>
           ))}
-        </div>
+        </Group>
 
         {event.entryFees.length > 0 && (
-          <div className="rounded-2xl border border-border/70 bg-card/50 p-4">
-            <h3 className="flex items-center gap-2 font-display text-sm font-semibold">
-              <Ticket className="h-4 w-4 text-foreground" />
-              {t("entryFees")}
-            </h3>
-            <ul className="mt-3 space-y-2">
+          <Paper withBorder radius="xl" p="md">
+            <Group gap="xs" mb="sm">
+              <Ticket size={16} />
+              <Text fw={600} size="sm">
+                {t("entryFees")}
+              </Text>
+            </Group>
+            <Stack gap="xs">
               {event.entryFees.map((fee) => (
-                <li key={fee.id} className="flex justify-between gap-3 text-sm">
-                  <span className="text-foreground">{fee.label}</span>
-                  <span className="font-semibold text-foreground">{formatFee(fee)}</span>
-                </li>
+                <Group key={fee.id} justify="space-between" gap="md">
+                  <Text size="sm">{fee.label}</Text>
+                  <Text size="sm" fw={600}>
+                    {formatFee(fee)}
+                  </Text>
+                </Group>
               ))}
-            </ul>
-          </div>
+            </Stack>
+          </Paper>
         )}
 
-        <div className="flex flex-wrap gap-2">
+        <Group gap="sm">
           {event.bookingUrl ? (
-            <Button asChild className="bg-primary text-primary-foreground">
-              <a href={event.bookingUrl} target="_blank" rel="noreferrer">
-                {t("getTickets")} <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <AppButton
+              component="a"
+              href={event.bookingUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Group gap="xs" wrap="nowrap">
+                {t("getTickets")}
+                <ExternalLink size={16} />
+              </Group>
+            </AppButton>
           ) : null}
           {event.website ? (
-            <Button variant="outline" asChild>
-              <a href={event.website} target="_blank" rel="noreferrer">
-                {t("officialSite")}
-              </a>
-            </Button>
+            <AppButton
+              variant="outline"
+              component="a"
+              href={event.website}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {t("officialSite")}
+            </AppButton>
           ) : null}
-        </div>
+        </Group>
 
         {missingVenueCount > 0 ? (
-          <p className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-foreground">
+          <Alert color="yellow" radius="md">
             {t("venueLinkMissing", { count: missingVenueCount })}
-          </p>
+          </Alert>
         ) : null}
 
         {hostVenueRows.length > 0 && (
-          <div>
-            <h3 className="font-display text-base font-semibold text-foreground">
-              {t("venues")}
-            </h3>
-            <p className="mt-1 text-xs text-muted-foreground">{t("venuesHint")}</p>
-            <div className="mt-4 grid gap-4">
+          <Stack gap="md">
+            <Stack gap={4}>
+              <Title order={3} size="h4">
+                {t("venues")}
+              </Title>
+              <Text size="xs" c="dimmed">
+                {t("venuesHint")}
+              </Text>
+            </Stack>
+            <Stack gap="md">
               {hostVenueRows.map(({ link, provider }) =>
                 provider ? (
                   <ProviderCard
@@ -195,19 +218,18 @@ export function EventProfile({
                     onShare={() => {}}
                   />
                 ) : (
-                  <div
-                    key={link.id}
-                    className="rounded-2xl border border-border/70 bg-card/50 p-4"
-                  >
-                    <p className="font-display font-semibold text-foreground">{link.name}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{link.address}</p>
-                  </div>
-                )
+                  <Paper key={link.id} withBorder radius="xl" p="md">
+                    <Text fw={600}>{link.name}</Text>
+                    <Text size="sm" c="dimmed" mt={4}>
+                      {link.address}
+                    </Text>
+                  </Paper>
+                ),
               )}
-            </div>
-          </div>
+            </Stack>
+          </Stack>
         )}
-      </div>
+      </Stack>
     </>
   );
 
@@ -236,19 +258,22 @@ export function EventProfile({
             })),
           })}
         />
-        <div className="overflow-y-auto bg-background">{content}</div>
+        <Box style={{ overflowY: "auto" }}>{content}</Box>
       </>
     );
   }
 
   return (
-    <Sheet open={!!event} onOpenChange={(o) => !o && onClose()}>
-      <SheetContent
-        side="right"
-        className="w-full overflow-y-auto bg-background p-0 sm:max-w-xl"
-      >
-        {content}
-      </SheetContent>
-    </Sheet>
+    <Drawer
+      opened={!!event}
+      onClose={onClose}
+      position="right"
+      size="xl"
+      padding={0}
+      withCloseButton={false}
+      styles={{ body: { padding: 0, height: "100%", overflowY: "auto" } }}
+    >
+      {content}
+    </Drawer>
   );
 }

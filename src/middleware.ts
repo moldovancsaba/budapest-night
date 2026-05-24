@@ -25,7 +25,9 @@ function maybeCanonicalRedirect(request: NextRequest): NextResponse | null {
 export default function middleware(request: NextRequest) {
   const redirect = maybeCanonicalRedirect(request);
   if (redirect) return redirect;
-  return intlMiddleware(request);
+  const response = intlMiddleware(request);
+  response.headers.set("x-pathname", request.nextUrl.pathname);
+  return response;
 }
 
 export const config = {

@@ -1,8 +1,8 @@
 "use client";
 
+import { Chip, Group, Text } from "@mantine/core";
 import { useNeighborhoodLabel } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
 
 export function NeighborhoodChips({
   options,
@@ -18,42 +18,36 @@ export function NeighborhoodChips({
 
   return (
     <div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+      <Text mb={8} size="10px" fw={700} tt="uppercase" c="dimmed" style={{ letterSpacing: "0.18em" }}>
         {t("label")}
-      </p>
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => onChange(null)}
-          className={cn(
-            "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
-            value === null
-              ? "border-foreground bg-primary text-primary-foreground"
-              : "border-border bg-card text-foreground hover:border-foreground",
-          )}
+      </Text>
+      <Group gap={8}>
+        <Chip
+          checked={value === null}
+          onChange={() => onChange(null)}
+          radius="xl"
+          color="brand"
+          variant="filled"
+          size="md"
         >
           {t("all")}
-        </button>
+        </Chip>
         {options.map((n) => {
-          const active = value === n;
           return (
-            <button
+            <Chip
               key={n}
-              type="button"
-              onClick={() => onChange(n)}
-              className={cn(
-                "rounded-full border px-3.5 py-1.5 text-sm transition-colors",
-                active
-                  ? "border-foreground bg-primary text-primary-foreground"
-                  : "border-border bg-card/80 text-foreground hover:border-foreground/40 hover:text-foreground",
-              )}
-              aria-pressed={active}
+              checked={value === n}
+              onChange={() => onChange(n)}
+              radius="xl"
+              color="brand"
+              variant="filled"
+              size="md"
             >
               {neighborhoodLabel(n)}
-            </button>
+            </Chip>
           );
         })}
-      </div>
+      </Group>
     </div>
   );
 }

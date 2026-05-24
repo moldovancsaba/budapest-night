@@ -7,6 +7,8 @@ import { useTranslations } from "next-intl";
 import { inferMenuItemKind } from "@/lib/menu/flattenMenuItems";
 import { menuTagMatchesItemKind, menuTagMessageKey } from "@/data/menuTags";
 import type { MenuSectionKind } from "@/types/menu";
+import { Anchor, Badge, Group, Paper, Stack, Text } from "@mantine/core";
+import { MANTINE_PANEL_RADIUS } from "@/lib/mantine/surfaceTokens";
 
 function sectionKindLabel(
   kind: MenuSectionKind,
@@ -31,37 +33,29 @@ function MenuBlock({
   if (!menu.sections.length) return null;
 
   return (
-    <div className="space-y-4">
-      <p className="text-xs text-muted-foreground">
+    <Stack gap="md">
+      <Text size="xs" c="dimmed">
         {verifiedLabel}: {menu.lastVerifiedAt}
         {menu.menuUrl ? (
           <>
             {" · "}
-            <a
-              href={menu.menuUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="text-foreground hover:underline"
-            >
+            <Anchor href={menu.menuUrl} target="_blank" rel="noreferrer" size="xs">
               {menu.menuUrl.replace(/^https?:\/\//, "").slice(0, 48)}
-            </a>
+            </Anchor>
           </>
         ) : null}
-      </p>
+      </Text>
       {menu.sections.map((sec) => (
-        <div
-          key={sec.id}
-          className="rounded-2xl border border-border/60 bg-card/50 p-4"
-        >
-          <div className="flex flex-wrap items-baseline gap-2">
-            <h4 className="font-display text-sm font-semibold text-foreground">
+        <Paper key={sec.id} withBorder radius={MANTINE_PANEL_RADIUS} p="md" bg="gray.0">
+          <Group gap="xs" align="baseline" wrap="wrap">
+            <Text fw={600} size="sm" ff="var(--mantine-font-family-headings)">
               {sec.title}
-            </h4>
-            <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
+            </Text>
+            <Badge radius="xl" variant="light" color="gray" size="xs" tt="uppercase">
               {sectionKindLabel(sec.kind, tMenu)}
-            </span>
-          </div>
-          <ul className="mt-3 space-y-2">
+            </Badge>
+          </Group>
+          <Stack component="ul" gap="sm" mt="sm" style={{ listStyle: "none", margin: 0, padding: 0 }}>
             {sec.items.map((item) => {
               const itemKind =
                 item.kind === "food" || item.kind === "drink"
@@ -77,50 +71,55 @@ function MenuBlock({
               );
               const price = item.price ? formatPrice(item.price) : null;
               return (
-                <li
+                <Group
                   key={item.id}
-                  className="flex items-start justify-between gap-3 text-sm"
+                  component="li"
+                  justify="space-between"
+                  align="flex-start"
+                  gap="md"
+                  wrap="nowrap"
                 >
-                  <div className="min-w-0">
-                    <p className="font-medium text-foreground">{item.name}</p>
+                  <Stack gap={4} style={{ minWidth: 0, flex: 1 }}>
+                    <Text size="sm" fw={500}>
+                      {item.name}
+                    </Text>
                     {item.description ? (
-                      <p className="text-xs text-muted-foreground">
+                      <Text size="xs" c="dimmed">
                         {item.description}
-                      </p>
+                      </Text>
                     ) : null}
                     {displayTags.length > 0 ? (
-                      <p className="mt-1 flex flex-wrap gap-1">
+                      <Group gap={6}>
                         {displayTags.map((tag) => {
                           const key = menuTagMessageKey(tag);
                           return (
-                            <span
-                              key={tag}
-                              className="rounded-full bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground"
-                            >
+                            <Badge key={tag} radius="xl" variant="light" color="gray" size="xs">
                               {key ? tTag(key) : tag}
-                            </span>
+                            </Badge>
                           );
                         })}
-                      </p>
+                      </Group>
                     ) : null}
-                  </div>
+                  </Stack>
                   {price ? (
-                    <span className="shrink-0 text-right text-sm font-semibold text-foreground">
-                      {price.main}
+                    <Stack gap={0} align="flex-end" style={{ flexShrink: 0 }}>
+                      <Text size="sm" fw={600} ta="right">
+                        {price.main}
+                      </Text>
                       {price.suffix ? (
-                        <span className="block text-[10px] font-normal text-muted-foreground">
+                        <Text size="xs" c="dimmed" ta="right">
                           {price.suffix}
-                        </span>
+                        </Text>
                       ) : null}
-                    </span>
+                    </Stack>
                   ) : null}
-                </li>
+                </Group>
               );
             })}
-          </ul>
-        </div>
+          </Stack>
+        </Paper>
       ))}
-    </div>
+    </Stack>
   );
 }
 
@@ -131,46 +130,46 @@ export function VenueMenuPanel({ provider }: { provider: Provider }) {
   const offerings = provider.eventOfferings ?? [];
 
   if (!menu?.sections.length && offerings.length === 0) {
-    return <p className="text-sm text-muted-foreground">{t("empty")}</p>;
+    return (
+      <Text size="sm" c="dimmed">
+        {t("empty")}
+      </Text>
+    );
   }
 
   return (
-    <div className="space-y-6">
+    <Stack gap="xl">
       {menu?.sections.length ? (
         <MenuBlock menu={menu} verifiedLabel={t("verified")} />
       ) : null}
       {offerings.map((ev: EventOffering) => (
-        <div
-          key={ev.id}
-          className="rounded-2xl border border-border bg-muted p-4"
-        >
-          <h4 className="font-display text-sm font-semibold text-foreground">
+        <Paper key={ev.id} withBorder radius={MANTINE_PANEL_RADIUS} p="md" bg="gray.1">
+          <Text fw={600} size="sm" ff="var(--mantine-font-family-headings)">
             {ev.title}
-          </h4>
+          </Text>
           {ev.startsAt ? (
-            <p className="text-xs text-muted-foreground">{ev.startsAt}</p>
+            <Text size="xs" c="dimmed" mt={4}>
+              {ev.startsAt}
+            </Text>
           ) : null}
-          <ul className="mt-3 space-y-2">
+          <Stack component="ul" gap="sm" mt="sm" style={{ listStyle: "none", margin: 0, padding: 0 }}>
             {ev.items.map((item) => {
               const price = item.price ? formatPrice(item.price) : null;
               return (
-                <li
-                  key={item.id}
-                  className="flex justify-between gap-3 text-sm"
-                >
-                  <span className="text-foreground">{item.name}</span>
+                <Group key={item.id} component="li" justify="space-between" gap="md">
+                  <Text size="sm">{item.name}</Text>
                   {price ? (
-                    <span className="font-semibold text-foreground">
+                    <Text size="sm" fw={600}>
                       {price.main}
                       {price.suffix ?? ""}
-                    </span>
+                    </Text>
                   ) : null}
-                </li>
+                </Group>
               );
             })}
-          </ul>
-        </div>
+          </Stack>
+        </Paper>
       ))}
-    </div>
+    </Stack>
   );
 }

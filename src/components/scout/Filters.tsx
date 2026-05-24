@@ -2,14 +2,14 @@
 
 import { AGE_RANGES, DAY_TIME_TAGS, ACTIVITY_TYPES } from "@/data/providers";
 import type { AgeRange, DayTimeTag } from "@/types/provider";
+import { Badge, Chip, Group, Paper, Stack, Text } from "@mantine/core";
 import {
   useActivityTypeLabel,
   useAgeRangeLabel,
   useDayTimeLabel,
 } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
 import { SlidersHorizontal } from "lucide-react";
 import { useState } from "react";
 
@@ -49,42 +49,46 @@ export function Filters({
     arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v];
 
   return (
-    <div>
-      <div className="flex items-center justify-between">
-        <Button
+    <Stack gap="sm">
+      <Group justify="space-between">
+        <AppButton
           variant="outline"
           size="sm"
           onClick={() => setOpen((o) => !o)}
-          className="gap-2"
+          leftSection={<SlidersHorizontal size={16} />}
         >
-          <SlidersHorizontal className="h-4 w-4" />
-          {t("title")}{" "}
+          {t("title")}
           {has > 0 && (
-            <span className="rounded-full bg-primary px-1.5 text-[11px] text-primary-foreground">
+            <Badge radius="xl" variant="filled" color="brand" size="sm">
               {has}
-            </span>
+            </Badge>
           )}
-        </Button>
+        </AppButton>
         {has > 0 && (
-          <button
+          <AppButton
+            variant="subtle"
+            size="compact-xs"
+            color="gray"
             onClick={() => onChange(EMPTY_FILTERS)}
-            className="text-xs font-medium text-muted-foreground hover:text-foreground"
           >
             {t("clearAll")}
-          </button>
+          </AppButton>
         )}
-      </div>
+      </Group>
 
       {open && (
-        <div className="mt-3 space-y-4 rounded-2xl border border-border bg-card p-5 animate-fade-in">
+        <Paper withBorder radius="xl" p="lg">
+          <Stack gap="md">
           <FilterGroup label={t("crowd")}>
             {AGE_RANGES.map((a) => (
               <Chip
                 key={a}
-                active={value.ages.includes(a)}
-                onClick={() =>
-                  onChange({ ...value, ages: toggle(value.ages, a) })
-                }
+                checked={value.ages.includes(a)}
+                onChange={() => onChange({ ...value, ages: toggle(value.ages, a) })}
+                radius="xl"
+                color="brand"
+                variant="filled"
+                size="sm"
               >
                 {ageLabel(a)}
               </Chip>
@@ -94,10 +98,12 @@ export function Filters({
             {DAY_TIME_TAGS.map((d) => (
               <Chip
                 key={d}
-                active={value.times.includes(d)}
-                onClick={() =>
-                  onChange({ ...value, times: toggle(value.times, d) })
-                }
+                checked={value.times.includes(d)}
+                onChange={() => onChange({ ...value, times: toggle(value.times, d) })}
+                radius="xl"
+                color="brand"
+                variant="filled"
+                size="sm"
               >
                 {dayLabel(d)}
               </Chip>
@@ -105,16 +111,24 @@ export function Filters({
           </FilterGroup>
           <FilterGroup label={t("vibe")}>
             <Chip
-              active={value.activity === null}
-              onClick={() => onChange({ ...value, activity: null })}
+              checked={value.activity === null}
+              onChange={() => onChange({ ...value, activity: null })}
+              radius="xl"
+              color="brand"
+              variant="filled"
+              size="sm"
             >
               {t("any")}
             </Chip>
             {ACTIVITY_TYPES.map((act) => (
               <Chip
                 key={act}
-                active={value.activity === act}
-                onClick={() => onChange({ ...value, activity: act })}
+                checked={value.activity === act}
+                onChange={() => onChange({ ...value, activity: act })}
+                radius="xl"
+                color="brand"
+                variant="filled"
+                size="sm"
               >
                 {activityLabel(act)}
               </Chip>
@@ -122,17 +136,20 @@ export function Filters({
           </FilterGroup>
           <FilterGroup label={t("access")}>
             <Chip
-              active={value.englishFriendly}
-              onClick={() =>
-                onChange({ ...value, englishFriendly: !value.englishFriendly })
-              }
+              checked={value.englishFriendly}
+              onChange={() => onChange({ ...value, englishFriendly: !value.englishFriendly })}
+              radius="xl"
+              color="brand"
+              variant="filled"
+              size="sm"
             >
               {t("englishFriendly")}
             </Chip>
           </FilterGroup>
-        </div>
+          </Stack>
+        </Paper>
       )}
-    </div>
+    </Stack>
   );
 }
 
@@ -144,35 +161,11 @@ function FilterGroup({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+    <Stack gap={8}>
+      <Text size="10px" fw={700} tt="uppercase" c="dimmed" style={{ letterSpacing: "0.18em" }}>
         {label}
-      </p>
-      <div className="flex flex-wrap gap-1.5">{children}</div>
-    </div>
-  );
-}
-
-function Chip({
-  active,
-  onClick,
-  children,
-}: {
-  active?: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={cn(
-        "rounded-full border px-3 py-1 text-xs font-medium transition-colors",
-        active
-          ? "border-foreground bg-primary text-primary-foreground"
-          : "border-border bg-card text-foreground hover:border-foreground/40 hover:text-foreground",
-      )}
-    >
-      {children}
-    </button>
+      </Text>
+      <Group gap={6}>{children}</Group>
+    </Stack>
   );
 }

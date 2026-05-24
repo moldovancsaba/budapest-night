@@ -12,11 +12,12 @@ import {
 } from "@/lib/programVerticals";
 import { useProvidersCatalog, useEventsCatalog } from "@/hooks/useCatalog";
 import { useProgramWeek } from "@/hooks/useProgramWeek";
-import { Button } from "@/components/ui/button";
+import { AppButton } from "@/components/mantine/AppButton";
 import type { Provider } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { EventCard } from "@/components/scout/EventCard";
 import { ProviderCard } from "@/components/scout/ProviderCard";
+import { Anchor, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 
 type Props = {
   vertical: ProgramVerticalSlug;
@@ -51,58 +52,76 @@ export function ProgramVerticalView({
 
   if (!def) {
     return (
-      <p className="text-muted-foreground">
-        <Link href={buildProgramPath(undefined, { locale })}>← {t("weekTitle")}</Link>
-      </p>
+      <Text c="dimmed" size="sm">
+        <Anchor component={Link} href={buildProgramPath(undefined, { locale })}>
+          ← {t("weekTitle")}
+        </Anchor>
+      </Text>
     );
   }
 
   return (
-    <div className="space-y-8">
-      <header>
-        <Link href={buildProgramPath(undefined, { locale })}>
-          <Button variant="ghost" size="sm" className="mb-4 rounded-full">
-            ← {t("weekTitle")}
-          </Button>
-        </Link>
-        <h1 className="font-display text-3xl font-bold">{t(`vertical.${vertical}`)}</h1>
-        <p className="mt-2 text-muted-foreground">{t("weekSubtitle")}</p>
+    <Stack gap="xl">
+      <Stack gap="sm">
+        <AppButton
+          component={Link}
+          href={buildProgramPath(undefined, { locale })}
+          variant="subtle"
+          size="sm"
+          radius="xl"
+        >
+          ← {t("weekTitle")}
+        </AppButton>
+        <Title order={1} size="h2" tt="uppercase" lts="0.02em">
+          {t(`vertical.${vertical}`)}
+        </Title>
+        <Text c="dimmed">{t("weekSubtitle")}</Text>
         {verticalSponsor && (
-          <p className="mt-3 text-sm text-muted-foreground">
+          <Text size="sm" c="dimmed">
             {t("sponsorLabel")}:{" "}
             {verticalSponsor.url ? (
-              <a
+              <Anchor
                 href={verticalSponsor.url}
-                className="font-medium text-primary underline-offset-2 hover:underline"
+                fw={500}
+                c="brand"
                 target="_blank"
                 rel="noopener noreferrer"
+                underline="always"
               >
                 {verticalSponsor.name}
-              </a>
+              </Anchor>
             ) : (
-              <span className="font-medium text-foreground">{verticalSponsor.name}</span>
+              <Text span fw={500} c="dark">
+                {verticalSponsor.name}
+              </Text>
             )}
-          </p>
+          </Text>
         )}
-      </header>
+      </Stack>
 
       {filteredEvents.length > 0 && (
-        <section>
-          <h2 className="mb-3 font-display text-lg font-semibold">{t("featuredEvents")}</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+        <Stack gap="md">
+          <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+            {t("featuredEvents")}
+          </Title>
+          <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
             {filteredEvents.slice(0, 12).map((ev) => (
               <EventCard key={ev.id} event={ev} onOpen={onOpenEvent} />
             ))}
-          </div>
-        </section>
+          </SimpleGrid>
+        </Stack>
       )}
 
-      <section>
-        <h2 className="mb-3 font-display text-lg font-semibold">{t("featuredVenues")}</h2>
+      <Stack gap="md">
+        <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+          {t("featuredVenues")}
+        </Title>
         {filteredProviders.length === 0 ? (
-          <p className="text-sm text-muted-foreground">{t("emptyVertical")}</p>
+          <Text size="sm" c="dimmed">
+            {t("emptyVertical")}
+          </Text>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
             {filteredProviders.slice(0, 18).map((p) => (
               <ProviderCard
                 key={p.id}
@@ -111,9 +130,9 @@ export function ProgramVerticalView({
                 onShare={onShareProvider}
               />
             ))}
-          </div>
+          </SimpleGrid>
         )}
-      </section>
-    </div>
+      </Stack>
+    </Stack>
   );
 }

@@ -1,5 +1,8 @@
+"use client";
+
+import { Box, Group, Paper, Skeleton, Text, Title } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Navigation } from "lucide-react";
 
 const BOROUGH_CENTERS: Record<string, [number, number]> = {
@@ -59,33 +62,45 @@ export function ProviderMap({
     : "";
 
   return (
-    <div className="rounded-2xl border border-border/60 bg-secondary/50 p-5">
-      <h3 className="font-display text-sm font-semibold text-foreground">
+    <Paper withBorder radius="xl" p="lg">
+      <Title order={4} size="sm" fw={600}>
         Location
-      </h3>
-      <div className="mt-3 h-48 w-full overflow-hidden rounded-xl bg-muted">
+      </Title>
+      <Box
+        mt="sm"
+        h={192}
+        style={{ overflow: "hidden", borderRadius: "var(--mantine-radius-md)" }}
+      >
         {loading || !coords ? (
-          <div className="h-full w-full animate-pulse bg-muted" />
+          <Skeleton height="100%" radius="md" />
         ) : (
-          <iframe
+          <Box
+            component="iframe"
             title={`Map of ${address}`}
             src={src}
-            className="h-full w-full border-0"
+            style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
           />
         )}
-      </div>
-      <p className="mt-3 text-sm text-muted-foreground">{address}</p>
-      <Button
-        asChild
+      </Box>
+      <Text size="sm" c="dimmed" mt="sm">
+        {address}
+      </Text>
+      <AppButton
         variant="outline"
         size="sm"
-        className="mt-3 w-full border-border"
+        w="100%"
+        mt="sm"
+        component="a"
+        href={directionsUrl}
+        target="_blank"
+        rel="noreferrer"
       >
-        <a href={directionsUrl} target="_blank" rel="noreferrer">
-          <Navigation className="h-4 w-4" /> Get directions
-        </a>
-      </Button>
-    </div>
+        <Group gap="xs" wrap="nowrap" justify="center">
+          <Navigation size={16} />
+          Get directions
+        </Group>
+      </AppButton>
+    </Paper>
   );
 }

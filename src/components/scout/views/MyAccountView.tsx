@@ -10,10 +10,8 @@ import {
   Mail,
   ArrowRight,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { cn } from "@/lib/utils";
-import { toast } from "sonner";
+import { AppButton } from "@/components/mantine/AppButton";
+import { notify } from "@/lib/notify";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useAccountCopy } from "@/hooks/useLocalizedSiteCopy";
 import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
@@ -35,13 +33,22 @@ import type {
   SiteAccountSettings,
 } from "@/types/site";
 import { CMS_MEDIA } from "@/config/defaultMedia";
-import { CdnImage } from "@/components/ui/CdnImage";
+import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import {
-  ACCOUNT_PANEL,
-  CATEGORY_BADGE,
-  FILTER_CHIP_ACTIVE,
-  FILTER_CHIP_IDLE,
-} from "@/lib/cyberTheme";
+  ActionIcon,
+  Badge,
+  Box,
+  Card,
+  Checkbox,
+  Chip,
+  Group,
+  Paper,
+  ScrollArea,
+  SimpleGrid,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 
 interface Props {
   onNavigate: (
@@ -60,6 +67,28 @@ function interpolate(template: string, vars: Record<string, string>) {
   return template.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
 }
 
+function categoryBadgeLabel(
+  cat: string,
+  categoryLabel: ReturnType<typeof useCategoryLabel>,
+  tNav: ReturnType<typeof useTranslations>,
+) {
+  switch (cat) {
+    case "Events":
+    case "Venues":
+      return categoryLabel("Venues");
+    case "Parties":
+      return categoryLabel("Parties");
+    case "Restaurants":
+      return categoryLabel("Restaurants");
+    case "Cafés":
+      return categoryLabel("Cafés");
+    case "Meet-Up Group":
+      return tNav("culture");
+    default:
+      return cat;
+  }
+}
+
 export function MyAccountView({
   onNavigate,
   onOpenProvider,
@@ -69,47 +98,44 @@ export function MyAccountView({
   const tNav = useTranslations("nav");
   const categoryLabel = useCategoryLabel();
 
-  const badgeFor = useCallback((cat: string) => {
-    switch (cat) {
-      case "Events":
-      case "Venues":
-        return {
-          label: categoryLabel("Venues"),
-          filter: "Venues" as const,
-          tone: CATEGORY_BADGE.Venues,
-        };
-      case "Parties":
-        return {
-          label: categoryLabel("Parties"),
-          filter: "Parties" as const,
-          tone: CATEGORY_BADGE.Parties,
-        };
-      case "Restaurants":
-        return {
-          label: categoryLabel("Restaurants"),
-          filter: "Restaurants" as const,
-          tone: CATEGORY_BADGE.Restaurants,
-        };
-      case "Cafés":
-        return {
-          label: categoryLabel("Cafés"),
-          filter: "Cafés" as const,
-          tone: CATEGORY_BADGE.Cafés,
-        };
-      case "Meet-Up Group":
-        return {
-          label: tNav("culture"),
-          filter: "Culture" as const,
-          tone: CATEGORY_BADGE.Culture,
-        };
-      default:
-        return {
-          label: cat,
-          filter: "All" as const,
-          tone: CATEGORY_BADGE.default,
-        };
-    }
-  }, [categoryLabel, tNav]);
+  const badgeFor = useCallback(
+    (cat: string) => {
+      switch (cat) {
+        case "Events":
+        case "Venues":
+          return {
+            label: categoryLabel("Venues"),
+            filter: "Venues" as const,
+          };
+        case "Parties":
+          return {
+            label: categoryLabel("Parties"),
+            filter: "Parties" as const,
+          };
+        case "Restaurants":
+          return {
+            label: categoryLabel("Restaurants"),
+            filter: "Restaurants" as const,
+          };
+        case "Cafés":
+          return {
+            label: categoryLabel("Cafés"),
+            filter: "Cafés" as const,
+          };
+        case "Meet-Up Group":
+          return {
+            label: tNav("culture"),
+            filter: "Culture" as const,
+          };
+        default:
+          return {
+            label: cat,
+            filter: "All" as const,
+          };
+      }
+    },
+    [categoryLabel, tNav],
+  );
 
   const [tab, setTab] = useState(acc.saved.tabId);
   const [filter, setFilter] = useState<AccountSavedCategoryFilter>("All");
@@ -133,8 +159,7 @@ export function MyAccountView({
       savedProviders.map((p) => ({
         kind: "provider" as const,
         data: p,
-        categoryFilter: badgeFor(p.category)
-          .filter as AccountSavedCategoryFilter,
+        categoryFilter: badgeFor(p.category).filter as AccountSavedCategoryFilter,
       })),
     [savedProviders, badgeFor],
   );
@@ -143,95 +168,86 @@ export function MyAccountView({
     filter === "All" ? items : items.filter((i) => i.categoryFilter === filter);
 
   return (
-    <div className="space-y-8">
-      <header>
-        <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
+    <Stack gap="xl">
+      <Stack gap={4}>
+        <Title order={1} size="h2" tt="uppercase" lts="0.02em">
           {acc.page.title}
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground sm:text-base">
+        </Title>
+        <Text size="sm" c="dimmed">
           {acc.page.subtitle}
-        </p>
-      </header>
+        </Text>
+      </Stack>
 
-      <div className="-mx-4 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-        <div className="flex min-w-max gap-2 border-b border-border">
-          {acc.navTabs.map((t) => {
-            const active = t.id === tab;
+      <ScrollArea type="auto" offsetScrollbars>
+        <Group gap={0} wrap="nowrap" style={{ borderBottom: "1px solid var(--mantine-color-gray-3)" }}>
+          {acc.navTabs.map((navTab) => {
+            const active = navTab.id === tab;
             return (
-              <button
-                key={t.id}
+              <UnstyledTab
+                key={navTab.id}
+                active={active}
                 onClick={() => {
-                  setTab(t.id);
+                  setTab(navTab.id);
                   document
-                    .getElementById(`section-${t.id}`)
+                    .getElementById(`section-${navTab.id}`)
                     ?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className={cn(
-                  "relative whitespace-nowrap px-4 py-3 text-sm font-semibold transition-colors",
-                  active
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
-                )}
               >
-                {t.label}
-                {active && (
-                  <span className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-foreground" />
-                )}
-              </button>
+                {navTab.label}
+              </UnstyledTab>
             );
           })}
-        </div>
-      </div>
+        </Group>
+      </ScrollArea>
 
-      <section
+      <Paper
         id={`section-${acc.saved.tabId}`}
-        className={cn(
-          ACCOUNT_PANEL,
-          "p-6 sm:p-8",
-          tab !== acc.saved.tabId && "hidden",
-        )}
+        radius="xl"
+        withBorder
+        p={{ base: "lg", sm: "xl" }}
+        style={{ display: tab !== acc.saved.tabId ? "none" : undefined }}
       >
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-foreground">
+        <Group justify="space-between" align="flex-start" wrap="wrap">
+          <Stack gap={4}>
+            <Title order={2} size="h3" tt="uppercase" lts="0.04em">
               {acc.saved.title}
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
+            </Title>
+            <Text size="sm" c="dimmed">
               {acc.saved.subtitle}
-            </p>
-          </div>
-          <Button
+            </Text>
+          </Stack>
+          <AppButton
             variant="outline"
-            className="rounded-full border-border bg-card/80 hover:border-foreground/40/40 hover:bg-card"
+            radius="xl"
             onClick={() => onNavigate("Saved")}
+            rightSection={<ArrowRight size={16} />}
           >
-            {acc.saved.viewAllCta} <ArrowRight className="h-4 w-4" />
-          </Button>
-        </div>
+            {acc.saved.viewAllCta}
+          </AppButton>
+        </Group>
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {acc.saved.filterChips.map((c) => {
-            const active = c.categoryFilter === filter;
-            return (
-              <button
-                key={c.label}
-                onClick={() => setFilter(c.categoryFilter)}
-                className={cn(
-                  "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
-                  active ? FILTER_CHIP_ACTIVE : FILTER_CHIP_IDLE,
-                )}
-              >
-                {c.label}
-              </button>
-            );
-          })}
-        </div>
+        <Group gap="xs" mt="md">
+          {acc.saved.filterChips.map((c) => (
+            <Chip
+              key={c.label}
+              checked={c.categoryFilter === filter}
+              onChange={() => setFilter(c.categoryFilter)}
+              radius="xl"
+              color="brand"
+              variant="filled"
+            >
+              {c.label}
+            </Chip>
+          ))}
+        </Group>
 
-        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3, xl: 4 }} spacing="md" mt="lg">
           {filtered.length === 0 && (
-            <p className="col-span-full rounded-2xl bg-card p-8 text-center text-sm text-muted-foreground">
-              {acc.saved.emptyMessage}
-            </p>
+            <Paper radius="xl" p="xl" ta="center" style={{ gridColumn: "1 / -1" }}>
+              <Text size="sm" c="dimmed">
+                {acc.saved.emptyMessage}
+              </Text>
+            </Paper>
           )}
           {filtered.map((item) => (
             <SavedProviderCard
@@ -242,7 +258,7 @@ export function MyAccountView({
               onShare={() => onShareProvider(item.data)}
               onAddToPlan={() => {
                 addToCalc(item.data.id);
-                toast.success(
+                notify.success(
                   interpolate(acc.saved.toastAddedToPlan, {
                     name: item.data.name,
                   }),
@@ -251,21 +267,21 @@ export function MyAccountView({
               onRemove={() => {
                 if (saved.includes(item.data.id)) {
                   toggleSaved(item.data.id);
-                  toast(
+                  notify.info(
                     interpolate(acc.saved.toastRemoved, {
                       name: item.data.name,
                     }),
                   );
                 } else {
-                  toast(acc.saved.toastSampleRemove);
+                  notify.info(acc.saved.toastSampleRemove);
                 }
               }}
             />
           ))}
-        </div>
-      </section>
+        </SimpleGrid>
+      </Paper>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <SimpleGrid cols={{ base: 1, lg: 2 }} spacing="lg">
         <ActivityPlanCard
           acc={acc}
           tab={tab}
@@ -275,26 +291,70 @@ export function MyAccountView({
         <FamilyPreferencesCard acc={acc} tab={tab} />
         <NeighborhoodCard acc={acc} tab={tab} onNavigate={onNavigate} />
         <AlertsCard acc={acc} tab={tab} />
-      </div>
+      </SimpleGrid>
 
-      <div className={cn(ACCOUNT_PANEL, "rounded-2xl px-6 py-5 text-center")}>
-        <p className="text-sm font-medium text-foreground">
+      <Paper radius="xl" withBorder px="lg" py="md" ta="center">
+        <Text size="sm" fw={500}>
           {acc.privacy.headline}
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">
+        </Text>
+        <Text size="xs" c="dimmed" mt={4}>
           {acc.privacy.supportTextBefore}{" "}
-          <a
+          <Text
+            component="a"
             href={`mailto:${acc.privacy.supportEmail}`}
-            className="font-semibold text-foreground hover:underline"
+            fw={600}
+            inherit
+            style={{ color: "inherit" }}
           >
             {acc.privacy.supportEmail}
-          </a>
-          {acc.privacy.supportTextAfter
-            ? ` ${acc.privacy.supportTextAfter}`
-            : null}
-        </p>
-      </div>
-    </div>
+          </Text>
+          {acc.privacy.supportTextAfter ? ` ${acc.privacy.supportTextAfter}` : null}
+        </Text>
+      </Paper>
+    </Stack>
+  );
+}
+
+function UnstyledTab({
+  children,
+  active,
+  onClick,
+}: {
+  children: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        position: "relative",
+        whiteSpace: "nowrap",
+        padding: "12px 16px",
+        fontSize: 14,
+        fontWeight: 600,
+        border: "none",
+        background: "transparent",
+        cursor: "pointer",
+        color: active ? "var(--mantine-color-dark-9)" : "var(--mantine-color-dimmed)",
+      }}
+    >
+      {children}
+      {active ? (
+        <span
+          style={{
+            position: "absolute",
+            left: 8,
+            right: 8,
+            bottom: 0,
+            height: 2,
+            borderRadius: 999,
+            background: "var(--mantine-color-dark-9)",
+          }}
+        />
+      ) : null}
+    </button>
   );
 }
 
@@ -320,111 +380,77 @@ function SavedProviderCard({
   const ageLabel = useAgeRangeLabel();
   const activityLabel = useActivityTypeLabel();
   const formatPrice = useFormatVenuePrice();
-  const badgeFor = (cat: string) => {
-    switch (cat) {
-      case "Events":
-      case "Venues":
-        return { label: categoryLabel("Venues"), tone: CATEGORY_BADGE.Venues };
-      case "Parties":
-        return {
-          label: categoryLabel("Parties"),
-          tone: CATEGORY_BADGE.Parties,
-        };
-      case "Restaurants":
-        return {
-          label: categoryLabel("Restaurants"),
-          tone: CATEGORY_BADGE.Restaurants,
-        };
-      case "Cafés":
-        return { label: categoryLabel("Cafés"), tone: CATEGORY_BADGE.Cafés };
-      case "Meet-Up Group":
-        return { label: tNav("culture"), tone: CATEGORY_BADGE.Culture };
-      default:
-        return { label: cat, tone: CATEGORY_BADGE.default };
-    }
-  };
-  const b = badgeFor(provider.category);
+  const label = categoryBadgeLabel(provider.category, categoryLabel, tNav);
   const price = formatPrice(provider);
+
   return (
-    <article className="flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card ">
-      <div className="relative h-36 overflow-hidden bg-muted">
-        <CdnImage
-          fill
-          resolveBase={provider.website}
-          src={
-            provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing
-          }
-          alt={provider.name}
-        />
-        <span
-          className={cn(
-            "absolute left-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ",
-            b.tone,
-          )}
-        >
-          {b.label}
-        </span>
-        <span
-          className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-card text-foreground "
-          aria-label={tv("saved")}
-        >
-          <Heart className="h-4 w-4 fill-primary" />
-        </span>
-      </div>
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="font-display text-base font-semibold leading-snug text-foreground">
+    <Card radius="xl" p={0} withBorder>
+      <Card.Section>
+        <Box pos="relative" h={144}>
+          <ResolvedCoverImage
+            src={provider.image?.trim() ? provider.image : CMS_MEDIA.fallbackListing}
+            resolveBase={provider.website}
+            alt={provider.name}
+          />
+          <Badge
+            pos="absolute"
+            top={8}
+            left={8}
+            radius="xl"
+            tt="uppercase"
+            variant="light"
+            color="gray"
+            size="sm"
+          >
+            {label}
+          </Badge>
+          <ActionIcon
+            pos="absolute"
+            top={8}
+            right={8}
+            radius="xl"
+            variant="filled"
+            color="gray"
+            aria-label={tv("saved")}
+          >
+            <Heart size={16} fill="var(--mantine-color-brand-6)" color="var(--mantine-color-brand-6)" />
+          </ActionIcon>
+        </Box>
+      </Card.Section>
+      <Stack gap="xs" p="md">
+        <Title order={3} size="h5" lineClamp={1}>
           {provider.name}
-        </h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">
+        </Title>
+        <Text size="xs" c="dimmed">
           {locationLine(provider.borough, provider.neighborhood)}
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">
-          {ageLabel(provider.ageRanges[0])} ·{" "}
-          {activityLabel(provider.activityTypes[0])}
-        </p>
-        <p className="mt-2 text-sm font-bold text-foreground">
+        </Text>
+        <Text size="xs" c="dimmed">
+          {ageLabel(provider.ageRanges[0])} · {activityLabel(provider.activityTypes[0])}
+        </Text>
+        <Text size="sm" fw={700}>
           {price.main}
           {price.suffix ? (
-            <span className="text-[11px] font-normal text-muted-foreground">
+            <Text component="span" size="xs" fw={400} c="dimmed" ml={4}>
               {price.suffix}
-            </span>
+            </Text>
           ) : null}
-        </p>
-        <div className="mt-4 grid grid-cols-2 gap-2">
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full"
-            onClick={onView}
-          >
-            <Eye className="h-3.5 w-3.5" /> {card.viewCta}
-          </Button>
-          <Button
-            size="sm"
-            variant="outline"
-            className="rounded-full"
-            onClick={onShare}
-          >
-            <Share2 className="h-3.5 w-3.5" /> {card.shareCta}
-          </Button>
-          <Button
-            size="sm"
-            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-            onClick={onAddToPlan}
-          >
-            <Plus className="h-3.5 w-3.5" /> {card.addToPlanCta}
-          </Button>
-          <Button
-            size="sm"
-            variant="ghost"
-            className="rounded-full text-muted-foreground hover:text-foreground"
-            onClick={onRemove}
-          >
-            <X className="h-3.5 w-3.5" /> {card.removeCta}
-          </Button>
-        </div>
-      </div>
-    </article>
+        </Text>
+        <SimpleGrid cols={2} spacing="xs" mt="xs">
+          <AppButton size="sm" variant="outline" radius="xl" onClick={onView} leftSection={<Eye size={14} />}>
+            {card.viewCta}
+          </AppButton>
+          <AppButton size="sm" variant="outline" radius="xl" onClick={onShare} leftSection={<Share2 size={14} />}>
+            {card.shareCta}
+          </AppButton>
+          <AppButton size="sm" radius="xl" onClick={onAddToPlan} leftSection={<Plus size={14} />}>
+            {card.addToPlanCta}
+          </AppButton>
+          <AppButton size="sm" variant="subtle" radius="xl" c="dimmed" onClick={onRemove} leftSection={<X size={14} />}>
+            {card.removeCta}
+          </AppButton>
+        </SimpleGrid>
+      </Stack>
+    </Card>
   );
 }
 
@@ -465,114 +491,107 @@ function ActivityPlanCard({
   const totalHuf = rows.reduce((s, r) => s + r.subtotalHuf, 0);
 
   return (
-    <section
+    <Paper
       id={`section-${acc.activityPlan.tabId}`}
-      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
+      radius="xl"
+      withBorder
+      p={{ base: "lg", sm: "xl" }}
+      style={{ display: !visible ? "none" : undefined }}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <h2 className="font-display text-xl font-bold text-foreground">
-            {acc.activityPlan.title}
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {acc.activityPlan.subtitle}
-          </p>
-        </div>
-      </div>
+      <Stack gap={4}>
+        <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+          {acc.activityPlan.title}
+        </Title>
+        <Text size="sm" c="dimmed">
+          {acc.activityPlan.subtitle}
+        </Text>
+      </Stack>
 
       {rows.length === 0 ? (
-        <p className="mt-5 rounded-2xl bg-card p-6 text-center text-sm text-muted-foreground">
-          {acc.activityPlan.emptyMessage}
-        </p>
+        <Paper radius="xl" p="lg" mt="md" ta="center">
+          <Text size="sm" c="dimmed">
+            {acc.activityPlan.emptyMessage}
+          </Text>
+        </Paper>
       ) : (
         <>
-          <ul className="mt-5 space-y-2">
+          <Stack gap="xs" mt="md">
             {rows.map((r) => {
               const linePrice = formatPrice(r.provider);
               return (
-                <li
-                  key={r.providerId}
-                  className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3"
-                >
-                  <div className="min-w-0">
-                    <p className="truncate font-display text-sm font-semibold text-foreground">
-                      {r.provider.name}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {locationLine(
-                        r.provider.borough,
-                        r.provider.neighborhood,
-                      )}{" "}
-                      · {linePrice.main}
-                      {linePrice.suffix ?? ""}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex items-center rounded-full border border-border">
-                      <button
-                        type="button"
+                <Paper key={r.providerId} radius="xl" p="sm">
+                  <Group justify="space-between" wrap="nowrap" gap="sm">
+                    <Stack gap={2} style={{ flex: 1, minWidth: 0 }}>
+                      <Text size="sm" fw={600} truncate>
+                        {r.provider.name}
+                      </Text>
+                      <Text size="xs" c="dimmed">
+                        {locationLine(r.provider.borough, r.provider.neighborhood)} ·{" "}
+                        {linePrice.main}
+                        {linePrice.suffix ?? ""}
+                      </Text>
+                    </Stack>
+                    <Group gap={4} wrap="nowrap">
+                      <ActionIcon
+                        variant="subtle"
+                        radius="xl"
+                        size="sm"
                         onClick={() => setClasses(r.providerId, r.qty - 1)}
-                        className="grid h-7 w-7 place-items-center text-muted-foreground hover:text-foreground"
                         aria-label={tCalc("decreaseGuests")}
                       >
-                        <Minus className="h-3 w-3" />
-                      </button>
-                      <span className="w-6 text-center text-sm font-semibold">
+                        <Minus size={12} />
+                      </ActionIcon>
+                      <Text w={24} ta="center" size="sm" fw={600}>
                         {r.qty}
-                      </span>
-                      <button
-                        type="button"
+                      </Text>
+                      <ActionIcon
+                        variant="subtle"
+                        radius="xl"
+                        size="sm"
                         onClick={() => setClasses(r.providerId, r.qty + 1)}
-                        className="grid h-7 w-7 place-items-center text-muted-foreground hover:text-foreground"
                         aria-label={tCalc("increaseGuests")}
                       >
-                        <Plus className="h-3 w-3" />
-                      </button>
-                    </div>
-                    <p className="w-20 text-right text-sm font-bold text-foreground">
+                        <Plus size={12} />
+                      </ActionIcon>
+                    </Group>
+                    <Text size="sm" fw={700} w={72} ta="right">
                       {formatHuf(r.subtotalHuf)}
-                    </p>
-                    <button
-                      type="button"
+                    </Text>
+                    <ActionIcon
+                      variant="subtle"
+                      radius="xl"
+                      size="sm"
                       onClick={() => remove(r.providerId)}
-                      className="grid h-7 w-7 place-items-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
                       aria-label={tCalc("remove", { name: r.provider.name })}
                     >
-                      <X className="h-3.5 w-3.5" />
-                    </button>
-                  </div>
-                </li>
+                      <X size={14} />
+                    </ActionIcon>
+                  </Group>
+                </Paper>
               );
             })}
-          </ul>
+          </Stack>
 
-          <div className="mt-5 flex items-center justify-between rounded-2xl bg-card p-4">
-            <span className="font-display text-sm font-semibold text-foreground">
+          <Group justify="space-between" mt="md" p="md">
+            <Text size="sm" fw={600} tt="uppercase" lts="0.04em">
               {acc.activityPlan.estimatedTotalLabel}
-            </span>
-            <span className="font-display text-2xl font-bold text-foreground">
+            </Text>
+            <Title order={2} size="h2">
               {formatHuf(totalHuf)}
-            </span>
-          </div>
+            </Title>
+          </Group>
         </>
       )}
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        <Button
-          onClick={() => onNavigate("Calculator")}
-          className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-        >
+      <Group gap="xs" mt="md">
+        <AppButton radius="xl" onClick={() => onNavigate("Calculator")}>
           {acc.activityPlan.viewFullCta}
-        </Button>
-        <Button
-          variant="outline"
-          onClick={() => clear()}
-          className="rounded-full"
-        >
+        </AppButton>
+        <AppButton variant="outline" radius="xl" onClick={() => clear()}>
           {acc.activityPlan.clearCta}
-        </Button>
-      </div>
-    </section>
+        </AppButton>
+      </Group>
+    </Paper>
   );
 }
 
@@ -586,16 +605,9 @@ function PillToggle({
   onClick: () => void;
 }) {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cn(
-        "rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors",
-        active ? FILTER_CHIP_ACTIVE : FILTER_CHIP_IDLE,
-      )}
-    >
+    <Chip checked={active} onChange={onClick} radius="xl" color="brand" variant="filled">
       {label}
-    </button>
+    </Chip>
   );
 }
 
@@ -628,24 +640,27 @@ function FamilyPreferencesCard({
   };
 
   return (
-    <section
+    <Paper
       id={`section-${acc.familyPreferences.tabId}`}
-      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
+      radius="xl"
+      withBorder
+      p={{ base: "lg", sm: "xl" }}
+      style={{ display: !visible ? "none" : undefined }}
     >
-      <h2 className="font-display text-xl font-bold text-foreground">
+      <Title order={2} size="h4" tt="uppercase" lts="0.04em">
         {acc.familyPreferences.title}
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">
+      </Title>
+      <Text size="sm" c="dimmed" mt={4}>
         {acc.familyPreferences.subtitle}
-      </p>
+      </Text>
 
-      <div className="mt-5 space-y-5">
+      <Stack gap="lg" mt="md">
         {sections.map((sec) => (
-          <div key={sec.id}>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <Stack key={sec.id} gap="xs">
+            <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.12em">
               {sec.label}
-            </p>
-            <div className="flex flex-wrap gap-2">
+            </Text>
+            <Group gap="xs">
               {sec.options.map((a) => (
                 <PillToggle
                   key={a}
@@ -654,18 +669,19 @@ function FamilyPreferencesCard({
                   onClick={() => toggle(sec.id, sel[sec.id] ?? [], a)}
                 />
               ))}
-            </div>
-          </div>
+            </Group>
+          </Stack>
         ))}
-      </div>
+      </Stack>
 
-      <Button
-        className="mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-        onClick={() => toast.success(acc.familyPreferences.savedToast)}
+      <AppButton
+        radius="xl"
+        mt="lg"
+        onClick={() => notify.success(acc.familyPreferences.savedToast)}
       >
         {acc.familyPreferences.editCta}
-      </Button>
-    </section>
+      </AppButton>
+    </Paper>
   );
 }
 
@@ -682,77 +698,85 @@ function NeighborhoodCard({
   const visible = withSaved(tab, acc.saved.tabId, n.tabId);
 
   return (
-    <section
+    <Paper
       id={`section-${n.tabId}`}
-      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
+      radius="xl"
+      withBorder
+      p={{ base: "lg", sm: "xl" }}
+      style={{ display: !visible ? "none" : undefined }}
     >
-      <h2 className="font-display text-xl font-bold text-foreground">
+      <Title order={2} size="h4" tt="uppercase" lts="0.04em">
         {n.title}
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">{n.subtitle}</p>
+      </Title>
+      <Text size="sm" c="dimmed" mt={4}>
+        {n.subtitle}
+      </Text>
 
-      <div className="mt-5 rounded-2xl bg-card p-5">
-        <div className="flex flex-wrap items-start gap-3">
-          <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-muted text-foreground">
-            <MapPin className="h-5 w-5" />
-          </span>
-          <div className="min-w-0 flex-1">
-            <p className="font-display text-base font-semibold text-foreground">
-              {n.addressLine1}
-            </p>
-            <p className="text-sm text-muted-foreground">{n.addressLine2}</p>
-            <p className="mt-2 text-xs text-muted-foreground">
+      <Paper radius="xl" p="md" mt="md">
+        <Group align="flex-start" wrap="wrap">
+          <ActionIcon variant="light" radius="xl" size="xl" color="gray">
+            <MapPin size={20} />
+          </ActionIcon>
+          <Stack gap={4} style={{ flex: 1, minWidth: 200 }}>
+            <Text fw={600}>{n.addressLine1}</Text>
+            <Text size="sm" c="dimmed">
+              {n.addressLine2}
+            </Text>
+            <Text size="xs" c="dimmed">
               {n.detectedLabelPrefix}{" "}
-              <span className="font-semibold text-foreground">
+              <Text span fw={600} c="dark">
                 {n.detectedNeighborhood}
-              </span>{" "}
+              </Text>{" "}
               · {n.detectedBorough}
-            </p>
-          </div>
-          <Button
+            </Text>
+          </Stack>
+          <AppButton
             size="sm"
             variant="outline"
-            className="rounded-full"
-            onClick={() => toast(n.updateAddressToast)}
+            radius="xl"
+            onClick={() => notify.info(n.updateAddressToast)}
           >
             {n.updateAddressCtaLabel}
-          </Button>
-        </div>
-      </div>
+          </AppButton>
+        </Group>
+      </Paper>
 
-      <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.12em" mt="lg">
         {n.nearbySectionLabel}
-      </p>
-      <div className="mt-2 flex flex-wrap gap-2">
+      </Text>
+      <Group gap="xs" mt="xs">
         {n.nearbyNeighborhoods.map((hood) => (
-          <button
+          <AppButton
             key={hood}
-            type="button"
+            size="sm"
+            variant="outline"
+            radius="xl"
             onClick={() =>
               onNavigate("Events", {
                 borough: n.nearbyNavigateBorough,
                 neighborhood: hood,
               })
             }
-            className="rounded-full border border-border bg-card/80 px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-foreground/40 hover:text-foreground"
           >
             {hood}
-          </button>
+          </AppButton>
         ))}
-      </div>
+      </Group>
 
-      <Button
-        className="mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
+      <AppButton
+        radius="xl"
+        mt="lg"
         onClick={() =>
           onNavigate("Events", {
             borough: n.browseNavigateBorough,
             neighborhood: n.browseNavigateNeighborhood,
           })
         }
+        rightSection={<ArrowRight size={16} />}
       >
-        {n.browseCtaLabel} <ArrowRight className="h-4 w-4" />
-      </Button>
-    </section>
+        {n.browseCtaLabel}
+      </AppButton>
+    </Paper>
   );
 }
 
@@ -773,74 +797,66 @@ function AlertsCard({ acc, tab }: { acc: SiteAccountSettings; tab: string }) {
   }, [a.frequencyChoices]);
 
   return (
-    <section
+    <Paper
       id={`section-${a.tabId}`}
-      className={cn(ACCOUNT_PANEL, "p-6 sm:p-7", !visible && "hidden")}
+      radius="xl"
+      withBorder
+      p={{ base: "lg", sm: "xl" }}
+      style={{ display: !visible ? "none" : undefined }}
     >
-      <h2 className="font-display text-xl font-bold text-foreground">
+      <Title order={2} size="h4" tt="uppercase" lts="0.04em">
         {a.title}
-      </h2>
-      <p className="mt-1 text-sm text-muted-foreground">{a.subtitle}</p>
+      </Title>
+      <Text size="sm" c="dimmed" mt={4}>
+        {a.subtitle}
+      </Text>
 
-      <div className="mt-5">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <Stack gap="md" mt="md">
+        <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.12em">
           {a.emailSectionLabel}
-        </p>
-        <ul className="space-y-2">
+        </Text>
+        <Stack gap="xs">
           {a.options.map((opt) => (
-            <li
+            <Checkbox
               key={opt}
-              className="flex items-center gap-3 rounded-xl bg-card px-3 py-2"
-            >
-              <Checkbox
-                id={`alert-${opt}`}
-                checked={alerts[opt] ?? false}
-                onCheckedChange={(v) =>
-                  setAlerts((s) => ({ ...s, [opt]: !!v }))
-                }
-                className="data-[state=checked]:border-foreground data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
-              />
-              <label
-                htmlFor={`alert-${opt}`}
-                className="cursor-pointer text-sm text-foreground"
-              >
-                {opt}
-              </label>
-            </li>
+              label={opt}
+              checked={alerts[opt] ?? false}
+              onChange={(e) => setAlerts((s) => ({ ...s, [opt]: e.currentTarget.checked }))}
+              radius="sm"
+              color="brand"
+            />
           ))}
-        </ul>
-      </div>
+        </Stack>
+      </Stack>
 
-      <div className="mt-5">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <Stack gap="xs" mt="lg">
+        <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.12em">
           {a.frequencySectionLabel}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {a.frequencyChoices.map((f) => {
-            const active = f === freq;
-            return (
-              <button
-                key={f}
-                type="button"
-                onClick={() => setFreq(f)}
-                className={cn(
-                  "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
-                  active ? FILTER_CHIP_ACTIVE : FILTER_CHIP_IDLE,
-                )}
-              >
-                {f}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+        </Text>
+        <Group gap="xs">
+          {a.frequencyChoices.map((f) => (
+            <Chip
+              key={f}
+              checked={f === freq}
+              onChange={() => setFreq(f)}
+              radius="xl"
+              color="brand"
+              variant="filled"
+            >
+              {f}
+            </Chip>
+          ))}
+        </Group>
+      </Stack>
 
-      <Button
-        className="mt-6 rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-        onClick={() => toast.success(a.savedToast)}
+      <AppButton
+        radius="xl"
+        mt="lg"
+        onClick={() => notify.success(a.savedToast)}
+        leftSection={<Mail size={16} />}
       >
-        <Mail className="h-4 w-4" /> {a.saveCta}
-      </Button>
-    </section>
+        {a.saveCta}
+      </AppButton>
+    </Paper>
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
+import { Alert, Group, Paper, Select, Stack, Text, TextInput } from "@mantine/core";
+import { AppButton } from "@/components/mantine/AppButton";
+import { notify } from "@/lib/notify";
 import { findPromotionConflicts } from "@/lib/promotionConflicts";
 import type { PromotionDoc, PromotionType } from "@/types/promotion";
 
@@ -56,7 +56,7 @@ export function AdminPromotionsTab() {
 
   const create = async () => {
     if (!targetId.trim()) {
-      toast.error("targetId required");
+      notify.error("targetId required");
       return;
     }
     const r = await adminFetch("/api/admin/promotions", {
@@ -70,13 +70,13 @@ export function AdminPromotionsTab() {
     });
     const data = (await r.json()) as { conflicts?: string[] };
     if (!r.ok) {
-      toast.error("Create failed");
+      notify.error("Create failed");
       return;
     }
     if (data.conflicts?.length) {
-      toast.warning(`Created with warnings: ${data.conflicts.join(" ")}`);
+      notify.info(`Created with warnings: ${data.conflicts.join(" ")}`);
     } else {
-      toast.success("Promotion created");
+      notify.success("Promotion created");
     }
     setTargetId("");
     load();
@@ -88,80 +88,77 @@ export function AdminPromotionsTab() {
   };
 
   return (
-    <div className="space-y-6 max-w-2xl">
-      <div className="grid gap-2">
-        <select
-          className="rounded border px-2 py-1"
+    <Stack gap="xl" maw={760}>
+      <Stack gap="sm">
+        <Select
+          label="Promotion type"
           value={type}
-          onChange={(e) => setType(e.target.value as PromotionType)}
-        >
-          <option value="featured_venue">featured_venue</option>
-          <option value="featured_event">featured_event</option>
-          <option value="week_sponsor">week_sponsor</option>
-          <option value="vertical_sponsor">vertical_sponsor</option>
-        </select>
-        <div className="flex flex-wrap gap-2">
-          <Button variant="outline" asChild>
-            <a href="/api/admin/promotions/export" download>
-              Export CSV
-            </a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="/api/admin/qr-pack?partner=1" target="_blank" rel="noopener noreferrer">
-              A5 QR pack (partners)
-            </a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="/api/admin/qr-pack?partner=1&format=pdf" download>
-              A5 QR pack (PDF)
-            </a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="/api/admin/qr-pack?partner=1&print=1" target="_blank" rel="noopener noreferrer">
-              A5 QR pack (HTML print)
-            </a>
-          </Button>
-        </div>
-        <Input placeholder="targetId (prov-* or event-*)" value={targetId} onChange={(e) => setTargetId(e.target.value)} />
+          data={[
+            { value: "featured_venue", label: "featured_venue" },
+            { value: "featured_event", label: "featured_event" },
+            { value: "week_sponsor", label: "week_sponsor" },
+            { value: "vertical_sponsor", label: "vertical_sponsor" },
+          ]}
+          onChange={(value) => setType((value as PromotionType) ?? "featured_venue")}
+        />
+        <Group gap="sm" wrap="wrap">
+          <AppButton component="a" href="/api/admin/promotions/export" download variant="outline">
+            Export CSV
+          </AppButton>
+          <AppButton component="a" href="/api/admin/qr-pack?partner=1" target="_blank" rel="noopener noreferrer" variant="outline">
+            A5 QR pack (partners)
+          </AppButton>
+          <AppButton component="a" href="/api/admin/qr-pack?partner=1&format=pdf" download variant="outline">
+            A5 QR pack (PDF)
+          </AppButton>
+          <AppButton component="a" href="/api/admin/qr-pack?partner=1&print=1" target="_blank" rel="noopener noreferrer" variant="outline">
+            A5 QR pack (HTML print)
+          </AppButton>
+        </Group>
+        <TextInput placeholder="targetId (prov-* or event-*)" value={targetId} onChange={(e) => setTargetId(e.currentTarget.value)} />
         {type === "vertical_sponsor" ? (
-          <Input
+          <TextInput
             placeholder="verticalSlug (mozi, szinhaz, …)"
             value={verticalSlug}
-            onChange={(e) => setVerticalSlug(e.target.value)}
+            onChange={(e) => setVerticalSlug(e.currentTarget.value)}
           />
         ) : null}
-        <Input placeholder="Label" value={label} onChange={(e) => setLabel(e.target.value)} />
-        <Input type="datetime-local" value={startsAt} onChange={(e) => setStartsAt(e.target.value)} />
-        <Input type="datetime-local" value={endsAt} onChange={(e) => setEndsAt(e.target.value)} />
+        <TextInput placeholder="Label" value={label} onChange={(e) => setLabel(e.currentTarget.value)} />
+        <TextInput type="datetime-local" value={startsAt} onChange={(e) => setStartsAt(e.currentTarget.value)} />
+        <TextInput type="datetime-local" value={endsAt} onChange={(e) => setEndsAt(e.currentTarget.value)} />
         {draftWarnings.length > 0 && (
-          <ul className="rounded border border-amber-500/50 bg-amber-500/10 p-2 text-xs text-amber-900 dark:text-amber-100">
+          <Alert color="yellow" variant="light" title="Warnings">
             {draftWarnings.map((w) => (
-              <li key={w}>{w}</li>
+              <Text key={w} size="xs">
+                {w}
+              </Text>
             ))}
-          </ul>
+          </Alert>
         )}
-        <Button onClick={create}>Add promotion</Button>
-      </div>
-      <ul className="space-y-2 text-sm">
+        <AppButton onClick={create}>Add promotion</AppButton>
+      </Stack>
+      <Stack gap="sm">
         {rows.map((r) => {
           const rowWarnings = findPromotionConflicts(rows, r, { excludeId: r._id });
           return (
-            <li key={r._id} className="flex flex-col gap-1 border rounded p-2">
-              <div className="flex justify-between gap-2">
-                <span>
+            <Paper key={r._id} withBorder p="sm">
+              <Group justify="space-between" gap="sm" wrap="wrap">
+                <Text size="sm">
                   {r.type} · {r.targetId} · {r.label}
-                </span>
-                <Button size="sm" variant="outline" onClick={() => remove(r._id)}>
+                </Text>
+                <AppButton size="xs" variant="outline" onClick={() => remove(r._id)}>
                   Delete
-                </Button>
-              </div>
+                </AppButton>
+              </Group>
               {rowWarnings.length > 0 && (
-                <p className="text-xs text-amber-700 dark:text-amber-300">{rowWarnings.join(" · ")}</p>
+                <Text size="xs" c="yellow">
+                  {rowWarnings.join(" · ")}
+                </Text>
               )}
-            </li>
+            </Paper>
           );
         })}
-      </ul>
-    </div>
+      </Stack>
+    </Stack>
   );
 }
