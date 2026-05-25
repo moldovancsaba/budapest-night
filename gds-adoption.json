@@ -7,7 +7,8 @@
     "@gds/theme/client",
     "@gds/theme/server",
     "@gds/core/client",
-    "@gds/core/server"
+    "@gds/core/server",
+    "@gds/admin"
   ],
   "requiredContracts": [
     "StateBlock",
@@ -40,8 +41,23 @@
       "status": "legacy-wrapper"
     },
     {
+      "contract": "discovery-shell",
+      "path": "src/components/gds/DiscoveryAppShell.tsx",
+      "status": "active"
+    },
+    {
+      "contract": "listing-card",
+      "path": "src/components/gds/ListingCardMedia.tsx",
+      "status": "active"
+    },
+    {
       "contract": "public-shell",
       "path": "src/components/scout/BudapestNightShell.tsx",
+      "status": "active"
+    },
+    {
+      "contract": "admin-shell",
+      "path": "src/components/admin/AdminDashboard.tsx",
       "status": "active"
     }
   ],

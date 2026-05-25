@@ -24,15 +24,8 @@ import { Logo } from "@/components/scout/Logo";
 import type { Provider, Category } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
-import {
-  ActionIcon,
-  Anchor,
-  AppShell,
-  Badge,
-  Box,
-  Group,
-  Text,
-} from "@mantine/core";
+import { ActionIcon, Anchor, Badge, Box, Group, Text } from "@mantine/core";
+import { DiscoveryAppShell, PublicSiteFooter } from "@/components/gds";
 import { useMediaQuery } from "@mantine/hooks";
 import { Menu as MenuIcon, Heart, Bell, UserCircle } from "@/components/gds/icons";
 import { useLocale, useTranslations } from "next-intl";
@@ -239,22 +232,9 @@ export default function BudapestNightShell() {
 
   return (
     <>
-      <AppShell
-        navbar={{
-          width: 288,
-          breakpoint: "lg",
-          collapsed: { mobile: !mobileNav, desktop: false },
-        }}
-        header={{ height: 64 }}
-        padding={0}
-        styles={{
-          navbar: {
-            backgroundColor: "var(--mantine-color-dark-8)",
-            borderRightColor: "var(--mantine-color-dark-4)",
-          },
-        }}
-      >
-        <AppShell.Navbar p={0}>
+      <DiscoveryAppShell
+        navbarCollapsed={{ mobile: !mobileNav, desktop: false }}
+        navbar={
           <Sidebar
             active={view}
             mobileOpen={mobileNav}
@@ -263,9 +243,8 @@ export default function BudapestNightShell() {
             logoLightUrl={site?.logoLightUrl}
             sidebarPromo={undefined}
           />
-        </AppShell.Navbar>
-
-        <AppShell.Header>
+        }
+        header={
             <Group justify="space-between" h="100%" px={{ base: "md", sm: "xl" }} wrap="nowrap">
               <Group gap="sm" wrap="nowrap">
                 <ActionIcon
@@ -366,10 +345,9 @@ export default function BudapestNightShell() {
                 </ActionIcon>
               </Group>
             </Group>
-          </AppShell.Header>
-
-          <AppShell.Main>
-            <Box maw={1400} mx="auto" px={{ base: "md", sm: "xl" }} py={{ base: "md", sm: "xl" }}>
+        }
+      >
+            <Box maw={1400} mx="auto" w="100%">
               {view === "Home" && (
                 <HomeView
                   onNavigate={navigateToView}
@@ -434,21 +412,23 @@ export default function BudapestNightShell() {
               )}
               {view !== "Home" && <TrustStrip />}
               <Box
-                component="footer"
                 mt="xl"
                 pt="md"
                 style={{ borderTop: "1px solid var(--mantine-color-default-border)" }}
               >
-                <Text size="xs" c="dimmed" ta="center">
-                  {t("brand")} · {tf("tagline")} ·{" "}
-                  <Anchor component={Link} href="/admin" size="xs" underline="always">
-                    {tf("admin")}
-                  </Anchor>
-                </Text>
+                <PublicSiteFooter
+                  meta={
+                    <>
+                      {t("brand")} · {tf("tagline")} ·{" "}
+                      <Anchor component={Link} href="/admin" size="xs" underline="always">
+                        {tf("admin")}
+                      </Anchor>
+                    </>
+                  }
+                />
               </Box>
             </Box>
-          </AppShell.Main>
-      </AppShell>
+      </DiscoveryAppShell>
 
       <ProviderProfile
         provider={openProvider}

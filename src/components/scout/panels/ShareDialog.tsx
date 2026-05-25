@@ -1,8 +1,7 @@
 "use client";
 
 import { Group, Modal, Stack, Text } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
-import { Mail, MessageCircle, Link2 } from "@/components/gds/icons";
+import { AppButton, Mail, MessageCircle, SemanticButton } from "@/components/gds";
 import type { Provider } from "@/types/provider";
 import { notify } from "@/lib/notify";
 import { useVenueShareSummary } from "@/hooks/useVenueDisplay";
@@ -64,19 +63,15 @@ export function ShareDialog({
             {t("shareWhatsapp")}
           </Group>
         </AppButton>
-        <AppButton
+        <SemanticButton
+          action="copy"
           variant="outline"
           w="100%"
           onClick={() => {
             navigator.clipboard.writeText(url);
             notify.success(t("linkCopied"));
           }}
-        >
-          <Group gap="xs" wrap="nowrap">
-            <Link2 size={16} />
-            {t("copyLink")}
-          </Group>
-        </AppButton>
+        />
       </Stack>
     </Modal>
   );

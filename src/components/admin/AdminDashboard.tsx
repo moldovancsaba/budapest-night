@@ -4,20 +4,20 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  AppShell,
+  Box,
   FileInput,
   Grid,
   Group,
+  NavLink,
   Paper,
   Select,
   Stack,
-  Tabs,
   Text,
   TextInput,
   Textarea,
-  Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
+import { AppShell as AdminAppShell, PageHeader } from "@gds/admin";
+import { AppButton, SemanticButton } from "@/components/gds";
 import type { Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc, SiteAccountSettings, SiteCalculatorCopy } from "@/types/site";
@@ -33,8 +33,22 @@ async function adminFetch(input: RequestInfo, init?: RequestInit) {
   return fetch(input, { ...init, credentials: "include" });
 }
 
+const ADMIN_TABS = [
+  { value: "providers", label: "Venues & listings" },
+  { value: "meetups", label: "Meet-Up Groups" },
+  { value: "locations", label: "Neighborhoods" },
+  { value: "site", label: "Site & images" },
+  { value: "upload", label: "ImgBB upload" },
+  { value: "reviews", label: "Community reviews" },
+  { value: "program-week", label: "Program week" },
+  { value: "promotions", label: "Promotions" },
+] as const;
+
+type AdminTab = (typeof ADMIN_TABS)[number]["value"];
+
 export default function AdminDashboard() {
   const router = useRouter();
+  const [tab, setTab] = useState<AdminTab>("providers");
   const [providers, setProviders] = useState<Provider[]>([]);
   const [meetups, setMeetups] = useState<MeetupGroup[]>([]);
   const [site, setSite] = useState<Partial<SiteDoc> | null>(null);
@@ -293,47 +307,37 @@ export default function AdminDashboard() {
     }
   };
 
+  const activeTab = ADMIN_TABS.find((item) => item.value === tab);
+
   return (
-    <AppShell
-      header={{ height: 66 }}
-      padding="md"
-      styles={{ main: { maxWidth: 1200, margin: "0 auto", width: "100%" } }}
-    >
-      <AppShell.Header>
-        <Group justify="space-between" h="100%" px="md" wrap="wrap">
-          <Group gap="md">
-            <Title order={3}>
-              <Link href="/">Pesti Est</Link>
-            </Title>
-            <Text c="dimmed">Admin</Text>
-          </Group>
-          <Group gap="xs">
-            <AppButton variant="outline" component={Link} href="/">
-              View site
-            </AppButton>
-            <AppButton variant="secondary" onClick={() => load()} disabled={busy}>
-              Refresh data
-            </AppButton>
-            <AppButton variant="destructive" onClick={logout}>
-              Log out
-            </AppButton>
-          </Group>
+    <AdminAppShell
+      logoText="Pesti Est Admin"
+      navLinks={ADMIN_TABS.map(({ value, label }) => (
+        <NavLink
+          key={value}
+          label={label}
+          active={tab === value}
+          onClick={() => setTab(value)}
+        />
+      ))}
+      headerActions={
+        <Group gap="xs">
+          <AppButton variant="outline" component={Link} href="/">
+            View site
+          </AppButton>
+          <SemanticButton action="refresh" variant="default" onClick={() => load()} disabled={busy} loading={busy} />
+          <SemanticButton action="logout" color="red" onClick={logout} />
         </Group>
-      </AppShell.Header>
+      }
+    >
+      <Box maw={1200} mx="auto" w="100%">
+        <PageHeader
+          title={activeTab?.label ?? "Admin"}
+          description="Curate venues, site copy, program week, and promotions."
+        />
 
-      <Tabs defaultValue="providers" variant="outline">
-        <Tabs.List>
-          <Tabs.Tab value="providers">Venues & listings</Tabs.Tab>
-          <Tabs.Tab value="meetups">Meet-Up Groups</Tabs.Tab>
-          <Tabs.Tab value="locations">Neighborhoods</Tabs.Tab>
-          <Tabs.Tab value="site">Site & images</Tabs.Tab>
-          <Tabs.Tab value="upload">ImgBB upload</Tabs.Tab>
-          <Tabs.Tab value="reviews">Community reviews</Tabs.Tab>
-          <Tabs.Tab value="program-week">Program week</Tabs.Tab>
-          <Tabs.Tab value="promotions">Promotions</Tabs.Tab>
-        </Tabs.List>
-
-        <Tabs.Panel value="providers" pt="md">
+        {tab === "providers" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <Stack gap="sm">
               <Text size="sm" c="dimmed">
@@ -358,15 +362,19 @@ export default function AdminDashboard() {
               ) : null}
             </Stack>
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="reviews" pt="md">
+        {tab === "reviews" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <AdminReviewsTab reviews={reviews} busy={busy} onDelete={deleteReview} />
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="meetups" pt="md">
+        {tab === "meetups" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <Stack gap="sm">
               <Text size="sm" c="dimmed">
@@ -379,23 +387,25 @@ export default function AdminDashboard() {
               </Stack>
             </Stack>
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="locations" pt="md">
+        {tab === "locations" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <Stack gap="sm">
               <Text size="sm" c="dimmed">
                 Array of {"{ borough, neighborhoods: string[] }"} — used by Discover & Meetups.
               </Text>
               <Textarea value={locationsJson} onChange={(e) => setLocationsJson(e.currentTarget.value)} minRows={16} autosize styles={{ input: { fontFamily: "monospace", fontSize: 12 } }} />
-              <AppButton onClick={saveLocations} disabled={busy}>
-                Save neighborhoods
-              </AppButton>
+              <SemanticButton action="save" onClick={saveLocations} disabled={busy} loading={busy} />
             </Stack>
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="site" pt="md">
+        {tab === "site" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             {site ? (
               <Stack gap="sm">
@@ -521,27 +531,31 @@ export default function AdminDashboard() {
                   <Grid.Col span={{ base: 12, sm: 4 }}><Field label="Sidebar promo body"><TextInput value={site.sidebarBody ?? ""} onChange={(e) => setSite({ ...site, sidebarBody: e.currentTarget.value })} /></Field></Grid.Col>
                   <Grid.Col span={{ base: 12, sm: 4 }}><Field label="Sidebar CTA label"><TextInput value={site.sidebarCtaLabel ?? ""} onChange={(e) => setSite({ ...site, sidebarCtaLabel: e.currentTarget.value })} /></Field></Grid.Col>
                 </Grid>
-                <AppButton onClick={saveSite} disabled={busy}>
-                  Save site & branding
-                </AppButton>
+                <SemanticButton action="save" onClick={saveSite} disabled={busy} loading={busy} />
               </Stack>
             ) : null}
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="program-week" pt="md">
+        {tab === "program-week" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <AdminProgramWeekTab providers={providers} events={events} />
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="promotions" pt="md">
+        {tab === "promotions" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <AdminPromotionsTab />
           </Paper>
-        </Tabs.Panel>
+          </Box>
+        )}
 
-        <Tabs.Panel value="upload" pt="md">
+        {tab === "upload" && (
+          <Box pt="md">
           <Paper withBorder p="md">
             <Stack gap="sm">
               <Text size="sm" c="dimmed">
@@ -550,9 +564,10 @@ export default function AdminDashboard() {
               <FileInput accept="image/*" disabled={busy} onChange={(file) => upload(file ?? null)} />
             </Stack>
           </Paper>
-        </Tabs.Panel>
-      </Tabs>
-    </AppShell>
+          </Box>
+        )}
+      </Box>
+    </AdminAppShell>
   );
 }
 

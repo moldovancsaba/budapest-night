@@ -44,8 +44,21 @@ npm run build
 - ESLint: `@gds/eslint-config` + `no-restricted-imports` on `lucide-react` and legacy paths
 - `prebuild` rebuilds sibling GDS packages
 
+## Adopted from GDS 2.4.3 (2026-05-25)
+
+- `AuthShell` + `SemanticButton` — admin login
+- `StateBlock` — shareable loading / not-found
+- `FeatureBand` — trust strip
+- `DataToolbar` + `FilterDrawer` + `SemanticButton` — discover filters
+- `EditorialHero` — home hero
+- `PublicSiteFooter` — app footer
+- `SemanticButton` — share copy actions
+- `@gds/admin` `AppShell` + `PageHeader` — admin dashboard shell
+- `ProductCard` + `ListingCardMedia` — venue, event, meet-up listing cards
+- `DiscoveryAppShell` — public app sidebar layout adapter
+
 ## Remaining product-specific work
 
-- Migrate `BudapestNightShell` → `@gds/core` `PublicShell` when layout parity is validated
-- Replace `AppButton` legacy shadcn variants with Mantine/`SemanticButton` at call sites
-- Adopt `@gds/admin` for dashboard CRUD when admin refactor is scheduled
+- Dedicated `DiscoveryShell` in `@gds/core` (today: `DiscoveryAppShell` adapter mirrors admin regions)
+- `PublicProductCard` variant without e-commerce state badge for nightlife listings
+- Replace remaining product-labeled `AppButton` CTAs where no semantic action exists

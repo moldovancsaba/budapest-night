@@ -53,13 +53,12 @@ import { EventCard } from "@/components/scout/EventCard";
 import { isUpcoming } from "@/lib/eventDisplay";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { BOROUGHS, NEIGHBORHOODS } from "@/data/locations";
-import { AppButton } from "@/components/gds/AppButton";
+import { AppButton, EditorialHero } from "@/components/gds";
 import {
   Badge,
   Box,
   Card,
   Chip,
-  Grid,
   Group,
   Paper,
   ScrollArea,
@@ -178,59 +177,44 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
 
   return (
     <Stack gap={64}>
-      <Paper radius="xl" withBorder style={{ overflow: "hidden" }}>
-        <Grid gutter="xl" p={{ base: "xl", sm: 48, md: 64 }} align="center">
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <Title order={1} size="h1" lh={1.05} tt="uppercase" lts="0.02em">
-              {home.heroTitle}
-            </Title>
-            <Text mt="lg" maw={480} size="lg" c="dimmed" lh={1.6}>
-              {home.heroSubtitle}
-            </Text>
-            <Group mt="xl" gap="sm" wrap="wrap">
-              <AppButton
-                size="lg"
-                radius="xl"
-                onClick={() => onNavigate("Events")}
-                rightSection={<ArrowRight size={16} />}
-              >
-                {home.heroPrimaryCta}
-              </AppButton>
-              <AppButton size="lg" variant="outline" radius="xl" onClick={scrollToNeighborhoods}>
-                {home.heroSecondaryCta}
-              </AppButton>
-              <AppButton
-                component={Link}
-                href={buildProgramPath(undefined, { locale })}
-                size="lg"
-                variant="outline"
-                radius="xl"
-              >
-                {tProgram("heroCta")}
-              </AppButton>
-            </Group>
-            <Text mt="md" size="sm" fw={500} c="brand">
-              {tProgram("thuNote")}
-            </Text>
-            <Group mt="md" gap="xs">
-              <ThemeIcon radius="xl" size="md" variant="light" color="gray">
-                <Sparkles size={14} />
-              </ThemeIcon>
-              <Text size="sm" c="dimmed">
-                {home.heroTagline}
-              </Text>
-            </Group>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 5 }}>
+      <Stack gap="md">
+        <EditorialHero
+          title={home.heroTitle}
+          description={home.heroSubtitle}
+          media={
             <Box
               pos="relative"
               style={{ aspectRatio: "5/4", overflow: "hidden", borderRadius: "var(--mantine-radius-xl)" }}
             >
               <ResolvedCoverImage src={cacheBustMediaUrl(s.homeHeroUrl)} alt={home.heroImageAlt} />
             </Box>
-          </Grid.Col>
-        </Grid>
-      </Paper>
+          }
+          mediaAlt={home.heroImageAlt}
+          actions={[
+            { label: home.heroPrimaryCta, onClick: () => onNavigate("Events"), variant: "primary" },
+            { label: home.heroSecondaryCta, onClick: scrollToNeighborhoods, variant: "secondary" },
+            {
+              label: tProgram("heroCta"),
+              href: buildProgramPath(undefined, { locale }),
+              variant: "secondary",
+            },
+          ]}
+          meta={[
+            {
+              id: "hero-tagline",
+              label: home.heroTagline,
+              icon: (
+                <ThemeIcon radius="xl" size="md" variant="light" color="gray">
+                  <Sparkles size={14} />
+                </ThemeIcon>
+              ),
+            },
+          ]}
+        />
+        <Text size="sm" fw={500} c="brand">
+          {tProgram("thuNote")}
+        </Text>
+      </Stack>
 
       <Stack gap="md" align="center">
         <Title order={2} size="h2" ta="center" tt="uppercase" lts="0.04em">

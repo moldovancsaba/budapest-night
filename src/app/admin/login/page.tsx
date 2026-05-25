@@ -1,10 +1,10 @@
 "use client";
 
-import { Anchor, Code, Paper, PasswordInput, Stack, Text, Title } from "@mantine/core";
+import { Anchor, Code, PasswordInput, Stack, Text } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { AppButton } from "@/components/gds/AppButton";
+import { AuthShell, SemanticButton } from "@/components/gds";
 import { notify } from "@/lib/notify";
 
 export default function AdminLoginPage() {
@@ -38,16 +38,23 @@ export default function AdminLoginPage() {
 
   return (
     <Stack mih="100vh" align="center" justify="center" px="md" bg="var(--mantine-color-gray-light)">
-      <Paper component="form" onSubmit={submit} w="100%" maw={400} p="xl" radius="lg" withBorder>
-        <Stack gap="md">
-          <Title order={2} size="h3" tt="uppercase" lts="0.04em">
-            Pesti Est Admin
-          </Title>
-          <Text size="sm" c="dimmed">
-            Use the value of <Code>ADMIN_PASSWORD</Code> from <Code>.env</Code> or <Code>.env.local</Code> locally,
-            or from your host&apos;s environment (e.g. Vercel). <Code>.env.example</Code> is not loaded by the app. For
-            local dev, run <Code>npm run env:generate</Code> to write a strong password into <Code>.env.local</Code>.
+      <AuthShell
+        title="Pesti Est Admin"
+        description={
+          <Text size="sm" c="dimmed" ta="left">
+            Use the value of <Code>ADMIN_PASSWORD</Code> from <Code>.env</Code> or{" "}
+            <Code>.env.local</Code> locally, or from your host&apos;s environment (e.g. Vercel).{" "}
+            <Code>.env.example</Code> is not loaded by the app. For local dev, run{" "}
+            <Code>npm run env:generate</Code> to write a strong password into <Code>.env.local</Code>.
           </Text>
+        }
+        footer={
+          <Anchor component={Link} href="/" size="sm">
+            ← Back to site
+          </Anchor>
+        }
+      >
+        <Stack component="form" onSubmit={submit} gap="md">
           <PasswordInput
             label="Password"
             autoComplete="current-password"
@@ -57,14 +64,15 @@ export default function AdminLoginPage() {
             size="md"
             required
           />
-          <AppButton type="submit" fullWidth loading={busy} disabled={!password}>
-            {busy ? "Signing in…" : "Sign in"}
-          </AppButton>
-          <Anchor component={Link} href="/" size="sm" ta="center">
-            ← Back to site
-          </Anchor>
+          <SemanticButton
+            action="login"
+            type="submit"
+            fullWidth
+            loading={busy}
+            disabled={!password}
+          />
         </Stack>
-      </Paper>
+      </AuthShell>
     </Stack>
   );
 }

@@ -2,8 +2,8 @@
 
 import type { ReactNode } from "react";
 import { ActionIcon, Anchor, Box, Container, Group, Text } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
-import { Link2, ArrowLeft } from "@/components/gds/icons";
+import { SemanticButton } from "@/components/gds";
+import { ArrowLeft } from "@/components/gds/icons";
 import { useTranslations } from "next-intl";
 import { notify } from "@/lib/notify";
 import { Link } from "@/i18n/routing";
@@ -95,14 +95,12 @@ export function ShareablePageChrome({
             </Group>
             <Group gap="xs" wrap="nowrap" style={{ flexShrink: 0 }}>
               {shareUrl ? (
-                <AppButton type="button" variant="outline" size="sm" onClick={copyLink}>
-                  <Group gap="xs" wrap="nowrap">
-                    <Link2 size={16} />
-                    <Text component="span" visibleFrom="sm">
-                      {t("copyLink")}
-                    </Text>
-                  </Group>
-                </AppButton>
+                <SemanticButton
+                  action="copy"
+                  variant="outline"
+                  size="sm"
+                  onClick={copyLink}
+                />
               ) : null}
               <ThemeToggle />
               <CurrencySwitcher variant="header" />
