@@ -2,7 +2,7 @@
 
 import { ActionIcon, Menu, Select, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { Coins } from "lucide-react";
+import { Coins } from "@/components/gds/icons";
 import { useTranslations } from "next-intl";
 import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import type { DisplayCurrency } from "@/types/currency";
@@ -42,7 +42,7 @@ export function CurrencySwitcher({
             aria-label={t("label")}
             style={style}
           >
-            <Coins size={16} strokeWidth={1.75} />
+            <Coins size={16} stroke={1.75} />
           </ActionIcon>
         </Menu.Target>
         <Menu.Dropdown>
@@ -66,7 +66,7 @@ export function CurrencySwitcher({
       value={displayCurrency}
       onChange={(next) => next && setDisplayCurrency(next as DisplayCurrency)}
       aria-label={t("label")}
-      leftSection={<Coins size={16} strokeWidth={1.75} />}
+      leftSection={<Coins size={16} stroke={1.75} />}
       comboboxProps={{ position: "bottom-end", withinPortal: true }}
       w={isHeader ? undefined : 120}
       radius={isHeader ? "xl" : "md"}

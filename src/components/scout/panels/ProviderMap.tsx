@@ -1,9 +1,9 @@
 "use client";
 
 import { Box, Group, Paper, Skeleton, Text, Title } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { useEffect, useState } from "react";
-import { Navigation } from "lucide-react";
+import { Navigation } from "@/components/gds/icons";
 
 const BOROUGH_CENTERS: Record<string, [number, number]> = {
   Belváros: [47.4979, 19.0402],

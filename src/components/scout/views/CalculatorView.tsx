@@ -1,5 +1,5 @@
 import { useCalculator } from "@/store/useScout";
-import { Calculator, Minus, Plus, Trash2, Users, X } from "lucide-react";
+import { Calculator, Minus, Plus, Trash2, Users, X } from "@/components/gds/icons";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
@@ -12,7 +12,7 @@ import { providerLineHuf } from "@/lib/venueDisplay";
 import { useFormatHuf } from "@/hooks/useFormatHuf";
 import { useDisplayCurrency } from "@/contexts/DisplayCurrencyContext";
 import { useFormatVenuePrice, useVenueLocationLine } from "@/hooks/useVenueDisplay";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import {
   ActionIcon,
   Box,

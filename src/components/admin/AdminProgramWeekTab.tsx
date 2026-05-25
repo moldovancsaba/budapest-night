@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Group, Select, Stack, Text, TextInput, Textarea } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { notify } from "@/lib/notify";
 import { locales, type AppLocale } from "@/i18n/config";
 import { PROGRAM_WEEK_LOCALE_DEFAULTS } from "@/lib/programWeekCopy";

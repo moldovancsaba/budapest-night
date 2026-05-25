@@ -13,7 +13,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import {
   Heart,
   MapPin,
@@ -22,7 +22,7 @@ import {
   Instagram,
   Globe,
   CalendarClock,
-} from "lucide-react";
+} from "@/components/gds/icons";
 import { useSaved } from "@/store/useScout";
 import { notify } from "@/lib/notify";
 import { useEventsCatalog, useMeetupGroupsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";

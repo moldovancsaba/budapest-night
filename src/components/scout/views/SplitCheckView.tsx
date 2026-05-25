@@ -11,8 +11,8 @@ import {
   Copy,
   ArrowRight,
   Sparkles,
-} from "lucide-react";
-import { AppButton } from "@/components/mantine/AppButton";
+} from "@/components/gds/icons";
+import { AppButton } from "@/components/gds/AppButton";
 import { EmptyState } from "../EmptyState";
 import { useCalculator, useCrewSplit } from "@/store/useScout";
 import { useProvidersCatalog } from "@/hooks/useCatalog";

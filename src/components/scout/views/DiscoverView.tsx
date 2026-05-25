@@ -7,7 +7,7 @@ import { EmptyState } from "../EmptyState";
 import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { NEIGHBORHOODS as FALLBACK_HOODS } from "@/data/locations";
 import type { BoroughChoice, Provider, Category } from "@/types/provider";
-import { MapPin, Sparkles } from "lucide-react";
+import { MapPin, Sparkles } from "@/components/gds/icons";
 import {
   useProvidersCatalog,
   useNeighborhoodsCatalog,

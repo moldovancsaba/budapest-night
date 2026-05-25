@@ -1,9 +1,9 @@
 "use client";
 
 import { Group, Paper, SimpleGrid, Stack, Text, ThemeIcon } from "@mantine/core";
-import { SiteLucideIcon } from "@/lib/siteLucideIcon";
+import { SiteGdsIcon } from "@/lib/siteGdsIcon";
 import { useTrustPillars } from "@/hooks/useLocalizedSiteCopy";
-import { MANTINE_PANEL_RADIUS } from "@/lib/mantine/surfaceTokens";
+import { MANTINE_PANEL_RADIUS } from "@/lib/gds/surfaceTokens";
 
 export function TrustStrip() {
   const pillars = useTrustPillars();
@@ -14,7 +14,7 @@ export function TrustStrip() {
         {pillars.map((pillar) => (
           <Group key={pillar.title} align="flex-start" gap="sm" wrap="nowrap">
             <ThemeIcon size={40} radius="xl" variant="light" color="gray" aria-hidden>
-              <SiteLucideIcon name={pillar.icon} />
+              <SiteGdsIcon name={pillar.icon} />
             </ThemeIcon>
             <Stack gap={4}>
               <Text size="sm" fw={600} tt="uppercase" style={{ letterSpacing: "0.04em" }}>

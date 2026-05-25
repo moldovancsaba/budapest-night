@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { MapPin, Search, Sparkles, Wine } from "lucide-react";
+import { MapPin, Search, Sparkles, Wine } from "@/components/gds/icons";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import { Link } from "@/i18n/routing";
@@ -12,7 +12,7 @@ import { useFormatMenuPrice } from "@/hooks/useFormatMenuPrice";
 import type { PublicMenuItemRow } from "@/lib/publicMenuItem";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import {
   Box,
   Chip,

@@ -1,7 +1,7 @@
-import { Heart, Share2, MapPin, Instagram, CalendarClock } from "lucide-react";
+import { Heart, Share2, MapPin, Instagram, CalendarClock } from "@/components/gds/icons";
 import Image from "next/image";
 import { ActionIcon, Badge, Card, Group, Stack, Text } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { useSaved } from "@/store/useScout";
 import { notify } from "@/lib/notify";
 import { MeetupLogo } from "./MeetupLogo";

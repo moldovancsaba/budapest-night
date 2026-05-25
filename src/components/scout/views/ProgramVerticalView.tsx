@@ -12,7 +12,7 @@ import {
 } from "@/lib/programVerticals";
 import { useProvidersCatalog, useEventsCatalog } from "@/hooks/useCatalog";
 import { useProgramWeek } from "@/hooks/useProgramWeek";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { Provider } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { EventCard } from "@/components/scout/EventCard";

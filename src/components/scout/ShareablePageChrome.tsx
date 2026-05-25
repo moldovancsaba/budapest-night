@@ -2,8 +2,8 @@
 
 import type { ReactNode } from "react";
 import { ActionIcon, Anchor, Box, Container, Group, Text } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
-import { Link2, ArrowLeft } from "lucide-react";
+import { AppButton } from "@/components/gds/AppButton";
+import { Link2, ArrowLeft } from "@/components/gds/icons";
 import { useTranslations } from "next-intl";
 import { notify } from "@/lib/notify";
 import { Link } from "@/i18n/routing";

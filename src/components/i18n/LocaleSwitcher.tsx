@@ -2,7 +2,7 @@
 
 import { ActionIcon, Menu, Select, Text } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { Languages } from "lucide-react";
+import { Languages } from "@/components/gds/icons";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { locales, localeLabels, type AppLocale } from "@/i18n/config";
@@ -41,7 +41,7 @@ export function LocaleSwitcher({
             aria-label={t("label")}
             style={style}
           >
-            <Languages size={16} strokeWidth={1.75} />
+            <Languages size={16} stroke={1.75} />
           </ActionIcon>
         </Menu.Target>
         <Menu.Dropdown>
@@ -65,7 +65,7 @@ export function LocaleSwitcher({
       value={locale}
       onChange={(next) => next && switchLocale(next as AppLocale)}
       aria-label={t("label")}
-      leftSection={<Languages size={16} strokeWidth={1.75} />}
+      leftSection={<Languages size={16} stroke={1.75} />}
       comboboxProps={{ position: "bottom-end", withinPortal: true }}
       w={isHeader ? undefined : 148}
       radius={isHeader ? "xl" : "md"}

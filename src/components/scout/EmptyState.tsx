@@ -1,16 +1,26 @@
 "use client";
 
-import { Compass, type LucideIcon } from "lucide-react";
-import { StateBlock } from "@/components/mantine/StateBlock";
+import type { ReactNode } from "react";
+import { EmptyState as GdsEmptyState } from "@gds/core/client";
+import { Compass, type GdsIconComponent } from "@/components/gds/icons";
 
 export function EmptyState({
   title,
   message,
   icon: Icon = Compass,
+  action,
 }: {
   title: string;
   message: string;
-  icon?: LucideIcon;
+  icon?: GdsIconComponent;
+  action?: ReactNode;
 }) {
-  return <StateBlock title={title} message={message} icon={Icon} />;
+  return (
+    <GdsEmptyState
+      title={title}
+      description={message}
+      icon={<Icon size={32} stroke={1.5} />}
+      action={action}
+    />
+  );
 }

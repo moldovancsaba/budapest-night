@@ -1,5 +1,6 @@
-import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+import { PDFDocument, StandardFonts } from "pdf-lib";
 import QRCode from "qrcode";
+import { pdfColor } from "@/theme/pdfColors";
 import { buildPartnerVenueUrl } from "@/lib/partnerQrUrl";
 import type { Provider } from "@/types/provider";
 import type { AppLocale } from "@/i18n/config";
@@ -67,7 +68,7 @@ export async function buildPartnerQrPackPdf(
       y: A5_HEIGHT - 48,
       size: 10,
       font,
-      color: rgb(0.45, 0.45, 0.45),
+      color: pdfColor.muted,
     });
     const title = p.name.length > 42 ? `${p.name.slice(0, 40)}…` : p.name;
     page.drawText(title, {
@@ -83,7 +84,7 @@ export async function buildPartnerQrPackPdf(
         y: A5_HEIGHT - 100,
         size: 9,
         font,
-        color: rgb(0.35, 0.35, 0.35),
+        color: pdfColor.label,
       });
     }
     page.drawImage(img, {
@@ -97,28 +98,28 @@ export async function buildPartnerQrPackPdf(
       y: 88,
       size: 10,
       font: fontBold,
-      color: rgb(0.2, 0.2, 0.2),
+      color: pdfColor.title,
     });
     page.drawText(copy.scanLine, {
       x: A5_WIDTH / 2 - 48,
       y: 72,
       size: 9,
       font,
-      color: rgb(0.4, 0.4, 0.4),
+      color: pdfColor.body,
     });
     page.drawText(copy.privacy.slice(0, 90), {
       x: 40,
       y: 40,
       size: 6.5,
       font,
-      color: rgb(0.5, 0.5, 0.5),
+      color: pdfColor.hint,
     });
     page.drawText(p.id, {
       x: A5_WIDTH / 2 - p.id.length * 2.2,
       y: 24,
       size: 7,
       font,
-      color: rgb(0.6, 0.6, 0.6),
+      color: pdfColor.footer,
     });
   }
 

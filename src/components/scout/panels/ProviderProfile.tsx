@@ -13,7 +13,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { Provider } from "@/types/provider";
 import {
   Heart,
@@ -28,7 +28,7 @@ import {
   Calendar,
   ChevronLeft,
   ChevronRight,
-} from "lucide-react";
+} from "@/components/gds/icons";
 import { useMemo, useState } from "react";
 import { useSaved, useCalculator } from "@/store/useScout";
 import { notify } from "@/lib/notify";
@@ -240,7 +240,7 @@ export function ProviderProfile({
                     background:
                       i === photoIdx
                         ? "var(--mantine-color-dark-filled)"
-                        : "rgba(255,255,255,0.8)",
+                        : "var(--mantine-color-gray-3)",
                     transition: "width 150ms ease",
                   }}
                 />

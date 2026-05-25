@@ -3,9 +3,9 @@
 import { Button, type ButtonProps, useMantineColorScheme } from "@mantine/core";
 import { forwardRef } from "react";
 
-type AppButtonVariant = "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+type LegacyVariant = "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
 
-const SHADCN_VARIANTS = new Set<string>([
+const LEGACY_VARIANTS = new Set<string>([
   "default",
   "destructive",
   "outline",
@@ -14,18 +14,18 @@ const SHADCN_VARIANTS = new Set<string>([
   "link",
 ]);
 
-function isShadcnVariant(value: unknown): value is AppButtonVariant {
-  return typeof value === "string" && SHADCN_VARIANTS.has(value);
+function isLegacyVariant(value: unknown): value is LegacyVariant {
+  return typeof value === "string" && LEGACY_VARIANTS.has(value);
 }
 
 export type AppButtonProps = Omit<ButtonProps, "variant"> & {
-  /** Legacy shadcn `variant` values; maps to Mantine variant/color. */
-  variant?: AppButtonVariant | ButtonProps["variant"];
+  /** @deprecated Prefer Mantine `variant` / `color`; mapped for remaining call sites. */
+  variant?: LegacyVariant | ButtonProps["variant"];
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
 };
 
-function mapShadcnVariant(
-  variant: AppButtonVariant,
+function mapLegacyVariant(
+  variant: LegacyVariant,
   colorScheme: "light" | "dark" | "auto",
 ): Pick<ButtonProps, "variant" | "color"> {
   const isDark = colorScheme === "dark";
@@ -53,12 +53,12 @@ function AppButtonInner(
 ) {
   const { colorScheme } = useMantineColorScheme();
 
-  const mapped = isShadcnVariant(variant)
-    ? mapShadcnVariant(variant, colorScheme)
+  const mapped = isLegacyVariant(variant)
+    ? mapLegacyVariant(variant, colorScheme)
     : { variant: variant as ButtonProps["variant"], color };
 
   const linkStyles =
-    isShadcnVariant(variant) && variant === "link"
+    isLegacyVariant(variant) && variant === "link"
       ? {
           root: {
             paddingInline: 0,
@@ -80,7 +80,7 @@ function AppButtonInner(
   );
 }
 
-/** Mantine Button with legacy shadcn variant mapping. */
+/** Mantine button using GDS theme tokens. */
 export const AppButton = forwardRef(AppButtonInner) as unknown as typeof Button;
 
 AppButton.displayName = "AppButton";

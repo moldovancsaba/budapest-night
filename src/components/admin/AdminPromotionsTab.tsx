@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Alert, Group, Paper, Select, Stack, Text, TextInput } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { notify } from "@/lib/notify";
 import { findPromotionConflicts } from "@/lib/promotionConflicts";
 import type { PromotionDoc, PromotionType } from "@/types/promotion";

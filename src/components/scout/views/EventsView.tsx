@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { CalendarDays, MapPin, Sparkles } from "lucide-react";
+import { CalendarDays, MapPin, Sparkles } from "@/components/gds/icons";
 import {
   Box,
   Grid,

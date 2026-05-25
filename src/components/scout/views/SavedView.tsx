@@ -5,7 +5,7 @@ import { Group, Loader, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { useSaved } from "@/store/useScout";
 import { ProviderCard } from "../ProviderCard";
 import { EmptyState } from "../EmptyState";
-import { Heart } from "lucide-react";
+import { Heart } from "@/components/gds/icons";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 export function SavedView({

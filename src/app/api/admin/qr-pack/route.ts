@@ -5,6 +5,7 @@ import { getSiteOrigin } from "@/lib/appPaths";
 import { buildPartnerQrPackPdf } from "@/lib/partnerQrPdf";
 import type { Provider } from "@/types/provider";
 import type { AppLocale } from "@/i18n/config";
+import { PARTNER_QR_PRINT_CSS } from "@/theme/printMedia";
 
 function escapeHtml(s: string): string {
   return s
@@ -94,33 +95,7 @@ export async function GET(req: NextRequest) {
 <head>
   <meta charset="utf-8" />
   <title>Pesti Est — Partner QR pack</title>
-  <style>
-    @page { size: A5 portrait; margin: 12mm; }
-    * { box-sizing: border-box; }
-    body { font-family: system-ui, sans-serif; margin: 0; color: #111; }
-    .page {
-      width: 148mm;
-      min-height: 210mm;
-      padding: 10mm;
-      page-break-after: always;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    .page:last-child { page-break-after: auto; }
-    .brand { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin: 0; }
-    h1 { font-size: 20px; margin: 8px 0 4px; max-width: 120mm; }
-    .sub { font-size: 11px; color: #444; margin: 0 0 12px; max-width: 120mm; }
-    .qr-wrap { padding: 8px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
-    .hint { font-size: 10px; color: #666; margin-top: 10px; }
-    .id { font-size: 9px; color: #999; margin-top: 4px; }
-    @media screen {
-      body { background: #eee; padding: 16px; }
-      .page { margin: 0 auto 16px; box-shadow: 0 2px 12px rgba(0,0,0,.12); background: #fff; }
-    }
-  </style>
+  <style>${PARTNER_QR_PRINT_CSS}</style>
 </head>
 <body>
 ${pages}

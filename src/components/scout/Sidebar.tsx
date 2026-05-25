@@ -1,6 +1,6 @@
 "use client";
 
-import type { LucideIcon } from "lucide-react";
+import type { GdsIconComponent } from "@/components/gds/icons";
 import {
   CalendarDays,
   CalendarRange,
@@ -16,7 +16,7 @@ import {
   UserCircle,
   Wine,
   Building2,
-} from "lucide-react";
+} from "@/components/gds/icons";
 import {
   ActionIcon,
   Box,
@@ -33,7 +33,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
 import { Logo } from "./Logo";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { Category } from "@/types/provider";
 
 export type ViewKey =
@@ -51,7 +51,7 @@ export type ViewKey =
 type NavItem = {
   key: ViewKey;
   labelKey: string;
-  icon: LucideIcon;
+  icon: GdsIconComponent;
   disabled?: boolean;
 };
 

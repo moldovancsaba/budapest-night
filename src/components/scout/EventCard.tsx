@@ -1,10 +1,10 @@
 "use client";
 
-import { CalendarDays, MapPin, Ticket } from "lucide-react";
+import { CalendarDays, MapPin, Ticket } from "@/components/gds/icons";
 import Image from "next/image";
 import { Badge, Card, Group, Stack, Text } from "@mantine/core";
 import type { PublicNightEvent } from "@/lib/publicEvent";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useEventDisplayLabels,

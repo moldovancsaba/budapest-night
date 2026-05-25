@@ -12,10 +12,10 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Provider } from "@/types/provider";
-import { CalendarDays, ExternalLink, MapPin, Ticket, X } from "lucide-react";
+import { CalendarDays, ExternalLink, MapPin, Ticket, X } from "@/components/gds/icons";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import {

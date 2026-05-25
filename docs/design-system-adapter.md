@@ -1,62 +1,51 @@
 # Design system adapter — Pesti Est (budapest-night)
 
-Status: **GDS 2.4 adoption (partial)**  
-GDS version: **2.4.3** · packages via monorepo sibling ([sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system))  
+Status: **GDS-only** (Mantine via `@gds/*` only)  
+GDS version: **2.4.3** · [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system)  
 Last updated: 2026-05-25
 
-> [General Design System](https://github.com/sovereignsquad/general-design-system) is SSOT. Machine-readable inventory: [`gds-adoption.json`](../gds-adoption.json). [Exceptions](./design-system-exceptions.md) are documented separately.
+> SSOT: sovereignsquad GDS. Inventory: [`gds-adoption.json`](../gds-adoption.json). Exceptions: [`design-system-exceptions.md`](./design-system-exceptions.md).
 
-## Locked decisions (implemented)
+## Policy
 
-| Topic | Decision |
-|-------|----------|
-| Scope | Full Mantine-only migration |
-| Visual | Monochrome + brand red parity |
-| Theme | `extendGdsTheme` + `src/theme/pestiestTheme.ts` |
-| Root provider | `GdsProvider` from `@gds/theme/client` |
-| Color mode | GDS `ThemeToggle` + `defaultColorScheme="dark"` |
-| Notifications | Via `GdsProvider` (Mantine notifications) |
-| Host i18n | next-intl for page copy; GDS messages for semantic controls |
-| Tailwind / shadcn / Radix | **Removed** |
-| ESLint | `no-restricted-imports` on `@/components/ui/*` in scout/admin |
-| QA | [#26](https://github.com/moldovancsaba/budapest-night/issues/26) — 6-locale sign-off |
+| Rule | Implementation |
+|------|----------------|
+| UI primitives | Mantine + `@gds/theme`, `@gds/core` only |
+| Icons | `@/components/gds/icons` or `GdsIcons` — **no** `lucide-react` |
+| Legacy UI | No `@/components/ui/*`, Tailwind, Radix, shadcn |
+| Theme | `extendGdsTheme` in `src/theme/pestiestTheme.ts` |
+| Provider | `GdsProvider` in `src/components/gds/MantineRoot.tsx` |
+| Host copy | next-intl; GDS `getGdsMessages` for semantic controls |
 
 ## Adapter paths
 
 | Contract | Path |
 |----------|------|
-| GDS repo (SSOT) | `../general-design-system` → [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system) |
-| Local theme override | `src/theme/pestiestTheme.ts` (`@gds/theme/server`) |
-| Root provider | `src/app/providers.tsx` → `src/components/mantine/MantineRoot.tsx` |
-| GDS semantic messages | `src/lib/gdsMessages.ts` |
-| Button | `src/components/mantine/AppButton.tsx` (legacy shadcn variant map) |
-| State block | `src/components/mantine/StateBlock.tsx` (legacy wrapper; migrate to `@gds/core` `StateBlock`) |
+| GDS sibling repo | `../general-design-system` |
+| Theme | `src/theme/pestiestTheme.ts` |
+| Root provider | `src/components/gds/MantineRoot.tsx` |
+| Icons barrel | `src/components/gds/icons.ts` |
+| Buttons | `src/components/gds/AppButton.tsx` (legacy variant map; prefer Mantine/`SemanticButton`) |
+| Empty / state | `@gds/core` `EmptyState`, `StateBlock` via `src/components/gds` |
 | Shell | `src/components/scout/BudapestNightShell.tsx` |
-| Media | `src/components/media/CdnImage.tsx` |
-| Notify | `src/lib/notify.ts` |
+| Notify | `src/lib/notify.ts` (`@mantine/notifications`) |
 
-## Build
+## Commands
 
 ```bash
-# From budapest-night (prebuild runs this automatically)
-npm run build:gds
-
-# Or manually
-cd ../general-design-system/packages/gds-theme && npm run build
-cd ../general-design-system/packages/gds-core && npm run build
-cd ../../../budapest-night && npm install && npm run build
+npm run gds:sync      # pull latest GDS main
+npm run build:gds     # build @gds/theme + @gds/core
+npm run gds:check     # adoption manifest compliance
+npm run build
 ```
 
-**Vercel:** clone/build `general-design-system` sibling or switch to published `@gds/*` when on npm.
+## Enforcement
 
-## Next adoption steps
+- ESLint: `@gds/eslint-config` + `no-restricted-imports` on `lucide-react` and legacy paths
+- `prebuild` rebuilds sibling GDS packages
 
-1. Replace local `StateBlock` / `AppButton` with `@gds/core` contracts where APIs align.
-2. Adopt `PublicShell` / `ProductCard` for scout surfaces.
-3. Enable `@gds/eslint-config` when Lucide exception is reflected in shared lint policy.
-4. Prefer published `@gds/*@2.4.3` on npm when Vercel drops sibling-repo builds.
+## Remaining product-specific work
 
-## GitHub
-
-- GDS plan: [PESTIEST_MANTINE_REFACTOR.md](https://github.com/sovereignsquad/general-design-system/blob/main/PROJECTS/PESTIEST_MANTINE_REFACTOR.md)
-- Product board: [project 43](https://github.com/users/moldovancsaba/projects/43)
+- Migrate `BudapestNightShell` → `@gds/core` `PublicShell` when layout parity is validated
+- Replace `AppButton` legacy shadcn variants with Mantine/`SemanticButton` at call sites
+- Adopt `@gds/admin` for dashboard CRUD when admin refactor is scheduled

@@ -1,12 +1,12 @@
 "use client";
 
-import { CalendarDays } from "lucide-react";
+import { CalendarDays } from "@/components/gds/icons";
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { buildProgramPath, buildSectionPath } from "@/lib/appPaths";
 import { PROGRAM_VERTICALS } from "@/lib/programVerticals";
 import { useProgramWeek } from "@/hooks/useProgramWeek";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { Provider } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { EventCard } from "@/components/scout/EventCard";

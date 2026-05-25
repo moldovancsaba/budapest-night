@@ -9,8 +9,8 @@ import {
   MapPin,
   Mail,
   ArrowRight,
-} from "lucide-react";
-import { AppButton } from "@/components/mantine/AppButton";
+} from "@/components/gds/icons";
+import { AppButton } from "@/components/gds/AppButton";
 import { notify } from "@/lib/notify";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
 import { useAccountCopy } from "@/hooks/useLocalizedSiteCopy";

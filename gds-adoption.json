@@ -6,14 +6,17 @@
   "supportedEntryPoints": [
     "@gds/theme/client",
     "@gds/theme/server",
-    "@gds/core"
+    "@gds/core/client",
+    "@gds/core/server"
   ],
   "requiredContracts": [
     "StateBlock",
     "ProductCard",
     "PublicShell",
     "AuthShell",
-    "DataToolbar"
+    "DataToolbar",
+    "EmptyState",
+    "ThemeToggle"
   ],
   "localAdapters": [
     {
@@ -23,32 +26,26 @@
     },
     {
       "contract": "root-provider",
-      "path": "src/components/mantine/MantineRoot.tsx",
+      "path": "src/components/gds/MantineRoot.tsx",
       "status": "active"
+    },
+    {
+      "contract": "icons",
+      "path": "src/components/gds/icons.ts",
+      "status": "active"
+    },
+    {
+      "contract": "button",
+      "path": "src/components/gds/AppButton.tsx",
+      "status": "legacy-wrapper"
     },
     {
       "contract": "public-shell",
       "path": "src/components/scout/BudapestNightShell.tsx",
       "status": "active"
-    },
-    {
-      "contract": "state-block",
-      "path": "src/components/mantine/StateBlock.tsx",
-      "status": "legacy-wrapper"
-    },
-    {
-      "contract": "button",
-      "path": "src/components/mantine/AppButton.tsx",
-      "status": "legacy-wrapper"
     }
   ],
   "approvedExceptions": [
-    {
-      "surface": "lucide-react icons",
-      "reason": "Product icon glyphs; GDS uses Tabler in @gds/core.",
-      "owner": "pestiest",
-      "reviewDate": "2026-06-01"
-    },
     {
       "surface": "Map embed",
       "reason": "OSM iframe in provider profiles.",
@@ -56,7 +53,7 @@
       "reviewDate": "2026-06-01"
     }
   ],
-  "migrationStatus": "partial",
+  "migrationStatus": "gds-only",
   "owner": "pestiest",
   "lastReviewedAt": "2026-05-25"
 }

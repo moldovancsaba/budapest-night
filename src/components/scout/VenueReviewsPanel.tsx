@@ -1,11 +1,11 @@
 "use client";
 
 import type { Provider } from "@/types/provider";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { Group, Paper, Stack, Text, Textarea, TextInput, Title } from "@mantine/core";
 import { StarRatingInput } from "@/components/scout/StarRatingInput";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
-import { Star } from "lucide-react";
+import { Star } from "@/components/gds/icons";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { notify } from "@/lib/notify";

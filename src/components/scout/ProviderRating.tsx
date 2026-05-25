@@ -1,7 +1,7 @@
 "use client";
 
 import type { Provider } from "@/types/provider";
-import { Star } from "lucide-react";
+import { Star } from "@/components/gds/icons";
 import { Anchor, Group, Text } from "@mantine/core";
 import { useTranslations } from "next-intl";
 

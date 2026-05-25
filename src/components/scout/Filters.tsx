@@ -9,8 +9,8 @@ import {
   useDayTimeLabel,
 } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
-import { AppButton } from "@/components/mantine/AppButton";
-import { SlidersHorizontal } from "lucide-react";
+import { AppButton } from "@/components/gds/AppButton";
+import { SlidersHorizontal } from "@/components/gds/icons";
 import { useState } from "react";
 
 export interface FilterState {

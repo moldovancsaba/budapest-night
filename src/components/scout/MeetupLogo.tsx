@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { Baby, Building2, Heart, Coffee, Blocks, Users } from "lucide-react";
+import { Baby, Building2, Heart, Coffee, Blocks, Users } from "@/components/gds/icons";
 import { Box, Text } from "@mantine/core";
 import type { MeetupGroup } from "@/types/meetup";
 
@@ -79,7 +79,7 @@ export function MeetupLogo({
         ...p.container,
       }}
     >
-      <Icon size={dim.icon} color={p.iconColor} strokeWidth={1.75} aria-hidden />
+      <Icon size={dim.icon} color={p.iconColor} stroke={1.75} aria-hidden />
       <Text
         component="span"
         ff="var(--mantine-font-family-headings)"

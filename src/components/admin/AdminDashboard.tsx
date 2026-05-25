@@ -17,7 +17,7 @@ import {
   Textarea,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";
 import type { SiteDoc, SiteAccountSettings, SiteCalculatorCopy } from "@/types/site";

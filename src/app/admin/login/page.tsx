@@ -4,7 +4,7 @@ import { Anchor, Code, Paper, PasswordInput, Stack, Text, Title } from "@mantine
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { notify } from "@/lib/notify";
 
 export default function AdminLoginPage() {

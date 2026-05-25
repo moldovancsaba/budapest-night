@@ -34,9 +34,9 @@ import {
   Text,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { Menu as MenuIcon, Heart, Bell, UserCircle } from "lucide-react";
+import { Menu as MenuIcon, Heart, Bell, UserCircle } from "@/components/gds/icons";
 import { useLocale, useTranslations } from "next-intl";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { AppLocale } from "@/i18n/config";
 import { findProviderByVenueKey, getVenuePathKey } from "@/lib/providerLocale";
 import { findEventByKey } from "@/lib/eventLocale";
@@ -276,7 +276,7 @@ export default function BudapestNightShell() {
                   aria-label={t("openMenu")}
                   hiddenFrom="lg"
                 >
-                  <MenuIcon size={20} strokeWidth={1.75} />
+                  <MenuIcon size={20} stroke={1.75} />
                 </ActionIcon>
                 <Anchor component={Link} href="/" underline="never" aria-label={t("goHome")}>
                   <Group gap="sm" wrap="nowrap">
@@ -308,7 +308,7 @@ export default function BudapestNightShell() {
                     radius="xl"
                     aria-label={t("saved")}
                   >
-                    <Heart size={16} strokeWidth={1.75} />
+                    <Heart size={16} stroke={1.75} />
                   </ActionIcon>
                   {saved.length > 0 ? (
                     <Badge
@@ -330,7 +330,7 @@ export default function BudapestNightShell() {
                   radius="xl"
                   aria-label={t("notifications")}
                 >
-                  <Bell size={16} strokeWidth={1.75} />
+                  <Bell size={16} stroke={1.75} />
                 </ActionIcon>
                 {smUp ? (
                   <AppButton
@@ -362,7 +362,7 @@ export default function BudapestNightShell() {
                   radius="xl"
                   aria-label={t("myAccount")}
                 >
-                  <UserCircle size={20} strokeWidth={1.75} />
+                  <UserCircle size={20} stroke={1.75} />
                 </ActionIcon>
               </Group>
             </Group>

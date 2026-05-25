@@ -19,7 +19,7 @@ import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { NEIGHBORHOODS as FALLBACK_HOODS } from "@/data/locations";
 import type { BoroughChoice } from "@/types/provider";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
-import { MapPin, Users } from "lucide-react";
+import { MapPin, Users } from "@/components/gds/icons";
 import {
   useMeetupGroupsCatalog,
   useNeighborhoodsCatalog,

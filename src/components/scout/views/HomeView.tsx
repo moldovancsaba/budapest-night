@@ -10,8 +10,8 @@ import {
   ArrowRight,
   Star,
   Building2,
-  type LucideIcon,
-} from "lucide-react";
+  type GdsIconComponent,
+} from "@/components/gds/icons";
 import type { BoroughChoice, Category, Provider } from "@/types/provider";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
@@ -41,7 +41,7 @@ import { Link } from "@/i18n/routing";
 import { buildProgramPath } from "@/lib/appPaths";
 import { cacheBustMediaUrl } from "@/lib/siteMedia";
 import { ResolvedCoverImage } from "../ResolvedCoverImage";
-import { SiteLucideIcon } from "@/lib/siteLucideIcon";
+import { SiteGdsIcon } from "@/lib/siteGdsIcon";
 import {
   useProvidersCatalog,
   useMeetupGroupsCatalog,
@@ -53,7 +53,7 @@ import { EventCard } from "@/components/scout/EventCard";
 import { isUpcoming } from "@/lib/eventDisplay";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { BOROUGHS, NEIGHBORHOODS } from "@/data/locations";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import {
   Badge,
   Box,
@@ -92,7 +92,7 @@ function openMarketingLink(href: string | undefined, inApp: () => void) {
 
 const CATEGORY_TILES: {
   key: Category | "Events" | "Meet-Up Groups";
-  icon: LucideIcon;
+  icon: GdsIconComponent;
   descKey: keyof HomeCopy["categories"];
 }[] = [
   { key: "Events", icon: CalendarDays, descKey: "events" },
@@ -526,7 +526,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
                     <Title order={3} size="h6">
                       {step.title}
                     </Title>
-                    <SiteLucideIcon name={step.icon} />
+                    <SiteGdsIcon name={step.icon} />
                   </Group>
                   <Text size="sm" c="dimmed">
                     {step.desc}
@@ -543,7 +543,7 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
           {trustPillars.map((pillar) => (
             <Group key={pillar.title} align="flex-start" wrap="nowrap" gap="sm">
               <ThemeIcon size="lg" radius="xl" variant="light" color="gray">
-                <SiteLucideIcon name={pillar.icon} />
+                <SiteGdsIcon name={pillar.icon} />
               </ThemeIcon>
               <Stack gap={4}>
                 <Text size="sm" fw={600}>

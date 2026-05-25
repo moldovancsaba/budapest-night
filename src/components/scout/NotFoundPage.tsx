@@ -8,9 +8,9 @@ import {
   Sparkles,
   ArrowRight,
   Home,
-} from "lucide-react";
+} from "@/components/gds/icons";
 import { Box, Group, Paper, Stack, Text, Title } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 
 export type NotFoundCopy = {
   code: string;

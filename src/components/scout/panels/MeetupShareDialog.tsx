@@ -1,8 +1,8 @@
 "use client";
 
 import { Group, Modal, Stack, Text } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
-import { Mail, MessageCircle, Link2 } from "lucide-react";
+import { AppButton } from "@/components/gds/AppButton";
+import { Mail, MessageCircle, Link2 } from "@/components/gds/icons";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import { notify } from "@/lib/notify";
 import { useLocale, useTranslations } from "next-intl";

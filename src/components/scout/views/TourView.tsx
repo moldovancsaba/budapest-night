@@ -1,14 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, MapPin, RefreshCw } from "lucide-react";
+import { ChevronLeft, MapPin, RefreshCw } from "@/components/gds/icons";
 import { useLocale, useTranslations } from "next-intl";
 import type { AppLocale } from "@/i18n/config";
 import { Link, useRouter } from "@/i18n/routing";
 import { buildSectionPath, buildTourPath } from "@/lib/appPaths";
 import type { Provider } from "@/types/provider";
 import { useProvidersCatalog } from "@/hooks/useCatalog";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {

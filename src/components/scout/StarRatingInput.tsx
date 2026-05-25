@@ -1,7 +1,7 @@
 "use client";
 
 import { Group, UnstyledButton } from "@mantine/core";
-import { Star } from "lucide-react";
+import { Star } from "@/components/gds/icons";
 
 type Props = {
   value: number;
@@ -25,7 +25,7 @@ export function StarRatingInput({ value, onChange, label, disabled }: Props) {
         >
           <Star
             size={24}
-            strokeWidth={1.5}
+            stroke={1.5}
             fill={value >= n ? "var(--mantine-color-text)" : "transparent"}
             color={value >= n ? "var(--mantine-color-text)" : "var(--mantine-color-dimmed)"}
           />

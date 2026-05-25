@@ -8,7 +8,7 @@ import { inferMenuItemKind } from "@/lib/menu/flattenMenuItems";
 import { menuTagMatchesItemKind, menuTagMessageKey } from "@/data/menuTags";
 import type { MenuSectionKind } from "@/types/menu";
 import { Anchor, Badge, Group, Paper, Stack, Text } from "@mantine/core";
-import { MANTINE_PANEL_RADIUS } from "@/lib/mantine/surfaceTokens";
+import { MANTINE_PANEL_RADIUS } from "@/lib/gds/surfaceTokens";
 
 function sectionKindLabel(
   kind: MenuSectionKind,

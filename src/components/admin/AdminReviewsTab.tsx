@@ -1,7 +1,7 @@
 "use client";
 
 import { Group, Paper, Stack, Text } from "@mantine/core";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import type { VenueReview } from "@/types/venueReview";
 
 type Props = {

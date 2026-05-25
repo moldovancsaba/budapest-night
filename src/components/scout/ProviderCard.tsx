@@ -5,11 +5,11 @@ import {
   MapPin,
   Calendar,
   Megaphone,
-} from "lucide-react";
+} from "@/components/gds/icons";
 import Image from "next/image";
 import { ActionIcon, Badge, Card, Group, Stack, Text } from "@mantine/core";
 import type { Provider } from "@/types/provider";
-import { AppButton } from "@/components/mantine/AppButton";
+import { AppButton } from "@/components/gds/AppButton";
 import { useSaved, useCalculator } from "@/store/useScout";
 import { notify } from "@/lib/notify";
 import { CMS_MEDIA } from "@/config/defaultMedia";
