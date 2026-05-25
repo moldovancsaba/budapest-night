@@ -39,6 +39,8 @@
     "audit:locations:validate": "node scripts/lib/location-ingest-validate.test.cjs",
     "i18n:audit": "node scripts/i18n-audit.cjs",
     "gds:check": "gds-compliance check --manifest ./gds-adoption.json",
+    "content:quality:audit": "node scripts/content-quality-audit.cjs",
+    "content:quality": "npm run content:quality:audit",
     "curator:run": "npx tsx scripts/run-curator-once.ts",
     "reviews:sync": "npx tsx scripts/sync-provider-reviews.ts",
     "env:generate": "node scripts/generate-env-secrets.cjs",

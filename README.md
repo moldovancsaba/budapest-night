@@ -47,6 +47,7 @@ Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Man
 | `npm run ingest:listing -- path.json` | POST ingest payload (`--dry-run`, `--force`) |
 | `npm run ingest:db -- path.json` | Apply payload directly to Mongo (menu/image patches) |
 | `npm run audit:catalog` | Content audit → `scripts/catalog-audit-findings.md` |
+| `npm run content:quality:audit` | Full audit bundle for Cursor content-quality agent |
 | `npm run audit:locations` | Location fixes → `venue-location-fix.json` |
 | `npm run menu:status` | Count providers missing `menu.sections` |
 | `node scripts/fix-venue-slugs.cjs --ingest` | Set canonical `locales.en.slug` for all providers |

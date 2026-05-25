@@ -1,5 +1,6 @@
 import { Heart, Share2, MapPin, Instagram, CalendarClock } from "@/components/gds/icons";
-import { ListingCardMedia, ProductCard } from "@/components/gds";
+import Image from "next/image";
+import { ActionIcon, Badge, Card, Group, Stack, Text } from "@mantine/core";
 import { AppButton } from "@/components/gds/AppButton";
 import { useSaved } from "@/store/useScout";
 import { notify } from "@/lib/notify";
@@ -13,7 +14,6 @@ import {
 } from "@/hooks/useVenueDisplay";
 import { useTranslations } from "next-intl";
 import { CMS_MEDIA } from "@/config/defaultMedia";
-import { ActionIcon, Badge, Group, Stack, Text } from "@mantine/core";
 
 interface Props {
   group: PublicMeetupGroup;
@@ -37,98 +37,109 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
   ].filter(Boolean);
 
   return (
-    <ProductCard
-      icon={<MeetupLogo group={group} />}
-      title={group.name}
-      status={
-        <Badge radius="xl" variant="light" color="gray" size="sm" tt="uppercase">
-          {groupTypeLabel(group.groupType)}
-        </Badge>
-      }
-      description={
-        <Stack gap="xs">
-          <Group gap={4}>
-            <MapPin size={14} />
-            <Text size="xs" c="dimmed">
+    <Card radius="xl" p={0} withBorder style={{ overflow: "hidden" }}>
+      <Card.Section>
+        <div style={{ position: "relative", height: 144, overflow: "hidden" }}>
+          <Image
+            fill
+            src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
+            alt={group.name}
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
+      </Card.Section>
+      <Group align="flex-start" justify="space-between" gap="md" p="lg" pb="sm">
+        <Group align="flex-start" gap="md">
+          <MeetupLogo group={group} />
+          <Stack gap={4}>
+            <Badge radius="xl" variant="light" color="gray" size="sm" tt="uppercase">
+              {groupTypeLabel(group.groupType)}
+            </Badge>
+            <AppButton onClick={() => onOpen(group)} variant="subtle" px={0} justify="flex-start" color="gray">
+              <Text fw={600} size="lg" lh={1.2} ta="left">
+                {group.name}
+              </Text>
+            </AppButton>
+            <Group gap={4}>
+              <MapPin size={14} />
+              <Text size="xs" c="dimmed">
               {locationLine(group.borough, group.neighborhood)}
-            </Text>
-          </Group>
-          <Text size="sm" lh={1.6} c="dimmed">
-            {group.description}
-          </Text>
-          <Group gap={6}>
-            <Badge radius="xl" variant="light" color="gray" size="sm">
-              {ageLabel(group.ageRange)}
-            </Badge>
-            <Badge radius="xl" variant="outline" color="gray" size="sm" leftSection={<CalendarClock size={12} />}>
-              {cadenceLabel(group.cadence)}
-            </Badge>
-            {organizerParts.length > 0 ? (
-              <Badge radius="xl" variant="outline" color="gray" size="sm">
-                {organizerParts.join(" · ")}
-              </Badge>
-            ) : null}
-          </Group>
-        </Stack>
-      }
-      media={
-        <ListingCardMedia
-          src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
-          alt={group.name}
-          height={144}
-          overlays={
-            <ActionIcon
-              onClick={(e) => {
-                e.stopPropagation();
-                toggle(group.id);
-                notify.success(saved ? t("unsave") : t("save"));
-              }}
-              aria-label={saved ? t("unsave") : t("save")}
-              variant="filled"
-              color="dark"
-              radius="xl"
-              style={{ position: "absolute", top: 12, right: 12 }}
-            >
-              <Heart size={16} style={{ fill: saved ? "currentColor" : "none" }} />
-            </ActionIcon>
-          }
-        />
-      }
-      secondaryActions={[{ label: t("share"), onClick: () => onShare(group) }]}
-      footer={
-        <Stack gap="sm" w="100%">
-          {group.instagram ? (
-            <Group
-              py="xs"
-              style={{ borderTop: "1px solid var(--mantine-color-default-border)" }}
-            >
-              <a
-                href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 12 }}
-              >
-                <Instagram size={14} />
-                {group.instagram}
-              </a>
+              </Text>
             </Group>
-          ) : null}
-          <Group gap="xs" w="100%">
-            <AppButton onClick={() => onOpen(group)} color="brand" style={{ flex: 1 }}>
-              {t("viewDetails")}
-            </AppButton>
-            <AppButton
-              variant="outline"
-              aria-label={t("share")}
-              px="sm"
-              onClick={() => onShare(group)}
-            >
-              <Share2 size={16} />
-            </AppButton>
-          </Group>
-        </Stack>
-      }
-    />
+          </Stack>
+        </Group>
+        <ActionIcon
+          onClick={(e) => {
+            e.stopPropagation();
+            toggle(group.id);
+            notify.success(saved ? t("unsave") : t("save"));
+          }}
+          aria-label={saved ? t("unsave") : t("save")}
+          variant="light"
+          color="gray"
+          radius="xl"
+        >
+          <Heart size={16} style={{ fill: saved ? "currentColor" : "none" }} />
+        </ActionIcon>
+      </Group>
+
+      <Stack gap="sm" px="lg" style={{ flex: 1 }}>
+        <Text size="sm" lh={1.6} c="dimmed">
+          {group.description}
+        </Text>
+
+        <Group gap={6}>
+          <Badge radius="xl" variant="light" color="gray" size="sm">
+            {ageLabel(group.ageRange)}
+          </Badge>
+          <Badge radius="xl" variant="outline" color="gray" size="sm" leftSection={<CalendarClock size={12} />}>
+            {cadenceLabel(group.cadence)}
+          </Badge>
+          {organizerParts.length > 0 && (
+            <Badge radius="xl" variant="outline" color="gray" size="sm">
+              {organizerParts.join(" · ")}
+            </Badge>
+          )}
+        </Group>
+      </Stack>
+
+      {group.instagram ? (
+        <Group
+          px="lg"
+          py="sm"
+          style={{ borderTop: "1px solid var(--mantine-color-gray-7)" }}
+        >
+          <a
+            href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 12 }}
+          >
+            <Instagram size={14} />
+            {group.instagram}
+          </a>
+        </Group>
+      ) : null}
+
+      <Group gap="xs" px="lg" pb="lg">
+        <AppButton
+          onClick={() => onOpen(group)}
+          color="brand"
+          style={{ flex: 1 }}
+        >
+          {t("viewDetails")}
+        </AppButton>
+        <AppButton
+          variant="outline"
+          aria-label={t("share")}
+          px="sm"
+          onClick={() => onShare(group)}
+        >
+          <Share2 size={16} />
+        </AppButton>
+      </Group>
+    </Card>
   );
 }

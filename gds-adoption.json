@@ -47,8 +47,9 @@
     },
     {
       "contract": "listing-card",
-      "path": "src/components/gds/ListingCardMedia.tsx",
-      "status": "active"
+      "path": "src/components/scout/ProviderCard.tsx",
+      "status": "deferred",
+      "note": "ProductCard migration reverted; unique images are catalog data (content-quality agent)"
     },
     {
       "contract": "public-shell",
