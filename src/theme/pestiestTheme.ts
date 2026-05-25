@@ -1,5 +1,5 @@
-import { mergeThemeOverrides, type MantineColorsTuple } from "@mantine/core";
-import { gdsTheme } from "@gds/theme";
+import type { MantineColorsTuple } from "@mantine/core";
+import { extendGdsTheme } from "@gds/theme/server";
 
 /** Pesti Est brand red — hsl(358 72% 46%). */
 const brand: MantineColorsTuple = [
@@ -29,7 +29,8 @@ const ink: MantineColorsTuple = [
   "#0a0a0a",
 ];
 
-export const pestiestTheme = mergeThemeOverrides(gdsTheme, {
+/** Pesti Est brand on flat GDS surfaces (dark public default in MantineRoot). */
+export const pestiestTheme = extendGdsTheme({
   primaryColor: "brand",
   defaultRadius: "md",
   fontFamily: "var(--font-rubik), var(--font-noto-devanagari), system-ui, sans-serif",
@@ -54,13 +55,20 @@ export const pestiestTheme = mergeThemeOverrides(gdsTheme, {
     ink,
   },
   primaryShade: { light: 5, dark: 4 },
+  shadows: {
+    xs: "none",
+    sm: "none",
+    md: "none",
+    lg: "none",
+    xl: "none",
+  },
   components: {
     Button: { defaultProps: { size: "md", radius: "md" } },
     TextInput: { defaultProps: { size: "md", radius: "md" } },
     Select: { defaultProps: { size: "md", radius: "md" } },
     Modal: { defaultProps: { centered: true, radius: "lg" } },
-    Paper: { defaultProps: { radius: "xl" } },
-    Card: { defaultProps: { radius: "xl", padding: "lg", withBorder: true } },
+    Paper: { defaultProps: { radius: "xl", withBorder: true } },
+    Card: { defaultProps: { radius: "xl", padding: "lg", withBorder: true, shadow: undefined } },
     Title: {
       defaultProps: {
         tt: "uppercase",

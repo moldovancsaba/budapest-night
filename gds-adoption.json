@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "gdsVersion": "2.4.0",
+  "gdsRepository": "https://github.com/sovereignsquad/general-design-system",
+  "productArchetype": "public-discovery",
+  "supportedEntryPoints": [
+    "@gds/theme/client",
+    "@gds/theme/server",
+    "@gds/core"
+  ],
+  "requiredContracts": [
+    "StateBlock",
+    "ProductCard",
+    "PublicShell",
+    "AuthShell",
+    "DataToolbar"
+  ],
+  "localAdapters": [
+    {
+      "contract": "theme",
+      "path": "src/theme/pestiestTheme.ts",
+      "status": "active"
+    },
+    {
+      "contract": "root-provider",
+      "path": "src/components/mantine/MantineRoot.tsx",
+      "status": "active"
+    },
+    {
+      "contract": "public-shell",
+      "path": "src/components/scout/BudapestNightShell.tsx",
+      "status": "active"
+    },
+    {
+      "contract": "state-block",
+      "path": "src/components/mantine/StateBlock.tsx",
+      "status": "legacy-wrapper"
+    },
+    {
+      "contract": "button",
+      "path": "src/components/mantine/AppButton.tsx",
+      "status": "legacy-wrapper"
+    }
+  ],
+  "approvedExceptions": [
+    {
+      "surface": "lucide-react icons",
+      "reason": "Product icon glyphs; GDS uses Tabler in @gds/core.",
+      "owner": "pestiest",
+      "reviewDate": "2026-06-01"
+    },
+    {
+      "surface": "Map embed",
+      "reason": "OSM iframe in provider profiles.",
+      "owner": "pestiest",
+      "reviewDate": "2026-06-01"
+    }
+  ],
+  "migrationStatus": "partial",
+  "owner": "pestiest",
+  "lastReviewedAt": "2026-05-25"
+}

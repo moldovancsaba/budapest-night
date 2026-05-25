@@ -16,11 +16,11 @@
 
 ## Stack
 
-Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@gds/theme` (GDS v2.2).
+Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@gds/theme` / `@gds/core` (GDS **2.4**).
 
-**Monorepo:** depends on `../general-design-system/packages/gds-theme` — run `npm run build` in that package after cloning.
+**Monorepo:** depends on sibling [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system) (`../general-design-system`). `npm run build` runs `build:gds` first.
 
-**Design system:** [General Design System](https://github.com/moldovancsaba/general-design-system) is SSOT for UI/UX. Local adapter: [docs/design-system-adapter.md](docs/design-system-adapter.md).
+**Design system:** [General Design System](https://github.com/sovereignsquad/general-design-system) is SSOT. Local adapter: [docs/design-system-adapter.md](docs/design-system-adapter.md) · [gds-adoption.json](gds-adoption.json).
 
 ## Environment variables
 

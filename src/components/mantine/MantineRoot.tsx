@@ -1,31 +1,27 @@
 "use client";
 
-import { DirectionProvider, MantineProvider } from "@mantine/core";
-import { ModalsProvider } from "@mantine/modals";
-import { Notifications } from "@mantine/notifications";
+import { GdsProvider } from "@gds/theme/client";
 import { usePathname } from "next/navigation";
+import { localeFromPathname } from "@/lib/localeFromPath";
+import { getGdsMessagesForLocale } from "@/lib/gdsMessages";
 import { pestiestTheme } from "@/theme/pestiestTheme";
 
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 
-function usePathDirection(): "ltr" | "rtl" {
-  const pathname = usePathname() ?? "";
-  const seg = pathname.split("/").filter(Boolean)[0];
-  return seg === "ar" || seg === "he" ? "rtl" : "ltr";
-}
-
 export function MantineRoot({ children }: { children: React.ReactNode }) {
-  const dir = usePathDirection();
+  const pathname = usePathname() ?? "";
+  const locale = localeFromPathname(pathname);
 
   return (
-    <DirectionProvider initialDirection={dir} key={dir}>
-      <MantineProvider theme={pestiestTheme} defaultColorScheme="dark">
-        <ModalsProvider>
-          <Notifications position="top-right" zIndex={1000} />
-          {children}
-        </ModalsProvider>
-      </MantineProvider>
-    </DirectionProvider>
+    <GdsProvider
+      key={locale}
+      locale={locale}
+      messages={getGdsMessagesForLocale(locale)}
+      theme={pestiestTheme}
+      defaultColorScheme="dark"
+    >
+      {children}
+    </GdsProvider>
   );
 }

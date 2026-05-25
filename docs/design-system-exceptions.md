@@ -1,7 +1,7 @@
 # Design system exceptions
 
 Status: active  
-GDS epic: [#11](https://github.com/moldovancsaba/budapest-night/issues/11)
+GDS SSOT: [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system)
 
 Only dependencies listed here may bypass the Mantine-only **primitive** rule. **shadcn/Radix/Tailwind are removed.**
 

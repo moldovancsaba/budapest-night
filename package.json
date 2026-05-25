@@ -4,6 +4,8 @@
   "version": "0.2.0",
   "scripts": {
     "dev": "next dev",
+    "build:gds": "npm run build --prefix ../general-design-system/packages/gds-theme && npm run build --prefix ../general-design-system/packages/gds-core",
+    "prebuild": "npm run build:gds",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -48,6 +50,7 @@
     "test:ingest-validate": "node --test scripts/lib/image-ingest-validate.test.cjs scripts/lib/scarcity-ingest-validate.test.cjs"
   },
   "dependencies": {
+    "@gds/core": "file:../general-design-system/packages/gds-core",
     "@gds/theme": "file:../general-design-system/packages/gds-theme",
     "@hookform/resolvers": "^3.10.0",
     "@mantine/core": "^7.17.8",
