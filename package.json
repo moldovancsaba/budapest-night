@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build:gds": "npm run build --prefix ../general-design-system/packages/gds-theme && npm run build --prefix ../general-design-system/packages/gds-core",
+    "gds:sync": "git -C ../general-design-system fetch origin main && git -C ../general-design-system pull origin main",
     "prebuild": "npm run build:gds",
     "build": "next build",
     "start": "next start",

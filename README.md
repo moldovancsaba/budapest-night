@@ -16,7 +16,7 @@
 
 ## Stack
 
-Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@gds/theme` / `@gds/core` (GDS **2.4**).
+Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@gds/theme` / `@gds/core` (GDS **2.4.3**).
 
 **Monorepo:** depends on sibling [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system) (`../general-design-system`). `npm run build` runs `build:gds` first.
 

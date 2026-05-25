@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "gdsVersion": "2.4.0",
+  "gdsVersion": "2.4.3",
   "gdsRepository": "https://github.com/sovereignsquad/general-design-system",
   "productArchetype": "public-discovery",
   "supportedEntryPoints": [

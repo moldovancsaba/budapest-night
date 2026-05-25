@@ -1,7 +1,7 @@
 # Design system adapter — Pesti Est (budapest-night)
 
 Status: **GDS 2.4 adoption (partial)**  
-GDS version: **2.4.0** · packages via monorepo sibling  
+GDS version: **2.4.3** · packages via monorepo sibling ([sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system))  
 Last updated: 2026-05-25
 
 > [General Design System](https://github.com/sovereignsquad/general-design-system) is SSOT. Machine-readable inventory: [`gds-adoption.json`](../gds-adoption.json). [Exceptions](./design-system-exceptions.md) are documented separately.
@@ -54,7 +54,7 @@ cd ../../../budapest-night && npm install && npm run build
 1. Replace local `StateBlock` / `AppButton` with `@gds/core` contracts where APIs align.
 2. Adopt `PublicShell` / `ProductCard` for scout surfaces.
 3. Enable `@gds/eslint-config` when Lucide exception is reflected in shared lint policy.
-4. Add `@gds/core` locale **`es`** when shipped upstream.
+4. Prefer published `@gds/*@2.4.3` on npm when Vercel drops sibling-repo builds.
 
 ## GitHub
 
