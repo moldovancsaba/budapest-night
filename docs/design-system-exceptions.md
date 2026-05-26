@@ -16,4 +16,4 @@ Only dependencies listed here may bypass the Mantine + GDS **primitive** rule. *
 
 1. New rows require GDS maintainer + product owner approval.
 2. No `@/components/ui/*`, `@radix-ui/*`, `tailwindcss`, or `lucide-react` in product code.
-3. Icons: import from `@/components/gds/icons` or `GdsIcons` from `@gds/core` only.
+3. Icons: import from `@/components/gds/icons` or `GdsIcons` from `@doneisbetter/gds-core` only.

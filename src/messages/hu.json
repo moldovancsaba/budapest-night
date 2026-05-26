@@ -95,6 +95,10 @@
     "saved": "Mentve",
     "removed": "Eltávolítva a mentettekből",
     "share": "Hely megosztása",
+    "listed": "Listázva",
+    "locationMeta": "Terület",
+    "addressMeta": "Cím",
+    "ratingMeta": "Értékelés",
     "viewDetails": "Részletek",
     "reserve": "Foglalás",
     "reserveAt": "Foglalás: {name}",
@@ -195,7 +199,9 @@
     "noMatchesHint": "Próbálj más kerületet, vagy nézz vissza később.",
     "loading": "Események betöltése…",
     "loadErrorTitle": "Nem sikerült betölteni az eseményeket",
-    "loadErrorMessage": "Ellenőrizd a MONGODB_URI-t és a hálózatot."
+    "loadErrorMessage": "Ellenőrizd a MONGODB_URI-t és a hálózatot.",
+    "districtScope": "Kerület",
+    "eventsResultLabel": "esemény"
   },
   "event": {
     "viewEvent": "Esemény megtekintése",
@@ -676,6 +682,10 @@
     "spotlightEventsHint": "A hét után induló nagy események — jegyek és részletek egy kattintással.",
     "featuredVenues": "Kiemelt helyszínek",
     "eventsThisWeek": "{count} esemény ezen a héten",
+    "eventsResultLabel": "esemény ezen a héten",
+    "emptyWeekTitle": "Még nincs program ezen a héten",
+    "emptyWeekMessage": "A lista csütörtökönként frissül. Addig is böngészhetsz a teljes naptárban.",
+    "upcomingFallback": "Hamarosan",
     "browseAllEvents": "Összes esemény",
     "boroughTitle": "Kerület szerint",
     "emptyVertical": "Ehhez a műfajhoz még nincs lista.",

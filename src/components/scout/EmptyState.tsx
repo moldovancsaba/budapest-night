@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { EmptyState as GdsEmptyState } from "@gds/core/client";
+import { EmptyState as GdsEmptyState } from "@doneisbetter/gds-core/client";
 import { Compass, type GdsIconComponent } from "@/components/gds/icons";
 
 export function EmptyState({

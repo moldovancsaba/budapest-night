@@ -1,7 +1,7 @@
-import { getGdsMessages } from "@gds/core";
+import { getGdsMessages } from "@doneisbetter/gds-core";
 import type { AppLocale } from "@/i18n/config";
 
-/** GDS semantic control messages (SSOT: @gds/core locales, currently 2.4.3). */
+/** GDS semantic control messages (SSOT: @doneisbetter/gds-core locales). */
 export function getGdsMessagesForLocale(locale: AppLocale): Record<string, string> {
   return getGdsMessages(locale);
 }

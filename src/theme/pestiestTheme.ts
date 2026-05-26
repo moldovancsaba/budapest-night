@@ -1,5 +1,5 @@
 import type { MantineColorsTuple } from "@mantine/core";
-import { extendGdsTheme } from "@gds/theme/server";
+import { extendGdsTheme } from "@doneisbetter/gds-theme/server";
 
 /** Pesti Est brand red — hsl(358 72% 46%). */
 const brand: MantineColorsTuple = [

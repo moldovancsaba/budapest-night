@@ -11,7 +11,7 @@ import {
 import { useTranslations } from "next-intl";
 import { DataToolbar, FilterDrawer, SemanticButton } from "@/components/gds";
 import { useMemo, useState } from "react";
-import type { DataToolbarFilterChip } from "@gds/core/client";
+import type { DataToolbarFilterChip } from "@doneisbetter/gds-core/client";
 
 export interface FilterState {
   ages: AgeRange[];

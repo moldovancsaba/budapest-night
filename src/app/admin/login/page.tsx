@@ -4,7 +4,7 @@ import { Anchor, Code, PasswordInput, Stack, Text } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { AuthShell, SemanticButton } from "@/components/gds";
+import { AppButton, AuthShell } from "@/components/gds";
 import { notify } from "@/lib/notify";
 
 export default function AdminLoginPage() {
@@ -12,8 +12,7 @@ export default function AdminLoginPage() {
   const [busy, setBusy] = useState(false);
   const router = useRouter();
 
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const login = async () => {
     setBusy(true);
     try {
       const r = await fetch("/api/admin/login", {
@@ -34,6 +33,11 @@ export default function AdminLoginPage() {
     } finally {
       setBusy(false);
     }
+  };
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await login();
   };
 
   return (
@@ -64,13 +68,9 @@ export default function AdminLoginPage() {
             size="md"
             required
           />
-          <SemanticButton
-            action="login"
-            type="submit"
-            fullWidth
-            loading={busy}
-            disabled={!password}
-          />
+          <AppButton type="submit" fullWidth loading={busy} disabled={!password}>
+            Sign in
+          </AppButton>
         </Stack>
       </AuthShell>
     </Stack>

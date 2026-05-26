@@ -14,6 +14,8 @@ export type ProgramWeekPayload = {
   spotlightEvents?: PublicNightEvent[];
   featuredProviders: Provider[];
   fallbackEventCount: number;
+  /** When the week has no curated picks, surface upcoming events so the page is not empty. */
+  suggestedEvents?: PublicNightEvent[];
   verticalSponsors?: Record<string, { name: string; url?: string }>;
 };
 

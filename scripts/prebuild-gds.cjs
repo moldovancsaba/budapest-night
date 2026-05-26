@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build @gds/* from vendor/general-design-system (skipped when packages already built).
+ * Build @doneisbetter/gds-* from vendor/general-design-system (skipped when packages already built).
  * Prunes vendor node_modules after build so Next.js resolves a single @mantine/core.
  */
 const fs = require("fs");
@@ -47,9 +47,9 @@ if (!fs.existsSync(vendorModules)) {
   });
 }
 
-console.log("[gds] Building @gds/theme, @gds/core, @gds/admin…");
+console.log("[gds] Building @doneisbetter/gds-theme, gds-core, gds-admin…");
 execSync(
-  "npm run build --workspace=@gds/theme --workspace=@gds/core --workspace=@gds/admin",
+  "npm run build --workspace=@doneisbetter/gds-theme --workspace=@doneisbetter/gds-core --workspace=@doneisbetter/gds-admin",
   { cwd: vendor, stdio: "inherit" },
 );
 

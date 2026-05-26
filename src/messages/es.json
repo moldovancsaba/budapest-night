@@ -95,6 +95,10 @@
     "saved": "Guardado",
     "removed": "Eliminado de guardados",
     "share": "Compartir local",
+    "listed": "Listado",
+    "locationMeta": "Zona",
+    "addressMeta": "Dirección",
+    "ratingMeta": "Valoración",
     "viewDetails": "Ver detalles",
     "reserve": "Reservar",
     "reserveAt": "Reservar en {name}",
@@ -195,7 +199,9 @@
     "noMatchesHint": "Prueba otro distrito o vuelve cuando haya nuevos listados.",
     "loading": "Cargando eventos…",
     "loadErrorTitle": "No se pudieron cargar los eventos",
-    "loadErrorMessage": "Comprueba MONGODB_URI y la red."
+    "loadErrorMessage": "Comprueba MONGODB_URI y la red.",
+    "districtScope": "Distrito",
+    "eventsResultLabel": "eventos"
   },
   "event": {
     "viewEvent": "Ver evento",
@@ -676,6 +682,10 @@
     "spotlightEventsHint": "Grandes eventos después de esta semana.",
     "featuredVenues": "Lugares destacados",
     "eventsThisWeek": "{count} eventos esta semana",
+    "eventsResultLabel": "eventos esta semana",
+    "emptyWeekTitle": "Aún no hay eventos esta semana",
+    "emptyWeekMessage": "El programa se actualiza cada jueves. Mientras tanto, explora el calendario completo.",
+    "upcomingFallback": "Próximamente",
     "browseAllEvents": "Ver todos los eventos",
     "boroughTitle": "Por distrito",
     "emptyVertical": "Aún no hay listados en esta categoría.",

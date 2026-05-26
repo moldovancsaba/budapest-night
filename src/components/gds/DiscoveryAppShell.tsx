@@ -11,8 +11,8 @@ type DiscoveryAppShellProps = {
 };
 
 /**
- * Sidebar discovery layout (288px nav). Mirrors @gds/admin AppShell regions until
- * a dedicated DiscoveryShell ships in @gds/core.
+ * Sidebar discovery layout (288px nav). Mirrors @doneisbetter/gds-admin AppShell regions until
+ * a dedicated DiscoveryShell ships in @doneisbetter/gds-core.
  */
 export function DiscoveryAppShell({
   navbar,

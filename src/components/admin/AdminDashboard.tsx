@@ -16,7 +16,7 @@ import {
   TextInput,
   Textarea,
 } from "@mantine/core";
-import { AppShell as AdminAppShell, PageHeader } from "@gds/admin/client";
+import { AppShell as AdminAppShell, PageHeader } from "@doneisbetter/gds-admin/client";
 import { AppButton, SemanticButton } from "@/components/gds";
 import type { Provider } from "@/types/provider";
 import type { MeetupGroup } from "@/types/meetup";

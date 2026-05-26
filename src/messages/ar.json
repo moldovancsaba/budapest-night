@@ -95,6 +95,10 @@
     "saved": "تم الحفظ",
     "removed": "تمت الإزالة من المحفوظات",
     "share": "مشاركة المكان",
+    "listed": "مُدرَج",
+    "locationMeta": "المنطقة",
+    "addressMeta": "العنوان",
+    "ratingMeta": "التقييم",
     "viewDetails": "التفاصيل",
     "reserve": "حجز",
     "reserveAt": "حجز في {name}",
@@ -195,7 +199,9 @@
     "noMatchesHint": "جرّب منطقة أخرى أو عد لاحقاً بعد إضافة فعاليات جديدة.",
     "loading": "جارٍ تحميل الفعاليات…",
     "loadErrorTitle": "تعذّر تحميل الفعاليات",
-    "loadErrorMessage": "تحقق من MONGODB_URI والشبكة."
+    "loadErrorMessage": "تحقق من MONGODB_URI والشبكة.",
+    "districtScope": "المنطقة",
+    "eventsResultLabel": "فعاليات"
   },
   "event": {
     "viewEvent": "عرض الفعالية",
@@ -676,6 +682,10 @@
     "spotlightEventsHint": "فعاليات كبرى بعد هذا الأسبوع.",
     "featuredVenues": "أماكن مميزة",
     "eventsThisWeek": "{count} فعالية هذا الأسبوع",
+    "eventsResultLabel": "فعاليات هذا الأسبوع",
+    "emptyWeekTitle": "لا توجد فعاليات لهذا الأسبوع بعد",
+    "emptyWeekMessage": "يُحدَّث البرنامج كل خميس. يمكنك تصفح التقويم الكامل حتى ذلك الحين.",
+    "upcomingFallback": "قريبًا",
     "browseAllEvents": "كل الفعاليات",
     "boroughTitle": "حسب المنطقة",
     "emptyVertical": "لا توجد قوائم في هذا القسم بعد.",

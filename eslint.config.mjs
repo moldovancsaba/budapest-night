@@ -1,7 +1,7 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
-import { createGdsConfig } from "@gds/eslint-config";
+import { createGdsConfig } from "@doneisbetter/gds-eslint-config";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,13 +32,17 @@ const eslintConfig = [
           paths: [
             {
               name: "lucide-react",
-              message: "Use @/components/gds/icons or GdsIcons from @gds/core.",
+              message: "Use @/components/gds/icons or GdsIcons from @doneisbetter/gds-core.",
             },
           ],
           patterns: [
             {
+              group: ["@gds/*"],
+              message: "Use @doneisbetter/gds-* packages (deprecated @gds scope).",
+            },
+            {
               group: ["@/components/ui/*", "@/components/ui", "@/components/mantine/*"],
-              message: "Use @gds/* packages and @/components/gds/* adapters only.",
+              message: "Use @doneisbetter/gds-* packages and @/components/gds/* adapters only.",
             },
           ],
         },

@@ -95,6 +95,10 @@
     "saved": "Salvato",
     "removed": "Rimosso dai salvati",
     "share": "Condividi locale",
+    "listed": "In elenco",
+    "locationMeta": "Zona",
+    "addressMeta": "Indirizzo",
+    "ratingMeta": "Valutazione",
     "viewDetails": "Vedi dettagli",
     "reserve": "Prenota",
     "reserveAt": "Prenota da {name}",
@@ -195,7 +199,9 @@
     "noMatchesHint": "Prova un altro distretto o torna più tardi.",
     "loading": "Caricamento eventi…",
     "loadErrorTitle": "Impossibile caricare gli eventi",
-    "loadErrorMessage": "Controlla MONGODB_URI e la rete."
+    "loadErrorMessage": "Controlla MONGODB_URI e la rete.",
+    "districtScope": "Quartiere",
+    "eventsResultLabel": "eventi"
   },
   "event": {
     "viewEvent": "Vedi evento",
@@ -676,6 +682,10 @@
     "spotlightEventsHint": "Grandi eventi dopo questa settimana.",
     "featuredVenues": "Locali in evidenza",
     "eventsThisWeek": "{count} eventi questa settimana",
+    "eventsResultLabel": "eventi questa settimana",
+    "emptyWeekTitle": "Nessun evento in programma questa settimana",
+    "emptyWeekMessage": "Il programma si aggiorna ogni giovedì. Nel frattempo sfoglia il calendario completo.",
+    "upcomingFallback": "In arrivo",
     "browseAllEvents": "Tutti gli eventi",
     "boroughTitle": "Per quartiere",
     "emptyVertical": "Nessuna scheda per questa categoria.",

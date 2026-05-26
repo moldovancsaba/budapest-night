@@ -95,6 +95,10 @@
     "saved": "נשמר",
     "removed": "הוסר מהשמורים",
     "share": "שתף מקום",
+    "listed": "ברשימה",
+    "locationMeta": "אזור",
+    "addressMeta": "כתובת",
+    "ratingMeta": "דירוג",
     "viewDetails": "פרטים",
     "reserve": "הזמנה",
     "reserveAt": "הזמנה ב-{name}",
@@ -195,7 +199,9 @@
     "noMatchesHint": "נסו מחוז אחר או חזרו לאחר רישום אירועים חדשים.",
     "loading": "טוען אירועים…",
     "loadErrorTitle": "לא ניתן לטעון אירועים",
-    "loadErrorMessage": "בדוק את MONGODB_URI והרשת."
+    "loadErrorMessage": "בדוק את MONGODB_URI והרשת.",
+    "districtScope": "אזור",
+    "eventsResultLabel": "אירועים"
   },
   "event": {
     "viewEvent": "צפייה באירוע",
@@ -676,6 +682,10 @@
     "spotlightEventsHint": "אירועים גדולים לאחר השבוע הנוכחי.",
     "featuredVenues": "מקומות נבחרים",
     "eventsThisWeek": "{count} אירועים השבוע",
+    "eventsResultLabel": "אירועים השבוע",
+    "emptyWeekTitle": "עדיין אין אירועים השבוע",
+    "emptyWeekMessage": "התוכנית מתעדכנת בכל חמישי. בינתיים אפשר לעיין בלוח המלא.",
+    "upcomingFallback": "בקרוב",
     "browseAllEvents": "כל האירועים",
     "boroughTitle": "לפי רובע",
     "emptyVertical": "אין עדיין רישומים בקטגוריה זו.",

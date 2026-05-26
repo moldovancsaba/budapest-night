@@ -163,6 +163,11 @@ export async function GET(req: Request) {
 
   featuredProviders = featuredProviders.map(applyProviderPromo);
 
+  const suggestedEvents =
+    featuredEvents.length === 0 && spotlightEvents.length === 0
+      ? sortFeatured(upcomingPublic).slice(0, 6)
+      : [];
+
   return NextResponse.json(
     {
       week,
@@ -170,6 +175,7 @@ export async function GET(req: Request) {
       spotlightEvents,
       featuredProviders,
       fallbackEventCount: events.length,
+      suggestedEvents,
       verticalSponsors,
     },
     {

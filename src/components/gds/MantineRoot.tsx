@@ -1,6 +1,6 @@
 "use client";
 
-import { GdsProvider } from "@gds/theme/client";
+import { GdsProvider } from "@doneisbetter/gds-theme/client";
 import { usePathname } from "next/navigation";
 import { localeFromPathname } from "@/lib/localeFromPath";
 import { getGdsMessagesForLocale } from "@/lib/gdsMessages";

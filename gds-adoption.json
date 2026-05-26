@@ -1,23 +1,25 @@
 {
   "schemaVersion": 1,
-  "gdsVersion": "2.4.3",
+  "gdsVersion": "2.6.1",
   "gdsRepository": "https://github.com/sovereignsquad/general-design-system",
-  "productArchetype": "public-discovery",
+  "productArchetype": "hybrid",
   "supportedEntryPoints": [
-    "@gds/theme/client",
-    "@gds/theme/server",
-    "@gds/core/client",
-    "@gds/core/server",
-    "@gds/admin"
+    "@doneisbetter/gds-theme/client",
+    "@doneisbetter/gds-theme/server",
+    "@doneisbetter/gds-core/client",
+    "@doneisbetter/gds-core/server",
+    "@doneisbetter/gds-admin/client"
   ],
   "requiredContracts": [
+    "BrowseSurface",
+    "PublicProductCard",
     "StateBlock",
-    "ProductCard",
-    "PublicShell",
     "AuthShell",
     "DataToolbar",
     "EmptyState",
-    "ThemeToggle"
+    "ThemeToggle",
+    "EditorialHero",
+    "AccentPanel"
   ],
   "localAdapters": [
     {
@@ -38,7 +40,7 @@
     {
       "contract": "button",
       "path": "src/components/gds/AppButton.tsx",
-      "status": "legacy-wrapper"
+      "status": "exception"
     },
     {
       "contract": "discovery-shell",
@@ -48,13 +50,12 @@
     {
       "contract": "listing-card",
       "path": "src/components/scout/ProviderCard.tsx",
-      "status": "deferred",
-      "note": "ProductCard migration reverted; unique images are catalog data (content-quality agent)"
+      "status": "active"
     },
     {
       "contract": "public-shell",
       "path": "src/components/scout/BudapestNightShell.tsx",
-      "status": "active"
+      "status": "exception"
     },
     {
       "contract": "admin-shell",
@@ -68,9 +69,40 @@
       "reason": "OSM iframe in provider profiles.",
       "owner": "pestiest",
       "reviewDate": "2026-06-01"
+    },
+    {
+      "surface": "AppButton legacy wrapper",
+      "reason": "Gradual migration to SemanticButton where vocabulary exists.",
+      "owner": "pestiest",
+      "reviewDate": "2026-08-01"
+    },
+    {
+      "surface": "Sidebar discovery shell",
+      "reason": "Product uses sidebar-first layout; GDS PublicShell is top-nav. DiscoveryAppShell mirrors admin AppShell regions until DiscoveryShell ships in @doneisbetter/gds-core.",
+      "owner": "pestiest",
+      "reviewDate": "2026-08-01"
     }
   ],
+  "compliance": {
+    "documentationPaths": [
+      "README.md",
+      "docs/design-system-adapter.md",
+      "docs/design-system-exceptions.md"
+    ],
+    "staleDocumentationReferences": [
+      "@gds/theme",
+      "@gds/core",
+      "@gds/admin",
+      "@gds/eslint-config",
+      "@gds/compliance"
+    ],
+    "protectedSurfacePaths": [
+      "src/components/gds",
+      "src/theme/pestiestTheme.ts"
+    ],
+    "bannedImports": ["lucide-react", "@/components/ui"]
+  },
   "migrationStatus": "gds-only",
   "owner": "pestiest",
-  "lastReviewedAt": "2026-05-25"
+  "lastReviewedAt": "2026-05-26"
 }

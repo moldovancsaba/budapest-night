@@ -15,8 +15,8 @@ const marker = path.join(vendor, "packages/gds-theme/package.json");
 const sibling = path.join(root, "../general-design-system");
 const siblingMarker = path.join(sibling, "packages/gds-theme/package.json");
 
-/** Pin aligned with gds-adoption.json (2.4.3). Override with GDS_VENDOR_REF on Vercel if needed. */
-const GDS_REF = process.env.GDS_VENDOR_REF || "787a8ce214f16290b370f79aac3a993ca1f6e481";
+/** Pin aligned with gds-adoption.json (2.6.1 @doneisbetter scope). Override with GDS_VENDOR_REF on Vercel if needed. */
+const GDS_REF = process.env.GDS_VENDOR_REF || "53c52b8adbd66ec394491c322393b65c50b2349b";
 const GDS_ARCHIVE = `https://codeload.github.com/sovereignsquad/general-design-system/tar.gz/${GDS_REF}`;
 
 function symlinkSibling() {

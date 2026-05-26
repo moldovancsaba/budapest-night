@@ -95,6 +95,10 @@
     "saved": "Saved",
     "removed": "Removed from saved",
     "share": "Share venue",
+    "listed": "Listed",
+    "locationMeta": "Area",
+    "addressMeta": "Address",
+    "ratingMeta": "Rating",
     "viewDetails": "View details",
     "reserve": "Reserve",
     "reserveAt": "Reserve at {name}",
@@ -195,7 +199,9 @@
     "noMatchesHint": "Try another district or check back after new listings are ingested.",
     "loading": "Loading events…",
     "loadErrorTitle": "Can't load events",
-    "loadErrorMessage": "Check MONGODB_URI and your network. The API returned an error."
+    "loadErrorMessage": "Check MONGODB_URI and your network. The API returned an error.",
+    "districtScope": "District",
+    "eventsResultLabel": "events"
   },
   "event": {
     "viewEvent": "View event",
@@ -676,6 +682,10 @@
     "spotlightEventsHint": "Headline shows after this week — tickets and details on Pesti Est.",
     "featuredVenues": "Featured venues",
     "eventsThisWeek": "{count} events this week",
+    "eventsResultLabel": "events this week",
+    "emptyWeekTitle": "No events in this week yet",
+    "emptyWeekMessage": "The program refreshes every Thursday. Browse the full calendar for what's already on sale.",
+    "upcomingFallback": "Coming up soon",
     "browseAllEvents": "Browse all events",
     "boroughTitle": "By district",
     "emptyVertical": "No listings yet for this vertical.",

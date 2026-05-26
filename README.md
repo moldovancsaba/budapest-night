@@ -16,9 +16,9 @@
 
 ## Stack
 
-Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@gds/theme` / `@gds/core` (GDS **2.4.3**).
+Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@doneisbetter/gds-theme` / `@doneisbetter/gds-core` (GDS **2.6.1**).
 
-**GDS vendor:** `preinstall` links `../general-design-system` or clones into `vendor/general-design-system` (Vercel/CI, pinned commit `787a8ce` / v2.4.3). `prebuild` installs GDS monorepo deps and builds `@gds/theme`, `@gds/core`, `@gds/admin`.
+**GDS packages:** Canonical scope is `@doneisbetter/gds-*` (not `@gds/*`). Until npm publish, `preinstall` vendors GDS and `prebuild` builds packages from `vendor/general-design-system` (pin `53c52b8` / v2.6.1). Then switch to `npm install @doneisbetter/gds-theme @doneisbetter/gds-core @doneisbetter/gds-admin`.
 
 **Design system:** [General Design System](https://github.com/sovereignsquad/general-design-system) is SSOT. Local adapter: [docs/design-system-adapter.md](docs/design-system-adapter.md) · [gds-adoption.json](gds-adoption.json).
 

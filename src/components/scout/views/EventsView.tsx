@@ -1,24 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { CalendarDays, MapPin, Sparkles } from "@/components/gds/icons";
-import {
-  Box,
-  Grid,
-  Group,
-  Loader,
-  Paper,
-  SimpleGrid,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
-import { BoroughBar } from "../BoroughBar";
+import { Sparkles } from "@/components/gds/icons";
+import { BrowseSurface } from "@/components/gds";
+import { Box, Group, SimpleGrid, Stack, Title } from "@mantine/core";
 import { NeighborhoodChips } from "../NeighborhoodChips";
 import { EventCard } from "../EventCard";
-import { EmptyState } from "../EmptyState";
 import { ResolvedCoverImage } from "../ResolvedCoverImage";
 import { NEIGHBORHOODS as FALLBACK_HOODS } from "@/data/locations";
+import { BOROUGHS } from "@/data/locations";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Borough, BoroughChoice } from "@/types/provider";
 import { useEventsCatalog, useNeighborhoodsCatalog } from "@/hooks/useCatalog";
@@ -82,113 +72,115 @@ export function EventsView({
     [filtered],
   );
 
-  if (isLoading) {
-    return (
-      <Stack align="center" justify="center" gap="sm" py={96}>
-        <Loader color="gray" />
-        <Text size="sm" c="dimmed">
-          {t("loading")}
-        </Text>
-      </Stack>
-    );
-  }
+  const activeFilters = useMemo(() => {
+    const chips = [];
+    if (borough !== "All") {
+      chips.push({
+        id: "borough",
+        label: districtLabel(borough),
+        onRemove: () => {
+          setBorough("All");
+          setNeighborhood(null);
+        },
+      });
+    }
+    if (neighborhood) {
+      chips.push({
+        id: "neighborhood",
+        label: neighborhoodLabel(neighborhood),
+        onRemove: () => setNeighborhood(null),
+      });
+    }
+    return chips;
+  }, [borough, neighborhood, districtLabel, neighborhoodLabel]);
 
-  if (isError) {
-    return (
-      <EmptyState
-        icon={CalendarDays}
-        title={t("loadErrorTitle")}
-        message={t("loadErrorMessage")}
-      />
-    );
-  }
+  const scopeOptions = useMemo(
+    () => [
+      {
+        id: "all",
+        label: districtLabel("All"),
+        active: borough === "All",
+        onSelect: () => {
+          setBorough("All");
+          setNeighborhood(null);
+        },
+      },
+      ...BOROUGHS.map((b) => ({
+        id: b,
+        label: districtLabel(b),
+        active: borough === b,
+        onSelect: () => {
+          setBorough(b);
+          setNeighborhood(null);
+        },
+      })),
+    ],
+    [borough, districtLabel],
+  );
 
   return (
-    <Stack gap="xl">
-      <Paper radius="xl" withBorder style={{ overflow: "hidden" }}>
-        <Grid gutter="xl" p={{ base: "xl", sm: 40 }}>
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <Text size="xs" fw={600} tt="uppercase" c="dimmed" lts="0.2em">
-              {t("eyebrow")}
-            </Text>
-            <Title order={1} mt="sm" size="h1" tt="uppercase" lts="0.02em" lh={1.1}>
-              {t("title")}
-            </Title>
-            <Text c="dimmed" mt="md" maw={420} size="sm">
-              {t("subtitle")}
-            </Text>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 5 }} display={{ base: "none", md: "block" }}>
-            <Box
-              pos="relative"
-              h={176}
-              maw={400}
-              ml="auto"
-              style={{ overflow: "hidden", borderRadius: "var(--mantine-radius-xl)" }}
-            >
-              <ResolvedCoverImage src={BAKED_EVENTS_LISTING_HERO} alt={t("heroAlt")} />
-            </Box>
-          </Grid.Col>
-        </Grid>
-      </Paper>
-
-      <Stack gap="md">
-        <BoroughBar
-          value={borough}
-          onChange={(b) => {
-            setBorough(b);
-            setNeighborhood(null);
-          }}
-        />
-        {borough !== "All" && (
+    <BrowseSurface
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      description={t("subtitle")}
+      resultCount={filtered.length}
+      resultLabel={t("eventsResultLabel")}
+      activeFilters={activeFilters}
+      scopeOptions={scopeOptions}
+      scopeLabel={t("districtScope")}
+      locationControls={
+        borough !== "All" ? (
           <NeighborhoodChips
             options={hoodOptions}
             value={neighborhood}
             onChange={setNeighborhood}
           />
-        )}
-      </Stack>
+        ) : null
+      }
+      loading={isLoading}
+      loadingTitle={t("loading")}
+      error={isError ? t("loadErrorMessage") : undefined}
+      errorTitle={t("loadErrorTitle")}
+      empty={!isLoading && !isError && filtered.length === 0}
+      emptyTitle={t("noMatches")}
+      emptyDescription={t("noMatchesHint")}
+      content={
+        <Stack gap="xl">
+          <Box
+            pos="relative"
+            h={176}
+            maw={480}
+            display={{ base: "block", md: "none" }}
+            style={{ overflow: "hidden", borderRadius: "var(--mantine-radius-xl)" }}
+          >
+            <ResolvedCoverImage src={BAKED_EVENTS_LISTING_HERO} alt={t("heroAlt")} />
+          </Box>
 
-      {featured.length > 0 && (
-        <Stack gap="md">
-          <Group gap="xs">
-            <Sparkles size={16} />
-            <Title order={2} size="h4" tt="uppercase" lts="0.04em">
-              {t("featured")}
-            </Title>
-          </Group>
-          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-            {featured.map((e) => (
-              <EventCard key={e.id} event={e} onOpen={onOpen} />
-            ))}
-          </SimpleGrid>
+          {featured.length > 0 && (
+            <Stack gap="md">
+              <Group gap="xs">
+                <Sparkles size={16} />
+                <Title order={2} size="h4" tt="uppercase" lts="0.04em">
+                  {t("featured")}
+                </Title>
+              </Group>
+              <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
+                {featured.map((e) => (
+                  <EventCard key={e.id} event={e} onOpen={onOpen} />
+                ))}
+              </SimpleGrid>
+            </Stack>
+          )}
+
+          {filtered.length > 0 && (
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
+              {filtered.map((e) => (
+                <EventCard key={e.id} event={e} onOpen={onOpen} />
+              ))}
+            </SimpleGrid>
+          )}
         </Stack>
-      )}
-
-      <Stack gap="md">
-        <Title order={2} size="h4" tt="uppercase" lts="0.04em">
-          {borough !== "All"
-            ? t("resultsIn", {
-                count: filtered.length,
-                district: districtLabel(borough),
-              })
-            : t("results", { count: filtered.length })}
-          {neighborhood ? ` · ${neighborhoodLabel(neighborhood)}` : ""}
-        </Title>
-        {filtered.length === 0 ? (
-          <EmptyState
-            icon={MapPin}
-            title={t("noMatches")}
-            message={t("noMatchesHint")}
-          />
-        ) : (
-          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-            {filtered.map((e) => (
-              <EventCard key={e.id} event={e} onOpen={onOpen} />
-            ))}
-          </SimpleGrid>
-        )}
-      </Stack>
-    </Stack>
+      }
+    />
   );
 }
