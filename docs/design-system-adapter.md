@@ -21,7 +21,7 @@ Last updated: 2026-05-25
 
 | Contract | Path |
 |----------|------|
-| GDS sibling repo | `../general-design-system` |
+| GDS vendor path | `vendor/general-design-system` (symlink to sibling locally) |
 | Theme | `src/theme/pestiestTheme.ts` |
 | Root provider | `src/components/gds/MantineRoot.tsx` |
 | Icons barrel | `src/components/gds/icons.ts` |
@@ -33,8 +33,9 @@ Last updated: 2026-05-25
 ## Commands
 
 ```bash
-npm run gds:sync      # pull latest GDS main
-npm run build:gds     # build @gds/theme + @gds/core
+npm run gds:vendor    # ensure vendor/general-design-system (symlink or clone)
+npm run gds:sync      # pull latest GDS main in vendor
+npm run build:gds     # build @gds/theme + @gds/core + @gds/admin
 npm run gds:check     # adoption manifest compliance
 npm run build
 ```
