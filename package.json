@@ -81,7 +81,19 @@
   },
   "overrides": {
     "@types/react": "^18.3.23",
-    "@types/react-dom": "^18.3.7"
+    "@types/react-dom": "^18.3.7",
+    "@gds/admin": {
+      "@mantine/core": "$@mantine/core",
+      "@mantine/hooks": "$@mantine/hooks"
+    },
+    "@gds/core": {
+      "@mantine/core": "$@mantine/core",
+      "@mantine/hooks": "$@mantine/hooks"
+    },
+    "@gds/theme": {
+      "@mantine/core": "$@mantine/core",
+      "@mantine/hooks": "$@mantine/hooks"
+    }
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

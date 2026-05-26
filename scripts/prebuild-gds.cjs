@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Build @gds/* from vendor/general-design-system (skipped when packages already built).
+ * Prunes vendor node_modules after build so Next.js resolves a single @mantine/core.
  */
 const fs = require("fs");
 const path = require("path");
@@ -11,6 +12,21 @@ const vendor = path.join(root, "vendor/general-design-system");
 const themeDist = path.join(vendor, "packages/gds-theme/dist/index.js");
 const vendorModules = path.join(vendor, "node_modules/tsup");
 
+function pruneVendorInstalls() {
+  const targets = [
+    path.join(vendor, "node_modules"),
+    path.join(vendor, "packages/gds-theme/node_modules"),
+    path.join(vendor, "packages/gds-core/node_modules"),
+    path.join(vendor, "packages/gds-admin/node_modules"),
+  ];
+  for (const target of targets) {
+    if (fs.existsSync(target)) {
+      fs.rmSync(target, { recursive: true, force: true });
+    }
+  }
+  console.log("[gds] Pruned vendor GDS node_modules (single @mantine/core for the app).");
+}
+
 if (!fs.existsSync(path.join(vendor, "packages/gds-theme/package.json"))) {
   console.log("[gds] No vendor GDS — skipping build:gds (run npm install first).");
   process.exit(0);
@@ -18,6 +34,7 @@ if (!fs.existsSync(path.join(vendor, "packages/gds-theme/package.json"))) {
 
 if (fs.existsSync(themeDist) && process.env.GDS_FORCE_BUILD !== "1") {
   console.log("[gds] Using existing vendor GDS build (set GDS_FORCE_BUILD=1 to rebuild).");
+  pruneVendorInstalls();
   process.exit(0);
 }
 
@@ -35,3 +52,5 @@ execSync(
   "npm run build --workspace=@gds/theme --workspace=@gds/core --workspace=@gds/admin",
   { cwd: vendor, stdio: "inherit" },
 );
+
+pruneVendorInstalls();

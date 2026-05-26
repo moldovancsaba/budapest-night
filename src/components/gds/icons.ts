@@ -3,7 +3,7 @@
  * Tabler is confined to this module (GDS icon policy).
  */
 import type { ComponentType } from "react";
-import { GdsIcons } from "@gds/core";
+import { GdsIcons } from "@gds/core/client";
 import type { Icon, IconProps } from "@tabler/icons-react";
 import {
   IconAdjustmentsHorizontal,
