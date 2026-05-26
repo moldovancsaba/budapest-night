@@ -53,6 +53,16 @@
       "status": "active"
     },
     {
+      "contract": "detail-sections",
+      "path": "src/components/scout/detail",
+      "status": "active"
+    },
+    {
+      "contract": "cta-button-group",
+      "path": "src/components/scout/detail/VenueProfileActions.tsx",
+      "status": "active"
+    },
+    {
       "contract": "public-shell",
       "path": "src/components/scout/BudapestNightShell.tsx",
       "status": "exception"
@@ -102,7 +112,8 @@
     ],
     "bannedImports": ["lucide-react", "@/components/ui"]
   },
-  "migrationStatus": "gds-only",
+  "migrationStatus": "in-progress",
   "owner": "pestiest",
-  "lastReviewedAt": "2026-05-26"
+  "lastReviewedAt": "2026-05-27",
+  "packageSource": "npm:@doneisbetter/*@^2.6.1"
 }

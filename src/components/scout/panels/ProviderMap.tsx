@@ -1,9 +1,10 @@
 "use client";
 
-import { Box, Group, Paper, Skeleton, Text, Title } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
+import { Box, Group, Skeleton } from "@mantine/core";
+import { AppButton, SectionPanel } from "@/components/gds";
 import { useEffect, useState } from "react";
 import { Navigation } from "@/components/gds/icons";
+import { useTranslations } from "next-intl";
 
 const BOROUGH_CENTERS: Record<string, [number, number]> = {
   Belváros: [47.4979, 19.0402],
@@ -22,6 +23,7 @@ export function ProviderMap({
   address: string;
   borough: string;
 }) {
+  const t = useTranslations("venue");
   const [coords, setCoords] = useState<[number, number] | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -62,12 +64,8 @@ export function ProviderMap({
     : "";
 
   return (
-    <Paper withBorder radius="xl" p="lg">
-      <Title order={4} size="sm" fw={600}>
-        Location
-      </Title>
+    <SectionPanel title={t("locationTitle")} description={address} tone="supporting">
       <Box
-        mt="sm"
         h={192}
         style={{ overflow: "hidden", borderRadius: "var(--mantine-radius-md)" }}
       >
@@ -83,9 +81,6 @@ export function ProviderMap({
           />
         )}
       </Box>
-      <Text size="sm" c="dimmed" mt="sm">
-        {address}
-      </Text>
       <AppButton
         variant="outline"
         size="sm"
@@ -98,9 +93,9 @@ export function ProviderMap({
       >
         <Group gap="xs" wrap="nowrap" justify="center">
           <Navigation size={16} />
-          Get directions
+          {t("getDirections")}
         </Group>
       </AppButton>
-    </Paper>
+    </SectionPanel>
   );
 }

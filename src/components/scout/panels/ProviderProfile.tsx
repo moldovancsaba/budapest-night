@@ -2,36 +2,28 @@
 
 import {
   ActionIcon,
-  Anchor,
   Badge,
   Box,
   Drawer,
   Group,
-  Paper,
   SimpleGrid,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
+import { AccentPanel, SectionPanel } from "@/components/gds";
+import { VenueContactSection } from "@/components/scout/detail/VenueContactSection";
+import { VenueProfileActions } from "@/components/scout/detail/VenueProfileActions";
+import { VenueQrSection } from "@/components/scout/detail/VenueQrSection";
 import type { Provider } from "@/types/provider";
 import {
-  Heart,
-  Plus,
-  Mail,
-  Globe,
-  Phone,
   MapPin,
-  MessageCircle,
   Megaphone,
   X,
-  Calendar,
   ChevronLeft,
   ChevronRight,
 } from "@/components/gds/icons";
 import { useMemo, useState } from "react";
-import { useSaved, useCalculator } from "@/store/useScout";
-import { notify } from "@/lib/notify";
 import { useEventsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import { eventsForVenue } from "@/lib/eventsAtVenue";
@@ -55,8 +47,6 @@ import {
 } from "@/hooks/useVenueDisplay";
 import { useLocale, useTranslations } from "next-intl";
 import { buildAbsoluteVenueUrl } from "@/lib/appShareUrls";
-import { buildProgramPath } from "@/lib/appPaths";
-import { Link } from "@/i18n/routing";
 import { JsonLd, localBusinessJsonLd } from "@/components/seo/JsonLd";
 import type { AppLocale } from "@/i18n/config";
 import { ResolvedCoverImage } from "../ResolvedCoverImage";
@@ -78,7 +68,6 @@ export function ProviderProfile({
 }) {
   const locale = useLocale() as AppLocale;
   const t = useTranslations("venue");
-  const tProgram = useTranslations("program");
   const tMenu = useTranslations("menu");
   const categoryLabel = useCategoryLabel();
   const activityLabel = useActivityTypeLabel();
@@ -89,8 +78,6 @@ export function ProviderProfile({
   const shareSummary = useVenueShareSummary();
   const { data: allProviders = [] } = useProvidersCatalog();
   const { data: allEvents = [] } = useEventsCatalog();
-  const { isSaved, toggle } = useSaved();
-  const { add } = useCalculator();
   const [photoIdx, setPhotoIdx] = useState(0);
   const [bannerOpen, setBannerOpen] = useState(true);
   const gallery = useMemo(() => {
@@ -117,7 +104,6 @@ export function ProviderProfile({
   if (!provider) return null;
 
   const isPage = variant === "page";
-  const saved = isSaved(provider.id);
   const price = formatPrice(provider);
   const current =
     gallery.length > 0
@@ -252,15 +238,12 @@ export function ProviderProfile({
 
       <Stack gap="xl" p="lg" pb={48}>
         {provider.announcementTitle && bannerOpen && (
-          <Paper withBorder radius="xl" p="md">
+          <AccentPanel tone="gray" variant="soft-outline" title={provider.announcementTitle}>
             <Group align="flex-start" gap="md" wrap="nowrap">
               <ActionIcon variant="light" color="gray" radius="xl" size="lg">
                 <Megaphone size={16} />
               </ActionIcon>
               <Stack gap={4} style={{ flex: 1 }}>
-                <Text size="sm" fw={600}>
-                  {provider.announcementTitle}
-                </Text>
                 {provider.announcementDescription ? (
                   <Text size="xs" c="dimmed">
                     {provider.announcementDescription}
@@ -276,7 +259,7 @@ export function ProviderProfile({
                 <X size={16} />
               </ActionIcon>
             </Group>
-          </Paper>
+          </AccentPanel>
         )}
 
         {gallery.length > 1 && (
@@ -371,180 +354,36 @@ export function ProviderProfile({
 
         {(provider.menu?.sections?.length ||
           (provider.eventOfferings?.length ?? 0) > 0) && (
-          <Stack gap="sm">
-            <Title order={3} size="h4">
-              {tMenu("title")}
-            </Title>
+          <SectionPanel title={tMenu("title")}>
             <VenueMenuPanel provider={provider} />
-          </Stack>
+          </SectionPanel>
         )}
 
         {venueEvents.length > 0 && (
-          <Stack gap="md">
-            <Stack gap={4}>
-              <Title order={3} size="h4">
-                {t("upcomingEvents")}
-              </Title>
-              <Text size="xs" c="dimmed">
-                {t("upcomingEventsHint")}
-              </Text>
-            </Stack>
+          <SectionPanel
+            title={t("upcomingEvents")}
+            description={t("upcomingEventsHint")}
+          >
             <SimpleGrid cols={isPage ? pageCardCols : 1} spacing="md">
               {venueEvents.map((event) => (
                 <EventCard key={event.id} event={event} onOpen={onOpenEvent} />
               ))}
             </SimpleGrid>
-          </Stack>
+          </SectionPanel>
         )}
 
-        <SimpleGrid cols={2} spacing="xs">
-          {provider.bookingEnabled && (
-            <Box style={{ gridColumn: "1 / -1" }}>
-              <AppButton
-                w="100%"
-                aria-label={t("reserveAt", { name: provider.name })}
-                onClick={() => notify.success(t("bookingSoon"))}
-              >
-                <Group gap="xs" wrap="nowrap" justify="center">
-                  <Calendar size={16} />
-                  {t("reserve")}
-                </Group>
-              </AppButton>
-            </Box>
-          )}
-          <AppButton
-            onClick={() => {
-              add(provider.id);
-              notify.success(t("addedToBudget", { name: provider.name }));
-            }}
-          >
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <Plus size={16} />
-              {t("addToBudget")}
-            </Group>
-          </AppButton>
-          <AppButton
-            variant="outline"
-            onClick={() => {
-              toggle(provider.id);
-              notify.success(saved ? t("removed") : t("saved"));
-            }}
-          >
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <Heart size={16} fill={saved ? "currentColor" : "none"} />
-              {saved ? t("saved") : t("save")}
-            </Group>
-          </AppButton>
-          <AppButton variant="outline" onClick={shareEmail}>
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <Mail size={16} />
-              {t("shareEmail")}
-            </Group>
-          </AppButton>
-          <AppButton variant="outline" onClick={shareWhatsapp}>
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <MessageCircle size={16} />
-              {t("shareWhatsapp")}
-            </Group>
-          </AppButton>
-        </SimpleGrid>
+        <VenueProfileActions
+          provider={provider}
+          onShareEmail={shareEmail}
+          onShareWhatsapp={shareWhatsapp}
+        />
 
-        <Paper radius="xl" p="lg" bg="gray.1">
-          <Title order={4} size="sm" fw={600}>
-            {t("contactVenue")}
-          </Title>
-          <Stack gap="xs" mt="sm">
-            <Anchor href={`mailto:${provider.email}`} size="sm">
-              <Group gap="xs" wrap="nowrap">
-                <Mail size={16} />
-                {provider.email}
-              </Group>
-            </Anchor>
-            <Anchor href={provider.website} target="_blank" rel="noreferrer" size="sm">
-              <Group gap="xs" wrap="nowrap">
-                <Globe size={16} />
-                {provider.website}
-              </Group>
-            </Anchor>
-            {provider.externalProgramUrl ? (
-              <Anchor
-                href={provider.externalProgramUrl}
-                target="_blank"
-                rel="noreferrer"
-                size="sm"
-              >
-                <Group gap="xs" wrap="nowrap">
-                  <Globe size={16} />
-                  {tProgram("officialProgram")}
-                </Group>
-              </Anchor>
-            ) : null}
-            {provider.repertoireUrl ? (
-              <Anchor href={provider.repertoireUrl} target="_blank" rel="noreferrer" size="sm">
-                <Group gap="xs" wrap="nowrap">
-                  <Globe size={16} />
-                  {tProgram("repertoire")}
-                </Group>
-              </Anchor>
-            ) : null}
-            <Anchor component={Link} href={buildProgramPath(undefined, { locale })} size="sm" fw={500}>
-              {tProgram("moreThisWeek")}
-            </Anchor>
-            <Anchor href={`tel:${provider.phone}`} size="sm">
-              <Group gap="xs" wrap="nowrap">
-                <Phone size={16} />
-                {provider.phone}
-              </Group>
-            </Anchor>
-          </Stack>
-        </Paper>
-
-        <Paper withBorder radius="xl" p="md">
-          <Text size="sm" fw={600}>
-            {tProgram("qrTitle")}
-          </Text>
-          <Text size="xs" c="dimmed" mt={4}>
-            {tProgram("qrHint")}
-          </Text>
-          <Group gap="md" mt="sm" align="flex-start">
-            <Box
-              component="img"
-              src={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=200`}
-              alt=""
-              width={120}
-              height={120}
-              style={{
-                borderRadius: "var(--mantine-radius-md)",
-                border: "1px solid var(--mantine-color-default-border)",
-                background: "white",
-                padding: 8,
-              }}
-            />
-            <Anchor
-              href={`/api/public/providers/${encodeURIComponent(provider.id)}/qr?locale=${locale}&size=400`}
-              download={`pestiest-${provider.id}-qr.svg`}
-              size="sm"
-              fw={500}
-            >
-              {tProgram("qrDownload")}
-            </Anchor>
-          </Group>
-          {(provider.partnerTier === "listed" ||
-            provider.partnerTier === "partner" ||
-            provider.isPromoted) && (
-            <Text size="xs" fw={500} c="brand" mt="xs">
-              {tProgram("partnerBadge")}
-            </Text>
-          )}
-        </Paper>
-
+        <VenueContactSection provider={provider} />
+        <VenueQrSection provider={provider} />
         <ProviderMap address={provider.address} borough={provider.borough} />
 
         {similar.length > 0 && (
-          <Stack gap="md">
-            <Title order={3} size="h4">
-              {t("moreNearby")}
-            </Title>
+          <SectionPanel title={t("moreNearby")}>
             <SimpleGrid cols={isPage ? pageCardCols : { base: 1, sm: 2 }} spacing="md">
               {similar.map((p) => (
                 <ProviderCard
@@ -555,7 +394,7 @@ export function ProviderProfile({
                 />
               ))}
             </SimpleGrid>
-          </Stack>
+          </SectionPanel>
         )}
       </Stack>
     </>

@@ -2,29 +2,19 @@
 
 import {
   Alert,
-  Anchor,
   Badge,
   Box,
   Drawer,
   Group,
   Paper,
-  SimpleGrid,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
-import {
-  Heart,
-  MapPin,
-  Mail,
-  MessageCircle,
-  Instagram,
-  Globe,
-  CalendarClock,
-} from "@/components/gds/icons";
-import { useSaved } from "@/store/useScout";
-import { notify } from "@/lib/notify";
+import { SectionPanel } from "@/components/gds";
+import { MapPin, CalendarClock } from "@/components/gds/icons";
+import { MeetupConnectSection } from "@/components/scout/detail/MeetupConnectSection";
+import { MeetupProfileActions } from "@/components/scout/detail/MeetupProfileActions";
 import { useEventsCatalog, useMeetupGroupsCatalog, useProvidersCatalog } from "@/hooks/useCatalog";
 import { useFormatEventSchedule } from "@/hooks/useEventDisplay";
 import { eventStubFromMeetupLink, type PublicMeetupGroup } from "@/lib/publicMeetup";
@@ -62,8 +52,6 @@ export function MeetupGroupProfile({
   variant?: "sheet" | "page";
 }) {
   const t = useTranslations("meetup");
-  const tv = useTranslations("venue");
-  const { isSaved, toggle } = useSaved();
   const { data: allGroups = [] } = useMeetupGroupsCatalog();
   const { data: providers = [] } = useProvidersCatalog();
   const { data: allEvents = [] } = useEventsCatalog();
@@ -74,7 +62,6 @@ export function MeetupGroupProfile({
   const ageLabel = useAgeRangeLabel();
   if (!group) return null;
   const isPage = variant === "page";
-  const saved = isSaved(group.id);
 
   const similar = allGroups
     .filter((g) => g.id !== group.id && g.borough === group.borough)
@@ -106,7 +93,7 @@ export function MeetupGroupProfile({
           alt={group.name}
         />
       </Box>
-      <Box px="lg" pb="lg" pt="lg" bg="gray.1">
+      <Box px="lg" pb="lg" pt="lg" bg="dark.7">
         <Group align="flex-start" gap="lg" wrap="nowrap">
           <MeetupLogo group={group} size="lg" />
           <Stack gap="xs" style={{ minWidth: 0, flex: 1 }}>
@@ -148,43 +135,12 @@ export function MeetupGroupProfile({
           {group.description}
         </Text>
 
-        <SimpleGrid cols={2} spacing="xs">
-          <AppButton
-            onClick={() => {
-              toggle(group.id);
-              notify.success(saved ? tv("removed") : tv("savedGroup"));
-            }}
-          >
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <Heart size={16} fill={saved ? "currentColor" : "none"} />
-              {saved ? t("unsave") : t("save")}
-            </Group>
-          </AppButton>
-          <AppButton
-            variant="outline"
-            component="a"
-            href={websiteUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <Globe size={16} />
-              {t("visitWebsite")}
-            </Group>
-          </AppButton>
-          <AppButton variant="outline" onClick={shareEmail}>
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <Mail size={16} />
-              {tv("shareEmail")}
-            </Group>
-          </AppButton>
-          <AppButton variant="outline" onClick={shareWhatsapp}>
-            <Group gap="xs" wrap="nowrap" justify="center">
-              <MessageCircle size={16} />
-              {tv("shareWhatsapp")}
-            </Group>
-          </AppButton>
-        </SimpleGrid>
+        <MeetupProfileActions
+          group={group}
+          websiteUrl={websiteUrl}
+          onShareEmail={shareEmail}
+          onShareWhatsapp={shareWhatsapp}
+        />
 
         {(group.venueIds?.length ?? 0) > group.venues.length ? (
           <Alert color="yellow" radius="md">
@@ -195,15 +151,7 @@ export function MeetupGroupProfile({
         ) : null}
 
         {group.venues.length > 0 && (
-          <Stack gap="md">
-            <Stack gap={4}>
-              <Title order={3} size="h4">
-                {t("hostVenues")}
-              </Title>
-              <Text size="xs" c="dimmed">
-                {t("hostVenuesHint")}
-              </Text>
-            </Stack>
+          <SectionPanel title={t("hostVenues")} description={t("hostVenuesHint")}>
             <Stack gap="md">
               {group.venues.map((link) => {
                 const provider = providers.find((p) => p.id === link.id) ?? null;
@@ -215,7 +163,7 @@ export function MeetupGroupProfile({
                     onShare={() => {}}
                   />
                 ) : (
-                  <Paper key={link.id} withBorder radius="xl" p="md">
+                  <Paper key={link.id} radius="xl" p="md" bg="dark.6">
                     <Text fw={600}>{link.name}</Text>
                     <Text size="sm" c="dimmed" mt={4}>
                       {link.address}
@@ -224,7 +172,7 @@ export function MeetupGroupProfile({
                 );
               })}
             </Stack>
-          </Stack>
+          </SectionPanel>
         )}
 
         {(group.eventIds?.length ?? 0) > group.events.length ? (
@@ -236,15 +184,7 @@ export function MeetupGroupProfile({
         ) : null}
 
         {group.events.length > 0 && (
-          <Stack gap="md">
-            <Stack gap={4}>
-              <Title order={3} size="h4">
-                {t("organizedEvents")}
-              </Title>
-              <Text size="xs" c="dimmed">
-                {t("organizedEventsHint")}
-              </Text>
-            </Stack>
+          <SectionPanel title={t("organizedEvents")} description={t("organizedEventsHint")}>
             <Stack gap="md">
               {group.events.map((link) => {
                 const full = allEvents.find((e) => e.id === link.id);
@@ -258,10 +198,10 @@ export function MeetupGroupProfile({
                     key={link.id}
                     component="button"
                     type="button"
-                    withBorder
                     radius="xl"
                     p="md"
                     w="100%"
+                    bg="dark.6"
                     onClick={() => onOpenEvent(stub)}
                     style={{ cursor: "pointer", textAlign: "left" }}
                   >
@@ -276,39 +216,13 @@ export function MeetupGroupProfile({
                 );
               })}
             </Stack>
-          </Stack>
+          </SectionPanel>
         )}
 
-        <Paper radius="xl" p="lg" bg="gray.1">
-          <Title order={4} size="sm" fw={600}>
-            {t("connect")}
-          </Title>
-          <Stack gap="xs" mt="sm">
-            <Anchor
-              href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
-              target="_blank"
-              rel="noreferrer"
-              size="sm"
-            >
-              <Group gap="xs" wrap="nowrap">
-                <Instagram size={16} />
-                {group.instagram}
-              </Group>
-            </Anchor>
-            <Anchor href={websiteUrl} target="_blank" rel="noreferrer" size="sm">
-              <Group gap="xs" wrap="nowrap">
-                <Globe size={16} />
-                {group.website}
-              </Group>
-            </Anchor>
-          </Stack>
-        </Paper>
+        <MeetupConnectSection group={group} websiteUrl={websiteUrl} />
 
         {similar.length > 0 && (
-          <Stack gap="md">
-            <Title order={3} size="h4">
-              {t("similarNearby")}
-            </Title>
+          <SectionPanel title={t("similarNearby")}>
             <Stack gap="md">
               {similar.map((g) => (
                 <MeetupGroupCard
@@ -319,7 +233,7 @@ export function MeetupGroupProfile({
                 />
               ))}
             </Stack>
-          </Stack>
+          </SectionPanel>
         )}
       </Stack>
     </>

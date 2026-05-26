@@ -1,8 +1,8 @@
 "use client";
 
 import type { Provider } from "@/types/provider";
-import { AppButton } from "@/components/gds/AppButton";
-import { Group, Paper, Stack, Text, Textarea, TextInput, Title } from "@mantine/core";
+import { SectionPanel, SemanticButton } from "@/components/gds";
+import { Group, Paper, Stack, Text, Textarea, TextInput } from "@mantine/core";
 import { StarRatingInput } from "@/components/scout/StarRatingInput";
 import { useVenueReviews } from "@/hooks/useVenueReviews";
 import { Star } from "@/components/gds/icons";
@@ -57,22 +57,20 @@ export function VenueReviewsPanel({ provider }: { provider: Provider }) {
   };
 
   return (
-    <Paper withBorder radius="xl" p="md">
-      <Title order={3} size="h4">
-        {t("communityReviewsTitle")}
-      </Title>
-      <Text size="xs" c="dimmed" mt={4}>
-        {t("communityReviewsHint")}
-      </Text>
-
+    <SectionPanel
+      title={t("communityReviewsTitle")}
+      description={t("communityReviewsHint")}
+      tone="supporting"
+      divided
+    >
       {isLoading ? (
-        <Text size="sm" c="dimmed" mt="md">
+        <Text size="sm" c="dimmed">
           {t("reviewsLoading")}
         </Text>
       ) : (
         <>
           {data && data.summary.reviewCount > 0 ? (
-            <Group gap={4} mt="md" align="center">
+            <Group gap={4} align="center">
               <Star size={16} fill="currentColor" aria-hidden />
               <Text size="sm" fw={600}>
                 {data.summary.rating}
@@ -89,7 +87,7 @@ export function VenueReviewsPanel({ provider }: { provider: Provider }) {
           {data && data.reviews.length > 0 ? (
             <Stack gap="sm" mt="md">
               {data.reviews.map((rev) => (
-                <Paper key={rev.id} withBorder radius="md" p="sm">
+                <Paper key={rev.id} radius="md" p="sm" bg="dark.6">
                   <Stack gap={4}>
                     <Group justify="space-between" gap="xs" wrap="nowrap">
                       <Text size="sm" fw={500}>
@@ -115,13 +113,13 @@ export function VenueReviewsPanel({ provider }: { provider: Provider }) {
               ))}
             </Stack>
           ) : (
-            <Text size="sm" c="dimmed" mt="md">
+            <Text size="sm" c="dimmed">
               {t("reviewsEmpty")}
             </Text>
           )}
 
           <form onSubmit={onSubmit}>
-            <Stack gap="sm" mt="lg" pt="md" style={{ borderTop: "1px solid var(--mantine-color-default-border)" }}>
+            <Stack gap="sm" mt="lg" pt="md">
               <Text size="sm" fw={500}>
                 {data?.mine ? t("reviewEditTitle") : t("reviewWriteTitle")}
               </Text>
@@ -156,13 +154,16 @@ export function VenueReviewsPanel({ provider }: { provider: Provider }) {
                 autoComplete="off"
                 aria-hidden
               />
-              <AppButton type="submit" fullWidth disabled={submit.isPending || !reviewerId}>
-                {data?.mine ? t("reviewUpdateButton") : t("reviewSubmitButton")}
-              </AppButton>
+              <SemanticButton
+                action="submit"
+                type="submit"
+                fullWidth
+                disabled={submit.isPending || !reviewerId}
+              />
             </Stack>
           </form>
         </>
       )}
-    </Paper>
+    </SectionPanel>
   );
 }

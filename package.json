@@ -4,11 +4,6 @@
   "version": "0.2.0",
   "scripts": {
     "dev": "next dev",
-    "build:gds": "node scripts/prebuild-gds.cjs",
-    "gds:vendor": "node scripts/ensure-gds-vendor.cjs",
-    "gds:sync": "git -C vendor/general-design-system fetch origin main && git -C vendor/general-design-system pull origin main",
-    "preinstall": "node scripts/ensure-gds-vendor.cjs",
-    "prebuild": "node scripts/prebuild-gds.cjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -56,9 +51,9 @@
     "test:ingest-validate": "node --test scripts/lib/image-ingest-validate.test.cjs scripts/lib/scarcity-ingest-validate.test.cjs"
   },
   "dependencies": {
-    "@doneisbetter/gds-admin": "file:vendor/general-design-system/packages/gds-admin",
-    "@doneisbetter/gds-core": "file:vendor/general-design-system/packages/gds-core",
-    "@doneisbetter/gds-theme": "file:vendor/general-design-system/packages/gds-theme",
+    "@doneisbetter/gds-admin": "^2.6.1",
+    "@doneisbetter/gds-core": "^2.6.1",
+    "@doneisbetter/gds-theme": "^2.6.1",
     "@hookform/resolvers": "^3.10.0",
     "@mantine/core": "^7.17.8",
     "@mantine/hooks": "^7.17.8",
@@ -96,8 +91,8 @@
     }
   },
   "devDependencies": {
-    "@doneisbetter/gds-compliance": "file:vendor/general-design-system/packages/gds-compliance",
-    "@doneisbetter/gds-eslint-config": "file:vendor/general-design-system/packages/gds-eslint-config",
+    "@doneisbetter/gds-compliance": "^2.6.1",
+    "@doneisbetter/gds-eslint-config": "^2.6.1",
     "@eslint/eslintrc": "^3.3.1",
     "@tabler/icons-react": "^3.5.0",
     "@testing-library/jest-dom": "^6.6.0",

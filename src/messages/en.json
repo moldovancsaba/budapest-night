@@ -110,6 +110,8 @@
     "upcomingEvents": "Upcoming events",
     "upcomingEventsHint": "Scheduled happenings at this venue.",
     "contactVenue": "Contact this venue",
+    "locationTitle": "Location",
+    "getDirections": "Get directions",
     "similarNearby": "Similar venues nearby",
     "bookingSoon": "Booking link coming soon. Visit the venue website or contact them directly.",
     "dismissAnnouncement": "Dismiss announcement",

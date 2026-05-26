@@ -12,7 +12,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
+import { AppButton, CtaButtonGroup, SectionPanel } from "@/components/gds";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { Provider } from "@/types/provider";
 import { CalendarDays, ExternalLink, MapPin, Ticket, X } from "@/components/gds/icons";
@@ -145,13 +145,15 @@ export function EventProfile({
         </Group>
 
         {event.entryFees.length > 0 && (
-          <Paper withBorder radius="xl" p="md">
-            <Group gap="xs" mb="sm">
-              <Ticket size={16} />
-              <Text fw={600} size="sm">
+          <SectionPanel
+            title={
+              <Group gap="xs">
+                <Ticket size={16} />
                 {t("entryFees")}
-              </Text>
-            </Group>
+              </Group>
+            }
+            tone="supporting"
+          >
             <Stack gap="xs">
               {event.entryFees.map((fee) => (
                 <Group key={fee.id} justify="space-between" gap="md">
@@ -162,35 +164,42 @@ export function EventProfile({
                 </Group>
               ))}
             </Stack>
-          </Paper>
+          </SectionPanel>
         )}
 
-        <Group gap="sm">
-          {event.bookingUrl ? (
-            <AppButton
-              component="a"
-              href={event.bookingUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Group gap="xs" wrap="nowrap">
-                {t("getTickets")}
-                <ExternalLink size={16} />
-              </Group>
-            </AppButton>
-          ) : null}
-          {event.website ? (
-            <AppButton
-              variant="outline"
-              component="a"
-              href={event.website}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("officialSite")}
-            </AppButton>
-          ) : null}
-        </Group>
+        {event.bookingUrl || event.website ? (
+          <CtaButtonGroup
+            primary={
+              <AppButton
+                w="100%"
+                component="a"
+                href={event.bookingUrl ?? event.website!}
+                target="_blank"
+                rel="noreferrer"
+                variant={event.bookingUrl ? "filled" : "outline"}
+              >
+                <Group gap="xs" wrap="nowrap" justify="center">
+                  {event.bookingUrl ? t("getTickets") : t("officialSite")}
+                  <ExternalLink size={16} />
+                </Group>
+              </AppButton>
+            }
+            secondary={
+              event.bookingUrl && event.website ? (
+                <AppButton
+                  w="100%"
+                  variant="outline"
+                  component="a"
+                  href={event.website}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {t("officialSite")}
+                </AppButton>
+              ) : undefined
+            }
+          />
+        ) : null}
 
         {missingVenueCount > 0 ? (
           <Alert color="yellow" radius="md">
@@ -199,15 +208,7 @@ export function EventProfile({
         ) : null}
 
         {hostVenueRows.length > 0 && (
-          <Stack gap="md">
-            <Stack gap={4}>
-              <Title order={3} size="h4">
-                {t("venues")}
-              </Title>
-              <Text size="xs" c="dimmed">
-                {t("venuesHint")}
-              </Text>
-            </Stack>
+          <SectionPanel title={t("venues")} description={t("venuesHint")}>
             <Stack gap="md">
               {hostVenueRows.map(({ link, provider }) =>
                 provider ? (
@@ -218,7 +219,7 @@ export function EventProfile({
                     onShare={() => {}}
                   />
                 ) : (
-                  <Paper key={link.id} withBorder radius="xl" p="md">
+                  <Paper key={link.id} radius="xl" p="md" bg="dark.6">
                     <Text fw={600}>{link.name}</Text>
                     <Text size="sm" c="dimmed" mt={4}>
                       {link.address}
@@ -227,7 +228,7 @@ export function EventProfile({
                 ),
               )}
             </Stack>
-          </Stack>
+          </SectionPanel>
         )}
       </Stack>
     </>

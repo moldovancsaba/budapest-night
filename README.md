@@ -18,7 +18,7 @@
 
 Next.js (App Router), MongoDB, ImgBB CDN, Vitest, next-intl, TanStack Query, Mantine + `@doneisbetter/gds-theme` / `@doneisbetter/gds-core` (GDS **2.6.1**).
 
-**GDS packages:** Canonical scope is `@doneisbetter/gds-*` (not `@gds/*`). Until npm publish, `preinstall` vendors GDS and `prebuild` builds packages from `vendor/general-design-system` (pin `53c52b8` / v2.6.1). Then switch to `npm install @doneisbetter/gds-theme @doneisbetter/gds-core @doneisbetter/gds-admin`.
+**GDS packages:** `@doneisbetter/gds-theme`, `@doneisbetter/gds-core`, `@doneisbetter/gds-admin` from npm (^2.6.1). Dev: `@doneisbetter/gds-eslint-config`, `@doneisbetter/gds-compliance`. Do not use the deprecated `@gds/*` scope.
 
 **Design system:** [General Design System](https://github.com/sovereignsquad/general-design-system) is SSOT. Local adapter: [docs/design-system-adapter.md](docs/design-system-adapter.md) · [gds-adoption.json](gds-adoption.json).
 

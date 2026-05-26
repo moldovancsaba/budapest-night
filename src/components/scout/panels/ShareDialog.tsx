@@ -1,7 +1,7 @@
 "use client";
 
 import { Group, Modal, Stack, Text } from "@mantine/core";
-import { AppButton, Mail, MessageCircle, SemanticButton } from "@/components/gds";
+import { AppButton, MessageCircle, SemanticButton } from "@/components/gds";
 import type { Provider } from "@/types/provider";
 import { notify } from "@/lib/notify";
 import { useVenueShareSummary } from "@/hooks/useVenueDisplay";
@@ -34,7 +34,8 @@ export function ShareDialog({
         {t("shareDescription")}
       </Text>
       <Stack gap="xs">
-        <AppButton
+        <SemanticButton
+          action="mail"
           variant="outline"
           w="100%"
           onClick={() =>
@@ -42,12 +43,7 @@ export function ShareDialog({
               `mailto:?subject=${encodeURIComponent(provider.name)}&body=${encodeURIComponent(summary + "\n\n" + url)}`,
             )
           }
-        >
-          <Group gap="xs" wrap="nowrap">
-            <Mail size={16} />
-            {t("shareEmail")}
-          </Group>
-        </AppButton>
+        />
         <AppButton
           variant="outline"
           w="100%"
