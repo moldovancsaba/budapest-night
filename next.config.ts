@@ -4,13 +4,15 @@ import path from "path";
 
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
+function resolveMantinePackage(name: string) {
+  return path.dirname(require.resolve(name));
+}
+
 const mantineAliases = {
-  "@mantine/core": path.dirname(require.resolve("@mantine/core/package.json")),
-  "@mantine/hooks": path.dirname(require.resolve("@mantine/hooks/package.json")),
-  "@mantine/notifications": path.dirname(
-    require.resolve("@mantine/notifications/package.json"),
-  ),
-  "@mantine/modals": path.dirname(require.resolve("@mantine/modals/package.json")),
+  "@mantine/core": resolveMantinePackage("@mantine/core"),
+  "@mantine/hooks": resolveMantinePackage("@mantine/hooks"),
+  "@mantine/notifications": resolveMantinePackage("@mantine/notifications"),
+  "@mantine/modals": resolveMantinePackage("@mantine/modals"),
 };
 
 const nextConfig: NextConfig = {
