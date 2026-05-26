@@ -39,7 +39,7 @@ export function EventCard({ event, onOpen }: Props) {
     : null;
 
   return (
-    <Card radius="xl" p={0} withBorder style={{ overflow: "hidden" }}>
+    <Card radius="xl" p={0} style={{ overflow: "hidden" }}>
       <Card.Section>
         <div style={{ position: "relative", height: 176, overflow: "hidden" }}>
           <Image

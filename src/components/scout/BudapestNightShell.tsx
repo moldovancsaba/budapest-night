@@ -347,7 +347,13 @@ export default function BudapestNightShell() {
             </Group>
         }
       >
-            <Box maw={1400} mx="auto" w="100%">
+            <Box
+              maw={1400}
+              mx="auto"
+              w="100%"
+              px={{ base: "md", sm: "xl" }}
+              py={{ base: "lg", sm: "xl" }}
+            >
               {view === "Home" && (
                 <HomeView
                   onNavigate={navigateToView}

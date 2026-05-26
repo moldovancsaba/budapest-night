@@ -3,6 +3,8 @@ export { SemanticButton, type SemanticButtonProps } from "./SemanticButton";
 export { MantineRoot } from "./MantineRoot";
 export * from "./icons";
 export { DiscoveryAppShell } from "./DiscoveryAppShell";
+export { BrowseSurface } from "./BrowseSurface";
+export type { BrowseSurfaceProps, BrowseSurfaceFilterChip } from "./BrowseSurface";
 export { ListingCardMedia } from "./ListingCardMedia";
 export {
   EmptyState,
@@ -16,7 +18,6 @@ export {
   PublicSiteFooter,
   ProductCard,
   PublicProductCard,
-  BrowseSurface,
   AccentPanel,
   SectionPanel,
   EditorialCard,
@@ -28,6 +29,4 @@ export {
   type ProductCardMetaItem,
   type PublicProductCardProps,
   type PublicProductCardMetaItem,
-  type BrowseSurfaceProps,
-  type BrowseSurfaceFilterChip,
 } from "@doneisbetter/gds-core/client";

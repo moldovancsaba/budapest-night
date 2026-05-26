@@ -67,8 +67,19 @@ export const pestiestTheme = extendGdsTheme({
     TextInput: { defaultProps: { size: "md", radius: "md" } },
     Select: { defaultProps: { size: "md", radius: "md" } },
     Modal: { defaultProps: { centered: true, radius: "lg" } },
-    Paper: { defaultProps: { radius: "xl", withBorder: true } },
-    Card: { defaultProps: { radius: "xl", padding: "lg", withBorder: true, shadow: undefined } },
+    Paper: {
+      defaultProps: { radius: "xl", withBorder: false },
+      styles: { root: { backgroundColor: "var(--mantine-color-dark-7)" } },
+    },
+    Card: {
+      defaultProps: { radius: "xl", padding: "lg", withBorder: false, shadow: undefined },
+      styles: {
+        root: {
+          backgroundColor: "var(--mantine-color-dark-7)",
+          border: "1px solid var(--mantine-color-dark-5)",
+        },
+      },
+    },
     Title: {
       defaultProps: {
         tt: "uppercase",
