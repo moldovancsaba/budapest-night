@@ -2,7 +2,7 @@
 /**
  * Ensures GDS packages exist at vendor/general-design-system before npm install.
  * Local: symlinks ../general-design-system when present.
- * CI/Vercel: shallow-clones sovereignsquad/general-design-system.
+ * CI/Vercel: downloads a pinned GitHub tarball (no git ref quirks).
  */
 const fs = require("fs");
 const path = require("path");
@@ -10,16 +10,17 @@ const { execSync } = require("child_process");
 
 const root = path.join(__dirname, "..");
 const vendor = path.join(root, "vendor/general-design-system");
+const vendorParent = path.join(root, "vendor");
 const marker = path.join(vendor, "packages/gds-theme/package.json");
 const sibling = path.join(root, "../general-design-system");
 const siblingMarker = path.join(sibling, "packages/gds-theme/package.json");
 
-const GDS_REPO = "https://github.com/sovereignsquad/general-design-system.git";
 /** Pin aligned with gds-adoption.json (2.4.3). Override with GDS_VENDOR_REF on Vercel if needed. */
-const GDS_REF = process.env.GDS_VENDOR_REF || "787a8ce";
+const GDS_REF = process.env.GDS_VENDOR_REF || "787a8ce214f16290b370f79aac3a993ca1f6e481";
+const GDS_ARCHIVE = `https://codeload.github.com/sovereignsquad/general-design-system/tar.gz/${GDS_REF}`;
 
 function symlinkSibling() {
-  fs.mkdirSync(path.dirname(vendor), { recursive: true });
+  fs.mkdirSync(vendorParent, { recursive: true });
   if (fs.existsSync(vendor)) {
     const stat = fs.lstatSync(vendor);
     if (stat.isSymbolicLink() || stat.isDirectory()) return;
@@ -29,14 +30,28 @@ function symlinkSibling() {
   console.log("[gds] Linked vendor/general-design-system → ../general-design-system");
 }
 
-function cloneRepo() {
-  fs.mkdirSync(path.dirname(vendor), { recursive: true });
-  console.log(`[gds] Fetching ${GDS_REPO} @ ${GDS_REF} into vendor/general-design-system…`);
-  fs.mkdirSync(vendor, { recursive: true });
-  execSync("git init", { cwd: vendor, stdio: "inherit" });
-  execSync(`git remote add origin ${GDS_REPO}`, { cwd: vendor, stdio: "inherit" });
-  execSync(`git fetch --depth 1 origin ${GDS_REF}`, { cwd: vendor, stdio: "inherit" });
-  execSync("git checkout FETCH_HEAD", { cwd: vendor, stdio: "inherit" });
+function downloadArchive() {
+  fs.mkdirSync(vendorParent, { recursive: true });
+  if (fs.existsSync(vendor)) {
+    fs.rmSync(vendor, { recursive: true, force: true });
+  }
+
+  const tarFile = path.join(vendorParent, "gds-vendor.tar.gz");
+  console.log(`[gds] Downloading GDS @ ${GDS_REF.slice(0, 7)}…`);
+  execSync(`curl -fsSL "${GDS_ARCHIVE}" -o "${tarFile}"`, { stdio: "inherit" });
+
+  execSync(`tar -xzf "${tarFile}" -C "${vendorParent}"`, { stdio: "inherit" });
+  fs.unlinkSync(tarFile);
+
+  const extracted = fs
+    .readdirSync(vendorParent)
+    .find((name) => name.startsWith("general-design-system-"));
+  if (!extracted) {
+    throw new Error("[gds] Archive extracted but general-design-system-* folder not found");
+  }
+
+  fs.renameSync(path.join(vendorParent, extracted), vendor);
+  console.log(`[gds] Installed vendor/general-design-system (${extracted})`);
 }
 
 if (fs.existsSync(marker)) {
@@ -48,7 +63,7 @@ if (fs.existsSync(siblingMarker)) {
   process.exit(0);
 }
 
-cloneRepo();
+downloadArchive();
 
 if (!fs.existsSync(marker)) {
   console.error("[gds] vendor/general-design-system is missing packages/gds-theme after setup.");
