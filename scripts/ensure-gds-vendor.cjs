@@ -15,7 +15,8 @@ const sibling = path.join(root, "../general-design-system");
 const siblingMarker = path.join(sibling, "packages/gds-theme/package.json");
 
 const GDS_REPO = "https://github.com/sovereignsquad/general-design-system.git";
-const GDS_REF = process.env.GDS_VENDOR_REF || "main";
+/** Pin aligned with gds-adoption.json (2.4.3). Override with GDS_VENDOR_REF on Vercel if needed. */
+const GDS_REF = process.env.GDS_VENDOR_REF || "787a8ce";
 
 function symlinkSibling() {
   fs.mkdirSync(path.dirname(vendor), { recursive: true });
@@ -30,11 +31,12 @@ function symlinkSibling() {
 
 function cloneRepo() {
   fs.mkdirSync(path.dirname(vendor), { recursive: true });
-  console.log(`[gds] Cloning ${GDS_REPO} (${GDS_REF}) into vendor/general-design-system…`);
-  execSync(`git clone --depth 1 --branch ${GDS_REF} ${GDS_REPO} "${vendor}"`, {
-    cwd: root,
-    stdio: "inherit",
-  });
+  console.log(`[gds] Fetching ${GDS_REPO} @ ${GDS_REF} into vendor/general-design-system…`);
+  fs.mkdirSync(vendor, { recursive: true });
+  execSync("git init", { cwd: vendor, stdio: "inherit" });
+  execSync(`git remote add origin ${GDS_REPO}`, { cwd: vendor, stdio: "inherit" });
+  execSync(`git fetch --depth 1 origin ${GDS_REF}`, { cwd: vendor, stdio: "inherit" });
+  execSync("git checkout FETCH_HEAD", { cwd: vendor, stdio: "inherit" });
 }
 
 if (fs.existsSync(marker)) {
