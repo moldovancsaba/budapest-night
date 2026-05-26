@@ -32,7 +32,6 @@ import { useMediaQuery } from "@mantine/hooks";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { buildPathForView } from "@/lib/appPaths";
-import { Logo } from "./Logo";
 import { AppButton } from "@/components/gds/AppButton";
 import type { Category } from "@/types/provider";
 
@@ -78,8 +77,6 @@ interface Props {
   active: ViewKey;
   mobileOpen: boolean;
   onCloseMobile: () => void;
-  logoUrl?: string | null;
-  logoLightUrl?: string | null;
   sidebarPromo?: { title: string; body: string; cta: string };
 }
 
@@ -87,8 +84,6 @@ export function Sidebar({
   active,
   mobileOpen,
   onCloseMobile,
-  logoUrl,
-  logoLightUrl,
   sidebarPromo,
 }: Props) {
   const t = useTranslations("nav");
@@ -162,26 +157,21 @@ export function Sidebar({
         bg="dark.8"
         style={{ borderRight: "1px solid var(--mantine-color-dark-4)" }}
       >
-        <Group justify="space-between" p="lg">
-          <Link
-            href="/"
-            onClick={onCloseMobile}
-            aria-label={t("goHome")}
-          >
-            <Logo logoUrl={logoUrl} logoLightUrl={logoLightUrl} size={96} />
-          </Link>
+        <Group justify="flex-end" p="md" hiddenFrom="lg">
           <ActionIcon
             variant="subtle"
             color="gray"
             onClick={onCloseMobile}
             aria-label={t("closeMenu")}
-            hiddenFrom="lg"
           >
             <X size={20} />
           </ActionIcon>
         </Group>
 
-        <ScrollArea style={{ flex: 1, paddingInline: 16, paddingBottom: 8 }} aria-label="Main">
+        <ScrollArea
+          style={{ flex: 1, paddingInline: 16, paddingTop: desktop ? 16 : 0, paddingBottom: 8 }}
+          aria-label="Main"
+        >
           <Text px="sm" pb={8} size="10px" fw={700} tt="uppercase" c="dimmed" style={{ letterSpacing: "0.2em" }}>
             {t("explore")}
           </Text>

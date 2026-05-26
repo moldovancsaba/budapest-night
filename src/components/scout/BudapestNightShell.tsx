@@ -239,8 +239,6 @@ export default function BudapestNightShell() {
             active={view}
             mobileOpen={mobileNav}
             onCloseMobile={() => setMobileNav(false)}
-            logoUrl={site?.logoUrl}
-            logoLightUrl={site?.logoLightUrl}
             sidebarPromo={undefined}
           />
         }
