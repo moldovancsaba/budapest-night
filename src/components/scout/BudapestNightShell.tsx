@@ -24,7 +24,7 @@ import { Logo } from "@/components/scout/Logo";
 import type { Provider, Category } from "@/types/provider";
 import type { PublicNightEvent } from "@/lib/publicEvent";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
-import { ActionIcon, Anchor, Badge, Box, Group, Text } from "@mantine/core";
+import { ActionIcon, Anchor, Badge, Box, Group } from "@mantine/core";
 import { DiscoveryAppShell, PublicSiteFooter } from "@/components/gds";
 import { useMediaQuery } from "@mantine/hooks";
 import { Menu as MenuIcon, Heart, Bell, UserCircle } from "@/components/gds/icons";
@@ -256,22 +256,12 @@ export default function BudapestNightShell() {
                   <MenuIcon size={20} stroke={1.75} />
                 </ActionIcon>
                 <Anchor component={Link} href="/" underline="never" aria-label={t("goHome")}>
-                  <Group gap="sm" wrap="nowrap">
-                    <Logo
-                      logoUrl={site?.logoUrl}
-                      logoLightUrl={site?.logoLightUrl}
-                      withWordmark={false}
-                      size={48}
-                    />
-                    <Text
-                      ff="var(--font-rubik), system-ui, sans-serif"
-                      size={smUp ? "lg" : "md"}
-                      fw={700}
-                      style={{ letterSpacing: "0.2em" }}
-                    >
-                      {t("brand")}
-                    </Text>
-                  </Group>
+                  <Logo
+                    logoUrl={site?.logoUrl}
+                    logoLightUrl={site?.logoLightUrl}
+                    withWordmark={false}
+                    size={48}
+                  />
                 </Anchor>
               </Group>
 

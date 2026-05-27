@@ -154,8 +154,7 @@ export function Sidebar({
       <Stack
         h="100%"
         gap={0}
-        bg="dark.8"
-        style={{ borderRight: "1px solid var(--mantine-color-dark-4)" }}
+        bg="black"
       >
         <Group justify="flex-end" p="md" hiddenFrom="lg">
           <ActionIcon
