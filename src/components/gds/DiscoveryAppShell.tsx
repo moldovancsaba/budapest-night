@@ -10,7 +10,7 @@ type DiscoveryAppShellProps = {
   navbarCollapsed: { mobile: boolean; desktop: boolean };
 };
 
-const shellBlack = "#000000";
+const shellBlack = "var(--mantine-color-black)";
 
 /**
  * Sidebar discovery layout (288px nav). Mirrors @doneisbetter/gds-admin AppShell regions until
