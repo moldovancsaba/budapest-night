@@ -10,7 +10,7 @@ type DiscoveryAppShellProps = {
   navbarCollapsed: { mobile: boolean; desktop: boolean };
 };
 
-const shellBlack = "var(--mantine-color-black)";
+const shellSurface = "var(--mantine-color-body)";
 
 /**
  * Sidebar discovery layout (288px nav). Mirrors @doneisbetter/gds-admin AppShell regions until
@@ -32,17 +32,17 @@ export function DiscoveryAppShell({
       header={{ height: 64 }}
       padding={0}
       styles={{
-        root: { backgroundColor: shellBlack },
+        root: { backgroundColor: shellSurface },
         header: {
-          backgroundColor: shellBlack,
+          backgroundColor: shellSurface,
           borderBottom: "none",
         },
         navbar: {
-          backgroundColor: shellBlack,
+          backgroundColor: shellSurface,
           borderRight: "none",
         },
         main: {
-          backgroundColor: shellBlack,
+          backgroundColor: shellSurface,
         },
       }}
     >

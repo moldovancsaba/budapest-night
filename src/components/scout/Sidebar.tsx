@@ -154,7 +154,7 @@ export function Sidebar({
       <Stack
         h="100%"
         gap={0}
-        bg="black"
+        style={{ backgroundColor: "var(--mantine-color-body)" }}
       >
         <Group justify="flex-end" p="md" hiddenFrom="lg">
           <ActionIcon
@@ -191,7 +191,7 @@ export function Sidebar({
           <Stack gap={4}>{renderItems(NIGHT_ITEMS)}</Stack>
         </ScrollArea>
 
-        <Paper m="md" radius="xl" withBorder p="lg" bg="dark.6">
+        <Paper m="md" radius="xl" withBorder p="lg">
           <Text size="sm" fw={600}>
             {sidebarPromo?.title ?? ts("listVenueTitle")}
           </Text>

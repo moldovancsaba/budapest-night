@@ -1,10 +1,9 @@
-import { Heart, Share2, MapPin, Instagram, CalendarClock } from "@/components/gds/icons";
+import { Heart, Share2 } from "@/components/gds/icons";
 import Image from "next/image";
-import { ActionIcon, Badge, Card, Group, Stack, Text } from "@mantine/core";
-import { AppButton } from "@/components/gds/AppButton";
+import { ActionIcon, AspectRatio, Box, Button } from "@mantine/core";
+import { PublicProductCard } from "@/components/gds";
 import { useSaved } from "@/store/useScout";
 import { notify } from "@/lib/notify";
-import { MeetupLogo } from "./MeetupLogo";
 import type { PublicMeetupGroup } from "@/lib/publicMeetup";
 import {
   useAgeRangeLabel,
@@ -35,111 +34,58 @@ export function MeetupGroupCard({ group, onOpen, onShare }: Props) {
     venueCount > 0 ? t("linkedVenuesCount", { count: venueCount }) : null,
     eventCount > 0 ? t("linkedEventsCount", { count: eventCount }) : null,
   ].filter(Boolean);
+  const cardBadge = groupTypeLabel(group.groupType);
+  const age = ageLabel(group.ageRange);
+  const cadence = cadenceLabel(group.cadence);
+  const location = locationLine(group.borough, group.neighborhood);
 
   return (
-    <Card radius="xl" p={0} withBorder style={{ overflow: "hidden" }}>
-      <Card.Section>
-        <div style={{ position: "relative", height: 144, overflow: "hidden" }}>
-          <Image
-            fill
-            src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
-            alt={group.name}
-            style={{ objectFit: "cover" }}
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
-      </Card.Section>
-      <Group align="flex-start" justify="space-between" gap="md" p="lg" pb="sm">
-        <Group align="flex-start" gap="md">
-          <MeetupLogo group={group} />
-          <Stack gap={4}>
-            <Badge radius="xl" variant="light" color="gray" size="sm" tt="uppercase">
-              {groupTypeLabel(group.groupType)}
-            </Badge>
-            <AppButton onClick={() => onOpen(group)} variant="subtle" px={0} justify="flex-start" color="gray">
-              <Text fw={600} size="lg" lh={1.2} ta="left">
-                {group.name}
-              </Text>
-            </AppButton>
-            <Group gap={4}>
-              <MapPin size={14} />
-              <Text size="xs" c="dimmed">
-              {locationLine(group.borough, group.neighborhood)}
-              </Text>
-            </Group>
-          </Stack>
-        </Group>
-        <ActionIcon
-          onClick={(e) => {
-            e.stopPropagation();
-            toggle(group.id);
-            notify.success(saved ? t("unsave") : t("save"));
-          }}
-          aria-label={saved ? t("unsave") : t("save")}
-          variant="light"
-          color="gray"
-          radius="xl"
-        >
-          <Heart size={16} style={{ fill: saved ? "currentColor" : "none" }} />
-        </ActionIcon>
-      </Group>
-
-      <Stack gap="sm" px="lg" style={{ flex: 1 }}>
-        <Text size="sm" lh={1.6} c="dimmed">
-          {group.description}
-        </Text>
-
-        <Group gap={6}>
-          <Badge radius="xl" variant="light" color="gray" size="sm">
-            {ageLabel(group.ageRange)}
-          </Badge>
-          <Badge radius="xl" variant="outline" color="gray" size="sm" leftSection={<CalendarClock size={12} />}>
-            {cadenceLabel(group.cadence)}
-          </Badge>
-          {organizerParts.length > 0 && (
-            <Badge radius="xl" variant="outline" color="gray" size="sm">
-              {organizerParts.join(" · ")}
-            </Badge>
-          )}
-        </Group>
-      </Stack>
-
-      {group.instagram ? (
-        <Group
-          px="lg"
-          py="sm"
-          style={{ borderTop: "1px solid var(--mantine-color-gray-7)" }}
-        >
-          <a
-            href={`https://instagram.com/${group.instagram.replace(/^@/, "")}`}
-            target="_blank"
-            rel="noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            style={{ display: "inline-flex", gap: 6, alignItems: "center", fontSize: 12 }}
-          >
-            <Instagram size={14} />
-            {group.instagram}
-          </a>
-        </Group>
-      ) : null}
-
-      <Group gap="xs" px="lg" pb="lg">
-        <AppButton
-          onClick={() => onOpen(group)}
-          color="brand"
-          style={{ flex: 1 }}
-        >
+    <PublicProductCard
+      title={group.name}
+      description={`${group.description} ${cadence} · ${age}`.trim()}
+      image={
+        <AspectRatio ratio={16 / 9}>
+          <Box pos="relative" h="100%">
+            <Image
+              fill
+              src={group.coverImageUrl?.trim() ? group.coverImageUrl : CMS_MEDIA.fallbackMeetup}
+              alt={group.name}
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+            <ActionIcon
+              onClick={(e) => {
+                e.stopPropagation();
+                toggle(group.id);
+                notify.success(saved ? t("unsave") : t("save"));
+              }}
+              aria-label={saved ? t("unsave") : t("save")}
+              variant="filled"
+              color="dark"
+              radius="xl"
+              style={{ position: "absolute", top: 12, right: 12, zIndex: 1 }}
+            >
+              <Heart size={16} style={{ fill: saved ? "currentColor" : "none" }} />
+            </ActionIcon>
+          </Box>
+        </AspectRatio>
+      }
+      state="available"
+      stateLabels={{ available: cardBadge }}
+      metadata={[
+        { label: t("hostVenues"), value: location },
+        ...(organizerParts.length > 0 ? [{ label: t("organizedEvents"), value: organizerParts.join(" · ") }] : []),
+      ]}
+      primaryAction={
+        <Button size="sm" color="brand" onClick={() => onOpen(group)}>
           {t("viewDetails")}
-        </AppButton>
-        <AppButton
-          variant="outline"
-          aria-label={t("share")}
-          px="sm"
-          onClick={() => onShare(group)}
-        >
+        </Button>
+      }
+      secondaryAction={
+        <ActionIcon variant="outline" radius="xl" aria-label={t("share")} onClick={() => onShare(group)}>
           <Share2 size={16} />
-        </AppButton>
-      </Group>
-    </Card>
+        </ActionIcon>
+      }
+    />
   );
 }

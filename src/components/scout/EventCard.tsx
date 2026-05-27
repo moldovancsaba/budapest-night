@@ -1,10 +1,10 @@
 "use client";
 
-import { CalendarDays, MapPin, Ticket } from "@/components/gds/icons";
+import { CalendarDays, Ticket } from "@/components/gds/icons";
 import Image from "next/image";
-import { Badge, Card, Group, Stack, Text } from "@mantine/core";
+import { ActionIcon, AspectRatio, Box, Button, Group } from "@mantine/core";
 import type { PublicNightEvent } from "@/lib/publicEvent";
-import { AppButton } from "@/components/gds/AppButton";
+import { PublicProductCard } from "@/components/gds";
 import { CMS_MEDIA } from "@/config/defaultMedia";
 import {
   useEventDisplayLabels,
@@ -25,7 +25,6 @@ interface Props {
 
 export function EventCard({ event, onOpen }: Props) {
   const t = useTranslations("event");
-  const tProgram = useTranslations("program");
   const schedule = useFormatEventSchedule();
   const doors = useFormatDoorsOpen();
   const fromPrice = useEventFromPrice();
@@ -37,87 +36,50 @@ export function EventCard({ event, onOpen }: Props) {
   const primaryHost = primaryHostRaw
     ? { ...primaryHostRaw, ...resolveProviderLocation(primaryHostRaw) }
     : null;
+  const cardBadge =
+    event.promotionLabel ??
+    (event.isFeatured ? badgeLabel("Featured") : event.badges[0] ? badgeLabel(event.badges[0]) : t("viewEvent"));
+  const location = placeLine(event, primaryHost);
+  const price = fromPrice(event.entryFees);
 
   return (
-    <Card radius="xl" p={0} style={{ overflow: "hidden" }}>
-      <Card.Section>
-        <div style={{ position: "relative", height: 176, overflow: "hidden" }}>
-          <Image
-            fill
-            src={event.image?.trim() ? event.image : CMS_MEDIA.fallbackListing}
-            alt={event.title}
-            style={{ objectFit: "cover" }}
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
-        {event.promotionLabel || event.isFeatured ? (
-          <Stack gap={4} style={{ position: "absolute", top: 12, left: 12, maxWidth: "85%" }}>
-            <Badge radius="xl" tt="uppercase" variant="filled" color="brand" size="sm">
-              {event.promotionLabel ?? badgeLabel("Featured")}
-            </Badge>
-            {event.promotionLabel ? (
-              <Badge radius="sm" variant="light" color="gray" size="xs">
-                {tProgram("adDisclosure")}
-              </Badge>
-            ) : null}
-          </Stack>
-        ) : event.badges[0] ? (
-          <Badge
-            radius="xl"
-            tt="uppercase"
-            variant="filled"
-            color="dark"
-            size="sm"
-            style={{ position: "absolute", top: 12, left: 12 }}
-          >
-            {badgeLabel(event.badges[0])}
-          </Badge>
-        ) : null}
-      </Card.Section>
-
-      <Stack gap="sm" p="lg" style={{ flex: 1 }}>
-        <AppButton type="button" variant="subtle" onClick={() => onOpen(event)} px={0} justify="flex-start" color="gray">
-          <Text fw={600} size="lg" ta="left">
-            {event.title}
-          </Text>
-        </AppButton>
-        <Group gap={6} wrap="nowrap">
-          <CalendarDays size={16} />
-          <Text size="sm" fw={500}>
-            {dateLine} · {timeLine}
-          </Text>
-        </Group>
-        {doors(event) ? (
-          <Text size="xs" c="dimmed">
-            {doors(event)}
-          </Text>
-        ) : null}
-        <Group align="flex-start" gap={6} wrap="nowrap">
-          <MapPin size={16} style={{ marginTop: 2 }} />
-          <Stack gap={2}>
-            <Text size="sm">{placeLine(event, primaryHost)}</Text>
-            {primaryHost?.address ? (
-              <Text size="xs" c="dimmed">
-                {primaryHost.address}
-              </Text>
-            ) : null}
-          </Stack>
-        </Group>
-        <Text size="sm" c="dimmed" lineClamp={2}>
-          {event.shortDescription}
-        </Text>
-        <Group justify="space-between" gap="xs" mt="xs">
-          <Group gap={4}>
+    <PublicProductCard
+      title={event.title}
+      description={event.shortDescription}
+      image={
+        <AspectRatio ratio={16 / 10}>
+          <Box pos="relative" h="100%">
+            <Image
+              fill
+              src={event.image?.trim() ? event.image : CMS_MEDIA.fallbackListing}
+              alt={event.title}
+              style={{ objectFit: "cover" }}
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+          </Box>
+        </AspectRatio>
+      }
+      price={price}
+      state="available"
+      stateLabels={{ available: cardBadge }}
+      metadata={[
+        { label: t("venues"), value: location },
+        { label: t("entryFees"), value: `${dateLine} · ${timeLine}` },
+        ...(doors(event) ? [{ label: t("doorsOpen", { time: "" }).trim(), value: doors(event) as string }] : []),
+      ]}
+      primaryAction={
+        <Button size="sm" color="brand" onClick={() => onOpen(event)}>
+          <Group gap="xs" wrap="nowrap">
             <Ticket size={16} />
-            <Text size="sm" fw={600}>
-            {fromPrice(event.entryFees)}
-            </Text>
-          </Group>
-          <AppButton size="sm" variant="secondary" onClick={() => onOpen(event)}>
             {t("viewEvent")}
-          </AppButton>
-        </Group>
-      </Stack>
-    </Card>
+          </Group>
+        </Button>
+      }
+      secondaryAction={
+        <ActionIcon variant="outline" radius="xl" aria-label={t("viewEvent")} onClick={() => onOpen(event)}>
+          <CalendarDays size={16} />
+        </ActionIcon>
+      }
+    />
   );
 }
