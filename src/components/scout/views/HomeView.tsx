@@ -471,8 +471,8 @@ export function HomeView({ onNavigate, onOpenProvider, onOpenGroup, onOpenEvent 
                       </ThemeIcon>
                     </Box>
                   </Card.Section>
-                  <Stack gap="xs" p="lg" pt={28}>
-                    <Title order={3} size="h5" lh={1.3}>
+                  <Stack gap="xs" p="lg" pt={28} style={{ minWidth: 0 }}>
+                    <Title order={3} size="h5" lh={1.3} lineClamp={1}>
                       {g.title}
                     </Title>
                     <Text size="sm" c="dimmed" style={{ flex: 1 }}>

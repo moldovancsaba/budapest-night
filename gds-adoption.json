@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "gdsVersion": "2.6.1",
+  "gdsVersion": "2.6.5",
   "gdsRepository": "https://github.com/sovereignsquad/general-design-system",
   "productArchetype": "hybrid",
   "supportedEntryPoints": [
@@ -25,7 +25,8 @@
     {
       "contract": "theme",
       "path": "src/theme/pestiestTheme.ts",
-      "status": "active"
+      "status": "active",
+      "notes": "createPublicBrandTheme({ flatSurfaces: true, overrides: brand/ink })"
     },
     {
       "contract": "root-provider",
@@ -76,18 +77,42 @@
   "approvedExceptions": [
     {
       "surface": "Map embed",
+      "category": "runtime-constraint",
+      "scope": ["src/components/scout/panels/ProviderMap.tsx"],
+      "allowedImplementation": "OpenStreetMap iframe embed in venue detail map panel.",
+      "mustStillUse": ["Mantine layout primitives", "GDS StateBlock for map loading and error states"],
+      "mustNotDo": ["Custom map rendering stack", "Raw color literals for map chrome"],
+      "exitCondition": "Adopt GDS MapPanel when published in @doneisbetter/gds-core.",
+      "status": "approved",
       "reason": "OSM iframe in provider profiles.",
       "owner": "pestiest",
       "reviewDate": "2026-06-01"
     },
     {
       "surface": "AppButton legacy wrapper",
+      "category": "migration-bridge",
+      "scope": ["src/components/gds/AppButton.tsx"],
+      "allowedImplementation": "Legacy Mantine Button wrapper mapping deprecated variant names to GDS theme tokens.",
+      "mustStillUse": ["@mantine/core Button", "createPublicBrandTheme brand and ink colors"],
+      "mustNotDo": ["New AppButton call sites for semantic actions", "Parallel button or CTA design systems"],
+      "exitCondition": "Scout and admin actions use SemanticButton or GDS ActionBar; remove AppButton.tsx.",
+      "status": "temporary",
       "reason": "Gradual migration to SemanticButton where vocabulary exists.",
       "owner": "pestiest",
       "reviewDate": "2026-08-01"
     },
     {
       "surface": "Sidebar discovery shell",
+      "category": "package-coverage-gap",
+      "scope": [
+        "src/components/scout/BudapestNightShell.tsx",
+        "src/components/gds/DiscoveryAppShell.tsx"
+      ],
+      "allowedImplementation": "Sidebar-first discovery chrome composed from Mantine AppShell regions until upstream DiscoveryShell ships.",
+      "mustStillUse": ["DiscoveryAppShell layout regions", "GDS ThemeToggle and semantic header controls"],
+      "mustNotDo": ["Duplicate PublicShell top-nav layout", "New bespoke shell primitives outside adapter paths"],
+      "exitCondition": "Migrate to GDS DiscoveryShell in @doneisbetter/gds-core and retire local shell adapters.",
+      "status": "temporary",
       "reason": "Product uses sidebar-first layout; GDS PublicShell is top-nav. DiscoveryAppShell mirrors admin AppShell regions until DiscoveryShell ships in @doneisbetter/gds-core.",
       "owner": "pestiest",
       "reviewDate": "2026-08-01"
@@ -110,10 +135,21 @@
       "src/components/gds",
       "src/theme/pestiestTheme.ts"
     ],
-    "bannedImports": ["lucide-react", "@/components/ui"]
+    "bannedImports": ["lucide-react", "@/components/ui"],
+    "approvedThemeLanes": [
+      "gdsTheme",
+      "gdsDarkPublicTheme",
+      "gdsFlatSurfaceTheme",
+      "gdsEditorialPublicTheme",
+      "createPublicBrandTheme"
+    ],
+    "themeOwnershipPaths": [
+      "src/theme/pestiestTheme.ts",
+      "src/components/gds/MantineRoot.tsx"
+    ]
   },
   "migrationStatus": "in-progress",
   "owner": "pestiest",
   "lastReviewedAt": "2026-05-27",
-  "packageSource": "npm:@doneisbetter/*@^2.6.1"
+  "packageSource": "npm:@doneisbetter/*@^2.6.5"
 }

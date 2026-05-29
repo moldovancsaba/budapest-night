@@ -1,7 +1,7 @@
 # Design system adapter — Pesti Est (budapest-night)
 
 Status: **GDS-only** (Mantine via `@doneisbetter/gds-*` only)  
-GDS version: **2.6.1** · [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system)  
+GDS version: **2.6.5** · [sovereignsquad/general-design-system](https://github.com/sovereignsquad/general-design-system)  
 Last updated: 2026-05-27
 
 > SSOT: sovereignsquad GDS. Inventory: [`gds-adoption.json`](../gds-adoption.json). Exceptions: [`design-system-exceptions.md`](./design-system-exceptions.md).
@@ -13,7 +13,7 @@ Last updated: 2026-05-27
 | UI primitives | Mantine + `@doneisbetter/gds-theme`, `@doneisbetter/gds-core` only |
 | Icons | `@/components/gds/icons` or `GdsIcons` — **no** `lucide-react` |
 | Legacy UI | No `@/components/ui/*`, Tailwind, Radix, shadcn |
-| Theme | `extendGdsTheme` in `src/theme/pestiestTheme.ts` |
+| Theme | `createPublicBrandTheme` in `src/theme/pestiestTheme.ts` |
 | Provider | `GdsProvider` in `src/components/gds/MantineRoot.tsx` |
 | Host copy | next-intl; `getGdsMessages` for semantic controls |
 
@@ -24,7 +24,7 @@ npm install @doneisbetter/gds-theme @doneisbetter/gds-core @doneisbetter/gds-adm
 npm install -D @doneisbetter/gds-eslint-config @doneisbetter/gds-compliance
 ```
 
-Pinned in `package.json` at `^2.6.1` (npm registry). Do **not** use the deprecated `@gds/*` scope or `file:vendor/...` tarballs.
+Pinned in `package.json` at `^2.6.5` (npm registry). Do **not** use the deprecated `@gds/*` scope, `extendGdsTheme(...)`, or `file:vendor/...` tarballs.
 
 ## Import paths
 

@@ -2,7 +2,7 @@
 
 /**
  * Pesti Est browse chrome — GDS BrowseSurface rhythm without the outer bordered panel
- * and with scope chips that match our dark editorial shell (brand, not violet).
+ * and with scope chips that follow the active color scheme (brand, not violet).
  */
 export {
   type BrowseSurfaceFilterChip,
@@ -85,7 +85,7 @@ export function BrowseSurface({
 
   return (
     <Stack gap="xl">
-      <Paper radius="xl" p={{ base: "lg", sm: "xl" }} bg="dark.7">
+      <Paper radius="xl" p={{ base: "lg", sm: "xl" }}>
         <Stack gap="lg">
           <Group justify="space-between" align="flex-start" gap="md" wrap="wrap">
             <Stack gap="xs" maw={760}>

@@ -51,9 +51,9 @@
     "test:ingest-validate": "node --test scripts/lib/image-ingest-validate.test.cjs scripts/lib/scarcity-ingest-validate.test.cjs"
   },
   "dependencies": {
-    "@doneisbetter/gds-admin": "^2.6.1",
-    "@doneisbetter/gds-core": "^2.6.1",
-    "@doneisbetter/gds-theme": "^2.6.1",
+    "@doneisbetter/gds-admin": "^2.6.5",
+    "@doneisbetter/gds-core": "^2.6.5",
+    "@doneisbetter/gds-theme": "^2.6.5",
     "@hookform/resolvers": "^3.10.0",
     "@mantine/core": "^7.17.8",
     "@mantine/hooks": "^7.17.8",
@@ -91,8 +91,8 @@
     }
   },
   "devDependencies": {
-    "@doneisbetter/gds-compliance": "^2.6.1",
-    "@doneisbetter/gds-eslint-config": "^2.6.1",
+    "@doneisbetter/gds-compliance": "^2.6.5",
+    "@doneisbetter/gds-eslint-config": "^2.6.5",
     "@eslint/eslintrc": "^3.3.1",
     "@tabler/icons-react": "^3.5.0",
     "@testing-library/jest-dom": "^6.6.0",

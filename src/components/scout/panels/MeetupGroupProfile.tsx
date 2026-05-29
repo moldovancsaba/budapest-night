@@ -93,7 +93,12 @@ export function MeetupGroupProfile({
           alt={group.name}
         />
       </Box>
-      <Box px="lg" pb="lg" pt="lg" bg="dark.7">
+      <Box
+        px="lg"
+        pb="lg"
+        pt="lg"
+        style={{ backgroundColor: "var(--mantine-color-default)" }}
+      >
         <Group align="flex-start" gap="lg" wrap="nowrap">
           <MeetupLogo group={group} size="lg" />
           <Stack gap="xs" style={{ minWidth: 0, flex: 1 }}>
